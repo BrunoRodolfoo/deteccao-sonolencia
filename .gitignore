@@ -1,0 +1,17 @@
+# Dados (baixados via src/baseline/download_data.py — nunca versionar)
+data/**
+!data/README.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Notebooks / IDE
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# SO
+.DS_Store

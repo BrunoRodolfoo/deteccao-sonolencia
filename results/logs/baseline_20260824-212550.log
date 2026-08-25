@@ -1,0 +1,61 @@
+Baseline UTA-RLDD (blink features, 5 folds oficiais) — seed=42
+Execução: 20260824-212550
+
+Fold 1: treino (7379, 30, 4) | teste (1269, 30, 4) | classes teste [228 494 547]
+  [estatisticas(24d)] LogReg        acc=0.451
+  [estatisticas(24d)] SVM-RBF       acc=0.555
+  [estatisticas(24d)] RandomForest  acc=0.474
+  [achatado(120d)] LogReg        acc=0.384
+  [achatado(120d)] SVM-RBF       acc=0.374
+  [achatado(120d)] RandomForest  acc=0.409
+
+Fold 2: treino (6605, 30, 4) | teste (2043, 30, 4) | classes teste [465 835 743]
+  [estatisticas(24d)] LogReg        acc=0.460
+  [estatisticas(24d)] SVM-RBF       acc=0.584
+  [estatisticas(24d)] RandomForest  acc=0.723
+  [achatado(120d)] LogReg        acc=0.522
+  [achatado(120d)] SVM-RBF       acc=0.556
+  [achatado(120d)] RandomForest  acc=0.680
+
+Fold 3: treino (6465, 30, 4) | teste (2196, 30, 4) | classes teste [449 771 976]
+  [estatisticas(24d)] LogReg        acc=0.482
+  [estatisticas(24d)] SVM-RBF       acc=0.532
+  [estatisticas(24d)] RandomForest  acc=0.523
+  [achatado(120d)] LogReg        acc=0.460
+  [achatado(120d)] SVM-RBF       acc=0.503
+  [achatado(120d)] RandomForest  acc=0.449
+
+Fold 4: treino (7186, 30, 4) | teste (1462, 30, 4) | classes teste [211 584 667]
+  [estatisticas(24d)] LogReg        acc=0.568
+  [estatisticas(24d)] SVM-RBF       acc=0.508
+  [estatisticas(24d)] RandomForest  acc=0.492
+  [achatado(120d)] LogReg        acc=0.562
+  [achatado(120d)] SVM-RBF       acc=0.419
+  [achatado(120d)] RandomForest  acc=0.466
+
+Fold 5: treino (6957, 30, 4) | teste (1691, 30, 4) | classes teste [295 810 586]
+  [estatisticas(24d)] LogReg        acc=0.510
+  [estatisticas(24d)] SVM-RBF       acc=0.473
+  [estatisticas(24d)] RandomForest  acc=0.523
+  [achatado(120d)] LogReg        acc=0.450
+  [achatado(120d)] SVM-RBF       acc=0.552
+  [achatado(120d)] RandomForest  acc=0.475
+
+# Baseline — UTA-RLDD (3 classes, 5 folds oficiais, divisão por sujeito)
+
+Classificadores clássicos sobre blink features (30 piscadas x 4 caract.). Seed 42.
+Referências (Ghoddoosian et al., 2019): HM-LSTM 65.2% | humanos 57.8%.
+
+| Representação | Modelo | Acurácia média | Acur. balanceada | F1 macro |
+|---|---|---|---|---|
+| estatisticas(24d) | LogReg | 49.4% ± 4.2% | 49.7% | 48.5% |
+| estatisticas(24d) | SVM-RBF | 53.0% ± 3.8% | 56.2% | 54.2% |
+| estatisticas(24d) | RandomForest | 54.7% ± 9.0% | 58.0% | 56.2% |
+| achatado(120d) | LogReg | 47.6% ± 6.1% | 47.7% | 46.6% |
+| achatado(120d) | SVM-RBF | 48.1% ± 7.3% | 51.9% | 49.4% |
+| achatado(120d) | RandomForest | 49.6% ± 9.5% | 54.4% | 51.5% |
+
+**Melhor:** RandomForest com estatisticas(24d) — acurácia média 54.7% (vs. 65.2% do HM-LSTM e 57.8% de humanos).
+
+Tabela salva em /Users/bruno/Documents/tcc/deteccao-sonolencia/results/baseline_uta_rldd.md
+Log salvo em /Users/bruno/Documents/tcc/deteccao-sonolencia/results/logs/baseline_20260824-212550.log
