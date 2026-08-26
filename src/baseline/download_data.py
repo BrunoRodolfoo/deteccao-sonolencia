@@ -1,7 +1,7 @@
 """Baixa as blink features e partições oficiais do UTA-RLDD (CVPRW 2019).
 
 Fonte: https://github.com/rezaghoddoosian/Early-Drowsiness-Detection
-Destino: data/uta_rldd_blinks/ (~alguns MB, 20 arquivos .npy)
+Destino: data/uta_rldd_blinks/ (~40 MB, 20 arquivos .npy)
 """
 
 from pathlib import Path

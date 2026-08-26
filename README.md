@@ -26,7 +26,7 @@ oficiais (divisão por sujeito) disponibilizadas por
 
 ```bash
 pip install -r requirements.txt
-python src/baseline/download_data.py   # ~30 MB de features (não os 111 GB de vídeo)
+python src/baseline/download_data.py   # ~40 MB de features (não os 111 GB de vídeo)
 python src/baseline/train.py
 ```
 
