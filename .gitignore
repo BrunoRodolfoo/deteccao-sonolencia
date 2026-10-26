@@ -1,17 +1,82 @@
-# Dados (baixados via src/baseline/download_data.py — nunca versionar)
+# ============================================================================================
+# .gitignore — revisado em 27/09/2026. O repositório no GitHub é PÚBLICO: nada de dados das
+# bases, nada de rosto, nada de chave privada. Conferir antes de cada commit:
+#   git status --short -uall | awk '{print $2}' | xargs -I{} du -k "{}" | sort -rn | head
+# ============================================================================================
+
+# ---- Dados (nunca versionar; ver data/README.md para obter cada base) ----
+# Inclui vídeos (UTA-RLDD ~112 GB, DMD ~27 GB, NITYMED ~1,3 GB), MRL/CEW, data/signals/
+# (sinais por quadro), data/features/ (piscadas/janelas), data/cache/ e data/signals/app_headless/.
 data/**
 !data/README.md
+*.npz
+!results/exp3_predictions.npz
+*.y4m
+*.eml
+*.tar.gz
+*.zip
 
-# Python
+# ---- Imagens com ROSTO das bases (licenças: DMD CC BY-NC-ND + rostos; UTA-RLDD autorização restrita) ----
+# Figuras de verificação interna com quadros do DMD: uso interno, NUNCA publicar.
+results/figures/exp5_dmd_verificacao_visual.jpg
+results/figures/*verificacao_visual*
+results/**/*_quadros*.jpg
+
+# ---- Python / ambientes ----
 __pycache__/
 *.pyc
 .venv/
+.venv-mp/
 venv/
-
-# Notebooks / IDE
+.pytest_cache/
 .ipynb_checkpoints/
+
+# ---- IDE / SO ----
 .vscode/
 .idea/
-
-# SO
 .DS_Store
+
+# ---- Modelos regeneráveis e grandes ----
+# Versionados: models/*.tflite, models/*.json, models/*.pkl (baseline de agosto), models/exp3/eyenet_*.keras
+# (~0,8 MB cada) e models/exp5/exp5b_final_*.joblib (modelos finais de transferência do Exp. 5b, ~2,5 MB
+# cada, usados pelo Exp. 6). Ignorados (regeneráveis):
+# models/exp1/: 100 modelos do Exp. 1 (~62 MB; ~10 min: exp1_intra.py)
+models/exp1/
+# models/exp3/mobilenetv3_*.keras: 7,6 MB, opcional (train_mobilenet.py)
+models/exp3/mobilenetv3_*.keras
+# models/exp6/: RF intra-UTA do Exp. 6 (~58 MB; ~1 min: run_exp6.sh)
+models/exp6/
+
+# ---- Android (build, IDE e assets binários baixados por app/android/tools/fetch_assets.sh) ----
+app/android/.gradle/
+app/android/.kotlin/
+app/android/.idea/
+app/android/build/
+app/android/app/build/
+app/android/local.properties
+app/android/*.iml
+app/android/app/src/main/assets/face_landmarker.task
+app/android/app/src/main/assets/*.tflite
+
+# ---- PWA: certificado autoassinado + CHAVE PRIVADA (serve_https.py gera de novo) ----
+app/.pwa-cert/
+*.pem
+*.key
+# Dependências locais da PWA (MediaPipe, WASM, face_landmarker.task, TensorFlow.js; ~36 MB), baixadas de novo por
+# bash tools/baixar_dependencias_app.sh; sem elas o app usa a CDN.
+app/pwa/vendor/
+
+# ---- LaTeX (paper/, poster/) ----
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.out
+paper/*.log
+poster/*.log
+
+# Versionados de propósito (pequenos, são a fonte dos números): results/*.csv|md, results/logs/,
+# results/phone/*.json e *_frames.csv (só números, nenhum quadro).

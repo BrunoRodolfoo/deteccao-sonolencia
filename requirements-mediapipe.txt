@@ -1,0 +1,18 @@
+# Ambiente de VÍDEO (.venv-mp): só o que precisa do MediaPipe 0.10.21, do OpenCV 4.11 ou do dlib.
+# Versões instaladas no .venv-mp em 27/09/2026 (uv pip freeze; Python 3.11.16, macOS arm64).
+#   uv venv --python 3.11 .venv-mp && uv pip install --python .venv-mp/bin/python -r requirements-mediapipe.txt
+# Congelamento completo: requirements-mediapipe-lock.txt.
+#
+# Usado por: src/features/extract_signals.py (sinais por quadro: EAR/MAR/pose), src/realtime/demo_webcam.py
+# (demo de webcam), src/experiments/exp5a_dlib_rosto.py (Exp. 5a), src/experiments/exp6_luminancia.py (Exp. 6)
+# e tools/app_validacao/extrair_sinais_app.py (validação do motor do app).
+# Por que separado: mediapipe 1.x aborta neste Mac; o 0.10.21 exige protobuf < 5 (quebra o TensorFlow 2.21
+# do .venv) e numpy < 2.
+mediapipe==0.10.21
+protobuf==4.25.9
+numpy==1.26.4
+opencv-python==4.11.0.86
+opencv-contrib-python==4.11.0.86
+pandas==3.0.6
+tqdm==4.70.1
+dlib-bin==20.0.1

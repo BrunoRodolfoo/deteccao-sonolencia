@@ -1,8 +1,10 @@
 """Carrega as 5 partições oficiais (por sujeito) das blink features do UTA-RLDD.
 
-Cada amostra é uma sequência de 30 piscadas x 4 características
-(duração, amplitude, velocidade de abertura, frequência), com rótulo em
-3 classes (0 = alerta, 1 = vigilância baixa, 2 = sonolento).
+Cada amostra é uma sequência de 30 piscadas x 4 características, na ordem
+[0] frequência, [1] amplitude, [2] duração, [3] velocidade de abertura do olho
+(ordem confirmada em Preprocessing.py, função normalize_blinks, do repositório
+original de Ghoddoosian et al.), com rótulo em 3 classes
+(0 = alerta, 1 = pouca vigilância, 2 = sonolento; originais 0/5/10).
 
 Para os classificadores clássicos do baseline, cada sequência é resumida em
 um vetor fixo de características (estatísticas por dimensão + concatenação).
