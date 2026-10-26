@@ -1,0 +1,216 @@
+# Pôster (sessão de 16/11/2026)
+
+Pôster final no template do professor (`material_disciplina/TemplatePoster.pptx`: 3 colunas, cabeçalho com os
+logos, título em vermelho, nomes à direita). Versão de 26/10/2026: mensagem do PP1 igual à do artigo
+reescrito (a perda depende do modelo e da normalização; o achado firme é que o sono encenado é mais extremo),
+vazamento medido nas duas unidades (sequências de piscadas e janelas de 10 s), app v2.1 e iPhone 17 Pro.
+
+![prévia](poster_final_preview.png)
+
+## Arquivos
+
+| Arquivo | O que é |
+|---|---|
+| `layout.py` | geometria fixa (cm): colunas, caixas brancas, figuras, tabela e cabeçalho; usada pelos dois scripts abaixo |
+| `make_assets.py` | gera as figuras em `assets/` já no tamanho físico, com texto de 20 pt: `fig_poster_metodo.png` (diagrama: câmera e MediaPipe, sinais de olhos, bocejo e cabeça, experimentos com Face Mesh de 468 pontos e app v2.1 com Face Landmarker de 478 pontos), `fig_poster_exp5b.png` (PP1: queda B−C da AUC no RF e na RL, normalização principal e as outras duas, e quanto o modelo do DMD reconhece) e `qr_repositorio.png` (QR de `https://github.com/BrunoRodolfoo/deteccao-sonolencia`) |
+| `build_poster.py` | gera `poster_final.pptx` (a partir do template, caminho em `POSTER_TEMPLATE`) e `poster_final.html` com o mesmo conteúdo e a mesma geometria; com `--pdf`, imprime o PDF, grava título e autores nos metadados, refaz a prévia e confere tudo |
+| `numeros.json` | todos os números de resultado (gerado por `src/experiments/make_paper_numbers.py`; ver o fim deste arquivo) |
+| `poster_final.pptx` / `.html` / `.pdf` / `_preview.png` | saídas; o PDF (1 página, 50,8 × 28,575 cm) é impresso do HTML pelo Chrome headless |
+| `assets/` | figuras acima + `logo_pucpr.png`, `logo_bcc.png`, `fundo_gradiente.png` |
+
+Gerar tudo (na raiz do repositório):
+
+```bash
+.venv/bin/python poster/make_assets.py && .venv/bin/python poster/build_poster.py --pdf
+```
+
+O `build_poster.py --pdf` chama o Chrome headless sem som (`--mute-audio`), espera o PDF ficar estável (até
+120 s, porque o Chrome às vezes grava o arquivo e não termina) e depois confere fontes, traços, quebras de linha
+e metadados. O `tools/atualizar_celular.sh` refaz números, figuras e pôster depois de um benchmark novo, mas
+imprime o PDF direto pelo Chrome, sem os autores nos metadados: depois dele, rode de novo
+`.venv/bin/python poster/build_poster.py --pdf`.
+
+## Regras ao alterar
+
+- Edite **só** `build_poster.py` (texto), `make_assets.py` (figuras) e `layout.py` (posições). Não edite o
+  `.pptx` à mão.
+- **Números:** todo número de resultado vem de `numeros.json` pela função `N("NomeDoMacro")`, que dá erro se o
+  macro não existir. Os únicos números digitados são da literatura, com a fonte no comentário: 27,8 %
+  (ABRAMET/PRF, `paper/fontes_brasil.md`) e mais de 90 % no NTHU-DDD (Lyu et al., 2018,
+  `paper/related_work_notes.md`).
+- **Celular:** o PP2 mostra cada aparelho que existe em `numeros.json`, com a versão do app de cada medição
+  (`CelularIPhoneVersaoApp`). O Galaxy S23 Ultra só aparece quando `samsung_medido = true`, com os macros
+  `CelularSamsung...`; sem esses dados, o pôster não fala do Galaxy.
+- **Fontes:** título 32 pt; títulos das colunas 28 pt; frase-síntese 24 pt; corpo, tabela e figuras 20 pt;
+  referências e endereço do repositório 16 pt. Os dois scripts param com erro se algum texto ficar menor.
+- **Quebra de linha:** o `build_poster.py` quebra o texto com as medidas da Arial do sistema, deixa cada linha
+  em no máximo 95 % da largura da caixa e grava as quebras no `.pptx` e no `.html`. As caixas são empilhadas
+  pela altura medida, e o script para se algo não couber. Assim o PowerPoint, o Quick Look do macOS e o PDF
+  mostram as mesmas linhas.
+- **Template:** os cartões brancos do template eram grupos de forma livre que o Quick Look não desenha; o
+  script os troca por retângulos arredondados na mesma posição e com o mesmo raio. A tabela é desenhada com
+  caixas de texto e linhas finas, porque a tabela nativa do PowerPoint cresce no Quick Look. A fonte é Arial
+  nas duas saídas (a Montserrat do template não está instalada).
+- **Visual:** cinzas e o vermelho do título; verde e amarelo só no semáforo do app, dentro do diagrama. Nada de
+  ícones, sombras ou caixas coloridas. Negrito só nos títulos, nos rótulos (PP1, PP2, PP3, Limitações) e em
+  poucos números.
+- **Texto:** frases curtas, sem travessão nem meia-risca, vírgula decimal.
+- **Imagens:** nenhum rosto. Nada do DMD (CC BY-NC-ND e rostos), da UTA-RLDD (autorização de imagem restrita)
+  nem do NITYMED; nenhum quadro do NTHU-DDD. As figuras são só gráficos e diagramas.
+- **Conferência feita em 26/10/2026:** PDF com 1 página de 50,80 × 28,57 cm; menor fonte 20 pt no corpo e
+  16 pt nas referências e no endereço, no PDF e no `.pptx`; as 85 linhas de texto do PDF iguais às do
+  `.pptx`; nenhum travessão; metadados com título e autores nos dois arquivos; `.pptx` aberto no Quick Look
+  (`qlmanage -t -s 2000`) e comparado com o PDF. **Imprima o PDF.**
+
+## O que está no pôster (e de onde vem)
+
+| Coluna | Conteúdo | Fonte |
+|---|---|---|
+| Cabeçalho | título, endereço do repositório, autores, orientador e QR | |
+| 1. Contexto e Pergunta | ABRAMET/PRF 27,8 %; encenado acima de 90 % e real 65,2 % (HM-LSTM), humanos 57,8 %; cuidado com o vazamento; pergunta central; PP1 a PP3 | `paper/fontes_brasil.md`, `results/exp1_intra.md` |
+| 2. Método e Resultados | diagrama do método com a validação dos sinais do app (olhos κ 0,938 e revocação 0,920; bocejo 0,638 sem a mão; cabeça sem revocação medida) e o semáforo (40 e 70); tabela das bases; figura do PP1 (queda B−C: RL de 5,4 a 9,8 por janela em todas as normalizações, RF 10,9 só na principal; C reconhece 82,0 % das janelas alertas e 48,4 % das sonolentas); vazamento (45,3 pp nas sequências; 12,6 pp no RF e 1,2 pp na RL nas janelas de 10 s); app v2.1 (3,3 % do tempo em vermelho em 63 min de direção real do DMD, vídeos usados no ajuste) | `results/exp5b_transferencia.md`, `results/exp2_leakage.md`, `results/app_validacao_dmd.md` |
+| 3. Conclusões | frase-síntese (sono encenado mais extremo; 48 % das janelas de sono real); PP1; PP2 (iPhone 17 Pro, 11 a 23 ms por quadro, app 1.0); PP3 (SNR do EAR 7,2 à noite e 8,7 com o carro andando de dia; óculos, AUC de 93,4 para 65,1 do CEW para o MRL); limitações; referências | `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
+
+## Roteiro da apresentação (10 min, 4 falas de 2,5 min)
+
+Divisão da equipe (contexto de 15/09): André, dados e Pipeline A; Bruno Sandoval, Pipeline B (olho);
+Bruno Rodolfo, celular e repositório; Paulo, escrita e pôster. Cada um fala da parte que fez, com as próprias
+palavras; o texto abaixo é só um guia. Aponte para o pôster enquanto fala. Os números são os do pôster: se
+ele mudar (por exemplo, com a medição nova do celular), use os números novos.
+
+### Fala 1, Paulo: problema e pergunta (coluna 1), de 0:00 a 2:30
+
+- **Abertura (20 s):** "Segundo a ABRAMET, com dados da PRF, 27,8 % das ocorrências registradas nas rodovias
+  federais entre 2014 e 2024 tiveram a ver com a saúde do condutor, e o sono entra aí. A ideia é ter um celular no
+  painel que avise o motorista."
+- **O problema (1 min):** "Os trabalhos que usam sono encenado, em que a pessoa finge que está com sono,
+  passam de 90 % de acurácia. Na UTA-RLDD, que tem sono de verdade, o melhor modelo publicado acerta 65,2 % dos
+  vídeos, e pessoas olhando os mesmos vídeos acertam 57,8 %. A gente quis entender de onde vem essa
+  diferença."
+- **Um cuidado (30 s):** "Muitos trabalhos dividem treino e teste por janela. Aí pedaços do mesmo vídeo
+  caem nos dois lados, e o modelo é testado em algo que já viu. Aqui a pessoa do teste nunca aparece no
+  treino."
+- **Pergunta e PPs (40 s):** ler a pergunta central e as três perguntas. Passar para o André: "o André vai
+  mostrar como a gente mediu isso."
+
+### Fala 2, André: método, PP1 e vazamento (coluna 2), de 2:30 a 5:00
+
+- **Método (40 s, diagrama):** "O vídeo passa pelo MediaPipe, que marca pontos do rosto. Nos experimentos
+  usamos o Face Mesh, com 468 pontos; no app, o Face Landmarker, com 478. Daí saem os sinais de olhos, bocejo e
+  cabeça. Nos experimentos, cortamos os vídeos em janelas de 10 s e treinamos Random Forest e regressão
+  logística, sempre testando em pessoas que o modelo nunca viu."
+- **Bases (20 s, tabela):** UTA-RLDD tem sono real (60 pessoas); DMD, sono encenado (13 pessoas); NITYMED é a
+  noite; MRL e CEW são recortes de olho.
+- **PP1 (1 min 10 s, figura):** "B treina e testa na UTA. C treina no DMD e testa na UTA. A diferença B menos
+  C é o quanto se perde treinando com sono encenado. Na regressão logística, a perda fica entre 5,4 e 9,8
+  pontos de AUC em todas as formas de normalizar os dados de cada pessoa. No Random Forest, os 10,9 pontos só
+  aparecem na normalização principal: com outra referência ou sem centragem, a diferença fica em uns 2 pontos e
+  não dá para separar de zero. Isso acontece porque, na UTA, as janelas alertas saem do mesmo vídeo usado como
+  referência, e o Random Forest treinado lá aproveita isso. O resultado mais firme está à direita: o modelo do
+  DMD reconhece 82,0 % das janelas alertas, mas só 48,4 % das sonolentas. O sono encenado é mais extremo: nas
+  janelas sonolentas, o maior fechamento de olho tem mediana de 0,97 s no DMD e de 0,17 s na UTA. Quem aprende
+  com fechamento longo deixa passar o sono real."
+- **Vazamento (30 s, texto à direita da figura):** "Também medimos o vazamento. Nas sequências de 30 piscadas,
+  que se sobrepõem, dividir por janela leva a acurácia de 54,2 % para 99,5 %, 45,3 pontos a mais. O que infla
+  é ter pedaços do mesmo vídeo nos dois lados: dividindo por vídeo, o resultado fica até abaixo da divisão por
+  pessoa, 47,2 %. Nas janelas de 10 s, o efeito depende do modelo: 12,6 pontos no Random Forest e 1,2 na
+  regressão logística. Isso não explica os 90 % da literatura, que foram medidos com outras pessoas no teste."
+  Passar para o Bruno Sandoval.
+
+### Fala 3, Bruno Sandoval: noite, movimento e óculos (PP3), de 5:00 a 7:30
+
+- **Noite e movimento (1 min 10 s, coluna 3, PP3):** "À noite, no NITYMED, o rosto continua sendo encontrado
+  em 99,15 % dos quadros. O que piora é o sinal do olho. O EAR é a medida de abertura do olho, e a SNR diz
+  quanto a piscada se destaca do ruído: ela cai para 7,2, contra 21,5 na UTA. Só que, com os mesmos motoristas
+  do DMD, de dia, o carro andando já leva a SNR a 8,7. A diferença entre a noite e o carro andando não dá para
+  separar de zero. Então boa parte do que parece efeito da noite vem do movimento."
+- **Óculos (40 s):** "Para o olho, treinamos uma CNN pequena. Treinada no CEW e testada no MRL, a AUC cai de
+  93,4 sem óculos para 65,1 com óculos. No DMD, o detector de piscadas falhou num dos três motoristas de
+  óculos. Óculos são o caso difícil."
+- **Por que regras no app (30 s):** "Por isso o app usa regras simples sobre olhos, bocejo e cabeça, calibradas
+  em cada pessoa. Não é que a regra acerte mais: com o mesmo falso alarme, a regressão logística do DMD acha
+  tanto sono quanto ela. A vantagem é não precisar de treino e cada alarme ter uma explicação." Passar para o
+  Bruno Rodolfo.
+
+### Fala 4, Bruno Rodolfo: o app no celular (PP2), conclusões e limitações, de 7:30 a 10:00
+
+- **App v2.1 (50 s, diagrama e celular na mão):** "O app soma olhos, bocejo e cabeça num nível de 0 a 100:
+  amarelo a partir de 40, vermelho a partir de 70, com alarme. Olho fechado por 1 s ou mais vai direto para o
+  vermelho. O botão 'Por quê?' mostra de onde veio cada ponto. Tudo roda no aparelho, sem mandar vídeo para
+  fora."
+- **Demonstração (40 s, se não houver fila):** piscar normal fica verde; fechar os olhos por 2 s vai ao vermelho
+  com sirene; abrir os olhos volta ao amarelo. Antes, subir o volume para 100 % (o padrão é 20 %).
+- **PP2 (30 s):** "No iPhone 17 Pro, a versão 1.0 do app levou de 11 a 23 ms por quadro, em duas execuções. A
+  versão 2.1 está sendo medida no iPhone e no Galaxy S23 Ultra." Se o pôster já trouxer a medição nova, ler os
+  números dele.
+- **Validação e limitações (30 s):** "Na direção real do DMD, 63 minutos com motoristas acordados, o app ficou
+  3,3 % do tempo em vermelho. Mas são os mesmos vídeos que usamos para ajustar as regras. As limitações: é um
+  só par de bases, o DMD tem só 13 pessoas, e à noite não temos vídeos de gente alerta."
+- **Fechamento:** "Resumindo: treinar com sono encenado não basta para reconhecer sono real, porque o encenado é
+  mais extremo. E o teste tem que ser sempre em pessoas novas." Mostrar o QR.
+
+## Perguntas prováveis (respostas curtas, com os números do pôster e do artigo)
+
+1. **Por que não usaram o NTHU-DDD, a base atuada mais citada?** O acesso exige um termo assinado pela chefia
+   institucional e não tinha prazo de resposta. O DMD cumpre o mesmo papel (sono encenado, rótulo por quadro) e
+   tem licença para pesquisa. A troca está registrada como alteração do planejamento.
+2. **A queda do PP1 não pode ser só câmera e ambiente?** Pode ter parte disso: com um só par de bases, a troca
+   muda câmera, cenário e tipo de rótulo ao mesmo tempo. O volume do treino explica pouco: com B treinado com só
+   13 pessoas, como o DMD, a queda continua (9,3 pontos no RF e 7,0 na RL). O que aparece em todos os controles
+   é o modelo do DMD deixar passar a maior parte das janelas sonolentas reais.
+3. **Por que o RF perde 10,9 e depois quase nada?** Na UTA-RLDD, as janelas alertas saem do mesmo vídeo usado
+   como referência na normalização, e o RF treinado lá aproveita isso. Com a referência no vídeo de pouca vigilância ou sem
+   centragem, a AUC de B no RF cai de 80,1 para 68,4 e 69,4, e a queda vira 2,3 [−2,5; 6,8] e
+   2,1 [−1,2; 5,8], que incluem zero. Na RL, a queda por janela fica entre 5,4 e 9,8, sempre com IC acima de zero.
+4. **O resultado não depende do limiar 0,5?** A AUC não depende de limiar. Com o limiar calibrado só no DMD
+   (0,662), o modelo reconhece ainda menos janelas sonolentas: 37,0 %.
+5. **Trocar o extrator oficial (dlib) pelo MediaPipe não piorou tudo?** Não: com o mesmo modelo, a diferença
+   oficial menos nosso é 2,0 [−4,8; 8,5] pp e inclui zero (Exp. 5a). Com cada extrator treinado e testado no
+   seu próprio sinal, o nosso é melhor no esquema B3: −6,7 [−12,9; −1,8] pp, p = 0,029.
+6. **Como vocês sabem que os 45,3 pp são vazamento?** Mesmos dados, mesmo modelo; só muda a divisão. Por
+   janela, 97,1 % dos vídeos de teste também aparecem no treino e a acurácia vai a 99,5 %; por pessoa, 54,2 %;
+   por vídeo, 47,2 %. Sequências vizinhas dividem 28 de 30 piscadas, então o teste vê quase o mesmo que o
+   treino.
+7. **O NITYMED tem sono real?** A página oficial não diz se bocejos e microssonos foram espontâneos; três
+   bocejos por vídeo sugerem instrução. Por isso ele só entra no PP3 (captura e qualidade do sinal à noite),
+   nunca no PP1. Baixamos 126 vídeos; a página declara 130.
+8. **Então a noite não atrapalha?** Atrapalha o sinal (SNR 7,2 contra 21,5 na UTA), mas o carro andando de dia
+   já dá quase a mesma perda (8,7), com os mesmos motoristas. Sem vídeos noturnos de pessoas alertas, não dá
+   para medir falso alarme à noite: está nas limitações.
+9. **Por que o app não usa o modelo para decidir?** No limiar 0,5, os modelos marcam sono em 26,0 % a 43,6 %
+   das janelas de pessoas acordadas da UTA-RLDD, e a regra em 2,6 %, mas esse limiar é arbitrário. Escolhendo
+   o limiar que dá o mesmo falso alarme da regra, a RL do DMD com centragem acha 24,7 % das janelas sonolentas,
+   e a regra, 24,1 %; os modelos sem centragem acham menos (15,3 % e 19,2 %). A regra não acerta mais; ela não
+   precisa de treino e cada alarme tem explicação. O LSTM entra só como reforço limitado.
+10. **Qual o falso alarme do app?** Na direção real do DMD (63,3 min), 3,3 % do tempo em vermelho, e 16 das
+    17 sessões sem nenhum alarme. São os mesmos vídeos usados para ajustar as regras, então é um número de
+    desenvolvimento. O caso ruim conhecido é um motorista (gA_5) que olha muito para baixo: o olhar baixo é
+    lido como olho fechado (55,8 % do tempo em vermelho).
+11. **E a revocação? O app pega quem está com sono?** Olho fechado por quadro: κ = 0,938 offline (0,902 no
+    navegador); fechamentos de 1 s ou mais: revocação 0,920. Bocejo: 0,638 sem a mão na boca, quase nulo com a
+    mão (0,026). Cabeça caindo: o DMD não anota isso, então a revocação não foi medida. Em sono real (UTA), só 1
+    de 3 vídeos sonolentos chegou ao vermelho no navegador, o mesmo limite do PP1.
+12. **Os pesos do nível (40, 70, pontos por sinal) foram ajustados nos dados?** São escolhas de projeto,
+    documentadas em `app/pwa/README.md`, e não foram ajustados em sono real. Mas a regra dos olhos e os ajustes
+    da v2.1 foram escolhidos olhando os mesmos vídeos do DMD da validação; por isso os números do app são de
+    desenvolvimento, não de um teste independente.
+13. **O iPhone mostra o custo do app final?** Ainda não: as duas execuções no iPhone 17 Pro usaram a versão
+    1.0, e a 2.1 está sendo medida. O custo maior é o MediaPipe (9 a 19 ms dos 11 a 23 ms por quadro), que a
+    v2.1 também usa. Numa das execuções, a v1 deu falso alarme com o André acordado (PERCLOS 25,8 %, alarme em
+    63,4 % dos quadros), e foi isso que levou à reescrita.
+14. **Por que o iPhone e não o Galaxy S23 Ultra do planejamento?** O S23 Ultra é de um colega e está sendo
+    medido na PUC. Quando o benchmark entrar, `bash tools/atualizar_celular.sh` e depois
+    `.venv/bin/python poster/build_poster.py --pdf` atualizam artigo e pôster; o Galaxy aparece sozinho no PP2.
+15. **E os óculos escuros?** Não medimos óculos escuros. Com óculos comuns, a CNN do olho treinada no CEW e
+    testada no MRL cai de AUC 93,4 para 65,1; no DMD, o detector de piscadas falhou num dos três motoristas de
+    óculos.
+16. **Dá para reproduzir?** Sim: código, figuras e o app estão no repositório do QR; os números do pôster e do
+    artigo saem de `results/` por um script e são conferidos automaticamente.
+
+## Números gerados
+
+`poster/numeros.json` (chave `valores`: nome do macro → texto pt-BR, por exemplo
+`"ExpCincoBLRQuedaNormMin": "7,3"`) é gerado por `src/experiments/make_paper_numbers.py` com os MESMOS valores
+de `paper/numeros.tex`; a origem de cada um está em `results/numeros_resumo.md`. Depois de um benchmark novo no
+celular, `bash tools/atualizar_celular.sh` refaz importação, figura do Exp. 4, números e artigo; em seguida,
+`.venv/bin/python poster/build_poster.py --pdf` refaz o pôster com os metadados completos.

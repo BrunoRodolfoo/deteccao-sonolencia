@@ -1,0 +1,45 @@
+% Figura 1: cadeias de processamento. (a) avaliação offline dos Exp. 5b e 6; (b) protótipo no celular (PWA 2.1).
+% A centragem por sujeito só existe no Exp. 5b; o Exp. 6 usa as características brutas (o NITYMED não tem
+% trecho alerta para servir de referência), por isso a caixa traz "(Exp. 5b)".
+% Diagrama de blocos simples, em preto e branco, na fonte do artigo (Times), para uma coluna IEEE.
+% Os detalhes de cada etapa estão no texto (Seção IV); a figura só mostra a ordem das etapas.
+\documentclass[tikz,border=1pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{mathptmx}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\begin{document}
+\begin{tikzpicture}[
+  every node/.style={font=\fontsize{8}{9.2}\selectfont},
+  caixa/.style={draw,line width=0.4pt,align=center,minimum height=8mm,inner sep=1.5pt},
+  sinal/.style={draw,line width=0.4pt,align=center,minimum height=4.3mm,text width=11mm,inner sep=1pt},
+  seta/.style={-{Latex[length=1.6mm,width=1.2mm]},line width=0.4pt},
+  titulo/.style={anchor=south west,inner sep=0pt}]
+% ---------------- (a) avaliação offline ----------------
+\node[caixa,text width=9.5mm] (v) at (0,0) {Vídeos};
+\node[caixa,text width=15mm,right=3mm of v] (fm) {EAR, MAR\\e pose};
+\node[caixa,text width=9.5mm,right=3mm of fm] (j) {Janelas\\de 10\,s};
+\node[caixa,text width=19.5mm,right=3mm of j] (c) {Centragem por\\sujeito (Exp.~5b)};
+\node[caixa,text width=11mm,right=3mm of c] (m) {RF e RL};
+\foreach \a/\b in {v/fm,fm/j,j/c,c/m} \draw[seta] (\a) -- (\b);
+\node[titulo] at ($(v.north west)+(0,1.4mm)$) {(a) Avaliação \textit{offline} (Exp.~5b e 6)};
+% ---------------- (b) protótipo no celular ----------------
+\node[caixa,text width=9.5mm,anchor=north west] (cam) at ($(v.south west)+(0,-13mm)$) {Câmera};
+\node[caixa,text width=15mm,right=3mm of cam] (fl) {Face\\Landmarker};
+\node[sinal,right=6mm of fl] (bo) {Bocejo};
+\node[sinal,above=1.2mm of bo] (ol) {Olhos};
+\node[sinal,below=1.2mm of bo] (ca) {Cabeça};
+\node[caixa,text width=12.5mm,right=6mm of bo] (n) {Nível\\de 0 a 100};
+\node[caixa,text width=11mm,right=3mm of n] (al) {Alarme};
+\draw[seta] (cam) -- (fl);
+\coordinate (abre) at ($(fl.east)+(3mm,0)$);
+\draw[line width=0.4pt] (fl.east) -- (abre);
+\foreach \s in {ol,bo,ca} \draw[seta] (abre) |- (\s.west);
+\coordinate (junta) at ($(n.west)+(-3mm,0)$);
+\foreach \s in {ol,ca} \draw[line width=0.4pt] (\s.east) -| (junta);
+\draw[seta] (bo.east) -- (n.west);
+\draw[seta] (n) -- (al);
+\node[titulo] at ($(cam.west |- ol.north)+(0,1.4mm)$) {(b) Protótipo no celular (PWA 2.1)};
+\end{tikzpicture}
+\end{document}

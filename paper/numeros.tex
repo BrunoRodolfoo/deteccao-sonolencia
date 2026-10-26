@@ -1,0 +1,1276 @@
+% paper/numeros.tex — GERADO por src/experiments/make_paper_numbers.py em 26/10/2026 20:55.
+% NÃO EDITE À MÃO: rode `bash tools/atualizar_celular.sh` (ou o script acima).
+% Origem de cada número: results/numeros_resumo.md (arquivo, coluna e filtro).
+% Percentuais sem o símbolo %; diferenças em pontos percentuais (pp); IC 95% entre colchetes.
+\newif\ifSamsungMedido
+\SamsungMedidofalse
+\newcommand{\SamsungPendente}{medição prevista}
+% --- Base ---
+\newcommand{\BaseUTASujeitos}{60}
+\newcommand{\BaseUTAVideos}{180}
+\newcommand{\BaseUTAArquivos}{182}
+\newcommand{\BaseUTASequencias}{8.661}
+\newcommand{\BaseUTASujeitosOficiais}{58}
+\newcommand{\BaseUTAVideosOficiais}{174}
+\newcommand{\BaseUTAJanelasBTres}{12.487}
+\newcommand{\BaseUTAJanelasSonolentas}{7.581}
+\newcommand{\BaseUTAJanelasAlerta}{4.906}
+\newcommand{\BaseMRLImagens}{84.898}
+\newcommand{\BaseMRLSujeitos}{37}
+\newcommand{\BaseCEWImagens}{4.846}
+\newcommand{\BaseDMDSujeitos}{13}
+\newcommand{\BaseDMDJanelas}{510}
+\newcommand{\BaseDMDJanelasSonolentas}{423}
+\newcommand{\BaseDMDJanelasAlerta}{87}
+\newcommand{\BaseDMDSessoesSonolencia}{16}
+\newcommand{\BaseDMDSessoesDirecaoReal}{17}
+\newcommand{\BaseDMDSessoes}{65}
+\newcommand{\BaseDMDSujeitosTodos}{14}
+\newcommand{\BaseNITYMEDVideos}{126}
+\newcommand{\BaseNITYMEDMicrossono}{19}
+\newcommand{\BaseNITYMEDBocejo}{107}
+\newcommand{\BaseNITYMEDDeclarados}{130}
+\newcommand{\BaseNITYMEDJanelas}{979}
+\newcommand{\BaseNITYMEDJanelasAvaliaveis}{529}
+% --- ExpUm ---
+\newcommand{\ExpUmRFBSA}{54,5}
+\newcommand{\ExpUmRFBSADP}{9,3}
+\newcommand{\ExpUmRFBSAMDP}{54,5\,$\pm$\,9,3}
+\newcommand{\ExpUmRFAcBal}{57,8}
+\newcommand{\ExpUmRFAcBalDP}{7,9}
+\newcommand{\ExpUmRFAcBalMDP}{57,8\,$\pm$\,7,9}
+\newcommand{\ExpUmRFFMacro}{56,0}
+\newcommand{\ExpUmRFFMacroDP}{9,1}
+\newcommand{\ExpUmRFFMacroMDP}{56,0\,$\pm$\,9,1}
+\newcommand{\ExpUmRFAUC}{73,5}
+\newcommand{\ExpUmRFAUCDP}{6,8}
+\newcommand{\ExpUmRFAUCMDP}{73,5\,$\pm$\,6,8}
+\newcommand{\ExpUmRFVA}{57,3}
+\newcommand{\ExpUmRFVADP}{7,2}
+\newcommand{\ExpUmRFVAMDP}{57,3\,$\pm$\,7,2}
+\newcommand{\ExpUmLSTMBSA}{50,8}
+\newcommand{\ExpUmLSTMBSADP}{8,9}
+\newcommand{\ExpUmLSTMBSAMDP}{50,8\,$\pm$\,8,9}
+\newcommand{\ExpUmLSTMAcBal}{53,1}
+\newcommand{\ExpUmLSTMAcBalDP}{6,7}
+\newcommand{\ExpUmLSTMAcBalMDP}{53,1\,$\pm$\,6,7}
+\newcommand{\ExpUmLSTMFMacro}{51,8}
+\newcommand{\ExpUmLSTMFMacroDP}{7,8}
+\newcommand{\ExpUmLSTMFMacroMDP}{51,8\,$\pm$\,7,8}
+\newcommand{\ExpUmLSTMAUC}{68,6}
+\newcommand{\ExpUmLSTMAUCDP}{8,2}
+\newcommand{\ExpUmLSTMAUCMDP}{68,6\,$\pm$\,8,2}
+\newcommand{\ExpUmLSTMVA}{57,2}
+\newcommand{\ExpUmLSTMVADP}{7,5}
+\newcommand{\ExpUmLSTMVAMDP}{57,2\,$\pm$\,7,5}
+\newcommand{\ExpUmCNNBSA}{48,0}
+\newcommand{\ExpUmCNNBSADP}{6,8}
+\newcommand{\ExpUmCNNBSAMDP}{48,0\,$\pm$\,6,8}
+\newcommand{\ExpUmCNNAcBal}{51,4}
+\newcommand{\ExpUmCNNAcBalDP}{5,2}
+\newcommand{\ExpUmCNNAcBalMDP}{51,4\,$\pm$\,5,2}
+\newcommand{\ExpUmCNNFMacro}{50,0}
+\newcommand{\ExpUmCNNFMacroDP}{6,4}
+\newcommand{\ExpUmCNNFMacroMDP}{50,0\,$\pm$\,6,4}
+\newcommand{\ExpUmCNNAUC}{68,4}
+\newcommand{\ExpUmCNNAUCDP}{6,1}
+\newcommand{\ExpUmCNNAUCMDP}{68,4\,$\pm$\,6,1}
+\newcommand{\ExpUmCNNVA}{55,0}
+\newcommand{\ExpUmCNNVADP}{8,2}
+\newcommand{\ExpUmCNNVAMDP}{55,0\,$\pm$\,8,2}
+\newcommand{\ExpUmSVMBSA}{53,0}
+\newcommand{\ExpUmSVMBSADP}{3,8}
+\newcommand{\ExpUmSVMBSAMDP}{53,0\,$\pm$\,3,8}
+\newcommand{\ExpUmSVMAcBal}{56,2}
+\newcommand{\ExpUmSVMAcBalDP}{4,5}
+\newcommand{\ExpUmSVMAcBalMDP}{56,2\,$\pm$\,4,5}
+\newcommand{\ExpUmSVMFMacro}{54,2}
+\newcommand{\ExpUmSVMFMacroDP}{3,9}
+\newcommand{\ExpUmSVMFMacroMDP}{54,2\,$\pm$\,3,9}
+\newcommand{\ExpUmSVMAUC}{69,9}
+\newcommand{\ExpUmSVMAUCDP}{5,1}
+\newcommand{\ExpUmSVMAUCMDP}{69,9\,$\pm$\,5,1}
+\newcommand{\ExpUmSVMVA}{54,0}
+\newcommand{\ExpUmSVMVADP}{4,0}
+\newcommand{\ExpUmSVMVAMDP}{54,0\,$\pm$\,4,0}
+\newcommand{\ExpUmLRBSA}{49,4}
+\newcommand{\ExpUmLRBSADP}{4,3}
+\newcommand{\ExpUmLRBSAMDP}{49,4\,$\pm$\,4,3}
+\newcommand{\ExpUmLRAcBal}{49,7}
+\newcommand{\ExpUmLRAcBalDP}{3,0}
+\newcommand{\ExpUmLRAcBalMDP}{49,7\,$\pm$\,3,0}
+\newcommand{\ExpUmLRFMacro}{48,5}
+\newcommand{\ExpUmLRFMacroDP}{3,6}
+\newcommand{\ExpUmLRFMacroMDP}{48,5\,$\pm$\,3,6}
+\newcommand{\ExpUmLRAUC}{68,9}
+\newcommand{\ExpUmLRAUCDP}{5,5}
+\newcommand{\ExpUmLRAUCMDP}{68,9\,$\pm$\,5,5}
+\newcommand{\ExpUmLRVA}{50,7}
+\newcommand{\ExpUmLRVADP}{7,6}
+\newcommand{\ExpUmLRVAMDP}{50,7\,$\pm$\,7,6}
+\newcommand{\ExpUmChanceBSA}{44,4}
+\newcommand{\ExpUmChanceBSADP}{2,4}
+\newcommand{\ExpUmChanceBSAMDP}{44,4\,$\pm$\,2,4}
+\newcommand{\ExpUmChanceVA}{33,3}
+\newcommand{\ExpUmChanceVADP}{0,0}
+\newcommand{\ExpUmChanceVAMDP}{33,3\,$\pm$\,0,0}
+\newcommand{\ExpUmRFBTresBSA}{86,9}
+\newcommand{\ExpUmRFBTresBSADP}{3,9}
+\newcommand{\ExpUmRFBTresBSAMDP}{86,9\,$\pm$\,3,9}
+\newcommand{\ExpUmRFBTresAcBal}{84,8}
+\newcommand{\ExpUmRFBTresAcBalDP}{3,7}
+\newcommand{\ExpUmRFBTresAcBalMDP}{84,8\,$\pm$\,3,7}
+\newcommand{\ExpUmRFBTresFMacro}{84,6}
+\newcommand{\ExpUmRFBTresFMacroDP}{4,1}
+\newcommand{\ExpUmRFBTresFMacroMDP}{84,6\,$\pm$\,4,1}
+\newcommand{\ExpUmRFBTresAUC}{92,8}
+\newcommand{\ExpUmRFBTresAUCDP}{3,3}
+\newcommand{\ExpUmRFBTresAUCMDP}{92,8\,$\pm$\,3,3}
+\newcommand{\ExpUmRFBTresVA}{85,5}
+\newcommand{\ExpUmRFBTresVADP}{6,6}
+\newcommand{\ExpUmRFBTresVAMDP}{85,5\,$\pm$\,6,6}
+\newcommand{\ExpUmLSTMBTresBSA}{83,0}
+\newcommand{\ExpUmLSTMBTresBSADP}{6,2}
+\newcommand{\ExpUmLSTMBTresBSAMDP}{83,0\,$\pm$\,6,2}
+\newcommand{\ExpUmLSTMBTresAcBal}{80,8}
+\newcommand{\ExpUmLSTMBTresAcBalDP}{2,3}
+\newcommand{\ExpUmLSTMBTresAcBalMDP}{80,8\,$\pm$\,2,3}
+\newcommand{\ExpUmLSTMBTresFMacro}{80,3}
+\newcommand{\ExpUmLSTMBTresFMacroDP}{5,1}
+\newcommand{\ExpUmLSTMBTresFMacroMDP}{80,3\,$\pm$\,5,1}
+\newcommand{\ExpUmLSTMBTresAUC}{91,1}
+\newcommand{\ExpUmLSTMBTresAUCDP}{4,1}
+\newcommand{\ExpUmLSTMBTresAUCMDP}{91,1\,$\pm$\,4,1}
+\newcommand{\ExpUmLSTMBTresVA}{81,2}
+\newcommand{\ExpUmLSTMBTresVADP}{7,7}
+\newcommand{\ExpUmLSTMBTresVAMDP}{81,2\,$\pm$\,7,7}
+\newcommand{\ExpUmCNNBTresBSA}{85,2}
+\newcommand{\ExpUmCNNBTresBSADP}{5,1}
+\newcommand{\ExpUmCNNBTresBSAMDP}{85,2\,$\pm$\,5,1}
+\newcommand{\ExpUmCNNBTresAcBal}{83,8}
+\newcommand{\ExpUmCNNBTresAcBalDP}{1,3}
+\newcommand{\ExpUmCNNBTresAcBalMDP}{83,8\,$\pm$\,1,3}
+\newcommand{\ExpUmCNNBTresFMacro}{83,1}
+\newcommand{\ExpUmCNNBTresFMacroDP}{4,4}
+\newcommand{\ExpUmCNNBTresFMacroMDP}{83,1\,$\pm$\,4,4}
+\newcommand{\ExpUmCNNBTresAUC}{93,8}
+\newcommand{\ExpUmCNNBTresAUCDP}{2,5}
+\newcommand{\ExpUmCNNBTresAUCMDP}{93,8\,$\pm$\,2,5}
+\newcommand{\ExpUmCNNBTresVA}{84,5}
+\newcommand{\ExpUmCNNBTresVADP}{5,9}
+\newcommand{\ExpUmCNNBTresVAMDP}{84,5\,$\pm$\,5,9}
+\newcommand{\ExpUmSVMBTresBSA}{85,5}
+\newcommand{\ExpUmSVMBTresBSADP}{4,9}
+\newcommand{\ExpUmSVMBTresBSAMDP}{85,5\,$\pm$\,4,9}
+\newcommand{\ExpUmSVMBTresAcBal}{85,0}
+\newcommand{\ExpUmSVMBTresAcBalDP}{3,0}
+\newcommand{\ExpUmSVMBTresAcBalMDP}{85,0\,$\pm$\,3,0}
+\newcommand{\ExpUmSVMBTresFMacro}{83,6}
+\newcommand{\ExpUmSVMBTresFMacroDP}{5,1}
+\newcommand{\ExpUmSVMBTresFMacroMDP}{83,6\,$\pm$\,5,1}
+\newcommand{\ExpUmSVMBTresAUC}{92,5}
+\newcommand{\ExpUmSVMBTresAUCDP}{3,5}
+\newcommand{\ExpUmSVMBTresAUCMDP}{92,5\,$\pm$\,3,5}
+\newcommand{\ExpUmSVMBTresVA}{82,0}
+\newcommand{\ExpUmSVMBTresVADP}{5,3}
+\newcommand{\ExpUmSVMBTresVAMDP}{82,0\,$\pm$\,5,3}
+\newcommand{\ExpUmLRBTresBSA}{74,0}
+\newcommand{\ExpUmLRBTresBSADP}{9,1}
+\newcommand{\ExpUmLRBTresBSAMDP}{74,0\,$\pm$\,9,1}
+\newcommand{\ExpUmLRBTresAcBal}{72,2}
+\newcommand{\ExpUmLRBTresAcBalDP}{7,9}
+\newcommand{\ExpUmLRBTresAcBalMDP}{72,2\,$\pm$\,7,9}
+\newcommand{\ExpUmLRBTresFMacro}{71,0}
+\newcommand{\ExpUmLRBTresFMacroDP}{9,0}
+\newcommand{\ExpUmLRBTresFMacroMDP}{71,0\,$\pm$\,9,0}
+\newcommand{\ExpUmLRBTresAUC}{81,8}
+\newcommand{\ExpUmLRBTresAUCDP}{7,4}
+\newcommand{\ExpUmLRBTresAUCMDP}{81,8\,$\pm$\,7,4}
+\newcommand{\ExpUmLRBTresVA}{77,5}
+\newcommand{\ExpUmLRBTresVADP}{9,8}
+\newcommand{\ExpUmLRBTresVAMDP}{77,5\,$\pm$\,9,8}
+\newcommand{\ExpUmChanceBTresBSA}{68,6}
+\newcommand{\ExpUmChanceBTresBSADP}{4,8}
+\newcommand{\ExpUmChanceBTresBSAMDP}{68,6\,$\pm$\,4,8}
+\newcommand{\ExpUmChanceBTresVA}{50,0}
+\newcommand{\ExpUmChanceBTresVADP}{0,0}
+\newcommand{\ExpUmChanceBTresVAMDP}{50,0\,$\pm$\,0,0}
+\newcommand{\ExpUmRFBUmBSA}{87,4}
+\newcommand{\ExpUmRFBUmBSADP}{3,2}
+\newcommand{\ExpUmRFBUmBSAMDP}{87,4\,$\pm$\,3,2}
+\newcommand{\ExpUmRFBUmAcBal}{79,8}
+\newcommand{\ExpUmRFBUmAcBalDP}{4,3}
+\newcommand{\ExpUmRFBUmAcBalMDP}{79,8\,$\pm$\,4,3}
+\newcommand{\ExpUmRFBUmFMacro}{79,4}
+\newcommand{\ExpUmRFBUmFMacroDP}{2,9}
+\newcommand{\ExpUmRFBUmFMacroMDP}{79,4\,$\pm$\,2,9}
+\newcommand{\ExpUmRFBUmAUC}{88,7}
+\newcommand{\ExpUmRFBUmAUCDP}{5,1}
+\newcommand{\ExpUmRFBUmAUCMDP}{88,7\,$\pm$\,5,1}
+\newcommand{\ExpUmRFBUmVA}{82,2}
+\newcommand{\ExpUmRFBUmVADP}{3,3}
+\newcommand{\ExpUmRFBUmVAMDP}{82,2\,$\pm$\,3,3}
+\newcommand{\ExpUmLSTMBUmBSA}{81,1}
+\newcommand{\ExpUmLSTMBUmBSADP}{9,4}
+\newcommand{\ExpUmLSTMBUmBSAMDP}{81,1\,$\pm$\,9,4}
+\newcommand{\ExpUmLSTMBUmAcBal}{73,8}
+\newcommand{\ExpUmLSTMBUmAcBalDP}{4,9}
+\newcommand{\ExpUmLSTMBUmAcBalMDP}{73,8\,$\pm$\,4,9}
+\newcommand{\ExpUmLSTMBUmFMacro}{72,2}
+\newcommand{\ExpUmLSTMBUmFMacroDP}{7,7}
+\newcommand{\ExpUmLSTMBUmFMacroMDP}{72,2\,$\pm$\,7,7}
+\newcommand{\ExpUmLSTMBUmAUC}{85,2}
+\newcommand{\ExpUmLSTMBUmAUCDP}{7,9}
+\newcommand{\ExpUmLSTMBUmAUCMDP}{85,2\,$\pm$\,7,9}
+\newcommand{\ExpUmLSTMBUmVA}{77,8}
+\newcommand{\ExpUmLSTMBUmVADP}{8,3}
+\newcommand{\ExpUmLSTMBUmVAMDP}{77,8\,$\pm$\,8,3}
+\newcommand{\ExpUmCNNBUmBSA}{83,2}
+\newcommand{\ExpUmCNNBUmBSADP}{8,5}
+\newcommand{\ExpUmCNNBUmBSAMDP}{83,2\,$\pm$\,8,5}
+\newcommand{\ExpUmCNNBUmAcBal}{75,6}
+\newcommand{\ExpUmCNNBUmAcBalDP}{6,7}
+\newcommand{\ExpUmCNNBUmAcBalMDP}{75,6\,$\pm$\,6,7}
+\newcommand{\ExpUmCNNBUmFMacro}{74,2}
+\newcommand{\ExpUmCNNBUmFMacroDP}{7,4}
+\newcommand{\ExpUmCNNBUmFMacroMDP}{74,2\,$\pm$\,7,4}
+\newcommand{\ExpUmCNNBUmAUC}{87,5}
+\newcommand{\ExpUmCNNBUmAUCDP}{6,5}
+\newcommand{\ExpUmCNNBUmAUCMDP}{87,5\,$\pm$\,6,5}
+\newcommand{\ExpUmCNNBUmVA}{81,3}
+\newcommand{\ExpUmCNNBUmVADP}{6,8}
+\newcommand{\ExpUmCNNBUmVAMDP}{81,3\,$\pm$\,6,8}
+\newcommand{\ExpUmSVMBUmBSA}{85,1}
+\newcommand{\ExpUmSVMBUmBSADP}{2,9}
+\newcommand{\ExpUmSVMBUmBSAMDP}{85,1\,$\pm$\,2,9}
+\newcommand{\ExpUmSVMBUmAcBal}{78,0}
+\newcommand{\ExpUmSVMBUmAcBalDP}{1,7}
+\newcommand{\ExpUmSVMBUmAcBalMDP}{78,0\,$\pm$\,1,7}
+\newcommand{\ExpUmSVMBUmFMacro}{76,6}
+\newcommand{\ExpUmSVMBUmFMacroDP}{2,4}
+\newcommand{\ExpUmSVMBUmFMacroMDP}{76,6\,$\pm$\,2,4}
+\newcommand{\ExpUmSVMBUmAUC}{89,9}
+\newcommand{\ExpUmSVMBUmAUCDP}{2,2}
+\newcommand{\ExpUmSVMBUmAUCMDP}{89,9\,$\pm$\,2,2}
+\newcommand{\ExpUmSVMBUmVA}{81,8}
+\newcommand{\ExpUmSVMBUmVADP}{6,4}
+\newcommand{\ExpUmSVMBUmVAMDP}{81,8\,$\pm$\,6,4}
+\newcommand{\ExpUmLRBUmBSA}{78,5}
+\newcommand{\ExpUmLRBUmBSADP}{6,7}
+\newcommand{\ExpUmLRBUmBSAMDP}{78,5\,$\pm$\,6,7}
+\newcommand{\ExpUmLRBUmAcBal}{60,1}
+\newcommand{\ExpUmLRBUmAcBalDP}{5,5}
+\newcommand{\ExpUmLRBUmAcBalMDP}{60,1\,$\pm$\,5,5}
+\newcommand{\ExpUmLRBUmFMacro}{60,3}
+\newcommand{\ExpUmLRBUmFMacroDP}{5,8}
+\newcommand{\ExpUmLRBUmFMacroMDP}{60,3\,$\pm$\,5,8}
+\newcommand{\ExpUmLRBUmAUC}{80,3}
+\newcommand{\ExpUmLRBUmAUCDP}{6,5}
+\newcommand{\ExpUmLRBUmAUCMDP}{80,3\,$\pm$\,6,5}
+\newcommand{\ExpUmLRBUmVA}{70,9}
+\newcommand{\ExpUmLRBUmVADP}{4,5}
+\newcommand{\ExpUmLRBUmVAMDP}{70,9\,$\pm$\,4,5}
+\newcommand{\ExpUmChanceBUmBSA}{81,4}
+\newcommand{\ExpUmChanceBUmBSADP}{2,8}
+\newcommand{\ExpUmChanceBUmBSAMDP}{81,4\,$\pm$\,2,8}
+\newcommand{\ExpUmChanceBUmVA}{66,7}
+\newcommand{\ExpUmChanceBUmVADP}{0,0}
+\newcommand{\ExpUmChanceBUmVAMDP}{66,7\,$\pm$\,0,0}
+\newcommand{\ExpUmRFBDoisBSA}{66,5}
+\newcommand{\ExpUmRFBDoisBSADP}{9,2}
+\newcommand{\ExpUmRFBDoisBSAMDP}{66,5\,$\pm$\,9,2}
+\newcommand{\ExpUmRFBDoisAcBal}{63,4}
+\newcommand{\ExpUmRFBDoisAcBalDP}{10,2}
+\newcommand{\ExpUmRFBDoisAcBalMDP}{63,4\,$\pm$\,10,2}
+\newcommand{\ExpUmRFBDoisFMacro}{62,9}
+\newcommand{\ExpUmRFBDoisFMacroDP}{10,5}
+\newcommand{\ExpUmRFBDoisFMacroMDP}{62,9\,$\pm$\,10,5}
+\newcommand{\ExpUmRFBDoisAUC}{70,8}
+\newcommand{\ExpUmRFBDoisAUCDP}{11,6}
+\newcommand{\ExpUmRFBDoisAUCMDP}{70,8\,$\pm$\,11,6}
+\newcommand{\ExpUmRFBDoisVA}{70,1}
+\newcommand{\ExpUmRFBDoisVADP}{4,1}
+\newcommand{\ExpUmRFBDoisVAMDP}{70,1\,$\pm$\,4,1}
+\newcommand{\ExpUmLSTMBDoisBSA}{60,9}
+\newcommand{\ExpUmLSTMBDoisBSADP}{8,6}
+\newcommand{\ExpUmLSTMBDoisBSAMDP}{60,9\,$\pm$\,8,6}
+\newcommand{\ExpUmLSTMBDoisAcBal}{59,3}
+\newcommand{\ExpUmLSTMBDoisAcBalDP}{9,9}
+\newcommand{\ExpUmLSTMBDoisAcBalMDP}{59,3\,$\pm$\,9,9}
+\newcommand{\ExpUmLSTMBDoisFMacro}{58,5}
+\newcommand{\ExpUmLSTMBDoisFMacroDP}{9,5}
+\newcommand{\ExpUmLSTMBDoisFMacroMDP}{58,5\,$\pm$\,9,5}
+\newcommand{\ExpUmLSTMBDoisAUC}{63,7}
+\newcommand{\ExpUmLSTMBDoisAUCDP}{11,8}
+\newcommand{\ExpUmLSTMBDoisAUCMDP}{63,7\,$\pm$\,11,8}
+\newcommand{\ExpUmLSTMBDoisVA}{67,0}
+\newcommand{\ExpUmLSTMBDoisVADP}{7,7}
+\newcommand{\ExpUmLSTMBDoisVAMDP}{67,0\,$\pm$\,7,7}
+\newcommand{\ExpUmCNNBDoisBSA}{61,2}
+\newcommand{\ExpUmCNNBDoisBSADP}{9,9}
+\newcommand{\ExpUmCNNBDoisBSAMDP}{61,2\,$\pm$\,9,9}
+\newcommand{\ExpUmCNNBDoisAcBal}{60,8}
+\newcommand{\ExpUmCNNBDoisAcBalDP}{11,1}
+\newcommand{\ExpUmCNNBDoisAcBalMDP}{60,8\,$\pm$\,11,1}
+\newcommand{\ExpUmCNNBDoisFMacro}{59,7}
+\newcommand{\ExpUmCNNBDoisFMacroDP}{10,4}
+\newcommand{\ExpUmCNNBDoisFMacroMDP}{59,7\,$\pm$\,10,4}
+\newcommand{\ExpUmCNNBDoisAUC}{65,2}
+\newcommand{\ExpUmCNNBDoisAUCDP}{12,9}
+\newcommand{\ExpUmCNNBDoisAUCMDP}{65,2\,$\pm$\,12,9}
+\newcommand{\ExpUmCNNBDoisVA}{66,5}
+\newcommand{\ExpUmCNNBDoisVADP}{6,7}
+\newcommand{\ExpUmCNNBDoisVAMDP}{66,5\,$\pm$\,6,7}
+\newcommand{\ExpUmSVMBDoisBSA}{66,2}
+\newcommand{\ExpUmSVMBDoisBSADP}{5,9}
+\newcommand{\ExpUmSVMBDoisBSAMDP}{66,2\,$\pm$\,5,9}
+\newcommand{\ExpUmSVMBDoisAcBal}{63,9}
+\newcommand{\ExpUmSVMBDoisAcBalDP}{7,1}
+\newcommand{\ExpUmSVMBDoisAcBalMDP}{63,9\,$\pm$\,7,1}
+\newcommand{\ExpUmSVMBDoisFMacro}{63,7}
+\newcommand{\ExpUmSVMBDoisFMacroDP}{7,0}
+\newcommand{\ExpUmSVMBDoisFMacroMDP}{63,7\,$\pm$\,7,0}
+\newcommand{\ExpUmSVMBDoisAUC}{66,2}
+\newcommand{\ExpUmSVMBDoisAUCDP}{12,1}
+\newcommand{\ExpUmSVMBDoisAUCMDP}{66,2\,$\pm$\,12,1}
+\newcommand{\ExpUmSVMBDoisVA}{69,4}
+\newcommand{\ExpUmSVMBDoisVADP}{3,1}
+\newcommand{\ExpUmSVMBDoisVAMDP}{69,4\,$\pm$\,3,1}
+\newcommand{\ExpUmLRBDoisBSA}{66,8}
+\newcommand{\ExpUmLRBDoisBSADP}{6,5}
+\newcommand{\ExpUmLRBDoisBSAMDP}{66,8\,$\pm$\,6,5}
+\newcommand{\ExpUmLRBDoisAcBal}{63,4}
+\newcommand{\ExpUmLRBDoisAcBalDP}{7,2}
+\newcommand{\ExpUmLRBDoisAcBalMDP}{63,4\,$\pm$\,7,2}
+\newcommand{\ExpUmLRBDoisFMacro}{63,0}
+\newcommand{\ExpUmLRBDoisFMacroDP}{8,1}
+\newcommand{\ExpUmLRBDoisFMacroMDP}{63,0\,$\pm$\,8,1}
+\newcommand{\ExpUmLRBDoisAUC}{66,9}
+\newcommand{\ExpUmLRBDoisAUCDP}{10,3}
+\newcommand{\ExpUmLRBDoisAUCMDP}{66,9\,$\pm$\,10,3}
+\newcommand{\ExpUmLRBDoisVA}{73,6}
+\newcommand{\ExpUmLRBDoisVADP}{2,3}
+\newcommand{\ExpUmLRBDoisVAMDP}{73,6\,$\pm$\,2,3}
+\newcommand{\ExpUmChanceBDoisBSA}{59,2}
+\newcommand{\ExpUmChanceBDoisBSADP}{4,5}
+\newcommand{\ExpUmChanceBDoisBSAMDP}{59,2\,$\pm$\,4,5}
+\newcommand{\ExpUmChanceBDoisVA}{66,7}
+\newcommand{\ExpUmChanceBDoisVADP}{0,0}
+\newcommand{\ExpUmChanceBDoisVAMDP}{66,7\,$\pm$\,0,0}
+\newcommand{\ExpUmHMLSTMBSA}{54,0}
+\newcommand{\ExpUmHMLSTMVA}{65,2}
+\newcommand{\ExpUmRefLSTMBSA}{52,8}
+\newcommand{\ExpUmRefLSTMVA}{61,4}
+\newcommand{\ExpUmRefDensasBSA}{52,0}
+\newcommand{\ExpUmRefDensasVA}{57,0}
+\newcommand{\ExpUmHumanosVA}{57,8}
+\newcommand{\ExpUmDifHMLSTMRFVA}{7,9}
+\newcommand{\ExpUmDifRFHumanosVA}{$-$0,5}
+\newcommand{\ExpUmLSTMParametros}{5.324}
+\newcommand{\ExpUmLSTMKB}{101,8}
+\newcommand{\ExpUmLSTMConcordancia}{100,0}
+\newcommand{\ExpUmLSTMPcinquentaMac}{0,033}
+\newcommand{\ExpUmLSTMPnoventaecincoMac}{0,045}
+% --- ExpDois ---
+\newcommand{\ExpDoisRFJanelaBSA}{99,5}
+\newcommand{\ExpDoisRFJanelaAcBal}{99,6}
+\newcommand{\ExpDoisRFJanelaAUC}{100,0}
+\newcommand{\ExpDoisRFVideoBSA}{47,2}
+\newcommand{\ExpDoisRFVideoAcBal}{52,5}
+\newcommand{\ExpDoisRFVideoAUC}{67,9}
+\newcommand{\ExpDoisRFVideoVA}{52,8}
+\newcommand{\ExpDoisRFSujeitoBSA}{54,2}
+\newcommand{\ExpDoisRFSujeitoAcBal}{57,4}
+\newcommand{\ExpDoisRFSujeitoAUC}{73,4}
+\newcommand{\ExpDoisRFSujeitoVA}{55,7}
+\newcommand{\ExpDoisRFInflacaoJanelaBSA}{45,3}
+\newcommand{\ExpDoisRFInflacaoJanelaAcBal}{42,1}
+\newcommand{\ExpDoisRFInflacaoJanelaAUC}{26,6}
+\newcommand{\ExpDoisRFInflacaoVideoBSA}{$-$7,0}
+\newcommand{\ExpDoisRFInflacaoVideoAcBal}{$-$5,0}
+\newcommand{\ExpDoisRFInflacaoVideoAUC}{$-$5,5}
+\newcommand{\ExpDoisRFInflacaoVideoVA}{$-$2,8}
+\newcommand{\ExpDoisLSTMJanelaBSA}{87,3}
+\newcommand{\ExpDoisLSTMJanelaAcBal}{87,9}
+\newcommand{\ExpDoisLSTMJanelaAUC}{97,1}
+\newcommand{\ExpDoisLSTMVideoBSA}{45,1}
+\newcommand{\ExpDoisLSTMVideoAcBal}{48,9}
+\newcommand{\ExpDoisLSTMVideoAUC}{62,3}
+\newcommand{\ExpDoisLSTMVideoVA}{46,2}
+\newcommand{\ExpDoisLSTMSujeitoBSA}{49,2}
+\newcommand{\ExpDoisLSTMSujeitoAcBal}{51,0}
+\newcommand{\ExpDoisLSTMSujeitoAUC}{67,6}
+\newcommand{\ExpDoisLSTMSujeitoVA}{50,8}
+\newcommand{\ExpDoisLSTMInflacaoJanelaBSA}{38,1}
+\newcommand{\ExpDoisLSTMInflacaoJanelaAcBal}{36,9}
+\newcommand{\ExpDoisLSTMInflacaoJanelaAUC}{29,6}
+\newcommand{\ExpDoisLSTMInflacaoVideoBSA}{$-$4,1}
+\newcommand{\ExpDoisLSTMInflacaoVideoAcBal}{$-$2,1}
+\newcommand{\ExpDoisLSTMInflacaoVideoAUC}{$-$5,3}
+\newcommand{\ExpDoisLSTMInflacaoVideoVA}{$-$4,6}
+\newcommand{\ExpDoisVideosVistosJanela}{97,1}
+% --- ExpTres ---
+\newcommand{\ExpTresIntraMRLAc}{94,1}
+\newcommand{\ExpTresIntraMRLAcDP}{3,4}
+\newcommand{\ExpTresIntraMRLAcMDP}{94,1\,$\pm$\,3,4}
+\newcommand{\ExpTresMRLCEWPatchAc}{79,0}
+\newcommand{\ExpTresMRLCEWPatchAcDP}{8,5}
+\newcommand{\ExpTresMRLCEWPatchAcMDP}{79,0\,$\pm$\,8,5}
+\newcommand{\ExpTresMRLCEWCropAc}{80,6}
+\newcommand{\ExpTresMRLCEWCropAcDP}{10,3}
+\newcommand{\ExpTresMRLCEWCropAcMDP}{80,6\,$\pm$\,10,3}
+\newcommand{\ExpTresCEWPatchMRLAc}{68,1}
+\newcommand{\ExpTresCEWPatchMRLAcDP}{1,9}
+\newcommand{\ExpTresCEWPatchMRLAcMDP}{68,1\,$\pm$\,1,9}
+\newcommand{\ExpTresCEWCropMRLAc}{67,1}
+\newcommand{\ExpTresCEWCropMRLAcDP}{1,8}
+\newcommand{\ExpTresCEWCropMRLAcMDP}{67,1\,$\pm$\,1,8}
+\newcommand{\ExpTresIntraCEWPatchAc}{94,7}
+\newcommand{\ExpTresIntraCEWPatchAcDP}{1,1}
+\newcommand{\ExpTresIntraCEWPatchAcMDP}{94,7\,$\pm$\,1,1}
+\newcommand{\ExpTresIntraCEWCropAc}{94,5}
+\newcommand{\ExpTresIntraCEWCropAcDP}{1,3}
+\newcommand{\ExpTresIntraCEWCropAcMDP}{94,5\,$\pm$\,1,3}
+\newcommand{\ExpTresFinalMRLCEWPatchAc}{85,7}
+\newcommand{\ExpTresFinalMRLCEWCropAc}{90,0}
+\newcommand{\ExpTresIntraMRLAcBal}{94,2}
+\newcommand{\ExpTresIntraMRLAcBalDP}{3,5}
+\newcommand{\ExpTresIntraMRLAcBalMDP}{94,2\,$\pm$\,3,5}
+\newcommand{\ExpTresMRLCEWPatchAcBal}{78,7}
+\newcommand{\ExpTresMRLCEWPatchAcBalDP}{8,6}
+\newcommand{\ExpTresMRLCEWPatchAcBalMDP}{78,7\,$\pm$\,8,6}
+\newcommand{\ExpTresMRLCEWCropAcBal}{80,3}
+\newcommand{\ExpTresMRLCEWCropAcBalDP}{10,5}
+\newcommand{\ExpTresMRLCEWCropAcBalMDP}{80,3\,$\pm$\,10,5}
+\newcommand{\ExpTresCEWPatchMRLAcBal}{68,4}
+\newcommand{\ExpTresCEWPatchMRLAcBalDP}{1,9}
+\newcommand{\ExpTresCEWPatchMRLAcBalMDP}{68,4\,$\pm$\,1,9}
+\newcommand{\ExpTresCEWCropMRLAcBal}{67,4}
+\newcommand{\ExpTresCEWCropMRLAcBalDP}{1,8}
+\newcommand{\ExpTresCEWCropMRLAcBalMDP}{67,4\,$\pm$\,1,8}
+\newcommand{\ExpTresIntraCEWPatchAcBal}{94,7}
+\newcommand{\ExpTresIntraCEWPatchAcBalDP}{1,1}
+\newcommand{\ExpTresIntraCEWPatchAcBalMDP}{94,7\,$\pm$\,1,1}
+\newcommand{\ExpTresIntraCEWCropAcBal}{94,4}
+\newcommand{\ExpTresIntraCEWCropAcBalDP}{1,4}
+\newcommand{\ExpTresIntraCEWCropAcBalMDP}{94,4\,$\pm$\,1,4}
+\newcommand{\ExpTresFinalMRLCEWPatchAcBal}{85,5}
+\newcommand{\ExpTresFinalMRLCEWCropAcBal}{89,9}
+\newcommand{\ExpTresIntraMRLAUC}{98,6}
+\newcommand{\ExpTresIntraMRLAUCDP}{1,3}
+\newcommand{\ExpTresIntraMRLAUCMDP}{98,6\,$\pm$\,1,3}
+\newcommand{\ExpTresMRLCEWPatchAUC}{93,2}
+\newcommand{\ExpTresMRLCEWPatchAUCDP}{4,7}
+\newcommand{\ExpTresMRLCEWPatchAUCMDP}{93,2\,$\pm$\,4,7}
+\newcommand{\ExpTresMRLCEWCropAUC}{93,5}
+\newcommand{\ExpTresMRLCEWCropAUCDP}{4,9}
+\newcommand{\ExpTresMRLCEWCropAUCMDP}{93,5\,$\pm$\,4,9}
+\newcommand{\ExpTresCEWPatchMRLAUC}{84,2}
+\newcommand{\ExpTresCEWPatchMRLAUCDP}{2,8}
+\newcommand{\ExpTresCEWPatchMRLAUCMDP}{84,2\,$\pm$\,2,8}
+\newcommand{\ExpTresCEWCropMRLAUC}{83,6}
+\newcommand{\ExpTresCEWCropMRLAUCDP}{3,1}
+\newcommand{\ExpTresCEWCropMRLAUCMDP}{83,6\,$\pm$\,3,1}
+\newcommand{\ExpTresIntraCEWPatchAUC}{98,9}
+\newcommand{\ExpTresIntraCEWPatchAUCDP}{0,5}
+\newcommand{\ExpTresIntraCEWPatchAUCMDP}{98,9\,$\pm$\,0,5}
+\newcommand{\ExpTresIntraCEWCropAUC}{98,8}
+\newcommand{\ExpTresIntraCEWCropAUCDP}{0,3}
+\newcommand{\ExpTresIntraCEWCropAUCMDP}{98,8\,$\pm$\,0,3}
+\newcommand{\ExpTresFinalMRLCEWPatchAUC}{96,8}
+\newcommand{\ExpTresFinalMRLCEWCropAUC}{97,6}
+\newcommand{\ExpTresQuedaMRLCEWPatch}{15,1}
+\newcommand{\ExpTresQuedaCEWMRLPatch}{26,5}
+\newcommand{\ExpTresIntraMRLComOculosAc}{88,8}
+\newcommand{\ExpTresCEWPatchMRLComOculosAc}{65,2}
+\newcommand{\ExpTresCEWPatchMRLComOculosAcDP}{5,1}
+\newcommand{\ExpTresCEWPatchMRLComOculosAcMDP}{65,2\,$\pm$\,5,1}
+\newcommand{\ExpTresIntraMRLComOculosAcBal}{88,5}
+\newcommand{\ExpTresCEWPatchMRLComOculosAcBal}{61,1}
+\newcommand{\ExpTresCEWPatchMRLComOculosAcBalDP}{2,8}
+\newcommand{\ExpTresCEWPatchMRLComOculosAcBalMDP}{61,1\,$\pm$\,2,8}
+\newcommand{\ExpTresIntraMRLComOculosAUC}{95,7}
+\newcommand{\ExpTresCEWPatchMRLComOculosAUC}{65,1}
+\newcommand{\ExpTresCEWPatchMRLComOculosAUCDP}{4,3}
+\newcommand{\ExpTresCEWPatchMRLComOculosAUCMDP}{65,1\,$\pm$\,4,3}
+\newcommand{\ExpTresIntraMRLSemOculosAc}{96,1}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAc}{69,3}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAcDP}{4,4}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAcMDP}{69,3\,$\pm$\,4,4}
+\newcommand{\ExpTresIntraMRLSemOculosAcBal}{96,0}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAcBal}{71,8}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAcBalDP}{4,0}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAcBalMDP}{71,8\,$\pm$\,4,0}
+\newcommand{\ExpTresIntraMRLSemOculosAUC}{99,4}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAUC}{93,4}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAUCDP}{2,3}
+\newcommand{\ExpTresCEWPatchMRLSemOculosAUCMDP}{93,4\,$\pm$\,2,3}
+\newcommand{\ExpTresParametros}{62.865}
+% --- ExpQuatro ---
+\newcommand{\ExpQuatroCNNIntPcinquenta}{0,060}
+\newcommand{\ExpQuatroCNNIntPnoventaecinco}{0,064}
+\newcommand{\ExpQuatroCNNIntQuatroThreadsPcinquenta}{0,070}
+\newcommand{\ExpQuatroCNNIntQuatroThreadsPnoventaecinco}{0,087}
+\newcommand{\ExpQuatroCNNIntKB}{72,1}
+\newcommand{\ExpQuatroCNNFloatPcinquenta}{0,067}
+\newcommand{\ExpQuatroCNNFloatPnoventaecinco}{0,070}
+\newcommand{\ExpQuatroCNNFloatQuatroThreadsPcinquenta}{0,082}
+\newcommand{\ExpQuatroCNNFloatQuatroThreadsPnoventaecinco}{0,099}
+\newcommand{\ExpQuatroCNNFloatKB}{248,2}
+\newcommand{\ExpQuatroModelosKB}{173,9}
+\newcommand{\ExpQuatroAcCEWPatchKeras}{85,7}
+\newcommand{\ExpQuatroAcCEWPatchInt}{85,6}
+\newcommand{\ExpQuatroAcCEWCropKeras}{90,0}
+\newcommand{\ExpQuatroAcCEWCropInt}{89,7}
+\newcommand{\ExpQuatroAcMRLCompletoKeras}{98,5}
+\newcommand{\ExpQuatroAcMRLCompletoInt}{98,5}
+\newcommand{\ExpQuatroQuedaQuantizacaoMax}{0,31}
+% --- MacPWA ---
+\newcommand{\MacPWATotalPcinquenta}{12,7}
+\newcommand{\MacPWATotalPnoventaecinco}{14,8}
+\newcommand{\MacPWAFPS}{29,9}
+% --- Celular ---
+\newcommand{\CelularIPhoneNome}{iPhone 17 Pro (512 GB)}
+\newcommand{\CelularIPhoneExecucoes}{2}
+\newcommand{\CelularIPhoneVersaoApp}{1.0}
+\newcommand{\CelularIPhoneSistema}{iOS 26.6.1}
+\newcommand{\CelularIPhoneNavegador}{Chrome 154 (iOS, motor WebKit)}
+\newcommand{\CelularIPhoneDelegate}{GPU}
+\newcommand{\CelularIPhoneTotalPcinquenta}{17,0}
+\newcommand{\CelularIPhoneTotalPcinquentaMin}{11,0}
+\newcommand{\CelularIPhoneTotalPcinquentaMax}{23,0}
+\newcommand{\CelularIPhoneTotalPnoventaecinco}{22,0}
+\newcommand{\CelularIPhoneTotalPnoventaecincoMin}{14,0}
+\newcommand{\CelularIPhoneTotalPnoventaecincoMax}{30,0}
+\newcommand{\CelularIPhoneLandmarkerPcinquenta}{14,0}
+\newcommand{\CelularIPhoneLandmarkerPcinquentaMin}{9,0}
+\newcommand{\CelularIPhoneLandmarkerPcinquentaMax}{19,0}
+\newcommand{\CelularIPhoneLandmarkerPnoventaecinco}{18,5}
+\newcommand{\CelularIPhoneLandmarkerPnoventaecincoMin}{11,0}
+\newcommand{\CelularIPhoneLandmarkerPnoventaecincoMax}{26,0}
+\newcommand{\CelularIPhoneCNNPcinquenta}{2,5}
+\newcommand{\CelularIPhoneCNNPcinquentaMin}{2,0}
+\newcommand{\CelularIPhoneCNNPcinquentaMax}{3,0}
+\newcommand{\CelularIPhoneCNNPnoventaecinco}{4,5}
+\newcommand{\CelularIPhoneCNNPnoventaecincoMin}{3,0}
+\newcommand{\CelularIPhoneCNNPnoventaecincoMax}{6,0}
+\newcommand{\CelularIPhoneLSTMPcinquenta}{1,0}
+\newcommand{\CelularIPhoneLSTMPcinquentaMin}{1,0}
+\newcommand{\CelularIPhoneLSTMPcinquentaMax}{1,0}
+\newcommand{\CelularIPhoneLSTMPnoventaecinco}{1,0}
+\newcommand{\CelularIPhoneLSTMPnoventaecincoMin}{1,0}
+\newcommand{\CelularIPhoneLSTMPnoventaecincoMax}{1,0}
+\newcommand{\CelularIPhoneFPS}{50,2}
+\newcommand{\CelularIPhoneFPSMin}{40,5}
+\newcommand{\CelularIPhoneFPSMax}{60,0}
+\newcommand{\CelularIPhoneQuadros}{6.031}
+\newcommand{\CelularIPhoneQuadrosComRosto}{6.031}
+\newcommand{\CelularIPhoneTaxaRosto}{100,0}
+\newcommand{\CelularVUmFalsoAlarmePERCLOS}{25,8}
+\newcommand{\CelularVUmFalsoAlarmeQuadros}{2.281}
+\newcommand{\CelularVUmFalsoAlarmeQuadrosTotal}{3.600}
+\newcommand{\CelularVUmFalsoAlarmeFracao}{63,4}
+% --- ExpCincoA ---
+\newcommand{\ExpCincoACustoAcBalDif}{2,0}
+\newcommand{\ExpCincoACustoAcBalDifIC}{[$-$4,8; 8,5]}
+\newcommand{\ExpCincoACustoAcBalDifComIC}{2,0 [$-$4,8; 8,5]}
+\newcommand{\ExpCincoACustoAcBalOficial}{58,9}
+\newcommand{\ExpCincoACustoAcBalNosso}{57,0}
+\newcommand{\ExpCincoACustoAcBalP}{0,555}
+\newcommand{\ExpCincoACustoVADif}{2,1}
+\newcommand{\ExpCincoACustoVADifIC}{[$-$6,4; 9,9]}
+\newcommand{\ExpCincoACustoVADifComIC}{2,1 [$-$6,4; 9,9]}
+\newcommand{\ExpCincoACustoVAOficial}{58,9}
+\newcommand{\ExpCincoACustoVANosso}{56,7}
+\newcommand{\ExpCincoACustoVAP}{0,734}
+\newcommand{\ExpCincoACustoBTresAcBalDif}{0,5}
+\newcommand{\ExpCincoACustoBTresAcBalDifIC}{[$-$6,4; 7,2]}
+\newcommand{\ExpCincoACustoBTresAcBalDifComIC}{0,5 [$-$6,4; 7,2]}
+\newcommand{\ExpCincoACustoBTresAcBalOficial}{85,5}
+\newcommand{\ExpCincoACustoBTresAcBalNosso}{85,0}
+\newcommand{\ExpCincoACustoBTresAcBalP}{0,904}
+\newcommand{\ExpCincoACustoBTresVADif}{2,1}
+\newcommand{\ExpCincoACustoBTresVADifIC}{[$-$6,4; 10,6]}
+\newcommand{\ExpCincoACustoBTresVADifComIC}{2,1 [$-$6,4; 10,6]}
+\newcommand{\ExpCincoACustoBTresVAOficial}{88,3}
+\newcommand{\ExpCincoACustoBTresVANosso}{86,2}
+\newcommand{\ExpCincoACustoBTresVAP}{0,806}
+\newcommand{\ExpCincoAMesmoAcBalDif}{$-$1,7}
+\newcommand{\ExpCincoAMesmoAcBalDifIC}{[$-$10,4; 5,7]}
+\newcommand{\ExpCincoAMesmoAcBalDifComIC}{$-$1,7 [$-$10,4; 5,7]}
+\newcommand{\ExpCincoAMesmoAcBalOficial}{54,6}
+\newcommand{\ExpCincoAMesmoAcBalNosso}{56,3}
+\newcommand{\ExpCincoAMesmoAcBalP}{0,712}
+\newcommand{\ExpCincoAMesmoVADif}{$-$5,0}
+\newcommand{\ExpCincoAMesmoVADifIC}{[$-$15,6; 5,7]}
+\newcommand{\ExpCincoAMesmoVADifComIC}{$-$5,0 [$-$15,6; 5,7]}
+\newcommand{\ExpCincoAMesmoVAOficial}{55,3}
+\newcommand{\ExpCincoAMesmoVANosso}{60,3}
+\newcommand{\ExpCincoAMesmoVAP}{0,460}
+\newcommand{\ExpCincoAMesmoBTresAcBalDif}{$-$6,7}
+\newcommand{\ExpCincoAMesmoBTresAcBalDifIC}{[$-$12,9; $-$1,8]}
+\newcommand{\ExpCincoAMesmoBTresAcBalDifComIC}{$-$6,7 [$-$12,9; $-$1,8]}
+\newcommand{\ExpCincoAMesmoBTresAcBalOficial}{83,1}
+\newcommand{\ExpCincoAMesmoBTresAcBalNosso}{89,8}
+\newcommand{\ExpCincoAMesmoBTresAcBalP}{0,029}
+\newcommand{\ExpCincoAMesmoBTresVADif}{$-$7,4}
+\newcommand{\ExpCincoAMesmoBTresVADifIC}{[$-$13,8; $-$2,1]}
+\newcommand{\ExpCincoAMesmoBTresVADifComIC}{$-$7,4 [$-$13,8; $-$2,1]}
+\newcommand{\ExpCincoAMesmoBTresVAOficial}{87,2}
+\newcommand{\ExpCincoAMesmoBTresVANosso}{94,7}
+\newcommand{\ExpCincoAMesmoBTresVAP}{0,039}
+\newcommand{\ExpCincoAMesmoLOSOAcBalDif}{0,4}
+\newcommand{\ExpCincoAMesmoLOSOAcBalDifIC}{[$-$6,7; 7,7]}
+\newcommand{\ExpCincoAMesmoLOSOAcBalDifComIC}{0,4 [$-$6,7; 7,7]}
+\newcommand{\ExpCincoAMesmoLOSOAcBalOficial}{55,6}
+\newcommand{\ExpCincoAMesmoLOSOAcBalNosso}{55,2}
+\newcommand{\ExpCincoAMesmoLOSOAcBalP}{0,910}
+\newcommand{\ExpCincoAMesmoLOSOVADif}{$-$0,7}
+\newcommand{\ExpCincoAMesmoLOSOVADifIC}{[$-$9,2; 7,1]}
+\newcommand{\ExpCincoAMesmoLOSOVADifComIC}{$-$0,7 [$-$9,2; 7,1]}
+\newcommand{\ExpCincoAMesmoLOSOVAOficial}{55,3}
+\newcommand{\ExpCincoAMesmoLOSOVANosso}{56,0}
+\newcommand{\ExpCincoAMesmoLOSOVAP}{1,000}
+\newcommand{\ExpCincoAMesmoLOSOBTresAcBalDif}{$-$4,5}
+\newcommand{\ExpCincoAMesmoLOSOBTresAcBalDifIC}{[$-$11,0; 0,6]}
+\newcommand{\ExpCincoAMesmoLOSOBTresAcBalDifComIC}{$-$4,5 [$-$11,0; 0,6]}
+\newcommand{\ExpCincoAMesmoLOSOBTresAcBalOficial}{85,0}
+\newcommand{\ExpCincoAMesmoLOSOBTresAcBalNosso}{89,5}
+\newcommand{\ExpCincoAMesmoLOSOBTresAcBalP}{0,163}
+\newcommand{\ExpCincoAMesmoLOSOBTresVADif}{$-$3,2}
+\newcommand{\ExpCincoAMesmoLOSOBTresVADifIC}{[$-$9,6; 4,3]}
+\newcommand{\ExpCincoAMesmoLOSOBTresVADifComIC}{$-$3,2 [$-$9,6; 4,3]}
+\newcommand{\ExpCincoAMesmoLOSOBTresVAOficial}{88,3}
+\newcommand{\ExpCincoAMesmoLOSOBTresVANosso}{91,5}
+\newcommand{\ExpCincoAMesmoLOSOBTresVAP}{0,546}
+\newcommand{\ExpCincoASujeitos}{47}
+\newcommand{\ExpCincoAVideos}{141}
+\newcommand{\ExpCincoAVideosBTres}{94}
+% --- ExpCincoB ---
+\newcommand{\ExpCincoBAcBalJanelaA}{76,4}
+\newcommand{\ExpCincoBAcBalJanelaAIC}{[68,3; 83,7]}
+\newcommand{\ExpCincoBAcBalJanelaAComIC}{76,4 [68,3; 83,7]}
+\newcommand{\ExpCincoBAcBalJanelaB}{74,2}
+\newcommand{\ExpCincoBAcBalJanelaBIC}{[70,9; 77,6]}
+\newcommand{\ExpCincoBAcBalJanelaBComIC}{74,2 [70,9; 77,6]}
+\newcommand{\ExpCincoBAcBalJanelaC}{65,2}
+\newcommand{\ExpCincoBAcBalJanelaCIC}{[61,7; 68,6]}
+\newcommand{\ExpCincoBAcBalJanelaCComIC}{65,2 [61,7; 68,6]}
+\newcommand{\ExpCincoBQuedaAcBalJanela}{9,0}
+\newcommand{\ExpCincoBQuedaAcBalJanelaIC}{[5,8; 12,2]}
+\newcommand{\ExpCincoBQuedaAcBalJanelaComIC}{9,0 [5,8; 12,2]}
+\newcommand{\ExpCincoBChoqueAcBalJanela}{11,3}
+\newcommand{\ExpCincoBChoqueAcBalJanelaIC}{[2,2; 19,8]}
+\newcommand{\ExpCincoBChoqueAcBalJanelaComIC}{11,3 [2,2; 19,8]}
+\newcommand{\ExpCincoBAcVideoB}{85,8}
+\newcommand{\ExpCincoBAcVideoBIC}{[80,0; 91,7]}
+\newcommand{\ExpCincoBAcVideoBComIC}{85,8 [80,0; 91,7]}
+\newcommand{\ExpCincoBAcVideoC}{73,3}
+\newcommand{\ExpCincoBAcVideoCIC}{[67,5; 79,2]}
+\newcommand{\ExpCincoBAcVideoCComIC}{73,3 [67,5; 79,2]}
+\newcommand{\ExpCincoBQuedaAcVideo}{12,5}
+\newcommand{\ExpCincoBQuedaAcVideoIC}{[5,0; 19,2]}
+\newcommand{\ExpCincoBQuedaAcVideoComIC}{12,5 [5,0; 19,2]}
+\newcommand{\ExpCincoBCSensJanela}{48,4}
+\newcommand{\ExpCincoBCSensJanelaIC}{[41,0; 55,2]}
+\newcommand{\ExpCincoBCSensJanelaComIC}{48,4 [41,0; 55,2]}
+\newcommand{\ExpCincoBCSensVideo}{55,0}
+\newcommand{\ExpCincoBCSensVideoIC}{[43,3; 66,7]}
+\newcommand{\ExpCincoBCSensVideoComIC}{55,0 [43,3; 66,7]}
+\newcommand{\ExpCincoBCEspecJanela}{82,0}
+\newcommand{\ExpCincoBCEspecJanelaIC}{[77,0; 86,6]}
+\newcommand{\ExpCincoBCEspecJanelaComIC}{82,0 [77,0; 86,6]}
+\newcommand{\ExpCincoBCEspecVideo}{91,7}
+\newcommand{\ExpCincoBCEspecVideoIC}{[85,0; 98,3]}
+\newcommand{\ExpCincoBCEspecVideoComIC}{91,7 [85,0; 98,3]}
+\newcommand{\ExpCincoBAcBalJanelaACal}{78,6}
+\newcommand{\ExpCincoBAcBalJanelaACalIC}{[72,6; 84,2]}
+\newcommand{\ExpCincoBAcBalJanelaACalComIC}{78,6 [72,6; 84,2]}
+\newcommand{\ExpCincoBAcBalJanelaBCal}{74,0}
+\newcommand{\ExpCincoBAcBalJanelaBCalIC}{[70,7; 77,4]}
+\newcommand{\ExpCincoBAcBalJanelaBCalComIC}{74,0 [70,7; 77,4]}
+\newcommand{\ExpCincoBAcBalJanelaCCal}{62,9}
+\newcommand{\ExpCincoBAcBalJanelaCCalIC}{[60,0; 66,0]}
+\newcommand{\ExpCincoBAcBalJanelaCCalComIC}{62,9 [60,0; 66,0]}
+\newcommand{\ExpCincoBQuedaAcBalJanelaCal}{11,1}
+\newcommand{\ExpCincoBQuedaAcBalJanelaCalIC}{[8,0; 14,2]}
+\newcommand{\ExpCincoBQuedaAcBalJanelaCalComIC}{11,1 [8,0; 14,2]}
+\newcommand{\ExpCincoBChoqueAcBalJanelaCal}{15,8}
+\newcommand{\ExpCincoBChoqueAcBalJanelaCalIC}{[8,8; 22,1]}
+\newcommand{\ExpCincoBChoqueAcBalJanelaCalComIC}{15,8 [8,8; 22,1]}
+\newcommand{\ExpCincoBAcVideoBCal}{82,5}
+\newcommand{\ExpCincoBAcVideoBCalIC}{[76,7; 88,3]}
+\newcommand{\ExpCincoBAcVideoBCalComIC}{82,5 [76,7; 88,3]}
+\newcommand{\ExpCincoBAcVideoCCal}{60,8}
+\newcommand{\ExpCincoBAcVideoCCalIC}{[55,8; 65,8]}
+\newcommand{\ExpCincoBAcVideoCCalComIC}{60,8 [55,8; 65,8]}
+\newcommand{\ExpCincoBQuedaAcVideoCal}{21,7}
+\newcommand{\ExpCincoBQuedaAcVideoCalIC}{[14,2; 29,2]}
+\newcommand{\ExpCincoBQuedaAcVideoCalComIC}{21,7 [14,2; 29,2]}
+\newcommand{\ExpCincoBCSensJanelaCal}{37,0}
+\newcommand{\ExpCincoBCSensJanelaCalIC}{[30,6; 43,6]}
+\newcommand{\ExpCincoBCSensJanelaCalComIC}{37,0 [30,6; 43,6]}
+\newcommand{\ExpCincoBCSensVideoCal}{21,7}
+\newcommand{\ExpCincoBCSensVideoCalIC}{[11,7; 31,7]}
+\newcommand{\ExpCincoBCSensVideoCalComIC}{21,7 [11,7; 31,7]}
+\newcommand{\ExpCincoBCEspecJanelaCal}{88,7}
+\newcommand{\ExpCincoBCEspecJanelaCalIC}{[85,1; 92,1]}
+\newcommand{\ExpCincoBCEspecJanelaCalComIC}{88,7 [85,1; 92,1]}
+\newcommand{\ExpCincoBCEspecVideoCal}{100,0}
+\newcommand{\ExpCincoBCEspecVideoCalIC}{[100,0; 100,0]}
+\newcommand{\ExpCincoBCEspecVideoCalComIC}{100,0 [100,0; 100,0]}
+\newcommand{\ExpCincoBAUCJanelaA}{82,4}
+\newcommand{\ExpCincoBAUCJanelaAIC}{[73,6; 89,7]}
+\newcommand{\ExpCincoBAUCJanelaAComIC}{82,4 [73,6; 89,7]}
+\newcommand{\ExpCincoBAUCJanelaB}{80,1}
+\newcommand{\ExpCincoBAUCJanelaBIC}{[76,3; 83,8]}
+\newcommand{\ExpCincoBAUCJanelaBComIC}{80,1 [76,3; 83,8]}
+\newcommand{\ExpCincoBAUCJanelaC}{69,2}
+\newcommand{\ExpCincoBAUCJanelaCIC}{[63,7; 74,3]}
+\newcommand{\ExpCincoBAUCJanelaCComIC}{69,2 [63,7; 74,3]}
+\newcommand{\ExpCincoBQuedaAUCJanela}{10,9}
+\newcommand{\ExpCincoBQuedaAUCJanelaIC}{[6,7; 15,7]}
+\newcommand{\ExpCincoBQuedaAUCJanelaComIC}{10,9 [6,7; 15,7]}
+\newcommand{\ExpCincoBChoqueAUCJanela}{13,1}
+\newcommand{\ExpCincoBChoqueAUCJanelaIC}{[3,5; 22,6]}
+\newcommand{\ExpCincoBChoqueAUCJanelaComIC}{13,1 [3,5; 22,6]}
+\newcommand{\ExpCincoBLabAUCJanela}{2,2}
+\newcommand{\ExpCincoBLabAUCJanelaIC}{[$-$7,1; 10,9]}
+\newcommand{\ExpCincoBLabAUCJanelaComIC}{2,2 [$-$7,1; 10,9]}
+\newcommand{\ExpCincoBAUCVideoB}{92,4}
+\newcommand{\ExpCincoBAUCVideoBIC}{[87,9; 96,2]}
+\newcommand{\ExpCincoBAUCVideoBComIC}{92,4 [87,9; 96,2]}
+\newcommand{\ExpCincoBAUCVideoC}{80,5}
+\newcommand{\ExpCincoBAUCVideoCIC}{[73,0; 87,2]}
+\newcommand{\ExpCincoBAUCVideoCComIC}{80,5 [73,0; 87,2]}
+\newcommand{\ExpCincoBQuedaAUCVideo}{11,9}
+\newcommand{\ExpCincoBQuedaAUCVideoIC}{[5,6; 18,8]}
+\newcommand{\ExpCincoBQuedaAUCVideoComIC}{11,9 [5,6; 18,8]}
+\newcommand{\ExpCincoBLimiarCal}{0,662}
+\newcommand{\ExpCincoBLRAcBalJanelaA}{78,6}
+\newcommand{\ExpCincoBLRAcBalJanelaAIC}{[70,1; 85,3]}
+\newcommand{\ExpCincoBLRAcBalJanelaAComIC}{78,6 [70,1; 85,3]}
+\newcommand{\ExpCincoBLRAcBalJanelaB}{72,0}
+\newcommand{\ExpCincoBLRAcBalJanelaBIC}{[68,9; 74,9]}
+\newcommand{\ExpCincoBLRAcBalJanelaBComIC}{72,0 [68,9; 74,9]}
+\newcommand{\ExpCincoBLRAcBalJanelaC}{64,0}
+\newcommand{\ExpCincoBLRAcBalJanelaCIC}{[60,7; 67,4]}
+\newcommand{\ExpCincoBLRAcBalJanelaCComIC}{64,0 [60,7; 67,4]}
+\newcommand{\ExpCincoBLRQuedaAcBalJanela}{7,9}
+\newcommand{\ExpCincoBLRQuedaAcBalJanelaIC}{[4,8; 10,9]}
+\newcommand{\ExpCincoBLRQuedaAcBalJanelaComIC}{7,9 [4,8; 10,9]}
+\newcommand{\ExpCincoBLRChoqueAcBalJanela}{14,6}
+\newcommand{\ExpCincoBLRChoqueAcBalJanelaIC}{[5,6; 22,0]}
+\newcommand{\ExpCincoBLRChoqueAcBalJanelaComIC}{14,6 [5,6; 22,0]}
+\newcommand{\ExpCincoBLRAcVideoB}{85,8}
+\newcommand{\ExpCincoBLRAcVideoBIC}{[80,0; 90,8]}
+\newcommand{\ExpCincoBLRAcVideoBComIC}{85,8 [80,0; 90,8]}
+\newcommand{\ExpCincoBLRAcVideoC}{65,8}
+\newcommand{\ExpCincoBLRAcVideoCIC}{[60,0; 71,7]}
+\newcommand{\ExpCincoBLRAcVideoCComIC}{65,8 [60,0; 71,7]}
+\newcommand{\ExpCincoBLRQuedaAcVideo}{20,0}
+\newcommand{\ExpCincoBLRQuedaAcVideoIC}{[12,5; 26,7]}
+\newcommand{\ExpCincoBLRQuedaAcVideoComIC}{20,0 [12,5; 26,7]}
+\newcommand{\ExpCincoBLRCSensJanela}{33,7}
+\newcommand{\ExpCincoBLRCSensJanelaIC}{[26,5; 41,5]}
+\newcommand{\ExpCincoBLRCSensJanelaComIC}{33,7 [26,5; 41,5]}
+\newcommand{\ExpCincoBLRCSensVideo}{31,7}
+\newcommand{\ExpCincoBLRCSensVideoIC}{[20,0; 43,3]}
+\newcommand{\ExpCincoBLRCSensVideoComIC}{31,7 [20,0; 43,3]}
+\newcommand{\ExpCincoBLRCEspecJanela}{94,4}
+\newcommand{\ExpCincoBLRCEspecJanelaIC}{[92,2; 96,2]}
+\newcommand{\ExpCincoBLRCEspecJanelaComIC}{94,4 [92,2; 96,2]}
+\newcommand{\ExpCincoBLRCEspecVideo}{100,0}
+\newcommand{\ExpCincoBLRCEspecVideoIC}{[100,0; 100,0]}
+\newcommand{\ExpCincoBLRCEspecVideoComIC}{100,0 [100,0; 100,0]}
+\newcommand{\ExpCincoBLRAcBalJanelaACal}{78,7}
+\newcommand{\ExpCincoBLRAcBalJanelaACalIC}{[72,1; 83,8]}
+\newcommand{\ExpCincoBLRAcBalJanelaACalComIC}{78,7 [72,1; 83,8]}
+\newcommand{\ExpCincoBLRAcBalJanelaBCal}{72,2}
+\newcommand{\ExpCincoBLRAcBalJanelaBCalIC}{[69,1; 75,2]}
+\newcommand{\ExpCincoBLRAcBalJanelaBCalComIC}{72,2 [69,1; 75,2]}
+\newcommand{\ExpCincoBLRAcBalJanelaCCal}{63,3}
+\newcommand{\ExpCincoBLRAcBalJanelaCCalIC}{[60,2; 66,7]}
+\newcommand{\ExpCincoBLRAcBalJanelaCCalComIC}{63,3 [60,2; 66,7]}
+\newcommand{\ExpCincoBLRQuedaAcBalJanelaCal}{8,9}
+\newcommand{\ExpCincoBLRQuedaAcBalJanelaCalIC}{[5,6; 11,9]}
+\newcommand{\ExpCincoBLRQuedaAcBalJanelaCalComIC}{8,9 [5,6; 11,9]}
+\newcommand{\ExpCincoBLRChoqueAcBalJanelaCal}{15,4}
+\newcommand{\ExpCincoBLRChoqueAcBalJanelaCalIC}{[7,8; 21,4]}
+\newcommand{\ExpCincoBLRChoqueAcBalJanelaCalComIC}{15,4 [7,8; 21,4]}
+\newcommand{\ExpCincoBLRAcVideoBCal}{85,0}
+\newcommand{\ExpCincoBLRAcVideoBCalIC}{[79,2; 90,0]}
+\newcommand{\ExpCincoBLRAcVideoBCalComIC}{85,0 [79,2; 90,0]}
+\newcommand{\ExpCincoBLRAcVideoCCal}{64,2}
+\newcommand{\ExpCincoBLRAcVideoCCalIC}{[58,3; 70,0]}
+\newcommand{\ExpCincoBLRAcVideoCCalComIC}{64,2 [58,3; 70,0]}
+\newcommand{\ExpCincoBLRQuedaAcVideoCal}{20,8}
+\newcommand{\ExpCincoBLRQuedaAcVideoCalIC}{[12,5; 28,3]}
+\newcommand{\ExpCincoBLRQuedaAcVideoCalComIC}{20,8 [12,5; 28,3]}
+\newcommand{\ExpCincoBLRCSensJanelaCal}{30,8}
+\newcommand{\ExpCincoBLRCSensJanelaCalIC}{[24,1; 38,2]}
+\newcommand{\ExpCincoBLRCSensJanelaCalComIC}{30,8 [24,1; 38,2]}
+\newcommand{\ExpCincoBLRCSensVideoCal}{28,3}
+\newcommand{\ExpCincoBLRCSensVideoCalIC}{[16,7; 40,0]}
+\newcommand{\ExpCincoBLRCSensVideoCalComIC}{28,3 [16,7; 40,0]}
+\newcommand{\ExpCincoBLRCEspecJanelaCal}{95,8}
+\newcommand{\ExpCincoBLRCEspecJanelaCalIC}{[94,0; 97,2]}
+\newcommand{\ExpCincoBLRCEspecJanelaCalComIC}{95,8 [94,0; 97,2]}
+\newcommand{\ExpCincoBLRCEspecVideoCal}{100,0}
+\newcommand{\ExpCincoBLRCEspecVideoCalIC}{[100,0; 100,0]}
+\newcommand{\ExpCincoBLRCEspecVideoCalComIC}{100,0 [100,0; 100,0]}
+\newcommand{\ExpCincoBLRAUCJanelaA}{83,5}
+\newcommand{\ExpCincoBLRAUCJanelaAIC}{[76,1; 88,9]}
+\newcommand{\ExpCincoBLRAUCJanelaAComIC}{83,5 [76,1; 88,9]}
+\newcommand{\ExpCincoBLRAUCJanelaB}{74,4}
+\newcommand{\ExpCincoBLRAUCJanelaBIC}{[69,7; 78,4]}
+\newcommand{\ExpCincoBLRAUCJanelaBComIC}{74,4 [69,7; 78,4]}
+\newcommand{\ExpCincoBLRAUCJanelaC}{64,5}
+\newcommand{\ExpCincoBLRAUCJanelaCIC}{[58,1; 70,9]}
+\newcommand{\ExpCincoBLRAUCJanelaCComIC}{64,5 [58,1; 70,9]}
+\newcommand{\ExpCincoBLRQuedaAUCJanela}{9,8}
+\newcommand{\ExpCincoBLRQuedaAUCJanelaIC}{[3,7; 16,0]}
+\newcommand{\ExpCincoBLRQuedaAUCJanelaComIC}{9,8 [3,7; 16,0]}
+\newcommand{\ExpCincoBLRChoqueAUCJanela}{18,9}
+\newcommand{\ExpCincoBLRChoqueAUCJanelaIC}{[9,7; 27,8]}
+\newcommand{\ExpCincoBLRChoqueAUCJanelaComIC}{18,9 [9,7; 27,8]}
+\newcommand{\ExpCincoBLRLabAUCJanela}{9,1}
+\newcommand{\ExpCincoBLRLabAUCJanelaIC}{[1,3; 16,6]}
+\newcommand{\ExpCincoBLRLabAUCJanelaComIC}{9,1 [1,3; 16,6]}
+\newcommand{\ExpCincoBLRAUCVideoB}{89,0}
+\newcommand{\ExpCincoBLRAUCVideoBIC}{[82,2; 94,9]}
+\newcommand{\ExpCincoBLRAUCVideoBComIC}{89,0 [82,2; 94,9]}
+\newcommand{\ExpCincoBLRAUCVideoC}{76,0}
+\newcommand{\ExpCincoBLRAUCVideoCIC}{[67,8; 84,7]}
+\newcommand{\ExpCincoBLRAUCVideoCComIC}{76,0 [67,8; 84,7]}
+\newcommand{\ExpCincoBLRQuedaAUCVideo}{13,0}
+\newcommand{\ExpCincoBLRQuedaAUCVideoIC}{[5,8; 20,8]}
+\newcommand{\ExpCincoBLRQuedaAUCVideoComIC}{13,0 [5,8; 20,8]}
+\newcommand{\ExpCincoBLRLimiarCal}{0,535}
+% --- ExpSeis ---
+\newcommand{\ExpSeisRostoNoite}{99,15}
+\newcommand{\ExpSeisRostoNoiteIC}{[98,75; 99,48]}
+\newcommand{\ExpSeisRostoNoiteComIC}{99,15 [98,75; 99,48]}
+\newcommand{\ExpSeisSNRNoite}{7,2}
+\newcommand{\ExpSeisSNRNoiteIC}{[6,4; 7,9]}
+\newcommand{\ExpSeisSNRNoiteComIC}{7,2 [6,4; 7,9]}
+\newcommand{\ExpSeisRuidoNoite}{0,0084}
+\newcommand{\ExpSeisRuidoNoiteIC}{[0,0080; 0,0090]}
+\newcommand{\ExpSeisRuidoNoiteComIC}{0,0084 [0,0080; 0,0090]}
+\newcommand{\ExpSeisRostoNoiteMicrossono}{99,23}
+\newcommand{\ExpSeisRostoNoiteMicrossonoIC}{[98,49; 99,73]}
+\newcommand{\ExpSeisRostoNoiteMicrossonoComIC}{99,23 [98,49; 99,73]}
+\newcommand{\ExpSeisSNRNoiteMicrossono}{7,1}
+\newcommand{\ExpSeisSNRNoiteMicrossonoIC}{[6,4; 11,0]}
+\newcommand{\ExpSeisSNRNoiteMicrossonoComIC}{7,1 [6,4; 11,0]}
+\newcommand{\ExpSeisRuidoNoiteMicrossono}{0,0084}
+\newcommand{\ExpSeisRuidoNoiteMicrossonoIC}{[0,0061; 0,0095]}
+\newcommand{\ExpSeisRuidoNoiteMicrossonoComIC}{0,0084 [0,0061; 0,0095]}
+\newcommand{\ExpSeisRostoNoiteBocejo}{99,14}
+\newcommand{\ExpSeisRostoNoiteBocejoIC}{[98,69; 99,49]}
+\newcommand{\ExpSeisRostoNoiteBocejoComIC}{99,14 [98,69; 99,49]}
+\newcommand{\ExpSeisSNRNoiteBocejo}{7,2}
+\newcommand{\ExpSeisSNRNoiteBocejoIC}{[5,9; 7,9]}
+\newcommand{\ExpSeisSNRNoiteBocejoComIC}{7,2 [5,9; 7,9]}
+\newcommand{\ExpSeisRuidoNoiteBocejo}{0,0084}
+\newcommand{\ExpSeisRuidoNoiteBocejoIC}{[0,0079; 0,0089]}
+\newcommand{\ExpSeisRuidoNoiteBocejoComIC}{0,0084 [0,0079; 0,0089]}
+\newcommand{\ExpSeisRostoUTA}{99,77}
+\newcommand{\ExpSeisRostoUTAIC}{[99,40; 99,96]}
+\newcommand{\ExpSeisRostoUTAComIC}{99,77 [99,40; 99,96]}
+\newcommand{\ExpSeisSNRUTA}{21,5}
+\newcommand{\ExpSeisSNRUTAIC}{[18,3; 23,5]}
+\newcommand{\ExpSeisSNRUTAComIC}{21,5 [18,3; 23,5]}
+\newcommand{\ExpSeisRuidoUTA}{0,0037}
+\newcommand{\ExpSeisRuidoUTAIC}{[0,0035; 0,0040]}
+\newcommand{\ExpSeisRuidoUTAComIC}{0,0037 [0,0035; 0,0040]}
+\newcommand{\ExpSeisRostoUTAAlerta}{99,95}
+\newcommand{\ExpSeisRostoUTAAlertaIC}{[99,90; 99,99]}
+\newcommand{\ExpSeisRostoUTAAlertaComIC}{99,95 [99,90; 99,99]}
+\newcommand{\ExpSeisSNRUTAAlerta}{24,4}
+\newcommand{\ExpSeisSNRUTAAlertaIC}{[21,6; 26,1]}
+\newcommand{\ExpSeisSNRUTAAlertaComIC}{24,4 [21,6; 26,1]}
+\newcommand{\ExpSeisRuidoUTAAlerta}{0,0036}
+\newcommand{\ExpSeisRuidoUTAAlertaIC}{[0,0033; 0,0038]}
+\newcommand{\ExpSeisRuidoUTAAlertaComIC}{0,0036 [0,0033; 0,0038]}
+\newcommand{\ExpSeisRostoDMDSonolencia}{99,78}
+\newcommand{\ExpSeisRostoDMDSonolenciaIC}{[99,58; 99,95]}
+\newcommand{\ExpSeisRostoDMDSonolenciaComIC}{99,78 [99,58; 99,95]}
+\newcommand{\ExpSeisSNRDMDSonolencia}{23,1}
+\newcommand{\ExpSeisSNRDMDSonolenciaIC}{[16,1; 27,9]}
+\newcommand{\ExpSeisSNRDMDSonolenciaComIC}{23,1 [16,1; 27,9]}
+\newcommand{\ExpSeisRuidoDMDSonolencia}{0,0046}
+\newcommand{\ExpSeisRuidoDMDSonolenciaIC}{[0,0043; 0,0053]}
+\newcommand{\ExpSeisRuidoDMDSonolenciaComIC}{0,0046 [0,0043; 0,0053]}
+\newcommand{\ExpSeisRostoDMDParado}{99,89}
+\newcommand{\ExpSeisRostoDMDParadoIC}{[99,77; 99,97]}
+\newcommand{\ExpSeisRostoDMDParadoComIC}{99,89 [99,77; 99,97]}
+\newcommand{\ExpSeisSNRDMDParado}{13,6}
+\newcommand{\ExpSeisSNRDMDParadoIC}{[12,0; 16,9]}
+\newcommand{\ExpSeisSNRDMDParadoComIC}{13,6 [12,0; 16,9]}
+\newcommand{\ExpSeisRuidoDMDParado}{0,0059}
+\newcommand{\ExpSeisRuidoDMDParadoIC}{[0,0051; 0,0068]}
+\newcommand{\ExpSeisRuidoDMDParadoComIC}{0,0059 [0,0051; 0,0068]}
+\newcommand{\ExpSeisRostoDMDMovimento}{99,65}
+\newcommand{\ExpSeisRostoDMDMovimentoIC}{[99,35; 99,87]}
+\newcommand{\ExpSeisRostoDMDMovimentoComIC}{99,65 [99,35; 99,87]}
+\newcommand{\ExpSeisSNRDMDMovimento}{8,7}
+\newcommand{\ExpSeisSNRDMDMovimentoIC}{[6,2; 10,8]}
+\newcommand{\ExpSeisSNRDMDMovimentoComIC}{8,7 [6,2; 10,8]}
+\newcommand{\ExpSeisRuidoDMDMovimento}{0,0097}
+\newcommand{\ExpSeisRuidoDMDMovimentoIC}{[0,0090; 0,0106]}
+\newcommand{\ExpSeisRuidoDMDMovimentoComIC}{0,0097 [0,0090; 0,0106]}
+\newcommand{\ExpSeisDifRostoNoiteUTA}{$-$0,61}
+\newcommand{\ExpSeisDifRostoNoiteUTAIC}{[$-$1,07; $-$0,14]}
+\newcommand{\ExpSeisDifRostoNoiteUTAComIC}{$-$0,61 [$-$1,07; $-$0,14]}
+\newcommand{\ExpSeisDifSNRNoiteUTA}{$-$14,3}
+\newcommand{\ExpSeisDifSNRNoiteUTAIC}{[$-$16,4; $-$11,2]}
+\newcommand{\ExpSeisDifSNRNoiteUTAComIC}{$-$14,3 [$-$16,4; $-$11,2]}
+\newcommand{\ExpSeisDifRostoNoiteDMDSonolencia}{$-$0,63}
+\newcommand{\ExpSeisDifRostoNoiteDMDSonolenciaIC}{[$-$1,08; $-$0,25]}
+\newcommand{\ExpSeisDifRostoNoiteDMDSonolenciaComIC}{$-$0,63 [$-$1,08; $-$0,25]}
+\newcommand{\ExpSeisDifSNRNoiteDMDSonolencia}{$-$15,9}
+\newcommand{\ExpSeisDifSNRNoiteDMDSonolenciaIC}{[$-$20,7; $-$9,0]}
+\newcommand{\ExpSeisDifSNRNoiteDMDSonolenciaComIC}{$-$15,9 [$-$20,7; $-$9,0]}
+\newcommand{\ExpSeisDifRostoNoiteDMDParado}{$-$0,73}
+\newcommand{\ExpSeisDifRostoNoiteDMDParadoIC}{[$-$1,13; $-$0,38]}
+\newcommand{\ExpSeisDifRostoNoiteDMDParadoComIC}{$-$0,73 [$-$1,13; $-$0,38]}
+\newcommand{\ExpSeisDifSNRNoiteDMDParado}{$-$6,4}
+\newcommand{\ExpSeisDifSNRNoiteDMDParadoIC}{[$-$9,8; $-$4,5]}
+\newcommand{\ExpSeisDifSNRNoiteDMDParadoComIC}{$-$6,4 [$-$9,8; $-$4,5]}
+\newcommand{\ExpSeisDifRostoNoiteDMDMovimento}{$-$0,50}
+\newcommand{\ExpSeisDifRostoNoiteDMDMovimentoIC}{[$-$0,94; $-$0,05]}
+\newcommand{\ExpSeisDifRostoNoiteDMDMovimentoComIC}{$-$0,50 [$-$0,94; $-$0,05]}
+\newcommand{\ExpSeisDifSNRNoiteDMDMovimento}{$-$1,6}
+\newcommand{\ExpSeisDifSNRNoiteDMDMovimentoIC}{[$-$3,7; 1,1]}
+\newcommand{\ExpSeisDifSNRNoiteDMDMovimentoComIC}{$-$1,6 [$-$3,7; 1,1]}
+\newcommand{\ExpSeisDifSNRMovimentoParado}{$-$5,4}
+\newcommand{\ExpSeisDifSNRMovimentoParadoIC}{[$-$6,6; $-$3,5]}
+\newcommand{\ExpSeisDifSNRMovimentoParadoComIC}{$-$5,4 [$-$6,6; $-$3,5]}
+\newcommand{\ExpSeisDifRuidoMovimentoParado}{0,0043}
+\newcommand{\ExpSeisDifRuidoMovimentoParadoIC}{[0,0030; 0,0054]}
+\newcommand{\ExpSeisDifRuidoMovimentoParadoComIC}{0,0043 [0,0030; 0,0054]}
+\newcommand{\ExpSeisSujeitosPareadosMovimento}{11}
+\newcommand{\ExpSeisDisparoModeloDMDMicrossono}{44,7}
+\newcommand{\ExpSeisDisparoModeloDMDMicrossonoIC}{[32,7; 57,4]}
+\newcommand{\ExpSeisDisparoModeloDMDMicrossonoComIC}{44,7 [32,7; 57,4]}
+\newcommand{\ExpSeisDisparoModeloDMDBocejo}{73,0}
+\newcommand{\ExpSeisDisparoModeloDMDBocejoIC}{[65,4; 80,6]}
+\newcommand{\ExpSeisDisparoModeloDMDBocejoComIC}{73,0 [65,4; 80,6]}
+\newcommand{\ExpSeisDisparoModeloDMDUTAAlerta}{26,0}
+\newcommand{\ExpSeisDisparoModeloDMDUTAAlertaIC}{[21,1; 31,1]}
+\newcommand{\ExpSeisDisparoModeloDMDUTAAlertaComIC}{26,0 [21,1; 31,1]}
+\newcommand{\ExpSeisDisparoModeloDMDUTAIntermediario}{40,5}
+\newcommand{\ExpSeisDisparoModeloDMDUTAIntermediarioIC}{[34,7; 46,3]}
+\newcommand{\ExpSeisDisparoModeloDMDUTAIntermediarioComIC}{40,5 [34,7; 46,3]}
+\newcommand{\ExpSeisDisparoModeloDMDUTASonolento}{52,2}
+\newcommand{\ExpSeisDisparoModeloDMDUTASonolentoIC}{[46,2; 58,1]}
+\newcommand{\ExpSeisDisparoModeloDMDUTASonolentoComIC}{52,2 [46,2; 58,1]}
+\newcommand{\ExpSeisDisparoModeloDMDDMDParado}{45,7}
+\newcommand{\ExpSeisDisparoModeloDMDDMDParadoIC}{[28,6; 66,1]}
+\newcommand{\ExpSeisDisparoModeloDMDDMDParadoComIC}{45,7 [28,6; 66,1]}
+\newcommand{\ExpSeisDisparoModeloDMDDMDMovimento}{42,9}
+\newcommand{\ExpSeisDisparoModeloDMDDMDMovimentoIC}{[25,0; 69,2]}
+\newcommand{\ExpSeisDisparoModeloDMDDMDMovimentoComIC}{42,9 [25,0; 69,2]}
+\newcommand{\ExpSeisDisparoModeloDMDDMDSonolento}{82,0}
+\newcommand{\ExpSeisDisparoModeloDMDDMDSonolentoIC}{[64,5; 93,2]}
+\newcommand{\ExpSeisDisparoModeloDMDDMDSonolentoComIC}{82,0 [64,5; 93,2]}
+\newcommand{\ExpSeisDisparoModeloUTAMicrossono}{83,5}
+\newcommand{\ExpSeisDisparoModeloUTAMicrossonoIC}{[73,8; 91,1]}
+\newcommand{\ExpSeisDisparoModeloUTAMicrossonoComIC}{83,5 [73,8; 91,1]}
+\newcommand{\ExpSeisDisparoModeloUTABocejo}{89,5}
+\newcommand{\ExpSeisDisparoModeloUTABocejoIC}{[85,2; 93,8]}
+\newcommand{\ExpSeisDisparoModeloUTABocejoComIC}{89,5 [85,2; 93,8]}
+\newcommand{\ExpSeisDisparoModeloUTAUTAAlerta}{43,6}
+\newcommand{\ExpSeisDisparoModeloUTAUTAAlertaIC}{[38,7; 48,8]}
+\newcommand{\ExpSeisDisparoModeloUTAUTAAlertaComIC}{43,6 [38,7; 48,8]}
+\newcommand{\ExpSeisDisparoModeloUTAUTAIntermediario}{58,3}
+\newcommand{\ExpSeisDisparoModeloUTAUTAIntermediarioIC}{[53,0; 64,0]}
+\newcommand{\ExpSeisDisparoModeloUTAUTAIntermediarioComIC}{58,3 [53,0; 64,0]}
+\newcommand{\ExpSeisDisparoModeloUTAUTASonolento}{69,4}
+\newcommand{\ExpSeisDisparoModeloUTAUTASonolentoIC}{[63,8; 74,6]}
+\newcommand{\ExpSeisDisparoModeloUTAUTASonolentoComIC}{69,4 [63,8; 74,6]}
+\newcommand{\ExpSeisDisparoModeloUTADMDParado}{69,1}
+\newcommand{\ExpSeisDisparoModeloUTADMDParadoIC}{[53,7; 82,4]}
+\newcommand{\ExpSeisDisparoModeloUTADMDParadoComIC}{69,1 [53,7; 82,4]}
+\newcommand{\ExpSeisDisparoModeloUTADMDMovimento}{77,1}
+\newcommand{\ExpSeisDisparoModeloUTADMDMovimentoIC}{[63,2; 88,2]}
+\newcommand{\ExpSeisDisparoModeloUTADMDMovimentoComIC}{77,1 [63,2; 88,2]}
+\newcommand{\ExpSeisDisparoModeloUTADMDSonolento}{92,9}
+\newcommand{\ExpSeisDisparoModeloUTADMDSonolentoIC}{[89,4; 96,3]}
+\newcommand{\ExpSeisDisparoModeloUTADMDSonolentoComIC}{92,9 [89,4; 96,3]}
+\newcommand{\ExpSeisDisparoRegraMicrossono}{15,0}
+\newcommand{\ExpSeisDisparoRegraMicrossonoIC}{[5,9; 26,7]}
+\newcommand{\ExpSeisDisparoRegraMicrossonoComIC}{15,0 [5,9; 26,7]}
+\newcommand{\ExpSeisDisparoRegraBocejo}{61,7}
+\newcommand{\ExpSeisDisparoRegraBocejoIC}{[51,3; 72,2]}
+\newcommand{\ExpSeisDisparoRegraBocejoComIC}{61,7 [51,3; 72,2]}
+\newcommand{\ExpSeisDisparoRegraUTAAlerta}{2,6}
+\newcommand{\ExpSeisDisparoRegraUTAAlertaIC}{[1,4; 4,3]}
+\newcommand{\ExpSeisDisparoRegraUTAAlertaComIC}{2,6 [1,4; 4,3]}
+\newcommand{\ExpSeisDisparoRegraUTAIntermediario}{9,7}
+\newcommand{\ExpSeisDisparoRegraUTAIntermediarioIC}{[6,3; 13,9]}
+\newcommand{\ExpSeisDisparoRegraUTAIntermediarioComIC}{9,7 [6,3; 13,9]}
+\newcommand{\ExpSeisDisparoRegraUTASonolento}{24,1}
+\newcommand{\ExpSeisDisparoRegraUTASonolentoIC}{[18,0; 30,3]}
+\newcommand{\ExpSeisDisparoRegraUTASonolentoComIC}{24,1 [18,0; 30,3]}
+\newcommand{\ExpSeisDisparoRegraDMDParado}{14,9}
+\newcommand{\ExpSeisDisparoRegraDMDParadoIC}{[5,7; 25,5]}
+\newcommand{\ExpSeisDisparoRegraDMDParadoComIC}{14,9 [5,7; 25,5]}
+\newcommand{\ExpSeisDisparoRegraDMDMovimento}{23,8}
+\newcommand{\ExpSeisDisparoRegraDMDMovimentoIC}{[6,8; 50,0]}
+\newcommand{\ExpSeisDisparoRegraDMDMovimentoComIC}{23,8 [6,8; 50,0]}
+\newcommand{\ExpSeisDisparoRegraDMDSonolento}{75,7}
+\newcommand{\ExpSeisDisparoRegraDMDSonolentoIC}{[61,9; 85,7]}
+\newcommand{\ExpSeisDisparoRegraDMDSonolentoComIC}{75,7 [61,9; 85,7]}
+% --- App ---
+\newcommand{\AppVersao}{2.1}
+\newcommand{\AppLimiarAmarelo}{40}
+\newcommand{\AppLimiarVermelho}{70}
+\newcommand{\AppVolumePadrao}{20}
+\newcommand{\AppUTAAlertaVideos}{3}
+\newcommand{\AppUTAAlertaVerdeMin}{100,0}
+\newcommand{\AppUTAAlertaAlarmes}{0}
+\newcommand{\AppUTAAlertaAvisos}{0}
+\newcommand{\AppUTASonolentoVideos}{3}
+\newcommand{\AppUTASonolentoComVermelho}{1}
+\newcommand{\AppKappaNavegador}{0,902}
+\newcommand{\AppBocejosNavegadorAcertos}{6}
+\newcommand{\AppBocejosNavegadorAnotados}{24}
+\newcommand{\AppBocejosNavegadorAnotadosSemMao}{14}
+\newcommand{\AppDMDMinutosDirecaoReal}{63,3}
+\newcommand{\AppDMDVermelhoDirecaoReal}{3,3}
+\newcommand{\AppDMDAmareloDirecaoReal}{4,1}
+\newcommand{\AppDMDAlarmesDirecaoReal}{4}
+\newcommand{\AppDMDAlarmesHoraDirecaoReal}{3,8}
+\newcommand{\AppDMDBocejosFalsosDirecaoReal}{0}
+\newcommand{\AppDMDMinutosSonolencia}{46,6}
+\newcommand{\AppDMDVermelhoSonolencia}{68,6}
+\newcommand{\AppKappaOffline}{0,938}
+\newcommand{\AppFechUmSRevocacao}{0,920}
+\newcommand{\AppFechUmSPrecisao}{0,748}
+\newcommand{\AppFechMeioSRevocacao}{0,929}
+\newcommand{\AppFechMeioSPrecisao}{0,786}
+\newcommand{\AppDMDVermelhoVUmDirecaoReal}{55,6}
+\newcommand{\AppDMDSessoesDirecaoReal}{17}
+\newcommand{\AppDMDSessoesSemAlarme}{16}
+\newcommand{\AppGACincoVermelho}{55,8}
+\newcommand{\AppBocejoAcertosSemMao}{30}
+\newcommand{\AppBocejoAnotadosSemMao}{47}
+\newcommand{\AppBocejoAcertosComMao}{1}
+\newcommand{\AppBocejoAnotadosComMao}{38}
+\newcommand{\AppBocejoFalsos}{0}
+\newcommand{\AppBocejoRevocacaoSemMao}{0,638}
+\newcommand{\AppBocejoRevocacaoComMao}{0,026}
+% --- Outros ---
+\newcommand{\SinaisDetectorFUmPiscadas}{0,749}
+\newcommand{\SinaisDetectorPrecisaoPiscadas}{0,811}
+\newcommand{\SinaisDetectorRevocacaoPiscadas}{0,775}
+\newcommand{\SinaisDetectorAcBalQuadro}{0,900}
+\newcommand{\SinaisDetectorKappaQuadro}{0,773}
+\newcommand{\SinaisDetectorSessoes}{16}
+\newcommand{\SinaisSafeDriveMin}{10}
+\newcommand{\SinaisSafeDriveMax}{26}
+% --- Base ---
+\newcommand{\BaseDMDHoras}{4,24}
+\newcommand{\BaseDMDFPSFaixa}{29,76}
+\newcommand{\BaseNITYMEDHoras}{1,63}
+\newcommand{\BaseNITYMEDFPSFaixa}{24,00--25,00}
+\newcommand{\BaseUTAHoras}{31,55}
+\newcommand{\BaseUTAFPSFaixa}{11,99--30,17}
+% --- ExpTres ---
+\newcommand{\ExpTresIntraMRLIlumRuimAcBal}{94,3}
+\newcommand{\ExpTresCEWPatchMRLIlumRuimAcBal}{63,8}
+\newcommand{\ExpTresCEWPatchMRLIlumRuimAcBalDP}{3,1}
+\newcommand{\ExpTresCEWPatchMRLIlumRuimAcBalMDP}{63,8\,$\pm$\,3,1}
+\newcommand{\ExpTresCEWPatchMRLIlumRuimAUC}{81,1}
+\newcommand{\ExpTresCEWPatchMRLIlumRuimAUCDP}{3,2}
+\newcommand{\ExpTresCEWPatchMRLIlumRuimAUCMDP}{81,1\,$\pm$\,3,2}
+\newcommand{\ExpTresIntraMRLIlumBoaAcBal}{92,6}
+\newcommand{\ExpTresCEWPatchMRLIlumBoaAcBal}{75,1}
+\newcommand{\ExpTresCEWPatchMRLIlumBoaAcBalDP}{2,5}
+\newcommand{\ExpTresCEWPatchMRLIlumBoaAcBalMDP}{75,1\,$\pm$\,2,5}
+\newcommand{\ExpTresCEWPatchMRLIlumBoaAUC}{89,6}
+\newcommand{\ExpTresCEWPatchMRLIlumBoaAUCDP}{1,6}
+\newcommand{\ExpTresCEWPatchMRLIlumBoaAUCMDP}{89,6\,$\pm$\,1,6}
+\newcommand{\ExpTresIntraMRLReflexoGrandeAcBal}{84,2}
+\newcommand{\ExpTresCEWPatchMRLReflexoGrandeAcBal}{65,7}
+\newcommand{\ExpTresCEWPatchMRLReflexoGrandeAcBalDP}{3,6}
+\newcommand{\ExpTresCEWPatchMRLReflexoGrandeAcBalMDP}{65,7\,$\pm$\,3,6}
+\newcommand{\ExpTresCEWPatchMRLReflexoGrandeAUC}{69,2}
+\newcommand{\ExpTresCEWPatchMRLReflexoGrandeAUCDP}{3,5}
+\newcommand{\ExpTresCEWPatchMRLReflexoGrandeAUCMDP}{69,2\,$\pm$\,3,5}
+\newcommand{\ExpTresIntraMRLSemReflexoAcBal}{95,5}
+\newcommand{\ExpTresCEWPatchMRLSemReflexoAcBal}{64,8}
+\newcommand{\ExpTresCEWPatchMRLSemReflexoAcBalDP}{3,4}
+\newcommand{\ExpTresCEWPatchMRLSemReflexoAcBalMDP}{64,8\,$\pm$\,3,4}
+\newcommand{\ExpTresCEWPatchMRLSemReflexoAUC}{86,9}
+\newcommand{\ExpTresCEWPatchMRLSemReflexoAUCDP}{3,5}
+\newcommand{\ExpTresCEWPatchMRLSemReflexoAUCMDP}{86,9\,$\pm$\,3,5}
+% --- ExpCincoB ---
+\newcommand{\ExpCincoBSemNormAUCJanelaB}{69,4}
+\newcommand{\ExpCincoBSemNormAUCJanelaBIC}{[64,8; 73,7]}
+\newcommand{\ExpCincoBSemNormAUCJanelaBComIC}{69,4 [64,8; 73,7]}
+\newcommand{\ExpCincoBSemNormAUCJanelaC}{67,2}
+\newcommand{\ExpCincoBSemNormAUCJanelaCIC}{[62,5; 71,6]}
+\newcommand{\ExpCincoBSemNormAUCJanelaCComIC}{67,2 [62,5; 71,6]}
+\newcommand{\ExpCincoBSemNormQuedaAUCJanela}{2,1}
+\newcommand{\ExpCincoBSemNormQuedaAUCJanelaIC}{[$-$1,2; 5,8]}
+\newcommand{\ExpCincoBSemNormQuedaAUCJanelaComIC}{2,1 [$-$1,2; 5,8]}
+\newcommand{\ExpCincoBAlertaSUmAUCJanelaC}{58,6}
+\newcommand{\ExpCincoBAlertaSUmAUCJanelaCIC}{[53,5; 63,3]}
+\newcommand{\ExpCincoBAlertaSUmAUCJanelaCComIC}{58,6 [53,5; 63,3]}
+\newcommand{\ExpCincoBControleAUCCincoDezB}{61,5}
+\newcommand{\ExpCincoBControleAUCCincoDezBIC}{[57,1; 65,8]}
+\newcommand{\ExpCincoBControleAUCCincoDezBComIC}{61,5 [57,1; 65,8]}
+\newcommand{\ExpCincoBControleAUCCincoDezC}{60,2}
+\newcommand{\ExpCincoBControleAUCCincoDezCIC}{[55,6; 64,8]}
+\newcommand{\ExpCincoBControleAUCCincoDezCComIC}{60,2 [55,6; 64,8]}
+\newcommand{\ExpCincoBControleQuedaCincoDez}{1,2}
+\newcommand{\ExpCincoBControleQuedaCincoDezIC}{[$-$3,0; 5,8]}
+\newcommand{\ExpCincoBControleQuedaCincoDezComIC}{1,2 [$-$3,0; 5,8]}
+\newcommand{\ExpCincoBControleQuedaZeroCinco}{11,5}
+\newcommand{\ExpCincoBControleQuedaZeroCincoIC}{[6,7; 16,2]}
+\newcommand{\ExpCincoBControleQuedaZeroCincoComIC}{11,5 [6,7; 16,2]}
+\newcommand{\ExpCincoBMedianaFechMaxSonolentoDMD}{0,97}
+\newcommand{\ExpCincoBMedianaPERCLOSSonolentoDMD}{0,208}
+\newcommand{\ExpCincoBAUCUnivBocejoDMD}{57,0}
+\newcommand{\ExpCincoBMedianaFechMaxSonolentoUTA}{0,17}
+\newcommand{\ExpCincoBMedianaPERCLOSSonolentoUTA}{0,040}
+\newcommand{\ExpCincoBAUCUnivBocejoUTA}{50,2}
+\newcommand{\ExpCincoBMotoristasOculos}{3}
+\newcommand{\ExpCincoBOculosFalhaFUm}{0,108}
+\newcommand{\ExpCincoBOculosFalhaQuedaEAR}{14,2}
+\newcommand{\ExpCincoBOculosFalhaAUCEAR}{92,8}
+\newcommand{\ExpCincoBSemOculosQuedaEARMin}{30,4}
+\newcommand{\ExpCincoBSemOculosQuedaEARMax}{55,6}
+\newcommand{\ExpCincoBQuedaAUCIntraSujeito}{11,2}
+\newcommand{\ExpCincoBQuedaAUCIntraSujeitoIC}{[6,8; 15,7]}
+\newcommand{\ExpCincoBQuedaAUCIntraSujeitoComIC}{11,2 [6,8; 15,7]}
+% --- ExpSeis ---
+\newcommand{\ExpSeisPERCLOSMicrossono}{2,9}
+\newcommand{\ExpSeisPERCLOSMicrossonoPNoventa}{19,5}
+\newcommand{\ExpSeisPERCLOSUTAAlerta}{1,4}
+\newcommand{\ExpSeisPERCLOSUTAAlertaPNoventa}{2,4}
+\newcommand{\ExpSeisPERCLOSDMDMovimento}{5,4}
+\newcommand{\ExpSeisPERCLOSDMDMovimentoPNoventa}{18,4}
+% --- MacPWA ---
+\newcommand{\MacPWALandmarkerPcinquenta}{9,6}
+\newcommand{\MacPWALandmarkerPnoventaecinco}{11,2}
+\newcommand{\MacPWACNNPcinquenta}{3,0}
+\newcommand{\MacPWACNNPnoventaecinco}{3,8}
+\newcommand{\MacPWALSTMPcinquenta}{0,2}
+\newcommand{\MacPWALSTMPnoventaecinco}{0,3}
+% --- App ---
+\newcommand{\AppKappaEARSozinho}{0,831}
+\newcommand{\AppDMDVermelhoEARSozinho}{26,1}
+\newcommand{\AppNavegadorSessoesDMD}{4}
+\newcommand{\AppNavegadorVideosNITYMED}{3}
+% --- ExpSeis ---
+\newcommand{\ExpSeisDisparoModeloDMDCalUTAAlerta}{1,7}
+\newcommand{\ExpSeisDisparoModeloDMDCalUTAAlertaIC}{[0,8; 2,8]}
+\newcommand{\ExpSeisDisparoModeloDMDCalUTAAlertaComIC}{1,7 [0,8; 2,8]}
+\newcommand{\ExpSeisDisparoModeloDMDCalUTASonolento}{11,0}
+\newcommand{\ExpSeisDisparoModeloDMDCalUTASonolentoIC}{[7,9; 15,1]}
+\newcommand{\ExpSeisDisparoModeloDMDCalUTASonolentoComIC}{11,0 [7,9; 15,1]}
+\newcommand{\ExpSeisDisparoModeloDMDCalDMDMovimento}{21,9}
+\newcommand{\ExpSeisDisparoModeloDMDCalDMDMovimentoIC}{[9,3; 40,7]}
+\newcommand{\ExpSeisDisparoModeloDMDCalDMDMovimentoComIC}{21,9 [9,3; 40,7]}
+\newcommand{\ExpSeisDisparoModeloDMDLRUTAAlerta}{2,3}
+\newcommand{\ExpSeisDisparoModeloDMDLRUTAAlertaIC}{[1,1; 3,9]}
+\newcommand{\ExpSeisDisparoModeloDMDLRUTAAlertaComIC}{2,3 [1,1; 3,9]}
+\newcommand{\ExpSeisDisparoModeloDMDLRUTASonolento}{18,5}
+\newcommand{\ExpSeisDisparoModeloDMDLRUTASonolentoIC}{[12,9; 24,9]}
+\newcommand{\ExpSeisDisparoModeloDMDLRUTASonolentoComIC}{18,5 [12,9; 24,9]}
+% --- ExpCincoB ---
+\newcommand{\ExpCincoBLRSemNormQuedaAUCJanela}{7,3}
+\newcommand{\ExpCincoBLRSemNormQuedaAUCJanelaIC}{[3,0; 11,7]}
+\newcommand{\ExpCincoBLRSemNormQuedaAUCJanelaComIC}{7,3 [3,0; 11,7]}
+\newcommand{\ExpCincoBSensVariantesICPositivo}{7}
+\newcommand{\ExpCincoBSensVariantesTotal}{8}
+\newcommand{\ExpCincoBSujeitosTreinoB}{48}
+\newcommand{\ExpCincoBRefAltAUCJanelaB}{68,4}
+\newcommand{\ExpCincoBRefAltAUCJanelaBIC}{[63,5; 72,8]}
+\newcommand{\ExpCincoBRefAltAUCJanelaBComIC}{68,4 [63,5; 72,8]}
+\newcommand{\ExpCincoBRefAltAUCJanelaC}{66,1}
+\newcommand{\ExpCincoBRefAltAUCJanelaCIC}{[61,4; 70,9]}
+\newcommand{\ExpCincoBRefAltAUCJanelaCComIC}{66,1 [61,4; 70,9]}
+\newcommand{\ExpCincoBRefAltQuedaAUCJanela}{2,3}
+\newcommand{\ExpCincoBRefAltQuedaAUCJanelaIC}{[$-$2,5; 6,8]}
+\newcommand{\ExpCincoBRefAltQuedaAUCJanelaComIC}{2,3 [$-$2,5; 6,8]}
+\newcommand{\ExpCincoBRefAltQuedaAUCVideo}{$-$2,3}
+\newcommand{\ExpCincoBRefAltQuedaAUCVideoIC}{[$-$9,1; 4,3]}
+\newcommand{\ExpCincoBRefAltQuedaAUCVideoComIC}{$-$2,3 [$-$9,1; 4,3]}
+\newcommand{\ExpCincoBBootDuploQuedaAUCJanela}{10,9}
+\newcommand{\ExpCincoBBootDuploQuedaAUCJanelaIC}{[5,7; 19,5]}
+\newcommand{\ExpCincoBBootDuploQuedaAUCJanelaComIC}{10,9 [5,7; 19,5]}
+\newcommand{\ExpCincoBTrezeAUCJanelaB}{78,6}
+\newcommand{\ExpCincoBTrezeAUCJanelaBIC}{[77,0; 80,3]}
+\newcommand{\ExpCincoBTrezeAUCJanelaBComIC}{78,6 [77,0; 80,3]}
+\newcommand{\ExpCincoBTrezeQuinhentasAUCJanelaB}{78,8}
+\newcommand{\ExpCincoBTrezeQuinhentasAUCJanelaBIC}{[76,6; 80,5]}
+\newcommand{\ExpCincoBTrezeQuinhentasAUCJanelaBComIC}{78,8 [76,6; 80,5]}
+\newcommand{\ExpCincoBVazamentoAcBal}{12,6}
+\newcommand{\ExpCincoBVazamentoAcBalSujeito}{74,2}
+\newcommand{\ExpCincoBVazamentoAcBalAleatoria}{86,8}
+\newcommand{\ExpCincoBVazamentoAUC}{13,9}
+\newcommand{\ExpCincoBVazamentoAUCSujeito}{80,1}
+\newcommand{\ExpCincoBVazamentoAUCAleatoria}{94,0}
+\newcommand{\ExpCincoBOpRegraSensCBruta}{15,3}
+\newcommand{\ExpCincoBOpRegraSensCCentrada}{16,4}
+\newcommand{\ExpCincoBOpRegraSensBCentrada}{24,2}
+\newcommand{\ExpCincoBTrezeQuedaAUCJanela}{9,3}
+\newcommand{\ExpCincoBLRRefAltAUCJanelaB}{73,7}
+\newcommand{\ExpCincoBLRRefAltAUCJanelaBIC}{[69,3; 78,0]}
+\newcommand{\ExpCincoBLRRefAltAUCJanelaBComIC}{73,7 [69,3; 78,0]}
+\newcommand{\ExpCincoBLRRefAltAUCJanelaC}{66,2}
+\newcommand{\ExpCincoBLRRefAltAUCJanelaCIC}{[60,3; 71,7]}
+\newcommand{\ExpCincoBLRRefAltAUCJanelaCComIC}{66,2 [60,3; 71,7]}
+\newcommand{\ExpCincoBLRRefAltQuedaAUCJanela}{7,6}
+\newcommand{\ExpCincoBLRRefAltQuedaAUCJanelaIC}{[3,0; 12,5]}
+\newcommand{\ExpCincoBLRRefAltQuedaAUCJanelaComIC}{7,6 [3,0; 12,5]}
+\newcommand{\ExpCincoBLRRefAltQuedaAUCVideo}{8,4}
+\newcommand{\ExpCincoBLRRefAltQuedaAUCVideoIC}{[3,4; 13,8]}
+\newcommand{\ExpCincoBLRRefAltQuedaAUCVideoComIC}{8,4 [3,4; 13,8]}
+\newcommand{\ExpCincoBLRBootDuploQuedaAUCJanela}{9,8}
+\newcommand{\ExpCincoBLRBootDuploQuedaAUCJanelaIC}{[1,9; 18,1]}
+\newcommand{\ExpCincoBLRBootDuploQuedaAUCJanelaComIC}{9,8 [1,9; 18,1]}
+\newcommand{\ExpCincoBLRTrezeAUCJanelaB}{71,5}
+\newcommand{\ExpCincoBLRTrezeAUCJanelaBIC}{[68,1; 73,2]}
+\newcommand{\ExpCincoBLRTrezeAUCJanelaBComIC}{71,5 [68,1; 73,2]}
+\newcommand{\ExpCincoBLRTrezeQuinhentasAUCJanelaB}{71,2}
+\newcommand{\ExpCincoBLRTrezeQuinhentasAUCJanelaBIC}{[67,8; 73,6]}
+\newcommand{\ExpCincoBLRTrezeQuinhentasAUCJanelaBComIC}{71,2 [67,8; 73,6]}
+\newcommand{\ExpCincoBLRVazamentoAcBal}{1,2}
+\newcommand{\ExpCincoBLRVazamentoAcBalSujeito}{72,0}
+\newcommand{\ExpCincoBLRVazamentoAcBalAleatoria}{73,1}
+\newcommand{\ExpCincoBLRVazamentoAUC}{2,1}
+\newcommand{\ExpCincoBLRVazamentoAUCSujeito}{74,4}
+\newcommand{\ExpCincoBLRVazamentoAUCAleatoria}{76,5}
+\newcommand{\ExpCincoBLROpRegraSensCBruta}{19,2}
+\newcommand{\ExpCincoBLROpRegraSensCCentrada}{24,7}
+\newcommand{\ExpCincoBLROpRegraSensBCentrada}{27,3}
+\newcommand{\ExpCincoBLRTrezeQuedaAUCJanela}{7,0}
+\newcommand{\ExpCincoBLRControleQuedaCincoDez}{4,6}
+\newcommand{\ExpCincoBLRControleQuedaCincoDezIC}{[$-$0,2; 9,7]}
+\newcommand{\ExpCincoBLRControleQuedaCincoDezComIC}{4,6 [$-$0,2; 9,7]}
+\newcommand{\ExpCincoBRefSDoisQuedaAUCJanela}{9,0}
+\newcommand{\ExpCincoBRefSDoisQuedaAUCJanelaIC}{[5,5; 13,2]}
+\newcommand{\ExpCincoBRefSDoisQuedaAUCJanelaComIC}{9,0 [5,5; 13,2]}
+\newcommand{\ExpCincoBSemNormQuedaAUCVideo}{0,2}
+\newcommand{\ExpCincoBSemNormQuedaAUCVideoIC}{[$-$5,6; 6,3]}
+\newcommand{\ExpCincoBSemNormQuedaAUCVideoComIC}{0,2 [$-$5,6; 6,3]}
+\newcommand{\ExpCincoBLRRefSDoisQuedaAUCJanela}{5,4}
+\newcommand{\ExpCincoBLRRefSDoisQuedaAUCJanelaIC}{[0,3; 10,9]}
+\newcommand{\ExpCincoBLRRefSDoisQuedaAUCJanelaComIC}{5,4 [0,3; 10,9]}
+\newcommand{\ExpCincoBLRSemNormQuedaAUCVideo}{1,2}
+\newcommand{\ExpCincoBLRSemNormQuedaAUCVideoIC}{[$-$5,4; 7,9]}
+\newcommand{\ExpCincoBLRSemNormQuedaAUCVideoComIC}{1,2 [$-$5,4; 7,9]}
+\newcommand{\ExpCincoBMedianaFechMaxAlertaDMD}{0,13}
+\newcommand{\ExpCincoBMedianaPERCLOSAlertaDMD}{0,037}
+\newcommand{\ExpCincoBMedianaFechMaxAlertaUTA}{0,07}
+\newcommand{\ExpCincoBMedianaPERCLOSAlertaUTA}{0,010}
+\newcommand{\ExpCincoBLRQuedaNormMin}{5,4}
+\newcommand{\ExpCincoBLRQuedaNormMax}{9,8}
+\newcommand{\ExpCincoBQuedaOutrasNormMin}{2,1}
+\newcommand{\ExpCincoBQuedaOutrasNormMax}{2,3}

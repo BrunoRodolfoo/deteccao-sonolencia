@@ -1,0 +1,592 @@
+% =====================================================================
+% refs.bib - Referencias verificadas para o artigo IEEE (TCC Equipe 14)
+% Verificacao feita em 20/09/2026 em fonte primaria (DOI / pagina do
+% editor / arXiv / pagina oficial do dataset), salvo onde indicado em
+% note={UNVERIFIED ...}. Comentarios em pt-BR.
+% Revisao critica (20/09/2026): todos os 32 DOIs conferidos no Crossref/DataCite
+% (titulo, autores, veiculo, ano, volume, paginas) e os 15 identificadores arXiv
+% conferidos na API do arXiv. Paginas faltantes adicionadas; shen2020, joshi2020,
+% fu2024 e petrellis2022 deixaram de ser UNVERIFIED. Restam UNVERIFIED: xu2025
+% (protocolo) e fl3d (ano/origem).
+% =====================================================================
+
+% ---------- Dataset principal e baseline (UTA-RLDD) ----------
+@inproceedings{ghoddoosian2019,
+  author    = {Reza Ghoddoosian and Marnim Galib and Vassilis Athitsos},
+  title     = {A Realistic Dataset and Baseline Temporal Model for Early Drowsiness Detection},
+  booktitle = {Proc. IEEE/CVF Conf. on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+  year      = {2019},
+  pages     = {178--187},
+  doi       = {10.1109/CVPRW.2019.00027},
+  note      = {arXiv:1904.07312. Dataset: \url{https://sites.google.com/view/utarldd/home}}
+}
+
+@inproceedings{chung2017,
+  author    = {Junyoung Chung and Sungjin Ahn and Yoshua Bengio},
+  title     = {Hierarchical Multiscale Recurrent Neural Networks},
+  booktitle = {Proc. 5th Int. Conf. on Learning Representations (ICLR)},
+  address   = {Toulon, France},
+  year      = {2017},
+  note      = {arXiv:1609.01704}
+}
+
+% ---------- NTHU-DDD (sonolencia atuada) e metodos avaliados nele ----------
+@inproceedings{weng2016,
+  author    = {Ching-Hua Weng and Ying-Hsiu Lai and Shang-Hong Lai},
+  title     = {Driver Drowsiness Detection via a Hierarchical Temporal Deep Belief Network},
+  booktitle = {Computer Vision -- ACCV 2016 Workshops, Revised Selected Papers, Part III},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10118},
+  publisher = {Springer},
+  year      = {2017},
+  pages     = {117--133},
+  doi       = {10.1007/978-3-319-54526-4_9}
+}
+% weng2016: workshop realizado em Taipei, nov. 2016; introduz o NTHU-DDD.
+
+@inproceedings{park2016,
+  author    = {Sanghyuk Park and Fei Pan and Sunghun Kang and Chang D. Yoo},
+  title     = {Driver Drowsiness Detection System Based on Feature Representation Learning Using Various Deep Networks},
+  booktitle = {Computer Vision -- ACCV 2016 Workshops, Revised Selected Papers, Part III},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10118},
+  publisher = {Springer},
+  year      = {2017},
+  pages     = {154--164},
+  doi       = {10.1007/978-3-319-54526-4_12}
+}
+
+@inproceedings{shih2016,
+  author    = {Tun-Huai Shih and Chiou-Ting Hsu},
+  title     = {{MSTN}: Multistage Spatial-Temporal Network for Driver Drowsiness Detection},
+  booktitle = {Computer Vision -- ACCV 2016 Workshops, Revised Selected Papers, Part III},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10118},
+  publisher = {Springer},
+  year      = {2017},
+  pages     = {146--153},
+  doi       = {10.1007/978-3-319-54526-4_11}
+}
+
+@inproceedings{huynh2016,
+  author    = {Xuan-Phung Huynh and Sang-Min Park and Yong-Guk Kim},
+  title     = {Detection of Driver Drowsiness Using {3D} Deep Neural Network and Semi-Supervised Gradient Boosting Machine},
+  booktitle = {Computer Vision -- ACCV 2016 Workshops, Revised Selected Papers, Part III},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10118},
+  publisher = {Springer},
+  year      = {2017},
+  pages     = {134--145},
+  doi       = {10.1007/978-3-319-54526-4_10}
+}
+
+@article{yu2019,
+  author    = {Jongmin Yu and Sangwoo Park and Sangwook Lee and Moongu Jeon},
+  title     = {Driver Drowsiness Detection Using Condition-Adaptive Representation Learning Framework},
+  journal   = {IEEE Transactions on Intelligent Transportation Systems},
+  volume    = {20},
+  number    = {11},
+  pages     = {4206--4218},
+  year      = {2019},
+  doi       = {10.1109/TITS.2018.2883823},
+  note      = {Vers\~{a}o de autor: arXiv:1910.09722}
+}
+
+@misc{lyu2018,
+  author    = {Jie Lyu and Zejian Yuan and Dapeng Chen},
+  title     = {Long-term Multi-granularity Deep Framework for Driver Drowsiness Detection},
+  howpublished = {arXiv:1801.02325},
+  year      = {2018}
+}
+
+% Verificacao 20/09/2026: o titulo do preprint arXiv usa ``Multi-Feature''; veiculo (RICAI 2020, ACM) confirmado via Crossref.
+@inproceedings{shen2020,
+  author    = {Qi Shen and Shengjie Zhao and Rongqing Zhang and Bin Zhang},
+  title     = {Robust Two-Stream Multi-Features Network for Driver Drowsiness Detection},
+  booktitle = {Proc. 2nd Int. Conf. on Robotics, Intelligent Control and Artificial Intelligence (RICAI 2020)},
+  publisher = {ACM},
+  address   = {Shanghai, China},
+  year      = {2020},
+  pages     = {271--277},
+  doi       = {10.1145/3438872.3439093},
+  note      = {Preprint: arXiv:2010.06235}
+}
+
+% ---------- Percepcao ocular: datasets de estado do olho e uso cruzado ----------
+@inproceedings{fusek2018,
+  author    = {Radovan Fusek},
+  title     = {Pupil Localization Using Geodesic Distance},
+  booktitle = {Advances in Visual Computing -- 13th Int. Symp. on Visual Computing (ISVC 2018)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {11241},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2018},
+  pages     = {433--444},
+  doi       = {10.1007/978-3-030-03801-4_38},
+  note      = {Artigo de refer\^{e}ncia do MRL Eye Dataset (\url{http://mrl.cs.vsb.cz/eyedataset})}
+}
+
+@article{song2014,
+  author    = {Fengyi Song and Xiaoyang Tan and Xue Liu and Songcan Chen},
+  title     = {Eyes closeness detection from still images with multi-scale histograms of principal oriented gradients},
+  journal   = {Pattern Recognition},
+  volume    = {47},
+  number    = {9},
+  pages     = {2825--2838},
+  year      = {2014},
+  doi       = {10.1016/j.patcog.2014.03.024},
+  note      = {Artigo de refer\^{e}ncia do dataset Closed Eyes In The Wild (CEW)}
+}
+
+@inproceedings{rahman2020,
+  author    = {Md Moklesur Rahman and Md. Shafiqul Islam and Mir Kanon Ara Jannat and Md. Hafizur Rahman and Md. Arifuzzaman and Roberto Sassi and Md. Aktaruzzaman},
+  title     = {{EyeNet}: An Improved Eye States Classification System using Convolutional Neural Network},
+  booktitle = {Proc. 22nd Int. Conf. on Advanced Communication Technology (ICACT)},
+  year      = {2020},
+  pages     = {84--90},
+  doi       = {10.23919/ICACT48636.2020.9061472}
+}
+
+@misc{florez2026,
+  author    = {Ruben Dario Florez-Zela},
+  title     = {Beyond aggregate scores: Deployment-aware and non-compensatory benchmarking of vision-based eye-state recognition models for driver monitoring},
+  howpublished = {Preprint, arXiv:2606.08123v2},
+  year      = {2026}
+}
+% florez2026: preprint (v2, 13 ago. 2026), Universidad Nacional de San Agustin de Arequipa.
+
+% Sem DOI. Define o Eye Aspect Ratio (EAR).
+@inproceedings{soukupova2016,
+  author    = {Tereza Soukupov\'{a} and Jan \v{C}ech},
+  title     = {Real-Time Eye Blink Detection using Facial Landmarks},
+  booktitle = {Proc. 21st Computer Vision Winter Workshop (CVWW)},
+  editor    = {Luka \v{C}ehovin and Rok Mandeljc and Vitomir \v{S}truc},
+  address   = {Rimske Toplice, Slovenia},
+  month     = {fev.},
+  year      = {2016},
+  note      = {{PDF} oficial: \url{https://cmp.felk.cvut.cz/ftp/articles/cech/Soukupova-CVWW-2016.pdf}}
+}
+
+@inproceedings{kazemi2014,
+  author    = {Vahid Kazemi and Josephine Sullivan},
+  title     = {One Millisecond Face Alignment with an Ensemble of Regression Trees},
+  booktitle = {Proc. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2014},
+  pages     = {1867--1874},
+  doi       = {10.1109/CVPR.2014.241}
+}
+
+% ---------- Medidas fisiologicas/comportamentais classicas ----------
+% Origem do PERCLOS.
+@techreport{wierwille1994,
+  author    = {Walter W. Wierwille and Steven S. Wreggit and C. L. Kirn and L. A. Ellsworth and R. J. Fairbanks},
+  title     = {Research on Vehicle-Based Driver Status/Performance Monitoring: Development, Validation, and Refinement of Algorithms for Detection of Driver Drowsiness. {Final Report}},
+  institution = {National Highway Traffic Safety Administration (NHTSA)},
+  number    = {DOT HS 808 247},
+  address   = {Washington, DC},
+  month     = {dez.},
+  year      = {1994},
+  note      = {247 p. Tamb\'{e}m VPISU ISE 94-04. Registro TRID 00712943 (\url{https://trid.trb.org/view/448128})}
+}
+
+@techreport{dinges1998,
+  author    = {David F. Dinges and Richard Grace},
+  title     = {{PERCLOS}: A Valid Psychophysiological Measure of Alertness as Assessed by Psychomotor Vigilance},
+  institution = {Federal Highway Administration, Office of Motor Carriers},
+  number    = {FHWA-MCRT-98-006},
+  month     = {out.},
+  year      = {1998},
+  doi       = {10.21949/1502740},
+  note      = {{Tech Brief}}
+}
+% dinges1998: \url{https://rosap.ntl.bts.gov/view/dot/113}. O registro ROSAP lista apenas o autor corporativo (FMCSA Technology Division); a atribuicao a Dinges e Grace segue a citacao corrente na literatura.
+
+@article{akerstedt1990,
+  author    = {Torbj\"{o}rn {\AA}kerstedt and Mats Gillberg},
+  title     = {Subjective and Objective Sleepiness in the Active Individual},
+  journal   = {International Journal of Neuroscience},
+  volume    = {52},
+  number    = {1--2},
+  pages     = {29--37},
+  year      = {1990},
+  doi       = {10.3109/00207459008994241},
+  note      = {{K}arolinska Sleepiness Scale (KSS)}
+}
+
+% ---------- Revisoes ----------
+@article{sikander2019,
+  author    = {Gulbadan Sikander and Shahzad Anwar},
+  title     = {Driver Fatigue Detection Systems: A Review},
+  journal   = {IEEE Transactions on Intelligent Transportation Systems},
+  volume    = {20},
+  number    = {6},
+  pages     = {2339--2352},
+  year      = {2019},
+  doi       = {10.1109/TITS.2018.2868499}
+}
+
+@article{albadawi2022,
+  author    = {Yaman Albadawi and Maen Takruri and Mohammed Awad},
+  title     = {A Review of Recent Developments in Driver Drowsiness Detection Systems},
+  journal   = {Sensors},
+  volume    = {22},
+  number    = {5},
+  pages     = {2069},
+  year      = {2022},
+  doi       = {10.3390/s22052069}
+}
+
+@inproceedings{ngxande2017,
+  author    = {Mkhuseli Ngxande and Jules-Raymond Tapamo and Michael Burke},
+  title     = {Driver drowsiness detection using behavioral measures and machine learning techniques: A review of state-of-art techniques},
+  booktitle = {Proc. Pattern Recognition Association of South Africa and Robotics and Mechatronics (PRASA-RobMech)},
+  year      = {2017},
+  pages     = {156--161},
+  doi       = {10.1109/RoboMech.2017.8261140}
+}
+
+@article{fu2024,
+  author    = {Biying Fu and Fadi Boutros and Chin-Teng Lin and Naser Damer},
+  title     = {A Survey on Drowsiness Detection: Modern Applications and Methods},
+  journal   = {IEEE Transactions on Intelligent Vehicles},
+  volume    = {9},
+  number    = {11},
+  pages     = {7279--7300},
+  year      = {2024},
+  doi       = {10.1109/TIV.2024.3395889},
+  note      = {Versao de autor: arXiv:2408.12990}
+}
+
+% ---------- Evidencias de avaliacao subject-independent / cross-dataset ----------
+@article{massoz2018,
+  author    = {Quentin Massoz and Jacques G. Verly and Marc {Van Droogenbroeck}},
+  title     = {Multi-Timescale Drowsiness Characterization Based on a Video of a Driver's Face},
+  journal   = {Sensors},
+  volume    = {18},
+  number    = {9},
+  pages     = {2801},
+  year      = {2018},
+  doi       = {10.3390/s18092801}
+}
+
+@article{bakker2022,
+  author    = {Bram Bakker and Bartosz Zab{\l}ocki and Angela Baker and Vanessa Riethmeister and Bernd Marx and Girish Iyer and Anna Anund and Christer Ahlstr\"{o}m},
+  title     = {A Multi-Stage, Multi-Feature Machine Learning Approach to Detect Driver Sleepiness in Naturalistic Road Driving Conditions},
+  journal   = {IEEE Transactions on Intelligent Transportation Systems},
+  volume    = {23},
+  number    = {5},
+  pages     = {4791--4800},
+  year      = {2022},
+  doi       = {10.1109/TITS.2021.3090272}
+}
+
+@inproceedings{cui2021,
+  author    = {Jian Cui and Zirui Lan and Tianhu Zheng and Yisi Liu and Olga Sourina and Lipo Wang and Wolfgang M\"{u}ller-Wittig},
+  title     = {Subject-Independent Drowsiness Recognition from Single-Channel {EEG} with an Interpretable {CNN-LSTM} Model},
+  booktitle = {Proc. Int. Conf. on Cyberworlds (CW)},
+  year      = {2021},
+  pages     = {201--208},
+  doi       = {10.1109/CW52790.2021.00041},
+  note      = {arXiv:2112.10894}
+}
+
+@inproceedings{joshi2020,
+  author    = {Ajjen Joshi and Survi Kyal and Sandipan Banerjee and Taniya Mishra},
+  title     = {In-the-wild Drowsiness Detection from Facial Expressions},
+  booktitle = {Proc. IEEE Intelligent Vehicles Symposium (IV)},
+  year      = {2020},
+  pages     = {207--212},
+  doi       = {10.1109/IV47402.2020.9304579},
+  note      = {HSIM Workshop. arXiv:2010.11162}
+}
+% joshi2020: DOI e paginas confirmados via Crossref em 20/09/2026.
+
+@article{xu2025,
+  author    = {Chang-Biao Xu and Wenhao Huang and Jiao Liu and Lang Li},
+  title     = {Detecting Driver Drowsiness Using Hybrid Facial Features and Ensemble Learning},
+  journal   = {Information},
+  volume    = {16},
+  number    = {4},
+  pages     = {294},
+  year      = {2025},
+  doi       = {10.3390/info16040294},
+  note      = {VA=86,52\% no UTA-RLDD confirmado no resumo oficial (Crossref/OpenAlex). UNVERIFIED: protocolo de particao (por sujeito ou nao) nao conferido no texto integral (acesso ao MDPI bloqueado).}
+}
+
+% ---------- Sonolencia em smartphone / embarcado (latencia reportada) ----------
+@article{wijnands2020,
+  author    = {Jasper S. Wijnands and Jason Thompson and Kerry A. Nice and Gideon D. P. A. Aschwanden and Mark Stevenson},
+  title     = {Real-time monitoring of driver drowsiness on mobile platforms using {3D} neural networks},
+  journal   = {Neural Computing and Applications},
+  volume    = {32},
+  number    = {13},
+  pages     = {9731--9743},
+  year      = {2020},
+  doi       = {10.1007/s00521-019-04506-0},
+  note      = {arXiv:1910.06540}
+}
+
+@article{jabbar2018,
+  author    = {Rateb Jabbar and Khalifa Al-Khalifa and Mohamed Kharbeche and Wael Alhajyaseen and Mohsen Jafari and Shan Jiang},
+  title     = {Real-time Driver Drowsiness Detection for {Android} Application Using Deep Neural Networks Techniques},
+  journal   = {Procedia Computer Science},
+  volume    = {130},
+  pages     = {400--407},
+  year      = {2018},
+  doi       = {10.1016/j.procs.2018.04.060},
+  note      = {{ANT} 2018. arXiv:1811.01627}
+}
+
+@article{dasgupta2019,
+  author    = {Anirban Dasgupta and Daleef Rahman and Aurobinda Routray},
+  title     = {A Smartphone-Based Drowsiness Detection and Warning System for Automotive Drivers},
+  journal   = {IEEE Transactions on Intelligent Transportation Systems},
+  volume    = {20},
+  number    = {11},
+  pages     = {4045--4054},
+  year      = {2019},
+  doi       = {10.1109/TITS.2018.2879609}
+}
+
+@inproceedings{galarza2018,
+  author    = {Eddie E. Galarza and Fabricio D. Egas and Franklin M. Silva and Paola M. Velasco and Eddie D. Galarza},
+  title     = {Real Time Driver Drowsiness Detection Based on Driver's Face Image Behavior Using a System of Human Computer Interaction Implemented in a Smartphone},
+  booktitle = {Proc. Int. Conf. on Information Technology \& Systems (ICITS 2018)},
+  series    = {Advances in Intelligent Systems and Computing},
+  volume    = {721},
+  publisher = {Springer},
+  year      = {2018},
+  pages     = {563--572},
+  doi       = {10.1007/978-3-319-73450-7_53}
+}
+
+@article{rajkumarsingh2021,
+  author    = {B. Rajkumarsingh and D. Totah},
+  title     = {Drowsiness Detection using Android Application and Mobile Vision Face {API}},
+  journal   = {R\&D Journal},
+  volume    = {37},
+  pages     = {26--34},
+  year      = {2021},
+  doi       = {10.17159/2309-8988/2021/v37a4}
+}
+
+@inproceedings{reddy2017,
+  author    = {Bhargava Reddy and Ye-Hoon Kim and Sojung Yun and Chanwon Seo and Junik Jang},
+  title     = {Real-Time Driver Drowsiness Detection for Embedded System Using Model Compression of Deep Neural Networks},
+  booktitle = {Proc. IEEE Conf. on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+  year      = {2017},
+  pages     = {438--445},
+  doi       = {10.1109/CVPRW.2017.59}
+}
+
+% ---------- Ferramentas moveis: MediaPipe, MobileNet, quantizacao ----------
+@misc{lugaresi2019,
+  author    = {Camillo Lugaresi and Jiuqiang Tang and Hadon Nash and Chris McClanahan and Esha Uboweja and Michael Hays and Fan Zhang and Chuo-Ling Chang and Ming Guang Yong and Juhyun Lee and Wan-Teh Chang and Wei Hua and Manfred Georg and Matthias Grundmann},
+  title     = {{MediaPipe}: A Framework for Building Perception Pipelines},
+  howpublished = {arXiv:1906.08172},
+  year      = {2019}
+}
+
+@misc{kartynnik2019,
+  author    = {Yury Kartynnik and Artsiom Ablavatski and Ivan Grishchenko and Matthias Grundmann},
+  title     = {Real-time Facial Surface Geometry from Monocular Video on Mobile {GPUs}},
+  howpublished = {arXiv:1907.06724},
+  year      = {2019},
+  note      = {{CVPR} Workshop on Computer Vision for Augmented and Virtual Reality}
+}
+% kartynnik2019: Face Mesh de 468 vertices usado pelo MediaPipe.
+
+@misc{bazarevsky2019,
+  author    = {Valentin Bazarevsky and Yury Kartynnik and Andrey Vakunov and Karthik Raveendran and Matthias Grundmann},
+  title     = {{BlazeFace}: Sub-millisecond Neural Face Detection on Mobile {GPUs}},
+  howpublished = {arXiv:1907.05047},
+  year      = {2019},
+  note      = {CVPR Workshop on Computer Vision for Augmented and Virtual Reality, 2019}
+}
+
+@inproceedings{howard2019,
+  author    = {Andrew Howard and Mark Sandler and Grace Chu and Liang-Chieh Chen and Bo Chen and Mingxing Tan and Weijun Wang and Yukun Zhu and Ruoming Pang and Vijay Vasudevan and Quoc V. Le and Hartwig Adam},
+  title     = {Searching for {MobileNetV3}},
+  booktitle = {Proc. IEEE/CVF Int. Conf. on Computer Vision (ICCV)},
+  year      = {2019},
+  pages     = {1314--1324},
+  doi       = {10.1109/ICCV.2019.00140}
+}
+
+@inproceedings{jacob2018,
+  author    = {Benoit Jacob and Skirmantas Kligys and Bo Chen and Menglong Zhu and Matthew Tang and Andrew Howard and Hartwig Adam and Dmitry Kalenichenko},
+  title     = {Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference},
+  booktitle = {Proc. IEEE/CVF Conf. on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2018},
+  pages     = {2704--2713},
+  doi       = {10.1109/CVPR.2018.00286}
+}
+
+@misc{krishnamoorthi2018,
+  author    = {Raghuraman Krishnamoorthi},
+  title     = {Quantizing deep convolutional networks for efficient inference: A whitepaper},
+  howpublished = {arXiv:1806.08342},
+  year      = {2018}
+}
+
+% ---------- Outros datasets de sonolencia ----------
+@inproceedings{massoz2016,
+  author    = {Quentin Massoz and Thomas Langohr and Cl\'{e}mentine Fran\c{c}ois and Jacques G. Verly},
+  title     = {The {ULg} multimodality drowsiness database (called {DROZY}) and examples of use},
+  booktitle = {Proc. IEEE Winter Conf. on Applications of Computer Vision (WACV)},
+  year      = {2016},
+  pages     = {1--7},
+  doi       = {10.1109/WACV.2016.7477715}
+}
+
+@inproceedings{abtahi2014,
+  author    = {Shabnam Abtahi and Mona Omidyeganeh and Shervin Shirmohammadi and Behnoosh Hariri},
+  title     = {{YawDD}: a yawning detection dataset},
+  booktitle = {Proc. 5th ACM Multimedia Systems Conf. (MMSys)},
+  address   = {Singapore},
+  year      = {2014},
+  pages     = {24--28},
+  doi       = {10.1145/2557642.2563678},
+  note      = {Dataset no IEEE DataPort: doi:10.21227/e1qm-hb90}
+}
+
+@inproceedings{ortega2020,
+  author    = {Juan Diego Ortega and Neslihan Kose and Paola {Ca\~{n}as} and Min-An Chao and Alexander Unnervik and Marcos Nieto and Oihana Otaegui and Luis Salgado},
+  title     = {{DMD}: A Large-Scale Multi-modal Driver Monitoring Dataset for Attention and Alertness Analysis},
+  booktitle = {Computer Vision -- ECCV 2020 Workshops},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {12538},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2020},
+  pages     = {387--405},
+  doi       = {10.1007/978-3-030-66823-5_23},
+  note      = {\url{https://dmd.vicomtech.org/}}
+}
+
+@misc{petrellis2022,
+  author    = {Nikos Petrellis and Nikolaos Voros and Christos Antonopoulos and Georgios Keramidas and Panagiotis Christakos and Panagiotis Mousouliotis},
+  title     = {{NITYMED}: Night Time Yawning-Microsleep-Eyeblink-driver Distraction dataset},
+  howpublished = {IEEE DataPort, doi:10.21227/85xe-3f88},
+  year      = {2022},
+  doi       = {10.21227/85xe-3f88}
+}
+% petrellis2022: autores e ano conforme o registro DataCite do DOI (conferido em 20/09/2026); ficha do DataPort: 130 videos, 21 motoristas, 25 fps.
+
+@misc{fl3d,
+  author    = {{matjazmuc (Kaggle)}},
+  title     = {Frame Level Driver Drowsiness Detection ({FL3D})},
+  howpublished = {Kaggle dataset, \url{https://www.kaggle.com/datasets/matjazmuc/frame-level-driver-drowsiness-detection-fl3d}},
+  year      = {2023},
+  note      = {Pagina protegida por reCAPTCHA para clientes automatizados. Resumo indexado (20/09/2026): autor Matjaz Muc; 53.379 arquivos JSON, 628 MB; classes alerta/microssono/bocejo. UNVERIFIED: ano de publicacao e origem dos videos nao confirmados.}
+}
+
+@misc{nthuddd,
+  author    = {{NTHU Computer Vision Lab}},
+  title     = {Driver Drowsiness Detection Dataset},
+  howpublished = {\url{http://cv.cs.nthu.edu.tw/php/callforpaper/datasets/DDD/}},
+  year      = {2016},
+  note      = {Acesso mediante Dataset License Agreement enviado por e-mail. A pagina exige citar Weng, Lai e Lai (ACCV 2016 Workshops).}
+}
+
+% ---------- Fontes brasileiras ----------
+@misc{abramet2026,
+  author    = {Paula Laboissi\`{e}re},
+  title     = {Transtornos de sa\'{u}de causaram 28\% dos sinistros em rodovias do pa\'{i}s},
+  howpublished = {Ag\^{e}ncia Brasil. \url{https://agenciabrasil.ebc.com.br/saude/noticia/2026-05/transtornos-de-saude-causaram-28-dos-sinistros-em-rodovias-do-pais}},
+  month     = {maio},
+  year      = {2026},
+  note      = {Publicado em 12/05/2026; levantamento da ABRAMET sobre dados da PRF de 2014 a 2024. Acesso em 20/09/2026.}
+}
+
+% A URL responde 401 a clientes automatizados; numeros conferidos em reproducoes integrais (ABTLP; Portal do Transito, 26/05/2026). Abrir no navegador antes da entrega e atualizar a data de acesso.
+@misc{prf2026,
+  author    = {{Pol\'{i}cia Rodovi\'{a}ria Federal}},
+  title     = {{PRF} divulga anu\'{a}rio estat\'{i}stico de 2025, com aumento de infra\c{c}\~{o}es e redu\c{c}\~{a}o de mortes nas rodovias federais},
+  howpublished = {\url{https://www.gov.br/prf/pt-br/noticias/nacionais/2026/maio/prf-divulga-anuario-estatistico-de-2025-com-aumento-de-infracoes-e-reducao-de-mortes-nas-rodovias-federais}},
+  month     = {maio},
+  year      = {2026},
+  note      = {{B}ras\'{i}lia. Acesso em 20/09/2026.}
+}
+
+% ---------- NITYMED: citacao exigida pelos autores (acrescentado em 27/09/2026, Exp. 6) ----------
+% Pagina do Kaggle (nikospetrellis/nitymed): "The data set is free to be used provided that one or
+% more of the following papers are cited" -- tres artigos de 2021 e o DOI do Kaggle. Metadados
+% abaixo conferidos em 27/09/2026 na API do Crossref (artigos) e do DataCite (dataset); nada
+% UNVERIFIED. A copia usada no TCC e a do Kaggle (126 videos HDTV720, licenca CC BY-ND 4.0);
+% petrellis2022 (acima) e o registro no IEEE DataPort. Citar um dataset E pelo menos um artigo.
+% Opcao nao incluida: ESSE 2021 (ACM), pp. 51--57, doi 10.1145/3501774.3501782 (tambem conferida).
+@inproceedings{petrellis2021dsd,
+  author    = {Nikos Petrellis and Stavros Zogas and Panagiotis Christakos and Georgios Keramidas and Panagiotis Mousouliotis and Nikolaos Voros and Christos Antonopoulos},
+  title     = {High Speed Implementation of the Deformable Shape Tracking Face Alignment Algorithm},
+  booktitle = {Proc. 24th Euromicro Conf. on Digital System Design (DSD)},
+  publisher = {IEEE},
+  address   = {Palermo, Italy},
+  month     = {set.},
+  year      = {2021},
+  pages     = {174--177},
+  doi       = {10.1109/DSD53832.2021.00035}
+}
+% petrellis2021dsd: citacao exigida para uso do NITYMED; conferido no Crossref em 27/09/2026.
+
+@inproceedings{petrellis2021vlsisoc,
+  author    = {Nikos Petrellis and Panagiotis Christakos and Stavros Zogas and Panagiotis Mousouliotis and Georgios Keramidas and Nikolaos Voros and Christos Antonopoulos},
+  title     = {Challenges Towards Hardware Acceleration of the Deformable Shape Tracking Application},
+  booktitle = {Proc. IFIP/IEEE 29th Int. Conf. on Very Large Scale Integration (VLSI-SoC)},
+  publisher = {IEEE},
+  address   = {Singapore},
+  month     = {out.},
+  year      = {2021},
+  pages     = {1--4},
+  doi       = {10.1109/VLSI-SoC53125.2021.9606999}
+}
+% petrellis2021vlsisoc: alternativa aceita pelos autores do NITYMED; conferido no Crossref em 27/09/2026 (evento de 4 a 7/10/2021; a lista do Kaggle diz 4--8/10).
+
+@misc{petrellis2022kaggle,
+  author    = {Nikos Petrellis and Nikolaos Voros and Christos Antonopoulos and Georgios Keramidas and Panagiotis Christakos and Panagiotis Mousouliotis},
+  title     = {{NITYMED}},
+  howpublished = {Kaggle (dataset), \url{https://www.kaggle.com/datasets/nikospetrellis/nitymed}},
+  year      = {2022},
+  doi       = {10.34740/KAGGLE/DSV/3921886},
+  note      = {Vers\~{a}o 1, 09/07/2022, licen\c{c}a CC BY-ND 4.0}
+}
+% petrellis2022kaggle: copia usada no TCC (126 videos HDTV720); registro conferido no DataCite em 27/09/2026.
+
+% Revisão final (26/10/2026): revisão de literatura e avaliações entre bases de vídeo (metadados do Crossref).
+@article{perkins2023,
+  author    = {Emma Perkins and Chiranjibi Sitaula and Michael Burke and Faezeh Marzbanrad},
+  title     = {Challenges of Driver Drowsiness Prediction: The Remaining Steps to Implementation},
+  journal   = {IEEE Transactions on Intelligent Vehicles},
+  volume    = {8},
+  number    = {2},
+  pages     = {1319--1338},
+  year      = {2023},
+  doi       = {10.1109/TIV.2022.3224690},
+  note      = {arXiv:2109.08355}
+}
+
+@article{xie2026,
+  author    = {Wantong Xie and Peng Xiao},
+  title     = {Confidence-driven adaptive time window for real-time driver fatigue detection in {Level} 2-3 autonomous vehicles: a multi-dataset validation study},
+  journal   = {Frontiers in Neurorobotics},
+  volume    = {20},
+  pages     = {1857548},
+  year      = {2026},
+  doi       = {10.3389/fnbot.2026.1857548}
+}
+
+@inproceedings{pradeep2026,
+  author    = {Abhijith Pradeep and Wael AlSaafin},
+  title     = {Baseline vs Exploratory Deep Learning Video Models for Driver Drowsiness Detection: A Multi-Dataset Evaluation},
+  booktitle = {Proc. 6th Int. Conf. on Electrical, Computer and Energy Technologies (ICECET)},
+  publisher = {IEEE},
+  year      = {2026},
+  pages     = {1--5},
+  doi       = {10.1109/ICECET65726.2026.11632568}
+}
+
+% Controle do estilo IEEEtran: autores repetidos aparecem por extenso (sem o traço longo).
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+  CTLdash_repeated_names = "no"
+}

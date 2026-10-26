@@ -1,0 +1,357 @@
+% =====================================================================
+% Artigo IEEE (conference, 2 colunas), Equipe 14, PUCPR.
+% Compilar: tectonic artigo.tex   (roda o BibTeX e reexecuta sozinho)
+% Todo número de resultado vem de numeros.tex (gerado de results/ por
+% src/experiments/make_paper_numbers.py; não edite números à mão).
+% =====================================================================
+\documentclass[conference]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[nocompress]{cite}
+\usepackage{xurl}
+\usepackage[colorlinks=true,allcolors=black]{hyperref}
+\hypersetup{pdftitle={Detecção de Sonolência em Dispositivos Móveis: Avaliação da Generalização entre Sonolência Atuada e Real},
+  pdfauthor={André Luís Oliveira Ferreira da Silva, Bruno Rodolfo da Silveira, Bruno Sandoval Ribeiro, Paulo Henrique Perin},
+  pdfkeywords={detecção de sonolência, sonolência atuada, sonolência real, generalização entre bases, UTA-RLDD, DMD},
+  pdflang={pt-BR}}
+
+\input{numeros}
+% Reserva para os macros do Galaxy S23 Ultra e do motor da versão 2.x: só aparecem quando há medida;
+% se algum estágio faltar no benchmark, aparece n/a em vez de um erro de compilação.
+\providecommand{\CelularSamsungExecucoes}{n/a}\providecommand{\CelularSamsungVersaoApp}{n/a}
+\providecommand{\CelularSamsungSistema}{n/a}\providecommand{\CelularSamsungNavegador}{n/a}
+\providecommand{\CelularSamsungLandmarkerPcinquenta}{n/a}\providecommand{\CelularSamsungLandmarkerPnoventaecinco}{n/a}
+\providecommand{\CelularSamsungCNNPcinquenta}{n/a}\providecommand{\CelularSamsungCNNPnoventaecinco}{n/a}
+\providecommand{\CelularSamsungLSTMPcinquenta}{n/a}\providecommand{\CelularSamsungLSTMPnoventaecinco}{n/a}
+\providecommand{\CelularSamsungMotorPcinquenta}{n/a}\providecommand{\CelularSamsungMotorPnoventaecinco}{n/a}
+\providecommand{\CelularSamsungTotalPcinquenta}{n/a}\providecommand{\CelularSamsungTotalPnoventaecinco}{n/a}
+\providecommand{\CelularSamsungTotalPcinquentaMin}{n/a}\providecommand{\CelularSamsungTotalPcinquentaMax}{n/a}
+\providecommand{\CelularIPhoneMotorPcinquenta}{n/a}\providecommand{\CelularIPhoneMotorPnoventaecinco}{n/a}
+
+\graphicspath{{figures/}}
+\renewcommand{\IEEEkeywordsname}{Palavras-chave}
+
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{5pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{1pt}
+
+\title{Detecção de Sonolência em Dispositivos Móveis: Avaliação da Generalização entre Sonolência Atuada e Real}
+
+\author{\IEEEauthorblockN{André Luís Oliveira Ferreira da Silva, Bruno Rodolfo da Silveira,\\
+Bruno Sandoval Ribeiro e Paulo Henrique Perin}
+\IEEEauthorblockA{Bacharelado em Ciência da Computação\\
+Pontifícia Universidade Católica do Paraná (PUCPR), Curitiba, Brasil\\
+\{s.ferreira67, rodolfo.bruno, bruno.ribeiro, paulo.perin\}@pucpr.edu.br}}
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol}
+\maketitle
+
+\begin{abstract}
+Detectores de sonolência por vídeo passam de 90\% de acurácia em bases \emph{atuadas}, em que voluntários encenam a sonolência, mas na UTA-RLDD, base de sonolência \emph{real}, o modelo de base fica entre 54\% e 65\% em três classes. Este trabalho mede quanto do que se aprende com sonolência atuada vale para a real, com o mesmo extrator de sinais faciais nas duas bases, partição por sujeito e execução no celular. Treinados no DMD, de sonolência atuada, e testados na UTA-RLDD, os modelos ficam abaixo dos treinados na própria UTA-RLDD. Por janela, a regressão logística perde de \ExpCincoBLRQuedaNormMin{} a \ExpCincoBLRQuedaNormMax{} pontos de AUC (área sob a curva ROC) em todas as formas testadas de normalizar os dados de cada pessoa; o Random Forest perde \ExpCincoBQuedaAUCJanela{} pontos na forma principal, mas a diferença deixa de ser detectável com outra referência na UTA-RLDD. O modelo do DMD reconhece só \ExpCincoBCSensJanela\% das janelas sonolentas reais, cujos fechamentos de olho são bem mais curtos que os encenados. Misturar trechos do mesmo vídeo no treino e no teste infla a acurácia em até \ExpDoisRFInflacaoJanelaBSA{} pontos percentuais. À noite, o sinal do olho piora, mas o carro em movimento, de dia, já o reduz a um nível que não se distingue do noturno. O protótipo, uma aplicação web para celular, usa regras explicáveis sobre olhos, bocejo e cabeça e, na versão \CelularIPhoneVersaoApp, processou cada quadro em \CelularIPhoneTotalPcinquenta\,ms num iPhone~17~Pro\ifSamsungMedido{} e em \CelularSamsungTotalPcinquenta\,ms num Galaxy S23 Ultra\fi.
+\end{abstract}
+
+\begin{IEEEkeywords}
+detecção de sonolência, sonolência atuada, sonolência real, generalização entre bases, vazamento entre treino e teste, UTA-RLDD, DMD, smartphone
+\end{IEEEkeywords}
+
+% =====================================================================
+\section{Introdução}
+\label{sec:intro}
+
+A sonolência ao volante é um problema de saúde pública no Brasil. Um levantamento da Associação Brasileira de Medicina de Tráfego (ABRAMET) sobre registros da Polícia Rodoviária Federal (PRF) associa 27,8\% dos 4,34 milhões de ocorrências em rodovias federais de 2014 a 2024 a condições de saúde do condutor, categoria que inclui o sono, mas também falta de atenção, mal súbito e uso de substâncias~\cite{abramet2026}. No anuário da PRF de 2025, a ``reação tardia ou ineficiente do condutor'', causa compatível com a sonolência, aparece em 10.799 sinistros~\cite{prf2026}.
+
+Há também uma lacuna de método. A maior parte dos detectores por vídeo é treinada e avaliada com sonolência \emph{atuada}, em que voluntários encenam os sinais, e só 15 dos 126 estudos revisados por Perkins et al.~\cite{perkins2023} usam dados de estrada. Na base atuada mais usada, o NTHU-DDD~\cite{weng2016}, as acurácias publicadas vão de 73\%~\cite{park2016} a valores entre 90\% e 94\%~\cite{lyu2018,shen2020}. Na UTA-RLDD, base de sonolência \emph{real}, o modelo de base acerta 54\% das sequências de piscadas e 65,2\% dos vídeos, e pessoas que assistiram aos vídeos acertaram 57,8\%~\cite{ghoddoosian2019}. Os autores da UTA-RLDD deixam em aberto se vídeos de sonolência atuada servem de treino para detectar a real~\cite{ghoddoosian2019}. A diferença mistura o tipo de sonolência, o protocolo, já que trechos da mesma pessoa no treino e no teste deixam o modelo reconhecer a pessoa em vez do estado~\cite{perkins2023}, e a tarefa, que na UTA-RLDD tem três classes, uma delas intermediária. Há ainda a distância entre o computador em que os modelos são avaliados e o celular em que seriam úteis.
+
+A pergunta central é: \emph{quanto do desempenho obtido com sonolência atuada se mantém em sonolência real, com partição por sujeito e execução no celular?} Dela saem três perguntas de pesquisa. \textbf{PP1}: quanto se perde ao treinar com sonolência atuada e testar com sonolência real, em relação a treinar na própria base real, e quanto o vazamento entre treino e teste infla os números? \textbf{PP2}: qual o custo de executar o \emph{pipeline} num celular, em tamanho, perda por quantização e tempo por quadro? \textbf{PP3}: a degradação é uniforme ou se concentra em condições de captura, como óculos, pouca luz, reflexos, noite e carro em movimento?
+
+As contribuições são:
+\begin{enumerate}
+\item a medida da transferência da sonolência atuada para a real (DMD$\rightarrow$UTA-RLDD) com o mesmo extrator nas duas bases, um modelo de comparação treinado na base real, intervalos de confiança (IC) por sujeito e controles que mostram quando a queda depende da normalização por sujeito;
+\item a medida do vazamento entre treino e teste com dados e modelos fixos, a reprodução do protocolo oficial da UTA-RLDD e a validação do nosso extrator contra as características oficiais;
+\item a comparação do sinal do olho com o carro parado e em movimento, no mesmo motorista e com a mesma câmera, contrastada com vídeos noturnos, além da análise do estado ocular por óculos, iluminação e reflexos;
+\item um protótipo de celular baseado em sinais interpretáveis (olhos, bocejo e cabeça), avaliado contra a anotação do DMD, com o tempo por quadro medido \ifSamsungMedido em dois celulares\else num celular\fi{} (versão \CelularIPhoneVersaoApp{} do app). Código, \emph{logs} e resultados estão no repositório do projeto\footnote{\url{https://github.com/BrunoRodolfoo/deteccao-sonolencia}}.
+\end{enumerate}
+
+% =====================================================================
+\section{Trabalhos Relacionados}
+\label{sec:rel}
+
+\textbf{Sinais visuais.} O PERCLOS, fração do tempo com os olhos pelo menos 80\% fechados, vem de um estudo em simulador feito para a NHTSA~\cite{wierwille1994} e mede fechamentos lentos, não piscadas~\cite{dinges1998}. Soukupová e \v{C}ech~\cite{soukupova2016} definiram o \emph{Eye Aspect Ratio} (EAR) com seis pontos por olho. Ghoddoosian et al.~\cite{ghoddoosian2019} criaram a UTA-RLDD, descreveram cada piscada por quatro características e as modelaram com uma LSTM hierárquica multiescala (HM-LSTM). Entre as bases atuadas estão o NTHU-DDD~\cite{weng2016} e o DMD~\cite{ortega2020}.
+
+\textbf{Protocolos e generalização.} Perkins et al.~\cite{perkins2023} apontam que muitos estudos põem trechos da mesma pessoa no treino e no teste e que os estudos comportamentais costumam pedir aos voluntários que encenem a sonolência. Bakker et al.~\cite{bakker2022}, em direção real, obtêm 92\% com um módulo personalizado por motorista e 72\% sem ele, e Massoz et al.~\cite{massoz2018} mostram que o resultado depende da janela (70,68\% com 5\,s e 94,22\% com 60\,s). No NTHU-DDD, Wijnands et al.~\cite{wijnands2020} relatam 73,9\% com sujeitos separados. Entre bases de vídeo, Xie e Xiao~\cite{xie2026} cruzam NTHU-DDD, YawDD, UTA-RLDD e DROZY e relatam queda média de 12,8 pontos percentuais (pp), e Pradeep e AlSaafin~\cite{pradeep2026} medem a perda da UTA-RLDD para o DROZY. No estado ocular, Rahman et al.~\cite{rahman2020} vão de cerca de 99\% na mesma base a 90,94\% do MRL para o CEW e 67,34\% do CEW para o ZJU, e Florez-Zela~\cite{florez2026}, num \emph{preprint}, relata queda do Macro-F1 de valores entre 0,96 e 0,98 no MRL para valores entre 0,21 e 0,78 no RT-BENE, sem retreino. Nenhum desses trabalhos organiza a comparação entre sonolência atuada e real com as mesmas características nas duas bases, IC pareado por sujeito e controles para a referência da normalização.
+
+\textbf{Celulares.} Wijnands et al.~\cite{wijnands2020} executam uma rede 3D num Galaxy S7 em 1,1\,s por inferência de 10 quadros, Jabbar et al.~\cite{jabbar2018} comprimem um classificador sobre pontos faciais em até 100\,KB e Dasgupta et al.~\cite{dasgupta2019} combinam PERCLOS, voz e toque. O MediaPipe~\cite{lugaresi2019,kartynnik2019} entrega a malha facial em tempo real no celular, e a quantização pós-treino em 8 bits costuma ficar a menos de 2\,pp da versão em ponto flutuante~\cite{krishnamoorthi2018}.
+
+% =====================================================================
+\section{Bases de Dados}
+\label{sec:bases}
+
+A Tabela~\ref{tab:bases} resume as bases e o papel de cada uma.
+
+\begin{table}[t]
+\centering
+\caption{Bases de dados e papel de cada uma (horas medidas nos arquivos processados).}
+\label{tab:bases}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.2cm}@{}}
+\toprule
+\textbf{Base} & \textbf{O que usamos} & \textbf{Papel} \\
+\midrule
+UTA-RLDD~\cite{ghoddoosian2019} & sonolência real; \BaseUTASujeitos{} sujeitos, \BaseUTAVideos{} vídeos (\BaseUTAHoras\,h); rótulo KSS do vídeo & teste real (Exp.~1, 2, 5a, 5b e 6) \\
+DMD~\cite{ortega2020} & sonolência atuada e direção; \BaseDMDSujeitosTodos{} motoristas, \BaseDMDSessoes{} sessões (\BaseDMDHoras\,h); eventos anotados por quadro & treino atuado (Exp.~5b); movimento (Exp.~6) \\
+NITYMED~\cite{petrellis2022,petrellis2022kaggle,petrellis2021dsd} & noite, carro em movimento; \BaseNITYMEDVideos{} vídeos (\BaseNITYMEDHoras\,h), sem classe alerta & condição noite (Exp.~6) \\
+MRL Eye~\cite{fusek2018} & \BaseMRLImagens{} imagens de olho de \BaseMRLSujeitos{} sujeitos, em infravermelho & estado do olho (Exp.~3) \\
+CEW~\cite{song2014} & \BaseCEWImagens{} recortes de olho de fotos comuns & estado do olho (Exp.~3) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Por que o DMD.} Não usamos o NTHU-DDD porque o termo de licença exige a assinatura de uma chefia institucional. Usamos o DMD, que é RGB como a UTA-RLDD; em contrapartida, só \BaseDMDSujeitos{} motoristas encenam sonolência (\ExpCincoBMotoristasOculos{} de óculos) e não há óculos escuros.
+
+\textbf{DMD.} Na sessão de sonolência (s5), o carro está parado e os comportamentos são encenados; a anotação traz o estado do olho, as piscadas e os bocejos. A classe alerta vem dos trechos de direção segura da sessão s2 dos mesmos motoristas, também com o carro parado; a s1 é de direção com o carro em movimento, e a s3 serve de referência da normalização. Os trechos de direção segura duram de \SinaisSafeDriveMin{} a \SinaisSafeDriveMax\,s, o que definiu a janela de 10\,s.
+
+\textbf{NITYMED e UTA-RLDD.} A página do NITYMED não diz se bocejos e microssonos foram espontâneos, e três bocejos por vídeo sugerem instrução; por isso essa base serve só à condição noite, nunca como evidência de sonolência real. Na UTA-RLDD, os rótulos vêm da escala de sonolência de Karolinska (KSS)~\cite{akerstedt1990}, de 1 a 9: alerta (1 a 3), pouca vigilância (6 e 7) e sonolento (8 e 9), codificados como 0, 5 e 10. Os arquivos oficiais de características cobrem \BaseUTASujeitosOficiais{} dos \BaseUTASujeitos{} sujeitos. Nenhum quadro com rosto aparece neste artigo, por causa das licenças (DMD: CC BY-NC-ND 4.0; NITYMED: CC BY-ND 4.0) e da autorização parcial de imagem da UTA-RLDD.
+
+% =====================================================================
+\section{Método}
+\label{sec:met}
+
+A Fig.~\ref{fig:pipeline} resume as duas cadeias do trabalho.
+
+\begin{figure}[t]
+\centering
+\includegraphics{fig_pipeline.pdf}
+\caption{Cadeias de processamento. (a) Avaliação \emph{offline} dos Exp.~5b e 6, com o mesmo extrator (Face Mesh do MediaPipe) e as mesmas características nas três bases; a centragem por sujeito só é usada no Exp.~5b, e o Exp.~6 usa as características brutas. (b) Protótipo no celular (PWA \AppVersao): olhos, bocejo e cabeça somam pontos num nível de 0 a 100, que dispara o alarme a partir de 70.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{Sinais, piscadas e características}
+Usamos o Face Mesh do MediaPipe~\cite{kartynnik2019,lugaresi2019}, na versão 0.10.21, que fornece 468 pontos do rosto por quadro. Deles calculamos o EAR~\cite{soukupova2016}, que soma as duas alturas do olho e divide o total pelo dobro da largura, com a média dos dois olhos; a abertura da boca dividida pela largura (MAR); e a pose da cabeça. O olho conta como fechado quando o EAR fica abaixo de 0,75 vezes a mediana do EAR na referência do sujeito (Seção~\ref{sec:rotulos}), e daí saem as piscadas e os fechamentos de 0,5\,s ou mais. Contra a anotação quadro a quadro das \SinaisDetectorSessoes{} sessões s5 do DMD, esse detector tem F1 de piscadas de \SinaisDetectorFUmPiscadas{} e, por quadro, $\kappa$ de Cohen de \SinaisDetectorKappaQuadro{} (médias por sessão); o fator 0,75 foi fixado antes dessa validação.
+
+Nos Exp.~1, 2 e 5a, cada piscada é descrita pelas quatro características de~\cite{ghoddoosian2019}: duração, amplitude, velocidade de abertura e frequência acumulada. Normalizadas por \emph{z-score} do sujeito, elas formam sequências de 30 piscadas com passo 2, de modo que sequências vizinhas dividem 28 piscadas. Nos Exp.~5b e 6, a unidade é a janela de 10\,s com passo de 5\,s, descrita por 11 características que não dependem da taxa de quadros: PERCLOS, taxa de piscadas, duração média da piscada, maior fechamento, número de fechamentos de 0,5\,s ou mais, média e desvio do EAR, amplitude e velocidade médias das piscadas, fração do tempo em bocejo (MAR acima de 0,5 por 1\,s ou mais) e fração de quadros com rosto. A nota de um vídeo é a média das notas das suas janelas.
+
+\subsection{Rótulos, normalização e modelos}
+\label{sec:rotulos}
+No DMD, uma janela é sonolenta se pertence à s5 e contém um fechamento anotado de 0,5\,s ou mais ou um bocejo, e é alerta se está inteira num trecho de direção segura da s2. As janelas da s5 sem evento anotado ficam de fora, porque são ambíguas. Na UTA-RLDD, o rótulo é o do vídeo, e o esquema principal, B3, compara alerta (KSS de 1 a 3) com sonolento (KSS 8 e 9), como no DMD. Cada característica é centrada por sujeito: subtraímos a média de uma referência separada, que nunca entra na avaliação. Ela é a direção segura da s3 no DMD e o último terço do vídeo alerta na UTA-RLDD, como no código original. O \emph{z-score} completo não é estimável em boa parte dos sujeitos do DMD, que têm poucas janelas de referência. Os classificadores são um Random Forest (RF) com 300 árvores e uma regressão logística (RL) com padronização, ambos com classes balanceadas, valores ausentes preenchidos pela mediana do treino e hiperparâmetros fixados antes. No Exp.~1, o RF usa 24 estatísticas de cada sequência, seis por característica, e uma LSTM de 32 unidades usa a sequência bruta. O estágio ocular usa uma CNN compacta própria, a EyeNet (diferente da homônima de~\cite{rahman2020}), com \ExpTresParametros{} parâmetros e recortes de 48$\times$48 em tons de cinza, exportada em TFLite fp32 e int8.
+
+\subsection{Protótipo móvel}
+\label{sec:app}
+O protótipo é uma aplicação web progressiva (PWA, versão \AppVersao) que roda no navegador do celular, sem enviar vídeo. O Face Landmarker do MediaPipe fornece 478 pontos, 52 \emph{blendshapes} e a pose da cabeça, e três sinais visíveis são calibrados em 10\,s com a pessoa olhando para a frente:
+\begin{itemize}
+\item \textbf{olhos}: fechados quando os dois \emph{eyeBlink} ficam altos ou quando o EAR cai abaixo de 0,75 do valor da calibração, com regras de exclusão para olhar para baixo, olhos apertados e olhar lateral. Fechamentos de 0,5 a 1\,s somam pontos, e olhos fechados por 1\,s ou mais (microssono) levam ao vermelho imediatamente. O PERCLOS de 60\,s conta só fechamentos de 0,5\,s ou mais;
+\item \textbf{bocejo}: \emph{jawOpen} ou MAR acima do repouso por 1,5\,s ou mais;
+\item \textbf{cabeça}: queda (cabeça 18$^\circ$ abaixo do repouso por 0,8\,s) ou cabeceio, sempre \emph{com os olhos fechados}. Cabeça baixa com os olhos abertos conta como distração e não soma pontos.
+\end{itemize}
+Os eventos somam pontos que decaem com o tempo num nível de 0 a 100. O estado passa a amarelo em 40 e a vermelho em 70, com histerese, e o vermelho toca uma sirene. Os pontos de um único sinal não chegam a 70; o microssono e a cabeça caída com os olhos fechados levam direto ao vermelho. A LSTM do Exp.~1 soma no máximo 10 pontos, e a CNN do Exp.~3 só é exibida. Os pesos do nível são escolhas de projeto documentadas, não ajustadas em sonolência real, mas a regra dos olhos e os ajustes finais foram escolhidos nos dados da validação (Seção~\ref{sec:valapp}). A versão 1.0, substituída, alarmava por olho fechado, por um PERCLOS que contava piscadas ou pela LSTM sozinha.
+
+% =====================================================================
+\section{Protocolo Experimental}
+\label{sec:prot}
+
+A PP1 é respondida pelo Exp.~5b, com três cenários: A, DMD$\rightarrow$DMD, deixando um sujeito de fora; B, UTA$\rightarrow$UTA, nos 5 \emph{folds} oficiais; e C, DMD$\rightarrow$UTA. A queda da PP1 é B$-$C. Os Exp.~1 (reprodução do protocolo oficial), 2 (vazamento) e 5a (troca de extrator) apoiam a PP1; o Exp.~4 responde à PP2; e os Exp.~3 (estado ocular) e 6 (noite e movimento), à PP3. A área sob a curva ROC (AUC, $\times$100) mede a ordenação sem depender de limiar; a acurácia balanceada usa o limiar 0,5, fixado antes, e um limiar calibrado só com o treino. Os intervalos de confiança de 95\% (IC\,95\%) vêm de \emph{bootstrap} percentil sobre sujeitos (1.000 reamostragens), pareado na queda B$-$C; numa análise adicional, os motoristas do DMD também são reamostrados, e C é treinado de novo a cada reamostragem. O Exp.~5a usa também permutação pareada por sujeito. No Exp.~6, a relação sinal-ruído (SNR) do EAR é a amplitude das piscadas dividida pelo ruído quadro a quadro, medido como o desvio robusto em torno de uma mediana móvel de 1\,s; a taxa de disparo é a fração de janelas marcadas como sonolentas e, como o NITYMED não tem classe alerta, não é acurácia. A semente é 42 em todos os experimentos, e as partições aleatórias usam 42, 43 e 44. Cada número de resultado sai dos arquivos CSV do repositório por um \emph{script} que registra arquivo, coluna e filtro, e um segundo \emph{script} recalcula todos eles a partir desses arquivos.
+
+% =====================================================================
+\section{Resultados}
+\label{sec:res}
+
+\subsection{PP1: da sonolência atuada para a real (Exp.~5b)}
+\label{sec:respp1}
+A Fig.~\ref{fig:exp5b} resume o experimento central. Na AUC por janela, o RF obtém \ExpCincoBAUCJanelaAComIC{} no DMD (A) e \ExpCincoBAUCJanelaBComIC{} na UTA-RLDD quando treinado nela (B). Treinado só no DMD e aplicado à UTA-RLDD (C), fica em \ExpCincoBAUCJanelaCComIC, acima do acaso. A queda B$-$C é de \ExpCincoBQuedaAUCJanelaComIC{} pontos de AUC por janela e de \ExpCincoBQuedaAUCVideoComIC{} por vídeo (B: \ExpCincoBAUCVideoB; C: \ExpCincoBAUCVideoC). A RL repete o padrão, com queda de \ExpCincoBLRQuedaAUCJanelaComIC{} por janela e de \ExpCincoBLRQuedaAUCVideoComIC{} por vídeo.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_exp5b_transferencia.pdf}
+\caption{Exp.~5b: AUC e acurácia por janela e por vídeo nos cenários A (DMD$\rightarrow$DMD), B (UTA$\rightarrow$UTA) e C (DMD$\rightarrow$UTA), com IC\,95\% por \emph{bootstrap} de sujeitos; esquema B3 na UTA-RLDD (\BaseUTASujeitos{} sujeitos, 5 \emph{folds} oficiais) e \BaseDMDSujeitos{} motoristas no DMD. Marcador cheio: limiar 0,5; vazado: limiar calibrado só no treino. A linha tracejada marca o acaso; o DMD (A) não tem nível de vídeo.}
+\label{fig:exp5b}
+\end{figure}
+
+O modelo do DMD erra sobretudo ao chamar de alerta a sonolência real. No limiar 0,5, ele reconhece \ExpCincoBCEspecJanela\% das janelas alertas e só \ExpCincoBCSensJanela\% das sonolentas, e o limiar calibrado no DMD (\ExpCincoBLimiarCal) agrava o desequilíbrio (\ExpCincoBCSensJanelaCal\% das sonolentas e \ExpCincoBCEspecJanelaCal\% das alertas). As características brutas ajudam a entender o erro. Do alerta ao sonolento, a mediana do maior fechamento vai de \ExpCincoBMedianaFechMaxAlertaDMD{} a \ExpCincoBMedianaFechMaxSonolentoDMD\,s no DMD e de \ExpCincoBMedianaFechMaxAlertaUTA{} a \ExpCincoBMedianaFechMaxSonolentoUTA\,s na UTA-RLDD, e a do PERCLOS vai de \ExpCincoBMedianaPERCLOSAlertaDMD{} a \ExpCincoBMedianaPERCLOSSonolentoDMD{} e de \ExpCincoBMedianaPERCLOSAlertaUTA{} a \ExpCincoBMedianaPERCLOSSonolentoUTA. A sonolência atuada aparece bem mais intensa que a real, em parte por construção, já que as janelas sonolentas do DMD são as que contêm um evento anotado e as da UTA-RLDD são todas as do vídeo sonolento.
+
+\begin{table}[t]
+\centering
+\caption{Exp.~5b: queda B$-$C da AUC (pontos), com IC\,95\%, sob controles da normalização e do treino; por janela, salvo onde indicado. Na configuração principal, a referência da UTA-RLDD é o último terço do vídeo alerta e a do DMD é a s3. Na última linha, mediana de 20 sorteios, sem IC.}
+\label{tab:controles}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}X cc@{}}
+\toprule
+\textbf{Variação} & \textbf{RF} & \textbf{RL} \\
+\midrule
+Principal & \ExpCincoBQuedaAUCJanelaComIC & \ExpCincoBLRQuedaAUCJanelaComIC \\
+IC com os motoristas do DMD reamostrados & \ExpCincoBBootDuploQuedaAUCJanelaIC & \ExpCincoBLRBootDuploQuedaAUCJanelaIC \\
+UTA-RLDD: referência no vídeo de pouca vigilância & \ExpCincoBRefAltQuedaAUCJanelaComIC & \ExpCincoBLRRefAltQuedaAUCJanelaComIC \\
+DMD: referência na s2 & \ExpCincoBRefSDoisQuedaAUCJanelaComIC & \ExpCincoBLRRefSDoisQuedaAUCJanelaComIC \\
+Sem centragem & \ExpCincoBSemNormQuedaAUCJanelaComIC & \ExpCincoBLRSemNormQuedaAUCJanelaComIC \\
+Sem centragem, por vídeo & \ExpCincoBSemNormQuedaAUCVideoComIC & \ExpCincoBLRSemNormQuedaAUCVideoComIC \\
+Contraste KSS 8 e 9 $\times$ 6 e 7 & \ExpCincoBControleQuedaCincoDezComIC & \ExpCincoBLRControleQuedaCincoDezComIC \\
+B treinado com 13 sujeitos & \ExpCincoBTrezeQuedaAUCJanela & \ExpCincoBLRTrezeQuedaAUCJanela \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A Tabela~\ref{tab:controles} mostra quanto da queda resiste aos controles. Na UTA-RLDD, as janelas alertas saem do mesmo vídeo usado como referência da normalização, e o RF treinado nela aproveita essa semelhança. Quando a referência vem do vídeo de pouca vigilância (KSS 6 e 7), que não entra na avaliação, ou quando não há centragem, a AUC de B no RF cai de \ExpCincoBAUCJanelaB{} para \ExpCincoBRefAltAUCJanelaB{} e \ExpCincoBSemNormAUCJanelaB, e a queda deixa de ser detectável; nessa variante, o limiar de EAR do detector continua o do vídeo alerta. Entre dois vídeos que não são a referência, a queda não é detectável em nenhum dos dois modelos, e por vídeo, sem centragem, também não. Na RL, a queda por janela fica entre \ExpCincoBLRQuedaNormMin{} e \ExpCincoBLRQuedaNormMax{} pontos nas quatro normalizações testadas, sempre com IC acima de zero. O volume do treino explica pouco: com 13 sujeitos da UTA-RLDD por \emph{fold}, como no DMD, a queda continua clara nos dois modelos. Reamostrar também os motoristas do DMD alarga o IC da queda principal, que fica acima de zero. Usar como alerta do DMD a direção com o carro em movimento (s1) piora a transferência (AUC de C de \ExpCincoBAUCJanelaC{} para \ExpCincoBAlertaSUmAUCJanelaC). Nas variações de janela (5 e 15\,s), de alerta e de referência no DMD e na exclusão do motorista em que o detector falhou, o IC da queda do RF fica acima de zero; contando a principal e a sem centragem, são \ExpCincoBSensVariantesICPositivo{} de \ExpCincoBSensVariantesTotal{} variantes.
+
+\subsection{Protocolo, reprodução e extrator (Exp.~1, 2 e 5a)}
+A Tabela~\ref{tab:exp12} reúne os números de referência. No protocolo oficial, o RF sobre 24 estatísticas das piscadas empata com a HM-LSTM na acurácia por sequência (BSA, do inglês \emph{blink sequence accuracy}) e fica \ExpUmDifHMLSTMRFVA\,pp abaixo na acurácia por vídeo (VA), no nível do julgamento humano. Sem a classe intermediária (B3), chega à acurácia balanceada de \ExpUmRFBTresAcBal\% (acaso: 50\%), com a mesma estrutura de referência discutida acima. Repartir as mesmas sequências por janela, com janelas do mesmo vídeo nos dois lados, infla a BSA em \ExpDoisRFInflacaoJanelaBSA\,pp no RF e \ExpDoisLSTMInflacaoJanelaBSA\,pp na LSTM; como sequências vizinhas dividem 28 das 30 piscadas, o teste vê quase as mesmas sequências do treino. A partição por vídeo, em que o treino tem os outros vídeos do mesmo sujeito com rótulos diferentes, fica \emph{abaixo} da partição por sujeito (\ExpDoisRFInflacaoVideoBSA\,pp); uma explicação provável, que não isolamos, é que o modelo associa o padrão de piscadas da pessoa a rótulos que não são os do vídeo de teste. Nesta base, o que infla a acurácia é o mesmo vídeo, e com ele o mesmo rótulo, aparecer nos dois lados. No cenário do Exp.~5b, com janelas de 10\,s e duas classes, a partição aleatória de janelas infla a acurácia balanceada em \ExpCincoBVazamentoAcBal\,pp no RF e em só \ExpCincoBLRVazamentoAcBal\,pp na RL: o vazamento pesa nos modelos flexíveis, capazes de memorizar janelas vizinhas.
+
+\begin{table}[t]
+\centering
+\caption{Exp.~1 e 2, três classes (\%): 5 \emph{folds} oficiais (média $\pm$ dp) e as mesmas sequências sob três partições. BSA: acurácia por sequência de 30 piscadas; VA: por vídeo; n/a: não se aplica. Referências de~\cite{ghoddoosian2019}.}
+\label{tab:exp12}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{Modelo} & \textbf{Partição} & \textbf{BSA} & \textbf{VA} \\
+\midrule
+RF (24 estatísticas) & 5 \emph{folds} oficiais & \ExpUmRFBSAMDP & \ExpUmRFVAMDP \\
+LSTM (30$\times$4) & 5 \emph{folds} oficiais & \ExpUmLSTMBSAMDP & \ExpUmLSTMVAMDP \\
+HM-LSTM~\cite{ghoddoosian2019} & 5 \emph{folds} oficiais & \ExpUmHMLSTMBSA & \ExpUmHMLSTMVA \\
+Humanos~\cite{ghoddoosian2019} & n/a & n/a & \ExpUmHumanosVA \\
+Classe majoritária & n/a & \ExpUmChanceBSA & \ExpUmChanceVA \\
+\midrule
+RF & por janela & \ExpDoisRFJanelaBSA & n/a \\
+RF & por vídeo & \ExpDoisRFVideoBSA & \ExpDoisRFVideoVA \\
+RF & por sujeito & \ExpDoisRFSujeitoBSA & \ExpDoisRFSujeitoVA \\
+LSTM & por janela & \ExpDoisLSTMJanelaBSA & n/a \\
+LSTM & por sujeito & \ExpDoisLSTMSujeitoBSA & \ExpDoisLSTMSujeitoVA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Trocar o extrator dos autores (dlib) pelo nosso (MediaPipe), com o RF treinado nas características oficiais, custa \ExpCincoACustoAcBalDifComIC\,pp de acurácia balanceada em três classes (\emph{p}\,=\,\ExpCincoACustoAcBalP; \ExpCincoASujeitos{} sujeitos, \ExpCincoAVideos{} vídeos), custo que não se distingue de zero. Com cada extrator no próprio treino e teste, o nosso separa melhor alerta de sonolento nos 5 \emph{folds} (oficial menos nosso em B3: \ExpCincoAMesmoBTresAcBalDifComIC\,pp; \emph{p}\,=\,\ExpCincoAMesmoBTresAcBalP), mas essa vantagem não se distingue de zero quando se deixa um sujeito de fora por vez (\ExpCincoAMesmoLOSOBTresAcBalDifComIC\,pp). Não há, portanto, perda detectável ao trocar de extrator, embora o IC largo não prove equivalência; com essa ressalva, usamos o nosso nas duas pontas do Exp.~5b.
+
+\subsection{PP2: custo no celular (Exp.~4)}
+\label{sec:respp2}
+A Tabela~\ref{tab:exp4} reúne as medidas. A CNN do olho cai de \ExpQuatroCNNFloatKB{} para \ExpQuatroCNNIntKB\,KB em int8, com perda de no máximo \ExpQuatroQuedaQuantizacaoMax\,pp, e a LSTM exportada concorda com o modelo original em Keras em \ExpUmLSTMConcordancia\% das sequências. No iPhone~17~Pro (\CelularIPhoneSistema, \CelularIPhoneNavegador, Face Landmarker na \CelularIPhoneDelegate), \CelularIPhoneExecucoes{} execuções de 60\,s da versão \CelularIPhoneVersaoApp{} do app somaram \CelularIPhoneQuadros{} quadros, \CelularIPhoneTaxaRosto\% deles com rosto, e o tempo total por quadro (p50) ficou entre \CelularIPhoneTotalPcinquentaMin{} e \CelularIPhoneTotalPcinquentaMax\,ms nas execuções, dominado pelo Face Landmarker.\ifSamsungMedido{} No Galaxy S23 Ultra (\CelularSamsungSistema, \CelularSamsungNavegador), \CelularSamsungExecucoes{} execuções da versão \CelularSamsungVersaoApp{} ficaram entre \CelularSamsungTotalPcinquentaMin{} e \CelularSamsungTotalPcinquentaMax\,ms por quadro.\fi{} O iPhone registra os tempos em milissegundos inteiros, o que limita a precisão dos estágios mais rápidos. Numa execução da versão 1.0, com um dos autores acordado diante da câmera, a lógica antiga acusou PERCLOS de \CelularVUmFalsoAlarmePERCLOS\% e manteve o alarme ligado em \CelularVUmFalsoAlarmeFracao\% dos quadros; esse falso alarme motivou a reescrita descrita na Seção~\ref{sec:app}.
+
+\begin{table}[t]
+\centering
+\caption{Exp.~4. (a) Modelos e quantização. (b) Tempo por quadro na PWA (versão \CelularIPhoneVersaoApp{} do app), em ms: mediana, entre as execuções de 60\,s, do p50 e do p95 de cada execução.}
+\label{tab:exp4}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lr@{}}
+\multicolumn{2}{@{}l}{\textbf{(a) Modelos}}\\
+\toprule
+CNN do olho: fp32 $\rightarrow$ int8 (KB) & \ExpQuatroCNNFloatKB{} $\rightarrow$ \ExpQuatroCNNIntKB \\
+Maior perda de acurácia com int8 (pp) & \ExpQuatroQuedaQuantizacaoMax \\
+LSTM: parâmetros / tamanho (KB) & \ExpUmLSTMParametros{} / \ExpUmLSTMKB \\
+\bottomrule
+\end{tabular}
+
+\vspace{3pt}
+\ifSamsungMedido
+\begin{tabular}{@{}lcc@{}}
+\multicolumn{3}{@{}l}{\textbf{(b) \emph{Pipeline} completo, CNN int8 (p50 / p95)}}\\
+\toprule
+\textbf{Estágio} & \textbf{iPhone 17 Pro} & \textbf{Galaxy S23 Ultra} \\
+\midrule
+Face Landmarker & \CelularIPhoneLandmarkerPcinquenta{} / \CelularIPhoneLandmarkerPnoventaecinco & \CelularSamsungLandmarkerPcinquenta{} / \CelularSamsungLandmarkerPnoventaecinco \\
+CNN, 2 olhos & \CelularIPhoneCNNPcinquenta{} / \CelularIPhoneCNNPnoventaecinco & \CelularSamsungCNNPcinquenta{} / \CelularSamsungCNNPnoventaecinco \\
+LSTM & \CelularIPhoneLSTMPcinquenta{} / \CelularIPhoneLSTMPnoventaecinco & \CelularSamsungLSTMPcinquenta{} / \CelularSamsungLSTMPnoventaecinco \\
+Motor de sinais & \CelularIPhoneMotorPcinquenta{} / \CelularIPhoneMotorPnoventaecinco & \CelularSamsungMotorPcinquenta{} / \CelularSamsungMotorPnoventaecinco \\
+Total por quadro & \CelularIPhoneTotalPcinquenta{} / \CelularIPhoneTotalPnoventaecinco & \CelularSamsungTotalPcinquenta{} / \CelularSamsungTotalPnoventaecinco \\
+\bottomrule
+\end{tabular}
+\else
+\begin{tabular}{@{}lc@{}}
+\multicolumn{2}{@{}l}{\textbf{(b) \emph{Pipeline} completo, CNN int8 (p50 / p95)}}\\
+\toprule
+\textbf{Estágio} & \textbf{iPhone 17 Pro} \\
+\midrule
+Face Landmarker & \CelularIPhoneLandmarkerPcinquenta{} / \CelularIPhoneLandmarkerPnoventaecinco \\
+CNN, 2 olhos & \CelularIPhoneCNNPcinquenta{} / \CelularIPhoneCNNPnoventaecinco \\
+LSTM & \CelularIPhoneLSTMPcinquenta{} / \CelularIPhoneLSTMPnoventaecinco \\
+Total por quadro & \CelularIPhoneTotalPcinquenta{} / \CelularIPhoneTotalPnoventaecinco \\
+\bottomrule
+\end{tabular}
+\fi
+\end{table}
+
+\subsection{PP3: condições de captura (Exp.~3 e 6)}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_exp6_noite.pdf}
+\caption{Exp.~6, com características brutas, pois o NITYMED não tem trecho alerta para a referência. (A) SNR do EAR por vídeo (traço = mediana); o DMD é de dia, com o carro em movimento ou parado. (B) Fração de janelas de 10\,s marcadas como sonolentas no limiar 0,5 pelo RF do DMD, pelo RF da UTA-RLDD e pela regra de fechamento de 0,5\,s ou mais ou bocejo, com IC\,95\%; a linha vertical separa os grupos de pessoas acordadas dos sonolentos e noturnos. No próprio domínio, os valores são fora da amostra (UTA-RLDD: 5 \emph{folds}; DMD parado: um motorista de fora por vez); no DMD em movimento, os motoristas estão no treino com outras sessões. Nenhum valor no NITYMED é acurácia.}
+\label{fig:exp6}
+\end{figure*}
+No estado ocular, a EyeNet atinge \ExpTresIntraMRLAcMDP\% em sujeitos não vistos do MRL, \ExpTresMRLCEWPatchAcMDP\% do MRL para o CEW (média dos \emph{folds}; \ExpTresFinalMRLCEWPatchAc\% com o modelo treinado em todos os sujeitos) e \ExpTresCEWPatchMRLAcMDP\% do CEW para o MRL. Do CEW para o MRL, a AUC cai com óculos (\ExpTresCEWPatchMRLComOculosAUC{} contra \ExpTresCEWPatchMRLSemOculosAUC{} sem óculos), pouca luz (\ExpTresCEWPatchMRLIlumRuimAUC{} contra \ExpTresCEWPatchMRLIlumBoaAUC) e reflexo grande (\ExpTresCEWPatchMRLReflexoGrandeAUC{} contra \ExpTresCEWPatchMRLSemReflexoAUC); na acurácia balanceada, a queda aparece com óculos (\ExpTresCEWPatchMRLComOculosAcBal\% contra \ExpTresCEWPatchMRLSemOculosAcBal\%) e pouca luz (\ExpTresCEWPatchMRLIlumRuimAcBal\% contra \ExpTresCEWPatchMRLIlumBoaAcBal\%), mas não com reflexo. Essas condições estão ligadas entre si e aos sujeitos, e as diferenças devem ser lidas como associações.
+
+À noite, o rosto continua sendo encontrado em \ExpSeisRostoNoite\% dos quadros do NITYMED, contra \ExpSeisRostoUTA\% na UTA-RLDD (diferença de \ExpSeisDifRostoNoiteUTAComIC\,pp). O que cai é a qualidade do sinal (Fig.~\ref{fig:exp6}A): a SNR do EAR é de \ExpSeisSNRNoiteComIC{} no NITYMED, contra \ExpSeisSNRUTA{} na UTA-RLDD e \ExpSeisSNRDMDParado{} no DMD parado. Mas os mesmos motoristas do DMD, de dia e com o carro em movimento, ficam em \ExpSeisSNRDMDMovimento. No mesmo motorista e com a mesma câmera, o movimento muda a SNR em \ExpSeisDifSNRMovimentoParadoComIC{} (\ExpSeisSujeitosPareadosMovimento{} motoristas), e a diferença entre a noite e o carro em movimento não se distingue de zero (\ExpSeisDifSNRNoiteDMDMovimentoComIC). Com estes dados, a perda de sinal acompanha a condução real, e um efeito adicional da escuridão não é detectável. Sem um trecho alerta do próprio motorista, como o da calibração do protótipo, o PERCLOS também não separa microssono de ruído de condução: com o limiar tirado do próprio vídeo, sua mediana sobe tanto nos vídeos de microssono do NITYMED (\ExpSeisPERCLOSMicrossonoPNoventa\%) quanto nos motoristas acordados do DMD em movimento (\ExpSeisPERCLOSDMDMovimentoPNoventa\%).
+
+Na Fig.~\ref{fig:exp6}B, sem centragem, que o NITYMED não permite por falta de trecho alerta, os dois RF marcam como sonolentas de \ExpSeisDisparoModeloDMDUTAAlerta\% a \ExpSeisDisparoModeloUTAUTAAlerta\% das janelas de pessoas acordadas da UTA-RLDD no limiar 0,5. A regra do rótulo do DMD aplicada aos nossos sinais (fechamento de 0,5\,s ou mais, com o limiar de EAR do próprio sujeito, ou bocejo) marca \ExpSeisDisparoRegraUTAAlerta\% (\ExpSeisDisparoRegraUTAAlertaIC). Com o limiar calibrado no treino, o RF do DMD dispara ainda menos (\ExpSeisDisparoModeloDMDCalUTAAlerta\%), mas encontra menos janelas sonolentas que a regra (\ExpSeisDisparoModeloDMDCalUTASonolento\% contra \ExpSeisDisparoRegraUTASonolento\%); a RL do DMD, no limiar 0,5, marca \ExpSeisDisparoModeloDMDLRUTAAlerta\% e \ExpSeisDisparoModeloDMDLRUTASonolento\%. Com o carro em movimento, o RF calibrado e a regra disparam em \ExpSeisDisparoModeloDMDCalDMDMovimento\% e \ExpSeisDisparoRegraDMDMovimento\% das janelas de motoristas acordados. Nos vídeos de microssono do NITYMED, o disparo do modelo do DMD (\ExpSeisDisparoModeloDMDMicrossono\%) fica no nível do disparo em motoristas acordados do DMD e não informa sensibilidade.
+
+Nos vídeos, os óculos só puderam ser observados no DMD (\ExpCincoBMotoristasOculos{} motoristas), porque a UTA-RLDD não indica quais vídeos os têm. O detector falhou em um deles (F1 de piscadas de \ExpCincoBOculosFalhaFUm), em que o EAR cai só \ExpCincoBOculosFalhaQuedaEAR\% ao fechar o olho, contra \ExpCincoBSemOculosQuedaEARMin\% a \ExpCincoBSemOculosQuedaEARMax\% sem óculos; com um caso em três, a falha não pode ser atribuída aos óculos.
+
+\subsection{Validação do protótipo}
+\label{sec:valapp}
+A Tabela~\ref{tab:app} resume a versão \AppVersao. Contra a anotação do DMD, a combinação de EAR e \emph{blendshape} marca o olho fechado com $\kappa$ de \AppKappaOffline{} por quadro, contra \AppKappaEARSozinho{} do EAR sozinho. O bocejo com a mão na boca quase nunca é detectado (\AppBocejoAcertosComMao{} de \AppBocejoAnotadosComMao); no navegador, foram \AppBocejosNavegadorAcertos{} de \AppBocejosNavegadorAnotados{}, todos entre os \AppBocejosNavegadorAnotadosSemMao{} sem a mão. Em \AppDMDMinutosDirecaoReal\,min de direção real com motoristas acordados (sessões s1 do DMD), todo o vermelho veio de um motorista (\AppGACincoVermelho\% do tempo da sessão dele), cujo olhar para baixo o \emph{blendshape} lê como olho fechado. No navegador, com vídeos reais no lugar da câmera, só \AppUTASonolentoComVermelho{} dos \AppUTASonolentoVideos{} vídeos sonolentos da UTA-RLDD chegou ao vermelho. A queda da cabeça não tem revocação medida, pois o DMD não anota cabeceio; há só um teste sintético, com o vídeo girado, e casos isolados. Uma ressalva vale para toda a tabela: a regra dos olhos e os ajustes da versão \AppVersao{} foram escolhidos comparando variantes nessas mesmas sessões e clipes, e os números são, portanto, de desenvolvimento, não de um teste independente.
+
+\begin{table}[t]
+\centering
+\caption{Validação do protótipo (PWA \AppVersao). Motor \emph{offline} no DMD, com o mesmo Face Landmarker e o mesmo código do app: s5 = sonolência encenada com anotação; s1 = direção real com motoristas acordados. Navegador: Chrome com vídeos reais no lugar da câmera. Verde, amarelo e vermelho são os estados do nível.}
+\label{tab:app}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\toprule
+\textbf{Medida} & \textbf{Valor} \\
+\midrule
+Olho fechado por quadro, $\kappa$ (s5): \emph{offline} / navegador & \AppKappaOffline{} / \AppKappaNavegador \\
+Fechamentos de 1\,s ou mais (s5): revocação / precisão & \AppFechUmSRevocacao{} / \AppFechUmSPrecisao \\
+Bocejos (s5): revocação sem mão / com mão & \AppBocejoRevocacaoSemMao{} / \AppBocejoRevocacaoComMao \\
+Bocejos falsos em s1 & \AppDMDBocejosFalsosDirecaoReal \\
+Tempo em vermelho em s1 (\%): versão \AppVersao{} / lógica 1.0 & \AppDMDVermelhoDirecaoReal{} / \AppDMDVermelhoVUmDirecaoReal \\
+Sessões de s1 sem alarme & \AppDMDSessoesSemAlarme{} de \AppDMDSessoesDirecaoReal \\
+Tempo em vermelho em s5 (\%) & \AppDMDVermelhoSonolencia \\
+Navegador, UTA-RLDD alerta (3 vídeos): tempo em verde (\%) / alarmes & \AppUTAAlertaVerdeMin{} / \AppUTAAlertaAlarmes \\
+Navegador, UTA-RLDD sonolento: vídeos com vermelho & \AppUTASonolentoComVermelho{} de \AppUTASonolentoVideos \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% =====================================================================
+\section{Discussão}
+\label{sec:disc}
+
+\textbf{PP1.} Treinar no DMD em vez da UTA-RLDD custa AUC com o mesmo extrator e as mesmas características, mas o tamanho da perda depende do modelo e da normalização. Na RL, ela fica entre \ExpCincoBLRQuedaNormMin{} e \ExpCincoBLRQuedaNormMax{} pontos por janela nas quatro normalizações testadas. No RF, os \ExpCincoBQuedaAUCJanela{} pontos da configuração principal vêm em boa parte de B aproveitar a semelhança entre as janelas alertas e a referência tirada do mesmo vídeo; com outra referência na UTA-RLDD ou sem centragem, a diferença fica entre \ExpCincoBQuedaOutrasNormMin{} e \ExpCincoBQuedaOutrasNormMax{} pontos e não é detectável. Num app, a calibração e a sonolência acontecem na mesma sessão, e essa vantagem de B não se repetiria. O padrão de erro é estável: o modelo do DMD aprende com eventos longos e deixa passar a sonolência real, de fechamentos curtos e PERCLOS baixo. Com um único par de bases, a queda ainda se mistura com a câmera, o cenário e a natureza do rótulo, que no DMD é um evento encenado e na UTA-RLDD é o estado relatado.
+
+No mesmo cenário, o vazamento por janelas do mesmo vídeo infla a acurácia balanceada do RF em \ExpCincoBVazamentoAcBal\,pp, mais que a queda B$-$C (\ExpCincoBQuedaAcBalJanela\,pp, que depende da referência); na RL, infla \ExpCincoBLRVazamentoAcBal\,pp, contra uma queda de \ExpCincoBLRQuedaAcBalJanela\,pp. O protocolo pesa muito nos modelos capazes de memorizar janelas vizinhas e pouco no modelo linear. Os 90\% de~\cite{lyu2018,shen2020}, porém, foram medidos com pessoas que não estavam no treino, e a distância até a UTA-RLDD não se explica por esse vazamento. Separar vídeos que não são a referência continua difícil: entre KSS 8 e 9 e KSS 6 e 7, a AUC fica em \ExpCincoBControleAUCCincoDezB{} mesmo com o RF treinado na UTA-RLDD.
+
+\textbf{PP2.} O custo no celular é pequeno: \CelularIPhoneTotalPcinquenta\,ms por quadro no iPhone~17~Pro\ifSamsungMedido{} e \CelularSamsungTotalPcinquenta\,ms no Galaxy S23 Ultra\fi, dominado pelo rastreador facial. Os modelos aprendidos ocupam \ExpQuatroCNNIntKB\,KB (CNN int8) e \ExpUmLSTMKB\,KB (LSTM), e a quantização custa no máximo \ExpQuatroQuedaQuantizacaoMax\,pp. A resposta vale para a PWA no navegador, \ifSamsungMedido em dois aparelhos de topo\else num aparelho de topo\fi{} e em execuções de 60\,s; não medimos bateria, aquecimento em uso longo nem aparelhos de entrada.
+
+\textbf{PP3.} A degradação não é uniforme: no estado ocular, a AUC entre bases cai com óculos, pouca luz e reflexo grande, e o detector de piscadas falhou num dos \ExpCincoBMotoristasOculos{} motoristas de óculos do DMD. À noite, a captura do rosto quase não muda, mas a SNR do EAR cai para \ExpSeisSNRNoite; de dia, os mesmos motoristas do DMD vão de \ExpSeisSNRDMDParado{} a \ExpSeisSNRDMDMovimento{} com o carro em movimento. Parte da degradação atribuída à noite vem, portanto, do movimento, provavelmente da vibração, dos movimentos de cabeça e da luz variável, embora a comparação com o NITYMED não isole a escuridão (limitação 3). No limiar 0,5, os RF com características brutas disparam em muitas janelas de pessoas acordadas, e a regra sobre sinais visíveis em poucas, mas esse limiar é arbitrário. Escolhendo, só para comparar, o limiar que dá o falso alarme da regra nas janelas alertas, a RL do DMD com centragem encontra tantas janelas sonolentas quanto ela (\ExpCincoBLROpRegraSensCCentrada\% contra \ExpSeisDisparoRegraUTASonolento\%), e os outros modelos do DMD encontram menos (\ExpCincoBOpRegraSensCBruta\% e \ExpCincoBLROpRegraSensCBruta\% com características brutas; \ExpCincoBOpRegraSensCCentrada\% no RF centrado). A regra não é mais precisa que os modelos; ela fica na mesma curva, sem treino e com cada alarme explicável. Isso, somado à transferência limitada da PP1, justifica o desenho do protótipo: regras interpretáveis calibradas por usuário, com o modelo aprendido só como reforço limitado. Nenhum dos dois resolve o carro em movimento, em que disparam em \ExpSeisDisparoModeloDMDCalDMDMovimento\% e \ExpSeisDisparoRegraDMDMovimento\% das janelas de motoristas acordados.
+
+\textbf{Limitações.} (1)~Os rótulos têm naturezas diferentes: eventos encenados e anotados no DMD e KSS relatado para o vídeo inteiro na UTA-RLDD, com cada estado gravado em outro momento; o Exp.~5b mede também uma troca de pergunta. (2)~O DMD tem \BaseDMDSujeitos{} motoristas atuados (\BaseDMDJanelasAlerta{} janelas alertas), o carro parado nas sessões de treino e, na maioria dos sujeitos, o alerta gravado em outro dia; o tipo de sonolência continua misturado com a câmera e o cenário. (3)~O NITYMED não tem classe alerta nem identificação do motorista, o que deixa otimistas os IC por vídeo, e a noite vem junto com outra câmera, outra compressão e outras pessoas. (4)~O mapeamento entre sujeitos oficiais e pastas da UTA-RLDD, usado no Exp.~5a, é uma reconstrução nossa. (5)~\ifSamsungMedido Os dois aparelhos foram medidos em execuções curtas\else Só um aparelho foi medido, em \CelularIPhoneExecucoes{} execuções curtas\fi, e o aplicativo Android nativo do repositório não foi avaliado. (6)~A validação do protótipo usa sonolência atuada e poucos vídeos no navegador, os mesmos dados usados para escolher as regras; os pesos do nível não foram ajustados em sonolência real, há um falso alarme conhecido em direção real e a queda da cabeça não tem revocação medida. (7)~As análises de sensibilidade são descritivas, sem correção para comparações múltiplas, e o desenho não foi pré-registrado.
+
+\textbf{Ética, LGPD e falsa segurança.} O protótipo processa o vídeo só no aparelho, o que evita enviar dados biométricos, tratados como sensíveis pela Lei Geral de Proteção de Dados (LGPD); as bases foram usadas segundo seus termos e nenhum rosto foi publicado. O sistema detecta sinais visíveis, não o estado interno: quem relata sono sem mostrar sinais não é detectado, como nos vídeos sonolentos da UTA-RLDD que não chegaram ao vermelho no navegador. Ele não é um dispositivo certificado, não diagnostica distúrbios do sono e não substitui o descanso previsto na Lei n\textsuperscript{o}~13.103/2015; a ausência de alarme não significa condutor alerta.
+
+% =====================================================================
+\section{Conclusão e Trabalhos Futuros}
+\label{sec:conc}
+
+Com o mesmo extrator nas duas bases, modelos treinados com sonolência atuada (DMD) reconhecem a sonolência real (UTA-RLDD) pior que modelos treinados nela. Por janela, a regressão logística perde de \ExpCincoBLRQuedaNormMin{} a \ExpCincoBLRQuedaNormMax{} pontos de AUC em todas as normalizações testadas; o Random Forest perde \ExpCincoBQuedaAUCJanela{} na principal, mas a diferença não é detectável com outra referência na UTA-RLDD. Os erros são compatíveis com uma sonolência atuada mais intensa que a real, mas parte da diferença vem da regra de rótulo do DMD e de diferenças entre as bases que este desenho não separa. O vazamento por trechos do mesmo vídeo infla a acurácia em até \ExpDoisRFInflacaoJanelaBSA\,pp nas sequências de piscadas e em \ExpCincoBVazamentoAcBal\,pp nas janelas do Exp.~5b, no RF. À noite, a perda de sinal ocular é compatível com a do carro em movimento. O protótipo segue essas evidências, com regras explicáveis sobre olhos, bocejo e cabeça, e a versão \CelularIPhoneVersaoApp{} processou cada quadro em \CelularIPhoneTotalPcinquenta\,ms num iPhone~17~Pro\ifSamsungMedido{} e em \CelularSamsungTotalPcinquenta\,ms num Galaxy S23 Ultra\fi. Na sonolência real, ele ainda deixa passar casos: só \AppUTASonolentoComVermelho{} dos \AppUTASonolentoVideos{} vídeos sonolentos testados no navegador chegou ao vermelho.
+
+Como trabalhos futuros, propomos repetir a transferência com outra base de sonolência real, como o DROZY, e com a referência gravada na mesma sessão, como num app; validar o app em campo, com voluntários, KSS, óculos e noite; e medir a revocação da queda da cabeça.
+
+\section*{Agradecimentos}
+Trabalho da disciplina Experiência Criativa: Projeto Transformador II (turma 8\textsuperscript{o}A, equipe 14), orientado pelo Prof. Júlio César Nievola. Agradecemos aos autores da UTA-RLDD, do DMD e do NITYMED por disponibilizarem as bases. Ferramentas de IA generativa foram usadas como apoio na escrita do texto e do código; os autores conferiram todo o conteúdo e respondem por ele.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}
