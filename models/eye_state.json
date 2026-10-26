@@ -1,0 +1,172 @@
+{
+  "modelo": "EyeNet (src/pipeline_b/model.py), treinado no MRL Eye (37 sujeitos), seed 42",
+  "parametros": 62865,
+  "entrada": {
+    "forma": [
+      1,
+      48,
+      48,
+      1
+    ],
+    "descricao": "recorte quadrado do olho, escala de cinza, redimensionado para 48x48 (INTER_AREA ao reduzir, INTER_CUBIC ao ampliar), valores em [0,1] = pixel/255"
+  },
+  "saida": {
+    "forma": [
+      1,
+      1
+    ],
+    "descricao": "P(olho ABERTO); classe 1 = aberto, 0 = fechado; limiar 0,5"
+  },
+  "fp32": {
+    "arquivo": "eye_state_fp32.tflite",
+    "tamanho_kb": 248.2,
+    "entrada_dtype": "float32",
+    "saida_dtype": "float32"
+  },
+  "int8": {
+    "arquivo": "eye_state_int8.tflite",
+    "tamanho_kb": 72.1,
+    "io": "uint8",
+    "entrada_dtype": "uint8",
+    "entrada_quantizacao": {
+      "scale": 0.003921568859368563,
+      "zero_point": 0,
+      "formula": "q = round(x/scale) + zero_point, x em [0,1]"
+    },
+    "saida_dtype": "uint8",
+    "saida_quantizacao": {
+      "scale": 0.00390625,
+      "zero_point": 0,
+      "formula": "p = (q - zero_point) * scale"
+    },
+    "representative_dataset": "500 imagens MRL, seed 42"
+  },
+  "metricas": {
+    "MRL_val_subjects": {
+      "keras": {
+        "acc": 0.9851881240494611,
+        "auc": 0.9990016579150435,
+        "n": 15123
+      },
+      "fp32": {
+        "acc": 0.9851881240494611,
+        "auc": 0.9990016579150434,
+        "n": 15123
+      },
+      "int8": {
+        "acc": 0.9847252529260068,
+        "auc": 0.9987489542694216,
+        "n": 15123
+      }
+    },
+    "MRL_completo": {
+      "keras": {
+        "acc": 0.9849701995335579,
+        "auc": 0.9987987500505867,
+        "n": 84898
+      },
+      "fp32": {
+        "acc": 0.9849701995335579,
+        "auc": 0.9987987486629809,
+        "n": 84898
+      },
+      "int8": {
+        "acc": 0.9847110650427572,
+        "auc": 0.998647606768308,
+        "n": 84898
+      }
+    },
+    "CEW_patch": {
+      "keras": {
+        "acc": 0.8565827486586876,
+        "auc": 0.9680771041985836,
+        "n": 4846
+      },
+      "fp32": {
+        "acc": 0.8565827486586876,
+        "auc": 0.9680771041985835,
+        "n": 4846
+      },
+      "int8": {
+        "acc": 0.8555509698720595,
+        "auc": 0.9629388517547256,
+        "n": 4846
+      }
+    },
+    "CEW_crop": {
+      "keras": {
+        "acc": 0.8999174576970698,
+        "auc": 0.9759780713830083,
+        "n": 4846
+      },
+      "fp32": {
+        "acc": 0.8999174576970698,
+        "auc": 0.9759780713830083,
+        "n": 4846
+      },
+      "int8": {
+        "acc": 0.8968221213371853,
+        "auc": 0.9715502824134904,
+        "n": 4846
+      }
+    }
+  },
+  "latencia_desktop": [
+    {
+      "modelo": "fp32",
+      "threads": 1,
+      "arquivo": "eye_state_fp32.tflite",
+      "tamanho_kb": 248.2,
+      "p50_ms": 0.067,
+      "p95_ms": 0.07,
+      "mean_ms": 0.067,
+      "warmup": 50,
+      "runs": 500,
+      "batch": 1,
+      "maquina": "arm64 / macOS-26.5.1-arm64-arm-64bit",
+      "tf_version": "2.21.0"
+    },
+    {
+      "modelo": "fp32",
+      "threads": 4,
+      "arquivo": "eye_state_fp32.tflite",
+      "tamanho_kb": 248.2,
+      "p50_ms": 0.082,
+      "p95_ms": 0.099,
+      "mean_ms": 0.083,
+      "warmup": 50,
+      "runs": 500,
+      "batch": 1,
+      "maquina": "arm64 / macOS-26.5.1-arm64-arm-64bit",
+      "tf_version": "2.21.0"
+    },
+    {
+      "modelo": "int8",
+      "threads": 1,
+      "arquivo": "eye_state_int8.tflite",
+      "tamanho_kb": 72.1,
+      "p50_ms": 0.06,
+      "p95_ms": 0.064,
+      "mean_ms": 0.06,
+      "warmup": 50,
+      "runs": 500,
+      "batch": 1,
+      "maquina": "arm64 / macOS-26.5.1-arm64-arm-64bit",
+      "tf_version": "2.21.0"
+    },
+    {
+      "modelo": "int8",
+      "threads": 4,
+      "arquivo": "eye_state_int8.tflite",
+      "tamanho_kb": 72.1,
+      "p50_ms": 0.07,
+      "p95_ms": 0.087,
+      "mean_ms": 0.07,
+      "warmup": 50,
+      "runs": 500,
+      "batch": 1,
+      "maquina": "arm64 / macOS-26.5.1-arm64-arm-64bit",
+      "tf_version": "2.21.0"
+    }
+  ]
+}
