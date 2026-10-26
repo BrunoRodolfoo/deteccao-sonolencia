@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="hud_background">#B3000000</color>
+    <color name="hud_text">#FFFFFFFF</color>
+    <color name="accent">#FF1E88E5</color>
+    <color name="alert_red">#FFD32F2F</color>
+    <color name="alert_yellow">#FFFBC02D</color>
+    <color name="icon_background">#FF0D47A1</color>
+</resources>

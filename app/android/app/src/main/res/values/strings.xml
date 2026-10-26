@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Idioma padrão do aplicativo: português do Brasil. -->
+<resources>
+    <string name="app_name">Sonolência TCC</string>
+
+    <string name="btn_start">Iniciar</string>
+    <string name="btn_stop">Parar</string>
+    <string name="btn_calibrate">Calibrar</string>
+    <string name="btn_benchmark">Benchmark 60 s</string>
+    <string name="btn_benchmark_running">Gravando… %1$d s</string>
+    <string name="btn_share">Compartilhar</string>
+
+    <string name="perm_camera_denied">A permissão de câmera é necessária para a detecção de sonolência.</string>
+    <string name="camera_error">Erro ao abrir a câmera: %1$s</string>
+
+    <string name="status_idle">Toque em Iniciar. Nenhum quadro é salvo: só métricas numéricas.</string>
+    <string name="status_no_face">Rosto não detectado</string>
+    <string name="status_threshold_calib">Calibrando limiar de EAR — mantenha os olhos abertos (%1$d/%2$d quadros)</string>
+    <string name="status_blink_calib">Calibrando piscadas (estado alerta): %1$d/%2$d piscadas, %3$d s</string>
+    <string name="status_running">Monitorando</string>
+
+    <string name="models_ok">Modelos: landmarker=%1$s | temporal=%2$s | olho=%3$s</string>
+    <string name="model_missing">ausente</string>
+    <string name="degraded_mode">Modo degradado: só landmarks (EAR/PERCLOS). Copie os .tflite para assets (ver README).</string>
+    <string name="landmarker_missing">face_landmarker.task não encontrado em assets. Rode tools/fetch_assets.sh.</string>
+    <string name="delegate_gpu">GPU</string>
+    <string name="delegate_cpu">CPU</string>
+
+    <string name="hud_fps">FPS: %1$.1f</string>
+    <string name="hud_latency">Latência (ms) — landmarker %1$.1f | CNN %2$.1f | total %3$.1f</string>
+    <string name="hud_latency_pct">p50/p95 (ms) — landmarker %1$.1f/%2$.1f | CNN %3$.1f/%4$.1f | total %5$.1f/%6$.1f</string>
+    <string name="hud_metrics">EAR %1$.3f (limiar %2$.3f) | MAR %3$.2f | PERCLOS %4$.2f</string>
+    <string name="hud_eyes">Olho aberto (CNN) — E %1$.2f | D %2$.2f</string>
+    <string name="hud_eyes_na">Olho aberto (CNN) — n/d</string>
+    <string name="hud_blinks">Piscadas: %1$d | sequência: %2$d/30</string>
+    <string name="hud_class">Classe: %1$s (alerta %2$.2f · pouca vigilância %3$.2f · sonolento %4$.2f)</string>
+    <string name="hud_class_na">Classe: n/d (modelo temporal ausente ou calibrando)</string>
+
+    <string name="class_alert">ALERTA</string>
+    <string name="class_low_vigilant">POUCA VIGILÂNCIA</string>
+    <string name="class_drowsy">SONOLENTO</string>
+
+    <string name="alert_eyes_closed">OLHOS FECHADOS!</string>
+    <string name="alert_perclos">PERCLOS ALTO — SINAIS DE SONOLÊNCIA</string>
+    <string name="alert_drowsy">SONOLÊNCIA DETECTADA</string>
+
+    <string name="benchmark_saved">Benchmark salvo em %1$s</string>
+    <string name="benchmark_need_running">Toque em Iniciar antes do benchmark.</string>
+    <string name="share_title">Enviar resultados do benchmark</string>
+    <string name="share_nothing">Nenhum benchmark gravado ainda.</string>
+</resources>

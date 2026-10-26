@@ -1,0 +1,13 @@
+# Android Studio / Gradle
+*.iml
+.gradle/
+.idea/
+.kotlin/
+local.properties
+build/
+app/build/
+captures/
+.cxx/
+# Artefatos binários baixados por tools/fetch_assets.sh (não versionar)
+app/src/main/assets/*.task
+app/src/main/assets/*.tflite
