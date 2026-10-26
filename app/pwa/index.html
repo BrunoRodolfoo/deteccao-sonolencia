@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="Detecção de sonolência no navegador (MediaPipe + TFLite). PUCPR, Projeto Transformador II, Equipe 14." />
+  <title>Sonolência Móvel</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icon.svg" />
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- MediaPipe e TensorFlow.js: o app.js carrega de ./vendor/ (tools/baixar_dependencias_app.sh) ou, se faltar, da CDN -->
+</head>
+<body>
+  <div id="flash" class="flash" aria-hidden="true"></div>
+  <header class="topbar">
+    <h1>Sonolência Móvel</h1>
+    <span id="badge-state" class="badge">aguardando</span>
+  </header>
+
+  <main>
+    <div class="col-main">
+      <!-- Cartão de status: o que a banca olha primeiro -->
+      <section id="status" class="status st-off" aria-live="polite">
+        <div class="status-top">
+          <div class="status-text">
+            <div id="status-title" class="status-title">DESLIGADO</div>
+            <div id="status-sub" class="status-sub">Toque em "Iniciar câmera" e permita o acesso à câmera.</div>
+          </div>
+          <div class="status-level" aria-label="nível de sonolência"><span id="level-num">--</span><small>/100</small></div>
+        </div>
+        <div class="meter" id="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="nível de sonolência de 0 a 100">
+          <div id="meter-fill" class="meter-fill"></div>
+          <span class="meter-mark" style="left:40%"></span>
+          <span class="meter-mark" style="left:70%"></span>
+        </div>
+        <div class="meter-legend"><span>ALERTA</span><span class="m40">40 ATENÇÃO</span><span class="m70">70 SONOLENTO</span></div>
+        <div id="status-why" class="status-why"></div>
+        <button id="btn-ack" class="ack hidden" type="button">Estou acordado: silenciar 30 s</button>
+      </section>
+
+      <section class="stage" id="stage">
+        <video id="video" playsinline muted autoplay></video>
+        <canvas id="overlay"></canvas>
+        <div class="stage-hud">
+          <span id="hud-fps">FPS --</span>
+          <span id="hud-face">rosto: --</span>
+        </div>
+        <div id="calib-panel" class="calib-panel hidden">
+          <div id="calib-title" class="calib-title">Calibração (10 s)</div>
+          <div id="calib-text" class="calib-text">Apoie o celular como no painel do carro, olhe para a frente com os olhos abertos e a boca fechada.</div>
+          <div class="calib-bar"><div id="calib-fill"></div></div>
+        </div>
+        <div id="blink-calib" class="blink-calib hidden"><div id="blink-calib-fill"></div><span id="blink-calib-text"></span></div>
+      </section>
+
+      <!-- Três sinais ao vivo -->
+      <section class="signals" aria-label="sinais ao vivo">
+        <div class="sig" id="sig-eyes">
+          <div class="sig-head"><span class="dot"></span>Olhos</div>
+          <div class="sig-state" id="eyes-state">--</div>
+          <div class="sig-detail" id="eyes-detail">PERCLOS --</div>
+        </div>
+        <div class="sig" id="sig-yawn">
+          <div class="sig-head"><span class="dot"></span>Bocejo</div>
+          <div class="sig-state" id="yawn-state">--</div>
+          <div class="sig-detail" id="yawn-detail">0 em 5 min</div>
+        </div>
+        <div class="sig" id="sig-head">
+          <div class="sig-head"><span class="dot"></span>Cabeça</div>
+          <div class="sig-state" id="head-state">--</div>
+          <div class="sig-detail" id="head-detail">0 quedas em 5 min</div>
+        </div>
+      </section>
+
+      <div id="notice" class="notice hidden"></div>
+
+      <section class="controls main-controls">
+        <button id="btn-start" class="primary" type="button">Iniciar câmera</button>
+        <button id="btn-calib" type="button" disabled>Recalibrar</button>
+        <button id="btn-wake" type="button">Manter tela ligada</button>
+      </section>
+
+      <!-- Som: o volume começa em 20 % (testes sem susto); na demonstração, suba para 100 %. -->
+      <section class="card sound" aria-label="Som do alarme">
+        <div class="sound-row">
+          <button id="btn-sound" type="button">Testar som</button>
+          <div class="vol">
+            <label for="vol">Volume do alarme <output id="vol-out" for="vol">20 %</output></label>
+            <input id="vol" type="range" min="0" max="100" step="1" value="20" aria-describedby="sound-hint" />
+          </div>
+        </div>
+        <p id="sound-hint" class="hint">Toque em "Testar som" uma vez para liberar o som (o iPhone exige um toque).</p>
+      </section>
+    </div>
+
+    <div class="col-side">
+      <section class="card why">
+        <h2>Por quê?</h2>
+        <ul id="why-list"><li class="muted">Nenhum sinal elevando o nível.</li></ul>
+        <p class="muted small">Nível = soma dos pontos acima (máx. 100). Nenhum sinal sozinho chega a 70, exceto microssono e cabeça caída com os olhos fechados, que forçam o vermelho na hora; depois deles, o app fica pelo menos 1 min em ATENÇÃO. O PERCLOS só conta fechamentos de 0,5 s ou mais: piscadas normais não elevam o nível.</p>
+      </section>
+
+      <section class="card events">
+        <h2>Registro de eventos</h2>
+        <ol id="event-log"><li class="muted">Nenhum evento ainda.</li></ol>
+      </section>
+
+      <section class="card ml">
+        <h2>Modelos de aprendizado de máquina (experimental)</h2>
+        <p id="ml-lstm">LSTM de piscadas: aguardando a calibração.</p>
+        <p id="ml-cnn">CNN dos olhos: --</p>
+        <p class="muted small">Só informam. O LSTM (Exp. 1) soma no máximo 10 pontos, e só com "sonolento" em 5 predições seguidas (p &ge; 0,6) <b>e</b> com os sinais visíveis já em ATENÇÃO (&ge; 40): ele nunca muda a cor sozinho. A CNN não entra no nível. Motivo: a generalização desses modelos para uma pessoa nova é limitada (Exp. 5b).</p>
+      </section>
+
+      <details class="card tech" id="tech">
+        <summary>Detalhes técnicos</summary>
+        <div class="controls">
+          <button id="btn-bench" type="button" disabled>Benchmark 60 s</button>
+          <button id="btn-export" type="button" disabled>Exportar sessão</button>
+          <button id="btn-full" type="button">Tela cheia</button>
+        </div>
+        <div class="metrics">
+          <div class="metric"><label>EAR E / D</label><span id="m-ear">-- / --</span></div>
+          <div class="metric"><label>Limiar EAR (0,75 x mediana)</label><span id="m-thresh">--</span></div>
+          <div class="metric"><label>eyeBlink E / D</label><span id="m-blend">-- / --</span></div>
+          <div class="metric"><label>eyeLookDown (média)</label><span id="m-look">--</span></div>
+          <div class="metric"><label>MAR / jawOpen</label><span id="m-mouth">-- / --</span></div>
+          <div class="metric"><label>Pitch / yaw / roll</label><span id="m-pose">--</span></div>
+          <div class="metric"><label>Δ cabeça (baixo / lado / tombo)</label><span id="m-dpose">--</span></div>
+          <div class="metric"><label>PERCLOS 60 s (fechamentos &ge; 0,5 s)</label><span id="m-perclos">--</span></div>
+          <div class="metric"><label>Piscadas (duração típica)</label><span id="m-blinks">--</span></div>
+          <div class="metric"><label>Fechado por</label><span id="m-closedby">--</span></div>
+          <div class="metric"><label>Calibração</label><span id="m-calib">não calibrado</span></div>
+          <div class="metric"><label>Delegate</label><span id="m-delegate">--</span></div>
+          <div class="metric wide"><label>Última piscada [F, A, D, V] (entrada do LSTM)</label><span id="m-feat" class="small">--</span></div>
+        </div>
+        <div class="crops">
+          <div><canvas id="crop-left" width="48" height="48"></canvas><label>olho E (CNN)</label></div>
+          <div><canvas id="crop-right" width="48" height="48"></canvas><label>olho D (CNN)</label></div>
+        </div>
+        <h3>Latência por estágio (ms) nas últimas 300 medições</h3>
+        <table class="lat">
+          <thead><tr><th>Estágio</th><th>último</th><th>p50</th><th>p95</th></tr></thead>
+          <tbody>
+            <tr><td>Landmarker</td><td id="l-lm-last">--</td><td id="l-lm-p50">--</td><td id="l-lm-p95">--</td></tr>
+            <tr><td>CNN olhos (2 olhos)</td><td id="l-eye-last">--</td><td id="l-eye-p50">--</td><td id="l-eye-p95">--</td></tr>
+            <tr><td>LSTM (30x4)</td><td id="l-tmp-last">--</td><td id="l-tmp-p50">--</td><td id="l-tmp-p95">--</td></tr>
+            <tr><td>Motor v2 (sinais + nível)</td><td id="l-mon-last">--</td><td id="l-mon-p50">--</td><td id="l-mon-p95">--</td></tr>
+            <tr><td>Total por quadro</td><td id="l-tot-last">--</td><td id="l-tot-p50">--</td><td id="l-tot-p95">--</td></tr>
+          </tbody>
+        </table>
+        <h3>Modelos</h3>
+        <ul class="model-list">
+          <li>Face Landmarker: <span id="s-landmarker">não carregado</span></li>
+          <li>eye_state (TFLite): <span id="s-eye">não carregado</span></li>
+          <li>blink_temporal (TFLite): <span id="s-temporal">não carregado</span></li>
+          <li>Áudio: <span id="s-audio">não iniciado</span></li>
+          <li>Bibliotecas: <span id="s-deps">carregando</span></li>
+        </ul>
+        <h3>Benchmark</h3>
+        <div id="bench-status">Com a câmera ligada e o rosto enquadrado, toque em "Benchmark 60 s". O resultado vai sozinho para o computador (serve_https.py).</div>
+        <pre id="bench-summary" class="hidden"></pre>
+        <div class="controls" id="bench-downloads"></div>
+        <h3>Aparelho</h3>
+        <pre id="device-info"></pre>
+      </details>
+
+      <footer>
+        Protótipo de pesquisa da PUCPR, Projeto Transformador II, Equipe 14. Processamento 100% local; nenhum vídeo é armazenado ou enviado. Não substitui descanso: ao sentir sono, pare o carro.
+      </footer>
+    </div>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

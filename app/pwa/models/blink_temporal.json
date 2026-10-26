@@ -1,0 +1,111 @@
+{
+  "modelo": "LSTM",
+  "arquitetura": {
+    "units": 32,
+    "dense": 16,
+    "dropout": 0.2,
+    "unroll": true,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "batch": 64,
+    "epochs": 50,
+    "input_norm": "z-score (treino)"
+  },
+  "fold_origem": 3,
+  "conversao": "from_keras_model",
+  "ops_tflite": [
+    "ADD",
+    "FILL",
+    "FULLY_CONNECTED",
+    "LOGISTIC",
+    "MUL",
+    "PACK",
+    "SHAPE",
+    "SOFTMAX",
+    "SPLIT",
+    "STRIDED_SLICE",
+    "SUB",
+    "TANH",
+    "TRANSPOSE",
+    "UNPACK"
+  ],
+  "forma_entrada": [
+    1,
+    30,
+    4
+  ],
+  "dtype": "float32",
+  "ordem_caracteristicas": [
+    "frequencia",
+    "amplitude",
+    "duracao",
+    "velocidade_abertura"
+  ],
+  "definicoes": {
+    "frequencia": "100 * (n. de piscadas até a piscada i) / (n. de quadros até end_i)",
+    "amplitude": "(EAR[start] - 2*EAR[bottom] + EAR[end]) / 2",
+    "duracao": "end - start + 1 (quadros)",
+    "velocidade_abertura": "(EAR[end] - EAR[bottom]) / (end - bottom)",
+    "EAR": "(||p2-p6|| + ||p3-p5||) / (2 * ||p1-p4||)"
+  },
+  "normalizacao_por_sujeito": "z-score de cada característica com média e desvio das piscadas de um terço do vídeo em estado alerta do próprio sujeito (calibração); as demais piscadas são normalizadas com esses parâmetros (Ghoddoosian et al., 2019)",
+  "normalizacao_embutida_no_modelo": {
+    "tipo": "camada Normalization (z-score por característica, ajustada no treino do fold)",
+    "mean": [
+      21.503318786621094,
+      -0.2120569348335266,
+      0.43096742033958435,
+      -0.22536371648311615
+    ],
+    "variance": [
+      2027.687744140625,
+      2.405221700668335,
+      8.663494110107422,
+      2.318028450012207
+    ]
+  },
+  "janela": {
+    "tamanho": 30,
+    "passo": 2,
+    "unidade": "piscadas"
+  },
+  "classes": {
+    "0": "alerta",
+    "1": "pouca_vigilancia",
+    "2": "sonolento"
+  },
+  "rotulos_originais": {
+    "0": 0,
+    "5": 1,
+    "10": 2
+  },
+  "decisao_por_video": "voto majoritário das janelas; empate -> maior probabilidade média",
+  "treino": {
+    "epocas": 50,
+    "seed": 42,
+    "batch": 64,
+    "otimizador": "Adam",
+    "lr": 0.001,
+    "parametros": 5324
+  },
+  "metricas_fold_origem_keras": {
+    "va": 0.5555555555555556
+  },
+  "metricas_fold_origem_tflite": {
+    "bsa": 0.4822404371584699,
+    "bal_acc": 0.5192272534722829,
+    "f1_macro": 0.4840442905339817,
+    "va": 0.5555555555555556
+  },
+  "validacao_tflite_vs_keras": {
+    "max_abs_diff": 6.467103958129883e-06,
+    "concordancia_argmax": 1.0,
+    "n_sequencias": 2196
+  },
+  "latencia_mac_cpu_ms": {
+    "p50": 0.033250078558921814,
+    "p95": 0.044585089199244976,
+    "n_execucoes": 500
+  },
+  "tamanho_kb": 101.8
+}

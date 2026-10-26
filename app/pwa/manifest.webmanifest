@@ -1,0 +1,15 @@
+{
+  "name": "Sonolência Móvel, PUCPR Equipe 14",
+  "short_name": "Sonolência",
+  "description": "Detecção de sonolência no navegador com MediaPipe Face Landmarker e TensorFlow Lite (protótipo de pesquisa).",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
