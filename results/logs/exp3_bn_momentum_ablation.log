@@ -1,0 +1,51 @@
+Epoch 1/12
+196/196 - 8s - 40ms/step - acc: 0.7429 - loss: 0.4924 - val_acc: 0.4392 - val_loss: 1.8367 - learning_rate: 0.0010
+Epoch 2/12
+196/196 - 8s - 43ms/step - acc: 0.9366 - loss: 0.1746 - val_acc: 0.5216 - val_loss: 1.1760 - learning_rate: 0.0010
+Epoch 3/12
+196/196 - 9s - 46ms/step - acc: 0.9591 - loss: 0.1148 - val_acc: 0.9388 - val_loss: 0.1431 - learning_rate: 0.0010
+Epoch 4/12
+196/196 - 10s - 49ms/step - acc: 0.9668 - loss: 0.0939 - val_acc: 0.8472 - val_loss: 0.4045 - learning_rate: 0.0010
+Epoch 5/12
+196/196 - 9s - 44ms/step - acc: 0.9708 - loss: 0.0826 - val_acc: 0.8916 - val_loss: 0.2871 - learning_rate: 0.0010
+Epoch 6/12
+196/196 - 9s - 47ms/step - acc: 0.9760 - loss: 0.0694 - val_acc: 0.9452 - val_loss: 0.1364 - learning_rate: 5.0000e-04
+Epoch 7/12
+196/196 - 9s - 47ms/step - acc: 0.9796 - loss: 0.0596 - val_acc: 0.9448 - val_loss: 0.1324 - learning_rate: 5.0000e-04
+Epoch 8/12
+196/196 - 8s - 40ms/step - acc: 0.9792 - loss: 0.0620 - val_acc: 0.9320 - val_loss: 0.1574 - learning_rate: 5.0000e-04
+Epoch 9/12
+196/196 - 8s - 41ms/step - acc: 0.9798 - loss: 0.0598 - val_acc: 0.8736 - val_loss: 0.3399 - learning_rate: 5.0000e-04
+Epoch 10/12
+196/196 - 8s - 42ms/step - acc: 0.9816 - loss: 0.0521 - val_acc: 0.9332 - val_loss: 0.1702 - learning_rate: 2.5000e-04
+[18:53:24] BN momentum 0.99 fold 1: 10 épocas (86s), melhor época 7, val_acc=0.9448, n_treino=25001, n_val=2500
+[18:53:26] BN momentum 0.99 — treino (mesmas imagens, modo inferência): acc=0.9739 bal=0.9755 f1=0.9736 auc=0.9982 chance=0.5556 n=25001
+[18:53:27] BN momentum 0.99 — teste fold 1: acc=0.9317 bal=0.9183 f1=0.9190 auc=0.9793 chance=0.6974 n=16975
+Epoch 1/12
+196/196 - 9s - 46ms/step - acc: 0.7429 - loss: 0.4924 - val_acc: 0.7440 - val_loss: 0.5497 - learning_rate: 0.0010
+Epoch 2/12
+196/196 - 8s - 40ms/step - acc: 0.9366 - loss: 0.1746 - val_acc: 0.9204 - val_loss: 0.1856 - learning_rate: 0.0010
+Epoch 3/12
+196/196 - 8s - 42ms/step - acc: 0.9591 - loss: 0.1148 - val_acc: 0.8544 - val_loss: 0.3439 - learning_rate: 0.0010
+Epoch 4/12
+196/196 - 8s - 40ms/step - acc: 0.9668 - loss: 0.0939 - val_acc: 0.9308 - val_loss: 0.1673 - learning_rate: 0.0010
+Epoch 5/12
+196/196 - 7s - 37ms/step - acc: 0.9708 - loss: 0.0826 - val_acc: 0.8516 - val_loss: 0.3890 - learning_rate: 0.0010
+Epoch 6/12
+196/196 - 8s - 39ms/step - acc: 0.9736 - loss: 0.0771 - val_acc: 0.9280 - val_loss: 0.1580 - learning_rate: 0.0010
+Epoch 7/12
+196/196 - 8s - 41ms/step - acc: 0.9768 - loss: 0.0678 - val_acc: 0.9432 - val_loss: 0.1564 - learning_rate: 0.0010
+Epoch 8/12
+196/196 - 8s - 39ms/step - acc: 0.9775 - loss: 0.0666 - val_acc: 0.9224 - val_loss: 0.1773 - learning_rate: 0.0010
+Epoch 9/12
+196/196 - 7s - 38ms/step - acc: 0.9782 - loss: 0.0630 - val_acc: 0.9236 - val_loss: 0.2142 - learning_rate: 0.0010
+Epoch 10/12
+196/196 - 7s - 37ms/step - acc: 0.9821 - loss: 0.0516 - val_acc: 0.9508 - val_loss: 0.1315 - learning_rate: 5.0000e-04
+Epoch 11/12
+196/196 - 9s - 44ms/step - acc: 0.9817 - loss: 0.0511 - val_acc: 0.9552 - val_loss: 0.1163 - learning_rate: 5.0000e-04
+Epoch 12/12
+196/196 - 8s - 42ms/step - acc: 0.9832 - loss: 0.0483 - val_acc: 0.9192 - val_loss: 0.2213 - learning_rate: 5.0000e-04
+[18:55:02] BN momentum 0.9 fold 1: 12 épocas (95s), melhor época 11, val_acc=0.9552, n_treino=25001, n_val=2500
+[18:55:04] BN momentum 0.9 — treino (mesmas imagens, modo inferência): acc=0.9828 bal=0.9834 f1=0.9826 auc=0.9990 chance=0.5556 n=25001
+[18:55:05] BN momentum 0.9 — teste fold 1: acc=0.9120 bal=0.9084 f1=0.8982 auc=0.9732 chance=0.6974 n=16975
+[18:55:05] salvo em /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/exp3_bn_momentum_ablation.csv

@@ -1,0 +1,23 @@
+2026-09-27 21:34:23,942 INFO Exp. 6 final — versão 2.2; janelas de 10 s; seed 42; folds da UTA com .ok: [1, 2, 3, 4, 5]
+2026-09-27 21:34:24,041 INFO Janelas dmd: 830 (avaliadas na seção c: 619; por grupo: {'alerta': 87, 'alerta_s1': 109, 'sonolento': 423})
+2026-09-27 21:34:24,042 INFO Janelas nitymed: 979 (avaliadas na seção c: 529; por grupo: {'Microsleep': 273, 'Yawning': 256})
+2026-09-27 21:34:24,047 INFO Janelas uta: 22455 (avaliadas na seção c: 19955; por grupo: {'KSS 0': 4906, 'KSS 10': 7581, 'KSS 5': 7468})
+2026-09-27 21:34:38,734 INFO Medidas por vídeo lógico: 420 linhas (420 calculadas, 0 do cache); vídeos por base: {'dmd': 65, 'nitymed': 126, 'uta': 180}
+2026-09-27 21:34:38,777 INFO Luminância: results/exp6_luminancia_videos.csv (vídeos sem medida por base: {'dmd': 0, 'nitymed': 0, 'uta': 0})
+2026-09-27 21:34:44,629 INFO Modelos do Exp. 5b com as janelas finais do DMD (md5 9925bd35fa747bc3a7bde65c800c5bf4): 4 entradas
+2026-09-27 21:34:48,526 INFO RF dmd/sem_normalizacao: 510 janelas (423 sonolentas) de 13 sujeitos; origem: models/exp5/exp5b_final_C_sem_normalizacao_RF.joblib (Exp. 5b final, execução 20260927-211326; metadados models/exp5/exp5b_final_modelos.json); + fora da amostra por sujeito; limiar calibrado aqui 0.8417 (acur. bal. 0.783); no Exp. 5b 0.8417 (3.9 s)
+2026-09-27 21:34:52,165 INFO RF dmd/principal: 510 janelas (423 sonolentas) de 13 sujeitos; origem: models/exp5/exp5b_final_C_principal_RF.joblib (Exp. 5b final, execução 20260927-211326; metadados models/exp5/exp5b_final_modelos.json); + fora da amostra por sujeito; limiar calibrado aqui 0.6617 (acur. bal. 0.800); no Exp. 5b 0.6617 (3.6 s)
+2026-09-27 21:34:52,165 INFO RF do DMD (sem_taxa_rosto): nenhum modelo final do Exp. 5b com estas características -> treinado aqui com a mesma receita
+2026-09-27 21:34:56,100 INFO RF dmd/sem_taxa_rosto: 510 janelas (423 sonolentas) de 13 sujeitos; origem: models/exp6/rf_dmd_sem_taxa_rosto.joblib (treinado aqui, receita do Exp. 5b); + fora da amostra por sujeito; limiar calibrado aqui 0.8450 (acur. bal. 0.786) (3.9 s)
+2026-09-27 21:35:01,941 INFO RF uta/sem_normalizacao: 12487 janelas (7581 sonolentas) de 60 sujeitos; origem: models/exp6/rf_uta_sem_normalizacao.joblib (treinado aqui, receita do Exp. 5b); + fora da amostra por fold; limiar calibrado aqui 0.7150 (acur. bal. 0.647) (5.8 s)
+2026-09-27 21:35:08,205 INFO RF uta/principal: 12487 janelas (7581 sonolentas) de 60 sujeitos; origem: models/exp6/rf_uta_principal.joblib (treinado aqui, receita do Exp. 5b); + fora da amostra por fold; limiar calibrado aqui 0.5683 (acur. bal. 0.746) (6.3 s)
+2026-09-27 21:35:14,564 INFO RF uta/sem_taxa_rosto: 12487 janelas (7581 sonolentas) de 60 sujeitos; origem: models/exp6/rf_uta_sem_taxa_rosto.joblib (treinado aqui, receita do Exp. 5b); + fora da amostra por fold; limiar calibrado aqui 0.6783 (acur. bal. 0.646) (6.4 s)
+2026-09-27 21:35:20,216 INFO Conferência com o Exp. 5b — modelo do DMD inteiro aplicado à UTA (sem_normalizacao): 19955 janelas, 0 sem par, diferença máx. 3.33e-07
+2026-09-27 21:35:20,216 INFO Conferência com o Exp. 5b — modelo do DMD inteiro aplicado à UTA (principal): 19955 janelas, 0 sem par, diferença máx. 3.33e-07
+2026-09-27 21:35:20,217 INFO Conferência com o Exp. 5b — modelo do DMD, fora da amostra (LOSO) (sem_normalizacao): 510 janelas, 0 sem par, diferença máx. 3.33e-07
+2026-09-27 21:35:20,217 INFO Conferência com o Exp. 5b — modelo do DMD, fora da amostra (LOSO) (principal): 510 janelas, 0 sem par, diferença máx. 3.33e-07
+2026-09-27 21:35:20,217 INFO Conferência com o Exp. 5b — modelo da UTA B3, fora da amostra (sem_normalizacao): 12487 janelas, 0 sem par, diferença máx. 3.33e-07
+2026-09-27 21:35:20,217 INFO Conferência com o Exp. 5b — modelo da UTA B3, fora da amostra (principal): 12487 janelas, 0 sem par, diferença máx. 3.33e-07
+2026-09-27 21:35:21,976 INFO Ficha NITYMED: 126 vídeos -> data/nitymed/index.csv
+2026-09-27 21:35:23,405 INFO Saídas: results/exp6_noite.{csv,md}, exp6_noite_videos.csv, exp6_noite_janelas.csv, exp6_noite_importancias.csv, exp6_noite_contrafactual.csv, exp6_nitymed_ficha.md, data/nitymed/index.csv, figures/fig_exp6_noite.{pdf,png}, figures/fig_exp6_microssono.{pdf,png}, models/exp6/
+2026-09-27 21:35:23,405 INFO Tempo total: 59.5 s

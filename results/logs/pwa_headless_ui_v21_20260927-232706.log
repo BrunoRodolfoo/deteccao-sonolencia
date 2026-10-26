@@ -1,0 +1,18 @@
+# Teste da interface da PWA v2.1 no Chrome headless (tools/app_validacao/teste_headless_pwa.mjs), 2026-09-28T02:27:06Z
+# cópia congelada da v2.1 (md5 engine.js c4cc34e5, app.js c104d475, index.html b13893cd) servida em https://127.0.0.1:8769; câmera falsa padrão do Chrome (sem rosto); 14 s por largura
+# SEMPRE MUDO: --mute-audio, ?volume=0, política de autoplay padrão (sem --autoplay-policy); clique CONFIÁVEL (Input.dispatchMouseEvent) em 'Testar som' aos 6 s
+largura 390 px: viewport 390x844; chrome Chrome/154.0.8037.57; flags: --headless=new --mute-audio --use-fake-ui-for-media-stream --use-fake-device-for-media-stream --ignore-certificate-errors --no-first-run --no-default-browser-check --window-size=390,844 --enable-logging=stderr --v=0
+  layout: innerWidth 390, scrollWidth 390, elementos além da borda: 0
+  som depois do clique confiável em Testar som: [{"ctx":"running","sirene":false,"ganhoFinal":0,"erro":null}]; silêncio conferido: {"pct":0,"fonte":"url","ganho":0,"ganhoNo":0}
+  exceções JavaScript: 0; console.error: ["INFO: Created TensorFlow Lite XNNPACK delegate for CPU."]
+  modelos: {"landmarker":"face_landmarker float16 (GPU; blendshapes + matriz de pose)","eye":"eye_state_int8.tflite (int8; entrada uint8 [1,48,48,1]; aquecimento 1.8 ms)","lstm":"blink_temporal.tflite (entrada float32 [1,30,4]; aquecimento 2.1 ms)","audio":"running; sem audioSession (iOS antigo, Android ou computador); volume do alarme 0 % (url; ganho 0.000)"}
+largura 320 px: viewport 320x844; chrome Chrome/154.0.8037.57; flags: --headless=new --mute-audio --use-fake-ui-for-media-stream --use-fake-device-for-media-stream --ignore-certificate-errors --no-first-run --no-default-browser-check --window-size=320,844 --enable-logging=stderr --v=0
+  layout: innerWidth 320, scrollWidth 320, elementos além da borda: 0
+  som depois do clique confiável em Testar som: [{"ctx":"running","sirene":false,"ganhoFinal":0,"erro":null}]; silêncio conferido: {"pct":0,"fonte":"url","ganho":0,"ganhoNo":0}
+  exceções JavaScript: 0; console.error: ["INFO: Created TensorFlow Lite XNNPACK delegate for CPU."]
+  modelos: {"landmarker":"face_landmarker float16 (GPU; blendshapes + matriz de pose)","eye":"eye_state_int8.tflite (int8; entrada uint8 [1,48,48,1]; aquecimento 1.7 ms)","lstm":"blink_temporal.tflite (entrada float32 [1,30,4]; aquecimento 2.1 ms)","audio":"running; sem audioSession (iOS antigo, Android ou computador); volume do alarme 0 % (url; ganho 0.000)"}
+largura 1280 px: viewport 1280x800; chrome Chrome/154.0.8037.57; flags: --headless=new --mute-audio --use-fake-ui-for-media-stream --use-fake-device-for-media-stream --ignore-certificate-errors --no-first-run --no-default-browser-check --window-size=1280,800 --enable-logging=stderr --v=0
+  layout: innerWidth 1280, scrollWidth 1265, elementos além da borda: 0
+  som depois do clique confiável em Testar som: [{"ctx":"running","sirene":false,"ganhoFinal":0,"erro":null}]; silêncio conferido: {"pct":0,"fonte":"url","ganho":0,"ganhoNo":0}
+  exceções JavaScript: 0; console.error: ["INFO: Created TensorFlow Lite XNNPACK delegate for CPU."]
+  modelos: {"landmarker":"face_landmarker float16 (GPU; blendshapes + matriz de pose)","eye":"eye_state_int8.tflite (int8; entrada uint8 [1,48,48,1]; aquecimento 1.9 ms)","lstm":"blink_temporal.tflite (entrada float32 [1,30,4]; aquecimento 2.2 ms)","audio":"running; sem audioSession (iOS antigo, Android ou computador); volume do alarme 0 % (url; ganho 0.000)"}

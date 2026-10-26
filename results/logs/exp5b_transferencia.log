@@ -1,0 +1,138 @@
+2026-09-27 21:13:26,996 INFO Exp. 5b FINAL — execução 20260927-211326 | Python 3.11.16 | scikit-learn 1.9.1 | numpy 2.4.6 | pandas 3.0.6 | macOS-26.5.1-arm64-arm-64bit
+2026-09-27 21:13:27,604 INFO Janelas de 10 s: DMD 830 (md5 9925bd35fa747bc3a7bde65c800c5bf4) | UTA 22455 (md5 4ca1a69b7c68a99d6c6fd968df6fb067)
+2026-09-27 21:13:28,126 INFO Janelas de 5 s: DMD 1220 (md5 2ca1ba0197ea722cb0be36b907b8eb7d) | UTA 22637 (md5 e51d10b36ed4dd29f2ebe2636e4b67f4)
+2026-09-27 21:13:28,582 INFO Janelas de 15 s: DMD 627 (md5 0189cc86b1c8527577e8e69a1483067c) | UTA 22273 (md5 ddfca2bdec90a628c71a7d9b888eb121)
+2026-09-27 21:13:28,588 INFO UTA: folds [1, 2, 3, 4, 5], 60 sujeitos, 180 vídeos lógicos, 182 arquivos (index.csv: 182 com sinal completo)
+2026-09-27 21:13:29,009 INFO DMD: 13 sujeitos com s5 (gA_1, gA_5, gB_10, gB_6, gB_7, gB_9, gC_13, gC_14, gE_29, gF_23, gZ_33, gZ_36, gZ_37) | UTA: 60 sujeitos
+2026-09-27 21:13:30,157 INFO -> results/exp5b_amostra.csv
+2026-09-27 21:13:30,164 INFO (A) principal: 510 janelas (sonolento 423, alerta 87), 13 sujeitos, 13 com as duas classes
+2026-09-27 21:14:27,307 INFO    RF: acur. bal. 0.764 | F1 0.720 | AUC 0.824 | limiar calibrado (LOSO) 0.662 (acur. bal. 0.800)
+2026-09-27 21:14:30,507 INFO    LR: acur. bal. 0.786 | F1 0.694 | AUC 0.835 | limiar calibrado (LOSO) 0.535 (acur. bal. 0.803)
+2026-09-27 21:14:30,507 INFO    (60 s)
+2026-09-27 21:14:30,509 INFO (A) sem_normalizacao: 510 janelas (sonolento 423, alerta 87), 13 sujeitos, 13 com as duas classes
+2026-09-27 21:15:28,659 INFO    RF: acur. bal. 0.715 | F1 0.677 | AUC 0.816 | limiar calibrado (LOSO) 0.842 (acur. bal. 0.783)
+2026-09-27 21:15:33,033 INFO    LR: acur. bal. 0.771 | F1 0.671 | AUC 0.811 | limiar calibrado (LOSO) 0.400 (acur. bal. 0.781)
+2026-09-27 21:15:33,033 INFO    (63 s)
+2026-09-27 21:15:33,034 INFO (A) alerta_s1: 525 janelas (sonolento 423, alerta 102), 13 sujeitos, 13 com as duas classes
+2026-09-27 21:15:37,749 INFO    RF: acur. bal. 0.751 | F1 0.733 | AUC 0.772 | limiar calibrado (LOSO) 0.592 (acur. bal. 0.753)
+2026-09-27 21:15:38,226 INFO    LR: acur. bal. 0.745 | F1 0.678 | AUC 0.825 | limiar calibrado (LOSO) 0.382 (acur. bal. 0.765)
+2026-09-27 21:15:38,227 INFO    (5 s)
+2026-09-27 21:15:38,228 INFO (A) s5_sem_sinal_alerta: 656 janelas (sonolento 423, alerta 233), 13 sujeitos, 13 com as duas classes
+2026-09-27 21:15:44,195 INFO    RF: acur. bal. 0.766 | F1 0.754 | AUC 0.800 | limiar calibrado (LOSO) 0.512 (acur. bal. 0.767)
+2026-09-27 21:15:44,653 INFO    LR: acur. bal. 0.766 | F1 0.746 | AUC 0.820 | limiar calibrado (LOSO) 0.435 (acur. bal. 0.776)
+2026-09-27 21:15:44,653 INFO    (6 s)
+2026-09-27 21:15:44,655 INFO (A) janela_5s: 545 janelas (sonolento 308, alerta 237), 13 sujeitos, 13 com as duas classes
+2026-09-27 21:15:49,996 INFO    RF: acur. bal. 0.774 | F1 0.766 | AUC 0.801 | limiar calibrado (LOSO) 0.577 (acur. bal. 0.778)
+2026-09-27 21:15:50,223 INFO    LR: acur. bal. 0.779 | F1 0.770 | AUC 0.825 | limiar calibrado (LOSO) 0.512 (acur. bal. 0.783)
+2026-09-27 21:15:50,223 INFO    (6 s)
+2026-09-27 21:15:50,226 INFO (A) janela_15s: 474 janelas (sonolento 466, alerta 8), 13 sujeitos, 5 com as duas classes
+2026-09-27 21:15:54,865 INFO    RF: acur. bal. 0.734 | F1 0.638 | AUC 0.935 | limiar calibrado (LOSO) 0.958 (acur. bal. 0.912)
+2026-09-27 21:15:55,169 INFO    LR: acur. bal. 0.827 | F1 0.575 | AUC 0.949 | limiar calibrado (LOSO) 0.831 (acur. bal. 0.920)
+2026-09-27 21:15:55,169 INFO    (5 s)
+2026-09-27 21:15:55,171 INFO (A) ref_s2_espelho: 472 janelas (sonolento 423, alerta 49), 13 sujeitos, 13 com as duas classes
+2026-09-27 21:16:00,145 INFO    RF: acur. bal. 0.806 | F1 0.741 | AUC 0.862 | limiar calibrado (LOSO) 0.765 (acur. bal. 0.823)
+2026-09-27 21:16:00,507 INFO    LR: acur. bal. 0.743 | F1 0.600 | AUC 0.853 | limiar calibrado (LOSO) 0.380 (acur. bal. 0.760)
+2026-09-27 21:16:00,507 INFO    (5 s)
+2026-09-27 21:16:00,508 INFO (A) sem_gE_29: 474 janelas (sonolento 393, alerta 81), 12 sujeitos, 12 com as duas classes
+2026-09-27 21:16:05,275 INFO    RF: acur. bal. 0.786 | F1 0.765 | AUC 0.872 | limiar calibrado (LOSO) 0.568 (acur. bal. 0.821)
+2026-09-27 21:16:05,567 INFO    LR: acur. bal. 0.818 | F1 0.726 | AUC 0.852 | limiar calibrado (LOSO) 0.581 (acur. bal. 0.822)
+2026-09-27 21:16:05,567 INFO    (5 s)
+2026-09-27 21:16:05,696 INFO (B) principal B3: 12487 janelas (sonolento 7581, não 4906), 120 vídeos, 60 sujeitos
+2026-09-27 21:17:01,605 INFO    RF: acur. bal. 0.742 | F1 0.733 | AUC 0.801 | AUC vídeo 0.924 | acurácia vídeo 0.858
+2026-09-27 21:17:07,610 INFO    LR: acur. bal. 0.720 | F1 0.692 | AUC 0.744 | AUC vídeo 0.890 | acurácia vídeo 0.858
+2026-09-27 21:17:07,610 INFO    (62 s)
+2026-09-27 21:17:07,667 INFO (B) principal B1: 19955 janelas (sonolento 15049, não 4906), 180 vídeos, 60 sujeitos
+2026-09-27 21:17:29,304 INFO    RF: acur. bal. 0.675 | F1 0.657 | AUC 0.749 | AUC vídeo 0.875 | acurácia vídeo 0.806
+2026-09-27 21:17:31,297 INFO    LR: acur. bal. 0.681 | F1 0.601 | AUC 0.697 | AUC vídeo 0.823 | acurácia vídeo 0.783
+2026-09-27 21:17:31,297 INFO    (24 s)
+2026-09-27 21:17:31,323 INFO (B) principal B2: 19955 janelas (sonolento 7581, não 12374), 180 vídeos, 60 sujeitos
+2026-09-27 21:17:53,606 INFO    RF: acur. bal. 0.620 | F1 0.622 | AUC 0.667 | AUC vídeo 0.790 | acurácia vídeo 0.756
+2026-09-27 21:17:56,003 INFO    LR: acur. bal. 0.626 | F1 0.628 | AUC 0.651 | AUC vídeo 0.757 | acurácia vídeo 0.772
+2026-09-27 21:17:56,003 INFO    (25 s)
+2026-09-27 21:17:56,025 INFO (B) sem_normalizacao B3: 12487 janelas (sonolento 7581, não 4906), 120 vídeos, 60 sujeitos
+2026-09-27 21:18:37,700 INFO    RF: acur. bal. 0.629 | F1 0.628 | AUC 0.694 | AUC vídeo 0.808 | acurácia vídeo 0.758
+2026-09-27 21:18:43,798 INFO    LR: acur. bal. 0.681 | F1 0.656 | AUC 0.725 | AUC vídeo 0.828 | acurácia vídeo 0.775
+2026-09-27 21:18:43,802 INFO    (48 s)
+2026-09-27 21:18:43,818 INFO (B) sem_normalizacao B1: 19955 janelas (sonolento 15049, não 4906), 180 vídeos, 60 sujeitos
+2026-09-27 21:19:05,857 INFO    RF: acur. bal. 0.574 | F1 0.575 | AUC 0.643 | AUC vídeo 0.748 | acurácia vídeo 0.689
+2026-09-27 21:19:08,227 INFO    LR: acur. bal. 0.640 | F1 0.564 | AUC 0.683 | AUC vídeo 0.783 | acurácia vídeo 0.694
+2026-09-27 21:19:08,227 INFO    (24 s)
+2026-09-27 21:19:08,318 INFO (B) sem_normalizacao B2: 19955 janelas (sonolento 7581, não 12374), 180 vídeos, 60 sujeitos
+2026-09-27 21:19:34,893 INFO    RF: acur. bal. 0.584 | F1 0.585 | AUC 0.608 | AUC vídeo 0.716 | acurácia vídeo 0.728
+2026-09-27 21:19:37,428 INFO    LR: acur. bal. 0.618 | F1 0.620 | AUC 0.650 | AUC vídeo 0.745 | acurácia vídeo 0.728
+2026-09-27 21:19:37,428 INFO    (29 s)
+2026-09-27 21:19:37,448 INFO (B) janela_5s B3: 12609 janelas (sonolento 7643, não 4966), 120 vídeos, 60 sujeitos
+2026-09-27 21:19:51,482 INFO    RF: acur. bal. 0.716 | F1 0.704 | AUC 0.775 | AUC vídeo 0.907 | acurácia vídeo 0.833
+2026-09-27 21:19:53,374 INFO    LR: acur. bal. 0.685 | F1 0.653 | AUC 0.708 | AUC vídeo 0.886 | acurácia vídeo 0.825
+2026-09-27 21:19:53,374 INFO    (16 s)
+2026-09-27 21:19:53,429 INFO (B) janela_5s B1: 20137 janelas (sonolento 15171, não 4966), 180 vídeos, 60 sujeitos
+2026-09-27 21:20:15,388 INFO    RF: acur. bal. 0.653 | F1 0.635 | AUC 0.722 | AUC vídeo 0.850 | acurácia vídeo 0.778
+2026-09-27 21:20:17,993 INFO    LR: acur. bal. 0.653 | F1 0.566 | AUC 0.665 | AUC vídeo 0.816 | acurácia vídeo 0.772
+2026-09-27 21:20:17,993 INFO    (25 s)
+2026-09-27 21:20:18,022 INFO (B) janela_5s B2: 20137 janelas (sonolento 7643, não 12494), 180 vídeos, 60 sujeitos
+2026-09-27 21:20:40,792 INFO    RF: acur. bal. 0.609 | F1 0.611 | AUC 0.648 | AUC vídeo 0.773 | acurácia vídeo 0.728
+2026-09-27 21:20:43,342 INFO    LR: acur. bal. 0.613 | F1 0.615 | AUC 0.630 | AUC vídeo 0.762 | acurácia vídeo 0.772
+2026-09-27 21:20:43,342 INFO    (25 s)
+2026-09-27 21:20:43,423 INFO (B) janela_15s B3: 12365 janelas (sonolento 7519, não 4846), 120 vídeos, 60 sujeitos
+2026-09-27 21:20:57,286 INFO    RF: acur. bal. 0.760 | F1 0.753 | AUC 0.821 | AUC vídeo 0.937 | acurácia vídeo 0.858
+2026-09-27 21:20:58,884 INFO    LR: acur. bal. 0.737 | F1 0.710 | AUC 0.762 | AUC vídeo 0.892 | acurácia vídeo 0.858
+2026-09-27 21:20:58,884 INFO    (16 s)
+2026-09-27 21:20:58,931 INFO (B) janela_15s B1: 19773 janelas (sonolento 14927, não 4846), 180 vídeos, 60 sujeitos
+2026-09-27 21:21:25,726 INFO    RF: acur. bal. 0.688 | F1 0.673 | AUC 0.769 | AUC vídeo 0.896 | acurácia vídeo 0.828
+2026-09-27 21:21:28,136 INFO    LR: acur. bal. 0.693 | F1 0.615 | AUC 0.712 | AUC vídeo 0.826 | acurácia vídeo 0.778
+2026-09-27 21:21:28,136 INFO    (29 s)
+2026-09-27 21:21:28,201 INFO (B) janela_15s B2: 19773 janelas (sonolento 7519, não 12254), 180 vídeos, 60 sujeitos
+2026-09-27 21:21:53,607 INFO    RF: acur. bal. 0.617 | F1 0.619 | AUC 0.674 | AUC vídeo 0.798 | acurácia vídeo 0.739
+2026-09-27 21:21:56,000 INFO    LR: acur. bal. 0.629 | F1 0.631 | AUC 0.661 | AUC vídeo 0.755 | acurácia vídeo 0.750
+2026-09-27 21:21:56,006 INFO    (28 s)
+2026-09-27 21:21:56,035 INFO (B) uta_ref_no_teste B3: 14987 janelas (sonolento 7581, não 7406), 120 vídeos, 60 sujeitos
+2026-09-27 21:22:13,569 INFO    RF: acur. bal. 0.765 | F1 0.764 | AUC 0.827 | AUC vídeo 0.951 | acurácia vídeo 0.892
+2026-09-27 21:22:15,094 INFO    LR: acur. bal. 0.723 | F1 0.717 | AUC 0.747 | AUC vídeo 0.903 | acurácia vídeo 0.867
+2026-09-27 21:22:15,094 INFO    (19 s)
+2026-09-27 21:22:19,519 INFO (C) principal RF (treino 510 janelas, alerta 87): B3 AUC 0.692 | acur. bal. 0,5 0.652 (sens. 0.484, espec. 0.820) | limiar do DMD 0.662: acur. bal. 0.629 (sens. 0.370, espec. 0.887)
+2026-09-27 21:22:26,726 INFO (C) principal LR (treino 510 janelas, alerta 87): B3 AUC 0.645 | acur. bal. 0,5 0.640 (sens. 0.337, espec. 0.944) | limiar do DMD 0.535: acur. bal. 0.633 (sens. 0.308, espec. 0.958)
+2026-09-27 21:22:26,726 INFO    (12 s)
+2026-09-27 21:22:31,801 INFO (C) sem_normalizacao RF (treino 510 janelas, alerta 87): B3 AUC 0.672 | acur. bal. 0,5 0.631 (sens. 0.522, espec. 0.740) | limiar do DMD 0.842: acur. bal. 0.547 (sens. 0.110, espec. 0.983)
+2026-09-27 21:22:40,728 INFO (C) sem_normalizacao LR (treino 510 janelas, alerta 87): B3 AUC 0.652 | acur. bal. 0,5 0.581 (sens. 0.185, espec. 0.977) | limiar do DMD 0.400: acur. bal. 0.594 (sens. 0.224, espec. 0.964)
+2026-09-27 21:22:40,728 INFO    (14 s)
+2026-09-27 21:22:44,744 INFO (C) alerta_s1 RF (treino 525 janelas, alerta 102): B3 AUC 0.586 | acur. bal. 0,5 0.583 (sens. 0.571, espec. 0.595) | limiar do DMD 0.592: acur. bal. 0.581 (sens. 0.457, espec. 0.705)
+2026-09-27 21:22:50,710 INFO (C) alerta_s1 LR (treino 525 janelas, alerta 102): B3 AUC 0.585 | acur. bal. 0,5 0.630 (sens. 0.354, espec. 0.906) | limiar do DMD 0.382: acur. bal. 0.559 (sens. 0.497, espec. 0.620)
+2026-09-27 21:22:50,711 INFO    (10 s)
+2026-09-27 21:22:54,415 INFO (C) s5_sem_sinal_alerta RF (treino 656 janelas, alerta 233): B3 AUC 0.675 | acur. bal. 0,5 0.602 (sens. 0.329, espec. 0.874) | limiar do DMD 0.512: acur. bal. 0.597 (sens. 0.314, espec. 0.881)
+2026-09-27 21:23:00,738 INFO (C) s5_sem_sinal_alerta LR (treino 656 janelas, alerta 233): B3 AUC 0.658 | acur. bal. 0,5 0.606 (sens. 0.238, espec. 0.974) | limiar do DMD 0.435: acur. bal. 0.623 (sens. 0.279, espec. 0.967)
+2026-09-27 21:23:00,739 INFO    (10 s)
+2026-09-27 21:23:04,630 INFO (C) janela_5s RF (treino 545 janelas, alerta 237): B3 AUC 0.657 | acur. bal. 0,5 0.598 (sens. 0.365, espec. 0.831) | limiar do DMD 0.577: acur. bal. 0.585 (sens. 0.301, espec. 0.869)
+2026-09-27 21:23:11,315 INFO (C) janela_5s LR (treino 545 janelas, alerta 237): B3 AUC 0.654 | acur. bal. 0,5 0.628 (sens. 0.294, espec. 0.961) | limiar do DMD 0.512: acur. bal. 0.624 (sens. 0.284, espec. 0.964)
+2026-09-27 21:23:11,315 INFO    (11 s)
+2026-09-27 21:23:15,311 INFO (C) janela_15s RF (treino 474 janelas, alerta 8): B3 AUC 0.692 | acur. bal. 0,5 0.575 (sens. 0.825, espec. 0.326) | limiar do DMD 0.958: acur. bal. 0.678 (sens. 0.502, espec. 0.854)
+2026-09-27 21:23:20,787 INFO (C) janela_15s LR (treino 474 janelas, alerta 8): B3 AUC 0.665 | acur. bal. 0,5 0.561 (sens. 0.707, espec. 0.415) | limiar do DMD 0.831: acur. bal. 0.641 (sens. 0.618, espec. 0.665)
+2026-09-27 21:23:20,787 INFO    (9 s)
+2026-09-27 21:23:24,212 INFO (C) ref_s2_espelho RF (treino 472 janelas, alerta 49): B3 AUC 0.711 | acur. bal. 0,5 0.640 (sens. 0.750, espec. 0.531) | limiar do DMD 0.765: acur. bal. 0.681 (sens. 0.608, espec. 0.754)
+2026-09-27 21:23:29,423 INFO (C) ref_s2_espelho LR (treino 472 janelas, alerta 49): B3 AUC 0.690 | acur. bal. 0,5 0.675 (sens. 0.595, espec. 0.755) | limiar do DMD 0.380: acur. bal. 0.647 (sens. 0.660, espec. 0.635)
+2026-09-27 21:23:29,423 INFO    (9 s)
+2026-09-27 21:23:33,254 INFO (C) sem_gE_29 RF (treino 474 janelas, alerta 81): B3 AUC 0.700 | acur. bal. 0,5 0.677 (sens. 0.435, espec. 0.918) | limiar do DMD 0.568: acur. bal. 0.665 (sens. 0.392, espec. 0.937)
+2026-09-27 21:23:39,604 INFO (C) sem_gE_29 LR (treino 474 janelas, alerta 81): B3 AUC 0.644 | acur. bal. 0,5 0.636 (sens. 0.315, espec. 0.957) | limiar do DMD 0.581: acur. bal. 0.616 (sens. 0.263, espec. 0.970)
+2026-09-27 21:23:39,604 INFO    (10 s)
+2026-09-27 21:23:39,605 INFO -> models/exp5/exp5b_final_modelos.json (4 modelos)
+2026-09-27 21:23:40,244 INFO -> results/exp5b_transferencia.csv (4164 linhas)
+2026-09-27 21:23:40,245 INFO -> results/exp5b_limiares.csv (104 linhas)
+2026-09-27 21:23:41,650 INFO Importância por permutação A/principal/LR: 1 s
+2026-09-27 21:23:47,399 INFO Importância por permutação A/principal/RF: 6 s
+2026-09-27 21:23:48,141 INFO Importância por permutação A/sem_normalizacao/LR: 1 s
+2026-09-27 21:23:53,554 INFO Importância por permutação A/sem_normalizacao/RF: 5 s
+2026-09-27 21:23:57,257 INFO Importância por permutação B/principal/LR: 4 s
+2026-09-27 21:24:05,431 INFO Importância por permutação B/principal/RF: 8 s
+2026-09-27 21:24:06,462 INFO Importância por permutação B/sem_normalizacao/LR: 1 s
+2026-09-27 21:24:14,573 INFO Importância por permutação B/sem_normalizacao/RF: 8 s
+2026-09-27 21:24:16,374 INFO Importância por permutação C/principal/LR: 2 s
+2026-09-27 21:24:20,476 INFO Importância por permutação C/principal/RF: 4 s
+2026-09-27 21:24:22,248 INFO Importância por permutação C/sem_normalizacao/LR: 2 s
+2026-09-27 21:24:26,528 INFO Importância por permutação C/sem_normalizacao/RF: 4 s
+2026-09-27 21:24:28,215 INFO -> results/exp5b_importancia.csv (242 linhas)
+2026-09-27 21:24:28,795 INFO -> results/exp5b_predicoes.csv (327612 linhas)
+2026-09-27 21:24:28,824 INFO -> results/exp5b_predicoes_video.csv (11760 linhas)
+2026-09-27 21:24:29,285 INFO -> results/exp5b_por_sujeito.csv (73 linhas)
+2026-09-27 21:24:29,443 INFO -> results/exp5b_comparacao_exp1.csv
+2026-09-27 21:24:29,443 INFO Tempo total das análises: 11.0 min
+2026-09-27 21:24:29,966 INFO -> results/exp5b_transferencia.md
+2026-09-27 21:24:30,573 INFO -> results/figures/fig_exp5b_transferencia.{pdf,png} (8.5 x 9.2 cm)

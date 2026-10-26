@@ -1,0 +1,64 @@
+{
+  "tipo": "benchmark_pwa",
+  "versao_app": "1.0",
+  "data": "2026-09-27T21:58:22.872Z",
+  "aparelho": {
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/154.0.8037.55 Mobile/15E148 Safari/604.1",
+    "hardwareConcurrency": 4,
+    "deviceMemoryGB": null,
+    "platform": "iPhone",
+    "screen": "402x874@3",
+    "secureContext": true,
+    "crossOriginIsolated": false,
+    "wasmSimd": true,
+    "webgl2": true,
+    "language": "pt-BR",
+    "date": "2026-09-27T21:58:22.874Z",
+    "delegate": "GPU",
+    "video": "480x640"
+  },
+  "delegate_landmarker": "GPU",
+  "modelos": {
+    "landmarker": "face_landmarker float16 v1",
+    "eye_state": "eye_state_int8.tflite",
+    "blink_temporal": "blink_temporal.tflite"
+  },
+  "duracao_s": 60.012,
+  "quadros": 2431,
+  "quadros_com_rosto": 2431,
+  "fps_medio": 40.50856495367593,
+  "latencia_ms": {
+    "landmarker": {
+      "n": 2431,
+      "mean": 19.04812834224611,
+      "p50": 19,
+      "p95": 26,
+      "max": 71
+    },
+    "cnn_olhos_2olhos": {
+      "n": 2431,
+      "mean": 3.4677087618265525,
+      "p50": 3,
+      "p95": 6,
+      "max": 8
+    },
+    "temporal": {
+      "n": 560,
+      "mean": 0.999999999999974,
+      "p50": 1,
+      "p95": 1.0000000000291038,
+      "max": 1.0000000000291038
+    },
+    "total_por_quadro": {
+      "n": 2431,
+      "mean": 22.818593171534605,
+      "p50": 23,
+      "p95": 30,
+      "max": 76
+    }
+  },
+  "perclos_final": 0.03333333333333333,
+  "piscadas_no_periodo": 9,
+  "quadros_em_alerta": 0,
+  "ear_medio": 0.24866517858268256
+}

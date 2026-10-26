@@ -1,0 +1,268 @@
+# Validação da PWA com vídeos reais pela câmera falsa do Chrome headless — 2026-09-28T01:09:50.245Z
+# Execuções em (pasta temporária local)/val/runs; analisador tools/app_validacao/analisar_app_videos.mjs; tolerância de casamento 0.5 s; janela UTA 180 s após a calibração.
+# Chrome headless: --headless=new --mute-audio --use-fake-ui-for-media-stream --use-fake-device-for-media-stream --use-file-for-fake-video-capture=<clipe .y4m local, fora do repositório> (tools/app_validacao/rodar_app_video.mjs); app aberto com ?autostart=1&volume=0; volume 0 % e ganho 0 conferidos a cada 1 s (aborta se não).
+# Clipes: tools/app_validacao/preparar_clipe.py (ffmpeg do imageio-ffmpeg; 30 fps; 640x480 ou 480x640 com faixas pretas; 5 s de preto antes e 3 s depois). Nenhum quadro ou rosto foi salvo; os .y4m foram apagados após cada execução.
+# Versão do app servida (cópia congelada de app/pwa): APP_VERSION 2.0; md5 engine.js a7dfafa14a4bf95fcce75dba88a8755d, app.js afe858bffc9789663762c87c736064ae (idênticos a app/pwa ao fim das execuções)
+ ## dmd_gE29_s5 — DMD s5 (encenada): gE_29 (óculos)
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-180.1 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (9 checagens registradas; ex.: {"s":180,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 11221; FPS médio 60.0; intervalo p95 18 ms, máx 115 ms
+primeiro rosto em vt=4.98 s (preto até 5 s); calibração concluída em vt=15.21 s: limiar EAR 0.225, pitch0 -25.8°, jaw0 0.002, avisos: []; linha de base das piscadas: 83 ms em vt=96.3 s
+sincronização (eyeBlink app x offline): vt = t_arquivo + 0.000 s (r=0.975, n=10191); 1ª metade 0.000 s (r=0.975), 2ª metade -0.033 s (r=0.975)
+janela avaliada: vt 15.2-185.1 s (169.9 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 43.9 s, ATENÇÃO 0.0 s, SONOLENTO 126.0 s (forçado 11.5 s); nível máx 100, médio 74.7; 1º vermelho 43.9 s após a calibração
+eventos: {"bocejo":2,"fechamento":2,"microssono":12,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":1,"aviso":0}
+piscadas (< 0,5 s): 31.4/min, duração mediana 50 ms; olho fechado em 19.0 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 163 pontos
+linha do tempo (s do vídeo original): 39.9s bocejo 4.1s; 54.1s microssono 1.6s; 54.1s alarme (olhos fechados há 1,0 s (microssono)); 59.7s fechamento 1.0s; 65.0s microssono 2.1s; 71.0s microssono 1.6s; 76.8s fechamento 0.7s; 97.5s microssono 2.2s; 103.9s microssono 1.8s; 109.4s microssono 2.2s; 115.8s microssono 2.4s; 121.2s bocejo 5.1s; 136.5s microssono 2.4s; 142.3s microssono 1.7s; 147.4s microssono 1.6s; 151.9s microssono 2.4s; 156.9s microssono 1.5s
+  bocejo anotado 77.2-84.7 s (com mão): jawOpen máx 0.27, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 161.7-170.3 s (com mão): jawOpen máx 0.18, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 38.0-43.4 s (sem mão): jawOpen máx 0.81, maior trecho >= 0,4: 4.03 s
+  bocejo anotado 119.3-125.7 s (sem mão): jawOpen máx 0.88, maior trecho >= 0,4: 5.05 s
+óculos (anotação): true; bocejos anotados após a calibração: 4 (2 sem mão, 2 com mão) em 77.2-84.7m, 161.7-170.3m, 38.0-43.4, 119.3-125.7
+bocejos detectados: 2 em 38.4-42.4, 119.7-124.8; VP 2; revocação 2/4 (sem mão 2/2, com mão 0/2); precisão 2/2
+fechamentos >= 0.5 s: anotados 18, detectados 14, revocação 14/18, precisão 14/14
+fechamentos >= 1 s: anotados 13, detectados 12, revocação 12/13, precisão 12/12
+duração dos fechamentos (app - anotação, 14 pares): mediana -0.32 s, p25 -0.55 s, p75 0.08 s; microssonos do app sobre fechamentos anotados de 0,5-1 s: 0 de 12
+olhos por quadro (app no navegador x anotação): sensibilidade 0.794, especificidade 1.000, kappa 0.847 (n=6849)
+ ## dmd_gZ33_s5 — DMD s5 (encenada): gZ_33
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-181.6 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (9 checagens registradas; ex.: {"s":180,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 11283; FPS médio 60.0; intervalo p95 18 ms, máx 121 ms
+primeiro rosto em vt=4.97 s (preto até 5 s); calibração concluída em vt=14.97 s: limiar EAR 0.218, pitch0 -5.1°, jaw0 0.001, avisos: []; linha de base das piscadas: 108 ms em vt=93.0 s
+sincronização (eyeBlink app x offline): vt = t_arquivo + -0.033 s (r=0.991, n=10295); 1ª metade -0.033 s (r=0.987), 2ª metade -0.033 s (r=0.995)
+janela avaliada: vt 15.0-186.6 s (171.6 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 29.2 s, ATENÇÃO 7.2 s, SONOLENTO 135.3 s (forçado 5.4 s); nível máx 100, médio 79.7; 1º vermelho 36.4 s após a calibração
+eventos: {"bocejo":1,"fechamento":6,"microssono":15,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":1,"aviso":1}
+piscadas (< 0,5 s): 16.1/min, duração mediana 100 ms; olho fechado em 16.9 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 141 pontos
+linha do tempo (s do vídeo original): 32.7s fechamento 0.7s; 39.2s fechamento 0.7s; 39.2s aviso; 46.4s bocejo 1.8s; 46.4s alarme (nível de sonolência >= 70); 50.6s fechamento 0.5s; 52.4s fechamento 0.6s; 63.8s microssono 1.2s; 66.7s microssono 1.3s; 70.3s microssono 1.3s; 76.3s microssono 1.4s; 78.9s fechamento 0.6s; 80.7s fechamento 0.5s; 89.6s microssono 1.2s; 96.8s microssono 1.2s; 101.4s microssono 1.3s; 105.2s microssono 1.4s; 113.0s microssono 1.3s; 119.4s microssono 1.7s; 144.0s microssono 1.8s; 149.5s microssono 1.2s; 156.5s microssono 1.3s; 161.0s microssono 1.9s; 172.2s microssono 1.1s
+  bocejo anotado 19.5-20.8 s (com mão): jawOpen máx 0.20, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 71.4-73.7 s (com mão): jawOpen máx 0.13, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 80.3-84.0 s (com mão): jawOpen máx 0.12, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 164.6-168.9 s (com mão): jawOpen máx 0.19, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 17.6-19.5 s (sem mão): jawOpen máx 0.14, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 26.6-29.7 s (sem mão): jawOpen máx 0.64, maior trecho >= 0,4: 0.50 s
+  bocejo anotado 38.3-42.1 s (sem mão): jawOpen máx 0.74, maior trecho >= 0,4: 1.30 s
+  bocejo anotado 44.5-48.2 s (sem mão): jawOpen máx 0.80, maior trecho >= 0,4: 1.80 s
+  bocejo anotado 120.9-126.6 s (sem mão): jawOpen máx 0.65, maior trecho >= 0,4: 1.40 s
+óculos (anotação): false; bocejos anotados após a calibração: 9 (5 sem mão, 4 com mão) em 19.5-20.8m, 71.4-73.7m, 80.3-84.0m, 164.6-168.9m, 17.6-19.5, 26.6-29.7, 38.3-42.1, 44.5-48.2, 120.9-126.6
+bocejos detectados: 1 em 44.9-46.7; VP 1; revocação 1/9 (sem mão 1/5, com mão 0/4); precisão 1/1
+fechamentos >= 0.5 s: anotados 18, detectados 21, revocação 18/18, precisão 18/21
+fechamentos >= 1 s: anotados 6, detectados 15, revocação 6/6, precisão 6/15
+duração dos fechamentos (app - anotação, 18 pares): mediana 0.26 s, p25 0.19 s, p75 0.31 s; microssonos do app sobre fechamentos anotados de 0,5-1 s: 9 de 15
+olhos por quadro (app no navegador x anotação): sensibilidade 0.989, especificidade 1.000, kappa 0.994 (n=8428)
+ ## dmd_gC14_s5 — DMD s5 (encenada): gC_14
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-187.3 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (9 checagens registradas; ex.: {"s":180,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 11657; FPS médio 60.0; intervalo p95 18 ms, máx 125 ms
+primeiro rosto em vt=6.38 s (preto até 5 s); calibração concluída em vt=16.39 s: limiar EAR 0.203, pitch0 -2.5°, jaw0 0.001, avisos: []; linha de base das piscadas: 92 ms em vt=165.7 s
+sincronização (eyeBlink app x offline): vt = t_arquivo + -0.033 s (r=0.987, n=10555); 1ª metade 0.000 s (r=0.989), 2ª metade -0.033 s (r=0.987)
+janela avaliada: vt 16.4-192.3 s (175.9 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 48.4 s, ATENÇÃO 0.0 s, SONOLENTO 127.5 s (forçado 10.3 s); nível máx 100, médio 60.7; 1º vermelho 48.4 s após a calibração
+eventos: {"bocejo":0,"fechamento":1,"microssono":7,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":1,"aviso":0}
+piscadas (< 0,5 s): 17.1/min, duração mediana 84 ms; olho fechado em 12.9 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 120 pontos
+linha do tempo (s do vídeo original): 59.8s microssono 1.3s; 59.8s alarme (olhos fechados há 1,0 s (microssono)); 62.9s microssono 1.8s; 71.9s microssono 2.4s; 99.1s microssono 3.2s; 143.6s microssono 4.0s; 173.4s fechamento 0.5s; 175.8s microssono 1.6s; 177.7s microssono 3.0s
+  bocejo anotado 76.1-80.0 s (com mão): jawOpen máx 0.37, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 155.6-160.0 s (com mão): jawOpen máx 0.30, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 41.8-46.0 s (sem mão): jawOpen máx 0.61, maior trecho >= 0,4: 0.70 s
+  bocejo anotado 120.6-124.8 s (sem mão): jawOpen máx 0.36, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 154.7-155.6 s (sem mão): jawOpen máx 0.02, maior trecho >= 0,4: 0.00 s
+óculos (anotação): false; bocejos anotados após a calibração: 5 (3 sem mão, 2 com mão) em 76.1-80.0m, 155.6-160.0m, 41.8-46.0, 120.6-124.8, 154.7-155.6
+bocejos detectados: 0 em ; VP 0; revocação 0/5 (sem mão 0/3, com mão 0/2); precisão 0/0
+fechamentos >= 0.5 s: anotados 7, detectados 8, revocação 7/7, precisão 7/8
+fechamentos >= 1 s: anotados 7, detectados 7, revocação 7/7, precisão 7/7
+duração dos fechamentos (app - anotação, 7 pares): mediana 0.18 s, p25 0.11 s, p75 0.21 s; microssonos do app sobre fechamentos anotados de 0,5-1 s: 0 de 7
+olhos por quadro (app no navegador x anotação): sensibilidade 0.998, especificidade 1.000, kappa 0.999 (n=8635)
+ ## dmd_gB7_s5 — DMD s5 (encenada): gB_7 (extra: quedas de cabeça reais no motor offline)
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-181.5 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (9 checagens registradas; ex.: {"s":180,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 11271; FPS médio 60.0; intervalo p95 18 ms, máx 104 ms
+primeiro rosto em vt=4.98 s (preto até 5 s); calibração concluída em vt=15.01 s: limiar EAR 0.184, pitch0 -9.3°, jaw0 0.012, avisos: []; linha de base das piscadas: 149 ms em vt=41.7 s
+sincronização (eyeBlink app x offline): vt = t_arquivo + -0.033 s (r=0.966, n=10256); 1ª metade -0.033 s (r=0.969), 2ª metade -0.033 s (r=0.962)
+janela avaliada: vt 15.0-186.5 s (171.5 s ativos); rosto em 99.7 % dos quadros
+tempo: ALERTA 35.7 s, ATENÇÃO 0.4 s, SONOLENTO 135.3 s (forçado 2.8 s); nível máx 100, médio 81.9; 1º vermelho 36.2 s após a calibração
+eventos: {"bocejo":3,"fechamento":3,"microssono":8,"queda":1,"cabeceio":1,"cabeca_baixa":0,"alarme":1,"aviso":1}
+piscadas (< 0,5 s): 69.3/min, duração mediana 116 ms; olho fechado em 21.3 % do tempo
+LSTM (+10) ativo em 40.7 % dos quadros; soma máxima dos outros sinais: 228 pontos
+linha do tempo (s do vídeo original): 27.3s bocejo 3.6s; 45.8s bocejo 4.2s; 45.8s aviso; 46.2s microssono 1.1s; 46.2s alarme (olhos fechados há 1,0 s (microssono)); 56.5s fechamento 0.6s; 61.6s fechamento 0.9s; 67.9s microssono 1.4s; 72.1s microssono 1.0s; 81.7s fechamento 0.5s; 104.1s microssono 1.7s; 106.9s microssono 1.1s; 116.4s microssono 1.8s; 116.9s queda pico 28°; 123.4s bocejo 4.3s; 138.2s microssono 1.3s; 138.6s cabeceio 0.6s pico 37°; 168.0s microssono 1.1s
+  bocejo anotado 76.2-81.6 s (com mão): jawOpen máx 0.50, maior trecho >= 0,4: 0.10 s
+  bocejo anotado 151.9-158.0 s (com mão): jawOpen máx 0.39, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 24.7-29.7 s (sem mão): jawOpen máx 0.80, maior trecho >= 0,4: 3.60 s
+  bocejo anotado 43.4-48.8 s (sem mão): jawOpen máx 0.90, maior trecho >= 0,4: 4.17 s
+  bocejo anotado 92.3-97.0 s (sem mão): jawOpen máx 0.11, maior trecho >= 0,4: 0.00 s
+  bocejo anotado 120.9-126.7 s (sem mão): jawOpen máx 0.82, maior trecho >= 0,4: 4.32 s
+óculos (anotação): false; bocejos anotados após a calibração: 6 (4 sem mão, 2 com mão) em 76.2-81.6m, 151.9-158.0m, 24.7-29.7, 43.4-48.8, 92.3-97.0, 120.9-126.7
+bocejos detectados: 3 em 25.8-29.4, 44.3-48.4, 121.9-126.2; VP 3; revocação 3/6 (sem mão 3/4, com mão 0/2); precisão 3/3
+fechamentos >= 0.5 s: anotados 11, detectados 11, revocação 9/11, precisão 9/11
+fechamentos >= 1 s: anotados 8, detectados 8, revocação 6/8, precisão 6/8
+duração dos fechamentos (app - anotação, 10 pares): mediana 0.11 s, p25 -0.08 s, p75 0.11 s; microssonos do app sobre fechamentos anotados de 0,5-1 s: 2 de 8
+olhos por quadro (app no navegador x anotação): sensibilidade 0.713, especificidade 0.991, kappa 0.780 (n=6928)
+ ## uta_F1_09_v0 — UTA-RLDD 0 (alerta): Fold1/09, vídeo 0
+clipe: 480x640 a 30 fps (origem 1440x2560), trecho 0-205 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 480x480
+silêncio: OK (10 checagens registradas; ex.: {"s":210,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 12709; FPS médio 59.9; intervalo p95 18 ms, máx 261 ms
+primeiro rosto em vt=4.97 s (preto até 5 s); calibração concluída em vt=14.95 s: limiar EAR 0.234, pitch0 -5.1°, jaw0 0.001, avisos: []; linha de base das piscadas: 134 ms em vt=105.6 s
+janela avaliada: vt 15.0-195.0 s (180.0 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 180.0 s, ATENÇÃO 0.0 s, SONOLENTO 0.0 s (forçado 0.0 s); nível máx 0, médio 0.0; 1º vermelho nunca
+eventos: {"bocejo":0,"fechamento":0,"microssono":0,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":0,"aviso":0}
+piscadas (< 0,5 s): 14.0/min, duração mediana 125 ms; olho fechado em 3.1 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 0 pontos
+linha do tempo (s do vídeo original): nenhum evento
+ ## uta_F3_31_v0 — UTA-RLDD 0 (alerta): Fold3/31, vídeo 0
+clipe: 480x640 a 30 fps (origem 720x1280), trecho 0-205 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 480x480
+silêncio: OK (10 checagens registradas; ex.: {"s":210,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 12727; FPS médio 60.0; intervalo p95 18 ms, máx 120 ms
+primeiro rosto em vt=4.97 s (preto até 5 s); calibração concluída em vt=14.97 s: limiar EAR 0.262, pitch0 -11.4°, jaw0 0.055, avisos: []; linha de base das piscadas: 91 ms em vt=45.6 s
+janela avaliada: vt 15.0-195.0 s (180.0 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 131.1 s, ATENÇÃO 48.9 s, SONOLENTO 0.0 s (forçado 0.0 s); nível máx 46, médio 23.3; 1º vermelho nunca
+eventos: {"bocejo":0,"fechamento":0,"microssono":0,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":0,"aviso":3}
+piscadas (< 0,5 s): 74.7/min, duração mediana 100 ms; olho fechado em 11.9 % do tempo
+LSTM (+10) ativo em 50.3 % dos quadros; soma máxima dos outros sinais: 36 pontos
+linha do tempo (s do vídeo original): 118.1s aviso; 154.8s aviso; 167.0s aviso
+ ## uta_F5_51_v0 — UTA-RLDD 0 (alerta): Fold5/51, vídeo 0
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-205 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (10 checagens registradas; ex.: {"s":210,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 12721; FPS médio 60.0; intervalo p95 18 ms, máx 117 ms
+primeiro rosto em vt=4.98 s (preto até 5 s); calibração concluída em vt=14.98 s: limiar EAR 0.215, pitch0 -9.2°, jaw0 0.000, avisos: []; linha de base das piscadas: 142 ms em vt=169.7 s
+janela avaliada: vt 15.0-195.0 s (180.0 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 180.0 s, ATENÇÃO 0.0 s, SONOLENTO 0.0 s (forçado 0.0 s); nível máx 0, médio 0.0; 1º vermelho nunca
+eventos: {"bocejo":0,"fechamento":0,"microssono":0,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":0,"aviso":0}
+piscadas (< 0,5 s): 9.7/min, duração mediana 133 ms; olho fechado em 2.0 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 0 pontos
+linha do tempo (s do vídeo original): nenhum evento
+ ## uta_F1_09_v10 — UTA-RLDD 10 (sonolento): Fold1/09, vídeo 10
+clipe: 480x640 a 30 fps (origem 1440x2560), trecho 0-205 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 480x480
+silêncio: OK (10 checagens registradas; ex.: {"s":210,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 12731; FPS médio 60.0; intervalo p95 18 ms, máx 117 ms
+primeiro rosto em vt=4.97 s (preto até 5 s); calibração concluída em vt=14.97 s: limiar EAR 0.235, pitch0 2.0°, jaw0 0.002, avisos: []; linha de base das piscadas: 134 ms em vt=141.5 s
+janela avaliada: vt 15.0-195.0 s (180.0 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 180.0 s, ATENÇÃO 0.0 s, SONOLENTO 0.0 s (forçado 0.0 s); nível máx 25, médio 10.5; 1º vermelho nunca
+eventos: {"bocejo":0,"fechamento":2,"microssono":0,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":0,"aviso":0}
+piscadas (< 0,5 s): 13.3/min, duração mediana 67 ms; olho fechado em 2.8 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 25 pontos
+linha do tempo (s do vídeo original): 22.0s fechamento 0.7s; 173.6s fechamento 0.5s
+ ## uta_F3_31_v10 — UTA-RLDD 10 (sonolento): Fold3/31, vídeo 10
+clipe: 480x640 a 30 fps (origem 720x1280), trecho 0-205 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 480x480
+silêncio: OK (10 checagens registradas; ex.: {"s":210,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 12731; FPS médio 60.0; intervalo p95 18 ms, máx 117 ms
+primeiro rosto em vt=4.97 s (preto até 5 s); calibração concluída em vt=14.97 s: limiar EAR 0.214, pitch0 -9.6°, jaw0 0.020, avisos: []; linha de base das piscadas: 134 ms em vt=43.5 s
+janela avaliada: vt 15.0-195.0 s (180.0 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 11.6 s, ATENÇÃO 0.1 s, SONOLENTO 168.3 s (forçado 47.7 s); nível máx 100, médio 92.4; 1º vermelho 11.7 s após a calibração
+eventos: {"bocejo":1,"fechamento":9,"microssono":10,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":1,"aviso":1}
+piscadas (< 0,5 s): 28.7/min, duração mediana 151 ms; olho fechado em 43.2 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 141 pontos
+linha do tempo (s do vídeo original): 17.3s fechamento 0.5s; 21.6s bocejo 3.3s; 21.6s aviso; 21.6s fechamento 0.7s; 21.6s alarme (nível de sonolência >= 70); 25.4s fechamento 0.5s; 35.3s fechamento 0.7s; 55.6s fechamento 0.7s; 72.2s microssono 2.6s; 76.4s microssono 1.6s; 78.4s fechamento 0.6s; 83.2s fechamento 0.8s; 89.4s microssono 1.1s; 100.4s microssono 3.4s; 125.7s microssono 11.3s; 139.3s fechamento 0.9s; 146.7s microssono 11.9s; 159.7s fechamento 0.8s; 161.8s microssono 3.4s; 166.3s microssono 11.7s; 179.4s microssono 2.8s; 183.1s microssono 9.4s; 192.2s fechamento 0.7s; 193.3s fechamento 0.8s; 204.1s fechamento 0.7s
+ ## uta_F5_51_v10 — UTA-RLDD 10 (sonolento): Fold5/51, vídeo 10
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-205 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (10 checagens registradas; ex.: {"s":210,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 12700; FPS médio 60.0; intervalo p95 18 ms, máx 100 ms
+primeiro rosto em vt=4.98 s (preto até 5 s); calibração concluída em vt=14.96 s: limiar EAR 0.192, pitch0 -22.3°, jaw0 0.001, avisos: []; linha de base das piscadas: 175 ms em vt=125.4 s
+janela avaliada: vt 15.0-195.0 s (180.0 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 180.0 s, ATENÇÃO 0.0 s, SONOLENTO 0.0 s (forçado 0.0 s); nível máx 0, médio 0.0; 1º vermelho nunca
+eventos: {"bocejo":0,"fechamento":0,"microssono":0,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":0,"aviso":0}
+piscadas (< 0,5 s): 10.0/min, duração mediana 175 ms; olho fechado em 2.9 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 0 pontos
+linha do tempo (s do vídeo original): nenhum evento
+ ## nity_bocejo_F_P1042778 — NITYMED bocejo (noite): Yawning/Female P1042778
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-59.5 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (5 checagens registradas; ex.: {"s":60,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 3980; FPS médio 59.9; intervalo p95 18 ms, máx 96 ms
+primeiro rosto em vt=4.96 s (preto até 5 s); calibração concluída em vt=15.46 s: limiar EAR 0.248, pitch0 -5.7°, jaw0 0.043, avisos: []; linha de base das piscadas: 101 ms em vt=39.5 s
+janela avaliada: vt 15.5-64.5 s (49.0 s ativos); rosto em 99.2 % dos quadros
+tempo: ALERTA 32.4 s, ATENÇÃO 16.6 s, SONOLENTO 0.0 s (forçado 0.0 s); nível máx 70, médio 24.3; 1º vermelho nunca
+eventos: {"bocejo":3,"fechamento":0,"microssono":0,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":0,"aviso":1}
+piscadas (< 0,5 s): 56.3/min, duração mediana 101 ms; olho fechado em 11.0 % do tempo
+LSTM (+10) ativo em 4.0 % dos quadros; soma máxima dos outros sinais: 60 pontos
+linha do tempo (s do vídeo original): 31.8s bocejo 3.1s; 42.9s bocejo 3.3s; 42.9s aviso; 51.8s bocejo 3.0s
+ ## nity_bocejo_M_P1042760 — NITYMED bocejo (noite): Yawning/Male P1042760
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-51.7 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (4 checagens registradas; ex.: {"s":30,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 3483; FPS médio 59.9; intervalo p95 18 ms, máx 123 ms
+primeiro rosto em vt=4.97 s (preto até 5 s); calibração concluída em vt=15.27 s: limiar EAR 0.273, pitch0 -2.4°, jaw0 0.021, avisos: []; linha de base das piscadas: 100 ms em vt=49.2 s
+janela avaliada: vt 15.3-56.7 s (41.4 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 13.6 s, ATENÇÃO 0.0 s, SONOLENTO 27.9 s (forçado 0.4 s); nível máx 88, médio 53.2; 1º vermelho 13.6 s após a calibração
+eventos: {"bocejo":3,"fechamento":0,"microssono":1,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":1,"aviso":0}
+piscadas (< 0,5 s): 52.1/min, duração mediana 83 ms; olho fechado em 11.4 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 88 pontos
+linha do tempo (s do vídeo original): 22.2s bocejo 4.9s; 23.8s microssono 1.4s; 23.8s alarme (olhos fechados há 1,0 s (microssono)); 35.8s bocejo 3.7s; 44.6s bocejo 3.1s; 52.5s queda pico 11°
+ ## nity_microssono_M_P1042751 — NITYMED microssono (noite): Microsleep/Male P1042751
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-128.5 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (7 checagens registradas; ex.: {"s":120,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 8140; FPS médio 60.0; intervalo p95 18 ms, máx 97 ms
+primeiro rosto em vt=4.98 s (preto até 5 s); calibração concluída em vt=14.96 s: limiar EAR 0.190, pitch0 -12.4°, jaw0 0.002, avisos: []; linha de base das piscadas: 142 ms em vt=63.7 s
+janela avaliada: vt 15.0-133.5 s (118.5 s ativos); rosto em 100.0 % dos quadros
+tempo: ALERTA 77.0 s, ATENÇÃO 41.5 s, SONOLENTO 0.0 s (forçado 0.0 s); nível máx 48, médio 25.3; 1º vermelho nunca
+eventos: {"bocejo":0,"fechamento":2,"microssono":0,"queda":0,"cabeceio":0,"cabeca_baixa":0,"alarme":0,"aviso":1}
+piscadas (< 0,5 s): 25.3/min, duração mediana 75 ms; olho fechado em 5.4 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 48 pontos
+linha do tempo (s do vídeo original): 23.3s fechamento 0.5s; 34.0s fechamento 0.7s; 34.0s aviso; 128.8s queda pico 19°; 130.5s alarme (cabeça caída há 2,5 s (rosto fora do quadro))
+ ## sint_cabeca_gC14 — Sintético (cabeça): gC_14 s5, 0-80 s, com transformações
+clipe: 640x480 a 30 fps (origem 1280x720), trecho 0-80 s, preto 5 s antes e 3 s depois; chrome Chrome/154.0.8037.57; delegate GPU; vídeo no app 640x480
+silêncio: OK (5 checagens registradas; ex.: {"s":60,"pct":0,"fonte":"url","ganho":0,"ganhoNo":null}); exceções JS: 0; quadros processados: 5179; FPS médio 59.9; intervalo p95 18 ms, máx 118 ms
+primeiro rosto em vt=6.36 s (preto até 5 s); calibração concluída em vt=16.38 s: limiar EAR 0.203, pitch0 -2.5°, jaw0 0.001, avisos: []; linha de base das piscadas: não completou 20 piscadas
+sincronização (eyeBlink app x offline): vt = t_arquivo + 0.000 s (r=0.985, n=4115); 1ª metade 0.000 s (r=0.933), 2ª metade 0.000 s (r=0.992)
+janela avaliada: vt 16.4-85.0 s (68.6 s ativos); rosto em 99.9 % dos quadros
+tempo: ALERTA 48.4 s, ATENÇÃO 0.0 s, SONOLENTO 20.2 s (forçado 2.5 s); nível máx 100, médio 26.7; 1º vermelho 48.4 s após a calibração
+eventos: {"bocejo":0,"fechamento":0,"microssono":3,"queda":2,"cabeceio":0,"cabeca_baixa":1,"alarme":1,"aviso":0}
+piscadas (< 0,5 s): 5.2/min, duração mediana 84 ms; olho fechado em 9.1 % do tempo
+LSTM (+10) ativo em 0.0 % dos quadros; soma máxima dos outros sinais: 134 pontos
+linha do tempo (s do vídeo original): 42.2s cabeca_baixa pico 0°; 59.8s microssono 1.3s; 59.8s alarme (olhos fechados há 1,0 s (microssono)); 62.8s microssono 1.8s; 63.1s queda pico 0°; 71.9s microssono 2.4s; 72.1s queda pico 1°
+transformação pitch (topo perto) 45° em 20-23.3 s do trecho (olhos fechados na anotação: não): Δpitch -10.8 a 7.4°, |Δroll| máx 12.9°, |Δyaw| máx 45.7°; eventos de cabeça: nenhum; vermelho forçado por cabeça caída: não
+transformação pitch (topo longe) 40° em 26-29.3 s do trecho (olhos fechados na anotação: não): Δpitch -4.1 a 0.5°, |Δroll| máx 6.6°, |Δyaw| máx 6.9°; eventos de cabeça: nenhum; vermelho forçado por cabeça caída: não
+transformação achatamento 40° em 32-35.3 s do trecho (olhos fechados na anotação: não): Δpitch -1.9 a 1.1°, |Δroll| máx 10.8°, |Δyaw| máx 10.5°; eventos de cabeça: nenhum; vermelho forçado por cabeça caída: não
+transformação roll 45° em 40-43.3 s do trecho (olhos fechados na anotação: não): Δpitch -4.8 a 0.4°, |Δroll| máx 43.4°, |Δyaw| máx 5.1°; eventos de cabeça: cabeca_baixa; vermelho forçado por cabeça caída: não
+transformação roll 45° em 62.2-63.6 s do trecho (olhos fechados na anotação: sim): Δpitch -1.6 a 0.1°, |Δroll| máx 40.1°, |Δyaw| máx 4.0°; eventos de cabeça: queda; vermelho forçado por cabeça caída: sim
+transformação roll 45° em 71.1-73.2 s do trecho (olhos fechados na anotação: sim): Δpitch -0.6 a 1.0°, |Δroll| máx 46.1°, |Δyaw| máx 4.1°; eventos de cabeça: queda; vermelho forçado por cabeça caída: sim
+eventos de cabeça FORA das janelas transformadas: 0
+ ## Controle do teste sintético: dmd_gC14_s5 (mesmo vídeo, SEM transformação) nos primeiros 80 s: eventos de cabeça 0
+
+## Execução (ordem real, 2026-09-27)
+Servidor de teste: python3 app/pwa/serve_https.py --dir <cópia congelada de app/pwa> --port 8766 --bind 127.0.0.1 (a 8443 do celular não foi usada; o servidor 8766 foi encerrado ao fim).
+1ª tentativa do roteiro: só sint_cabeca_gC14 rodou; os demais clipes falharam antes do Chrome (o ffmpeg consumia a lista de clipes pela entrada padrão; corrigido com -nostdin e < /dev/null). Nenhum resultado dessa tentativa além do sint_cabeca_gC14 foi usado.
+    [21:27:49] preparando dmd_gE29_s5
+    [21:27:55] rodando dmd_gE29_s5 (fim 186.6 s)
+    clip_dmd_gE29_s5.y4m: 11221 quadros, 19 eventos, vt final 187.2 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:31:04] fim dmd_gE29_s5 (código 0)
+    [21:31:04] preparando dmd_gZ33_s5
+    [21:31:13] rodando dmd_gZ33_s5 (fim 188.1 s)
+    clip_dmd_gZ33_s5.y4m: 11283 quadros, 26 eventos, vt final 188.3 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:34:23] fim dmd_gZ33_s5 (código 0)
+    [21:34:23] preparando dmd_gC14_s5
+    [21:34:35] rodando dmd_gC14_s5 (fim 193.8 s)
+    clip_dmd_gC14_s5.y4m: 11657 quadros, 11 eventos, vt final 194.5 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:37:51] fim dmd_gC14_s5 (código 0)
+    [21:37:52] preparando uta_F1_09_v0
+    [21:38:03] rodando uta_F1_09_v0 (fim 211.5 s)
+    clip_uta_F1_09_v0.y4m: 12709 quadros, 2 eventos, vt final 212.3 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:41:37] fim uta_F1_09_v0 (código 0)
+    [21:41:37] preparando uta_F3_31_v0
+    [21:41:40] rodando uta_F3_31_v0 (fim 211.5 s)
+    clip_uta_F3_31_v0.y4m: 12727 quadros, 5 eventos, vt final 212.4 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:45:15] fim uta_F3_31_v0 (código 0)
+    [21:45:15] preparando uta_F5_51_v0
+    [21:45:19] rodando uta_F5_51_v0 (fim 211.5 s)
+    clip_uta_F5_51_v0.y4m: 12721 quadros, 2 eventos, vt final 212.3 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:48:53] fim uta_F5_51_v0 (código 0)
+    [21:48:53] preparando uta_F1_09_v10
+    [21:49:03] rodando uta_F1_09_v10 (fim 211.5 s)
+    clip_uta_F1_09_v10.y4m: 12731 quadros, 4 eventos, vt final 212.4 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:52:37] fim uta_F1_09_v10 (código 0)
+    [21:52:37] preparando uta_F3_31_v10
+    [21:52:40] rodando uta_F3_31_v10 (fim 211.5 s)
+    clip_uta_F3_31_v10.y4m: 12731 quadros, 27 eventos, vt final 212.4 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:56:14] fim uta_F3_31_v10 (código 0)
+    [21:56:14] preparando uta_F5_51_v10
+    [21:56:16] rodando uta_F5_51_v10 (fim 211.5 s)
+    clip_uta_F5_51_v10.y4m: 12700 quadros, 2 eventos, vt final 211.9 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [21:59:49] fim uta_F5_51_v10 (código 0)
+    [21:59:49] preparando nity_bocejo_F_P1042778
+    [21:59:50] rodando nity_bocejo_F_P1042778 (fim 66.0 s)
+    clip_nity_bocejo_F_P1042778.y4m: 3980 quadros, 6 eventos, vt final 66.5 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [22:00:58] fim nity_bocejo_F_P1042778 (código 0)
+    [22:00:58] preparando nity_bocejo_M_P1042760
+    [22:00:59] rodando nity_bocejo_M_P1042760 (fim 58.2 s)
+    clip_nity_bocejo_M_P1042760.y4m: 3483 quadros, 8 eventos, vt final 58.4 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [22:01:59] fim nity_bocejo_M_P1042760 (código 0)
+    [22:01:59] preparando nity_microssono_M_P1042751
+    [22:02:00] rodando nity_microssono_M_P1042751 (fim 135.0 s)
+    clip_nity_microssono_M_P1042751.y4m: 8140 quadros, 7 eventos, vt final 135.8 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [22:04:17] fim nity_microssono_M_P1042751 (código 0)
+    [pula] sint_cabeca_gC14
+    [22:04:17] preparando dmd_gB7_s5
+    [22:04:26] rodando dmd_gB7_s5 (fim 188.0 s)
+    clip_dmd_gB7_s5.y4m: 11271 quadros, 20 eventos, vt final 188.2 s, exceções JS 0, chrome Chrome/154.0.8037.57
+    [22:07:36] fim dmd_gB7_s5 (código 0)
+    [22:07:36] TUDO PRONTO
+
+## Pilotos (ajuste do teste sintético de cabeça; gC_14 s5 0-40 s, preto 4 s)
+Piloto 2: pitch com topo afastando (40°) -> Δpitch medido cerca de -8° (lido como cabeça PARA CIMA); pitch com topo aproximando (45°) -> o landmarker leu yaw de até ±35° (virar para o lado), Δpitch -9 a +4°; achatamento vertical (40°) -> Δpitch ~0; roll de 35° -> |Δroll| medido 23-31° (abaixo de 30° em parte do tempo), por isso o teste final usou roll de 45°.
+Conclusão dos pilotos: transformação 2D do quadro não produz inclinação para baixo (pitch) no Face Landmarker; só o roll (rotação no plano) é simulável dessa forma.

@@ -1,0 +1,26 @@
+2026-09-27 20:45:51,679 INFO Folds da UTA-RLDD com .ok: [1, 2, 3, 4, 5]
+2026-09-27 20:45:51,867 INFO 126 arquivos já prontos, 52 reaproveitados da rodada preliminar (mesmo nº de quadros no .npz), 195 a processar (N_AMOSTRAS=24, 4 processos)
+2026-09-27 20:47:14,803 INFO 10/195 arquivos (83 s)
+2026-09-27 20:48:56,366 INFO 20/195 arquivos (184 s)
+2026-09-27 20:50:45,059 INFO 30/195 arquivos (293 s)
+2026-09-27 20:52:11,230 INFO 40/195 arquivos (379 s)
+2026-09-27 20:54:40,150 INFO 50/195 arquivos (528 s)
+2026-09-27 20:56:13,849 INFO 60/195 arquivos (622 s)
+2026-09-27 20:57:58,059 INFO 70/195 arquivos (726 s)
+2026-09-27 21:00:38,151 INFO 80/195 arquivos (886 s)
+2026-09-27 21:03:01,416 INFO 90/195 arquivos (1030 s)
+2026-09-27 21:04:40,548 INFO 100/195 arquivos (1129 s)
+2026-09-27 21:05:57,087 INFO 110/195 arquivos (1205 s)
+2026-09-27 21:07:17,044 INFO 120/195 arquivos (1285 s)
+2026-09-27 21:09:30,289 INFO 130/195 arquivos (1418 s)
+2026-09-27 21:11:07,490 INFO 140/195 arquivos (1516 s)
+2026-09-27 21:11:58,520 INFO 150/195 arquivos (1567 s)
+2026-09-27 21:15:07,821 INFO 160/195 arquivos (1756 s)
+2026-09-27 21:17:59,165 INFO 170/195 arquivos (1927 s)
+2026-09-27 21:20:32,619 INFO 180/195 arquivos (2081 s)
+2026-09-27 21:23:31,380 INFO 190/195 arquivos (2260 s)
+2026-09-27 21:24:00,017 INFO 195/195 arquivos (2288 s)
+2026-09-27 21:24:00,095 INFO dmd: 65 arquivos (65 vídeos lógicos); lum_rosto mediana 98.3 (mín 59.3, máx 126.2); lum_quadro mediana 97.1; versões {'1.1': 49, '1.0': 16}
+2026-09-27 21:24:00,095 INFO nitymed: 126 arquivos (126 vídeos lógicos); lum_rosto mediana 82.9 (mín 68.9, máx 99.4); lum_quadro mediana 52.0; versões {'1.0': 126}
+2026-09-27 21:24:00,096 INFO uta: 182 arquivos (180 vídeos lógicos); lum_rosto mediana 99.9 (mín 20.3, máx 186.4); lum_quadro mediana 124.6; versões {'1.1': 146, '1.0': 36}
+2026-09-27 21:24:00,098 INFO Tabela: results/exp6_luminancia_videos.csv (2288 s)

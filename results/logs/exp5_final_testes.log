@@ -1,0 +1,20 @@
+ok  test_caracteristicas_janela
+ok  test_ear_sintetico
+ok  test_escore_coerente_e_ordem
+ok  test_fechamento_longo_e_limiar
+ok  test_frequencia
+ok  test_janelas_ancoradas_em_trechos_safe_drive
+ok  test_normalizacao_janelas
+ok  test_numero_de_janelas
+ok  test_partes_uta_concatenadas_com_contagem_continua
+ok  test_recuperacao_frequencia_oficial
+ok  test_referencia_nitymed_primeiro_terco
+ok  test_referencia_uta_separada_da_avaliacao
+ok  test_rotulos_dmd_s5_e_casamento
+ok  test_rotulos_v2_dmd
+ok  test_sem_rosto_interrompe_piscada
+ok  test_tempo_vfr
+ok  test_tres_piscadas_caracteristicas
+ok  test_unroll_igual_ao_original
+ok  test_zscore_referencia_alerta
+19 testes passaram

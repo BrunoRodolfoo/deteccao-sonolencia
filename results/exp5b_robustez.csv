@@ -1,0 +1,53 @@
+analise,variante,modelo,nivel,metrica,valor,ic95_inf,ic95_sup,n_rep,unidade,descricao,execucao
+replica_principal,ref_video_alerta,RF,janela,queda_auc,10.890219573436354,6.7381780018662,15.656439828138735,1000.0,pp,réplica do Exp. 5b: queda B − C de AUC por janela (confere com exp5b_transferencia.csv),2026-10-26 20:51
+referencia_kss5,ref_video_kss5,RF,janela,auc_B,68.38295478004557,63.45110826592877,72.82247553292969,1000.0,AUC x 100,B (UTA→UTA) com a centragem pelo vídeo de pouca vigilância (código 5),2026-10-26 20:51
+referencia_kss5,ref_video_kss5,RF,janela,auc_C,66.09377790389678,61.37749296198126,70.93919502511513,1000.0,AUC x 100,C (DMD→UTA) com a centragem pelo vídeo de pouca vigilância (código 5),2026-10-26 20:51
+referencia_kss5,ref_video_kss5,RF,janela,queda_auc,2.2891768761487907,-2.4946549168280074,6.841605922287273,1000.0,pp,queda B − C de AUC por janela com a centragem pelo vídeo de pouca vigilância (bootstrap pareado),2026-10-26 20:51
+referencia_kss5,ref_video_kss5,RF,video,auc_B,75.55555555555556,,,,AUC x 100,"B, AUC por vídeo, centragem pelo vídeo de pouca vigilância",2026-10-26 20:51
+referencia_kss5,ref_video_kss5,RF,video,auc_C,77.83333333333333,,,,AUC x 100,"C, AUC por vídeo, centragem pelo vídeo de pouca vigilância",2026-10-26 20:51
+referencia_kss5,ref_video_kss5,RF,video,queda_auc,-2.2777777777777786,-9.059027777777771,4.333333333333334,1000.0,pp,queda B − C de AUC por vídeo com a centragem pelo vídeo de pouca vigilância,2026-10-26 20:51
+bootstrap_dois_niveis,ref_video_alerta,RF,janela,queda_auc,10.890219573436354,5.692575299568174,19.497192277847297,1000.0,pp,queda B − C de AUC por janela; IC com sujeitos do DMD (retreino de C) e da UTA-RLDD reamostrados,2026-10-26 20:51
+volume_treino,13_sujeitos,RF,janela,auc_B,78.57135799246653,76.98481269795381,80.31672984760914,20.0,AUC x 100,"B treinado com 13 sujeitos sorteados por fold; valor = mediana dos sorteios, faixa = percentis 2,5 e 97,5 dos sorteios (não é IC)",2026-10-26 20:51
+volume_treino,13_sujeitos_510_janelas,RF,janela,auc_B,78.75859524043443,76.60082146921147,80.54814811424036,20.0,AUC x 100,"B treinado com 13 sujeitos sorteados por fold e 510 janelas; valor = mediana dos sorteios, faixa = percentis 2,5 e 97,5 dos sorteios (não é IC)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,RF,janela,acuracia_balanceada_por_sujeito,74.191850719123,,,,%,"B3, janelas de 10 s, folds oficiais por sujeito (centrada)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,RF,janela,acuracia_balanceada_aleatoria,86.8061297098103,,,3.0,%,"B3, janelas de 10 s, partição aleatória de janelas em 5 partes, média das sementes (centrada)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,RF,janela,acuracia_balanceada_inflacao,12.61427899068731,,,3.0,pp,inflação pela partição aleatória de janelas: aleatória − por sujeito (centrada),2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,RF,janela,auc_por_sujeito,80.13359239711053,,,,%,"B3, janelas de 10 s, folds oficiais por sujeito (centrada)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,RF,janela,auc_aleatoria,94.03636540016551,,,3.0,%,"B3, janelas de 10 s, partição aleatória de janelas em 5 partes, média das sementes (centrada)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,RF,janela,auc_inflacao,13.90277300305498,,,3.0,pp,inflação pela partição aleatória de janelas: aleatória − por sujeito (centrada),2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,RF,janela,acuracia_balanceada_por_sujeito,62.88496387405744,,,,%,"B3, janelas de 10 s, folds oficiais por sujeito (bruta)",2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,RF,janela,acuracia_balanceada_aleatoria,77.53668721334522,,,3.0,%,"B3, janelas de 10 s, partição aleatória de janelas em 5 partes, média das sementes (bruta)",2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,RF,janela,acuracia_balanceada_inflacao,14.65172333928778,,,3.0,pp,inflação pela partição aleatória de janelas: aleatória − por sujeito (bruta),2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,RF,janela,auc_por_sujeito,69.3830600166389,,,,%,"B3, janelas de 10 s, folds oficiais por sujeito (bruta)",2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,RF,janela,auc_aleatoria,85.31966731040056,,,3.0,%,"B3, janelas de 10 s, partição aleatória de janelas em 5 partes, média das sementes (bruta)",2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,RF,janela,auc_inflacao,15.936607293761673,,,3.0,pp,inflação pela partição aleatória de janelas: aleatória − por sujeito (bruta),2026-10-26 20:51
+replica_principal,ref_video_alerta,LR,janela,queda_auc,9.815205187427335,3.663269894427383,16.02629611669986,1000.0,pp,réplica do Exp. 5b: queda B − C de AUC por janela (confere com exp5b_transferencia.csv),2026-10-26 20:51
+referencia_kss5,ref_video_kss5,LR,janela,auc_B,73.732204220509,69.31453753493237,77.975170328778,1000.0,AUC x 100,B (UTA→UTA) com a centragem pelo vídeo de pouca vigilância (código 5),2026-10-26 20:51
+referencia_kss5,ref_video_kss5,LR,janela,auc_C,66.1755930367038,60.34420916940918,71.67034416277191,1000.0,AUC x 100,C (DMD→UTA) com a centragem pelo vídeo de pouca vigilância (código 5),2026-10-26 20:51
+referencia_kss5,ref_video_kss5,LR,janela,queda_auc,7.556611183805195,3.0331749365368568,12.522228927042637,1000.0,pp,queda B − C de AUC por janela com a centragem pelo vídeo de pouca vigilância (bootstrap pareado),2026-10-26 20:51
+referencia_kss5,ref_video_kss5,LR,video,auc_B,84.86111111111111,,,,AUC x 100,"B, AUC por vídeo, centragem pelo vídeo de pouca vigilância",2026-10-26 20:51
+referencia_kss5,ref_video_kss5,LR,video,auc_C,76.5,,,,AUC x 100,"C, AUC por vídeo, centragem pelo vídeo de pouca vigilância",2026-10-26 20:51
+referencia_kss5,ref_video_kss5,LR,video,queda_auc,8.361111111111107,3.4437500000000054,13.83333333333333,1000.0,pp,queda B − C de AUC por vídeo com a centragem pelo vídeo de pouca vigilância,2026-10-26 20:51
+bootstrap_dois_niveis,ref_video_alerta,LR,janela,queda_auc,9.815205187427335,1.900365123207078,18.08391315462349,1000.0,pp,queda B − C de AUC por janela; IC com sujeitos do DMD (retreino de C) e da UTA-RLDD reamostrados,2026-10-26 20:51
+volume_treino,13_sujeitos,LR,janela,auc_B,71.51460516676721,68.12907963205157,73.2391088057647,20.0,AUC x 100,"B treinado com 13 sujeitos sorteados por fold; valor = mediana dos sorteios, faixa = percentis 2,5 e 97,5 dos sorteios (não é IC)",2026-10-26 20:51
+volume_treino,13_sujeitos_510_janelas,LR,janela,auc_B,71.20641439890412,67.78740042383944,73.63192079152977,20.0,AUC x 100,"B treinado com 13 sujeitos sorteados por fold e 510 janelas; valor = mediana dos sorteios, faixa = percentis 2,5 e 97,5 dos sorteios (não é IC)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,LR,janela,acuracia_balanceada_por_sujeito,71.95360093326629,,,,%,"B3, janelas de 10 s, folds oficiais por sujeito (centrada)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,LR,janela,acuracia_balanceada_aleatoria,73.13179145502163,,,3.0,%,"B3, janelas de 10 s, partição aleatória de janelas em 5 partes, média das sementes (centrada)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,LR,janela,acuracia_balanceada_inflacao,1.1781905217553512,,,3.0,pp,inflação pela partição aleatória de janelas: aleatória − por sujeito (centrada),2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,LR,janela,auc_por_sujeito,74.3645809655772,,,,%,"B3, janelas de 10 s, folds oficiais por sujeito (centrada)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,LR,janela,auc_aleatoria,76.46584169136123,,,3.0,%,"B3, janelas de 10 s, partição aleatória de janelas em 5 partes, média das sementes (centrada)",2026-10-26 20:51
+vazamento_mesmo_cenario,centrada,LR,janela,auc_inflacao,2.1012607257840377,,,3.0,pp,inflação pela partição aleatória de janelas: aleatória − por sujeito (centrada),2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,LR,janela,acuracia_balanceada_por_sujeito,68.10641430748757,,,,%,"B3, janelas de 10 s, folds oficiais por sujeito (bruta)",2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,LR,janela,acuracia_balanceada_aleatoria,69.01552556124435,,,3.0,%,"B3, janelas de 10 s, partição aleatória de janelas em 5 partes, média das sementes (bruta)",2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,LR,janela,acuracia_balanceada_inflacao,0.9091112537567891,,,3.0,pp,inflação pela partição aleatória de janelas: aleatória − por sujeito (bruta),2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,LR,janela,auc_por_sujeito,72.54615770012713,,,,%,"B3, janelas de 10 s, folds oficiais por sujeito (bruta)",2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,LR,janela,auc_aleatoria,74.22356912872795,,,3.0,%,"B3, janelas de 10 s, partição aleatória de janelas em 5 partes, média das sementes (bruta)",2026-10-26 20:51
+vazamento_mesmo_cenario,bruta,LR,janela,auc_inflacao,1.677411428600828,,,3.0,pp,inflação pela partição aleatória de janelas: aleatória − por sujeito (bruta),2026-10-26 20:51
+ponto_operacao_regra,regra_dmd,regra,janela,falso_alarme,2.6090501426824297,,,,%,regra do rótulo do DMD nas janelas KSS 0 do B3,2026-10-26 20:51
+ponto_operacao_regra,regra_dmd,regra,janela,sensibilidade,24.099722991689752,,,,%,regra do rótulo do DMD nas janelas KSS 10 do B3,2026-10-26 20:51
+ponto_operacao_regra,C_centrada,RF,janela,sensibilidade_no_fa_da_regra,16.36987204854241,,,,%,C (centrada): sensibilidade com o limiar que dá o falso alarme da regra (diagnóstico),2026-10-26 20:51
+ponto_operacao_regra,C_centrada,LR,janela,sensibilidade_no_fa_da_regra,24.653739612188367,,,,%,C (centrada): sensibilidade com o limiar que dá o falso alarme da regra (diagnóstico),2026-10-26 20:51
+ponto_operacao_regra,B_centrada,RF,janela,sensibilidade_no_fa_da_regra,24.152486479356288,,,,%,B (centrada): sensibilidade com o limiar que dá o falso alarme da regra (diagnóstico),2026-10-26 20:51
+ponto_operacao_regra,B_centrada,LR,janela,sensibilidade_no_fa_da_regra,27.278723123598468,,,,%,B (centrada): sensibilidade com o limiar que dá o falso alarme da regra (diagnóstico),2026-10-26 20:51
+ponto_operacao_regra,C_bruta,RF,janela,sensibilidade_no_fa_da_regra,15.288220551378446,,,,%,C (bruta): sensibilidade com o limiar que dá o falso alarme da regra (diagnóstico),2026-10-26 20:51
+ponto_operacao_regra,C_bruta,LR,janela,sensibilidade_no_fa_da_regra,19.19271863870202,,,,%,C (bruta): sensibilidade com o limiar que dá o falso alarme da regra (diagnóstico),2026-10-26 20:51

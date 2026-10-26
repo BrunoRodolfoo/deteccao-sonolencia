@@ -1,0 +1,5 @@
+modelo,threads,arquivo,tamanho_kb,p50_ms,p95_ms,mean_ms,warmup,runs,batch,maquina,tf_version
+fp32,1,eye_state_fp32.tflite,248.2,0.067,0.07,0.067,50,500,1,arm64 / macOS-26.5.1-arm64-arm-64bit,2.21.0
+fp32,4,eye_state_fp32.tflite,248.2,0.082,0.099,0.083,50,500,1,arm64 / macOS-26.5.1-arm64-arm-64bit,2.21.0
+int8,1,eye_state_int8.tflite,72.1,0.06,0.064,0.06,50,500,1,arm64 / macOS-26.5.1-arm64-arm-64bit,2.21.0
+int8,4,eye_state_int8.tflite,72.1,0.07,0.087,0.07,50,500,1,arm64 / macOS-26.5.1-arm64-arm-64bit,2.21.0

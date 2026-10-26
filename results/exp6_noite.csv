@@ -1,0 +1,1167 @@
+secao,base,grupo,modelo,variante,metrica,valor,ic95_inf,ic95_sup,n_videos,n_janelas,n_agrupamentos,nota
+a,nitymed,nitymed|todos,,,taxa_rosto_media_por_video,0.9915351579822643,0.9875416048833587,0.9948167525063086,126.0,979.0,126.0,
+a,nitymed,nitymed|todos,,,taxa_rosto_mediana,1.0,,,126.0,,126.0,por vídeo
+a,nitymed,nitymed|todos,,,taxa_rosto_minimo,0.8737373737373737,,,126.0,,126.0,por vídeo
+a,nitymed,nitymed|todos,,,taxa_rosto_p10,0.9732003151910846,,,126.0,,126.0,por vídeo
+a,nitymed,nitymed|todos,,,taxa_rosto_ponderada,0.9901832282023976,,,126.0,,126.0,ponderada pelo nº de quadros
+a,nitymed,nitymed|todos,,,n_videos_taxa_rosto_lt_0_95,8.0,,,126.0,,,
+a,nitymed,nitymed|todos,,,n_videos_taxa_rosto_lt_0_99,26.0,,,126.0,,,
+a,nitymed,nitymed|todos,,,frac_janelas_taxa_rosto_lt_0_90,0.030643513789581207,,,,979.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,nitymed,nitymed|todos,,,maior_lacuna_sem_rosto_s_mediana,0.0,,,126.0,,,
+a,nitymed,nitymed|todos,,,maior_lacuna_sem_rosto_s_max,3.04,,,126.0,,,
+a,nitymed,nitymed|todos,,,lacunas_ge_0_5s_por_min_media,0.3431361132800152,,,126.0,,,
+a,nitymed,nitymed|Microsleep,,,taxa_rosto_media_por_video,0.9923086288209124,0.9848570072429758,0.9972567836265079,19.0,438.0,19.0,
+a,nitymed,nitymed|Microsleep,,,taxa_rosto_mediana,0.9981424148606811,,,19.0,,19.0,por vídeo
+a,nitymed,nitymed|Microsleep,,,taxa_rosto_minimo,0.9397745571658616,,,19.0,,19.0,por vídeo
+a,nitymed,nitymed|Microsleep,,,taxa_rosto_p10,0.9815040630386604,,,19.0,,19.0,por vídeo
+a,nitymed,nitymed|Microsleep,,,taxa_rosto_ponderada,0.9920449869702372,,,19.0,,19.0,ponderada pelo nº de quadros
+a,nitymed,nitymed|Microsleep,,,n_videos_taxa_rosto_lt_0_95,1.0,,,19.0,,,
+a,nitymed,nitymed|Microsleep,,,n_videos_taxa_rosto_lt_0_99,5.0,,,19.0,,,
+a,nitymed,nitymed|Microsleep,,,frac_janelas_taxa_rosto_lt_0_90,0.0319634703196347,,,,438.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,nitymed,nitymed|Microsleep,,,maior_lacuna_sem_rosto_s_mediana,0.1599999999999966,,,19.0,,,
+a,nitymed,nitymed|Microsleep,,,maior_lacuna_sem_rosto_s_max,2.040000000000001,,,19.0,,,
+a,nitymed,nitymed|Microsleep,,,lacunas_ge_0_5s_por_min_media,0.22743190475391686,,,19.0,,,
+a,nitymed,nitymed|Yawning,,,taxa_rosto_media_por_video,0.9913978126931587,0.9868861970921675,0.9949280886787916,107.0,541.0,107.0,
+a,nitymed,nitymed|Yawning,,,taxa_rosto_mediana,1.0,,,107.0,,107.0,por vídeo
+a,nitymed,nitymed|Yawning,,,taxa_rosto_minimo,0.8737373737373737,,,107.0,,107.0,por vídeo
+a,nitymed,nitymed|Yawning,,,taxa_rosto_p10,0.9713592365371507,,,107.0,,107.0,por vídeo
+a,nitymed,nitymed|Yawning,,,taxa_rosto_ponderada,0.98895140432869,,,107.0,,107.0,ponderada pelo nº de quadros
+a,nitymed,nitymed|Yawning,,,n_videos_taxa_rosto_lt_0_95,7.0,,,107.0,,,
+a,nitymed,nitymed|Yawning,,,n_videos_taxa_rosto_lt_0_99,21.0,,,107.0,,,
+a,nitymed,nitymed|Yawning,,,frac_janelas_taxa_rosto_lt_0_90,0.029574861367837338,,,,541.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,nitymed,nitymed|Yawning,,,maior_lacuna_sem_rosto_s_mediana,0.0,,,107.0,,,
+a,nitymed,nitymed|Yawning,,,maior_lacuna_sem_rosto_s_max,3.04,,,107.0,,,
+a,nitymed,nitymed|Yawning,,,lacunas_ge_0_5s_por_min_media,0.3636817204014719,,,107.0,,,
+a,uta,uta|todos,,,taxa_rosto_media_por_video,0.9976747578037574,0.9940189251587368,0.9996089590213215,180.0,22455.0,60.0,
+a,uta,uta|todos,,,taxa_rosto_mediana,1.0,,,180.0,,60.0,por vídeo
+a,uta,uta|todos,,,taxa_rosto_minimo,0.7380165663332278,,,180.0,,60.0,por vídeo
+a,uta,uta|todos,,,taxa_rosto_p10,0.9979361609739229,,,180.0,,60.0,por vídeo
+a,uta,uta|todos,,,taxa_rosto_ponderada,0.9954158094479261,,,180.0,,60.0,ponderada pelo nº de quadros
+a,uta,uta|todos,,,n_videos_taxa_rosto_lt_0_95,1.0,,,180.0,,,
+a,uta,uta|todos,,,n_videos_taxa_rosto_lt_0_99,3.0,,,180.0,,,
+a,uta,uta|todos,,,frac_janelas_taxa_rosto_lt_0_90,0.00672456023157426,,,,22455.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,uta,uta|todos,,,maior_lacuna_sem_rosto_s_mediana,0.0,,,180.0,,,
+a,uta,uta|todos,,,maior_lacuna_sem_rosto_s_max,86.02247191011236,,,180.0,,,
+a,uta,uta|todos,,,lacunas_ge_0_5s_por_min_media,0.031150554142168503,,,180.0,,,
+a,uta,uta|KSS 0,,,taxa_rosto_media_por_video,0.9995024473158511,0.9990005987981846,0.9998932426719132,60.0,7406.0,60.0,
+a,uta,uta|KSS 0,,,taxa_rosto_mediana,1.0,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 0,,,taxa_rosto_minimo,0.9881026925485284,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 0,,,taxa_rosto_p10,0.9988687003551602,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 0,,,taxa_rosto_ponderada,0.9994766942025194,,,60.0,,60.0,ponderada pelo nº de quadros
+a,uta,uta|KSS 0,,,n_videos_taxa_rosto_lt_0_95,0.0,,,60.0,,,
+a,uta,uta|KSS 0,,,n_videos_taxa_rosto_lt_0_99,1.0,,,60.0,,,
+a,uta,uta|KSS 0,,,frac_janelas_taxa_rosto_lt_0_90,0.0008101539292465569,,,,7406.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,uta,uta|KSS 0,,,maior_lacuna_sem_rosto_s_mediana,0.0,,,60.0,,,
+a,uta,uta|KSS 0,,,maior_lacuna_sem_rosto_s_max,6.973633333333339,,,60.0,,,
+a,uta,uta|KSS 0,,,lacunas_ge_0_5s_por_min_media,0.014377153360607338,,,60.0,,,
+a,uta,uta|KSS 5,,,taxa_rosto_media_por_video,0.9992675448109227,0.998764743340636,0.9997161967200687,60.0,7468.0,60.0,
+a,uta,uta|KSS 5,,,taxa_rosto_mediana,1.0,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 5,,,taxa_rosto_minimo,0.9901207464324918,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 5,,,taxa_rosto_p10,0.9984422231543231,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 5,,,taxa_rosto_ponderada,0.9993204521258523,,,60.0,,60.0,ponderada pelo nº de quadros
+a,uta,uta|KSS 5,,,n_videos_taxa_rosto_lt_0_95,0.0,,,60.0,,,
+a,uta,uta|KSS 5,,,n_videos_taxa_rosto_lt_0_99,0.0,,,60.0,,,
+a,uta,uta|KSS 5,,,frac_janelas_taxa_rosto_lt_0_90,0.0020085698982324584,,,,7468.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,uta,uta|KSS 5,,,maior_lacuna_sem_rosto_s_mediana,0.0,,,60.0,,,
+a,uta,uta|KSS 5,,,maior_lacuna_sem_rosto_s_max,5.071733333333327,,,60.0,,,
+a,uta,uta|KSS 5,,,lacunas_ge_0_5s_por_min_media,0.021335712871887538,,,60.0,,,
+a,uta,uta|KSS 10,,,taxa_rosto_media_por_video,0.9942542812844981,0.9841495550812868,0.9994784486807747,60.0,7581.0,60.0,
+a,uta,uta|KSS 10,,,taxa_rosto_mediana,1.0,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 10,,,taxa_rosto_minimo,0.7380165663332278,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 10,,,taxa_rosto_p10,0.9973580750068064,,,60.0,,60.0,por vídeo
+a,uta,uta|KSS 10,,,taxa_rosto_ponderada,0.9876880082689248,,,60.0,,60.0,ponderada pelo nº de quadros
+a,uta,uta|KSS 10,,,n_videos_taxa_rosto_lt_0_95,1.0,,,60.0,,,
+a,uta,uta|KSS 10,,,n_videos_taxa_rosto_lt_0_99,2.0,,,60.0,,,
+a,uta,uta|KSS 10,,,frac_janelas_taxa_rosto_lt_0_90,0.017148133491623797,,,,7581.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,uta,uta|KSS 10,,,maior_lacuna_sem_rosto_s_mediana,0.0,,,60.0,,,
+a,uta,uta|KSS 10,,,maior_lacuna_sem_rosto_s_max,86.02247191011236,,,60.0,,,
+a,uta,uta|KSS 10,,,lacunas_ge_0_5s_por_min_media,0.057738796194010615,,,60.0,,,
+a,dmd,dmd_s5|todos,,,taxa_rosto_media_por_video,0.9977879258580652,0.9957591449404573,0.9995366992961155,16.0,569.0,13.0,
+a,dmd,dmd_s5|todos,,,taxa_rosto_mediana,0.9998258749782344,,,16.0,,13.0,por vídeo
+a,dmd,dmd_s5|todos,,,taxa_rosto_minimo,0.9831544178364987,,,16.0,,13.0,por vídeo
+a,dmd,dmd_s5|todos,,,taxa_rosto_p10,0.994479064498704,,,16.0,,13.0,por vídeo
+a,dmd,dmd_s5|todos,,,taxa_rosto_ponderada,0.9976649815238829,,,16.0,,13.0,ponderada pelo nº de quadros
+a,dmd,dmd_s5|todos,,,n_videos_taxa_rosto_lt_0_95,0.0,,,16.0,,,
+a,dmd,dmd_s5|todos,,,n_videos_taxa_rosto_lt_0_99,1.0,,,16.0,,,
+a,dmd,dmd_s5|todos,,,frac_janelas_taxa_rosto_lt_0_90,0.0035149384885764497,,,,569.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,dmd,dmd_s5|todos,,,maior_lacuna_sem_rosto_s_mediana,0.03360215053763227,,,16.0,,,
+a,dmd,dmd_s5|todos,,,maior_lacuna_sem_rosto_s_max,2.0161290322580645,,,16.0,,,
+a,dmd,dmd_s5|todos,,,lacunas_ge_0_5s_por_min_media,0.07752399320857015,,,16.0,,,
+a,dmd,dmd_s5|sem óculos,,,taxa_rosto_media_por_video,0.997392214948715,0.9951037246010779,0.9993858417789007,13.0,464.0,10.0,
+a,dmd,dmd_s5|sem óculos,,,taxa_rosto_mediana,0.9996517499564688,,,13.0,,10.0,por vídeo
+a,dmd,dmd_s5|sem óculos,,,taxa_rosto_minimo,0.9831544178364987,,,13.0,,10.0,por vídeo
+a,dmd,dmd_s5|sem óculos,,,taxa_rosto_p10,0.993164653059166,,,13.0,,10.0,por vídeo
+a,dmd,dmd_s5|sem óculos,,,taxa_rosto_ponderada,0.9972487007753661,,,13.0,,10.0,ponderada pelo nº de quadros
+a,dmd,dmd_s5|sem óculos,,,n_videos_taxa_rosto_lt_0_95,0.0,,,13.0,,,
+a,dmd,dmd_s5|sem óculos,,,n_videos_taxa_rosto_lt_0_99,1.0,,,13.0,,,
+a,dmd,dmd_s5|sem óculos,,,frac_janelas_taxa_rosto_lt_0_90,0.004310344827586207,,,,464.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,dmd,dmd_s5|sem óculos,,,maior_lacuna_sem_rosto_s_mediana,0.06720430107526454,,,13.0,,,
+a,dmd,dmd_s5|sem óculos,,,maior_lacuna_sem_rosto_s_max,2.0161290322580645,,,13.0,,,
+a,dmd,dmd_s5|sem óculos,,,lacunas_ge_0_5s_por_min_media,0.09541414548747093,,,13.0,,,
+a,dmd,dmd_s5|com óculos,,,taxa_rosto_media_por_video,0.999502673131916,0.9985080193957478,1.0,3.0,105.0,3.0,
+a,dmd,dmd_s5|com óculos,,,taxa_rosto_mediana,1.0,,,3.0,,3.0,por vídeo
+a,dmd,dmd_s5|com óculos,,,taxa_rosto_minimo,0.9985080193957478,,,3.0,,3.0,por vídeo
+a,dmd,dmd_s5|com óculos,,,taxa_rosto_p10,0.9988064155165983,,,3.0,,3.0,por vídeo
+a,dmd,dmd_s5|com óculos,,,taxa_rosto_ponderada,0.999507874015748,,,3.0,,3.0,ponderada pelo nº de quadros
+a,dmd,dmd_s5|com óculos,,,n_videos_taxa_rosto_lt_0_95,0.0,,,3.0,,,
+a,dmd,dmd_s5|com óculos,,,n_videos_taxa_rosto_lt_0_99,0.0,,,3.0,,,
+a,dmd,dmd_s5|com óculos,,,frac_janelas_taxa_rosto_lt_0_90,0.0,,,,105.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,dmd,dmd_s5|com óculos,,,maior_lacuna_sem_rosto_s_mediana,0.0,,,3.0,,,
+a,dmd,dmd_s5|com óculos,,,maior_lacuna_sem_rosto_s_max,0.26881720430107503,,,3.0,,,
+a,dmd,dmd_s5|com óculos,,,lacunas_ge_0_5s_por_min_media,0.0,,,3.0,,,
+a,dmd,dmd_mov|safe,,,taxa_rosto_media_por_video,0.9964973235659794,0.99350408855479,0.9987104051097472,15.0,105.0,12.0,
+a,dmd,dmd_mov|safe,,,taxa_rosto_mediana,0.9988610478359908,,,15.0,,12.0,por vídeo
+a,dmd,dmd_mov|safe,,,taxa_rosto_minimo,0.9865336658354115,,,15.0,,12.0,por vídeo
+a,dmd,dmd_mov|safe,,,taxa_rosto_p10,0.9879019965610194,,,15.0,,12.0,por vídeo
+a,dmd,dmd_mov|safe,,,taxa_rosto_ponderada,0.9965734807175922,,,15.0,,12.0,ponderada pelo nº de quadros
+a,dmd,dmd_mov|safe,,,n_videos_taxa_rosto_lt_0_95,0.0,,,15.0,,,
+a,dmd,dmd_mov|safe,,,n_videos_taxa_rosto_lt_0_99,3.0,,,15.0,,,
+a,dmd,dmd_mov|safe,,,frac_janelas_taxa_rosto_lt_0_90,0.009523809523809525,,,,105.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,dmd,dmd_mov|safe,,,maior_lacuna_sem_rosto_s_mediana,0.10080645161292523,,,15.0,,,
+a,dmd,dmd_mov|safe,,,maior_lacuna_sem_rosto_s_max,0.8064516129032313,,,15.0,,,
+a,dmd,dmd_mov|safe,,,lacunas_ge_0_5s_por_min_media,0.055034674063800325,,,15.0,,,
+a,dmd,dmd_par|safe,,,taxa_rosto_media_por_video,0.998855330882848,0.9977166852662617,0.999671615181231,18.0,94.0,13.0,
+a,dmd,dmd_par|safe,,,taxa_rosto_mediana,1.0,,,18.0,,13.0,por vídeo
+a,dmd,dmd_par|safe,,,taxa_rosto_minimo,0.9919309961046188,,,18.0,,13.0,por vídeo
+a,dmd,dmd_par|safe,,,taxa_rosto_p10,0.9952289669861555,,,18.0,,13.0,por vídeo
+a,dmd,dmd_par|safe,,,taxa_rosto_ponderada,0.9989047619047619,,,18.0,,13.0,ponderada pelo nº de quadros
+a,dmd,dmd_par|safe,,,n_videos_taxa_rosto_lt_0_95,0.0,,,18.0,,,
+a,dmd,dmd_par|safe,,,n_videos_taxa_rosto_lt_0_99,0.0,,,18.0,,,
+a,dmd,dmd_par|safe,,,frac_janelas_taxa_rosto_lt_0_90,0.0,,,,94.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,dmd,dmd_par|safe,,,maior_lacuna_sem_rosto_s_mediana,0.0,,,18.0,,,
+a,dmd,dmd_par|safe,,,maior_lacuna_sem_rosto_s_max,0.2688172043010866,,,18.0,,,
+a,dmd,dmd_par|safe,,,lacunas_ge_0_5s_por_min_media,0.0,,,18.0,,,
+a,dmd,dmd_mov|inteiro,,,taxa_rosto_media_por_video,0.9878440994297929,0.9778442065851767,0.9945541528189802,15.0,0.0,12.0,
+a,dmd,dmd_mov|inteiro,,,taxa_rosto_mediana,0.9934412503488697,,,15.0,,12.0,por vídeo
+a,dmd,dmd_mov|inteiro,,,taxa_rosto_minimo,0.9405624818788054,,,15.0,,12.0,por vídeo
+a,dmd,dmd_mov|inteiro,,,taxa_rosto_p10,0.9723646940452508,,,15.0,,12.0,por vídeo
+a,dmd,dmd_mov|inteiro,,,taxa_rosto_ponderada,0.988383053981991,,,15.0,,12.0,ponderada pelo nº de quadros
+a,dmd,dmd_mov|inteiro,,,n_videos_taxa_rosto_lt_0_95,1.0,,,15.0,,,
+a,dmd,dmd_mov|inteiro,,,n_videos_taxa_rosto_lt_0_99,5.0,,,15.0,,,
+a,dmd,dmd_mov|inteiro,,,frac_janelas_taxa_rosto_lt_0_90,,,,,0.0,,todas as janelas de 10 s dos vídeos da linha (DMD s1/s2: as janelas de direção segura)
+a,dmd,dmd_mov|inteiro,,,maior_lacuna_sem_rosto_s_mediana,0.5712365591398054,,,15.0,,,
+a,dmd,dmd_mov|inteiro,,,maior_lacuna_sem_rosto_s_max,1.4448924731182728,,,15.0,,,
+a,dmd,dmd_mov|inteiro,,,lacunas_ge_0_5s_por_min_media,0.3450583970157503,,,15.0,,,
+a,nitymed,nitymed|todos,,,dif_taxa_rosto_media_nitymed|todos_menos_uta|todos,-0.006139599821493036,-0.010736573607847346,-0.0014393604649337434,,,,média por vídeo; bootstrap independente por agrupamento em cada base
+a,nitymed,nitymed|todos,,,dif_taxa_rosto_media_nitymed|todos_menos_dmd_s5|todos,-0.006252767875800869,-0.010771114592627978,-0.0024623523802272235,,,,média por vídeo; bootstrap independente por agrupamento em cada base
+a,nitymed,nitymed|todos,,,dif_taxa_rosto_media_nitymed|todos_menos_dmd_mov|safe,-0.004962165583715095,-0.009406281910147293,-0.00046898229137172146,,,,média por vídeo; bootstrap independente por agrupamento em cada base
+a,nitymed,nitymed|todos,,,dif_taxa_rosto_media_nitymed|todos_menos_dmd_par|safe,-0.007320172900583621,-0.011311513043868196,-0.0037870090305097913,,,,média por vídeo; bootstrap independente por agrupamento em cada base
+a,dmd,dmd_mov|safe,,,dif_pareada_taxa_rosto_dmd_mov|safe_menos_dmd_par|safe,-0.0010537407797681642,-0.002758528973914931,0.0,,,11.0,"setup (Car Moving − Car Stopped), sessões s1/s2; mediana das diferenças por sujeito (média das sessões); bootstrap de sujeitos"
+a,dmd,dmd_s1|safe,,,dif_pareada_taxa_rosto_dmd_s1|safe_menos_dmd_s2|safe,-0.0008076533980140299,-0.0013923698134225004,0.0007106062265720414,,,14.0,sessão do protocolo (s1 − s2); mediana das diferenças por sujeito (média das sessões); bootstrap de sujeitos
+b,nitymed,nitymed|todos,,,ear_aberto_media_mediana_por_video,0.2465790897818435,0.24090882977624595,0.25274142512385656,126.0,,126.0,
+b,nitymed,nitymed|todos,,,ear_aberto_dp_mediana_por_video,0.027051726861715853,0.025588221895214227,0.029274729649860397,126.0,,126.0,
+b,nitymed,nitymed|todos,,,ruido_rapido_mediana_por_video,0.008383683384553347,0.007973968674447735,0.008958689205882294,126.0,,126.0,
+b,nitymed,nitymed|todos,,,amp_ext_media_mediana_por_video,0.0653029467486046,0.05477163617732769,0.07271297369118299,121.0,,126.0,
+b,nitymed,nitymed|todos,,,amp_ext_relativa_mediana_por_video,0.2540155584194268,0.22342549593825406,0.27225509659593833,121.0,,126.0,
+b,nitymed,nitymed|todos,,,snr_mediana_por_video,2.0632826299665465,1.8311108025232556,2.519982008388315,121.0,,126.0,
+b,nitymed,nitymed|todos,,,snr_rapido_mediana_por_video,7.170901682970046,6.43603786909125,7.898003433940989,121.0,,126.0,
+b,nitymed,nitymed|todos,,,taxa_piscadas_min_mediana_por_video,12.78421250599878,11.005189044871244,14.792899408284022,126.0,,126.0,
+b,nitymed,nitymed|todos,,,prof_rel_p90_vales_mediana_por_video,0.24713878993881774,0.2275691075410884,0.2618075431088867,126.0,,126.0,
+b,nitymed,nitymed|todos,,,vales12_por_min_mediana_por_video,38.54895104895105,34.32896890343699,42.239999999999995,126.0,,126.0,
+b,nitymed,nitymed|todos,,,olho_largura_px_mediana_por_video,41.19701299620104,40.49552230986099,41.77904640529313,126.0,,126.0,
+b,nitymed,nitymed|todos,,,lum_rosto_mediana_por_video,82.89457321166992,81.0054931640625,83.88154029846191,126.0,,126.0,
+b,nitymed,nitymed|todos,,,lum_olhos_mediana_por_video,79.81195068359375,78.57373433113098,81.37281799316406,126.0,,126.0,
+b,nitymed,nitymed|todos,,,contraste_rosto_mediana_por_video,30.25503444671631,29.724936294555665,31.064085006713867,126.0,,126.0,
+b,nitymed,nitymed|todos,,,frac_escuro_rosto_mediana_por_video,0.05570868105787955,0.0511656274391899,0.0622780678195633,126.0,,126.0,
+b,nitymed,nitymed|todos,,,taxa_bits_mbps_mediana_por_video,1.0372961754041718,1.014247174736062,1.0743329555832295,126.0,,126.0,
+b,nitymed,nitymed|todos,,,bits_por_pixel_mediana_por_video,0.04513261732357918,0.04402114473680824,0.04662903453052211,126.0,,126.0,
+b,nitymed,nitymed|Microsleep,,,ear_aberto_media_mediana_por_video,0.25486436625404096,0.23950079817246916,0.28795116244701374,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,ear_aberto_dp_mediana_por_video,0.028707274701628146,0.02580111593841345,0.03440687655142779,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,ruido_rapido_mediana_por_video,0.00840150861550397,0.00605615210722901,0.009509285495188025,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,amp_ext_media_mediana_por_video,0.06388715142161107,0.05461240131112516,0.08102317453710396,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,amp_ext_relativa_mediana_por_video,0.26564435207751846,0.21281561364474194,0.2813781818019684,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,snr_mediana_por_video,2.275013751901541,1.8792372641070396,2.775701294108943,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,snr_rapido_mediana_por_video,7.1276168303602905,6.43603786909125,11.00748750599267,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,taxa_piscadas_min_mediana_por_video,9.572431397574984,5.966952264381886,13.102555807182139,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,prof_rel_p90_vales_mediana_por_video,0.2624789568974972,0.22558793265602062,0.2967104909803616,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,vales12_por_min_mediana_por_video,39.24696873005744,31.158714703018497,42.48366013071894,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,olho_largura_px_mediana_por_video,40.48024301175539,36.56675590414191,41.27380257825194,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,lum_rosto_mediana_por_video,75.79730606079102,73.13779067993164,78.63982772827148,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,lum_olhos_mediana_por_video,71.31590270996094,69.95355606079102,76.18221282958984,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,contraste_rosto_mediana_por_video,29.623537063598633,27.99407386779785,31.582058906555176,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,frac_escuro_rosto_mediana_por_video,0.076174952809867,0.0585998009667477,0.0810993865727818,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,taxa_bits_mbps_mediana_por_video,0.716893782051282,0.6817535587761676,0.7928617419354839,19.0,,19.0,
+b,nitymed,nitymed|Microsleep,,,bits_por_pixel_mediana_por_video,0.03111518151264245,0.029589998210771157,0.034412401993727595,19.0,,19.0,
+b,nitymed,nitymed|Yawning,,,ear_aberto_media_mediana_por_video,0.24607081953893517,0.23787022234860172,0.2522601331823036,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,ear_aberto_dp_mediana_por_video,0.026626470005005762,0.024746011335314528,0.02935098804032649,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,ruido_rapido_mediana_por_video,0.008365858153602726,0.007944761390859421,0.008932086366758914,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,amp_ext_media_mediana_por_video,0.06574338435416682,0.0520371994498372,0.07221705470367397,102.0,,107.0,
+b,nitymed,nitymed|Yawning,,,amp_ext_relativa_mediana_por_video,0.24854427293259812,0.21756452414829847,0.271498246202855,102.0,,107.0,
+b,nitymed,nitymed|Yawning,,,snr_mediana_por_video,2.007613885939181,1.8102612563555314,2.529814525418245,102.0,,107.0,
+b,nitymed,nitymed|Yawning,,,snr_rapido_mediana_por_video,7.228119725868274,5.886335049172106,7.920130727363185,102.0,,107.0,
+b,nitymed,nitymed|Yawning,,,taxa_piscadas_min_mediana_por_video,13.432835820895523,11.224489795918368,15.217391304347826,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,prof_rel_p90_vales_mediana_por_video,0.23793525697707124,0.2269003258996243,0.26110356005404595,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,vales12_por_min_mediana_por_video,38.21656050955414,34.04255319148936,43.22033898305085,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,olho_largura_px_mediana_por_video,41.47896814227043,40.80551387607797,41.98472092716814,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,lum_rosto_mediana_por_video,83.51096725463867,82.56682586669922,84.87973022460938,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,lum_olhos_mediana_por_video,81.07605361938477,79.71348571777344,83.34161758422852,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,contraste_rosto_mediana_por_video,30.30148696899414,29.731924057006836,31.11119270324707,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,frac_escuro_rosto_mediana_por_video,0.0531827245956445,0.0479771499918085,0.061171899311831,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,taxa_bits_mbps_mediana_por_video,1.0614365,1.0297716666666668,1.0977746714456393,107.0,,107.0,
+b,nitymed,nitymed|Yawning,,,bits_por_pixel_mediana_por_video,0.046073479205462446,0.044962680905695614,0.04764647011482809,107.0,,107.0,
+b,uta,uta|todos,,,ear_aberto_media_mediana_por_video,0.2657732175501354,0.2601323406395806,0.2718489176073595,180.0,,60.0,
+b,uta,uta|todos,,,ear_aberto_dp_mediana_por_video,0.018244071698680853,0.016416157455464774,0.019261169406069912,180.0,,60.0,
+b,uta,uta|todos,,,ruido_rapido_mediana_por_video,0.0037421261488372283,0.003533482852086835,0.003973599893627875,180.0,,60.0,
+b,uta,uta|todos,,,amp_ext_media_mediana_por_video,0.07957214435872982,0.07307334107188634,0.08625085986811117,178.0,,60.0,
+b,uta,uta|todos,,,amp_ext_relativa_mediana_por_video,0.2950821034062092,0.2796476248511007,0.3224104292128477,178.0,,60.0,
+b,uta,uta|todos,,,snr_mediana_por_video,4.275007402684218,3.907894455444294,4.95885910543598,178.0,,60.0,
+b,uta,uta|todos,,,snr_rapido_mediana_por_video,21.45498138875952,18.342073048319822,23.480946338355647,178.0,,60.0,
+b,uta,uta|todos,,,taxa_piscadas_min_mediana_por_video,10.220283721231457,8.026833819334378,12.200786652510335,180.0,,60.0,
+b,uta,uta|todos,,,prof_rel_p90_vales_mediana_por_video,0.3156363404269859,0.29362837893156823,0.34122328046923717,180.0,,60.0,
+b,uta,uta|todos,,,vales12_por_min_mediana_por_video,17.022562660631472,13.821571965212243,19.722179527535552,180.0,,60.0,
+b,uta,uta|todos,,,olho_largura_px_mediana_por_video,50.8570677057142,48.19246660284657,54.34296715195302,180.0,,60.0,
+b,uta,uta|todos,,,lum_rosto_mediana_por_video,99.89503860473633,93.66936874389648,107.90438723564148,180.0,,60.0,
+b,uta,uta|todos,,,lum_olhos_mediana_por_video,93.05659294128418,87.95426063537597,101.73878841400145,180.0,,60.0,
+b,uta,uta|todos,,,contraste_rosto_mediana_por_video,40.646291732788086,38.147583961486816,42.50605487823486,180.0,,60.0,
+b,uta,uta|todos,,,frac_escuro_rosto_mediana_por_video,0.09134798566788785,0.0645663222356429,0.11678849806744376,180.0,,60.0,
+b,uta,uta|todos,,,taxa_bits_mbps_mediana_por_video,7.844857182970582,7.6117921517745195,8.148361219908761,180.0,,60.0,
+b,uta,uta|todos,,,bits_por_pixel_mediana_por_video,0.27623223840446837,0.23807607927171437,0.28285126221479495,180.0,,60.0,
+b,uta,uta|KSS 0,,,ear_aberto_media_mediana_por_video,0.2675334088640915,0.26020054848594243,0.2745629391092912,60.0,,60.0,
+b,uta,uta|KSS 0,,,ear_aberto_dp_mediana_por_video,0.016559921821072215,0.01486393365462891,0.018430778188178003,60.0,,60.0,
+b,uta,uta|KSS 0,,,ruido_rapido_mediana_por_video,0.0035750834878315136,0.0033192088867155085,0.0037760066035233968,60.0,,60.0,
+b,uta,uta|KSS 0,,,amp_ext_media_mediana_por_video,0.0865714444351168,0.07721279087204648,0.09356305459843646,60.0,,60.0,
+b,uta,uta|KSS 0,,,amp_ext_relativa_mediana_por_video,0.32830192796779334,0.2857381544687238,0.36265077519633837,60.0,,60.0,
+b,uta,uta|KSS 0,,,snr_mediana_por_video,5.3908860893557184,4.197164971659073,6.344818270902625,60.0,,60.0,
+b,uta,uta|KSS 0,,,snr_rapido_mediana_por_video,24.445015700129538,21.628215621880635,26.102458060188848,60.0,,60.0,
+b,uta,uta|KSS 0,,,taxa_piscadas_min_mediana_por_video,5.73223593999143,3.8434954409627142,7.1747646064637225,60.0,,60.0,
+b,uta,uta|KSS 0,,,prof_rel_p90_vales_mediana_por_video,0.29715976157719837,0.26968687858354756,0.3539669308825288,60.0,,60.0,
+b,uta,uta|KSS 0,,,vales12_por_min_mediana_por_video,12.220001182281546,9.256568322273935,15.704184287872962,60.0,,60.0,
+b,uta,uta|KSS 0,,,olho_largura_px_mediana_por_video,52.48096696676549,47.264187432988145,55.37475934339905,60.0,,60.0,
+b,uta,uta|KSS 0,,,lum_rosto_mediana_por_video,107.08696365356445,99.6672477722168,114.1198902130127,60.0,,60.0,
+b,uta,uta|KSS 0,,,lum_olhos_mediana_por_video,96.63725471496582,89.74891662597656,111.4457778930664,60.0,,60.0,
+b,uta,uta|KSS 0,,,contraste_rosto_mediana_por_video,39.84629821777344,36.538846015930176,42.86770901679993,60.0,,60.0,
+b,uta,uta|KSS 0,,,frac_escuro_rosto_mediana_por_video,0.0884639553179255,0.0311308391790697,0.11678488295780155,60.0,,60.0,
+b,uta,uta|KSS 0,,,taxa_bits_mbps_mediana_por_video,7.852425735877507,6.928181594603119,8.152924578156963,60.0,,60.0,
+b,uta,uta|KSS 0,,,bits_por_pixel_mediana_por_video,0.25069942769030956,0.19033433551087287,0.2800360199620133,60.0,,60.0,
+b,uta,uta|KSS 5,,,ear_aberto_media_mediana_por_video,0.26499713276935444,0.2618984169420978,0.2727233833875715,60.0,,60.0,
+b,uta,uta|KSS 5,,,ear_aberto_dp_mediana_por_video,0.017679181132559285,0.01573566501251876,0.01982331799640126,60.0,,60.0,
+b,uta,uta|KSS 5,,,ruido_rapido_mediana_por_video,0.0038246654102577285,0.0035396117621121575,0.004152154775691491,60.0,,60.0,
+b,uta,uta|KSS 5,,,amp_ext_media_mediana_por_video,0.08310769192189532,0.07304423197981849,0.0894519772502912,59.0,,60.0,
+b,uta,uta|KSS 5,,,amp_ext_relativa_mediana_por_video,0.3058453026622693,0.28126823002774215,0.3354359194319991,59.0,,60.0,
+b,uta,uta|KSS 5,,,snr_mediana_por_video,4.547114188243632,3.777294227371399,5.4398681159936,59.0,,60.0,
+b,uta,uta|KSS 5,,,snr_rapido_mediana_por_video,20.92865814874159,16.655409229169436,24.35052780926029,59.0,,60.0,
+b,uta,uta|KSS 5,,,taxa_piscadas_min_mediana_por_video,11.091582739262158,9.07757471320012,13.07984548729356,60.0,,60.0,
+b,uta,uta|KSS 5,,,prof_rel_p90_vales_mediana_por_video,0.32623458988194387,0.3020564922819762,0.3642248628559749,60.0,,60.0,
+b,uta,uta|KSS 5,,,vales12_por_min_mediana_por_video,18.545443112226913,13.23509558145726,22.71558541651276,60.0,,60.0,
+b,uta,uta|KSS 5,,,olho_largura_px_mediana_por_video,50.1187984135545,47.92288021638949,53.82992921750071,60.0,,60.0,
+b,uta,uta|KSS 5,,,lum_rosto_mediana_por_video,97.7290267944336,90.33946990966795,112.87079620361328,60.0,,60.0,
+b,uta,uta|KSS 5,,,lum_olhos_mediana_por_video,91.22564888000488,85.42356491088867,106.15812535285949,60.0,,60.0,
+b,uta,uta|KSS 5,,,contraste_rosto_mediana_por_video,40.646291732788086,36.962401390075684,43.82303698062897,60.0,,60.0,
+b,uta,uta|KSS 5,,,frac_escuro_rosto_mediana_por_video,0.08305941595102105,0.0637575924146158,0.13651928524207624,60.0,,60.0,
+b,uta,uta|KSS 5,,,taxa_bits_mbps_mediana_por_video,7.832945324744126,6.675881709221698,8.353447208584337,60.0,,60.0,
+b,uta,uta|KSS 5,,,bits_por_pixel_mediana_por_video,0.276387587108863,0.23906612485211554,0.29257968264027473,60.0,,60.0,
+b,uta,uta|KSS 10,,,ear_aberto_media_mediana_por_video,0.2606686459493053,0.2530383098767353,0.2724529701892653,60.0,,60.0,
+b,uta,uta|KSS 10,,,ear_aberto_dp_mediana_por_video,0.019771398252959448,0.018449459018162785,0.02164761846056128,60.0,,60.0,
+b,uta,uta|KSS 10,,,ruido_rapido_mediana_por_video,0.004023532937899453,0.0035017783276628635,0.0043934506309455685,60.0,,60.0,
+b,uta,uta|KSS 10,,,amp_ext_media_mediana_por_video,0.07132010822500885,0.06005415974567005,0.08247455162935355,59.0,,60.0,
+b,uta,uta|KSS 10,,,amp_ext_relativa_mediana_por_video,0.27237069019706445,0.24681334333786245,0.2962339991038857,59.0,,60.0,
+b,uta,uta|KSS 10,,,snr_mediana_por_video,3.4962636878543387,2.8822674911567785,4.048873785990638,59.0,,60.0,
+b,uta,uta|KSS 10,,,snr_rapido_mediana_por_video,17.721144201859723,13.207379105681662,21.43920713890469,59.0,,60.0,
+b,uta,uta|KSS 10,,,taxa_piscadas_min_mediana_por_video,15.256211465772836,11.73753025563943,19.564980672612784,60.0,,60.0,
+b,uta,uta|KSS 10,,,prof_rel_p90_vales_mediana_por_video,0.3152388201762263,0.29225225569560875,0.33737173532729337,60.0,,60.0,
+b,uta,uta|KSS 10,,,vales12_por_min_mediana_por_video,20.06781431797554,16.742851068353364,23.25197987656268,60.0,,60.0,
+b,uta,uta|KSS 10,,,olho_largura_px_mediana_por_video,51.01186797084907,47.33097033174418,55.81994582595263,60.0,,60.0,
+b,uta,uta|KSS 10,,,lum_rosto_mediana_por_video,95.0511245727539,89.02178816795349,105.95391082763672,60.0,,60.0,
+b,uta,uta|KSS 10,,,lum_olhos_mediana_por_video,89.00701332092285,83.87276840209961,100.18621635437012,60.0,,60.0,
+b,uta,uta|KSS 10,,,contraste_rosto_mediana_por_video,41.36684799194336,36.77852795124054,43.22346878051758,60.0,,60.0,
+b,uta,uta|KSS 10,,,frac_escuro_rosto_mediana_por_video,0.100412831086809,0.0780387744890927,0.1185759132072,60.0,,60.0,
+b,uta,uta|KSS 10,,,taxa_bits_mbps_mediana_por_video,7.850038308756771,7.406611942500357,8.187925126853063,60.0,,60.0,
+b,uta,uta|KSS 10,,,bits_por_pixel_mediana_por_video,0.2764617856533691,0.22767961154349575,0.2913332845053179,60.0,,60.0,
+b,dmd,dmd_s5|todos,,,ear_aberto_media_mediana_por_video,0.2675815033228071,0.2479876162782742,0.2771458115195072,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,ear_aberto_dp_mediana_por_video,0.02540011480839196,0.024077063459919057,0.028745248931237238,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,ruido_rapido_mediana_por_video,0.004615779423613287,0.0042588701762445,0.005301303575088021,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,amp_ext_media_mediana_por_video,0.10254410697573765,0.086542362473959,0.11659758682530373,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,amp_ext_relativa_mediana_por_video,0.39731250586252265,0.33520804780904756,0.4397586039880497,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,snr_mediana_por_video,3.872520409883094,3.3377642180843314,4.403548045194701,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,snr_rapido_mediana_por_video,23.110324727159828,16.127684376752672,27.86298087702158,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,taxa_piscadas_min_mediana_por_video,29.000444694120077,22.456223414092843,32.52579925650558,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,prof_rel_p90_vales_mediana_por_video,0.4354268778615854,0.391875996672513,0.5047613447415611,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,vales12_por_min_mediana_por_video,40.64043250939035,30.015689204333203,55.40456278485631,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,olho_largura_px_mediana_por_video,41.97309609721681,40.570076140139065,43.832140164138806,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,lum_rosto_mediana_por_video,103.73487281799316,92.89526581764221,112.16122245788574,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,lum_olhos_mediana_por_video,98.07027435302734,84.7145923614502,108.6175765991211,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,contraste_rosto_mediana_por_video,42.207634925842285,38.119662976264955,50.135775566101074,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,frac_escuro_rosto_mediana_por_video,0.08433974537120625,0.0640076261500326,0.1276829205250451,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,taxa_bits_mbps_mediana_por_video,15.505819217856747,15.480473187621008,15.55493474172089,16.0,,13.0,
+b,dmd,dmd_s5|todos,,,bits_por_pixel_mediana_por_video,0.5653525082115527,0.564428375048019,0.5671432929626571,16.0,,13.0,
+b,dmd,dmd_s5|sem óculos,,,ear_aberto_media_mediana_por_video,0.26778907182026646,0.24890509811844624,0.2771458115195072,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,ear_aberto_dp_mediana_por_video,0.02531179725107968,0.020604288527979835,0.028745248931237238,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,ruido_rapido_mediana_por_video,0.004542199828378178,0.003944652684042796,0.005156436294941779,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,amp_ext_media_mediana_por_video,0.10800357583371434,0.0897936298788499,0.13036706147209448,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,amp_ext_relativa_mediana_por_video,0.42225567642518663,0.33520804780904756,0.44852668562675296,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,snr_mediana_por_video,3.9442607261502323,3.6917612833819358,4.545531345353735,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,snr_rapido_mediana_por_video,24.961199574386317,16.972825959907375,28.013141387427293,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,taxa_piscadas_min_mediana_por_video,29.851498847040734,24.620918502636517,32.527611092040566,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,prof_rel_p90_vales_mediana_por_video,0.4578477043377398,0.407028171799605,0.5047613447415611,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,vales12_por_min_mediana_por_video,39.24758034724787,28.07648653533345,53.56308870820125,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,olho_largura_px_mediana_por_video,42.227627358137276,40.335773892971886,43.834324280870966,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,lum_rosto_mediana_por_video,98.28098678588869,90.97129821777344,117.38843536376952,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,lum_olhos_mediana_por_video,99.25851440429688,81.82907295227051,112.03680038452148,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,contraste_rosto_mediana_por_video,42.16619682312012,37.94205474853515,53.4794921875,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,frac_escuro_rosto_mediana_por_video,0.0868458155246869,0.0677156413951503,0.1276829205250451,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,taxa_bits_mbps_mediana_por_video,15.494949791213955,15.452593373199425,15.562342009791214,13.0,,10.0,
+b,dmd,dmd_s5|sem óculos,,,bits_por_pixel_mediana_por_video,0.5649562016682489,0.5634118584235015,0.5674133668957859,13.0,,10.0,
+b,dmd,dmd_s5|com óculos,,,ear_aberto_media_mediana_por_video,0.2470701344381022,0.23952462213751888,0.2731360010644024,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,ear_aberto_dp_mediana_por_video,0.025488432365704236,0.024698840620586426,0.04068997562140636,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,ruido_rapido_mediana_por_video,0.005413377955813186,0.004613838909610816,0.006095577125575143,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,amp_ext_media_mediana_por_video,0.08192103709011268,0.0796762765125011,0.10442245010834432,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,amp_ext_relativa_mediana_por_video,0.3224844503918064,0.29992764326514626,0.43595706018228053,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,snr_mediana_por_video,3.2140476869947054,2.5662942411154774,3.2259116019434173,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,snr_rapido_mediana_por_video,14.718402661491664,13.43942261781867,22.632443861624225,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,taxa_piscadas_min_mediana_por_video,23.460437956204377,2.3345536047814712,47.16305873660879,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,prof_rel_p90_vales_mediana_por_video,0.391875996672513,0.1897347002928814,0.5254685597745156,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,vales12_por_min_mediana_por_video,42.03328467153284,30.015689204333203,60.355522718876976,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,olho_largura_px_mediana_por_video,41.56531842067029,39.64035051023839,42.14340496926518,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,lum_rosto_mediana_por_video,109.74692916870116,108.98821258544922,109.95779418945312,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,lum_olhos_mediana_por_video,96.8820343017578,94.39710998535156,99.70187759399414,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,contraste_rosto_mediana_por_video,42.24907302856445,34.396549224853516,51.07217597961426,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,frac_escuro_rosto_mediana_por_video,0.0607514354451,0.0497372410784493,0.1282827613804142,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,taxa_bits_mbps_mediana_por_video,15.550003557473216,15.485663309630732,15.580070243036495,3.0,,3.0,
+b,dmd,dmd_s5|com óculos,,,bits_por_pixel_mediana_por_video,0.5669634986967943,0.56461761035735,0.5680597501013788,3.0,,3.0,
+b,dmd,dmd_mov|safe,,,ear_aberto_media_mediana_por_video,0.2695401239677126,0.24768311599346637,0.2813682845263139,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,ear_aberto_dp_mediana_por_video,0.04191371507199521,0.03289978760184172,0.049499036670240096,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,ruido_rapido_mediana_por_video,0.009722633838715095,0.008987432782982457,0.010560056093433846,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,amp_ext_media_mediana_por_video,0.093207703620725,0.06360436656122265,0.10723197544379079,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,amp_ext_relativa_mediana_por_video,0.33963507247626523,0.24354343564591882,0.3931159219801515,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,snr_mediana_por_video,2.368510706710294,1.3833121003805413,3.039318879070705,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,snr_rapido_mediana_por_video,8.723305362793587,6.243773596624095,10.838585202987598,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,taxa_piscadas_min_mediana_por_video,18.35418502202642,5.018079625292746,39.555903049257246,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,prof_rel_p90_vales_mediana_por_video,0.2782233512651787,0.20860299626244144,0.3456739411162403,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,vales12_por_min_mediana_por_video,46.531824164253734,33.04114830442903,50.7895147796988,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,olho_largura_px_mediana_por_video,42.64649742848768,41.001822804612395,45.88926790389924,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,lum_rosto_mediana_por_video,101.39011001586914,94.5341420173645,108.66845321655272,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,lum_olhos_mediana_por_video,90.65852355957033,84.98840713500977,93.15481567382812,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,contraste_rosto_mediana_por_video,40.99348449707031,38.724613189697266,46.6719856262207,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,frac_escuro_rosto_mediana_por_video,0.1129869383395879,0.06882246724972195,0.1421105836936685,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,taxa_bits_mbps_mediana_por_video,15.377392269353884,15.356926685669164,15.438057200924028,15.0,,12.0,
+b,dmd,dmd_mov|safe,,,bits_por_pixel_mediana_por_video,0.560669976031993,0.5599237872040693,0.5628818598893881,15.0,,12.0,
+b,dmd,dmd_par|safe,,,ear_aberto_media_mediana_por_video,0.27550893827017914,0.24208055701404707,0.2845679648229842,18.0,,13.0,
+b,dmd,dmd_par|safe,,,ear_aberto_dp_mediana_por_video,0.02677039824318246,0.024090504900546615,0.032178825236937304,18.0,,13.0,
+b,dmd,dmd_par|safe,,,ruido_rapido_mediana_por_video,0.005882322875642866,0.005105394510172559,0.006834364861701877,18.0,,13.0,
+b,dmd,dmd_par|safe,,,amp_ext_media_mediana_por_video,0.08601023543245834,0.07597831167794576,0.10802736634163629,18.0,,13.0,
+b,dmd,dmd_par|safe,,,amp_ext_relativa_mediana_por_video,0.33951989779461944,0.281566672366367,0.3775359188161658,18.0,,13.0,
+b,dmd,dmd_par|safe,,,snr_mediana_por_video,2.9038208765087825,2.4626604571611113,4.273571367217273,18.0,,13.0,
+b,dmd,dmd_par|safe,,,snr_rapido_mediana_por_video,13.559132015407963,12.001960489091593,16.888430395364136,18.0,,13.0,
+b,dmd,dmd_par|safe,,,taxa_piscadas_min_mediana_por_video,21.468986865652443,16.794174757281542,28.688310249307467,18.0,,13.0,
+b,dmd,dmd_par|safe,,,prof_rel_p90_vales_mediana_por_video,0.42789507839466023,0.37462982015514085,0.47473567576486525,18.0,,13.0,
+b,dmd,dmd_par|safe,,,vales12_por_min_mediana_por_video,37.08068064072227,30.87961165048542,43.19356668444122,18.0,,13.0,
+b,dmd,dmd_par|safe,,,olho_largura_px_mediana_por_video,41.919113733041975,41.20039019599741,45.07577098635618,18.0,,13.0,
+b,dmd,dmd_par|safe,,,lum_rosto_mediana_por_video,91.94946670532227,85.50690078735352,109.12857379913329,18.0,,13.0,
+b,dmd,dmd_par|safe,,,lum_olhos_mediana_por_video,84.13267517089844,75.86086654663086,98.84026336669922,18.0,,13.0,
+b,dmd,dmd_par|safe,,,contraste_rosto_mediana_por_video,41.01267337799072,35.96555519104004,45.67570686340332,18.0,,13.0,
+b,dmd,dmd_par|safe,,,frac_escuro_rosto_mediana_por_video,0.10927428660003424,0.07730048915802808,0.14124044304442354,18.0,,13.0,
+b,dmd,dmd_par|safe,,,taxa_bits_mbps_mediana_por_video,15.318783250208986,15.30080270649529,15.344564886918803,18.0,,13.0,
+b,dmd,dmd_par|safe,,,bits_por_pixel_mediana_por_video,0.5585330521125378,0.5578774694990222,0.559473067778586,18.0,,13.0,
+b,nitymed,nitymed|todos,,,dif_mediana_ear_aberto_media_nitymed|todos_menos_uta|todos,-0.01919412776829188,-0.02701724464644554,-0.01015173446118179,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ear_aberto_dp_nitymed|todos_menos_uta|todos,0.008807655163035,0.006920309768408106,0.011254534229638336,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ruido_rapido_nitymed|todos_menos_uta|todos,0.004641557235716119,0.004089608610064058,0.005289254122561572,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_amp_ext_media_nitymed|todos_menos_uta|todos,-0.014269197610125225,-0.0267469132283828,-0.004339257315296889,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_amp_ext_relativa_nitymed|todos_menos_uta|todos,-0.041066544986782416,-0.08541248055169842,-0.015805218272691574,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_snr_nitymed|todos_menos_uta|todos,-2.2117247727176714,-2.853256480373105,-1.5423393901612277,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_snr_rapido_nitymed|todos_menos_uta|todos,-14.284079705789475,-16.38146629662338,-11.16978983269775,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_taxa_piscadas_min_nitymed|todos_menos_uta|todos,2.5639287847673238,-0.11791489435403014,5.297833802918373,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_prof_rel_p90_vales_nitymed|todos_menos_uta|todos,-0.06849755048816816,-0.10103162979587668,-0.0402293770013404,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_vales12_por_min_nitymed|todos_menos_uta|todos,21.526388388319575,16.82980963431392,26.11968284290362,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_olho_largura_px_nitymed|todos_menos_uta|todos,-9.660054709513162,-13.17944381957612,-6.972958153737277,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_lum_rosto_nitymed|todos_menos_uta|todos,-17.000465393066406,-25.22581739425659,-10.463699579238893,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_lum_olhos_nitymed|todos_menos_uta|todos,-13.24464225769043,-22.00518102645874,-7.366500473022462,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_contraste_rosto_nitymed|todos_menos_uta|todos,-10.391257286071777,-12.41553233861923,-7.532149672508241,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_frac_escuro_rosto_nitymed|todos_menos_uta|todos,-0.0356393046100083,-0.059685453761391186,-0.008826098534087537,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_taxa_bits_mbps_nitymed|todos_menos_uta|todos,-6.80756100756641,-7.102143624241697,-6.575508481311696,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_bits_por_pixel_nitymed|todos_menos_uta|todos,-0.2310996210808892,-0.24331386644484188,-0.1922366584732456,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ear_aberto_media_nitymed|todos_menos_dmd_s5|todos,-0.021002413540963605,-0.02937892446709801,0.0005016841995832411,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ear_aberto_dp_nitymed|todos_menos_dmd_s5|todos,0.0016516120533238941,-0.002111761380017615,0.0042475557322557665,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ruido_rapido_nitymed|todos_menos_dmd_s5|todos,0.0037679039609400597,0.002986866889447594,0.004479194838943673,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_amp_ext_media_nitymed|todos_menos_dmd_s5|todos,-0.03724116022713306,-0.05498701445710503,-0.018518677670647535,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_amp_ext_relativa_nitymed|todos_menos_dmd_s5|todos,-0.14329694744309585,-0.20558986376793537,-0.07219760060125285,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_snr_nitymed|todos_menos_dmd_s5|todos,-1.8092377799165473,-2.4678056264719803,-1.047278043185647,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_snr_rapido_nitymed|todos_menos_dmd_s5|todos,-15.939423044189782,-20.72029236163524,-8.998985425077139,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_taxa_piscadas_min_nitymed|todos_menos_dmd_s5|todos,-16.216232188121296,-21.051944618117336,-9.910760555512063,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_prof_rel_p90_vales_nitymed|todos_menos_dmd_s5|todos,-0.18828808792276766,-0.26100334422985216,-0.14390108041377522,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_vales12_por_min_nitymed|todos_menos_dmd_s5|todos,-2.0914814604393044,-17.054564104115393,7.952259800474941,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_olho_largura_px_nitymed|todos_menos_dmd_s5|todos,-0.7760831010157716,-2.58641296513749,0.7591900674851075,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_lum_rosto_nitymed|todos_menos_dmd_s5|todos,-20.840299606323242,-28.93745446205139,-10.762620735168458,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_lum_olhos_nitymed|todos_menos_dmd_s5|todos,-18.258323669433594,-29.001391458511353,-4.719084692001343,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_contraste_rosto_nitymed|todos_menos_dmd_s5|todos,-11.952600479125977,-20.53040990829468,-7.66409878730774,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_frac_escuro_rosto_nitymed|todos_menos_dmd_s5|todos,-0.028631064313326703,-0.0723431071159595,-0.005815809268384792,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_taxa_bits_mbps_nitymed|todos_menos_dmd_s5|todos,-14.468523042452574,-14.535328913357642,-14.42462233236918,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_bits_por_pixel_nitymed|todos_menos_dmd_s5|todos,-0.5202198908879735,-0.5228855851353527,-0.5184583767800723,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ear_aberto_media_nitymed|todos_menos_dmd_mov|safe,-0.02296103418586909,-0.03691716320886429,0.0011609802956314417,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ear_aberto_dp_nitymed|todos_menos_dmd_mov|safe,-0.01486198821027936,-0.02214456338077248,-0.005460029064575918,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ruido_rapido_nitymed|todos_menos_dmd_mov|safe,-0.0013389504541617483,-0.002382327697571048,-0.0004025624921067267,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_amp_ext_media_nitymed|todos_menos_dmd_mov|safe,-0.027904756872120406,-0.042612662324842294,0.005030892590905375,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_amp_ext_relativa_nitymed|todos_menos_dmd_mov|safe,-0.08561951405683843,-0.15395984179547603,0.01058917764143777,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_snr_nitymed|todos_menos_dmd_mov|safe,-0.3052280767437474,-1.1029994416747637,0.971004536803066,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_snr_rapido_nitymed|todos_menos_dmd_mov|safe,-1.5524036798235414,-3.681333305335444,1.1404651458384136,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_taxa_piscadas_min_nitymed|todos_menos_dmd_mov|safe,-5.56997251602764,-25.689703112224887,8.244661454850686,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_prof_rel_p90_vales_nitymed|todos_menos_dmd_mov|safe,-0.031084561326360977,-0.10903799941767764,0.04539269555206288,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_vales12_por_min_nitymed|todos_menos_dmd_mov|safe,-7.982873115302688,-14.612246643815546,5.872751760140714,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_olho_largura_px_nitymed|todos_menos_dmd_mov|safe,-1.4494844322866385,-4.878099188220752,0.3865671138476737,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_lum_rosto_nitymed|todos_menos_dmd_mov|safe,-18.49553680419922,-26.00756235122679,-11.167972135543824,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_lum_olhos_nitymed|todos_menos_dmd_mov|safe,-10.846572875976577,-14.002822875976562,-5.18771300315857,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_contraste_rosto_nitymed|todos_menos_dmd_mov|safe,-10.738450050354004,-16.513423466682433,-8.534865474700927,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_frac_escuro_rosto_nitymed|todos_menos_dmd_mov|safe,-0.05727825728170834,-0.08434586323745813,-0.011133939973021824,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_taxa_bits_mbps_nitymed|todos_menos_dmd_mov|safe,-14.340096093949711,-14.404654813108962,-14.295912764495922,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_bits_por_pixel_nitymed|todos_menos_dmd_mov|safe,-0.5155373587084138,-0.518136167280146,-0.5138234992974569,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ear_aberto_media_nitymed|todos_menos_dmd_par|safe,-0.02892984848833563,-0.039360710636033386,0.005367854777387649,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ear_aberto_dp_nitymed|todos_menos_dmd_par|safe,0.000281328618533392,-0.005277850201575145,0.0035659011939191197,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_ruido_rapido_nitymed|todos_menos_dmd_par|safe,0.002501360508910481,0.0013120730025272596,0.003575494534646137,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_amp_ext_media_nitymed|todos_menos_dmd_par|safe,-0.020707288683853742,-0.04240817206974147,-0.00863625831917642,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_amp_ext_relativa_nitymed|todos_menos_dmd_par|safe,-0.08550433937519264,-0.14196189173866278,-0.03160084544700112,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_snr_nitymed|todos_menos_dmd_par|safe,-0.840538246542236,-2.1687416502287253,-0.10896916349712818,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_snr_rapido_nitymed|todos_menos_dmd_par|safe,-6.388230332437917,-9.827090871143179,-4.467878736787074,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_taxa_piscadas_min_nitymed|todos_menos_dmd_par|safe,-8.684774359653662,-16.26305784026607,-2.796026717022884,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_prof_rel_p90_vales_nitymed|todos_menos_dmd_par|safe,-0.1807562884558425,-0.23526887442128055,-0.12620274297967635,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_vales12_por_min_nitymed|todos_menos_dmd_par|safe,1.4682704082287756,-4.7057542617425625,6.49496670808512,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_olho_largura_px_nitymed|todos_menos_dmd_par|safe,-0.722100736840936,-4.008906710911072,0.2322304385224695,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_lum_rosto_nitymed|todos_menos_dmd_par|safe,-9.054893493652344,-26.2728488445282,-2.506501054763796,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_lum_olhos_nitymed|todos_menos_dmd_par|safe,-4.3207244873046875,-19.393324804306044,3.811758613586425,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_contraste_rosto_nitymed|todos_menos_dmd_par|safe,-10.757638931274414,-15.496072351932526,-5.6627347707748426,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_frac_escuro_rosto_nitymed|todos_menos_dmd_par|safe,-0.05356560554215469,-0.0836245459221992,-0.01969380239368437,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_taxa_bits_mbps_nitymed|todos_menos_dmd_par|safe,-14.281487074804813,-14.314842708581384,-14.24082707304218,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,nitymed,nitymed|todos,,,dif_mediana_bits_por_pixel_nitymed|todos_menos_dmd_par|safe,-0.5134004347889586,-0.514841815478596,-0.5118036558484358,,,,diferença de medianas por vídeo; bootstrap independente por agrupamento
+b,dmd,dmd_mov|safe,,,dif_pareada_ruido_rapido_dmd_mov|safe_menos_dmd_par|safe,0.004327751893859902,0.0029881478815304025,0.005421925197641397,,,11.0,"setup (Car Moving − Car Stopped), sessões s1/s2; mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_mov|safe,,,dif_pareada_snr_rapido_dmd_mov|safe_menos_dmd_par|safe,-5.392860577905662,-6.620352133396966,-3.476614951179915,,,11.0,"setup (Car Moving − Car Stopped), sessões s1/s2; mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_mov|safe,,,dif_pareada_ear_aberto_dp_dmd_mov|safe_menos_dmd_par|safe,0.009718095209331312,0.0030853917194459055,0.018069119992165858,,,11.0,"setup (Car Moving − Car Stopped), sessões s1/s2; mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_mov|safe,,,dif_pareada_amp_ext_media_dmd_mov|safe_menos_dmd_par|safe,-0.006942889315858319,-0.016598155107775986,0.018432398945041534,,,11.0,"setup (Car Moving − Car Stopped), sessões s1/s2; mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_mov|safe,,,dif_pareada_taxa_rosto_dmd_mov|safe_menos_dmd_par|safe,-0.0010537407797681642,-0.002758528973914931,0.0,,,11.0,"setup (Car Moving − Car Stopped), sessões s1/s2; mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_mov|safe,,,dif_pareada_lum_rosto_dmd_mov|safe_menos_dmd_par|safe,2.9234352111816406,-14.577136993408203,22.86879730224608,,,11.0,"setup (Car Moving − Car Stopped), sessões s1/s2; mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_s1|safe,,,dif_pareada_ruido_rapido_dmd_s1|safe_menos_dmd_s2|safe,0.003826880350868778,0.001347406309276007,0.0048109907052749975,,,14.0,"sessão do protocolo (s1 − s2); mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_s1|safe,,,dif_pareada_snr_rapido_dmd_s1|safe_menos_dmd_s2|safe,-5.327148845502798,-6.620352133396966,-3.703568752892648,,,14.0,"sessão do protocolo (s1 − s2); mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_s1|safe,,,dif_pareada_ear_aberto_dp_dmd_s1|safe_menos_dmd_s2|safe,0.0061464455957793585,0.001047113606197459,0.013339912545308863,,,14.0,"sessão do protocolo (s1 − s2); mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_s1|safe,,,dif_pareada_amp_ext_media_dmd_s1|safe_menos_dmd_s2|safe,-0.008964499285735103,-0.016598155107775986,0.004417086100647324,,,14.0,"sessão do protocolo (s1 − s2); mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_s1|safe,,,dif_pareada_taxa_rosto_dmd_s1|safe_menos_dmd_s2|safe,-0.0008076533980140299,-0.0013923698134225004,0.0007106062265720414,,,14.0,"sessão do protocolo (s1 − s2); mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,dmd,dmd_s1|safe,,,dif_pareada_lum_rosto_dmd_s1|safe_menos_dmd_s2|safe,0.6398277282714844,-14.577136993408203,8.022747039794922,,,14.0,"sessão do protocolo (s1 − s2); mesmos sujeitos, direção segura; mediana das diferenças por sujeito"
+b,nitymed,todos,,,spearman_lum_rosto_x_taxa_rosto,0.16957730207048194,,,126.0,,,p = 0.0577 (vídeos não independentes: IC/p otimistas)
+b,nitymed,todos,,,spearman_lum_rosto_x_snr_rapido,0.13710201869665353,,,121.0,,,p = 0.134 (vídeos não independentes: IC/p otimistas)
+b,nitymed,todos,,,spearman_olho_largura_px_x_snr_rapido,0.05480964638937812,,,121.0,,,p = 0.55 (vídeos não independentes: IC/p otimistas)
+b,nitymed,todos,,,spearman_contraste_rosto_x_snr_rapido,0.16173282753014492,,,121.0,,,p = 0.0763 (vídeos não independentes: IC/p otimistas)
+b,nitymed,todos,,,spearman_lum_olhos_x_ruido_rapido,-0.22780052493438321,,,126.0,,,p = 0.0103 (vídeos não independentes: IC/p otimistas)
+b,nitymed,todos,,,spearman_olho_largura_px_x_taxa_rosto,0.2186822150723742,,,126.0,,,p = 0.0139 (vídeos não independentes: IC/p otimistas)
+b,nitymed,todos,,,spearman_bits_por_pixel_x_ruido_rapido,0.19455268091488565,,,126.0,,,p = 0.029 (vídeos não independentes: IC/p otimistas)
+b,uta,todos,,,spearman_lum_rosto_x_taxa_rosto,0.047014150571480486,,,180.0,,,p = 0.531 (vídeos não independentes: IC/p otimistas)
+b,uta,todos,,,spearman_lum_rosto_x_snr_rapido,0.20013745719091547,,,178.0,,,p = 0.0074 (vídeos não independentes: IC/p otimistas)
+b,uta,todos,,,spearman_olho_largura_px_x_snr_rapido,0.07554506776575678,,,178.0,,,p = 0.316 (vídeos não independentes: IC/p otimistas)
+b,uta,todos,,,spearman_contraste_rosto_x_snr_rapido,0.1964052603973279,,,178.0,,,p = 0.0086 (vídeos não independentes: IC/p otimistas)
+b,uta,todos,,,spearman_lum_olhos_x_ruido_rapido,-0.25692356759982304,,,180.0,,,p = 0.000498 (vídeos não independentes: IC/p otimistas)
+b,uta,todos,,,spearman_olho_largura_px_x_taxa_rosto,0.02757412098331554,,,180.0,,,p = 0.713 (vídeos não independentes: IC/p otimistas)
+b,uta,todos,,,spearman_bits_por_pixel_x_ruido_rapido,0.2666234554564441,,,180.0,,,p = 0.000297 (vídeos não independentes: IC/p otimistas)
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.4468864468864469,0.3272488038277512,0.5735430283224401,18.0,273.0,18.0,outra base (modelo inteiro)
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.0695970695970696,0.022379828797190516,0.13284132841328414,18.0,273.0,18.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.27472527472527475,0.18242338449978532,0.38202247191011235,18.0,273.0,18.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,escore_mediano,0.44666666666666666,,,,273.0,18.0,
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.3333333333333333,0.1111111111111111,0.5555555555555556,18.0,273.0,18.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.8888888888888888,0.7222222222222222,1.0,18.0,273.0,18.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.3577586206896552,0.2567891050583657,0.4633363451024001,,232.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Microsleep,Modelo do DMD,principal,taxa_disparo_janela,0.2783882783882784,0.17025922740068816,0.40298259088581667,18.0,273.0,18.0,outra base (modelo inteiro)
+c,nitymed,Microsleep,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.15018315018315018,0.07219567306443654,0.23290787583448347,18.0,273.0,18.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,nitymed,Microsleep,Modelo do DMD,principal,taxa_disparo_janela_far10,0.12087912087912088,0.05858690046415678,0.19049369747899156,18.0,273.0,18.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,nitymed,Microsleep,Modelo do DMD,principal,escore_mediano,0.31333333333333335,,,,273.0,18.0,
+c,nitymed,Microsleep,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.2222222222222222,0.05555555555555555,0.4444444444444444,18.0,273.0,18.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Microsleep,Modelo do DMD,principal,frac_videos_alguma_janela,0.7777777777777778,0.6111111111111112,0.9444444444444444,18.0,273.0,18.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Microsleep,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.16810344827586207,0.07543675751222921,0.2895838064955712,,232.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Microsleep,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.45054945054945056,0.3345281862745098,0.5655741694722752,18.0,273.0,18.0,outra base (modelo inteiro)
+c,nitymed,Microsleep,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.09157509157509157,0.03516431924882629,0.16377346715897861,18.0,273.0,18.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,nitymed,Microsleep,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.2600732600732601,0.16114285714285714,0.3746363636363636,18.0,273.0,18.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,nitymed,Microsleep,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.44,,,,273.0,18.0,
+c,nitymed,Microsleep,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.3333333333333333,0.1111111111111111,0.5555555555555556,18.0,273.0,18.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Microsleep,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,0.8888888888888888,0.7222222222222222,1.0,18.0,273.0,18.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Microsleep,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.3620689655172414,0.2580475023819246,0.45209488807216835,,232.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.8351648351648352,0.7381818181818182,0.9114391143911439,18.0,273.0,18.0,outra base (modelo inteiro)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.47985347985347987,0.3440578781879586,0.5941509498428317,18.0,273.0,18.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.3443223443223443,0.23842998830890194,0.4419583559583977,18.0,273.0,18.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.7,,,,273.0,18.0,
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.8888888888888888,0.7222222222222222,1.0,18.0,273.0,18.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,18.0,273.0,18.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.8060344827586207,0.7058823529411765,0.8918950640781627,,232.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.45054945054945056,0.34599377808503284,0.5600566037735849,18.0,273.0,18.0,outra base (modelo inteiro)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.34798534798534797,0.2564778288893049,0.4529070222083203,18.0,273.0,18.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.1391941391941392,0.06295715457154571,0.23658041308888372,18.0,273.0,18.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.4766666666666667,,,,273.0,18.0,
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.5,0.2777777777777778,0.7222222222222222,18.0,273.0,18.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,0.8888888888888888,0.7222222222222222,1.0,18.0,273.0,18.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.39655172413793105,0.2879748878923767,0.5000498007968127,,232.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.8315018315018315,0.7383512544802867,0.9077490774907749,18.0,273.0,18.0,outra base (modelo inteiro)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.5311355311355311,0.4014336917562724,0.6509242424242424,18.0,273.0,18.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.3333333333333333,0.21933085501858737,0.44737824037706203,18.0,273.0,18.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.7066666666666667,,,,273.0,18.0,
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.8888888888888888,0.7222222222222222,1.0,18.0,273.0,18.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,18.0,273.0,18.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.8017241379310345,0.7032353868797309,0.8867227269513575,,232.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Microsleep,regra_fechamento,,taxa_disparo_janela,0.15018315018315018,0.058823529411764705,0.2674486030574591,18.0,273.0,18.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,nitymed,Microsleep,regra_bocejo,,taxa_disparo_janela,0.0,0.0,0.0,18.0,273.0,18.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,nitymed,Microsleep,regra_dmd,,taxa_disparo_janela,0.15018315018315018,0.058823529411764705,0.2674486030574591,18.0,273.0,18.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.73046875,0.6535716958539141,0.8059175964376846,96.0,256.0,96.0,outra base (modelo inteiro)
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.24609375,0.17960609204772846,0.3227299570508232,96.0,256.0,96.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.66015625,0.5753267202015431,0.744796460948396,96.0,256.0,96.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,escore_mediano,0.7366666666666666,,,,256.0,96.0,
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.8020833333333334,0.71875,0.8854166666666666,96.0,256.0,96.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.8541666666666666,0.78125,0.9270833333333334,96.0,256.0,96.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.35714285714285715,0.21978021978021978,0.48519371502367625,,98.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Yawning,Modelo do DMD,principal,taxa_disparo_janela,0.69140625,0.5972684395146,0.7809981921487603,96.0,256.0,96.0,outra base (modelo inteiro)
+c,nitymed,Yawning,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.61328125,0.5243546927518745,0.7053702731092437,96.0,256.0,96.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,nitymed,Yawning,Modelo do DMD,principal,taxa_disparo_janela_far10,0.5859375,0.4980490002863544,0.6767775791982057,96.0,256.0,96.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,nitymed,Yawning,Modelo do DMD,principal,escore_mediano,0.7466666666666667,,,,256.0,96.0,
+c,nitymed,Yawning,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.78125,0.6875,0.8645833333333334,96.0,256.0,96.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Yawning,Modelo do DMD,principal,frac_videos_alguma_janela,0.8541666666666666,0.78125,0.9166666666666666,96.0,256.0,96.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Yawning,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.336734693877551,0.2086940882076947,0.4878190584231423,,98.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Yawning,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.7265625,0.6550408755274262,0.8017810868840929,96.0,256.0,96.0,outra base (modelo inteiro)
+c,nitymed,Yawning,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.27734375,0.20221648455819988,0.3615531561461794,96.0,256.0,96.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,nitymed,Yawning,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.62890625,0.5479391548477661,0.7090986790986791,96.0,256.0,96.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,nitymed,Yawning,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.7483333333333333,,,,256.0,96.0,
+c,nitymed,Yawning,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.8125,0.7291666666666666,0.8856770833333331,96.0,256.0,96.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Yawning,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,0.8541666666666666,0.78125,0.9270833333333334,96.0,256.0,96.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Yawning,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.3469387755102041,0.21518987341772153,0.4592777777777778,,98.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.89453125,0.8519996389891696,0.9377146760343481,96.0,256.0,96.0,outra base (modelo inteiro)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.59375,0.5095603193978232,0.6748636363636363,96.0,256.0,96.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.453125,0.3768058613098514,0.5324818353452714,96.0,256.0,96.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.765,,,,256.0,96.0,
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.9270833333333334,0.875,0.9791666666666666,96.0,256.0,96.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,0.9479166666666666,0.8958333333333334,0.9895833333333334,96.0,256.0,96.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.826530612244898,0.7249942660550458,0.909111384111384,,98.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.6328125,0.5606654585187751,0.7024876364963988,96.0,256.0,96.0,outra base (modelo inteiro)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.52734375,0.43968010461185175,0.6139179772106601,96.0,256.0,96.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.31640625,0.23284630031205372,0.41245257782101163,96.0,256.0,96.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.59,,,,256.0,96.0,
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.6979166666666666,0.6041666666666666,0.7916666666666666,96.0,256.0,96.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,0.7708333333333334,0.6872395833333333,0.8541666666666666,96.0,256.0,96.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.46938775510204084,0.373008658008658,0.5824611032531825,,98.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.89453125,0.8503643428174189,0.9352322567783095,96.0,256.0,96.0,outra base (modelo inteiro)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.62890625,0.54605957182749,0.70491960304001,96.0,256.0,96.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.44140625,0.36190383546414673,0.5177230550785894,96.0,256.0,96.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.765,,,,256.0,96.0,
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.9375,0.8854166666666666,0.9791666666666666,96.0,256.0,96.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,0.9479166666666666,0.8958333333333334,0.9895833333333334,96.0,256.0,96.0,vídeo com pelo menos uma janela marcada
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.8367346938775511,0.7424881618596643,0.9150983370642789,,98.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,nitymed,Yawning,regra_fechamento,,taxa_disparo_janela,0.34375,0.2606601731601732,0.4344351389878831,96.0,256.0,96.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,nitymed,Yawning,regra_bocejo,,taxa_disparo_janela,0.48046875,0.3676349868305531,0.5974247974247974,96.0,256.0,96.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,nitymed,Yawning,regra_dmd,,taxa_disparo_janela,0.6171875,0.5130718954248366,0.7220022792128377,96.0,256.0,96.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 0,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.2600896860986547,0.21054675743661702,0.3110672462690312,60.0,4906.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 0,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.016510395434162252,0.007796111823397077,0.027586105257422555,60.0,4906.0,60.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,uta,KSS 0,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.09702405218100285,0.06877701508410064,0.12986910501760973,60.0,4906.0,60.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,uta,KSS 0,Modelo do DMD,sem_normalizacao,escore_mediano,0.3466666666666667,,,,4906.0,60.0,
+c,uta,KSS 0,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.08333333333333333,0.016666666666666666,0.15041666666666628,60.0,4906.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 0,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.95,0.8833333333333333,1.0,60.0,4906.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 0,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.2411050648807032,0.19227428991353115,0.2928098104447798,,4778.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 0,Modelo do DMD,principal,taxa_disparo_janela,0.18039135752140237,0.13350433893671854,0.22955541443984898,60.0,4906.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 0,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.11251528740317979,0.07927822018643468,0.14891874343720962,60.0,4906.0,60.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,uta,KSS 0,Modelo do DMD,principal,taxa_disparo_janela_far10,0.09947003668976763,0.06939918957374858,0.13318464676719688,60.0,4906.0,60.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,uta,KSS 0,Modelo do DMD,principal,escore_mediano,0.20333333333333334,,,,4906.0,60.0,
+c,uta,KSS 0,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.08333333333333333,0.016666666666666666,0.15,60.0,4906.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 0,Modelo do DMD,principal,frac_videos_alguma_janela,0.85,0.75,0.9333333333333333,60.0,4906.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 0,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.15969024696525744,0.1144559231058141,0.21040489080430036,,4778.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 0,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.28760701182225845,0.23768148281589072,0.3403354180559811,60.0,4906.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 0,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.017937219730941704,0.008417687980594687,0.0303649152474987,60.0,4906.0,60.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 0,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.09926620464737057,0.07214356072408559,0.12949712653846251,60.0,4906.0,60.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,uta,KSS 0,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.3466666666666667,,,,4906.0,60.0,
+c,uta,KSS 0,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.11666666666666667,0.05,0.2,60.0,4906.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 0,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,0.95,0.8833333333333333,1.0,60.0,4906.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 0,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.26935956467141065,0.2189787412289116,0.3244508405370977,,4778.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.4364044027721158,0.3874565677795006,0.4882829826650787,60.0,4906.0,60.0,fora da amostra (própria base)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.17366490012229924,0.13859865261578874,0.21700900425111794,60.0,4906.0,60.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.0996738687321647,0.07607876439059423,0.12651709923213705,60.0,4906.0,60.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.45,,,,4906.0,60.0,
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.3,0.18333333333333332,0.4166666666666667,60.0,4906.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,4906.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.42172457095018834,0.37227215448152007,0.47583230653716196,,4778.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.24113330615572767,0.19254372373718953,0.29172927888007755,60.0,4906.0,60.0,fora da amostra (própria base)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.18528332653893193,0.14364554726163561,0.23137739758338605,60.0,4906.0,60.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.0996738687321647,0.0683874019905053,0.13839997431396892,60.0,4906.0,60.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.26,,,,4906.0,60.0,
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.1,0.03333333333333333,0.18333333333333332,60.0,4906.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,0.9833333333333333,0.95,1.0,60.0,4906.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.22205943909585601,0.17440491689940218,0.2718394878571995,,4778.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.4447615165103954,0.39439537178507766,0.49799217002237134,60.0,4906.0,60.0,fora da amostra (própria base)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.2160619649408887,0.17558721769061975,0.262566381890787,60.0,4906.0,60.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.0984508764777823,0.07297537110630328,0.12822811005767906,60.0,4906.0,60.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.45666666666666667,,,,4906.0,60.0,
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.2833333333333333,0.16666666666666666,0.4166666666666667,60.0,4906.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,4906.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.43030556718292173,0.3797794079390301,0.48665028752528483,,4778.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 0,regra_fechamento,,taxa_disparo_janela,0.026090501426824297,0.013662574806567547,0.043321962650058575,60.0,4906.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 0,regra_bocejo,,taxa_disparo_janela,0.0,0.0,0.0,60.0,4906.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 0,regra_dmd,,taxa_disparo_janela,0.026090501426824297,0.013662574806567547,0.043321962650058575,60.0,4906.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 5,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.40492769148366364,0.3472713623482611,0.462570424434512,60.0,7468.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 5,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.049276914836636314,0.03371900719072152,0.06927608441938374,60.0,7468.0,60.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,uta,KSS 5,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.21893411890733797,0.17038709774017086,0.2658513753316,60.0,7468.0,60.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,uta,KSS 5,Modelo do DMD,sem_normalizacao,escore_mediano,0.44333333333333336,,,,7468.0,60.0,
+c,uta,KSS 5,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.26666666666666666,0.15,0.38333333333333336,60.0,7468.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 5,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.9833333333333333,0.95,1.0,60.0,7468.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 5,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.356412157153447,0.29645705976046105,0.4195176749013084,,6745.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 5,Modelo do DMD,principal,taxa_disparo_janela,0.3194965184788431,0.2588576709730188,0.38204615179405094,60.0,7468.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 5,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.21183717193358328,0.16264071168669014,0.2686851325870878,60.0,7468.0,60.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,uta,KSS 5,Modelo do DMD,principal,taxa_disparo_janela_far10,0.19242099625066952,0.1450353844705688,0.2473924242133418,60.0,7468.0,60.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,uta,KSS 5,Modelo do DMD,principal,escore_mediano,0.29333333333333333,,,,7468.0,60.0,
+c,uta,KSS 5,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.25,0.13333333333333333,0.36666666666666664,60.0,7468.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 5,Modelo do DMD,principal,frac_videos_alguma_janela,0.9333333333333333,0.8666666666666667,0.9833333333333333,60.0,7468.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 5,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.2501111934766494,0.19119537996698344,0.30775813922871637,,6745.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 5,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.43117300482056775,0.37573829617973986,0.48906581056973486,60.0,7468.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 5,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.0515532940546331,0.035771811508116064,0.07269957471428595,60.0,7468.0,60.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 5,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.21357793251205143,0.16815368278999904,0.2579777770981004,60.0,7468.0,60.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,uta,KSS 5,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.45666666666666667,,,,7468.0,60.0,
+c,uta,KSS 5,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.2833333333333333,0.16666666666666666,0.4,60.0,7468.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 5,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,0.9833333333333333,0.95,1.0,60.0,7468.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 5,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.38339510748702743,0.3223096677482222,0.4469248706279706,,6745.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.5826191751472951,0.5298587762401227,0.6402970631935523,60.0,7468.0,60.0,fora da amostra (própria base)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.30798071772897695,0.251729011982534,0.3710348067207661,60.0,7468.0,60.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.22429030530262453,0.17247982481474525,0.28474398509742227,60.0,7468.0,60.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.5633333333333334,,,,7468.0,60.0,
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.6,0.4829166666666667,0.7166666666666667,60.0,7468.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,7468.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.5396590066716086,0.487707573969372,0.5957434310721895,,6745.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.562131762185324,0.49402538263969437,0.6292787436826704,60.0,7468.0,60.0,fora da amostra (própria base)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.5017407605784682,0.4325771410460034,0.5698191160340527,60.0,7468.0,60.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.3541778253883235,0.28639393135883523,0.4251499102574791,60.0,7468.0,60.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.57,,,,7468.0,60.0,
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.5666666666666667,0.45,0.6833333333333333,60.0,7468.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,7468.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.5190511489992587,0.44680739547811105,0.5900074173708769,,6745.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.5846277450455276,0.5311306528113213,0.642074546148515,60.0,7468.0,60.0,fora da amostra (própria base)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.35993572576325655,0.3035475108003866,0.4240615036208435,60.0,7468.0,60.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.22054097482592394,0.16786272336003386,0.27953484597553396,60.0,7468.0,60.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.5666666666666667,,,,7468.0,60.0,
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.5833333333333334,0.4666666666666667,0.7166666666666667,60.0,7468.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,7468.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 5,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.541882876204596,0.4908855469942368,0.5963023091598457,,6745.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 5,regra_fechamento,,taxa_disparo_janela,0.09145688269951795,0.05852052758823674,0.13312023986754534,60.0,7468.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 5,regra_bocejo,,taxa_disparo_janela,0.006427423674343867,0.0005372607206831129,0.015736278229894575,60.0,7468.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 5,regra_dmd,,taxa_disparo_janela,0.0968130690948045,0.06314469431726367,0.1386416397626428,60.0,7468.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 10,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.5224904366178604,0.46214005503716726,0.5812342530920395,60.0,7581.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 10,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.11027568922305764,0.07866171183618621,0.15077537072536648,60.0,7581.0,60.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,uta,KSS 10,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.34269885239414327,0.28273367871173855,0.40001353179972937,60.0,7581.0,60.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,uta,KSS 10,Modelo do DMD,sem_normalizacao,escore_mediano,0.5133333333333333,,,,7581.0,60.0,
+c,uta,KSS 10,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.48333333333333334,0.36666666666666664,0.6,60.0,7581.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 10,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,7581.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 10,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.4099756690997567,0.3500570300198388,0.46910887833307946,,5754.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 10,Modelo do DMD,principal,taxa_disparo_janela,0.4838411819021237,0.4104921980469487,0.5519095779747248,60.0,7581.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 10,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.370003957261575,0.30649555404985307,0.43565687534304226,60.0,7581.0,60.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,uta,KSS 10,Modelo do DMD,principal,taxa_disparo_janela_far10,0.3458646616541353,0.28390217435908915,0.41032473564129723,60.0,7581.0,60.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,uta,KSS 10,Modelo do DMD,principal,escore_mediano,0.4766666666666667,,,,7581.0,60.0,
+c,uta,KSS 10,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.55,0.43333333333333335,0.6666666666666666,60.0,7581.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 10,Modelo do DMD,principal,frac_videos_alguma_janela,0.9833333333333333,0.95,1.0,60.0,7581.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 10,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.3284671532846715,0.2627254755276283,0.39814745517406724,,5754.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 10,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.5388471177944862,0.4784866832633786,0.5983874367214612,60.0,7581.0,60.0,outra base (modelo inteiro)
+c,uta,KSS 10,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.11185859385305369,0.07957545620490998,0.15179644039281553,60.0,7581.0,60.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 10,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.33623532515499277,0.27972562843879184,0.3941620580956908,60.0,7581.0,60.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,uta,KSS 10,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.5233333333333333,,,,7581.0,60.0,
+c,uta,KSS 10,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.5,0.36666666666666664,0.6166666666666667,60.0,7581.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 10,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,7581.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 10,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.4301355578727841,0.3693794833940528,0.49018689851105923,,5754.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.6941036802532647,0.6375570509983639,0.7462647498901749,60.0,7581.0,60.0,fora da amostra (própria base)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.4680121356021633,0.39981148172823644,0.5356453399286593,60.0,7581.0,60.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.3802928373565493,0.31192890185250344,0.446734133175303,60.0,7581.0,60.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.6833333333333333,,,,7581.0,60.0,
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.8166666666666667,0.7166666666666667,0.9,60.0,7581.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,7581.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.5990615224191866,0.5368145106335517,0.6567948361380117,,5754.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.7249703205381876,0.6652524172794713,0.7867300841395906,60.0,7581.0,60.0,fora da amostra (própria base)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.6778789077958053,0.614517771001961,0.7420634257154929,60.0,7581.0,60.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.5358132172536605,0.46904869401228394,0.6004931444443466,60.0,7581.0,60.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.76,,,,7581.0,60.0,
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.8166666666666667,0.7166666666666667,0.9,60.0,7581.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,7581.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.6393812999652416,0.5718276939878972,0.7114955306329959,,5754.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.69463131512993,0.6384907378263098,0.7465430931630034,60.0,7581.0,60.0,fora da amostra (própria base)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.5071890251945653,0.4431147579139042,0.572031204901797,60.0,7581.0,60.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.37158686189157103,0.3053545908856413,0.43794406075165154,60.0,7581.0,60.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.6833333333333333,,,,7581.0,60.0,
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.8,0.7,0.9,60.0,7581.0,60.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,60.0,7581.0,60.0,vídeo com pelo menos uma janela marcada
+c,uta,KSS 10,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.6006256517205423,0.5407944152246834,0.6577650470046452,,5754.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,uta,KSS 10,regra_fechamento,,taxa_disparo_janela,0.23835905553357076,0.17840300624412514,0.3008072583802935,60.0,7581.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 10,regra_bocejo,,taxa_disparo_janela,0.005408257485819813,0.0018681686550569875,0.010091686082451843,60.0,7581.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 10,regra_dmd,,taxa_disparo_janela,0.2409972299168975,0.18035574904920273,0.3030029006137529,60.0,7581.0,60.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_movimento,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.42857142857142855,0.2499543795620438,0.6924731182795697,15.0,105.0,12.0,fora da amostra (própria base)
+c,dmd,alerta_movimento,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.21904761904761905,0.09258040935672514,0.40702959830866803,15.0,105.0,12.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,alerta_movimento,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.38095238095238093,0.2021203396447394,0.6386229701414352,15.0,105.0,12.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,dmd,alerta_movimento,Modelo do DMD,sem_normalizacao,escore_mediano,0.36,,,,105.0,12.0,
+c,dmd,alerta_movimento,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.3333333333333333,0.1111111111111111,0.6666666666666666,15.0,105.0,12.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_movimento,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.8,0.6428571428571429,1.0,15.0,105.0,12.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_movimento,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.25,0.16666666666666666,0.40540540540540543,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_movimento,Modelo do DMD,principal,taxa_disparo_janela,0.3619047619047619,0.19479617604617605,0.5888988095238096,15.0,105.0,12.0,fora da amostra (própria base)
+c,dmd,alerta_movimento,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.23809523809523808,0.05881279519106913,0.5190682137834036,15.0,105.0,12.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,alerta_movimento,Modelo do DMD,principal,taxa_disparo_janela_far10,0.22857142857142856,0.05615459124370399,0.5111538461538461,15.0,105.0,12.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,dmd,alerta_movimento,Modelo do DMD,principal,escore_mediano,0.37666666666666665,,,,105.0,12.0,
+c,dmd,alerta_movimento,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.2,0.0,0.46166666666666656,15.0,105.0,12.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_movimento,Modelo do DMD,principal,frac_videos_alguma_janela,0.8,0.5384615384615384,0.9523809523809523,15.0,105.0,12.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_movimento,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.1875,0.1111111111111111,0.26088628762541805,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_movimento,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.42857142857142855,0.2499543795620438,0.6924731182795697,15.0,105.0,12.0,fora da amostra (própria base)
+c,dmd,alerta_movimento,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.22857142857142856,0.09258040935672514,0.43188131313131306,15.0,105.0,12.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_movimento,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.3523809523809524,0.17945205479452056,0.5932544926004226,15.0,105.0,12.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,dmd,alerta_movimento,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.34,,,,105.0,12.0,
+c,dmd,alerta_movimento,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.3333333333333333,0.1111111111111111,0.6666666666666666,15.0,105.0,12.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_movimento,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,0.8,0.6428571428571429,1.0,15.0,105.0,12.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_movimento,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.25,0.16666666666666666,0.40540540540540543,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.7714285714285715,0.6321687840290381,0.881831550802139,15.0,105.0,12.0,outra base (modelo inteiro)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.38095238095238093,0.22298156389065482,0.6300823192555475,15.0,105.0,12.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.26666666666666666,0.12496778350515464,0.4742461340206185,15.0,105.0,12.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.6433333333333333,,,,105.0,12.0,
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.8666666666666667,0.6875,1.0,15.0,105.0,12.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,15.0,105.0,12.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.7,0.5599830508474577,0.8139617940199335,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.7714285714285715,0.6516811372148451,0.9213538224278476,15.0,105.0,12.0,outra base (modelo inteiro)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.6571428571428571,0.5195486815415822,0.8317244224422442,15.0,105.0,12.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.44761904761904764,0.23300343153665887,0.7178011204481791,15.0,105.0,12.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.6966666666666667,,,,105.0,12.0,
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.8,0.5789473684210527,1.0,15.0,105.0,12.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,1.0,1.0,1.0,15.0,105.0,12.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.7,0.5925925925925926,0.8666666666666667,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.7523809523809524,0.6231642512077294,0.8666867469879518,15.0,105.0,12.0,outra base (modelo inteiro)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.47619047619047616,0.32254365196803786,0.7183628653642283,15.0,105.0,12.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.2761904761904762,0.12585227272727273,0.49464285714285705,15.0,105.0,12.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.67,,,,105.0,12.0,
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.9333333333333333,0.785515873015873,1.0,15.0,105.0,12.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,15.0,105.0,12.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_movimento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.675,0.5454146730462519,0.7846428571428571,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_movimento,regra_fechamento,,taxa_disparo_janela,0.23809523809523808,0.06848536737235367,0.5,15.0,105.0,12.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_movimento,regra_bocejo,,taxa_disparo_janela,0.0,0.0,0.0,15.0,105.0,12.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_movimento,regra_dmd,,taxa_disparo_janela,0.23809523809523808,0.06848536737235367,0.5,15.0,105.0,12.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_parado,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.4574468085106383,0.2857142857142857,0.6606064646895669,18.0,94.0,13.0,fora da amostra (própria base)
+c,dmd,alerta_parado,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.07446808510638298,0.034482758620689655,0.11881777463460631,18.0,94.0,13.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,alerta_parado,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.3617021276595745,0.20201556852933,0.5454545454545454,18.0,94.0,13.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,dmd,alerta_parado,Modelo do DMD,sem_normalizacao,escore_mediano,0.46499999999999997,,,,94.0,13.0,
+c,dmd,alerta_parado,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.5555555555555556,0.3125,0.75,18.0,94.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_parado,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.7777777777777778,0.5880030959752323,0.9473684210526315,18.0,94.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_parado,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.375,0.2211044520547945,0.5781455592105263,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_parado,Modelo do DMD,principal,taxa_disparo_janela,0.3404255319148936,0.1975071225071225,0.5,18.0,94.0,13.0,fora da amostra (própria base)
+c,dmd,alerta_parado,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.20212765957446807,0.08541666666666667,0.3333333333333333,18.0,94.0,13.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,alerta_parado,Modelo do DMD,principal,taxa_disparo_janela_far10,0.20212765957446807,0.08541666666666667,0.3333333333333333,18.0,94.0,13.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,dmd,alerta_parado,Modelo do DMD,principal,escore_mediano,0.33999999999999997,,,,94.0,13.0,
+c,dmd,alerta_parado,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.3888888888888889,0.17647058823529413,0.5885294117647056,18.0,94.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_parado,Modelo do DMD,principal,frac_videos_alguma_janela,0.6666666666666666,0.5,0.8333333333333334,18.0,94.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_parado,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.225,0.1333132530120482,0.34782608695652173,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_parado,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.43617021276595747,0.2649425287356322,0.6395991432068543,18.0,94.0,13.0,fora da amostra (própria base)
+c,dmd,alerta_parado,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.09574468085106383,0.036585365853658534,0.16815492056722464,18.0,94.0,13.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_parado,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.3404255319148936,0.19990654205607478,0.5052861898625428,18.0,94.0,13.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,dmd,alerta_parado,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.4666666666666667,,,,94.0,13.0,
+c,dmd,alerta_parado,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.5,0.23529411764705882,0.7058823529411765,18.0,94.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_parado,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,0.7777777777777778,0.5880030959752323,0.9473684210526315,18.0,94.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_parado,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.35,0.19800757853563136,0.5469712409420289,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.6914893617021277,0.5365635888501743,0.8235430283224401,18.0,94.0,13.0,outra base (modelo inteiro)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.3617021276595745,0.19539529015979817,0.5250694444444444,18.0,94.0,13.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.2553191489361702,0.1276234249122082,0.3831871719370119,18.0,94.0,13.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.655,,,,94.0,13.0,
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.7222222222222222,0.4666666666666667,0.9090909090909091,18.0,94.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,18.0,94.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.6375,0.48377419354838713,0.7777777777777778,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.6595744680851063,0.47305502846299813,0.8316228070175439,18.0,94.0,13.0,outra base (modelo inteiro)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.574468085106383,0.37634142446502716,0.7579347101932045,18.0,94.0,13.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.32978723404255317,0.1759233821733822,0.4948479641778611,18.0,94.0,13.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.6266666666666667,,,,94.0,13.0,
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.7222222222222222,0.42082043343653247,0.9412581699346404,18.0,94.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,0.8888888888888888,0.7222222222222222,1.0,18.0,94.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.6,0.4090909090909091,0.7879186602870812,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.6808510638297872,0.5632183908045977,0.7977631172044118,18.0,94.0,13.0,outra base (modelo inteiro)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.4148936170212766,0.25,0.56,18.0,94.0,13.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.22340425531914893,0.10089449541284404,0.3529961517317207,18.0,94.0,13.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.645,,,,94.0,13.0,
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.7777777777777778,0.5383333333333333,0.95,18.0,94.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,18.0,94.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_parado,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.625,0.4861011904761905,0.7474342105263158,,80.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_parado,regra_fechamento,,taxa_disparo_janela,0.14893617021276595,0.057463054187192115,0.2549183006535947,18.0,94.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_parado,regra_bocejo,,taxa_disparo_janela,0.0,0.0,0.0,18.0,94.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_parado,regra_dmd,,taxa_disparo_janela,0.14893617021276595,0.057463054187192115,0.2549183006535947,18.0,94.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,sonolento,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.8203309692671394,0.6446461138636433,0.9324018147345612,16.0,423.0,13.0,fora da amostra (própria base)
+c,dmd,sonolento,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.624113475177305,0.45267853367722294,0.7363949088407292,16.0,423.0,13.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,sonolento,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.7825059101654847,0.6111111111111112,0.8937834064899354,16.0,423.0,13.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,dmd,sonolento,Modelo do DMD,sem_normalizacao,escore_mediano,0.9133333333333333,,,,423.0,13.0,
+c,dmd,sonolento,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.875,0.6666666666666666,1.0,16.0,423.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,sonolento,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.9375,0.7857142857142857,1.0,16.0,423.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,sonolento,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.3786407766990291,0.1818002863278454,0.6506835032437441,,103.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,sonolento,Modelo do DMD,principal,taxa_disparo_janela,0.8392434988179669,0.6999936386768447,0.9317724271911425,16.0,423.0,13.0,fora da amostra (própria base)
+c,dmd,sonolento,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.7730496453900709,0.6395887162575644,0.8755300422469097,16.0,423.0,13.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,sonolento,Modelo do DMD,principal,taxa_disparo_janela_far10,0.75177304964539,0.6098951367781155,0.8612047228822188,16.0,423.0,13.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,dmd,sonolento,Modelo do DMD,principal,escore_mediano,0.8866666666666667,,,,423.0,13.0,
+c,dmd,sonolento,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.9375,0.7857142857142857,1.0,16.0,423.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,sonolento,Modelo do DMD,principal,frac_videos_alguma_janela,1.0,1.0,1.0,16.0,423.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,sonolento,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.3786407766990291,0.17414905450500556,0.6185093068035943,,103.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,sonolento,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.8321513002364066,0.6847463768115942,0.9310572974382374,16.0,423.0,13.0,fora da amostra (própria base)
+c,dmd,sonolento,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.6288416075650118,0.4504143059490085,0.7453808177586705,16.0,423.0,13.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,sonolento,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.7801418439716312,0.6095498929909042,0.8910595054662851,16.0,423.0,13.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,dmd,sonolento,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.9166666666666666,,,,423.0,13.0,
+c,dmd,sonolento,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.875,0.6666666666666666,1.0,16.0,423.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,sonolento,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,16.0,423.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,sonolento,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.3883495145631068,0.1787625271054328,0.6747294734493529,,103.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.9290780141843972,0.8937007175828355,0.9628616896450573,16.0,423.0,13.0,outra base (modelo inteiro)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.7565011820330969,0.688244331648384,0.8222813897603631,16.0,423.0,13.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.5626477541371159,0.46490018265761224,0.6631937944397918,16.0,423.0,13.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.82,,,,423.0,13.0,
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,1.0,1.0,1.0,16.0,423.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,16.0,423.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.8252427184466019,0.7746478873239436,0.8987658227848101,,103.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.8770685579196218,0.7538068181818182,0.9700581586460798,16.0,423.0,13.0,outra base (modelo inteiro)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.8321513002364066,0.7005962085729531,0.9430420990123766,16.0,423.0,13.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.6643026004728132,0.49683028153048026,0.8172529331072619,16.0,423.0,13.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.82,,,,423.0,13.0,
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.9375,0.7857142857142857,1.0,16.0,423.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,1.0,1.0,1.0,16.0,423.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.6504854368932039,0.4250852218167851,0.9325087183958152,,103.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.933806146572104,0.8999888392857143,0.9667507508686519,16.0,423.0,13.0,outra base (modelo inteiro)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.7990543735224587,0.7266635388739947,0.8595560506263722,16.0,423.0,13.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.5768321513002365,0.49402718292345954,0.663873397372286,16.0,423.0,13.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.8266666666666667,,,,423.0,13.0,
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,1.0,1.0,1.0,16.0,423.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,16.0,423.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,sonolento,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.8349514563106796,0.7785515873015874,0.9038527397260274,,103.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,sonolento,regra_fechamento,,taxa_disparo_janela,0.7021276595744681,0.5212497313561144,0.8282780320366132,16.0,423.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,sonolento,regra_bocejo,,taxa_disparo_janela,0.13947990543735225,0.0949471937717367,0.183228226925746,16.0,423.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,sonolento,regra_dmd,,taxa_disparo_janela,0.7565011820330969,0.6192565448012319,0.8574298287866182,16.0,423.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_s1,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.46788990825688076,0.2983701674464418,0.6897010271460015,17.0,109.0,14.0,fora da amostra (própria base)
+c,dmd,alerta_s1,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.22018348623853212,0.10373830040112911,0.38776271702710935,17.0,109.0,14.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,alerta_s1,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.4036697247706422,0.24386548410938655,0.6263888888888889,17.0,109.0,14.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,dmd,alerta_s1,Modelo do DMD,sem_normalizacao,escore_mediano,0.4066666666666667,,,,109.0,14.0,
+c,dmd,alerta_s1,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.47058823529411764,0.2,0.7650326797385617,17.0,109.0,14.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_s1,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.8823529411764706,0.75,1.0,17.0,109.0,14.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_s1,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.30120481927710846,0.21051793496480053,0.45764477401129944,,83.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_s1,Modelo do DMD,principal,taxa_disparo_janela,0.3669724770642202,0.20909090909090908,0.5856366675954304,17.0,109.0,14.0,fora da amostra (própria base)
+c,dmd,alerta_s1,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.24770642201834864,0.07215938589334717,0.5114661433926897,17.0,109.0,14.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,alerta_s1,Modelo do DMD,principal,taxa_disparo_janela_far10,0.23853211009174313,0.07142857142857142,0.4880093023255814,17.0,109.0,14.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,dmd,alerta_s1,Modelo do DMD,principal,escore_mediano,0.35333333333333333,,,,109.0,14.0,
+c,dmd,alerta_s1,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.29411764705882354,0.1,0.5625,17.0,109.0,14.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_s1,Modelo do DMD,principal,frac_videos_alguma_janela,0.8235294117647058,0.625,1.0,17.0,109.0,14.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_s1,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.1927710843373494,0.12118181818181818,0.261368006993007,,83.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_s1,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.47706422018348627,0.30245457721872815,0.6961324675324674,17.0,109.0,14.0,fora da amostra (própria base)
+c,dmd,alerta_s1,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.23853211009174313,0.1111111111111111,0.41559480519480524,17.0,109.0,14.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_s1,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.3669724770642202,0.20754716981132076,0.5851481448918586,17.0,109.0,14.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,dmd,alerta_s1,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.46,,,,109.0,14.0,
+c,dmd,alerta_s1,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.47058823529411764,0.2,0.7650326797385617,17.0,109.0,14.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_s1,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,0.8823529411764706,0.75,1.0,17.0,109.0,14.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_s1,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.3132530120481928,0.2212312204157234,0.4909314456035767,,83.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.7889908256880734,0.6581514622435617,0.8809582743988684,17.0,109.0,14.0,outra base (modelo inteiro)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.4036697247706422,0.22950819672131148,0.6201593406593405,17.0,109.0,14.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.26605504587155965,0.11926059414591525,0.45163210445468505,17.0,109.0,14.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.6533333333333333,,,,109.0,14.0,
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.8823529411764706,0.6875,1.0,17.0,109.0,14.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,17.0,109.0,14.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.7228915662650602,0.5844155844155844,0.8285808270676692,,83.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.7798165137614679,0.6639467625899281,0.9221642718983143,17.0,109.0,14.0,outra base (modelo inteiro)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.6605504587155964,0.5333196721311475,0.8289736842105263,17.0,109.0,14.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.43119266055045874,0.23209586466165413,0.6809216239687363,17.0,109.0,14.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.6933333333333334,,,,109.0,14.0,
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.8235294117647058,0.6190476190476191,1.0,17.0,109.0,14.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,1.0,1.0,1.0,17.0,109.0,14.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.7108433734939759,0.6017632577017766,0.8723404255319149,,83.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.7706422018348624,0.654527972027972,0.8794375492513791,17.0,109.0,14.0,outra base (modelo inteiro)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.48623853211009177,0.33035293126684634,0.6907831537019681,17.0,109.0,14.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.26605504587155965,0.11880550168418903,0.47060513860716696,17.0,109.0,14.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.6766666666666666,,,,109.0,14.0,
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.9411764705882353,0.8,1.0,17.0,109.0,14.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,17.0,109.0,14.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta_s1,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.6987951807228916,0.5714285714285714,0.7973143598143597,,83.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta_s1,regra_fechamento,,taxa_disparo_janela,0.23853211009174313,0.06870041909893729,0.46238052568697724,17.0,109.0,14.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_s1,regra_bocejo,,taxa_disparo_janela,0.0,0.0,0.0,17.0,109.0,14.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta_s1,regra_dmd,,taxa_disparo_janela,0.23853211009174313,0.06870041909893729,0.46238052568697724,17.0,109.0,14.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta,Modelo do DMD,sem_normalizacao,taxa_disparo_janela,0.39080459770114945,0.20213606618101002,0.5955056179775281,15.0,87.0,13.0,fora da amostra (própria base)
+c,dmd,alerta,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.05747126436781609,0.022720888661899898,0.09640308808047723,15.0,87.0,13.0,limiar calibrado no treino = 0.8417 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,alerta,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_far10,0.3103448275862069,0.1395039584364176,0.5108819169960475,15.0,87.0,13.0,limiar 0.6133 (FAR alcançado na UTA KSS 0 = 0.0970)
+c,dmd,alerta,Modelo do DMD,sem_normalizacao,escore_mediano,0.38,,,,87.0,13.0,
+c,dmd,alerta,Modelo do DMD,sem_normalizacao,frac_videos_media_escore_gt_0_5,0.4,0.14285714285714285,0.6923076923076923,15.0,87.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta,Modelo do DMD,sem_normalizacao,frac_videos_alguma_janela,0.6666666666666666,0.42857142857142855,0.875,15.0,87.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sem_evento,0.30666666666666664,0.15146290491118078,0.5125080128205127,,75.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta,Modelo do DMD,principal,taxa_disparo_janela,0.3103448275862069,0.1549223174096123,0.4775360310421284,15.0,87.0,13.0,fora da amostra (própria base)
+c,dmd,alerta,Modelo do DMD,principal,taxa_disparo_janela_limiar_calibrado,0.1724137931034483,0.052597840755735495,0.3143090062111801,15.0,87.0,13.0,limiar calibrado no treino = 0.6617 (metadados do Exp. 5b final (limiar_calibrado_dmd))
+c,dmd,alerta,Modelo do DMD,principal,taxa_disparo_janela_far10,0.1724137931034483,0.052597840755735495,0.3143090062111801,15.0,87.0,13.0,limiar 0.6900 (FAR alcançado na UTA KSS 0 = 0.0995)
+c,dmd,alerta,Modelo do DMD,principal,escore_mediano,0.3466666666666667,,,,87.0,13.0,
+c,dmd,alerta,Modelo do DMD,principal,frac_videos_media_escore_gt_0_5,0.26666666666666666,0.06666666666666667,0.5,15.0,87.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta,Modelo do DMD,principal,frac_videos_alguma_janela,0.6,0.38461538461538464,0.8,15.0,87.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta,Modelo do DMD,principal,taxa_disparo_janela_sem_evento,0.2,0.10386280386280387,0.31252332089552237,,75.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela,0.3563218390804598,0.17326829268292684,0.5648287416232315,15.0,87.0,13.0,fora da amostra (própria base)
+c,dmd,alerta,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.05747126436781609,0.022720888661899898,0.09640308808047723,15.0,87.0,13.0,limiar calibrado no treino = 0.8450 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_far10,0.2988505747126437,0.1397786946736684,0.4800253164556962,15.0,87.0,13.0,limiar 0.6333 (FAR alcançado na UTA KSS 0 = 0.0993)
+c,dmd,alerta,Modelo do DMD,sem_taxa_rosto,escore_mediano,0.4033333333333333,,,,87.0,13.0,
+c,dmd,alerta,Modelo do DMD,sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.3333333333333333,0.1111111111111111,0.6153846153846154,15.0,87.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta,Modelo do DMD,sem_taxa_rosto,frac_videos_alguma_janela,0.6666666666666666,0.42857142857142855,0.875,15.0,87.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta,Modelo do DMD,sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.26666666666666666,0.1183826042378674,0.457172619047619,,75.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela,0.6551724137931034,0.5237824675324676,0.7714285714285715,15.0,87.0,13.0,outra base (modelo inteiro)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_limiar_calibrado,0.3103448275862069,0.16049382716049382,0.4615591397849462,15.0,87.0,13.0,limiar calibrado no treino = 0.7150 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_far10,0.25287356321839083,0.13481433269388873,0.37651004304160685,15.0,87.0,13.0,limiar 0.7933 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_normalizacao,escore_mediano,0.6133333333333333,,,,87.0,13.0,
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_media_escore_gt_0_5,0.6666666666666666,0.38461538461538464,0.8823529411764706,15.0,87.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_normalizacao,frac_videos_alguma_janela,1.0,1.0,1.0,15.0,87.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sem_evento,0.6,0.4768852459016394,0.7160493827160493,,75.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela,0.6551724137931034,0.48099714569372054,0.8481012658227848,15.0,87.0,13.0,outra base (modelo inteiro)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_limiar_calibrado,0.5862068965517241,0.40185800126502214,0.8082191780821918,15.0,87.0,13.0,limiar calibrado no treino = 0.5683 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_far10,0.3563218390804598,0.19383830455259027,0.566297622924129,15.0,87.0,13.0,limiar 0.7267 (FAR alcançado na UTA KSS 0 = 0.0997)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),principal,escore_mediano,0.63,,,,87.0,13.0,
+c,dmd,alerta,Modelo da UTA-RLDD (B3),principal,frac_videos_media_escore_gt_0_5,0.7333333333333333,0.4666666666666667,1.0,15.0,87.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta,Modelo da UTA-RLDD (B3),principal,frac_videos_alguma_janela,0.8666666666666667,0.6875,1.0,15.0,87.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta,Modelo da UTA-RLDD (B3),principal,taxa_disparo_janela_sem_evento,0.6,0.41975308641975306,0.8095443349753695,,75.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela,0.6436781609195402,0.5316260353180184,0.7500644329896906,15.0,87.0,13.0,outra base (modelo inteiro)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_limiar_calibrado,0.3793103448275862,0.21537974683544306,0.5268853530950305,15.0,87.0,13.0,limiar calibrado no treino = 0.6783 (calculado aqui com a regra do Exp. 5b nos escores fora da amostra do treino)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_far10,0.22988505747126436,0.1097230384954452,0.37353162650602406,15.0,87.0,13.0,limiar 0.8000 (FAR alcançado na UTA KSS 0 = 0.0985)
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_taxa_rosto,escore_mediano,0.6233333333333333,,,,87.0,13.0,
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_media_escore_gt_0_5,0.7333333333333333,0.46153846153846156,0.9411764705882353,15.0,87.0,13.0,"regra por vídeo da Entrega 01: média dos escores das janelas >= 0,5"
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_taxa_rosto,frac_videos_alguma_janela,1.0,1.0,1.0,15.0,87.0,13.0,vídeo com pelo menos uma janela marcada
+c,dmd,alerta,Modelo da UTA-RLDD (B3),sem_taxa_rosto,taxa_disparo_janela_sem_evento,0.5866666666666667,0.4687401107594937,0.6988253012048192,,75.0,,"só janelas sem fechamento >= 0,5 s e sem bocejo detectados pelos nossos sinais"
+c,dmd,alerta,regra_fechamento,,taxa_disparo_janela,0.13793103448275862,0.03997087378640777,0.25888703208556146,15.0,87.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta,regra_bocejo,,taxa_disparo_janela,0.0,0.0,0.0,15.0,87.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,dmd,alerta,regra_dmd,,taxa_disparo_janela,0.13793103448275862,0.03997087378640777,0.25888703208556146,15.0,87.0,13.0,"fechamento >= 0,5 s na janela e/ou MAR > 0,5 por >= 1 s (sem treino)"
+c,uta,KSS 0,Modelo do DMD,sem_normalizacao,limiar_far10,0.6133333333333333,,,,,,FAR alcançado = 0.0970; fração das janelas alerta com p >= limiar = 0.1052
+c,uta,KSS 0,Modelo do DMD,principal,limiar_far10,0.69,,,,,,FAR alcançado = 0.0995; fração das janelas alerta com p >= limiar = 0.1019
+c,uta,KSS 0,Modelo do DMD,sem_taxa_rosto,limiar_far10,0.6333333333333333,,,,,,FAR alcançado = 0.0993; fração das janelas alerta com p >= limiar = 0.1044
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_normalizacao,limiar_far10,0.7933333333333333,,,,,,FAR alcançado = 0.0997; fração das janelas alerta com p >= limiar = 0.1035
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),principal,limiar_far10,0.7266666666666667,,,,,,FAR alcançado = 0.0997; fração das janelas alerta com p >= limiar = 0.1007
+c,uta,KSS 0,Modelo da UTA-RLDD (B3),sem_taxa_rosto,limiar_far10,0.8,,,,,,FAR alcançado = 0.0985; fração das janelas alerta com p >= limiar = 0.1015
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.4175824175824176,,,,273.0,,perclos := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.4468864468864469,,,,273.0,,taxa_piscadas_min := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.42124542124542125,,,,273.0,,dur_media_piscada_s := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.40293040293040294,,,,273.0,,dur_max_fechamento_s := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.4432234432234432,,,,273.0,,n_fechamentos_05s := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.7289377289377289,,,,273.0,,ear_media := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.36996336996337,,,,273.0,,ear_dp := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.5091575091575091,,,,273.0,,amp_media := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.5201465201465202,,,,273.0,,vel_media := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.4468864468864469,,,,273.0,,frac_bocejo := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.43956043956043955,,,,273.0,,taxa_rosto := mediana de uta_kss0; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.42857142857142855,,,,273.0,,ear_dp+amp_media+vel_media := mediana de uta_kss0; original = 0.4469
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.73046875,,,,256.0,,perclos := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.75,,,,256.0,,taxa_piscadas_min := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.77734375,,,,256.0,,dur_media_piscada_s := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.734375,,,,256.0,,dur_max_fechamento_s := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.74609375,,,,256.0,,n_fechamentos_05s := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.88671875,,,,256.0,,ear_media := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.71875,,,,256.0,,ear_dp := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.7734375,,,,256.0,,amp_media := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.7890625,,,,256.0,,vel_media := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.59375,,,,256.0,,frac_bocejo := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.72265625,,,,256.0,,taxa_rosto := mediana de uta_kss0; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.77734375,,,,256.0,,ear_dp+amp_media+vel_media := mediana de uta_kss0; original = 0.7305
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8351648351648352,,,,273.0,,perclos := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8241758241758241,,,,273.0,,taxa_piscadas_min := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8717948717948718,,,,273.0,,dur_media_piscada_s := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8058608058608059,,,,273.0,,dur_max_fechamento_s := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8351648351648352,,,,273.0,,n_fechamentos_05s := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.9304029304029304,,,,273.0,,ear_media := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.6446886446886447,,,,273.0,,ear_dp := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8168498168498168,,,,273.0,,amp_media := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8278388278388278,,,,273.0,,vel_media := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8351648351648352,,,,273.0,,frac_bocejo := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8241758241758241,,,,273.0,,taxa_rosto := mediana de uta_kss0; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.5531135531135531,,,,273.0,,ear_dp+amp_media+vel_media := mediana de uta_kss0; original = 0.8352
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.91015625,,,,256.0,,perclos := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.90625,,,,256.0,,taxa_piscadas_min := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.92578125,,,,256.0,,dur_media_piscada_s := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.87890625,,,,256.0,,dur_max_fechamento_s := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.89453125,,,,256.0,,n_fechamentos_05s := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.9140625,,,,256.0,,ear_media := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.81640625,,,,256.0,,ear_dp := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.85546875,,,,256.0,,amp_media := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.875,,,,256.0,,vel_media := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.890625,,,,256.0,,frac_bocejo := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.890625,,,,256.0,,taxa_rosto := mediana de uta_kss0; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.73828125,,,,256.0,,ear_dp+amp_media+vel_media := mediana de uta_kss0; original = 0.8945
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.4358974358974359,,,,273.0,,perclos := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.43956043956043955,,,,273.0,,taxa_piscadas_min := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.43223443223443225,,,,273.0,,dur_media_piscada_s := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.45787545787545786,,,,273.0,,dur_max_fechamento_s := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.4432234432234432,,,,273.0,,n_fechamentos_05s := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.663003663003663,,,,273.0,,ear_media := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.4175824175824176,,,,273.0,,ear_dp := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.47619047619047616,,,,273.0,,amp_media := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.34798534798534797,,,,273.0,,vel_media := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.4468864468864469,,,,273.0,,frac_bocejo := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.43956043956043955,,,,273.0,,taxa_rosto := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.30036630036630035,,,,273.0,,ear_dp+amp_media+vel_media := mediana de dmd_alerta_s2; original = 0.4469
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.73828125,,,,256.0,,perclos := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.7421875,,,,256.0,,taxa_piscadas_min := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.77734375,,,,256.0,,dur_media_piscada_s := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.765625,,,,256.0,,dur_max_fechamento_s := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.74609375,,,,256.0,,n_fechamentos_05s := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.84375,,,,256.0,,ear_media := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.71875,,,,256.0,,ear_dp := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.765625,,,,256.0,,amp_media := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.7421875,,,,256.0,,vel_media := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.59375,,,,256.0,,frac_bocejo := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.72265625,,,,256.0,,taxa_rosto := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_contrafactual,0.71484375,,,,256.0,,ear_dp+amp_media+vel_media := mediana de dmd_alerta_s2; original = 0.7305
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8498168498168498,,,,273.0,,perclos := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8095238095238095,,,,273.0,,taxa_piscadas_min := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8644688644688645,,,,273.0,,dur_media_piscada_s := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8498168498168498,,,,273.0,,dur_max_fechamento_s := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8351648351648352,,,,273.0,,n_fechamentos_05s := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8754578754578755,,,,273.0,,ear_media := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.9084249084249084,,,,273.0,,ear_dp := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8278388278388278,,,,273.0,,amp_media := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.7802197802197802,,,,273.0,,vel_media := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8351648351648352,,,,273.0,,frac_bocejo := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8241758241758241,,,,273.0,,taxa_rosto := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8095238095238095,,,,273.0,,ear_dp+amp_media+vel_media := mediana de dmd_alerta_s2; original = 0.8352
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.90625,,,,256.0,,perclos := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.890625,,,,256.0,,taxa_piscadas_min := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.9296875,,,,256.0,,dur_media_piscada_s := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.86328125,,,,256.0,,dur_max_fechamento_s := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.89453125,,,,256.0,,n_fechamentos_05s := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.89453125,,,,256.0,,ear_media := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.9609375,,,,256.0,,ear_dp := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.85546875,,,,256.0,,amp_media := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.84375,,,,256.0,,vel_media := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.890625,,,,256.0,,frac_bocejo := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.890625,,,,256.0,,taxa_rosto := mediana de dmd_alerta_s2; original = 0.8945
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_contrafactual,0.8359375,,,,256.0,,ear_dp+amp_media+vel_media := mediana de dmd_alerta_s2; original = 0.8945
+c,,,modelo do DMD inteiro aplicado à UTA,sem_normalizacao,conferencia_exp5b_dif_max,3.33333333379926e-07,,,,19955.0,,0 janelas sem par
+c,,,modelo do DMD inteiro aplicado à UTA,principal,conferencia_exp5b_dif_max,3.33333333379926e-07,,,,19955.0,,0 janelas sem par
+c,,,"modelo do DMD, fora da amostra (LOSO)",sem_normalizacao,conferencia_exp5b_dif_max,3.33333333379926e-07,,,,510.0,,0 janelas sem par
+c,,,"modelo do DMD, fora da amostra (LOSO)",principal,conferencia_exp5b_dif_max,3.33333333379926e-07,,,,510.0,,0 janelas sem par
+c,,,"modelo da UTA B3, fora da amostra",sem_normalizacao,conferencia_exp5b_dif_max,3.33333333379926e-07,,,,12487.0,,0 janelas sem par
+c,,,"modelo da UTA B3, fora da amostra",principal,conferencia_exp5b_dif_max,3.33333333379926e-07,,,,12487.0,,0 janelas sem par
+c,nitymed,Microsleep,Exp. 5b: exp5b_final_C_principal_RF.joblib,principal,taxa_disparo_janela,0.2783882783882784,0.17025922740068816,0.40298259088581667,,273.0,18.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,nitymed,Yawning,Exp. 5b: exp5b_final_C_principal_RF.joblib,principal,taxa_disparo_janela,0.69140625,0.5972684395146,0.7809981921487603,,256.0,96.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,uta,KSS 0,Exp. 5b: exp5b_final_C_principal_RF.joblib,principal,taxa_disparo_janela,0.18039135752140237,0.13350433893671854,0.22955541443984898,,4906.0,60.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,uta,KSS 10,Exp. 5b: exp5b_final_C_principal_RF.joblib,principal,taxa_disparo_janela,0.4838411819021237,0.4104921980469487,0.5519095779747248,,7581.0,60.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,dmd,alerta_movimento,Exp. 5b: exp5b_final_C_principal_RF.joblib,principal,taxa_disparo_janela,0.4,0.23397661332864428,0.6571915584415584,,105.0,12.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,nitymed,Microsleep,Exp. 5b: exp5b_final_C_principal_LR.joblib,principal,taxa_disparo_janela,0.13553113553113552,0.06272486162361623,0.2238360291378136,,273.0,18.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,nitymed,Yawning,Exp. 5b: exp5b_final_C_principal_LR.joblib,principal,taxa_disparo_janela,0.4921875,0.3982420019005385,0.5940232240437159,,256.0,96.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,uta,KSS 0,Exp. 5b: exp5b_final_C_principal_LR.joblib,principal,taxa_disparo_janela,0.05646147574398695,0.038254093669274174,0.07768961589888998,,4906.0,60.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,uta,KSS 10,Exp. 5b: exp5b_final_C_principal_LR.joblib,principal,taxa_disparo_janela,0.3371586861891571,0.2650458645572281,0.4153705185659411,,7581.0,60.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,dmd,alerta_movimento,Exp. 5b: exp5b_final_C_principal_LR.joblib,principal,taxa_disparo_janela,0.20952380952380953,0.0813825239398085,0.4193751694226078,,105.0,12.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,nitymed,Microsleep,Exp. 5b: exp5b_final_C_sem_normalizacao_RF.joblib,sem_normalizacao,taxa_disparo_janela,0.4468864468864469,0.3272488038277512,0.5735430283224401,,273.0,18.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,nitymed,Yawning,Exp. 5b: exp5b_final_C_sem_normalizacao_RF.joblib,sem_normalizacao,taxa_disparo_janela,0.73046875,0.6535716958539141,0.8059175964376846,,256.0,96.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,uta,KSS 0,Exp. 5b: exp5b_final_C_sem_normalizacao_RF.joblib,sem_normalizacao,taxa_disparo_janela,0.2600896860986547,0.21054675743661702,0.3110672462690312,,4906.0,60.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,uta,KSS 10,Exp. 5b: exp5b_final_C_sem_normalizacao_RF.joblib,sem_normalizacao,taxa_disparo_janela,0.5224904366178604,0.46214005503716726,0.5812342530920395,,7581.0,60.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,dmd,alerta_movimento,Exp. 5b: exp5b_final_C_sem_normalizacao_RF.joblib,sem_normalizacao,taxa_disparo_janela,0.3904761904761905,0.2222222222222222,0.6395721526535479,,105.0,12.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,nitymed,Microsleep,Exp. 5b: exp5b_final_C_sem_normalizacao_LR.joblib,sem_normalizacao,taxa_disparo_janela,0.14652014652014653,0.05691526796621873,0.25557930607187107,,273.0,18.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,nitymed,Yawning,Exp. 5b: exp5b_final_C_sem_normalizacao_LR.joblib,sem_normalizacao,taxa_disparo_janela,0.59375,0.499953531598513,0.6960358974358973,,256.0,96.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,uta,KSS 0,Exp. 5b: exp5b_final_C_sem_normalizacao_LR.joblib,sem_normalizacao,taxa_disparo_janela,0.022625356706074195,0.010607338886550025,0.038850460487641014,,4906.0,60.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,uta,KSS 10,Exp. 5b: exp5b_final_C_sem_normalizacao_LR.joblib,sem_normalizacao,taxa_disparo_janela,0.18533175042870334,0.12902331430900257,0.24924438110499414,,7581.0,60.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+c,dmd,alerta_movimento,Exp. 5b: exp5b_final_C_sem_normalizacao_LR.joblib,sem_normalizacao,taxa_disparo_janela,0.2571428571428571,0.09273664479850048,0.5222348484848485,,105.0,12.0,"modelo final salvo pelo Exp. 5b (treinado no DMD), aplicado sem mudança"
+d,nitymed,nitymed|Microsleep,,,perclos_mediana_por_video,0.029036375239310786,0.0205620287868403,0.06327868852459016,19.0,,19.0,
+d,nitymed,nitymed|Microsleep,,,perclos_p90_mediana_por_video,0.194833488951136,0.12465288491206418,0.22857142857142856,19.0,,19.0,
+d,nitymed,nitymed|Microsleep,,,fech_05s_por_min_mediana_por_video,0.4786215698787492,0.0,0.9132420091324202,19.0,,19.0,
+d,nitymed,nitymed|Microsleep,,,fech_05s_por_min_p90_mediana_por_video,5.602240896358541,2.4677817384151353,7.4719800747198,19.0,,19.0,
+d,nitymed,nitymed|Microsleep,,,dur_max_fech_s_mediana_por_video,0.5200000000000102,0.3999999999999986,0.88,19.0,,19.0,
+d,nitymed,nitymed|Microsleep,,,frac_videos_fech05,0.5789473684210527,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,frac_videos_fech_longo,0.15789473684210525,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,n_fech_05s_total,53.0,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,n_fech_longos_total,5.0,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,frac_videos_fech05_p90,1.0,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,frac_videos_fech_longo_p90,0.631578947368421,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,n_fech_longos_total_p90,48.0,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,perclos_janela_mediana,0.024,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,perclos_janela_p90,0.14240000000000008,,,19.0,273.0,,
+d,nitymed,nitymed|Microsleep,,,frac_janelas_fech05,0.15018315018315018,,,19.0,273.0,,
+d,nitymed,nitymed|Yawning,,,perclos_mediana_por_video,0.06517690875232775,0.04897959183673469,0.08598726114649681,107.0,,107.0,
+d,nitymed,nitymed|Yawning,,,perclos_p90_mediana_por_video,0.1826086956521739,0.1454102355808286,0.21515151515151515,107.0,,107.0,
+d,nitymed,nitymed|Yawning,,,fech_05s_por_min_mediana_por_video,1.3888888888888886,0.0,2.0408163265306123,107.0,,107.0,
+d,nitymed,nitymed|Yawning,,,fech_05s_por_min_p90_mediana_por_video,5.263157894736842,4.166666666666665,6.617647058823529,107.0,,107.0,
+d,nitymed,nitymed|Yawning,,,dur_max_fech_s_mediana_por_video,0.5200000000000005,0.4399999999999995,0.6799999999999997,107.0,,107.0,
+d,nitymed,nitymed|Yawning,,,frac_videos_fech05,0.5233644859813084,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,frac_videos_fech_longo,0.2336448598130841,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,n_fech_05s_total,137.0,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,n_fech_longos_total,40.0,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,frac_videos_fech05_p90,0.822429906542056,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,frac_videos_fech_longo_p90,0.514018691588785,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,n_fech_longos_total_p90,114.0,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,perclos_janela_mediana,0.068,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,perclos_janela_p90,0.296,,,107.0,256.0,,
+d,nitymed,nitymed|Yawning,,,frac_janelas_fech05,0.34375,,,107.0,256.0,,
+d,uta,uta|KSS 0,,,perclos_mediana_por_video,0.014018485057654673,0.009457618266760181,0.019322887518316522,60.0,,60.0,
+d,uta,uta|KSS 0,,,perclos_p90_mediana_por_video,0.02440498071296783,0.020677825086595734,0.033617492655203966,60.0,,60.0,
+d,uta,uta|KSS 0,,,fech_05s_por_min_mediana_por_video,0.0,0.0,0.09968150217316817,60.0,,60.0,
+d,uta,uta|KSS 0,,,fech_05s_por_min_p90_mediana_por_video,0.1958170348229612,0.0,0.33137677846541863,60.0,,60.0,
+d,uta,uta|KSS 0,,,dur_max_fech_s_mediana_por_video,0.36785000000000423,0.3019333333333804,0.6240333333333332,60.0,,60.0,
+d,uta,uta|KSS 0,,,frac_videos_fech05,0.45,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,frac_videos_fech_longo,0.08333333333333333,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,n_fech_05s_total,141.0,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,n_fech_longos_total,12.0,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,frac_videos_fech05_p90,0.6,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,frac_videos_fech_longo_p90,0.2833333333333333,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,n_fech_longos_total_p90,49.0,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,perclos_janela_mediana,0.01,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,perclos_janela_p90,0.06343924191750275,,,60.0,4906.0,,
+d,uta,uta|KSS 0,,,frac_janelas_fech05,0.026090501426824297,,,60.0,4906.0,,
+d,uta,uta|KSS 5,,,perclos_mediana_por_video,0.03412379153205258,0.02664500555249079,0.04460364998316687,60.0,,60.0,
+d,uta,uta|KSS 5,,,perclos_p90_mediana_por_video,0.05506726590755027,0.044577657462123464,0.07500882530298325,60.0,,60.0,
+d,uta,uta|KSS 5,,,fech_05s_por_min_mediana_por_video,0.2428253765686078,0.09868190666574575,0.49724345056251684,60.0,,60.0,
+d,uta,uta|KSS 5,,,fech_05s_por_min_p90_mediana_por_video,0.6690217136430061,0.3942843964201891,0.8749962086844886,60.0,,60.0,
+d,uta,uta|KSS 5,,,dur_max_fech_s_mediana_por_video,0.6991666666666845,0.5666666666666629,1.001684583333338,60.0,,60.0,
+d,uta,uta|KSS 5,,,frac_videos_fech05,0.6833333333333333,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,frac_videos_fech_longo,0.31666666666666665,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,n_fech_05s_total,538.0,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,n_fech_longos_total,128.0,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,frac_videos_fech05_p90,0.8333333333333334,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,frac_videos_fech_longo_p90,0.5,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,n_fech_longos_total_p90,138.0,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,perclos_janela_mediana,0.0201342281879194,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,perclos_janela_p90,0.1233333333333333,,,60.0,7468.0,,
+d,uta,uta|KSS 5,,,frac_janelas_fech05,0.09145688269951795,,,60.0,7468.0,,
+d,uta,uta|KSS 10,,,perclos_mediana_por_video,0.07666380324625433,0.04961473407254276,0.08903706676919246,60.0,,60.0,
+d,uta,uta|KSS 10,,,perclos_p90_mediana_por_video,0.08938286020445614,0.0743445780043526,0.13079209928459468,60.0,,60.0,
+d,uta,uta|KSS 10,,,fech_05s_por_min_mediana_por_video,1.0471656887643053,0.6684155104227728,1.931153310438062,60.0,,60.0,
+d,uta,uta|KSS 10,,,fech_05s_por_min_p90_mediana_por_video,1.8967204445605808,1.4248747790785097,2.586957158179655,60.0,,60.0,
+d,uta,uta|KSS 10,,,dur_max_fech_s_mediana_por_video,2.1484222222222797,1.233966666666662,3.4064999999999372,60.0,,60.0,
+d,uta,uta|KSS 10,,,frac_videos_fech05,0.8833333333333333,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,frac_videos_fech_longo,0.6,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,n_fech_05s_total,1420.0,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,n_fech_longos_total,440.0,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,frac_videos_fech05_p90,0.9666666666666667,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,frac_videos_fech_longo_p90,0.6833333333333333,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,n_fech_longos_total_p90,480.0,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,perclos_janela_mediana,0.04,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,perclos_janela_p90,0.3986666666666679,,,60.0,7581.0,,
+d,uta,uta|KSS 10,,,frac_janelas_fech05,0.23835905553357076,,,60.0,7581.0,,
+d,dmd,dmd_s5|todos,,,perclos_mediana_por_video,0.2046457739933284,0.1325278810408922,0.22700406353897304,16.0,,13.0,
+d,dmd,dmd_s5|todos,,,perclos_p90_mediana_por_video,0.23634735255769537,0.1654275092936803,0.27047474938528465,16.0,,13.0,
+d,dmd,dmd_s5|todos,,,fech_05s_por_min_mediana_por_video,5.112079793128924,3.6508550185873605,7.945888216447134,16.0,,13.0,
+d,dmd,dmd_s5|todos,,,fech_05s_por_min_p90_mediana_por_video,6.120273392814718,4.408334999138204,8.590082697409176,16.0,,13.0,
+d,dmd,dmd_s5|todos,,,dur_max_fech_s_mediana_por_video,2.4865591397849443,1.6465053763440949,3.897849462365599,16.0,,13.0,
+d,dmd,dmd_s5|todos,,,frac_videos_fech05,0.9375,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,frac_videos_fech_longo,0.8125,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,n_fech_05s_total,255.0,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,n_fech_longos_total,85.0,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,frac_videos_fech05_p90,1.0,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,frac_videos_fech_longo_p90,0.8125,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,n_fech_longos_total_p90,98.0,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,perclos_janela_mediana,0.1582491582491582,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,perclos_janela_p90,0.4231035184055318,,,16.0,569.0,,
+d,dmd,dmd_s5|todos,,,frac_janelas_fech05,0.5782073813708261,,,16.0,569.0,,
+d,dmd,dmd_mov|safe,,,perclos_mediana_por_video,0.05377229080932785,0.010551558752997603,0.21292676570237165,15.0,,12.0,
+d,dmd,dmd_mov|safe,,,perclos_p90_mediana_por_video,0.18439269981120202,0.1295634625021669,0.5207280080889788,15.0,,12.0,
+d,dmd,dmd_mov|safe,,,fech_05s_por_min_mediana_por_video,0.4898765432098766,0.0,4.9793641940881175,15.0,,12.0,
+d,dmd,dmd_mov|safe,,,fech_05s_por_min_p90_mediana_por_video,4.120327249842666,2.406469002695418,12.946346904629106,15.0,,12.0,
+d,dmd,dmd_mov|safe,,,dur_max_fech_s_mediana_por_video,0.5712365591398054,0.3024193548387046,1.2096774193548183,15.0,,12.0,
+d,dmd,dmd_mov|safe,,,frac_videos_fech05,0.6,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,frac_videos_fech_longo,0.13333333333333333,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,n_fech_05s_total,81.0,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,n_fech_longos_total,12.0,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,frac_videos_fech05_p90,1.0,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,frac_videos_fech_longo_p90,0.6,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,n_fech_longos_total_p90,72.0,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,perclos_janela_mediana,0.0268456375838926,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,perclos_janela_p90,0.3625674191580233,,,15.0,105.0,,
+d,dmd,dmd_mov|safe,,,frac_janelas_fech05,0.23809523809523808,,,15.0,105.0,,
+d,dmd,dmd_par|safe,,,perclos_mediana_por_video,0.06229540542035132,0.0449438202247191,0.11247359854911466,18.0,,13.0,
+d,dmd,dmd_par|safe,,,perclos_p90_mediana_por_video,0.13313986465151273,0.11191135734072022,0.2102748101709028,18.0,,13.0,
+d,dmd,dmd_par|safe,,,fech_05s_por_min_mediana_por_video,0.6112734136779439,0.0,1.884649983877659,18.0,,13.0,
+d,dmd,dmd_par|safe,,,fech_05s_por_min_p90_mediana_por_video,2.721067734133211,1.7814432989690716,5.997503023692535,18.0,,13.0,
+d,dmd,dmd_par|safe,,,dur_max_fech_s_mediana_por_video,0.8232526881720474,0.4032258064516156,1.3944892473118173,18.0,,13.0,
+d,dmd,dmd_par|safe,,,frac_videos_fech05,0.6666666666666666,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,frac_videos_fech_longo,0.2222222222222222,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,n_fech_05s_total,50.0,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,n_fech_longos_total,5.0,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,frac_videos_fech05_p90,1.0,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,frac_videos_fech_longo_p90,0.5555555555555556,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,n_fech_longos_total_p90,35.0,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,perclos_janela_mediana,0.0436241610738255,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,perclos_janela_p90,0.2271812080536912,,,18.0,94.0,,
+d,dmd,dmd_par|safe,,,frac_janelas_fech05,0.14893617021276595,,,18.0,94.0,,
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sensibilidade,0.4468864468864469,0.3272488038277512,0.5735430283224401,18.0,273.0,18.0,"avaliáveis (principal); suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sensibilidade,0.8351648351648352,0.7381818181818182,0.9114391143911439,18.0,273.0,18.0,"avaliáveis (principal); suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Microsleep,regra_dmd,,taxa_disparo_janela_sensibilidade,0.15018315018315018,0.058823529411764705,0.2674486030574591,18.0,273.0,18.0,"avaliáveis (principal); suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sensibilidade,0.4360730593607306,0.3193580801234986,0.5596593010586084,19.0,438.0,19.0,"todas as janelas; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sensibilidade,0.8447488584474886,0.7801382978723405,0.9046750797636146,19.0,438.0,19.0,"todas as janelas; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Microsleep,regra_dmd,,taxa_disparo_janela_sensibilidade,0.15753424657534246,0.06604212744130122,0.25599473194917877,19.0,438.0,19.0,"todas as janelas; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sensibilidade,0.73046875,0.6535716958539141,0.8059175964376846,96.0,256.0,96.0,"avaliáveis (principal); suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sensibilidade,0.89453125,0.8519996389891696,0.9377146760343481,96.0,256.0,96.0,"avaliáveis (principal); suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,regra_dmd,,taxa_disparo_janela_sensibilidade,0.6171875,0.5130718954248366,0.7220022792128377,96.0,256.0,96.0,"avaliáveis (principal); suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sensibilidade,0.7190388170055453,0.6607702962090477,0.7701979155039624,107.0,541.0,107.0,"todas as janelas; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sensibilidade,0.8743068391866913,0.8387687569370772,0.908596144889859,107.0,541.0,107.0,"todas as janelas; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,regra_dmd,,taxa_disparo_janela_sensibilidade,0.5767097966728281,0.4957521727883349,0.6524420409167471,107.0,541.0,107.0,"todas as janelas; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sensibilidade,0.7440758293838863,0.6728971962616822,0.8168423631703271,93.0,211.0,93.0,"avaliáveis, sem os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sensibilidade,0.8862559241706162,0.8348241590214067,0.9345184557561537,93.0,211.0,93.0,"avaliáveis, sem os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,regra_dmd,,taxa_disparo_janela_sensibilidade,0.6824644549763034,0.6041546658986174,0.7655673274094327,93.0,211.0,93.0,"avaliáveis, sem os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sensibilidade,0.6666666666666666,0.4375,0.9333333333333333,3.0,45.0,3.0,"avaliáveis, só os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sensibilidade,0.9333333333333333,0.8666666666666667,1.0,3.0,45.0,3.0,"avaliáveis, só os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Yawning,regra_dmd,,taxa_disparo_janela_sensibilidade,0.3111111111111111,0.0,0.6,3.0,45.0,3.0,"avaliáveis, só os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Microsleep,Modelo do DMD,sem_normalizacao,taxa_disparo_janela_sensibilidade,0.4779874213836478,0.36335620235620236,0.593777632636656,21.0,318.0,21.0,"avaliáveis, com os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Microsleep,Modelo da UTA-RLDD (B3),sem_normalizacao,taxa_disparo_janela_sensibilidade,0.8490566037735849,0.7639567732822508,0.9171784025634012,21.0,318.0,21.0,"avaliáveis, com os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"
+c,nitymed,Microsleep,regra_dmd,,taxa_disparo_janela_sensibilidade,0.17295597484276728,0.08119659810126582,0.2779552715654952,21.0,318.0,21.0,"avaliáveis, com os suspeitos; suspeitos = pasta Yawning, > 90 s, nenhum bocejo detectado: ['Yawning_Female_P1042777_720', 'Yawning_Female_P1043088_720', 'Yawning_Female_P1043107_720']"

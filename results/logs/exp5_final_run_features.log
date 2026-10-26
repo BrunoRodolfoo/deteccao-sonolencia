@@ -1,0 +1,44 @@
+[20:26:49] 1/6 testes
+ok  test_caracteristicas_janela
+ok  test_ear_sintetico
+ok  test_escore_coerente_e_ordem
+ok  test_fechamento_longo_e_limiar
+ok  test_frequencia
+ok  test_janelas_ancoradas_em_trechos_safe_drive
+ok  test_normalizacao_janelas
+ok  test_numero_de_janelas
+ok  test_partes_uta_concatenadas_com_contagem_continua
+ok  test_recuperacao_frequencia_oficial
+ok  test_referencia_nitymed_primeiro_terco
+ok  test_referencia_uta_separada_da_avaliacao
+ok  test_rotulos_dmd_s5_e_casamento
+ok  test_rotulos_v2_dmd
+ok  test_sem_rosto_interrompe_piscada
+ok  test_tempo_vfr
+ok  test_tres_piscadas_caracteristicas
+ok  test_unroll_igual_ao_original
+ok  test_zscore_referencia_alerta
+19 testes passaram
+[20:26:49] 2/6 piscadas
+2026-09-27 20:26:50,991 INFO dmd: 65 arquivos (65 calculados, 0 já prontos) em 0.7 s; piscadas=6297, fechamentos longos=183; unidades de referência=14 (fallback: ['gE_28'])
+2026-09-27 20:26:51,326 INFO nitymed: 126 arquivos (126 calculados, 0 já prontos) em 0.2 s; piscadas=1301, fechamentos longos=45; unidades de referência=126 (fallback: nenhuma)
+2026-09-27 20:26:52,976 INFO uta: 182 arquivos (182 calculados, 0 já prontos) em 1.3 s; piscadas=23744, fechamentos longos=580; unidades de referência=60 (fallback: nenhuma)
+[20:26:53] 3/6 DMD: alinhamento e validação do detector
+2026-09-27 20:27:00,539 INFO Distração: 49 sessões; nº de quadros = total_frames em 49; frame_shift=0 em 49; fim das ações <= n-1 em 38
+2026-09-27 20:27:00,540 INFO Agregado (micro) piscadas: P=0.7903 R=0.7260 (TP=1187, det=1502, anot=1635)
+[20:27:00] 4/6 janelas (10 s principal; 5 s e 15 s sensibilidade)
+2026-09-27 20:27:02,500 INFO dmd [10s]: por uso: {'sonolento': 423, 's5_sem_sinal': 146, 'alerta_s1': 109, 'alerta': 90, 'referencia': 62}
+2026-09-27 20:27:03,233 INFO nitymed [10s]: por uso: {'exemplo': 529, 'fronteira': 250, 'referencia': 200}
+2026-09-27 20:27:09,086 INFO uta [10s]: por uso: {'exemplo': 19955, 'referencia': 2380, 'fronteira': 120}
+2026-09-27 20:27:11,116 INFO dmd [5s]: por uso: {'sonolento': 308, 's5_sem_sinal': 277, 'alerta_s1': 275, 'alerta': 247, 'referencia': 113}
+2026-09-27 20:27:11,898 INFO nitymed [5s]: por uso: {'exemplo': 655, 'referencia': 324, 'fronteira': 126}
+2026-09-27 20:27:17,651 INFO uta [5s]: por uso: {'exemplo': 20137, 'referencia': 2440, 'fronteira': 60}
+2026-09-27 20:27:19,534 INFO dmd [15s]: por uso: {'sonolento': 466, 's5_sem_sinal': 87, 'alerta_s1': 34, 'referencia': 17, 's3_nao_usada': 15, 'alerta': 8}
+2026-09-27 20:27:20,197 INFO nitymed [15s]: por uso: {'exemplo': 415, 'fronteira': 303, 'referencia': 137}
+2026-09-27 20:27:26,037 INFO uta [15s]: por uso: {'exemplo': 19773, 'referencia': 2320, 'fronteira': 180}
+[20:27:26] 5/6 sequências e mapeamento oficial (5 folds)
+2026-09-27 20:27:26,864 INFO sequências: 8843 (X (8843, 30, 4)), 180 vídeos lógicos, 60 sujeitos -> data/features/final/uta/sequences.npz
+2026-09-27 20:29:22,310 INFO Mapeamento (5 folds): {'confirmado': 47, 'provavel': 7, 'indeterminado': 4}
+[20:29:24] 6/6 relatório
+relatório: results/exp5_caracteristicas.md (152 linhas)
+[20:29:25] fim (156 s)

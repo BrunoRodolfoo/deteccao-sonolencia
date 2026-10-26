@@ -1,0 +1,200 @@
+2026-09-27 20:36:57,740 INFO Folds da UTA-RLDD com .ok: [1, 2, 3, 4, 5]
+2026-09-27 20:36:58,033 INFO sequências: 8843 (X (8843, 30, 4)), 178 vídeos lógicos com sequência (de 180), 60 sujeitos -> data/features/final/uta/sequences.npz
+2026-09-27 20:36:58,033 WARNING vídeos sem nenhuma piscada (sem sequência): F2_15_10, F3_27_5
+2026-09-27 20:36:58,033 INFO por classe (0/1/2): [1021, 3470, 4352]
+2026-09-27 20:36:58,034 INFO   fold 1: 1288 sequências, 12 sujeitos, por classe [137, 586, 565]
+2026-09-27 20:36:58,034 INFO   fold 2: 1961 sequências, 12 sujeitos, por classe [340, 695, 926]
+2026-09-27 20:36:58,034 INFO   fold 3: 1847 sequências, 12 sujeitos, por classe [267, 697, 883]
+2026-09-27 20:36:58,034 INFO   fold 4: 1933 sequências, 12 sujeitos, por classe [98, 755, 1080]
+2026-09-27 20:36:58,034 INFO   fold 5: 1814 sequências, 12 sujeitos, por classe [179, 737, 898]
+2026-09-27 20:36:59,027 INFO fold 1, sujeito oficial 0: K=5796 (integralidade 18 vs 12), melhor pasta F1_01 (1.35), 2ª F1_09 (0.15)
+2026-09-27 20:36:59,368 INFO fold 1, sujeito oficial 1: K=3082 (integralidade 18 vs 11), melhor pasta F1_02 (1.61), 2ª F1_09 (0.08)
+2026-09-27 20:36:59,845 INFO fold 1, sujeito oficial 2: K=1543 (integralidade 18 vs 13), melhor pasta F1_03 (0.42), 2ª F1_10 (0.13)
+2026-09-27 20:37:00,419 INFO fold 1, sujeito oficial 3: K=4149 (integralidade 18 vs 14), melhor pasta F1_04 (0.72), 2ª F1_10 (0.15)
+2026-09-27 20:37:01,144 INFO fold 1, sujeito oficial 4: K=5388 (integralidade 18 vs 9), melhor pasta F1_05 (1.58), 2ª F1_03 (0.06)
+2026-09-27 20:37:01,623 INFO fold 1, sujeito oficial 5: K=5000 (integralidade 18 vs 13), melhor pasta F1_06 (0.56), 2ª F1_12 (0.17)
+2026-09-27 20:37:02,537 INFO fold 1, sujeito oficial 6: K=8898 (integralidade 18 vs 11), melhor pasta F1_07 (1.41), 2ª F1_09 (0.08)
+2026-09-27 20:37:03,081 INFO fold 1, sujeito oficial 7: K=1857 (integralidade 18 vs 15), melhor pasta F1_08 (0.94), 2ª F1_03 (0.12)
+2026-09-27 20:37:03,568 INFO fold 1, sujeito oficial 8: K=2823 (integralidade 18 vs 18), melhor pasta F1_09 (0.89), 2ª F1_03 (0.03)
+2026-09-27 20:37:03,744 INFO fold 1, sujeito oficial 9: K=991 (integralidade 18 vs 11), melhor pasta F1_10 (1.07), 2ª F1_02 (0.09)
+2026-09-27 20:37:04,100 INFO fold 1, sujeito oficial 10: K=4651 (integralidade 18 vs 16), melhor pasta F1_11 (1.26), 2ª F1_10 (0.19)
+2026-09-27 20:37:04,101 INFO fold 1: 11 confirmados; ordem crescente compatível com os confirmados: True; pastas sem par: ['F1_12']
+2026-09-27 20:37:04,102 INFO fold 1: mapeamento:
+ sujeito_oficial pasta     classe  escore  margem pasta_hungaro_blocos  viola_duracao_adotada
+               0 F1_01 confirmado   1.349   1.199                F1_01                      0
+               1 F1_02 confirmado   1.607   1.528                F1_02                      0
+               2 F1_03 confirmado   0.421   0.289                F1_03                      0
+               3 F1_04 confirmado   0.716   0.570                F1_04                      0
+               4 F1_05 confirmado   1.577   1.519                F1_05                      0
+               5 F1_06 confirmado   0.558   0.389                F1_06                      0
+               6 F1_07 confirmado   1.405   1.321                F1_07                      0
+               7 F1_08 confirmado   0.941   0.825                F1_08                      0
+               8 F1_09 confirmado   0.888   0.855                F1_09                      0
+               9 F1_10 confirmado   1.071   0.986                F1_10                      0
+              10 F1_11 confirmado   1.258   1.069                F1_11                      0
+2026-09-27 20:37:17,022 INFO fold 1: sensibilidade do mapeamento aos parâmetros do escore coerente:
+ fold  lag_min  queda_max  mapeamento_igual  n_confirmados  n_provaveis  n_indeterminados  pastas_iguais  margem_min_confirmados sem_par
+    1    -1500        150              True             11            0                 0             11                0.245346   F1_12
+    1    -6000        600              True             11            0                 0             11                0.272852   F1_12
+2026-09-27 20:37:17,670 INFO fold 2, sujeito oficial 0: K=2929 (integralidade 18 vs 14), melhor pasta F2_13 (0.62), 2ª F2_19 (-0.14)
+2026-09-27 20:37:18,272 INFO fold 2, sujeito oficial 1: K=1059 (integralidade 18 vs 13), melhor pasta F2_14 (1.33), 2ª F2_20 (0.04)
+2026-09-27 20:37:19,712 INFO fold 2, sujeito oficial 2: K=3663 (integralidade 14 vs 9), melhor pasta F2_15 (-0.14), 2ª F2_20 (-0.22)
+2026-09-27 20:37:19,868 INFO fold 2, sujeito oficial 3: K=468 (integralidade 18 vs 16), melhor pasta F2_16 (0.85), 2ª F2_21 (0.16)
+2026-09-27 20:37:20,333 INFO fold 2, sujeito oficial 4: K=4003 (integralidade 18 vs 9), melhor pasta F2_17 (1.58), 2ª F2_21 (0.11)
+2026-09-27 20:37:21,113 INFO fold 2, sujeito oficial 5: K=3333 (integralidade 18 vs 8), melhor pasta F2_18 (0.72), 2ª F2_24 (0.26)
+2026-09-27 20:37:22,087 INFO fold 2, sujeito oficial 6: K=8130 (integralidade 18 vs 14), melhor pasta F2_19 (1.93), 2ª F2_20 (0.08)
+2026-09-27 20:37:22,553 INFO fold 2, sujeito oficial 7: K=2561 (integralidade 18 vs 11), melhor pasta F2_20 (1.25), 2ª F2_14 (0.05)
+2026-09-27 20:37:22,826 INFO fold 2, sujeito oficial 8: K=1904 (integralidade 18 vs 18), melhor pasta F2_23 (0.09), 2ª F2_17 (0.08)
+2026-09-27 20:37:23,066 INFO fold 2, sujeito oficial 9: K=1261 (integralidade 18 vs 10), melhor pasta F2_22 (1.21), 2ª F2_23 (0.15)
+2026-09-27 20:37:23,595 INFO fold 2, sujeito oficial 10: K=5320 (integralidade 18 vs 10), melhor pasta F2_23 (0.13), 2ª F2_20 (-0.08)
+2026-09-27 20:37:25,225 INFO fold 2, sujeito oficial 11: K=5882 (integralidade 18 vs 13), melhor pasta F2_24 (0.46), 2ª F2_16 (0.15)
+2026-09-27 20:37:25,226 INFO fold 2: 9 confirmados; ordem crescente compatível com os confirmados: True; pastas sem par: []
+2026-09-27 20:37:25,226 INFO fold 2: mapeamento:
+ sujeito_oficial pasta     classe  escore  margem pasta_hungaro_blocos  viola_duracao_adotada
+               0 F2_13 confirmado   0.621   0.764                F2_13                      0
+               1 F2_14 confirmado   1.332   1.291                F2_14                      0
+               2 F2_15   provavel  -0.142   0.079                F2_15                      0
+               3 F2_16 confirmado   0.848   0.684                F2_16                      0
+               4 F2_17 confirmado   1.580   1.466                F2_17                      0
+               5 F2_18 confirmado   0.715   0.458                F2_18                      0
+               6 F2_19 confirmado   1.932   1.850                F2_19                      0
+               7 F2_20 confirmado   1.252   1.203                F2_20                      0
+               8 F2_21   provavel   0.023  -0.062                F2_21                      0
+               9 F2_22 confirmado   1.207   1.055                F2_22                      0
+              10 F2_23   provavel   0.129   0.205                F2_23                      0
+              11 F2_24 confirmado   0.460   0.315                F2_24                      0
+2026-09-27 20:37:43,424 INFO fold 2: sensibilidade do mapeamento aos parâmetros do escore coerente:
+ fold  lag_min  queda_max  mapeamento_igual  n_confirmados  n_provaveis  n_indeterminados  pastas_iguais  margem_min_confirmados sem_par
+    2    -1500        150              True              9            3                 0             12                0.344052        
+    2    -6000        600              True              9            3                 0             12                0.317296        
+2026-09-27 20:37:43,665 INFO fold 3, sujeito oficial 0: K=977 (integralidade 18 vs 18), melhor pasta F3_36 (0.13), 2ª F3_31 (0.10)
+2026-09-27 20:37:43,883 INFO fold 3, sujeito oficial 1: K=1502 (integralidade 18 vs 14), melhor pasta F3_27 (0.19), 2ª F3_26 (0.05)
+2026-09-27 20:37:44,197 INFO fold 3, sujeito oficial 2: K=2365 (integralidade 18 vs 16), melhor pasta F3_28 (0.78), 2ª F3_35 (0.16)
+2026-09-27 20:37:46,462 INFO fold 3, sujeito oficial 3: K=8000 (integralidade 18 vs 14), melhor pasta F3_26 (0.12), 2ª F3_27 (0.10)
+2026-09-27 20:37:47,426 INFO fold 3, sujeito oficial 4: K=2740 (integralidade 18 vs 12), melhor pasta F3_30 (1.28), 2ª F3_26 (0.05)
+2026-09-27 20:37:49,050 INFO fold 3, sujeito oficial 5: K=13216 (integralidade 18 vs 10), melhor pasta F3_31 (0.46), 2ª F3_28 (0.20)
+2026-09-27 20:37:49,393 INFO fold 3, sujeito oficial 6: K=3185 (integralidade 18 vs 11), melhor pasta F3_32 (0.77), 2ª F3_34 (0.20)
+2026-09-27 20:37:49,863 INFO fold 3, sujeito oficial 7: K=699 (integralidade 17 vs 11), melhor pasta F3_33 (0.61), 2ª F3_27 (0.12)
+2026-09-27 20:37:50,390 INFO fold 3, sujeito oficial 8: K=102 (integralidade 5 vs 5), melhor pasta F3_26 (-0.25), 2ª F3_30 (-0.38)
+2026-09-27 20:37:51,458 INFO fold 3, sujeito oficial 9: K=6592 (integralidade 18 vs 7), melhor pasta F3_35 (0.98), 2ª F3_26 (0.08)
+2026-09-27 20:37:52,063 INFO fold 3, sujeito oficial 10: K=1932 (integralidade 18 vs 16), melhor pasta F3_36 (1.70), 2ª F3_27 (0.08)
+2026-09-27 20:37:52,228 INFO fold 3, sujeito oficial 11: K=3437 (integralidade 18 vs 18), melhor pasta F3_27 (0.11), 2ª F3_30 (0.08)
+2026-09-27 20:37:52,229 INFO fold 3: 7 confirmados; ordem crescente compatível com os confirmados: False; pastas sem par: ['F3_25', 'F3_27', 'F3_29', 'F3_34']
+2026-09-27 20:37:52,230 INFO fold 3: mapeamento:
+ sujeito_oficial pasta        classe  escore  margem pasta_hungaro_blocos  viola_duracao_adotada
+               0       indeterminado     NaN     NaN                F3_31                    NaN
+               1       indeterminado     NaN     NaN                F3_25                    NaN
+               2 F3_28    confirmado   0.779   0.622                F3_28                    0.0
+               3 F3_26      provavel   0.123   0.019                F3_27                    0.0
+               4 F3_30    confirmado   1.276   1.223                F3_30                    0.0
+               5 F3_31    confirmado   0.464   0.261                F3_34                    0.0
+               6 F3_32    confirmado   0.768   0.573                F3_32                    0.0
+               7 F3_33    confirmado   0.614   0.490                F3_33                    0.0
+               8       indeterminado     NaN     NaN                F3_29                    NaN
+               9 F3_35    confirmado   0.981   0.898                F3_35                    0.0
+              10 F3_36    confirmado   1.699   1.616                F3_36                    0.0
+              11       indeterminado     NaN     NaN                F3_26                    NaN
+2026-09-27 20:38:11,581 INFO fold 3: sensibilidade do mapeamento aos parâmetros do escore coerente:
+ fold  lag_min  queda_max  mapeamento_igual  n_confirmados  n_provaveis  n_indeterminados  pastas_iguais  margem_min_confirmados                 sem_par
+    3    -1500        150              True              7            1                 4             12                0.284475 F3_25;F3_27;F3_29;F3_34
+    3    -6000        600              True              7            1                 4             12                0.280401 F3_25;F3_27;F3_29;F3_34
+2026-09-27 20:38:12,201 INFO fold 4, sujeito oficial 0: K=2123 (integralidade 18 vs 16), melhor pasta F4_37 (0.41), 2ª F4_39 (0.07)
+2026-09-27 20:38:12,373 INFO fold 4, sujeito oficial 1: K=618 (integralidade 17 vs 14), melhor pasta F4_38 (0.80), 2ª F4_41 (0.20)
+2026-09-27 20:38:13,316 INFO fold 4, sujeito oficial 2: K=765 (integralidade 18 vs 11), melhor pasta F4_39 (1.21), 2ª F4_42 (0.09)
+2026-09-27 20:38:14,101 INFO fold 4, sujeito oficial 3: K=6364 (integralidade 18 vs 12), melhor pasta F4_40 (1.98), 2ª F4_42 (0.15)
+2026-09-27 20:38:14,305 INFO fold 4, sujeito oficial 4: K=1286 (integralidade 18 vs 16), melhor pasta F4_41 (0.54), 2ª F4_38 (0.13)
+2026-09-27 20:38:15,181 INFO fold 4, sujeito oficial 5: K=2857 (integralidade 18 vs 10), melhor pasta F4_42 (0.60), 2ª F4_38 (-0.08)
+2026-09-27 20:38:15,518 INFO fold 4, sujeito oficial 6: K=2324 (integralidade 18 vs 10), melhor pasta F4_43 (0.26), 2ª F4_39 (0.14)
+2026-09-27 20:38:15,861 INFO fold 4, sujeito oficial 7: K=4016 (integralidade 17 vs 12), melhor pasta F4_44 (0.23), 2ª F4_38 (0.17)
+2026-09-27 20:38:16,687 INFO fold 4, sujeito oficial 8: K=14476 (integralidade 18 vs 10), melhor pasta F4_45 (1.17), 2ª F4_42 (0.18)
+2026-09-27 20:38:17,180 INFO fold 4, sujeito oficial 9: K=1764 (integralidade 18 vs 14), melhor pasta F4_46 (1.86), 2ª F4_47 (0.11)
+2026-09-27 20:38:17,441 INFO fold 4, sujeito oficial 10: K=1557 (integralidade 18 vs 15), melhor pasta F4_47 (0.86), 2ª F4_37 (0.11)
+2026-09-27 20:38:18,217 INFO fold 4, sujeito oficial 11: K=301 (integralidade 18 vs 15), melhor pasta F4_48 (0.66), 2ª F4_46 (0.17)
+2026-09-27 20:38:18,218 INFO fold 4: 10 confirmados; ordem crescente compatível com os confirmados: True; pastas sem par: []
+2026-09-27 20:38:18,219 INFO fold 4: mapeamento:
+ sujeito_oficial pasta     classe  escore  margem pasta_hungaro_blocos  viola_duracao_adotada
+               0 F4_37 confirmado   0.413   0.348                F4_37                      0
+               1 F4_38 confirmado   0.802   0.602                F4_38                      0
+               2 F4_39 confirmado   1.208   1.115                F4_39                      0
+               3 F4_40 confirmado   1.981   1.833                F4_40                      0
+               4 F4_41 confirmado   0.536   0.403                F4_41                      0
+               5 F4_42 confirmado   0.604   0.680                F4_42                      0
+               6 F4_43   provavel   0.258   0.120                F4_43                      0
+               7 F4_44   provavel   0.232   0.059                F4_44                      0
+               8 F4_45 confirmado   1.173   0.992                F4_45                      0
+               9 F4_46 confirmado   1.858   1.745                F4_46                      0
+              10 F4_47 confirmado   0.858   0.752                F4_47                      0
+              11 F4_48 confirmado   0.656   0.489                F4_48                      0
+2026-09-27 20:38:32,747 INFO fold 4: sensibilidade do mapeamento aos parâmetros do escore coerente:
+ fold  lag_min  queda_max  mapeamento_igual  n_confirmados  n_provaveis  n_indeterminados  pastas_iguais  margem_min_confirmados sem_par
+    4    -1500        150              True             10            2                 0             12                0.350920        
+    4    -6000        600              True             10            2                 0             12                0.406656        
+2026-09-27 20:38:33,233 INFO fold 5, sujeito oficial 0: K=955 (integralidade 18 vs 13), melhor pasta F5_50 (1.71), 2ª F5_53 (0.06)
+2026-09-27 20:38:33,898 INFO fold 5, sujeito oficial 1: K=1649 (integralidade 18 vs 12), melhor pasta F5_51 (1.27), 2ª F5_58 (0.14)
+2026-09-27 20:38:35,110 INFO fold 5, sujeito oficial 2: K=9694 (integralidade 18 vs 7), melhor pasta F5_50 (0.08), 2ª F5_49 (0.07)
+2026-09-27 20:38:35,253 INFO fold 5, sujeito oficial 3: K=731 (integralidade 18 vs 15), melhor pasta F5_53 (1.44), 2ª F5_50 (0.14)
+2026-09-27 20:38:35,535 INFO fold 5, sujeito oficial 4: K=1307 (integralidade 18 vs 18), melhor pasta F5_54 (0.57), 2ª F5_51 (0.12)
+2026-09-27 20:38:36,530 INFO fold 5, sujeito oficial 5: K=1745 (integralidade 18 vs 13), melhor pasta F5_55 (0.44), 2ª F5_58 (0.13)
+2026-09-27 20:38:37,181 INFO fold 5, sujeito oficial 6: K=1548 (integralidade 17 vs 12), melhor pasta F5_56 (1.24), 2ª F5_49 (0.12)
+2026-09-27 20:38:37,662 INFO fold 5, sujeito oficial 7: K=3314 (integralidade 14 vs 8), melhor pasta F5_57 (1.43), 2ª F5_49 (0.06)
+2026-09-27 20:38:38,061 INFO fold 5, sujeito oficial 8: K=1558 (integralidade 18 vs 9), melhor pasta F5_58 (0.89), 2ª F5_55 (0.09)
+2026-09-27 20:38:39,748 INFO fold 5, sujeito oficial 9: K=5430 (integralidade 18 vs 10), melhor pasta F5_59 (0.93), 2ª F5_50 (0.02)
+2026-09-27 20:38:40,178 INFO fold 5, sujeito oficial 10: K=1465 (integralidade 18 vs 15), melhor pasta F5_60 (0.71), 2ª F5_51 (0.15)
+2026-09-27 20:38:40,179 INFO fold 5: 10 confirmados; ordem crescente compatível com os confirmados: True; pastas sem par: ['F5_49']
+2026-09-27 20:38:40,180 INFO fold 5: mapeamento:
+ sujeito_oficial pasta     classe  escore  margem pasta_hungaro_blocos  viola_duracao_adotada
+               0 F5_50 confirmado   1.707   1.649                F5_50                      0
+               1 F5_51 confirmado   1.266   1.123                F5_51                      0
+               2 F5_52   provavel   0.041  -0.040                F5_52                      2
+               3 F5_53 confirmado   1.441   1.301                F5_53                      0
+               4 F5_54 confirmado   0.573   0.453                F5_54                      0
+               5 F5_55 confirmado   0.435   0.306                F5_55                      0
+               6 F5_56 confirmado   1.235   1.113                F5_56                      0
+               7 F5_57 confirmado   1.431   1.367                F5_57                      0
+               8 F5_58 confirmado   0.890   0.800                F5_58                      0
+               9 F5_59 confirmado   0.926   0.902                F5_59                      0
+              10 F5_60 confirmado   0.714   0.566                F5_60                      0
+2026-09-27 20:38:56,247 INFO fold 5: sensibilidade do mapeamento aos parâmetros do escore coerente:
+ fold  lag_min  queda_max  mapeamento_igual  n_confirmados  n_provaveis  n_indeterminados  pastas_iguais  margem_min_confirmados sem_par
+    5    -1500        150              True             10            1                 0             11                0.358326   F5_49
+    5    -6000        600              True             10            1                 0             11                0.290014   F5_49
+2026-09-27 20:38:56,283 INFO Mapeamento (5 folds): {'confirmado': 47, 'provavel': 7, 'indeterminado': 4}
+2026-09-27 20:38:56,315 INFO Correlação vídeo a vídeo (mediana por vídeo), oficial x nossa (Spearman):
+variante                              estendida  limiar  segundos
+videos                caracteristica                             
+confirmados           amplitude           0.341  -0.034    -0.034
+                      duracao             0.183   0.228     0.150
+                      frequencia          0.548   0.548     0.532
+                      velocidade          0.524   0.217     0.211
+confirmados_so_5_e_10 amplitude           0.317   0.005     0.005
+                      duracao             0.252   0.231     0.134
+                      frequencia          0.470   0.470     0.455
+                      velocidade          0.559   0.296     0.282
+so_5_e_10             amplitude           0.306  -0.007    -0.007
+                      duracao             0.231   0.213     0.114
+                      frequencia          0.407   0.407     0.393
+                      velocidade          0.569   0.263     0.253
+todos                 amplitude           0.308  -0.043    -0.043
+                      duracao             0.173   0.209     0.128
+                      frequencia          0.507   0.507     0.493
+                      velocidade          0.510   0.189     0.184
+2026-09-27 20:38:56,315 INFO Medianas por classe (mediana dos vídeos, só confirmados):
+                           0       1       2
+rotulo                 0.000   5.000  10.000
+n_videos              47.000  47.000  47.000
+oficial_frequencia     0.010   4.789  11.300
+limiar_frequencia     -0.367  12.215  15.639
+segundos_frequencia   -0.367  11.988  15.126
+estendida_frequencia  -0.367  12.215  15.639
+oficial_amplitude      0.148  -0.161  -0.556
+limiar_amplitude      -0.307  -0.236  -0.080
+segundos_amplitude    -0.307  -0.236  -0.080
+estendida_amplitude    0.210  -0.137  -0.962
+oficial_duracao        0.062   0.246   0.270
+limiar_duracao        -0.360   0.000   0.475
+segundos_duracao      -0.359  -0.023   0.491
+estendida_duracao     -0.051  -0.020  -0.139
+oficial_velocidade     0.058  -0.212  -0.790
+limiar_velocidade     -0.187  -0.119  -0.355
+segundos_velocidade   -0.208  -0.238  -0.366
+estendida_velocidade  -0.160  -0.502  -0.854

@@ -1,0 +1,7 @@
+2026-09-27 20:36:48,696 INFO Folds da UTA-RLDD com .ok: [1, 2, 3, 4, 5]
+2026-09-27 20:36:50,435 INFO dmd [15s]: 627 janelas de 56 arquivos em 1.7 s -> data/features/final/dmd/windows_15s.csv; janelas safe_drive (s1/s2/s3): ancoradas 74, grade global teria 39
+2026-09-27 20:36:50,435 INFO dmd [15s]: por uso: {'sonolento': 466, 's5_sem_sinal': 87, 'alerta_s1': 34, 'referencia': 17, 's3_nao_usada': 15, 'alerta': 8}
+2026-09-27 20:36:51,105 INFO nitymed [15s]: 855 janelas de 126 arquivos em 0.7 s -> data/features/final/nitymed/windows_15s.csv
+2026-09-27 20:36:51,105 INFO nitymed [15s]: por uso: {'exemplo': 415, 'fronteira': 303, 'referencia': 137}
+2026-09-27 20:36:57,218 INFO uta [15s]: 22273 janelas de 182 arquivos em 6.1 s -> data/features/final/uta/windows_15s.csv
+2026-09-27 20:36:57,219 INFO uta [15s]: por uso: {'exemplo': 19773, 'referencia': 2320, 'fronteira': 180}

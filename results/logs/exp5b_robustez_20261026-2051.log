@@ -1,0 +1,17 @@
+UTA B3: 12487 janelas (7581 sonolentas), 60 sujeitos | DMD: 510 janelas (423 sonolentas), 13 sujeitos
+(0) RF: réplica ok, queda 10,9 [6,7; 15,7]
+(1) RF: B 68,4, C 66,1, queda 2,3 [−2,5; 6,8]; vídeo −2,3 [−9,1; 4,3]
+(2) RF: queda 10,9, IC em dois níveis [5,7; 19,5] (1000 reamostragens)
+(3) RF 13_sujeitos: AUC B mediana 78,6 [77,0; 80,3]
+(3) RF 13_sujeitos_510_janelas: AUC B mediana 78,8 [76,6; 80,5]
+(4) RF centrada: acur. bal. 74,2 → 86,8 (+12,6 pp); AUC +13,9
+(4) RF bruta: acur. bal. 62,9 → 77,5 (+14,7 pp); AUC +15,9
+(0) LR: réplica ok, queda 9,8 [3,7; 16,0]
+(1) LR: B 73,7, C 66,2, queda 7,6 [3,0; 12,5]; vídeo 8,4 [3,4; 13,8]
+(2) LR: queda 9,8, IC em dois níveis [1,9; 18,1] (1000 reamostragens)
+(3) LR 13_sujeitos: AUC B mediana 71,5 [68,1; 73,2]
+(3) LR 13_sujeitos_510_janelas: AUC B mediana 71,2 [67,8; 73,6]
+(4) LR centrada: acur. bal. 72,0 → 73,1 (+1,2 pp); AUC +2,1
+(4) LR bruta: acur. bal. 68,1 → 69,0 (+0,9 pp); AUC +1,7
+(5) regra: falso alarme 2,6%, sensibilidade 24,1%
+-> results/exp5b_robustez.csv, results/exp5b_robustez.md (248 s)

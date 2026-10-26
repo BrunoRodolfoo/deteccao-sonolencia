@@ -1,0 +1,64 @@
+{
+  "tipo": "benchmark_pwa",
+  "versao_app": "1.0",
+  "data": "2026-09-20T22:01:15.695Z",
+  "aparelho": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 10,
+    "deviceMemoryGB": 32,
+    "platform": "macOS",
+    "screen": "390x844@1",
+    "secureContext": true,
+    "crossOriginIsolated": false,
+    "wasmSimd": true,
+    "webgl2": true,
+    "language": "pt-BR",
+    "date": "2026-09-20T22:01:15.696Z",
+    "delegate": "GPU",
+    "video": "320x240"
+  },
+  "delegate_landmarker": "GPU",
+  "modelos": {
+    "landmarker": "face_landmarker float16 v1",
+    "eye_state": "eye_state_int8.tflite",
+    "blink_temporal": "blink_temporal.tflite"
+  },
+  "duracao_s": 60.03,
+  "quadros": 1796,
+  "quadros_com_rosto": 1796,
+  "fps_medio": 29.918374146260202,
+  "latencia_ms": {
+    "landmarker": {
+      "n": 1796,
+      "mean": 9.47750556761013,
+      "p50": 9.600000023841858,
+      "p95": 11.200000047683716,
+      "max": 155.79999995231628
+    },
+    "cnn_olhos_2olhos": {
+      "n": 1796,
+      "mean": 2.9385857470582484,
+      "p50": 3,
+      "p95": 3.8000000715255737,
+      "max": 5.200000047683716
+    },
+    "temporal": {
+      "n": 1716,
+      "mean": 0.15920745833214625,
+      "p50": 0.19999992847442627,
+      "p95": 0.2999999523162842,
+      "max": 0.40000009536743164
+    },
+    "total_por_quadro": {
+      "n": 1796,
+      "mean": 12.60701559042612,
+      "p50": 12.700000047683716,
+      "p95": 14.800000071525574,
+      "max": 161.39999997615814
+    }
+  },
+  "perclos_final": 0.10058479532163743,
+  "piscadas_no_periodo": 52,
+  "quadros_em_alerta": 364,
+  "ear_medio": 0.18913464973467234
+}

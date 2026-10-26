@@ -1,0 +1,88 @@
+Exp. 5a (rodada final) — validação do extrator contra as características oficiais da UTA-RLDD (20260927-221239)
+Python 3.11.16, numpy 2.4.6, pandas 3.0.6, scipy 1.17.1, scikit-learn 1.9.1
+RF: 300 árvores, sementes 42..51 (principal 42), n_jobs=6; bootstrap por sujeito: 1000 reamostragens; permutação pareada: 10000 sorteios (semente 42); variante principal: estendida; conjunto principal: confirmado
+Nossas sequências: data/features/final/uta/sequences.npz (terço de referência = ultimo)
+Oficiais (teste dos 5 folds): 8661 sequências, 174 vídeos, 58 sujeitos; por classe do par: confirmado 47, provavel 7, indeterminado 4
+Nossas (sequences.npz): 8843 sequências, 178 vídeos lógicos com sequência, 60 pastas
+[confirmado] 47 sujeitos, 141 vídeos pareados
+[confirmado_provavel] vídeos fora da comparação pareada: só no oficial [np.str_('F2_15_10')]; só no nosso []
+[confirmado_provavel] 54 sujeitos, 161 vídeos pareados
+
+===== Parte 1: checagens do mapeamento
+[fold 1] 1a. contagem de piscadas: aritmética confere em 33/33 vídeos; húngaro coincide com o adotado em 2/11 (acaso: esperado 0.92, P(>= 2) = 0.234)
+[fold 1] 1b. duração (só séries confiáveis): pares adotados respeitam NF_final <= quadros em 33/33 vídeos (confirmados: 33/33; violações: []); atribuições completas viáveis 36 de 479001600; húngaro pela duração coincide em 7/11
+[fold 2] 1a. contagem de piscadas: aritmética confere em 36/36 vídeos; húngaro coincide com o adotado em 3/12 (acaso: esperado 1.00, P(>= 3) = 0.080)
+[fold 2] 1b. duração (só séries confiáveis): pares adotados respeitam NF_final <= quadros em 32/32 vídeos (confirmados: 26/26; violações: []); atribuições completas viáveis 1920 de 479001600; húngaro pela duração coincide em 6/12
+[fold 3] 1a. contagem de piscadas: aritmética confere em 24/24 vídeos; húngaro coincide com o adotado em 4/8 (acaso: esperado 0.67, P(>= 4) = 0.004)
+[fold 3] 1b. duração (só séries confiáveis): pares adotados respeitam NF_final <= quadros em 21/21 vídeos (confirmados: 18/18; violações: []); atribuições completas viáveis 1424 de 19958400; húngaro pela duração coincide em 7/8
+[fold 4] 1a. contagem de piscadas: aritmética confere em 36/36 vídeos; húngaro coincide com o adotado em 9/12 (acaso: esperado 1.00, P(>= 9) = 0.000)
+[fold 4] 1b. duração (só séries confiáveis): pares adotados respeitam NF_final <= quadros em 33/33 vídeos (confirmados: 28/28; violações: []); atribuições completas viáveis 60480 de 479001600; húngaro pela duração coincide em 3/12
+[fold 5] 1a. contagem de piscadas: aritmética confere em 33/33 vídeos; húngaro coincide com o adotado em 6/11 (acaso: esperado 0.92, P(>= 6) = 0.000)
+[fold 5] 1b. duração (só séries confiáveis): pares adotados respeitam NF_final <= quadros em 29/31 vídeos (confirmados: 28/28; violações: [(2, 'F5_52', 5, 1.0111974700843325), (2, 'F5_52', 10, 1.0184320637537652)]); atribuições completas viáveis 8640 de 479001600; húngaro pela duração coincide em 5/11
+
+===== Parte 2: RF treinado nas oficiais dos outros folds (protocolo oficial, 5 folds)
+  [3c] semente 42: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 43: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 44: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 45: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 46: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 47: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 48: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 49: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 50: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [3c] semente 51: 5 RF treinados nas oficiais dos outros folds (4 s)
+  [B3] semente 42: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 43: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 44: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 45: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 46: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 47: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 48: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 49: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 50: 5 RF treinados nas oficiais dos outros folds (2 s)
+  [B3] semente 51: 5 RF treinados nas oficiais dos outros folds (2 s)
+[fold 1] [3c] conferência com o Exp. 1 (RandomForest, fold 1): maior |diferença| = 5.55e-17 -> reproduz
+[fold 2] [3c] conferência com o Exp. 1 (RandomForest, fold 2): maior |diferença| = 0.00e+00 -> reproduz
+[fold 3] [3c] conferência com o Exp. 1 (RandomForest, fold 3): maior |diferença| = 0.00e+00 -> reproduz
+[fold 4] [3c] conferência com o Exp. 1 (RandomForest, fold 4): maior |diferença| = 0.00e+00 -> reproduz
+[fold 5] [3c] conferência com o Exp. 1 (RandomForest, fold 5): maior |diferença| = 0.00e+00 -> reproduz
+[3c] [confirmado] agregado: oficial bal=0.589 VA=0.589 | nosso estendida bal=0.570 VA=0.567 (47 sujeitos, 141 vídeos, 6787 x 7227 seq.)
+[3c] [confirmado_provavel] agregado: oficial bal=0.583 VA=0.584 | nosso estendida bal=0.585 VA=0.584 (54 sujeitos, 161 vídeos, 8270 x 8193 seq.)
+[3c] sem os 30 vídeos preenchidos: oficial bal=0.591 VA=0.568; nosso estendida bal=0.567
+[fold 1] [B3] conferência com o Exp. 1 (RandomForest, fold 1): maior |diferença| = 1.11e-16 -> reproduz
+[fold 2] [B3] conferência com o Exp. 1 (RandomForest, fold 2): maior |diferença| = 1.11e-16 -> reproduz
+[fold 3] [B3] conferência com o Exp. 1 (RandomForest, fold 3): maior |diferença| = 1.11e-16 -> reproduz
+[fold 4] [B3] conferência com o Exp. 1 (RandomForest, fold 4): maior |diferença| = 0.00e+00 -> reproduz
+[fold 5] [B3] conferência com o Exp. 1 (RandomForest, fold 5): maior |diferença| = 0.00e+00 -> reproduz
+[B3] [confirmado] agregado: oficial bal=0.855 VA=0.883 | nosso estendida bal=0.850 VA=0.862 (47 sujeitos, 94 vídeos, 4041 x 4541 seq.)
+[B3] [confirmado_provavel] agregado: oficial bal=0.851 VA=0.860 | nosso estendida bal=0.851 VA=0.869 (54 sujeitos, 107 vídeos, 4835 x 4935 seq.)
+[B3] sem os 30 vídeos preenchidos: oficial bal=0.847 VA=0.875; nosso estendida bal=0.848
+
+===== Parte 3: mesmo extrator no treino e no teste (5 folds e LOSO), mesmos sujeitos
+[mesmo_extrator_5_folds] [confirmado] [3c] oficial bal=0.546 VA=0.553 | nosso estendida bal=0.563 VA=0.603 (9 s)
+[mesmo_extrator_5_folds] [confirmado] [B3] oficial bal=0.831 VA=0.872 | nosso estendida bal=0.898 VA=0.947 (6 s)
+[mesmo_extrator_loso] [confirmado] [3c] oficial bal=0.556 VA=0.553 | nosso estendida bal=0.552 VA=0.560 (100 s)
+[mesmo_extrator_loso] [confirmado] [B3] oficial bal=0.850 VA=0.883 | nosso estendida bal=0.895 VA=0.915 (48 s)
+[mesmo_extrator_5_folds] [confirmado_provavel] [3c] oficial bal=0.565 VA=0.578 | nosso estendida bal=0.587 VA=0.609 (11 s)
+[mesmo_extrator_5_folds] [confirmado_provavel] [B3] oficial bal=0.858 VA=0.869 | nosso estendida bal=0.894 VA=0.916 (6 s)
+
+===== Parte 4: distribuições
+[confirmado] 4. KS (5 folds, todas as classes, estendida): frequencia D=0.210 (por sujeito 0.519); amplitude D=0.132 (por sujeito 0.350); duracao D=0.112 (por sujeito 0.308); velocidade D=0.124 (por sujeito 0.237)
+[confirmado_provavel] 4. KS (5 folds, todas as classes, estendida): frequencia D=0.258 (por sujeito 0.551); amplitude D=0.133 (por sujeito 0.332); duracao D=0.127 (por sujeito 0.298); velocidade D=0.132 (por sujeito 0.239)
+mecanismo da Frequency (10 - 0, 47 sujeitos): taxa_piscadas_min sobe em 39 (p=2.96e-06); vales12_por_min sobe em 33 (p=0.00383); frac_fechado sobe em 41 (p=1.41e-10); ear_median sobe em 14 (p=0.00111)
+Diagnóstico de vídeo: nenhum arquivo novo (182 em exp5a_videos_diagnostico.csv)
+Detector do dlib: 182 de 182 arquivos medidos (exp5a_dlib_rosto.csv)
+
+Arquivos:
+  -> results/exp5a_validacao.csv (4160 linhas)
+  -> results/exp5a_validacao_custo.csv (950 linhas)
+  -> results/exp5a_validacao_distribuicoes.csv (864 linhas)
+  -> results/exp5a_validacao_mapeamento.csv (58 linhas)
+  -> results/exp5a_validacao_mecanismo_frequencia.csv (8 linhas)
+  -> results/exp5a_validacao_videos.csv (4964 linhas)
+  -> results/exp5a_validacao_confusoes.csv (40 linhas)
+  -> results/figures/fig_exp5a_validacao.pdf (+ .png 300 dpi)
+  -> results/figures/fig_exp5a_distribuicoes.pdf (+ .png 300 dpi)
+  -> results/exp5a_validacao.md
+
+Concluído em 264 s. Log: results/logs/exp5a_validacao_20260927-221239.log

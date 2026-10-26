@@ -1,0 +1,1495 @@
+protocol,train_on,test_on,fold,stratum,level,metric,value
+A_intra_mrl,MRL,MRL,1,todos,todos,n,16975.0
+A_intra_mrl,MRL,MRL,1,todos,todos,acc,0.9119882179675994
+A_intra_mrl,MRL,MRL,1,todos,todos,bal_acc,0.9084070722089382
+A_intra_mrl,MRL,MRL,1,todos,todos,f1_macro,0.898221766325926
+A_intra_mrl,MRL,MRL,1,todos,todos,chance,0.6974374079528718
+A_intra_mrl,MRL,MRL,1,todos,todos,auc,0.9732103821416044
+A_intra_mrl,MRL,MRL,1,todos,todos,epochs_run,12.0
+A_intra_mrl,MRL,MRL,1,todos,todos,best_epoch,11.0
+A_intra_mrl,MRL,MRL,1,todos,todos,train_s,148.3086109161377
+A_intra_mrl,MRL,MRL,1,todos,todos,val_acc,0.9552000164985657
+A_intra_mrl,MRL,MRL,1,todos,todos,n_train,25001.0
+A_intra_mrl,MRL,MRL,1,todos,todos,n_val,2500.0
+A_intra_mrl,MRL,MRL,1,glasses,sem óculos,n,11978.0
+A_intra_mrl,MRL,MRL,1,glasses,sem óculos,acc,0.9216062781766572
+A_intra_mrl,MRL,MRL,1,glasses,sem óculos,bal_acc,0.9403518648151934
+A_intra_mrl,MRL,MRL,1,glasses,sem óculos,f1_macro,0.9079262510632427
+A_intra_mrl,MRL,MRL,1,glasses,sem óculos,chance,0.7269160126899316
+A_intra_mrl,MRL,MRL,1,glasses,sem óculos,auc,0.9892453448219501
+A_intra_mrl,MRL,MRL,1,glasses,com óculos,n,4997.0
+A_intra_mrl,MRL,MRL,1,glasses,com óculos,acc,0.8889333600160096
+A_intra_mrl,MRL,MRL,1,glasses,com óculos,bal_acc,0.8618349374612664
+A_intra_mrl,MRL,MRL,1,glasses,com óculos,f1_macro,0.8757807722456907
+A_intra_mrl,MRL,MRL,1,glasses,com óculos,chance,0.6267760656393837
+A_intra_mrl,MRL,MRL,1,glasses,com óculos,auc,0.9625983106153209
+A_intra_mrl,MRL,MRL,1,lighting,iluminação ruim,n,12451.0
+A_intra_mrl,MRL,MRL,1,lighting,iluminação ruim,acc,0.9396835595534495
+A_intra_mrl,MRL,MRL,1,lighting,iluminação ruim,bal_acc,0.9261764041285085
+A_intra_mrl,MRL,MRL,1,lighting,iluminação ruim,f1_macro,0.9320880054584078
+A_intra_mrl,MRL,MRL,1,lighting,iluminação ruim,chance,0.6573769175166653
+A_intra_mrl,MRL,MRL,1,lighting,iluminação ruim,auc,0.9847505141447442
+A_intra_mrl,MRL,MRL,1,lighting,iluminação boa,n,4524.0
+A_intra_mrl,MRL,MRL,1,lighting,iluminação boa,acc,0.8357648099027409
+A_intra_mrl,MRL,MRL,1,lighting,iluminação boa,bal_acc,0.8900109469074986
+A_intra_mrl,MRL,MRL,1,lighting,iluminação boa,f1_macro,0.7917949547008285
+A_intra_mrl,MRL,MRL,1,lighting,iluminação boa,chance,0.8076923076923077
+A_intra_mrl,MRL,MRL,1,lighting,iluminação boa,auc,0.9817622319108645
+A_intra_mrl,MRL,MRL,1,reflections,sem reflexo,n,15403.0
+A_intra_mrl,MRL,MRL,1,reflections,sem reflexo,acc,0.9241706161137441
+A_intra_mrl,MRL,MRL,1,reflections,sem reflexo,bal_acc,0.9299223025032023
+A_intra_mrl,MRL,MRL,1,reflections,sem reflexo,f1_macro,0.9121728456680989
+A_intra_mrl,MRL,MRL,1,reflections,sem reflexo,chance,0.7062260598584691
+A_intra_mrl,MRL,MRL,1,reflections,sem reflexo,auc,0.9820499482456863
+A_intra_mrl,MRL,MRL,1,reflections,reflexo pequeno,n,427.0
+A_intra_mrl,MRL,MRL,1,reflections,reflexo pequeno,acc,0.8384074941451991
+A_intra_mrl,MRL,MRL,1,reflections,reflexo pequeno,bal_acc,0.7988755841121495
+A_intra_mrl,MRL,MRL,1,reflections,reflexo pequeno,f1_macro,0.7906163609616738
+A_intra_mrl,MRL,MRL,1,reflections,reflexo pequeno,chance,0.7494145199063231
+A_intra_mrl,MRL,MRL,1,reflections,reflexo pequeno,auc,0.8439544392523364
+A_intra_mrl,MRL,MRL,1,reflections,reflexo grande,n,1145.0
+A_intra_mrl,MRL,MRL,1,reflections,reflexo grande,acc,0.7755458515283843
+A_intra_mrl,MRL,MRL,1,reflections,reflexo grande,bal_acc,0.7501284575192532
+A_intra_mrl,MRL,MRL,1,reflections,reflexo grande,f1_macro,0.7529901981769633
+A_intra_mrl,MRL,MRL,1,reflections,reflexo grande,chance,0.5598253275109171
+A_intra_mrl,MRL,MRL,1,reflections,reflexo grande,auc,0.9147258747492757
+A_intra_mrl,MRL,MRL,1,sensor,RealSense,n,16975.0
+A_intra_mrl,MRL,MRL,1,sensor,RealSense,acc,0.9119882179675994
+A_intra_mrl,MRL,MRL,1,sensor,RealSense,bal_acc,0.9084070722089382
+A_intra_mrl,MRL,MRL,1,sensor,RealSense,f1_macro,0.898221766325926
+A_intra_mrl,MRL,MRL,1,sensor,RealSense,chance,0.6974374079528718
+A_intra_mrl,MRL,MRL,1,sensor,RealSense,auc,0.9732103821416044
+B_folds_mrl_to_cew,MRL,CEW_patch,1,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_patch,1,todos,todos,acc,0.7785802723895997
+B_folds_mrl_to_cew,MRL,CEW_patch,1,todos,todos,bal_acc,0.7753235079244789
+B_folds_mrl_to_cew,MRL,CEW_patch,1,todos,todos,f1_macro,0.7678683091343383
+B_folds_mrl_to_cew,MRL,CEW_patch,1,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_patch,1,todos,todos,auc,0.9455051514565013
+B_folds_mrl_to_cew,MRL,CEW_crop,1,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_crop,1,todos,todos,acc,0.8631861328931077
+B_folds_mrl_to_cew,MRL,CEW_crop,1,todos,todos,bal_acc,0.861658961176323
+B_folds_mrl_to_cew,MRL,CEW_crop,1,todos,todos,f1_macro,0.8615487460197233
+B_folds_mrl_to_cew,MRL,CEW_crop,1,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_crop,1,todos,todos,auc,0.9573451019251004
+A_intra_mrl,MRL,MRL,2,todos,todos,n,16973.0
+A_intra_mrl,MRL,MRL,2,todos,todos,acc,0.9762564072350203
+A_intra_mrl,MRL,MRL,2,todos,todos,bal_acc,0.9758259348365679
+A_intra_mrl,MRL,MRL,2,todos,todos,f1_macro,0.9761858304026892
+A_intra_mrl,MRL,MRL,2,todos,todos,chance,0.5231249631768102
+A_intra_mrl,MRL,MRL,2,todos,todos,auc,0.9978929858207062
+A_intra_mrl,MRL,MRL,2,todos,todos,epochs_run,9.0
+A_intra_mrl,MRL,MRL,2,todos,todos,best_epoch,6.0
+A_intra_mrl,MRL,MRL,2,todos,todos,train_s,113.3195858001709
+A_intra_mrl,MRL,MRL,2,todos,todos,val_acc,0.9871948957443237
+A_intra_mrl,MRL,MRL,2,todos,todos,n_train,25004.0
+A_intra_mrl,MRL,MRL,2,todos,todos,n_val,2499.0
+A_intra_mrl,MRL,MRL,2,glasses,sem óculos,n,13045.0
+A_intra_mrl,MRL,MRL,2,glasses,sem óculos,acc,0.9890379455730165
+A_intra_mrl,MRL,MRL,2,glasses,sem óculos,bal_acc,0.9891520081396361
+A_intra_mrl,MRL,MRL,2,glasses,sem óculos,f1_macro,0.9890002159287742
+A_intra_mrl,MRL,MRL,2,glasses,sem óculos,chance,0.5305481027213492
+A_intra_mrl,MRL,MRL,2,glasses,sem óculos,auc,0.9994885358705805
+A_intra_mrl,MRL,MRL,2,glasses,com óculos,n,3928.0
+A_intra_mrl,MRL,MRL,2,glasses,com óculos,acc,0.9338085539714868
+A_intra_mrl,MRL,MRL,2,glasses,com óculos,bal_acc,0.9339417099184395
+A_intra_mrl,MRL,MRL,2,glasses,com óculos,f1_macro,0.9336985470394423
+A_intra_mrl,MRL,MRL,2,glasses,com óculos,chance,0.5015274949083504
+A_intra_mrl,MRL,MRL,2,glasses,com óculos,auc,0.9920285383925377
+A_intra_mrl,MRL,MRL,2,lighting,iluminação ruim,n,10869.0
+A_intra_mrl,MRL,MRL,2,lighting,iluminação ruim,acc,0.9734106173521023
+A_intra_mrl,MRL,MRL,2,lighting,iluminação ruim,bal_acc,0.9739521407260472
+A_intra_mrl,MRL,MRL,2,lighting,iluminação ruim,f1_macro,0.973180864154709
+A_intra_mrl,MRL,MRL,2,lighting,iluminação ruim,chance,0.5502806145919588
+A_intra_mrl,MRL,MRL,2,lighting,iluminação ruim,auc,0.9976725260104898
+A_intra_mrl,MRL,MRL,2,lighting,iluminação boa,n,6104.0
+A_intra_mrl,MRL,MRL,2,lighting,iluminação boa,acc,0.9813237221494102
+A_intra_mrl,MRL,MRL,2,lighting,iluminação boa,bal_acc,0.976475939771253
+A_intra_mrl,MRL,MRL,2,lighting,iluminação boa,f1_macro,0.9792491875986091
+A_intra_mrl,MRL,MRL,2,lighting,iluminação boa,chance,0.6538335517693316
+A_intra_mrl,MRL,MRL,2,lighting,iluminação boa,auc,0.9981700425578943
+A_intra_mrl,MRL,MRL,2,reflections,sem reflexo,n,12813.0
+A_intra_mrl,MRL,MRL,2,reflections,sem reflexo,acc,0.979083743073441
+A_intra_mrl,MRL,MRL,2,reflections,sem reflexo,bal_acc,0.9794778298426996
+A_intra_mrl,MRL,MRL,2,reflections,sem reflexo,f1_macro,0.9789153689581405
+A_intra_mrl,MRL,MRL,2,reflections,sem reflexo,chance,0.5477249668305627
+A_intra_mrl,MRL,MRL,2,reflections,sem reflexo,auc,0.9977890207628308
+A_intra_mrl,MRL,MRL,2,reflections,reflexo pequeno,n,1428.0
+A_intra_mrl,MRL,MRL,2,reflections,reflexo pequeno,acc,0.9957983193277311
+A_intra_mrl,MRL,MRL,2,reflections,reflexo pequeno,bal_acc,0.9819964255677041
+A_intra_mrl,MRL,MRL,2,reflections,reflexo pequeno,f1_macro,0.9858140998046293
+A_intra_mrl,MRL,MRL,2,reflections,reflexo pequeno,chance,0.9187675070028011
+A_intra_mrl,MRL,MRL,2,reflections,reflexo pequeno,auc,0.9996517556770397
+A_intra_mrl,MRL,MRL,2,reflections,reflexo grande,n,2732.0
+A_intra_mrl,MRL,MRL,2,reflections,reflexo grande,acc,0.9527818448023426
+A_intra_mrl,MRL,MRL,2,reflections,reflexo grande,bal_acc,0.941165820165538
+A_intra_mrl,MRL,MRL,2,reflections,reflexo grande,f1_macro,0.9474394658579788
+A_intra_mrl,MRL,MRL,2,reflections,reflexo grande,chance,0.6486090775988287
+A_intra_mrl,MRL,MRL,2,reflections,reflexo grande,auc,0.9958897667419113
+A_intra_mrl,MRL,MRL,2,sensor,RealSense,n,12857.0
+A_intra_mrl,MRL,MRL,2,sensor,RealSense,acc,0.9705996733297036
+A_intra_mrl,MRL,MRL,2,sensor,RealSense,bal_acc,0.9715840139606787
+A_intra_mrl,MRL,MRL,2,sensor,RealSense,f1_macro,0.9696818580960445
+A_intra_mrl,MRL,MRL,2,sensor,RealSense,chance,0.5922843587150968
+A_intra_mrl,MRL,MRL,2,sensor,RealSense,auc,0.996710692940974
+A_intra_mrl,MRL,MRL,2,sensor,IDS,n,2995.0
+A_intra_mrl,MRL,MRL,2,sensor,IDS,acc,0.9923205342237061
+A_intra_mrl,MRL,MRL,2,sensor,IDS,bal_acc,0.9615025281383198
+A_intra_mrl,MRL,MRL,2,sensor,IDS,f1_macro,0.9651970985540768
+A_intra_mrl,MRL,MRL,2,sensor,IDS,chance,0.9409015025041736
+A_intra_mrl,MRL,MRL,2,sensor,IDS,auc,0.9988612350787712
+A_intra_mrl,MRL,MRL,2,sensor,Aptina,n,1121.0
+A_intra_mrl,MRL,MRL,2,sensor,Aptina,acc,0.9982158786797503
+A_intra_mrl,MRL,MRL,2,sensor,Aptina,bal_acc,0.9977338702504266
+A_intra_mrl,MRL,MRL,2,sensor,Aptina,f1_macro,0.9977338702504266
+A_intra_mrl,MRL,MRL,2,sensor,Aptina,chance,0.7305976806422837
+A_intra_mrl,MRL,MRL,2,sensor,Aptina,auc,0.9999919138991986
+B_folds_mrl_to_cew,MRL,CEW_patch,2,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_patch,2,todos,todos,acc,0.806231943871234
+B_folds_mrl_to_cew,MRL,CEW_patch,2,todos,todos,bal_acc,0.8033345100562101
+B_folds_mrl_to_cew,MRL,CEW_patch,2,todos,todos,f1_macro,0.7987396531837005
+B_folds_mrl_to_cew,MRL,CEW_patch,2,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_patch,2,todos,todos,auc,0.9585037366630501
+B_folds_mrl_to_cew,MRL,CEW_crop,2,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_crop,2,todos,todos,acc,0.7855963681386711
+B_folds_mrl_to_cew,MRL,CEW_crop,2,todos,todos,bal_acc,0.7822351078677782
+B_folds_mrl_to_cew,MRL,CEW_crop,2,todos,todos,f1_macro,0.7745429541409972
+B_folds_mrl_to_cew,MRL,CEW_crop,2,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_crop,2,todos,todos,auc,0.9549113811818841
+A_intra_mrl,MRL,MRL,3,todos,todos,n,16886.0
+A_intra_mrl,MRL,MRL,3,todos,todos,acc,0.9011015042046666
+A_intra_mrl,MRL,MRL,3,todos,todos,bal_acc,0.9054583299885387
+A_intra_mrl,MRL,MRL,3,todos,todos,f1_macro,0.900983879565112
+A_intra_mrl,MRL,MRL,3,todos,todos,chance,0.5454814639346204
+A_intra_mrl,MRL,MRL,3,todos,todos,auc,0.972162790771691
+A_intra_mrl,MRL,MRL,3,todos,todos,epochs_run,5.0
+A_intra_mrl,MRL,MRL,3,todos,todos,best_epoch,2.0
+A_intra_mrl,MRL,MRL,3,todos,todos,train_s,64.8783209323883
+A_intra_mrl,MRL,MRL,3,todos,todos,val_acc,0.9399999976158142
+A_intra_mrl,MRL,MRL,3,todos,todos,n_train,25000.0
+A_intra_mrl,MRL,MRL,3,todos,todos,n_val,2500.0
+A_intra_mrl,MRL,MRL,3,glasses,sem óculos,n,10627.0
+A_intra_mrl,MRL,MRL,3,glasses,sem óculos,acc,0.9573727298390892
+A_intra_mrl,MRL,MRL,3,glasses,sem óculos,bal_acc,0.9456674142107335
+A_intra_mrl,MRL,MRL,3,glasses,sem óculos,f1_macro,0.9537028111800931
+A_intra_mrl,MRL,MRL,3,glasses,sem óculos,chance,0.6238825632822057
+A_intra_mrl,MRL,MRL,3,glasses,sem óculos,auc,0.9916820911309425
+A_intra_mrl,MRL,MRL,3,glasses,com óculos,n,6259.0
+A_intra_mrl,MRL,MRL,3,glasses,com óculos,acc,0.8055599936092027
+A_intra_mrl,MRL,MRL,3,glasses,com óculos,bal_acc,0.7643146992913815
+A_intra_mrl,MRL,MRL,3,glasses,com óculos,f1_macro,0.7114871236047959
+A_intra_mrl,MRL,MRL,3,glasses,com óculos,chance,0.8330404217926186
+A_intra_mrl,MRL,MRL,3,glasses,com óculos,auc,0.8235076523823419
+A_intra_mrl,MRL,MRL,3,lighting,iluminação ruim,n,12080.0
+A_intra_mrl,MRL,MRL,3,lighting,iluminação ruim,acc,0.8992549668874172
+A_intra_mrl,MRL,MRL,3,lighting,iluminação ruim,bal_acc,0.9044011729341144
+A_intra_mrl,MRL,MRL,3,lighting,iluminação ruim,f1_macro,0.894428123768285
+A_intra_mrl,MRL,MRL,3,lighting,iluminação ruim,chance,0.6292218543046357
+A_intra_mrl,MRL,MRL,3,lighting,iluminação ruim,auc,0.9618693019881198
+A_intra_mrl,MRL,MRL,3,lighting,iluminação boa,n,4806.0
+A_intra_mrl,MRL,MRL,3,lighting,iluminação boa,acc,0.9057428214731585
+A_intra_mrl,MRL,MRL,3,lighting,iluminação boa,bal_acc,0.8622449257223703
+A_intra_mrl,MRL,MRL,3,lighting,iluminação boa,f1_macro,0.8859767666031115
+A_intra_mrl,MRL,MRL,3,lighting,iluminação boa,chance,0.6650020807324178
+A_intra_mrl,MRL,MRL,3,lighting,iluminação boa,auc,0.9826988704825133
+A_intra_mrl,MRL,MRL,3,reflections,sem reflexo,n,11780.0
+A_intra_mrl,MRL,MRL,3,reflections,sem reflexo,acc,0.9436332767402377
+A_intra_mrl,MRL,MRL,3,reflections,sem reflexo,bal_acc,0.94643260923929
+A_intra_mrl,MRL,MRL,3,reflections,sem reflexo,f1_macro,0.9431041660338377
+A_intra_mrl,MRL,MRL,3,reflections,sem reflexo,chance,0.5627334465195246
+A_intra_mrl,MRL,MRL,3,reflections,sem reflexo,auc,0.9844317247427582
+A_intra_mrl,MRL,MRL,3,reflections,reflexo pequeno,n,2338.0
+A_intra_mrl,MRL,MRL,3,reflections,reflexo pequeno,acc,0.9285714285714286
+A_intra_mrl,MRL,MRL,3,reflections,reflexo pequeno,bal_acc,0.9252540891312078
+A_intra_mrl,MRL,MRL,3,reflections,reflexo pequeno,f1_macro,0.9273015770757339
+A_intra_mrl,MRL,MRL,3,reflections,reflexo pequeno,chance,0.5551753635585971
+A_intra_mrl,MRL,MRL,3,reflections,reflexo pequeno,auc,0.9757693048476948
+A_intra_mrl,MRL,MRL,3,reflections,reflexo grande,n,2768.0
+A_intra_mrl,MRL,MRL,3,reflections,reflexo grande,acc,0.696893063583815
+A_intra_mrl,MRL,MRL,3,reflections,reflexo grande,bal_acc,0.7163336316683699
+A_intra_mrl,MRL,MRL,3,reflections,reflexo grande,f1_macro,0.6944996835617464
+A_intra_mrl,MRL,MRL,3,reflections,reflexo grande,chance,0.5570809248554913
+A_intra_mrl,MRL,MRL,3,reflections,reflexo grande,auc,0.8618523643580613
+A_intra_mrl,MRL,MRL,3,sensor,RealSense,n,14146.0
+A_intra_mrl,MRL,MRL,3,sensor,RealSense,acc,0.8863989820443942
+A_intra_mrl,MRL,MRL,3,sensor,RealSense,bal_acc,0.8959097397564311
+A_intra_mrl,MRL,MRL,3,sensor,RealSense,f1_macro,0.8802520733400057
+A_intra_mrl,MRL,MRL,3,sensor,RealSense,chance,0.6447759083839955
+A_intra_mrl,MRL,MRL,3,sensor,RealSense,auc,0.9609572246213294
+A_intra_mrl,MRL,MRL,3,sensor,IDS,n,1097.0
+A_intra_mrl,MRL,MRL,3,sensor,IDS,acc,0.9845031905195989
+A_intra_mrl,MRL,MRL,3,sensor,IDS,bal_acc,0.5
+A_intra_mrl,MRL,MRL,3,sensor,IDS,f1_macro,0.4960955443270556
+A_intra_mrl,MRL,MRL,3,sensor,IDS,chance,0.9845031905195989
+A_intra_mrl,MRL,MRL,3,sensor,IDS,auc,0.8575708061002179
+A_intra_mrl,MRL,MRL,3,sensor,Aptina,n,1643.0
+A_intra_mrl,MRL,MRL,3,sensor,Aptina,acc,0.9720024345709068
+A_intra_mrl,MRL,MRL,3,sensor,Aptina,bal_acc,0.684931506849315
+A_intra_mrl,MRL,MRL,3,sensor,Aptina,f1_macro,0.7627809165097301
+A_intra_mrl,MRL,MRL,3,sensor,Aptina,chance,0.9555690809494827
+A_intra_mrl,MRL,MRL,3,sensor,Aptina,auc,0.9760404851234622
+B_folds_mrl_to_cew,MRL,CEW_patch,3,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_patch,3,todos,todos,acc,0.6601320676846884
+B_folds_mrl_to_cew,MRL,CEW_patch,3,todos,todos,bal_acc,0.6548445771703041
+B_folds_mrl_to_cew,MRL,CEW_patch,3,todos,todos,f1_macro,0.6159902102874256
+B_folds_mrl_to_cew,MRL,CEW_patch,3,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_patch,3,todos,todos,auc,0.8510323357994537
+B_folds_mrl_to_cew,MRL,CEW_crop,3,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_crop,3,todos,todos,acc,0.6467189434585225
+B_folds_mrl_to_cew,MRL,CEW_crop,3,todos,todos,bal_acc,0.6410525558966083
+B_folds_mrl_to_cew,MRL,CEW_crop,3,todos,todos,f1_macro,0.5933196667872538
+B_folds_mrl_to_cew,MRL,CEW_crop,3,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_crop,3,todos,todos,auc,0.8506761670001473
+A_intra_mrl,MRL,MRL,4,todos,todos,n,17167.0
+A_intra_mrl,MRL,MRL,4,todos,todos,acc,0.9430302324226714
+A_intra_mrl,MRL,MRL,4,todos,todos,bal_acc,0.9450062583208154
+A_intra_mrl,MRL,MRL,4,todos,todos,f1_macro,0.942786270149174
+A_intra_mrl,MRL,MRL,4,todos,todos,chance,0.54593114696802
+A_intra_mrl,MRL,MRL,4,todos,todos,auc,0.9897816349767311
+A_intra_mrl,MRL,MRL,4,todos,todos,epochs_run,9.0
+A_intra_mrl,MRL,MRL,4,todos,todos,best_epoch,6.0
+A_intra_mrl,MRL,MRL,4,todos,todos,train_s,102.21474599838257
+A_intra_mrl,MRL,MRL,4,todos,todos,val_acc,0.975600004196167
+A_intra_mrl,MRL,MRL,4,todos,todos,n_train,24998.0
+A_intra_mrl,MRL,MRL,4,todos,todos,n_val,2500.0
+A_intra_mrl,MRL,MRL,4,glasses,sem óculos,n,11896.0
+A_intra_mrl,MRL,MRL,4,glasses,sem óculos,acc,0.9620040349697377
+A_intra_mrl,MRL,MRL,4,glasses,sem óculos,bal_acc,0.9641287713032063
+A_intra_mrl,MRL,MRL,4,glasses,sem óculos,f1_macro,0.9605471372528762
+A_intra_mrl,MRL,MRL,4,glasses,sem óculos,chance,0.6049092131809012
+A_intra_mrl,MRL,MRL,4,glasses,sem óculos,auc,0.9943802260120871
+A_intra_mrl,MRL,MRL,4,glasses,com óculos,n,5271.0
+A_intra_mrl,MRL,MRL,4,glasses,com óculos,acc,0.9002086890533105
+A_intra_mrl,MRL,MRL,4,glasses,com óculos,bal_acc,0.8886880226646394
+A_intra_mrl,MRL,MRL,4,glasses,com óculos,f1_macro,0.8950835034421878
+A_intra_mrl,MRL,MRL,4,glasses,com óculos,chance,0.5871751090874597
+A_intra_mrl,MRL,MRL,4,glasses,com óculos,auc,0.9707150408628717
+A_intra_mrl,MRL,MRL,4,lighting,iluminação ruim,n,10951.0
+A_intra_mrl,MRL,MRL,4,lighting,iluminação ruim,acc,0.9358049493196968
+A_intra_mrl,MRL,MRL,4,lighting,iluminação ruim,bal_acc,0.9389642957705682
+A_intra_mrl,MRL,MRL,4,lighting,iluminação ruim,f1_macro,0.9355694986491196
+A_intra_mrl,MRL,MRL,4,lighting,iluminação ruim,chance,0.5492649073144005
+A_intra_mrl,MRL,MRL,4,lighting,iluminação ruim,auc,0.9875963791224263
+A_intra_mrl,MRL,MRL,4,lighting,iluminação boa,n,6216.0
+A_intra_mrl,MRL,MRL,4,lighting,iluminação boa,acc,0.9557593307593307
+A_intra_mrl,MRL,MRL,4,lighting,iluminação boa,bal_acc,0.9559794399949237
+A_intra_mrl,MRL,MRL,4,lighting,iluminação boa,f1_macro,0.9555167817195676
+A_intra_mrl,MRL,MRL,4,lighting,iluminação boa,chance,0.540057915057915
+A_intra_mrl,MRL,MRL,4,lighting,iluminação boa,auc,0.993291179321466
+A_intra_mrl,MRL,MRL,4,reflections,sem reflexo,n,14268.0
+A_intra_mrl,MRL,MRL,4,reflections,sem reflexo,acc,0.9580880291561537
+A_intra_mrl,MRL,MRL,4,reflections,sem reflexo,bal_acc,0.958782377442865
+A_intra_mrl,MRL,MRL,4,reflections,sem reflexo,f1_macro,0.9580819375489324
+A_intra_mrl,MRL,MRL,4,reflections,sem reflexo,chance,0.5169610316792823
+A_intra_mrl,MRL,MRL,4,reflections,sem reflexo,auc,0.9932767312977542
+A_intra_mrl,MRL,MRL,4,reflections,reflexo pequeno,n,805.0
+A_intra_mrl,MRL,MRL,4,reflections,reflexo pequeno,acc,0.9279503105590062
+A_intra_mrl,MRL,MRL,4,reflections,reflexo pequeno,bal_acc,0.8535414165666266
+A_intra_mrl,MRL,MRL,4,reflections,reflexo pequeno,f1_macro,0.8560123849702712
+A_intra_mrl,MRL,MRL,4,reflections,reflexo pequeno,chance,0.8521739130434782
+A_intra_mrl,MRL,MRL,4,reflections,reflexo pequeno,auc,0.9657005659406619
+A_intra_mrl,MRL,MRL,4,reflections,reflexo grande,n,2094.0
+A_intra_mrl,MRL,MRL,4,reflections,reflexo grande,acc,0.8462273161413563
+A_intra_mrl,MRL,MRL,4,reflections,reflexo grande,bal_acc,0.8545645739211716
+A_intra_mrl,MRL,MRL,4,reflections,reflexo grande,f1_macro,0.8409908792397762
+A_intra_mrl,MRL,MRL,4,reflections,reflexo grande,chance,0.6255969436485196
+A_intra_mrl,MRL,MRL,4,reflections,reflexo grande,auc,0.9402652282286961
+A_intra_mrl,MRL,MRL,4,sensor,RealSense,n,15429.0
+A_intra_mrl,MRL,MRL,4,sensor,RealSense,acc,0.9406312787607751
+A_intra_mrl,MRL,MRL,4,sensor,RealSense,bal_acc,0.9412423061890893
+A_intra_mrl,MRL,MRL,4,sensor,RealSense,f1_macro,0.9406255918340802
+A_intra_mrl,MRL,MRL,4,sensor,RealSense,chance,0.510402488819755
+A_intra_mrl,MRL,MRL,4,sensor,RealSense,auc,0.9892493916814805
+A_intra_mrl,MRL,MRL,4,sensor,IDS,n,1738.0
+A_intra_mrl,MRL,MRL,4,sensor,IDS,acc,0.9643268124280783
+A_intra_mrl,MRL,MRL,4,sensor,IDS,bal_acc,0.9114051062013377
+A_intra_mrl,MRL,MRL,4,sensor,IDS,f1_macro,0.9231773915275263
+A_intra_mrl,MRL,MRL,4,sensor,IDS,chance,0.8613348676639816
+A_intra_mrl,MRL,MRL,4,sensor,IDS,auc,0.9881921519387322
+B_folds_mrl_to_cew,MRL,CEW_patch,4,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_patch,4,todos,todos,acc,0.8087082129591415
+B_folds_mrl_to_cew,MRL,CEW_patch,4,todos,todos,bal_acc,0.8061835197007944
+B_folds_mrl_to_cew,MRL,CEW_patch,4,todos,todos,f1_macro,0.8030270204570324
+B_folds_mrl_to_cew,MRL,CEW_patch,4,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_patch,4,todos,todos,auc,0.9391512738593056
+B_folds_mrl_to_cew,MRL,CEW_crop,4,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_crop,4,todos,todos,acc,0.8140734626496079
+B_folds_mrl_to_cew,MRL,CEW_crop,4,todos,todos,bal_acc,0.8115568043659599
+B_folds_mrl_to_cew,MRL,CEW_crop,4,todos,todos,f1_macro,0.8085792103570086
+B_folds_mrl_to_cew,MRL,CEW_crop,4,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_crop,4,todos,todos,auc,0.9329222810886549
+A_intra_mrl,MRL,MRL,5,todos,todos,n,16897.0
+A_intra_mrl,MRL,MRL,5,todos,todos,acc,0.9708232230573475
+A_intra_mrl,MRL,MRL,5,todos,todos,bal_acc,0.9760888498742635
+A_intra_mrl,MRL,MRL,5,todos,todos,f1_macro,0.9657556991127907
+A_intra_mrl,MRL,MRL,5,todos,todos,chance,0.7036752086169142
+A_intra_mrl,MRL,MRL,5,todos,todos,auc,0.9982458620168937
+A_intra_mrl,MRL,MRL,5,todos,todos,epochs_run,10.0
+A_intra_mrl,MRL,MRL,5,todos,todos,best_epoch,7.0
+A_intra_mrl,MRL,MRL,5,todos,todos,train_s,99.71410727500916
+A_intra_mrl,MRL,MRL,5,todos,todos,val_acc,0.9471789002418518
+A_intra_mrl,MRL,MRL,5,todos,todos,n_train,25002.0
+A_intra_mrl,MRL,MRL,5,todos,todos,n_val,2499.0
+A_intra_mrl,MRL,MRL,5,glasses,sem óculos,n,13351.0
+A_intra_mrl,MRL,MRL,5,glasses,sem óculos,acc,0.9719871170698824
+A_intra_mrl,MRL,MRL,5,glasses,sem óculos,bal_acc,0.978419462001904
+A_intra_mrl,MRL,MRL,5,glasses,sem óculos,f1_macro,0.9679955212340403
+A_intra_mrl,MRL,MRL,5,glasses,sem óculos,chance,0.6891618605347914
+A_intra_mrl,MRL,MRL,5,glasses,sem óculos,auc,0.9991058986516657
+A_intra_mrl,MRL,MRL,5,glasses,com óculos,n,3546.0
+A_intra_mrl,MRL,MRL,5,glasses,com óculos,acc,0.9664410603496898
+A_intra_mrl,MRL,MRL,5,glasses,com óculos,bal_acc,0.9635632528565099
+A_intra_mrl,MRL,MRL,5,glasses,com óculos,f1_macro,0.9550512463342405
+A_intra_mrl,MRL,MRL,5,glasses,com óculos,chance,0.7583192329385223
+A_intra_mrl,MRL,MRL,5,glasses,com óculos,auc,0.9964751160026609
+A_intra_mrl,MRL,MRL,5,lighting,iluminação ruim,n,7279.0
+A_intra_mrl,MRL,MRL,5,lighting,iluminação ruim,acc,0.9916197279846133
+A_intra_mrl,MRL,MRL,5,lighting,iluminação ruim,bal_acc,0.9913533984254477
+A_intra_mrl,MRL,MRL,5,lighting,iluminação ruim,f1_macro,0.9914988425231221
+A_intra_mrl,MRL,MRL,5,lighting,iluminação ruim,chance,0.5590053578788295
+A_intra_mrl,MRL,MRL,5,lighting,iluminação ruim,auc,0.999557860550366
+A_intra_mrl,MRL,MRL,5,lighting,iluminação boa,n,9618.0
+A_intra_mrl,MRL,MRL,5,lighting,iluminação boa,acc,0.9550842170929508
+A_intra_mrl,MRL,MRL,5,lighting,iluminação boa,bal_acc,0.9680958269322844
+A_intra_mrl,MRL,MRL,5,lighting,iluminação boa,f1_macro,0.9316464017503887
+A_intra_mrl,MRL,MRL,5,lighting,iluminação boa,chance,0.813162819713038
+A_intra_mrl,MRL,MRL,5,lighting,iluminação boa,auc,0.9976614691963058
+A_intra_mrl,MRL,MRL,5,reflections,sem reflexo,n,11963.0
+A_intra_mrl,MRL,MRL,5,reflections,sem reflexo,acc,0.9717462175039706
+A_intra_mrl,MRL,MRL,5,reflections,sem reflexo,bal_acc,0.9749194098129076
+A_intra_mrl,MRL,MRL,5,reflections,sem reflexo,f1_macro,0.9706051530875139
+A_intra_mrl,MRL,MRL,5,reflections,sem reflexo,chance,0.6085430076067876
+A_intra_mrl,MRL,MRL,5,reflections,sem reflexo,auc,0.9983860696745066
+A_intra_mrl,MRL,MRL,5,reflections,reflexo pequeno,n,964.0
+A_intra_mrl,MRL,MRL,5,reflections,reflexo pequeno,acc,0.9885892116182573
+A_intra_mrl,MRL,MRL,5,reflections,reflexo pequeno,bal_acc,0.9926764314247669
+A_intra_mrl,MRL,MRL,5,reflections,reflexo pequeno,f1_macro,0.9837253881795732
+A_intra_mrl,MRL,MRL,5,reflections,reflexo pequeno,chance,0.779045643153527
+A_intra_mrl,MRL,MRL,5,reflections,reflexo pequeno,auc,0.9999312340978852
+A_intra_mrl,MRL,MRL,5,reflections,reflexo grande,n,3970.0
+A_intra_mrl,MRL,MRL,5,reflections,reflexo grande,acc,0.963727959697733
+A_intra_mrl,MRL,MRL,5,reflections,reflexo grande,bal_acc,0.9550926931077229
+A_intra_mrl,MRL,MRL,5,reflections,reflexo grande,f1_macro,0.7871190015505816
+A_intra_mrl,MRL,MRL,5,reflections,reflexo grande,chance,0.9720403022670026
+A_intra_mrl,MRL,MRL,5,reflections,reflexo grande,auc,0.9914835799780085
+A_intra_mrl,MRL,MRL,5,sensor,RealSense,n,10735.0
+A_intra_mrl,MRL,MRL,5,sensor,RealSense,acc,0.9849091755938519
+A_intra_mrl,MRL,MRL,5,sensor,RealSense,bal_acc,0.9853570516096066
+A_intra_mrl,MRL,MRL,5,sensor,RealSense,f1_macro,0.984792323088931
+A_intra_mrl,MRL,MRL,5,sensor,RealSense,chance,0.5469026548672566
+A_intra_mrl,MRL,MRL,5,sensor,RealSense,auc,0.9991130054112991
+A_intra_mrl,MRL,MRL,5,sensor,IDS,n,6162.0
+A_intra_mrl,MRL,MRL,5,sensor,IDS,acc,0.9462836741317754
+A_intra_mrl,MRL,MRL,5,sensor,IDS,bal_acc,0.948609705629144
+A_intra_mrl,MRL,MRL,5,sensor,IDS,f1_macro,0.7114190161724439
+A_intra_mrl,MRL,MRL,5,sensor,IDS,chance,0.9767932489451476
+A_intra_mrl,MRL,MRL,5,sensor,IDS,auc,0.987883357712233
+B_folds_mrl_to_cew,MRL,CEW_patch,5,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_patch,5,todos,todos,acc,0.8949649195212547
+B_folds_mrl_to_cew,MRL,CEW_patch,5,todos,todos,bal_acc,0.8940506436083503
+B_folds_mrl_to_cew,MRL,CEW_patch,5,todos,todos,f1_macro,0.8944298471569772
+B_folds_mrl_to_cew,MRL,CEW_patch,5,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_patch,5,todos,todos,auc,0.9675027702964252
+B_folds_mrl_to_cew,MRL,CEW_crop,5,todos,todos,n,4846.0
+B_folds_mrl_to_cew,MRL,CEW_crop,5,todos,todos,acc,0.9199339661576558
+B_folds_mrl_to_cew,MRL,CEW_crop,5,todos,todos,bal_acc,0.9194082265196081
+B_folds_mrl_to_cew,MRL,CEW_crop,5,todos,todos,f1_macro,0.9197532002299877
+B_folds_mrl_to_cew,MRL,CEW_crop,5,todos,todos,chance,0.5080478745356996
+B_folds_mrl_to_cew,MRL,CEW_crop,5,todos,todos,auc,0.976724654343334
+A_intra_mrl,MRL,MRL,oof,todos,todos,n,84898.0
+A_intra_mrl,MRL,MRL,oof,todos,todos,acc,0.9406582016066338
+A_intra_mrl,MRL,MRL,oof,todos,todos,bal_acc,0.9405501987020235
+A_intra_mrl,MRL,MRL,oof,todos,todos,f1_macro,0.9406338346678486
+A_intra_mrl,MRL,MRL,oof,todos,todos,chance,0.5059247567669438
+A_intra_mrl,MRL,MRL,oof,todos,todos,auc,0.9872150473499455
+A_intra_mrl,MRL,MRL,oof,glasses,sem óculos,n,60897.0
+A_intra_mrl,MRL,MRL,oof,glasses,sem óculos,acc,0.9612296172225233
+A_intra_mrl,MRL,MRL,oof,glasses,sem óculos,bal_acc,0.9600034807009983
+A_intra_mrl,MRL,MRL,oof,glasses,sem óculos,f1_macro,0.9608314343144286
+A_intra_mrl,MRL,MRL,oof,glasses,sem óculos,chance,0.5454948519631508
+A_intra_mrl,MRL,MRL,oof,glasses,sem óculos,auc,0.9936798632272058
+A_intra_mrl,MRL,MRL,oof,glasses,com óculos,n,24001.0
+A_intra_mrl,MRL,MRL,oof,glasses,com óculos,acc,0.8884629807091371
+A_intra_mrl,MRL,MRL,oof,glasses,com óculos,bal_acc,0.885272290193009
+A_intra_mrl,MRL,MRL,oof,glasses,com óculos,f1_macro,0.8845474615721443
+A_intra_mrl,MRL,MRL,oof,glasses,com óculos,chance,0.5944752301987417
+A_intra_mrl,MRL,MRL,oof,glasses,com óculos,auc,0.9566050966179671
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação ruim,n,53630.0
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação ruim,acc,0.9436695879172106
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação ruim,bal_acc,0.9428485818385482
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação ruim,f1_macro,0.942900786573571
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação ruim,chance,0.5577661756479582
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação ruim,auc,0.9859532349509915
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação boa,n,31268.0
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação boa,acc,0.9354931559421773
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação boa,bal_acc,0.9261148923036815
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação boa,f1_macro,0.9310433061702642
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação boa,chance,0.6151656645772036
+A_intra_mrl,MRL,MRL,oof,lighting,iluminação boa,auc,0.9879658294339212
+A_intra_mrl,MRL,MRL,oof,reflections,sem reflexo,n,66227.0
+A_intra_mrl,MRL,MRL,oof,reflections,sem reflexo,acc,0.9541576698325457
+A_intra_mrl,MRL,MRL,oof,reflections,sem reflexo,bal_acc,0.9545066632511472
+A_intra_mrl,MRL,MRL,oof,reflections,sem reflexo,f1_macro,0.9538456817944347
+A_intra_mrl,MRL,MRL,oof,reflections,sem reflexo,chance,0.5450949008712458
+A_intra_mrl,MRL,MRL,oof,reflections,sem reflexo,auc,0.9908901623937887
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo pequeno,n,5962.0
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo pequeno,acc,0.9478362965447836
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo pequeno,bal_acc,0.9341409388967239
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo pequeno,f1_macro,0.9377587487285686
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo pequeno,chance,0.6967460583696746
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo pequeno,auc,0.9832935708625017
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo grande,n,12709.0
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo grande,acc,0.8669446848689905
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo grande,bal_acc,0.8421529605525275
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo grande,f1_macro,0.8451706679043838
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo grande,chance,0.6822724053820127
+A_intra_mrl,MRL,MRL,oof,reflections,reflexo grande,auc,0.9497686577902043
+A_intra_mrl,MRL,MRL,oof,sensor,RealSense,n,70142.0
+A_intra_mrl,MRL,MRL,oof,sensor,RealSense,acc,0.9350317926491973
+A_intra_mrl,MRL,MRL,oof,sensor,RealSense,bal_acc,0.9354766384988726
+A_intra_mrl,MRL,MRL,oof,sensor,RealSense,f1_macro,0.9334255704156078
+A_intra_mrl,MRL,MRL,oof,sensor,RealSense,chance,0.5844287302899831
+A_intra_mrl,MRL,MRL,oof,sensor,RealSense,auc,0.9845662465521096
+A_intra_mrl,MRL,MRL,oof,sensor,IDS,n,11992.0
+A_intra_mrl,MRL,MRL,oof,sensor,IDS,acc,0.9638925950633755
+A_intra_mrl,MRL,MRL,oof,sensor,IDS,bal_acc,0.9186173660344275
+A_intra_mrl,MRL,MRL,oof,sensor,IDS,f1_macro,0.8397367361193608
+A_intra_mrl,MRL,MRL,oof,sensor,IDS,chance,0.9518012008005337
+A_intra_mrl,MRL,MRL,oof,sensor,IDS,auc,0.985598636531474
+A_intra_mrl,MRL,MRL,oof,sensor,Aptina,n,2764.0
+A_intra_mrl,MRL,MRL,oof,sensor,Aptina,acc,0.9826338639652678
+A_intra_mrl,MRL,MRL,oof,sensor,Aptina,bal_acc,0.937124040742291
+A_intra_mrl,MRL,MRL,oof,sensor,Aptina,f1_macro,0.9609339665309815
+A_intra_mrl,MRL,MRL,oof,sensor,Aptina,chance,0.8643270622286541
+A_intra_mrl,MRL,MRL,oof,sensor,Aptina,auc,0.9959715362076181
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,n,4846.0
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,acc,0.8565827486586876
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,bal_acc,0.8546618330162088
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,f1_macro,0.8539962235492057
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,chance,0.5080478745356996
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,auc,0.9680771041985836
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,epochs_run,12.0
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,best_epoch,11.0
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,train_s,109.26788973808289
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,val_acc,0.9844124913215637
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,n_train,25002.0
+B_final_mrl_to_cew,MRL,CEW_patch,final,todos,todos,n_val,2502.0
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,L,n,2423.0
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,L,acc,0.859678085018572
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,L,bal_acc,0.8578609631499463
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,L,f1_macro,0.8573886730786542
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,L,chance,0.5080478745356996
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,L,auc,0.9662473625960233
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,R,n,2423.0
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,R,acc,0.8534874122988031
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,R,bal_acc,0.8514627028824713
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,R,f1_macro,0.8505798041754933
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,R,chance,0.5080478745356996
+B_final_mrl_to_cew,MRL,CEW_patch,final,side,R,auc,0.9703159160174247
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,n,4846.0
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,acc,0.8999174576970698
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,bal_acc,0.8986855233100169
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,f1_macro,0.8990817001932438
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,chance,0.5080478745356996
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,auc,0.9759780713830083
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,epochs_run,12.0
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,best_epoch,11.0
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,train_s,109.26788973808289
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,val_acc,0.9844124913215637
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,n_train,25002.0
+B_final_mrl_to_cew,MRL,CEW_crop,final,todos,todos,n_val,2502.0
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,L,n,2423.0
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,L,acc,0.9001238134543954
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,L,bal_acc,0.8988753209863755
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,L,f1_macro,0.8992705971277399
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,L,chance,0.5080478745356996
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,L,auc,0.977892830077582
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,R,n,2423.0
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,R,acc,0.8997111019397441
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,R,bal_acc,0.8984957256336584
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,R,f1_macro,0.8988926581613335
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,R,chance,0.5080478745356996
+B_final_mrl_to_cew,MRL,CEW_crop,final,side,R,auc,0.9741943310125996
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,n,970.0
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,acc,0.9412371134020618
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,bal_acc,0.9408915388017556
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,f1_macro,0.9411605076223162
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,chance,0.5092783505154639
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,auc,0.9917242200523934
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,epochs_run,12.0
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,best_epoch,10.0
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,train_s,15.091823816299438
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,val_acc,0.9536082744598389
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,n_train,3488.0
+D_intra_cew_patch,CEW_patch,CEW_patch,1,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,n,84898.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,acc,0.7095573511743504
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,bal_acc,0.7110666062310004
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,f1_macro,0.7053893848162027
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,chance,0.5059247567669438
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,auc,0.7983465973005035
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,epochs_run,12.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,best_epoch,10.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,train_s,15.091823816299438
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,val_acc,0.9536082744598389
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,n_train,3488.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,sem óculos,n,60897.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,sem óculos,acc,0.7660311673809875
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,sem óculos,bal_acc,0.7846374254893069
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,sem óculos,f1_macro,0.7618119271610879
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,sem óculos,chance,0.5454948519631508
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,sem óculos,auc,0.8930331546634831
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,com óculos,n,24001.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,com óculos,acc,0.5662680721636598
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,com óculos,bal_acc,0.5709626304644061
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,com óculos,f1_macro,0.5632565761128165
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,com óculos,chance,0.5944752301987417
+C_cew_patch_to_mrl,CEW_patch,MRL,1,glasses,com óculos,auc,0.6346158294129167
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação ruim,n,53630.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação ruim,acc,0.7008577288830878
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação ruim,bal_acc,0.6892759582260383
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação ruim,f1_macro,0.6908546978926047
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação ruim,auc,0.7697472055476884
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação boa,n,31268.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação boa,acc,0.7244787002686452
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação boa,bal_acc,0.7685758130136493
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação boa,f1_macro,0.7244213680937603
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_patch_to_mrl,CEW_patch,MRL,1,lighting,iluminação boa,auc,0.8753059707068883
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,sem reflexo,n,66227.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,sem reflexo,acc,0.7168073444365591
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,sem reflexo,bal_acc,0.70039659026097
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,sem reflexo,f1_macro,0.6987033139102796
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,sem reflexo,auc,0.8109149259823167
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo pequeno,n,5962.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo pequeno,acc,0.7638376383763837
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo pequeno,bal_acc,0.699331276816034
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo pequeno,f1_macro,0.7074224021592443
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo pequeno,auc,0.8704143117200183
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo grande,n,12709.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo grande,acc,0.64631363600598
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo grande,bal_acc,0.6289919390516194
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo grande,f1_macro,0.6169635766182775
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_patch_to_mrl,CEW_patch,MRL,1,reflections,reflexo grande,auc,0.7066940583885677
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,RealSense,n,70142.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,RealSense,acc,0.6898006900287987
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,RealSense,bal_acc,0.6602081574593384
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,RealSense,f1_macro,0.6620128758165138
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,RealSense,chance,0.5844287302899831
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,RealSense,auc,0.7602815597826664
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,IDS,n,11992.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,IDS,acc,0.7616744496330887
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,IDS,bal_acc,0.8665904131573985
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,IDS,f1_macro,0.5707275771085343
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,IDS,chance,0.9518012008005337
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,IDS,auc,0.9229313330378586
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,Aptina,n,2764.0
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,Aptina,acc,0.9848046309696092
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,Aptina,bal_acc,0.9664808148458212
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,Aptina,f1_macro,0.967531828250509
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,Aptina,chance,0.8643270622286541
+C_cew_patch_to_mrl,CEW_patch,MRL,1,sensor,Aptina,auc,0.9908156829914889
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,n,970.0
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,acc,0.9422680412371134
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,bal_acc,0.9425238969962921
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,f1_macro,0.9422670594887361
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,chance,0.5072164948453608
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,auc,0.9814436847297343
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,epochs_run,12.0
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,best_epoch,12.0
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,train_s,16.501074075698853
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,val_acc,0.9587628841400146
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,n_train,3488.0
+D_intra_cew_patch,CEW_patch,CEW_patch,2,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,n,84898.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,acc,0.6924191382600297
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,bal_acc,0.6958742879040829
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,f1_macro,0.6655706263903787
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,chance,0.5059247567669438
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,auc,0.86464880362149
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,epochs_run,12.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,best_epoch,12.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,train_s,16.501074075698853
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,val_acc,0.9587628841400146
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,n_train,3488.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,sem óculos,n,60897.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,sem óculos,acc,0.7011182816887531
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,sem óculos,bal_acc,0.7257138766806913
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,sem óculos,f1_macro,0.6881027939140107
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,sem óculos,chance,0.5454948519631508
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,sem óculos,auc,0.9461205658582578
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,com óculos,n,24001.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,com óculos,acc,0.6703470688721304
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,com óculos,bal_acc,0.600340242305267
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,com óculos,f1_macro,0.5695334623373431
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,com óculos,chance,0.5944752301987417
+C_cew_patch_to_mrl,CEW_patch,MRL,2,glasses,com óculos,auc,0.6267376447647852
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação ruim,n,53630.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação ruim,acc,0.6784449002424017
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação ruim,bal_acc,0.6378745195263957
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação ruim,f1_macro,0.6076193307044284
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação ruim,auc,0.8485595930408978
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação boa,n,31268.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação boa,acc,0.716387360880133
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação boa,bal_acc,0.7664022067725504
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação boa,f1_macro,0.7159187095354578
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_patch_to_mrl,CEW_patch,MRL,2,lighting,iluminação boa,auc,0.885029851730633
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,sem reflexo,n,66227.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,sem reflexo,acc,0.6934029927371012
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,sem reflexo,bal_acc,0.6639243403295394
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,sem reflexo,f1_macro,0.6394840591811888
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,sem reflexo,auc,0.8993432093150997
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo pequeno,n,5962.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo pequeno,acc,0.8985239852398524
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo pequeno,bal_acc,0.9240549678101073
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo pequeno,f1_macro,0.8885813429466332
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo pequeno,auc,0.9611061653976761
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo grande,n,12709.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo grande,acc,0.5906050830120387
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo grande,bal_acc,0.6885312201597225
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo grande,f1_macro,0.5904778643983853
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_patch_to_mrl,CEW_patch,MRL,2,reflections,reflexo grande,auc,0.6783413071153301
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,RealSense,n,70142.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,RealSense,acc,0.6832995922557098
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,RealSense,bal_acc,0.6214853504871685
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,RealSense,f1_macro,0.5930053900036618
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,RealSense,chance,0.5844287302899831
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,RealSense,auc,0.8602923855809229
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,IDS,n,11992.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,IDS,acc,0.6811207471647766
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,IDS,bal_acc,0.8275589438818229
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,IDS,f1_macro,0.5145899681393818
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,IDS,chance,0.9518012008005337
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,IDS,auc,0.8720108189845167
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,Aptina,n,2764.0
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,Aptina,acc,0.9728654124457308
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,Aptina,bal_acc,0.9730626482489186
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,Aptina,f1_macro,0.9454762803408193
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,Aptina,chance,0.8643270622286541
+C_cew_patch_to_mrl,CEW_patch,MRL,2,sensor,Aptina,auc,0.9934767685223943
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,n,970.0
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,acc,0.9381443298969072
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,bal_acc,0.9379528523318705
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,f1_macro,0.93809985705534
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,chance,0.5072164948453608
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,auc,0.9863336394870224
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,epochs_run,12.0
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,best_epoch,12.0
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,train_s,16.053799867630005
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,val_acc,0.9768041372299194
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,n_train,3488.0
+D_intra_cew_patch,CEW_patch,CEW_patch,3,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,n,84898.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,acc,0.6742090508610332
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,bal_acc,0.6776139023994318
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,f1_macro,0.6466418138069693
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,chance,0.5059247567669438
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,auc,0.8675228582723904
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,epochs_run,12.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,best_epoch,12.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,train_s,16.053799867630005
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,val_acc,0.9768041372299194
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,n_train,3488.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,sem óculos,n,60897.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,sem óculos,acc,0.6655171847545857
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,sem óculos,bal_acc,0.6931301613613384
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,sem óculos,f1_macro,0.6449999528335503
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,sem óculos,chance,0.5454948519631508
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,sem óculos,auc,0.9392949792642438
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,com óculos,n,24001.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,com óculos,acc,0.6962626557226782
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,com óculos,bal_acc,0.6479684330814122
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,com óculos,f1_macro,0.6456205605981092
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,com óculos,chance,0.5944752301987417
+C_cew_patch_to_mrl,CEW_patch,MRL,3,glasses,com óculos,auc,0.7279382393275851
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação ruim,n,53630.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação ruim,acc,0.6504941264217788
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação ruim,bal_acc,0.6095521695352468
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação ruim,f1_macro,0.5735368668061305
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação ruim,auc,0.8307436381461037
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação boa,n,31268.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação boa,acc,0.7148842266854292
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação boa,bal_acc,0.7621777591045817
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação boa,f1_macro,0.7146312353831789
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_patch_to_mrl,CEW_patch,MRL,3,lighting,iluminação boa,auc,0.9156408884319529
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,sem reflexo,n,66227.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,sem reflexo,acc,0.653056910323584
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,sem reflexo,bal_acc,0.6195567687739632
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,sem reflexo,f1_macro,0.5755524411374104
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,sem reflexo,auc,0.8941143931134743
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo pequeno,n,5962.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo pequeno,acc,0.8856088560885609
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo pequeno,bal_acc,0.9057281924661591
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo pequeno,f1_macro,0.8738535522738715
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo pequeno,auc,0.9557496160007839
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo grande,n,12709.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo grande,acc,0.6852624124636084
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo grande,bal_acc,0.6987531637084647
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo grande,f1_macro,0.6696008729670601
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_patch_to_mrl,CEW_patch,MRL,3,reflections,reflexo grande,auc,0.7458791463794906
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,RealSense,n,70142.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,RealSense,acc,0.6510222120840581
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,RealSense,bal_acc,0.5872942110491219
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,RealSense,f1_macro,0.5484681439794414
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,RealSense,chance,0.5844287302899831
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,RealSense,auc,0.8362466986568874
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,IDS,n,11992.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,IDS,acc,0.739743162108072
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,IDS,bal_acc,0.8608181963144879
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,IDS,f1_macro,0.5554679327582843
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,IDS,chance,0.9518012008005337
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,IDS,auc,0.9383443994899726
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,Aptina,n,2764.0
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,Aptina,acc,0.9782923299565847
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,Aptina,bal_acc,0.9649616296916422
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,Aptina,f1_macro,0.9547337907993645
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,Aptina,chance,0.8643270622286541
+C_cew_patch_to_mrl,CEW_patch,MRL,3,sensor,Aptina,auc,0.9936397376866193
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,n,968.0
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,acc,0.9462809917355371
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,bal_acc,0.9468128714900594
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,f1_macro,0.9462663114026097
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,chance,0.5082644628099173
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,auc,0.9911397485823599
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,epochs_run,12.0
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,best_epoch,12.0
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,train_s,15.77156686782837
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,val_acc,0.9149484634399414
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,n_train,3490.0
+D_intra_cew_patch,CEW_patch,CEW_patch,4,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,n,84898.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,acc,0.6625008834130368
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,bal_acc,0.6660635061201226
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,f1_macro,0.6308619822402906
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,chance,0.5059247567669438
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,auc,0.8472327495238914
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,epochs_run,12.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,best_epoch,12.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,train_s,15.77156686782837
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,val_acc,0.9149484634399414
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,n_train,3490.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,sem óculos,n,60897.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,sem óculos,acc,0.6570110186051858
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,sem óculos,bal_acc,0.6855232540394824
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,sem óculos,f1_macro,0.6339531627307007
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,sem óculos,chance,0.5454948519631508
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,sem óculos,auc,0.946337827432246
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,com óculos,n,24001.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,com óculos,acc,0.6764301487438024
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,com óculos,bal_acc,0.6233359310063127
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,com óculos,f1_macro,0.6152459698331258
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,com óculos,chance,0.5944752301987417
+C_cew_patch_to_mrl,CEW_patch,MRL,4,glasses,com óculos,auc,0.642441497486679
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação ruim,n,53630.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação ruim,acc,0.6719932873391758
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação ruim,bal_acc,0.6343967427254826
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação ruim,f1_macro,0.6099929358809011
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação ruim,auc,0.8180375377388682
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação boa,n,31268.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação boa,acc,0.6462197774082129
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação boa,bal_acc,0.709432986157489
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação boa,f1_macro,0.6418032506427079
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_patch_to_mrl,CEW_patch,MRL,4,lighting,iluminação boa,auc,0.9011239518496822
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,sem reflexo,n,66227.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,sem reflexo,acc,0.6593232367463421
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,sem reflexo,bal_acc,0.6272570922522173
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,sem reflexo,f1_macro,0.5896266451532134
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,sem reflexo,auc,0.8757242148588519
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo pequeno,n,5962.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo pequeno,acc,0.8503857765850386
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo pequeno,bal_acc,0.8835750060715548
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo pequeno,f1_macro,0.8392377102383806
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo pequeno,auc,0.945730352128879
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo grande,n,12709.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo grande,acc,0.5909198205995752
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo grande,bal_acc,0.6527707257355435
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo grande,f1_macro,0.5890026723871067
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_patch_to_mrl,CEW_patch,MRL,4,reflections,reflexo grande,auc,0.6569412744764891
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,RealSense,n,70142.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,RealSense,acc,0.6549000598785322
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,RealSense,bal_acc,0.5916526196150009
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,RealSense,f1_macro,0.5546419085421744
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,RealSense,chance,0.5844287302899831
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,RealSense,auc,0.8267204163083909
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,IDS,n,11992.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,IDS,acc,0.6333388925950634
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,IDS,bal_acc,0.8065644206744221
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,IDS,f1_macro,0.48467544721234423
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,IDS,chance,0.9518012008005337
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,IDS,auc,0.9110738921363494
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,Aptina,n,2764.0
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,Aptina,acc,0.9819102749638206
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,Aptina,bal_acc,0.9782949630249755
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,Aptina,f1_macro,0.9626833430540255
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,Aptina,chance,0.8643270622286541
+C_cew_patch_to_mrl,CEW_patch,MRL,4,sensor,Aptina,auc,0.9967216408539137
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,n,968.0
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,acc,0.9648760330578512
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,bal_acc,0.9650372344059575
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,f1_macro,0.9648746835605152
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,chance,0.5082644628099173
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,auc,0.9944575391132062
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,epochs_run,12.0
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,best_epoch,10.0
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,train_s,14.483102798461914
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,val_acc,0.969072163105011
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,n_train,3490.0
+D_intra_cew_patch,CEW_patch,CEW_patch,5,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,n,84898.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,acc,0.6680722749652525
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,bal_acc,0.671215085965346
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,f1_macro,0.6445448325609562
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,chance,0.5059247567669438
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,auc,0.8308264130552442
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,epochs_run,12.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,best_epoch,10.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,train_s,14.483102798461914
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,val_acc,0.969072163105011
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,n_train,3490.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,todos,todos,n_val,388.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,sem óculos,n,60897.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,sem óculos,acc,0.6740233509039855
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,sem óculos,bal_acc,0.7010504479312666
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,sem óculos,f1_macro,0.6552686423146152
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,sem óculos,chance,0.5454948519631508
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,sem óculos,auc,0.9429254373717981
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,com óculos,n,24001.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,com óculos,acc,0.6529727928003
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,com óculos,bal_acc,0.6147912618469052
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,com óculos,f1_macro,0.6138673548195922
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,com óculos,chance,0.5944752301987417
+C_cew_patch_to_mrl,CEW_patch,MRL,5,glasses,com óculos,auc,0.6249618781372946
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação ruim,n,53630.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação ruim,acc,0.6528994965504382
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação ruim,bal_acc,0.6177564182097922
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação ruim,f1_macro,0.5959054552864022
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação ruim,auc,0.7878776076375167
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação boa,n,31268.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação boa,acc,0.694096200588461
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação boa,bal_acc,0.7462149632657147
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação boa,f1_macro,0.6931882118492587
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_patch_to_mrl,CEW_patch,MRL,5,lighting,iluminação boa,auc,0.9009616544710866
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,sem reflexo,n,66227.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,sem reflexo,acc,0.6611351865553324
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,sem reflexo,bal_acc,0.6297758919374279
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,sem reflexo,f1_macro,0.5948422987465156
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,sem reflexo,auc,0.865009033319428
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo pequeno,n,5962.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo pequeno,acc,0.8609527004360953
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo pequeno,bal_acc,0.8502381753805905
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo pequeno,f1_macro,0.840011303606553
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo pequeno,auc,0.9257556023408506
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo grande,n,12709.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo grande,acc,0.6137382956959635
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo grande,bal_acc,0.615506411270305
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo grande,f1_macro,0.5941805637080443
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_patch_to_mrl,CEW_patch,MRL,5,reflections,reflexo grande,auc,0.6738285189328984
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,RealSense,n,70142.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,RealSense,acc,0.6450058452852785
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,RealSense,bal_acc,0.5860027920195496
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,RealSense,f1_macro,0.5556790378717392
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,RealSense,chance,0.5844287302899831
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,RealSense,auc,0.7969924799634086
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,IDS,n,11992.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,IDS,acc,0.7314876584389594
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,IDS,bal_acc,0.8556601708701086
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,IDS,f1_macro,0.549334399966537
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,IDS,chance,0.9518012008005337
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,IDS,auc,0.9223637516726559
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,Aptina,n,2764.0
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,Aptina,acc,0.9782923299565847
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,Aptina,bal_acc,0.9705818334030976
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,Aptina,f1_macro,0.9552200116648306
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,Aptina,chance,0.8643270622286541
+C_cew_patch_to_mrl,CEW_patch,MRL,5,sensor,Aptina,auc,0.9925369052602205
+D_intra_cew_patch,CEW_patch,CEW_patch,oof,todos,todos,n,4846.0
+D_intra_cew_patch,CEW_patch,CEW_patch,oof,todos,todos,acc,0.946553858852662
+D_intra_cew_patch,CEW_patch,CEW_patch,oof,todos,todos,bal_acc,0.9466430004525159
+D_intra_cew_patch,CEW_patch,CEW_patch,oof,todos,todos,f1_macro,0.9465488309587626
+D_intra_cew_patch,CEW_patch,CEW_patch,oof,todos,todos,chance,0.5080478745356996
+D_intra_cew_patch,CEW_patch,CEW_patch,oof,todos,todos,auc,0.9883179019076539
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,todos,todos,n,84898.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,todos,todos,acc,0.6854931800513557
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,todos,todos,bal_acc,0.6887298709814462
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,todos,todos,f1_macro,0.6617409893095422
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,todos,todos,chance,0.5059247567669438
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,todos,todos,auc,0.8506133984676766
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,sem óculos,n,60897.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,sem óculos,acc,0.6830714156690806
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,sem óculos,bal_acc,0.7093167750948293
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,sem óculos,f1_macro,0.6663444631498563
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,sem óculos,chance,0.5454948519631508
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,sem óculos,auc,0.9421001217135974
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,com óculos,n,24001.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,com óculos,acc,0.6916378484229824
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,com óculos,bal_acc,0.6448950181220707
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,com óculos,f1_macro,0.6429612565849214
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,com óculos,chance,0.5944752301987417
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,glasses,com óculos,auc,0.6710514117748483
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação ruim,n,53630.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação ruim,acc,0.6768972589968302
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação ruim,bal_acc,0.6405089707235352
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação ruim,f1_macro,0.619300925880977
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação ruim,auc,0.8122405371213968
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação boa,n,31268.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação boa,acc,0.7002366636817193
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação boa,bal_acc,0.7522015847114483
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação boa,f1_macro,0.6994127766462401
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,lighting,iluminação boa,auc,0.9088833387760817
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,sem reflexo,n,66227.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,sem reflexo,acc,0.6763555649508508
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,sem reflexo,bal_acc,0.645881731326305
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,sem reflexo,f1_macro,0.616114328941798
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,sem reflexo,auc,0.8759171989087378
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo pequeno,n,5962.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo pequeno,acc,0.880409258638041
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo pequeno,bal_acc,0.8988731939787218
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo pequeno,f1_macro,0.8679851179820202
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo pequeno,auc,0.938207615753661
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo grande,n,12709.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo grande,acc,0.6416712565898183
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo grande,bal_acc,0.6768639482978822
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo grande,f1_macro,0.6333998038947417
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,reflections,reflexo grande,auc,0.7052809462225111
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,RealSense,n,70142.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,RealSense,acc,0.6685865815060876
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,RealSense,bal_acc,0.6090911212112413
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,RealSense,f1_macro,0.5819716225418702
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,RealSense,chance,0.5844287302899831
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,RealSense,auc,0.8219116238045701
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,IDS,n,11992.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,IDS,acc,0.7152268178785858
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,IDS,bal_acc,0.8487605217413448
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,IDS,f1_macro,0.5381837763718007
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,IDS,chance,0.9518012008005337
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,IDS,auc,0.930509366570405
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,Aptina,n,2764.0
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,Aptina,acc,0.9855282199710564
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,Aptina,bal_acc,0.9736436444816521
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,Aptina,f1_macro,0.9694219036081932
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,Aptina,chance,0.8643270622286541
+C_cew_patch_to_mrl,CEW_patch,MRL,ensemble5,sensor,Aptina,auc,0.995460304171899
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,n,970.0
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,acc,0.9587628865979382
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,bal_acc,0.9588635049161365
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,f1_macro,0.9587565744996578
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,chance,0.5092783505154639
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,auc,0.9921154696696493
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,epochs_run,12.0
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,best_epoch,12.0
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,train_s,13.83212399482727
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,val_acc,0.9561855792999268
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,n_train,3488.0
+D_intra_cew_crop,CEW_crop,CEW_crop,1,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,n,84898.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,acc,0.6638318923885133
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,bal_acc,0.6671505536253554
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,f1_macro,0.6369392203783388
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,chance,0.5059247567669438
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,auc,0.8313346641492968
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,epochs_run,12.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,best_epoch,12.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,train_s,13.83212399482727
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,val_acc,0.9561855792999268
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,n_train,3488.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,sem óculos,n,60897.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,sem óculos,acc,0.6688014187891029
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,sem óculos,bal_acc,0.6963785344755707
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,sem óculos,f1_macro,0.6486091375744683
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,sem óculos,chance,0.5454948519631508
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,sem óculos,auc,0.9366706026252747
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,com óculos,n,24001.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,com óculos,acc,0.6512228657139286
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,com óculos,bal_acc,0.6058737919783709
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,com óculos,f1_macro,0.6010967749583983
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,com óculos,chance,0.5944752301987417
+C_cew_crop_to_mrl,CEW_crop,MRL,1,glasses,com óculos,auc,0.6440168542991048
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação ruim,n,53630.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação ruim,acc,0.6572254335260116
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação ruim,bal_acc,0.6210753824987207
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação ruim,f1_macro,0.5977018944158274
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação ruim,auc,0.7866711123570213
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação boa,n,31268.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação boa,acc,0.6751631060509147
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação boa,bal_acc,0.7322576954619058
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação boa,f1_macro,0.6731117021343662
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_crop_to_mrl,CEW_crop,MRL,1,lighting,iluminação boa,auc,0.9110304992437939
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,sem reflexo,n,66227.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,sem reflexo,acc,0.6564543162154408
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,sem reflexo,bal_acc,0.6225138446688336
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,sem reflexo,f1_macro,0.5774201280171447
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,sem reflexo,auc,0.8708368824055726
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo pequeno,n,5962.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo pequeno,acc,0.8367997316336799
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo pequeno,bal_acc,0.7955778043127213
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo pequeno,f1_macro,0.8022851319187837
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo pequeno,auc,0.9188637218205291
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo grande,n,12709.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo grande,acc,0.6211346290030687
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo grande,bal_acc,0.6156339620794243
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo grande,f1_macro,0.5980772957492491
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_crop_to_mrl,CEW_crop,MRL,1,reflections,reflexo grande,auc,0.6841682027885361
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,RealSense,n,70142.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,RealSense,acc,0.6392033303869293
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,RealSense,bal_acc,0.5768011133123118
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,RealSense,f1_macro,0.538596707923497
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,RealSense,chance,0.5844287302899831
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,RealSense,auc,0.7903306643492316
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,IDS,n,11992.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,IDS,acc,0.7403268845897265
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,IDS,bal_acc,0.8586610991297641
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,IDS,f1_macro,0.5554040090908194
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,IDS,chance,0.9518012008005337
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,IDS,auc,0.9327837846195075
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,Aptina,n,2764.0
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,Aptina,acc,0.9569464544138929
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,Aptina,bal_acc,0.9649778149853495
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,Aptina,f1_macro,0.9173604259361573
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,Aptina,chance,0.8643270622286541
+C_cew_crop_to_mrl,CEW_crop,MRL,1,sensor,Aptina,auc,0.9970408818194503
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,n,970.0
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,acc,0.945360824742268
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,bal_acc,0.9453643228900908
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,f1_macro,0.9453510089494234
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,chance,0.5072164948453608
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,auc,0.9848921658672654
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,epochs_run,12.0
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,best_epoch,12.0
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,train_s,14.106898069381714
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,val_acc,0.9510309100151062
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,n_train,3488.0
+D_intra_cew_crop,CEW_crop,CEW_crop,2,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,n,84898.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,acc,0.6739616952107235
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,bal_acc,0.6773956869770131
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,f1_macro,0.6458429494207827
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,chance,0.5059247567669438
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,auc,0.8544168622369196
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,epochs_run,12.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,best_epoch,12.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,train_s,14.106898069381714
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,val_acc,0.9510309100151062
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,n_train,3488.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,sem óculos,n,60897.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,sem óculos,acc,0.6752877810072746
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,sem óculos,bal_acc,0.7021702508104859
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,sem óculos,f1_macro,0.6568910760890085
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,sem óculos,chance,0.5454948519631508
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,sem óculos,auc,0.9417798164765627
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,com óculos,n,24001.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,com óculos,acc,0.6705970584558977
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,com óculos,bal_acc,0.61524585461828
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,com óculos,f1_macro,0.6043504911926281
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,com óculos,chance,0.5944752301987417
+C_cew_crop_to_mrl,CEW_crop,MRL,2,glasses,com óculos,auc,0.6639147384017869
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação ruim,n,53630.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação ruim,acc,0.6587730747715831
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação ruim,bal_acc,0.6192138520313003
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação ruim,f1_macro,0.588212224633454
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação ruim,auc,0.8166975066895131
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação boa,n,31268.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação boa,acc,0.7000127926314443
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação boa,bal_acc,0.7526263912789348
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação boa,f1_macro,0.6991001767538894
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_crop_to_mrl,CEW_crop,MRL,2,lighting,iluminação boa,auc,0.9050443876169232
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,sem reflexo,n,66227.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,sem reflexo,acc,0.6603349087230284
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,sem reflexo,bal_acc,0.6268724854257328
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,sem reflexo,f1_macro,0.5843512672444393
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,sem reflexo,auc,0.8999791082938184
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo pequeno,n,5962.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo pequeno,acc,0.8931566588393157
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo pequeno,bal_acc,0.8949016514629251
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo pequeno,f1_macro,0.8784632609038977
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo pequeno,auc,0.9379995052215371
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo grande,n,12709.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo grande,acc,0.6421433629711228
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo grande,bal_acc,0.663779408729742
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo grande,f1_macro,0.6297961643136523
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_crop_to_mrl,CEW_crop,MRL,2,reflections,reflexo grande,auc,0.6822618094313226
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,RealSense,n,70142.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,RealSense,acc,0.6551709389524109
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,RealSense,bal_acc,0.5918694983704884
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,RealSense,f1_macro,0.5547970893054448
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,RealSense,chance,0.5844287302899831
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,RealSense,auc,0.8273938585728037
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,IDS,n,11992.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,IDS,acc,0.7185623749166111
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,IDS,bal_acc,0.8488702637385157
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,IDS,f1_macro,0.5401950348766378
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,IDS,chance,0.9518012008005337
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,IDS,auc,0.9182507004389073
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,Aptina,n,2764.0
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,Aptina,acc,0.9573082489146165
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,Aptina,bal_acc,0.9651871075763918
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,Aptina,f1_macro,0.9179760078464905
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,Aptina,chance,0.8643270622286541
+C_cew_crop_to_mrl,CEW_crop,MRL,2,sensor,Aptina,auc,0.9977374075624389
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,n,970.0
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,acc,0.9257731958762887
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,bal_acc,0.9251029016566317
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,f1_macro,0.9255068605365554
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,chance,0.5072164948453608
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,auc,0.9849984692315543
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,epochs_run,12.0
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,best_epoch,11.0
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,train_s,14.670064926147461
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,val_acc,0.9329897165298462
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,n_train,3488.0
+D_intra_cew_crop,CEW_crop,CEW_crop,3,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,n,84898.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,acc,0.6980140874932271
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,bal_acc,0.7008015113392426
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,f1_macro,0.6816181404044042
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,chance,0.5059247567669438
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,auc,0.8634025949709068
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,epochs_run,12.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,best_epoch,11.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,train_s,14.670064926147461
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,val_acc,0.9329897165298462
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,n_train,3488.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,sem óculos,n,60897.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,sem óculos,acc,0.7050265201898287
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,sem óculos,bal_acc,0.7288682807218441
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,sem óculos,f1_macro,0.693278654681224
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,sem óculos,chance,0.5454948519631508
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,sem óculos,auc,0.931446092483953
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,com óculos,n,24001.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,com óculos,acc,0.6802216574309404
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,com óculos,bal_acc,0.6454165761866506
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,com óculos,f1_macro,0.6471488418966023
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,com óculos,chance,0.5944752301987417
+C_cew_crop_to_mrl,CEW_crop,MRL,3,glasses,com óculos,auc,0.7331992976129608
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação ruim,n,53630.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação ruim,acc,0.6592765243333955
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação ruim,bal_acc,0.6238441729078303
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação ruim,f1_macro,0.6022092357245908
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação ruim,auc,0.825723648770469
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação boa,n,31268.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação boa,acc,0.7644556735320456
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação boa,bal_acc,0.7991394581632164
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação boa,f1_macro,0.7641912786646238
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_crop_to_mrl,CEW_crop,MRL,3,lighting,iluminação boa,auc,0.9143459636420086
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,sem reflexo,n,66227.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,sem reflexo,acc,0.6881634378727709
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,sem reflexo,bal_acc,0.6579539451042296
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,sem reflexo,f1_macro,0.6307577756869206
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,sem reflexo,auc,0.904318337229275
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo pequeno,n,5962.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo pequeno,acc,0.8399865816839986
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo pequeno,bal_acc,0.777404815062569
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo pequeno,f1_macro,0.7958560678442551
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo pequeno,auc,0.9390927845428865
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo grande,n,12709.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo grande,acc,0.6827445117633173
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo grande,bal_acc,0.6525805990592541
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo grande,f1_macro,0.6463901223641298
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_crop_to_mrl,CEW_crop,MRL,3,reflections,reflexo grande,auc,0.7541292503822383
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,RealSense,n,70142.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,RealSense,acc,0.6681588777052265
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,RealSense,bal_acc,0.6137902807277416
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,RealSense,f1_macro,0.5947452095859846
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,RealSense,chance,0.5844287302899831
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,RealSense,auc,0.8260476535959336
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,IDS,n,11992.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,IDS,acc,0.8162108072048032
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,IDS,bal_acc,0.8779932736037757
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,IDS,f1_macro,0.6125853509640554
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,IDS,chance,0.9518012008005337
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,IDS,auc,0.9395411026221061
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,Aptina,n,2764.0
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,Aptina,acc,0.942836468885673
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,Aptina,bal_acc,0.9455749965117901
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,Aptina,f1_macro,0.8922353335998381
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,Aptina,chance,0.8643270622286541
+C_cew_crop_to_mrl,CEW_crop,MRL,3,sensor,Aptina,auc,0.9897496860611135
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,n,968.0
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,acc,0.9555785123966942
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,bal_acc,0.9551393728222997
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,f1_macro,0.9554986780250667
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,chance,0.5082644628099173
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,auc,0.9895811983329917
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,epochs_run,12.0
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,best_epoch,12.0
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,train_s,14.924056768417358
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,val_acc,0.9561855792999268
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,n_train,3490.0
+D_intra_cew_crop,CEW_crop,CEW_crop,4,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,n,84898.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,acc,0.6694621781431835
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,bal_acc,0.6729041928132647
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,f1_macro,0.6407945882287027
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,chance,0.5059247567669438
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,auc,0.8457269315086811
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,epochs_run,12.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,best_epoch,12.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,train_s,14.924056768417358
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,val_acc,0.9561855792999268
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,n_train,3490.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,sem óculos,n,60897.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,sem óculos,acc,0.6581605005172668
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,sem óculos,bal_acc,0.6864020987391044
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,sem óculos,f1_macro,0.6357722544698782
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,sem óculos,chance,0.5454948519631508
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,sem óculos,auc,0.9150104161414122
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,com óculos,n,24001.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,com óculos,acc,0.6981375776009333
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,com óculos,bal_acc,0.651439456044369
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,com óculos,f1_macro,0.6501875059075423
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,com óculos,chance,0.5944752301987417
+C_cew_crop_to_mrl,CEW_crop,MRL,4,glasses,com óculos,auc,0.7324449686356587
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação ruim,n,53630.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação ruim,acc,0.6386910311392877
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação ruim,bal_acc,0.5965348202003771
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação ruim,f1_macro,0.5549355053537404
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação ruim,auc,0.8002336055949727
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação boa,n,31268.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação boa,acc,0.7222399897658949
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação boa,bal_acc,0.7682964668407871
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação boa,f1_macro,0.7220930440288824
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_crop_to_mrl,CEW_crop,MRL,4,lighting,iluminação boa,auc,0.9109547349761727
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,sem reflexo,n,66227.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,sem reflexo,acc,0.6430005888836879
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,sem reflexo,bal_acc,0.6078582523273819
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,sem reflexo,f1_macro,0.5551105817717268
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,sem reflexo,auc,0.8716769847902421
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo pequeno,n,5962.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo pequeno,acc,0.9002012747400201
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo pequeno,bal_acc,0.9049548681087852
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo pequeno,f1_macro,0.886805329730903
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo pequeno,auc,0.9487761156748373
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo grande,n,12709.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo grande,acc,0.6991108663152097
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo grande,bal_acc,0.6937512498751196
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo grande,f1_macro,0.675901255789524
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_crop_to_mrl,CEW_crop,MRL,4,reflections,reflexo grande,auc,0.7588798468522053
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,RealSense,n,70142.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,RealSense,acc,0.6434233412220923
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,RealSense,bal_acc,0.5784984533292885
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,RealSense,f1_macro,0.5354070653766727
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,RealSense,chance,0.5844287302899831
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,RealSense,auc,0.7956457439819626
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,IDS,n,11992.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,IDS,acc,0.7675116744496331
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,IDS,bal_acc,0.8655505925764693
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,IDS,f1_macro,0.5743857154023259
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,IDS,chance,0.9518012008005337
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,IDS,auc,0.9439066817112234
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,Aptina,n,2764.0
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,Aptina,acc,0.9048480463096961
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,Aptina,bal_acc,0.9404598855867169
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,Aptina,f1_macro,0.8400806051546381
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,Aptina,chance,0.8643270622286541
+C_cew_crop_to_mrl,CEW_crop,MRL,4,sensor,Aptina,auc,0.9944289102832427
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,n,968.0
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,acc,0.9380165289256198
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,bal_acc,0.9379654300744689
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,f1_macro,0.9379950891427351
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,chance,0.5082644628099173
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,auc,0.9874504679920749
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,epochs_run,9.0
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,best_epoch,6.0
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,train_s,11.085116863250732
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,val_acc,0.9278350472450256
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,n_train,3490.0
+D_intra_cew_crop,CEW_crop,CEW_crop,5,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,n,84898.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,acc,0.6475888713515041
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,bal_acc,0.6511898819622248
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,f1_macro,0.6137020558610847
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,chance,0.5059247567669438
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,auc,0.7843987234223226
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,epochs_run,9.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,best_epoch,6.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,train_s,11.085116863250732
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,val_acc,0.9278350472450256
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,n_train,3490.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,todos,todos,n_val,388.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,sem óculos,n,60897.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,sem óculos,acc,0.6472568435226694
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,sem óculos,bal_acc,0.6760130810353042
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,sem óculos,f1_macro,0.6228214951936684
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,sem óculos,chance,0.5454948519631508
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,sem óculos,auc,0.8747545284531449
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,com óculos,n,24001.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,com óculos,acc,0.6484313153618599
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,com óculos,bal_acc,0.5936963231715454
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,com óculos,f1_macro,0.5807221036253638
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,com óculos,chance,0.5944752301987417
+C_cew_crop_to_mrl,CEW_crop,MRL,5,glasses,com óculos,auc,0.610332548515507
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação ruim,n,53630.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação ruim,acc,0.628566101062838
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação ruim,bal_acc,0.5855502143550275
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação ruim,f1_macro,0.5394037328745289
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação ruim,auc,0.7298207006330925
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação boa,n,31268.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação boa,acc,0.6802161954714084
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação boa,bal_acc,0.7303749171193308
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação boa,f1_macro,0.6794294645287715
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_crop_to_mrl,CEW_crop,MRL,5,lighting,iluminação boa,auc,0.8541999169556919
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,sem reflexo,n,66227.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,sem reflexo,acc,0.6343485285457593
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,sem reflexo,bal_acc,0.5989663586661342
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,sem reflexo,f1_macro,0.5433870438946719
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,sem reflexo,auc,0.8030781552002342
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo pequeno,n,5962.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo pequeno,acc,0.8762160348876216
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo pequeno,bal_acc,0.8843065219151176
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo pequeno,f1_macro,0.8613538178813769
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo pequeno,auc,0.9237682333053545
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo grande,n,12709.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo grande,acc,0.609331969470454
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo grande,bal_acc,0.6212750436988614
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo grande,f1_macro,0.5940994049701269
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_crop_to_mrl,CEW_crop,MRL,5,reflections,reflexo grande,auc,0.6487422793346727
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,RealSense,n,70142.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,RealSense,acc,0.6292235750335035
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,RealSense,bal_acc,0.5631186978999201
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,RealSense,f1_macro,0.5142133641499307
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,RealSense,chance,0.5844287302899831
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,RealSense,auc,0.72749094428604
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,IDS,n,11992.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,IDS,acc,0.7014676450967312
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,IDS,bal_acc,0.8308563574266532
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,IDS,f1_macro,0.526782553540218
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,IDS,chance,0.9518012008005337
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,IDS,auc,0.9161340744050742
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,Aptina,n,2764.0
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,Aptina,acc,0.8798842257597684
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,Aptina,bal_acc,0.9215225338356355
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,Aptina,f1_macro,0.8070746255854104
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,Aptina,chance,0.8643270622286541
+C_cew_crop_to_mrl,CEW_crop,MRL,5,sensor,Aptina,auc,0.9927210827403377
+D_intra_cew_crop,CEW_crop,CEW_crop,oof,todos,todos,n,4846.0
+D_intra_cew_crop,CEW_crop,CEW_crop,oof,todos,todos,acc,0.9446966570367313
+D_intra_cew_crop,CEW_crop,CEW_crop,oof,todos,todos,bal_acc,0.9444696977957572
+D_intra_cew_crop,CEW_crop,CEW_crop,oof,todos,todos,f1_macro,0.9446491307028024
+D_intra_cew_crop,CEW_crop,CEW_crop,oof,todos,todos,chance,0.5080478745356996
+D_intra_cew_crop,CEW_crop,CEW_crop,oof,todos,todos,auc,0.9869024269568584
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,todos,todos,n,84898.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,todos,todos,acc,0.6722773210205187
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,todos,todos,bal_acc,0.6756291350815424
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,todos,todos,f1_macro,0.6454953438609399
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,todos,todos,chance,0.5059247567669438
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,todos,todos,auc,0.8450299144248266
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,sem óculos,n,60897.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,sem óculos,acc,0.6715601753780974
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,sem óculos,bal_acc,0.698738465153121
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,sem óculos,f1_macro,0.6523413913056357
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,sem óculos,chance,0.5454948519631508
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,sem óculos,auc,0.9296645188639783
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,com óculos,n,24001.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,com óculos,acc,0.6740969126286405
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,com óculos,bal_acc,0.6254392115286964
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,com óculos,f1_macro,0.620537712009211
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,com óculos,chance,0.5944752301987417
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,glasses,com óculos,auc,0.6912372369170218
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação ruim,n,53630.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação ruim,acc,0.6502703710609733
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação ruim,bal_acc,0.6107009240375253
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação ruim,f1_macro,0.578327938431694
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação ruim,chance,0.5577661756479582
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação ruim,auc,0.7957658903276388
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação boa,n,31268.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação boa,acc,0.7100230267365997
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação boa,bal_acc,0.7590045341691078
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação boa,f1_macro,0.7096073507833114
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação boa,chance,0.6151656645772036
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,lighting,iluminação boa,auc,0.9083878445271085
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,sem reflexo,n,66227.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,sem reflexo,acc,0.6561523245806091
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,sem reflexo,bal_acc,0.62228077224698
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,sem reflexo,f1_macro,0.5774013650241854
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,sem reflexo,chance,0.5450949008712458
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,sem reflexo,auc,0.8808300392603905
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo pequeno,n,5962.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo pequeno,acc,0.8864475008386448
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo pequeno,bal_acc,0.8754058355098615
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo pequeno,f1_macro,0.8681499250488434
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo pequeno,chance,0.6967460583696746
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo pequeno,auc,0.9378806039386284
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo grande,n,12709.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo grande,acc,0.6558344480289559
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo grande,bal_acc,0.6560157599791943
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo grande,f1_macro,0.6350491406253242
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo grande,chance,0.6822724053820127
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,reflections,reflexo grande,auc,0.7132203986017049
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,RealSense,n,70142.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,RealSense,acc,0.6486555843859599
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,RealSense,bal_acc,0.585819595859288
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,RealSense,f1_macro,0.5484684696443612
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,RealSense,chance,0.5844287302899831
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,RealSense,auc,0.8017190889434063
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,IDS,n,11992.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,IDS,acc,0.7480820547031354
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,IDS,bal_acc,0.860271305256763
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,IDS,f1_macro,0.5606200564145215
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,IDS,chance,0.9518012008005337
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,IDS,auc,0.939944753089601
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,Aptina,n,2764.0
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,Aptina,acc,0.942836468885673
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,Aptina,bal_acc,0.9579394446769918
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,Aptina,f1_macro,0.8943944253783027
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,Aptina,chance,0.8643270622286541
+C_cew_crop_to_mrl,CEW_crop,MRL,ensemble5,sensor,Aptina,auc,0.9955842053857961

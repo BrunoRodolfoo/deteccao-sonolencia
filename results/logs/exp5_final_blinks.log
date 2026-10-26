@@ -1,0 +1,4 @@
+2026-09-27 20:36:21,436 INFO Folds da UTA-RLDD com .ok: [1, 2, 3, 4, 5]
+2026-09-27 20:36:22,197 INFO dmd: 65 arquivos (0 calculados, 65 já prontos) em 0.5 s; piscadas=6297, fechamentos longos=183; unidades de referência=14 (fallback: ['gE_28'])
+2026-09-27 20:36:22,499 INFO nitymed: 126 arquivos (0 calculados, 126 já prontos) em 0.2 s; piscadas=1301, fechamentos longos=45; unidades de referência=126 (fallback: nenhuma)
+2026-09-27 20:36:23,650 INFO uta: 182 arquivos (0 calculados, 182 já prontos) em 0.8 s; piscadas=23744, fechamentos longos=580; unidades de referência=60 (fallback: nenhuma)

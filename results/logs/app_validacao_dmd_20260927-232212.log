@@ -1,0 +1,118 @@
+# Validação offline do motor do app (engine.js v2) no DMD — 2026-09-27T23:22:12.195Z
+# node v22.23.2; sinais: data/signals/app_tasks/dmd (33 vídeos); CFG = {"calib":{"neutralMs":10000,"earFactor":0.75,"nBlinks":20},"eyes":{"blendClosed":0.5,"blendSupport":0.35,"lookDownGate":0.6,"headDownGateDeg":10,"longMs":500,"microsleepMs":1000,"blinkMinMs":50,"blinkMaxMs":500,"lostGraceMs":300},"perclos":{"windowMs":60000,"minWindowMs":60000,"maxDtMs":100},"yawn":{"jawOpen":0.5,"jawRel":0.3,"marRel":0.4,"minMs":1500,"gapMs":150,"lostMaxMs":1000,"windowMs":300000},"head":{"pitchDownSign":1,"neutralDeg":5,"nodDeg":15,"dropDeg":18,"dropMs":800,"releaseDeg":10,"rollDeg":30,"rollReleaseDeg":20,"redMs":2000,"redEyesMs":800,"yawAsideDeg":25,"nodOnsetMs":500,"nodMaxMs":1500,"nodNeedsEyes":true,"lostWindowMs":300,"lostDownDeg":10,"lostMaxMs":4000,"driftBandDeg":8,"driftTauMs":120000,"windowMs":300000},"score":{"perclos":{"from":0.075,"at":0.15,"points":40,"cap":60},"longClosure":{"points":25,"decayMs":120000,"countMs":60000},"microsleep":{"points":40,"decayMs":300000},"closuresCap":60,"yawn":{"points":25,"decayMs":300000,"cap":50},"head":{"points":30,"decayMs":300000,"cap":60},"blinkDur":{"from":1.25,"at":2,"points":20,"cap":20,"minBlinks":5,"windowMs":120000},"ml":{"points":10,"minProb":0.6,"consecutive":5},"forcedFloor":75,"maxFallPerS":3},"levels":{"attention":40,"attentionExit":35,"drowsy":70,"drowsyExit":60},"alarm":{"sirenMinMs":2000,"dingGapMs":20000,"vibrateEveryMs":1500,"snoozeMs":30000}}
+gA_1_s5_2019-03-14T14;26;17+01;00: 5480 quadros, limiar EAR 0.200, pitch base -18.6°, eventos {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":11,"microssono":14}, alarmes 1
+gA_5_s5_2019-03-13T09;06;49+01;00: 5287 quadros, limiar EAR 0.194, pitch base -4.8°, eventos {"bocejo":2,"queda":0,"cabeceio":1,"fechamento":18,"microssono":7}, alarmes 1
+gB_10_s5_2019-03-12T10;35;20+01;00: 6055 quadros, limiar EAR 0.231, pitch base -18.1°, eventos {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":10,"microssono":16}, alarmes 1
+gB_10_s5_2019-03-13T14;17;28+01;00: 5417 quadros, limiar EAR 0.205, pitch base -20.6°, eventos {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":5,"microssono":12}, alarmes 1
+gB_6_s5_2019-03-13T13;37;11+01;00: 5410 quadros, limiar EAR 0.269, pitch base -1.8°, eventos {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":6,"microssono":1}, alarmes 1
+gB_7_s5_2019-03-13T13;55;52+01;00: 5405 quadros, limiar EAR 0.185, pitch base -9.7°, eventos {"bocejo":3,"queda":3,"cabeceio":0,"fechamento":10,"microssono":15}, alarmes 1
+gB_9_s5_2019-03-07T16;31;48+01;00: 5292 quadros, limiar EAR 0.228, pitch base -14.7°, eventos {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":20,"microssono":7}, alarmes 1
+gC_13_s5_2019-03-12T10;03;00+01;00: 5380 quadros, limiar EAR 0.238, pitch base -9.1°, eventos {"bocejo":1,"queda":0,"cabeceio":0,"fechamento":7,"microssono":2}, alarmes 1
+gC_14_s5_2019-03-12T09;18;58+01;00: 5576 quadros, limiar EAR 0.198, pitch base -2.4°, eventos {"bocejo":0,"queda":0,"cabeceio":0,"fechamento":2,"microssono":8}, alarmes 1
+gE_29_s5_2019-03-15T13;51;09+01;00: 5362 quadros, limiar EAR 0.218, pitch base -25.9°, eventos {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":4,"microssono":13}, alarmes 1
+gF_23_s5_2019-03-11T10;19;19+01;00: 6172 quadros, limiar EAR 0.211, pitch base -8.0°, eventos {"bocejo":3,"queda":1,"cabeceio":0,"fechamento":4,"microssono":7}, alarmes 1
+gF_23_s5_2019-03-14T13;49;53+01;00: 5743 quadros, limiar EAR 0.225, pitch base -7.8°, eventos {"bocejo":3,"queda":4,"cabeceio":0,"fechamento":10,"microssono":8}, alarmes 2
+gZ_33_s5_2019-04-04T09;29;07+02;00: 5407 quadros, limiar EAR 0.215, pitch base -5.2°, eventos {"bocejo":1,"queda":0,"cabeceio":0,"fechamento":6,"microssono":15}, alarmes 1
+gZ_33_s5_2019-04-04T15;02;29+02;00: 5618 quadros, limiar EAR 0.218, pitch base -3.5°, eventos {"bocejo":1,"queda":4,"cabeceio":0,"fechamento":5,"microssono":18}, alarmes 1
+gZ_36_s5_2019-04-09T10;49;32+02;00: 5414 quadros, limiar EAR 0.224, pitch base -10.6°, eventos {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":6,"microssono":9}, alarmes 1
+gZ_37_s5_2019-04-29T12;06;35+02;00: 5204 quadros, limiar EAR 0.169, pitch base -9.4°, eventos {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":10,"microssono":5}, alarmes 1
+gA_1_s1_2019-03-08T09;31;15+01;00: s1 3.6 min ativos
+gA_5_s1_2019-03-08T10;57;00+01;00: s1 3.8 min ativos
+gB_10_s1_2019-03-11T15;24;54+01;00: s1 3.4 min ativos
+gB_6_s1_2019-03-11T13;55;14+01;00: s1 3.6 min ativos
+gB_7_s1_2019-03-11T14;22;01+01;00: s1 3.5 min ativos
+gB_9_s1_2019-03-07T16;36;24+01;00: s1 3.8 min ativos
+gC_13_s1_2019-03-04T10;26;12+01;00: s1 3.8 min ativos
+gC_14_s1_2019-03-04T11;56;20+01;00: s1 3.6 min ativos
+gE_28_s1_2019-03-15T10;23;30+01;00: s1 3.7 min ativos
+gE_29_s1_2019-03-15T13;58;00+01;00: s1 3.9 min ativos
+gF_23_s1_2019-03-04T16;21;10+01;00: s1 3.9 min ativos
+gF_23_s1_2019-03-05T09;23;45+01;00: s1 3.3 min ativos
+gF_23_s1_2019-03-05T10;17;36+01;00: s1 3.6 min ativos
+gZ_33_s1_2019-04-08T10;08;19+02;00: s1 4.1 min ativos
+gZ_33_s1_2019-04-08T16;18;54+02;00: s1 4.1 min ativos
+gZ_36_s1_2019-04-09T10;55;20+02;00: s1 3.9 min ativos
+gZ_37_s1_2019-04-08T15;56;41+02;00: s1 3.7 min ativos
+
+## Arquivos
+  -> results/app_validacao_dmd_olhos.csv (112 linhas)
+  -> results/app_validacao_dmd_fechamentos.csv (32 linhas)
+  -> results/app_validacao_dmd_bocejo.csv (32 linhas)
+  -> results/app_validacao_dmd_bocejo_grade.csv (15 linhas)
+  -> results/app_validacao_dmd_sessoes.csv (33 linhas)
+  -> results/app_validacao_dmd_acoes_s1.csv (10 linhas)
+  -> results/app_validacao_dmd.md
+
+# Validação offline do motor do app (detector v2) no DMD
+
+Gerado em 2026-09-27T23:22:13.874Z por `tools/app_validacao/validar_motor_dmd.mjs` (log: `results/logs/app_validacao_dmd_20260927-232212.log`). Sinais por quadro extraídos com o MESMO `face_landmarker.task` da PWA (`tools/app_validacao/extrair_sinais_app.py`, MediaPipe 0.10.21 Tasks, CPU); o código avaliado é o `app/pwa/engine.js` importado sem cópia, com a calibração do app (10 s iniciais de cada vídeo). O LSTM não entra (no app vale no máximo +10 pontos).
+
+## Olhos por quadro (DMD s5, sonolência encenada; quadros anotados 'open' x 'close', transições excluídas)
+
+| Variante | Sensibilidade | Especificidade | Acurácia bal. | Kappa |
+|---|---:|---:|---:|---:|
+| ear | 0.994 | 0.949 | 0.971 | 0.831 |
+| blend05 | 0.921 | 0.999 | 0.960 | 0.942 |
+| app | 0.955 | 0.978 | 0.967 | 0.900 |
+| app_sem_trava | 0.987 | 0.977 | 0.982 | 0.918 |
+| app_sem_apoio | 0.960 | 0.952 | 0.956 | 0.814 |
+| app_blend045 | 0.970 | 0.978 | 0.974 | 0.909 |
+| app_blend040 | 0.978 | 0.977 | 0.978 | 0.913 |
+
+Médias entre as 16 sessões. `ear` = EAR < 0,75 x mediana dos 10 s iniciais (v1); `blend05` = os dois eyeBlink >= 0,5; `app` = fusão do app (CFG.eyes).
+
+## Fechamentos por evento (app, DMD s5)
+
+| Duração mínima | Anotados | Detectados | Revocação | Precisão |
+|---|---:|---:|---:|---:|
+| >= 500 ms | 198 | 297 | 0.949 | 0.633 |
+| >= 1000 ms | 113 | 163 | 0.947 | 0.656 |
+
+## Bocejos por evento (DMD s5: bocejos anotados com e sem a mão na frente da boca)
+
+| Detector | Anotados (sem/com mão) | Detectados | Revocação sem mão | Revocação com mão | Precisão |
+|---|---:|---:|---:|---:|---:|
+| app (jawOpen>=0,5 ou MAR>=base+0,4, 1,5 s) | 85 (47/38) | 30 | 0.617 | 0.026 | 1.000 |
+| v1 (MAR>0,6 por 2 s) | 85 (47/38) | 15 | 0.319 | 0.000 | 1.000 |
+
+Grade (jawOpen x duração mínima) com os falsos bocejos por hora na direção real (s1): `results/app_validacao_dmd_bocejo_grade.csv`.
+
+| jawOpen >= | Duração mín. | Revocação sem mão | Revocação com mão | Precisão s5 | Falsos/h em s1 |
+|---:|---:|---:|---:|---:|---:|
+| 0.3 | 1000 ms | 0.787 | 0.026 | 1.000 | 1.897 |
+| 0.3 | 1500 ms | 0.681 | 0.026 | 1.000 | 0.000 |
+| 0.3 | 2000 ms | 0.596 | 0.026 | 1.000 | 0.000 |
+| 0.35 | 1000 ms | 0.745 | 0.026 | 1.000 | 1.897 |
+| 0.35 | 1500 ms | 0.660 | 0.026 | 1.000 | 0.000 |
+| 0.35 | 2000 ms | 0.574 | 0.026 | 1.000 | 0.000 |
+| 0.4 | 1000 ms | 0.723 | 0.026 | 0.972 | 1.897 |
+| 0.4 | 1500 ms | 0.638 | 0.026 | 1.000 | 0.000 |
+| 0.4 | 2000 ms | 0.553 | 0.026 | 1.000 | 0.000 |
+| 0.45 | 1000 ms | 0.702 | 0.026 | 0.971 | 1.897 |
+| 0.45 | 1500 ms | 0.617 | 0.026 | 1.000 | 0.000 |
+| 0.45 | 2000 ms | 0.553 | 0.026 | 1.000 | 0.000 |
+| 0.5 | 1000 ms | 0.681 | 0.026 | 0.971 | 1.897 |
+| 0.5 | 1500 ms | 0.617 | 0.026 | 1.000 | 0.000 |
+| 0.5 | 2000 ms | 0.553 | 0.026 | 1.000 | 0.000 |
+
+## Monitor completo por tipo de sessão
+
+| Sessões | Minutos ativos | Bocejos | Quedas | Cabeceios | Fech. 0,5-1 s | Microssonos | Alarmes (vermelho) | Alarmes/h | Avisos/h | % tempo SONOLENTO | % ATENÇÃO |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| s5 (16) | 46.6 | 30 | 12 | 1 | 134 | 157 | 17 | 21.87 | 11.58 | 77.1 | 3.6 |
+| s1 (17) | 63.3 | 0 | 2 | 9 | 43 | 17 | 8 | 7.59 | 11.38 | 15.7 | 16.4 |
+
+## Direção real (s1) por ação anotada
+
+| Ação | Minutos | Eventos de sono/h | Alarmes/h | % SONOLENTO | Bocejos | Quedas | Cabeceios | Fech. | Microssonos |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| TOTAL | 63.3 | 67.3 | 7.6 | 15.7 | 0 | 2 | 9 | 43 | 17 |
+| safe_drive | 35.7 | 43.6 | 5.0 | 18.4 | 0 | 0 | 0 | 19 | 7 |
+| radio | 6.6 | 190.0 | 27.1 | 8.6 | 0 | 0 | 0 | 12 | 9 |
+| drinking | 6.6 | 72.4 | 9.1 | 15.2 | 0 | 0 | 2 | 6 | 0 |
+| reach_side | 5.2 | 126.8 | 11.5 | 15.5 | 0 | 1 | 6 | 4 | 0 |
+| talking_to_passenger | 5.0 | 0.0 | 0.0 | 11.2 | 0 | 0 | 0 | 0 | 0 |
+| unclassified | 3.8 | 78.8 | 0.0 | 10.8 | 0 | 1 | 1 | 2 | 1 |
+| change_gear | 0.2 | 0.0 | 0.0 | 0.0 | 0 | 0 | 0 | 0 | 0 |
+| hair_and_makeup | 0.0 | 0.0 | 0.0 | 42.3 | 0 | 0 | 0 | 0 | 0 |
+| sem_anotacao | 0.0 | 0.0 | 0.0 | 15.4 | 0 | 0 | 0 | 0 | 0 |

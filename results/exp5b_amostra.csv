@@ -1,0 +1,121 @@
+base,item,valor,descricao,execucao
+dmd,janelas_sonolento_10s,423.0,janelas do DMD com uso = sonolento (10 s),20260927-211326
+dmd,janelas_s5_sem_sinal_10s,146.0,janelas do DMD com uso = s5_sem_sinal (10 s),20260927-211326
+dmd,janelas_alerta_s1_10s,109.0,janelas do DMD com uso = alerta_s1 (10 s),20260927-211326
+dmd,janelas_alerta_10s,90.0,janelas do DMD com uso = alerta (10 s),20260927-211326
+dmd,janelas_referencia_10s,62.0,janelas do DMD com uso = referencia (10 s),20260927-211326
+dmd,alerta_principal_10s,87.0,alerta no principal (10 s),20260927-211326
+dmd,sonolento_principal_10s,423.0,sonolento no principal (10 s),20260927-211326
+dmd,sujeitos_duas_classes_10s,13.0,,20260927-211326
+dmd,sujeitos_com_alerta_10s,13.0,,20260927-211326
+uta,janelas_kss0_10s,4906.0,janelas avaliáveis KSS 0 (10 s),20260927-211326
+uta,janelas_kss5_10s,7468.0,janelas avaliáveis KSS 5 (10 s),20260927-211326
+uta,janelas_kss10_10s,7581.0,janelas avaliáveis KSS 10 (10 s),20260927-211326
+uta,janelas_referencia_10s,2380.0,,20260927-211326
+uta,janelas_fronteira_10s,120.0,,20260927-211326
+uta,sobreposicao_ref_10s,0.0,janelas avaliadas que dividem tempo com a referência do mesmo arquivo,20260927-211326
+dmd,sobreposicao_ref_10s,0.0,janelas do principal que dividem tempo com a referência do mesmo arquivo,20260927-211326
+dmd,janelas_sonolento_5s,308.0,janelas do DMD com uso = sonolento (5 s),20260927-211326
+dmd,janelas_s5_sem_sinal_5s,277.0,janelas do DMD com uso = s5_sem_sinal (5 s),20260927-211326
+dmd,janelas_alerta_s1_5s,275.0,janelas do DMD com uso = alerta_s1 (5 s),20260927-211326
+dmd,janelas_alerta_5s,247.0,janelas do DMD com uso = alerta (5 s),20260927-211326
+dmd,janelas_referencia_5s,113.0,janelas do DMD com uso = referencia (5 s),20260927-211326
+dmd,alerta_principal_5s,237.0,alerta no principal (5 s),20260927-211326
+dmd,sonolento_principal_5s,308.0,sonolento no principal (5 s),20260927-211326
+dmd,sujeitos_duas_classes_5s,13.0,,20260927-211326
+dmd,sujeitos_com_alerta_5s,13.0,,20260927-211326
+uta,janelas_kss0_5s,4966.0,janelas avaliáveis KSS 0 (5 s),20260927-211326
+uta,janelas_kss5_5s,7528.0,janelas avaliáveis KSS 5 (5 s),20260927-211326
+uta,janelas_kss10_5s,7643.0,janelas avaliáveis KSS 10 (5 s),20260927-211326
+uta,janelas_referencia_5s,2440.0,,20260927-211326
+uta,janelas_fronteira_5s,60.0,,20260927-211326
+uta,sobreposicao_ref_5s,0.0,janelas avaliadas que dividem tempo com a referência do mesmo arquivo,20260927-211326
+dmd,sobreposicao_ref_5s,0.0,janelas do principal que dividem tempo com a referência do mesmo arquivo,20260927-211326
+dmd,janelas_sonolento_15s,466.0,janelas do DMD com uso = sonolento (15 s),20260927-211326
+dmd,janelas_s5_sem_sinal_15s,87.0,janelas do DMD com uso = s5_sem_sinal (15 s),20260927-211326
+dmd,janelas_alerta_s1_15s,34.0,janelas do DMD com uso = alerta_s1 (15 s),20260927-211326
+dmd,janelas_referencia_15s,17.0,janelas do DMD com uso = referencia (15 s),20260927-211326
+dmd,janelas_s3_nao_usada_15s,15.0,janelas do DMD com uso = s3_nao_usada (15 s),20260927-211326
+dmd,janelas_alerta_15s,8.0,janelas do DMD com uso = alerta (15 s),20260927-211326
+dmd,alerta_principal_15s,8.0,alerta no principal (15 s),20260927-211326
+dmd,sonolento_principal_15s,466.0,sonolento no principal (15 s),20260927-211326
+dmd,sujeitos_duas_classes_15s,5.0,,20260927-211326
+dmd,sujeitos_com_alerta_15s,5.0,,20260927-211326
+uta,janelas_kss0_15s,4846.0,janelas avaliáveis KSS 0 (15 s),20260927-211326
+uta,janelas_kss5_15s,7408.0,janelas avaliáveis KSS 5 (15 s),20260927-211326
+uta,janelas_kss10_15s,7519.0,janelas avaliáveis KSS 10 (15 s),20260927-211326
+uta,janelas_referencia_15s,2320.0,,20260927-211326
+uta,janelas_fronteira_15s,180.0,,20260927-211326
+uta,sobreposicao_ref_15s,0.0,janelas avaliadas que dividem tempo com a referência do mesmo arquivo,20260927-211326
+dmd,sobreposicao_ref_15s,0.0,janelas do principal que dividem tempo com a referência do mesmo arquivo,20260927-211326
+dmd,sessoes,65.0,sessões (todas),20260927-211326
+dmd,sessoes_s1,17.0,sessões s1 com janelas,20260927-211326
+dmd,sessoes_s2,16.0,sessões s2 com janelas,20260927-211326
+dmd,sessoes_s3,16.0,sessões s3 com janelas,20260927-211326
+dmd,sessoes_s5,16.0,sessões s5 com janelas,20260927-211326
+dmd,sujeitos,14.0,sujeitos (com gE_28),20260927-211326
+dmd,sujeitos_s5,13.0,sujeitos com s5,20260927-211326
+dmd,ref_por_sujeito_min,2.0,janelas de referência por sujeito (10 s),20260927-211326
+dmd,ref_por_sujeito_max,9.0,,20260927-211326
+dmd,frac_sem_piscada,0.09607843137254903,janelas do principal sem piscada detectada,20260927-211326
+dmd,sujeitos_s2_mesmo_dia,3.0,"gB_9, gE_29, gZ_36",20260927-211326
+dmd,sujeitos_oculos_s5,3.0,"gA_1, gE_29, gZ_36",20260927-211326
+dmd,espelho_alerta,49.0,"alerta na referência espelhada (s2, antes do último terço)",20260927-211326
+dmd,espelho_sonolento,423.0,,20260927-211326
+dmd,espelho_ref_min,1.0,janelas de referência por sujeito (espelho),20260927-211326
+dmd,espelho_ref_max,6.0,,20260927-211326
+dmd,espelho_sobreposicao_ref,0.0,,20260927-211326
+uta,sujeitos,60.0,sujeitos,20260927-211326
+uta,videos,180.0,vídeos lógicos,20260927-211326
+uta,arquivos,182.0,arquivos (partes dos vídeos divididos separadas),20260927-211326
+uta,ref_por_sujeito_min,29.0,janelas de referência por sujeito (10 s),20260927-211326
+uta,ref_por_sujeito_mediana,39.0,,20260927-211326
+uta,ref_por_sujeito_max,58.0,,20260927-211326
+uta,frac_sem_piscada,0.34913555499874716,janelas avaliáveis sem piscada detectada,20260927-211326
+uta,frac_sem_rosto,0.001804059133049361,janelas avaliáveis sem nenhum quadro com rosto,20260927-211326
+uta,videos_sem_piscada,2.0,F2_15_10;F3_27_5,20260927-211326
+uta,janelas_video_sem_piscada_F2_15_10,122.0,janelas avaliáveis de F2_15_10 (KSS 10),20260927-211326
+uta,perclos_max_F2_15_10,0.0,,20260927-211326
+uta,janelas_video_sem_piscada_F3_27_5,124.0,janelas avaliáveis de F3_27_5 (KSS 5),20260927-211326
+uta,perclos_max_F3_27_5,0.0,,20260927-211326
+dmd,duracao_mediana_min_s1,3.8631272401433696,duração mediana das sessões s1 (min),20260927-211326
+dmd,duracao_mediana_min_s2,7.692652329749103,duração mediana das sessões s2 (min),20260927-211326
+dmd,duracao_mediana_min_s3,1.033546146953405,duração mediana das sessões s3 (min),20260927-211326
+dmd,duracao_mediana_min_s5,3.030913978494624,duração mediana das sessões s5 (min),20260927-211326
+uta,duracao_mediana_min_video,10.185680555555557,duração mediana dos vídeos lógicos (min),20260927-211326
+preliminar,A_auc_RF,0.9515805614531728,AUC de A na rodada preliminar (30 s; alerta sobreposto à referência),20260927-211326
+preliminar,A_alerta,18.0,janelas alerta de A na rodada preliminar,20260927-211326
+preliminar,A_sujeitos_alerta,6.0,sujeitos com alerta na rodada preliminar,20260927-211326
+preliminar,A_auc_LR,0.9598962019344184,AUC de A na rodada preliminar (30 s; alerta sobreposto à referência),20260927-211326
+preliminar,A_alerta,18.0,janelas alerta de A na rodada preliminar,20260927-211326
+preliminar,A_sujeitos_alerta,6.0,sujeitos com alerta na rodada preliminar,20260927-211326
+dmd,z_definido_perclos,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_taxa_piscadas_min,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_dur_media_piscada_s,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_dur_max_fechamento_s,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_n_fechamentos_05s,0.07692307692307693,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_ear_media,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_ear_dp,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_amp_media,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_vel_media,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_frac_bocejo,0.0,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_taxa_rosto,0.23076923076923078,fração das unidades de referência com z definido,20260927-211326
+dmd,z_definido_celulas,0.1958041958041958,fração das células unidade x característica,20260927-211326
+dmd,z_definido_todas_caracteristicas,0.0,fração das unidades com z definido nas 11 características,20260927-211326
+dmd,unidades_ref,13.0,,20260927-211326
+dmd,unidades_ref_5_ou_mais,3.0,unidades com >= 5 janelas de referência,20260927-211326
+uta,z_definido_perclos,0.9666666666666667,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_taxa_piscadas_min,0.9666666666666667,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_dur_media_piscada_s,0.8333333333333334,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_dur_max_fechamento_s,0.9666666666666667,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_n_fechamentos_05s,0.25,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_ear_media,1.0,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_ear_dp,1.0,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_amp_media,0.85,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_vel_media,0.85,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_frac_bocejo,0.016666666666666666,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_taxa_rosto,0.05,fração das unidades de referência com z definido,20260927-211326
+uta,z_definido_celulas,0.7045454545454546,fração das células unidade x característica,20260927-211326
+uta,z_definido_todas_caracteristicas,0.0,fração das unidades com z definido nas 11 características,20260927-211326
+uta,unidades_ref,60.0,,20260927-211326
+uta,unidades_ref_5_ou_mais,60.0,unidades com >= 5 janelas de referência,20260927-211326

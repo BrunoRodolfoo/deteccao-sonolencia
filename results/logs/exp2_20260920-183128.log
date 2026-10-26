@@ -1,0 +1,87 @@
+Exp. 2 vazamento de identidade — pool (8661, 30, 4), vídeos 174, sujeitos 58, classes [1648 3494 3519], chance seq 0.406 vídeo 0.333; modelos ['RandomForest', 'LSTM']; seeds [42, 43, 44]; épocas 50
+[janela] seed 42 RandomForest  fold 1: BSA=0.993 bal=0.994 F1=0.993 AUC=1.000 VA=nan | vídeos vistos=0.96 sujeitos vistos=1.00 (1s)
+[janela] seed 42 RandomForest  fold 2: BSA=0.997 bal=0.997 F1=0.996 AUC=1.000 VA=nan | vídeos vistos=0.99 sujeitos vistos=1.00 (1s)
+[janela] seed 42 RandomForest  fold 3: BSA=0.994 bal=0.994 F1=0.993 AUC=1.000 VA=nan | vídeos vistos=0.96 sujeitos vistos=1.00 (1s)
+[janela] seed 42 RandomForest  fold 4: BSA=0.995 bal=0.996 F1=0.995 AUC=1.000 VA=nan | vídeos vistos=0.98 sujeitos vistos=1.00 (1s)
+[janela] seed 42 RandomForest  fold 5: BSA=0.995 bal=0.996 F1=0.995 AUC=1.000 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (1s)
+[janela] seed 42 LSTM          fold 1: BSA=0.872 bal=0.882 F1=0.868 AUC=0.971 VA=nan | vídeos vistos=0.96 sujeitos vistos=1.00 (14s)
+[janela] seed 42 LSTM          fold 2: BSA=0.867 bal=0.879 F1=0.862 AUC=0.967 VA=nan | vídeos vistos=0.99 sujeitos vistos=1.00 (12s)
+[janela] seed 42 LSTM          fold 3: BSA=0.882 bal=0.888 F1=0.882 AUC=0.974 VA=nan | vídeos vistos=0.96 sujeitos vistos=1.00 (18s)
+[janela] seed 42 LSTM          fold 4: BSA=0.877 bal=0.875 F1=0.872 AUC=0.973 VA=nan | vídeos vistos=0.98 sujeitos vistos=1.00 (24s)
+[janela] seed 42 LSTM          fold 5: BSA=0.876 bal=0.884 F1=0.875 AUC=0.971 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (23s)
+[janela] seed 43 RandomForest  fold 1: BSA=0.994 bal=0.995 F1=0.995 AUC=1.000 VA=nan | vídeos vistos=0.98 sujeitos vistos=1.00 (1s)
+[janela] seed 43 RandomForest  fold 2: BSA=0.997 bal=0.998 F1=0.997 AUC=1.000 VA=nan | vídeos vistos=0.99 sujeitos vistos=1.00 (1s)
+[janela] seed 43 RandomForest  fold 3: BSA=0.994 bal=0.994 F1=0.994 AUC=1.000 VA=nan | vídeos vistos=0.94 sujeitos vistos=1.00 (1s)
+[janela] seed 43 RandomForest  fold 4: BSA=0.997 bal=0.997 F1=0.996 AUC=1.000 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (1s)
+[janela] seed 43 RandomForest  fold 5: BSA=0.994 bal=0.994 F1=0.994 AUC=1.000 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (1s)
+[janela] seed 43 LSTM          fold 1: BSA=0.855 bal=0.869 F1=0.854 AUC=0.967 VA=nan | vídeos vistos=0.98 sujeitos vistos=1.00 (18s)
+[janela] seed 43 LSTM          fold 2: BSA=0.855 bal=0.865 F1=0.850 AUC=0.967 VA=nan | vídeos vistos=0.99 sujeitos vistos=1.00 (21s)
+[janela] seed 43 LSTM          fold 3: BSA=0.861 bal=0.863 F1=0.856 AUC=0.967 VA=nan | vídeos vistos=0.94 sujeitos vistos=1.00 (23s)
+[janela] seed 43 LSTM          fold 4: BSA=0.883 bal=0.885 F1=0.878 AUC=0.973 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (23s)
+[janela] seed 43 LSTM          fold 5: BSA=0.868 bal=0.877 F1=0.864 AUC=0.967 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (22s)
+[janela] seed 44 RandomForest  fold 1: BSA=0.995 bal=0.995 F1=0.995 AUC=1.000 VA=nan | vídeos vistos=0.96 sujeitos vistos=1.00 (1s)
+[janela] seed 44 RandomForest  fold 2: BSA=0.995 bal=0.996 F1=0.995 AUC=1.000 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (1s)
+[janela] seed 44 RandomForest  fold 3: BSA=0.995 bal=0.995 F1=0.995 AUC=1.000 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (1s)
+[janela] seed 44 RandomForest  fold 4: BSA=0.997 bal=0.997 F1=0.996 AUC=1.000 VA=nan | vídeos vistos=0.98 sujeitos vistos=1.00 (1s)
+[janela] seed 44 RandomForest  fold 5: BSA=0.998 bal=0.998 F1=0.998 AUC=1.000 VA=nan | vídeos vistos=0.98 sujeitos vistos=1.00 (1s)
+[janela] seed 44 LSTM          fold 1: BSA=0.878 bal=0.880 F1=0.874 AUC=0.972 VA=nan | vídeos vistos=0.96 sujeitos vistos=1.00 (23s)
+[janela] seed 44 LSTM          fold 2: BSA=0.887 bal=0.884 F1=0.886 AUC=0.978 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (25s)
+[janela] seed 44 LSTM          fold 3: BSA=0.872 bal=0.878 F1=0.870 AUC=0.971 VA=nan | vídeos vistos=0.97 sujeitos vistos=1.00 (26s)
+[janela] seed 44 LSTM          fold 4: BSA=0.879 bal=0.875 F1=0.877 AUC=0.976 VA=nan | vídeos vistos=0.98 sujeitos vistos=1.00 (25s)
+[janela] seed 44 LSTM          fold 5: BSA=0.886 bal=0.894 F1=0.885 AUC=0.977 VA=nan | vídeos vistos=0.98 sujeitos vistos=1.00 (25s)
+[video] seed 42 RandomForest  fold 1: BSA=0.499 bal=0.490 F1=0.499 AUC=0.756 VA=0.543 | vídeos vistos=0.00 sujeitos vistos=0.96 (1s)
+[video] seed 42 RandomForest  fold 2: BSA=0.407 bal=0.522 F1=0.427 AUC=0.661 VA=0.514 | vídeos vistos=0.00 sujeitos vistos=0.96 (1s)
+[video] seed 42 RandomForest  fold 3: BSA=0.609 bal=0.623 F1=0.621 AUC=0.751 VA=0.686 | vídeos vistos=0.00 sujeitos vistos=0.96 (1s)
+[video] seed 42 RandomForest  fold 4: BSA=0.334 bal=0.525 F1=0.408 AUC=0.524 VA=0.486 | vídeos vistos=0.00 sujeitos vistos=0.97 (1s)
+[video] seed 42 RandomForest  fold 5: BSA=0.483 bal=0.501 F1=0.512 AUC=0.693 VA=0.500 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 42 LSTM          fold 1: BSA=0.464 bal=0.467 F1=0.469 AUC=0.669 VA=0.457 | vídeos vistos=0.00 sujeitos vistos=0.96 (26s)
+[video] seed 42 LSTM          fold 2: BSA=0.449 bal=0.529 F1=0.439 AUC=0.652 VA=0.571 | vídeos vistos=0.00 sujeitos vistos=0.96 (24s)
+[video] seed 42 LSTM          fold 3: BSA=0.533 bal=0.544 F1=0.535 AUC=0.679 VA=0.571 | vídeos vistos=0.00 sujeitos vistos=0.96 (24s)
+[video] seed 42 LSTM          fold 4: BSA=0.335 bal=0.510 F1=0.412 AUC=0.529 VA=0.429 | vídeos vistos=0.00 sujeitos vistos=0.97 (24s)
+[video] seed 42 LSTM          fold 5: BSA=0.455 bal=0.480 F1=0.486 AUC=0.623 VA=0.441 | vídeos vistos=0.00 sujeitos vistos=1.00 (24s)
+[video] seed 43 RandomForest  fold 1: BSA=0.553 bal=0.634 F1=0.590 AUC=0.746 VA=0.514 | vídeos vistos=0.00 sujeitos vistos=0.96 (1s)
+[video] seed 43 RandomForest  fold 2: BSA=0.442 bal=0.588 F1=0.460 AUC=0.661 VA=0.571 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 43 RandomForest  fold 3: BSA=0.491 bal=0.475 F1=0.486 AUC=0.697 VA=0.571 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 43 RandomForest  fold 4: BSA=0.433 bal=0.468 F1=0.477 AUC=0.638 VA=0.486 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 43 RandomForest  fold 5: BSA=0.372 bal=0.414 F1=0.405 AUC=0.625 VA=0.441 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 43 LSTM          fold 1: BSA=0.632 bal=0.662 F1=0.640 AUC=0.785 VA=0.486 | vídeos vistos=0.00 sujeitos vistos=0.96 (19s)
+[video] seed 43 LSTM          fold 2: BSA=0.396 bal=0.513 F1=0.392 AUC=0.607 VA=0.400 | vídeos vistos=0.00 sujeitos vistos=1.00 (21s)
+[video] seed 43 LSTM          fold 3: BSA=0.451 bal=0.453 F1=0.447 AUC=0.654 VA=0.457 | vídeos vistos=0.00 sujeitos vistos=1.00 (24s)
+[video] seed 43 LSTM          fold 4: BSA=0.348 bal=0.376 F1=0.379 AUC=0.511 VA=0.457 | vídeos vistos=0.00 sujeitos vistos=1.00 (22s)
+[video] seed 43 LSTM          fold 5: BSA=0.407 bal=0.435 F1=0.432 AUC=0.593 VA=0.441 | vídeos vistos=0.00 sujeitos vistos=1.00 (23s)
+[video] seed 44 RandomForest  fold 1: BSA=0.400 bal=0.432 F1=0.424 AUC=0.649 VA=0.371 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 44 RandomForest  fold 2: BSA=0.456 bal=0.529 F1=0.488 AUC=0.720 VA=0.600 | vídeos vistos=0.00 sujeitos vistos=0.92 (1s)
+[video] seed 44 RandomForest  fold 3: BSA=0.462 bal=0.478 F1=0.474 AUC=0.658 VA=0.514 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 44 RandomForest  fold 4: BSA=0.626 bal=0.668 F1=0.670 AUC=0.766 VA=0.686 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 44 RandomForest  fold 5: BSA=0.511 bal=0.519 F1=0.511 AUC=0.637 VA=0.441 | vídeos vistos=0.00 sujeitos vistos=1.00 (1s)
+[video] seed 44 LSTM          fold 1: BSA=0.376 bal=0.416 F1=0.408 AUC=0.563 VA=0.371 | vídeos vistos=0.00 sujeitos vistos=1.00 (22s)
+[video] seed 44 LSTM          fold 2: BSA=0.507 bal=0.501 F1=0.507 AUC=0.608 VA=0.429 | vídeos vistos=0.00 sujeitos vistos=0.92 (21s)
+[video] seed 44 LSTM          fold 3: BSA=0.393 bal=0.409 F1=0.406 AUC=0.575 VA=0.429 | vídeos vistos=0.00 sujeitos vistos=1.00 (20s)
+[video] seed 44 LSTM          fold 4: BSA=0.488 bal=0.528 F1=0.526 AUC=0.633 VA=0.429 | vídeos vistos=0.00 sujeitos vistos=1.00 (20s)
+[video] seed 44 LSTM          fold 5: BSA=0.533 bal=0.512 F1=0.503 AUC=0.661 VA=0.559 | vídeos vistos=0.00 sujeitos vistos=1.00 (18s)
+[sujeito] seed 42 RandomForest  fold 1: BSA=0.471 bal=0.559 F1=0.495 AUC=0.664 VA=0.545 | vídeos vistos=0.00 sujeitos vistos=0.00 (1s)
+[sujeito] seed 42 RandomForest  fold 2: BSA=0.711 bal=0.715 F1=0.723 AUC=0.858 VA=0.667 | vídeos vistos=0.00 sujeitos vistos=0.00 (1s)
+[sujeito] seed 42 RandomForest  fold 3: BSA=0.536 bal=0.572 F1=0.536 AUC=0.749 VA=0.472 | vídeos vistos=0.00 sujeitos vistos=0.00 (1s)
+[sujeito] seed 42 RandomForest  fold 4: BSA=0.491 bal=0.510 F1=0.516 AUC=0.682 VA=0.583 | vídeos vistos=0.00 sujeitos vistos=0.00 (1s)
+[sujeito] seed 42 RandomForest  fold 5: BSA=0.500 bal=0.515 F1=0.521 AUC=0.716 VA=0.515 | vídeos vistos=0.00 sujeitos vistos=0.00 (1s)
+[sujeito] seed 42 LSTM          fold 1: BSA=0.326 bal=0.380 F1=0.361 AUC=0.497 VA=0.333 | vídeos vistos=0.00 sujeitos vistos=0.00 (18s)
+[sujeito] seed 42 LSTM          fold 2: BSA=0.540 bal=0.561 F1=0.538 AUC=0.741 VA=0.444 | vídeos vistos=0.00 sujeitos vistos=0.00 (17s)
+[sujeito] seed 42 LSTM          fold 3: BSA=0.478 bal=0.518 F1=0.473 AUC=0.713 VA=0.528 | vídeos vistos=0.00 sujeitos vistos=0.00 (19s)
+[sujeito] seed 42 LSTM          fold 4: BSA=0.568 bal=0.542 F1=0.550 AUC=0.723 VA=0.750 | vídeos vistos=0.00 sujeitos vistos=0.00 (18s)
+[sujeito] seed 42 LSTM          fold 5: BSA=0.547 bal=0.546 F1=0.562 AUC=0.705 VA=0.485 | vídeos vistos=0.00 sujeitos vistos=0.00 (18s)
+
+protocol        model metric     mean      std dispersao
+  janela         LSTM    bsa 0.873071 0.006595   3 seeds
+  janela         LSTM     va      NaN      NaN   3 seeds
+  janela RandomForest    bsa 0.995189 0.000425   3 seeds
+  janela RandomForest     va      NaN      NaN   3 seeds
+ sujeito         LSTM    bsa 0.491847 0.088134   5 folds
+ sujeito         LSTM     va 0.508081 0.137141   5 folds
+ sujeito RandomForest    bsa 0.541749 0.087050   5 folds
+ sujeito RandomForest     va 0.556566 0.066017   5 folds
+   video         LSTM    bsa 0.451274 0.005794   3 seeds
+   video         LSTM     va 0.461793 0.022831   3 seeds
+   video RandomForest    bsa 0.471957 0.013912   3 seeds
+   video RandomForest     va 0.528347 0.012500   3 seeds
+
+Resultados em /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/exp2_leakage.csv, /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/exp2_leakage_plot.csv, /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/exp2_leakage.md; log /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/logs/exp2_20260920-183128.log

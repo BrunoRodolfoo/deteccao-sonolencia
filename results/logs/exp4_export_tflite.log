@@ -1,0 +1,71 @@
+[18:46:36] modelo /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/models/exp3/eyenet_mrl_final.keras: 62865 parâmetros
+Saved artifact at '/var/folders/pw/0jskcldx3ldcwkqw6smws7700000gn/T/tmpw7n9f869/sm'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 48, 48, 1), dtype=tf.float32, name='olho_48x48')
+Output Type:
+  TensorSpec(shape=(None, 1), dtype=tf.float32, name=None)
+Captures:
+  5023195088: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023196048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023195472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023196240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023196624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023194704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023197200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023197008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023196816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023197776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023197968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023198736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023199696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023199312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023198544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023200080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023200272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023198928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023199888: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023200848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023194512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023199504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023200464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  5023201808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+fully_quantize: 0, inference_type: 6, input_inference_type: UINT8, output_inference_type: UINT8
+[18:46:38] int8 convertido com E/S uint8
+[18:46:38] tamanhos KB: {'fp32': 248.19140625, 'int8': 72.078125, 'keras': 818.5107421875}
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[18:46:41] MRL_val_subjects fp32: 15123 imagens em 1s
+[18:46:42] MRL_val_subjects int8: 15123 imagens em 1s
+[18:46:42] MRL_val_subjects: keras acc=0.9852 fp32 acc=0.9852 int8 acc=0.9847 (n=15123)
+[18:46:56] MRL_completo fp32: 84898 imagens em 8s
+[18:47:02] MRL_completo int8: 84898 imagens em 7s
+[18:47:02] MRL_completo: keras acc=0.9850 fp32 acc=0.9850 int8 acc=0.9847 (n=84898)
+[18:47:03] CEW_patch fp32: 4846 imagens em 0s
+[18:47:04] CEW_patch int8: 4846 imagens em 0s
+[18:47:04] CEW_patch: keras acc=0.8566 fp32 acc=0.8566 int8 acc=0.8556 (n=4846)
+[18:47:05] CEW_crop fp32: 4846 imagens em 0s
+[18:47:05] CEW_crop int8: 4846 imagens em 0s
+[18:47:05] CEW_crop: keras acc=0.8999 fp32 acc=0.8999 int8 acc=0.8968 (n=4846)
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+[18:47:05] latência fp32 1 thread(s): p50=0.067 ms p95=0.070 ms
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+[18:47:05] latência fp32 4 thread(s): p50=0.082 ms p95=0.099 ms
+[18:47:05] latência int8 1 thread(s): p50=0.060 ms p95=0.064 ms
+[18:47:05] latência int8 4 thread(s): p50=0.070 ms p95=0.087 ms
+[18:47:05] contrato salvo em models/eye_state.json

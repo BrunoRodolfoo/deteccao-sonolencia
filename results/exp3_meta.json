@@ -1,0 +1,29 @@
+{
+  "final_model": {
+    "path": "models/exp3/eyenet_mrl_final.keras",
+    "params": 62865,
+    "val_subjects": [
+      13,
+      14,
+      15,
+      25
+    ],
+    "epochs_run": 12,
+    "best_epoch": 11,
+    "train_s": 109.26788973808289,
+    "val_acc": 0.9844124913215637,
+    "n_train": 25002,
+    "n_val": 2502
+  },
+  "args": {
+    "epochs": 12,
+    "batch": 128,
+    "max_train": 25000,
+    "threads": 8,
+    "protocols": "A,B,C,D",
+    "mobilenet": false,
+    "smoke": false,
+    "tag": ""
+  },
+  "eyenet_params": 62865
+}

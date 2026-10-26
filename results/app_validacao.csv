@@ -1,0 +1,1169 @@
+versao_app,video,base,descricao,metrica,valor,observacao
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fps_medio,59.9719,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),excecoes_js,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),calibracao_fim_s_video,10.2131,segundos do trecho
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),base_piscadas_ms,83.25,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),sinc_deslocamento_s,0,"r=0.975; metades 0.000 e -0.033 s"
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),sinc_correlacao,0.9748,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),piscadas_por_min,31.4315,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),piscada_duracao_mediana_ms,50.263,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_tempo_olho_fechado,18.9884,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),segundos_avaliados,169.8933,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),taxa_rosto,0.9998,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_tempo_alerta,25.858,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_tempo_atencao,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_tempo_sonolento,74.142,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),s_tempo_sonolento,125.9623,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),s_tempo_atencao,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),nivel_max,100,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),nivel_medio,74.6678,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),primeiro_vermelho_s_apos_calib,43.9324,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_bocejo,2,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_fechamento,2,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_microssono,12,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_queda,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_cabeceio,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_cabeca_baixa,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_alarme,1,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_aviso,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),alarmes_por_hora,21.1898,extrapolação linear da janela
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),oculos,1,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_anotados,4,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_anotados_sem_mao,2,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_anotados_com_mao,2,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_detectados,2,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_vp_anotados,2,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_vp_sem_mao,2,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_vp_com_mao,0,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_vp_detectados,2,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_revocacao,0.5,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_precisao,1,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_anotados,18,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_detectados,14,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_vp_anotados,14,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_vp_detectados,14,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_revocacao,0.7778,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_precisao,1,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_anotados,13,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_detectados,12,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_vp_anotados,12,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_vp_detectados,12,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_revocacao,0.9231,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_precisao,1,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_duracao_app_menos_anot_mediana_s,-0.3207,14 pares
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),microssonos_sobre_fech_anotado_menor_1s,0,de 12 microssonos do app
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),olhos_quadro_sensibilidade,0.7936,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),olhos_quadro_especificidade,1,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),olhos_quadro_kappa,0.8468,
+2.0 (antes do ajuste),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),olhos_quadro_n,6849,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fps_medio,59.9593,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,excecoes_js,0,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,calibracao_fim_s_video,9.9719,segundos do trecho
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,base_piscadas_ms,108.4,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,sinc_deslocamento_s,-0.0333,"r=0.991; metades -0.033 e -0.033 s"
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,sinc_correlacao,0.991,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,piscadas_por_min,16.0799,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,piscada_duracao_mediana_ms,99.9905,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_tempo_olho_fechado,16.8636,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,segundos_avaliados,171.6428,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,taxa_rosto,0.9999,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_tempo_alerta,17.011,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_tempo_atencao,4.1756,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_tempo_sonolento,78.8134,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,s_tempo_sonolento,135.2776,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,s_tempo_atencao,7.167,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,nivel_max,100,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,nivel_medio,79.689,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,primeiro_vermelho_s_apos_calib,36.3657,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_bocejo,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_fechamento,6,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_microssono,15,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_queda,0,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_cabeceio,0,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_cabeca_baixa,0,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_alarme,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_aviso,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,alarmes_por_hora,20.9738,extrapolação linear da janela
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,oculos,0,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_anotados,9,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_anotados_sem_mao,5,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_anotados_com_mao,4,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_detectados,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_vp_anotados,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_vp_sem_mao,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_vp_com_mao,0,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_vp_detectados,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_revocacao,0.1111,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_precisao,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_anotados,18,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_detectados,21,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_vp_anotados,18,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_vp_detectados,18,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_revocacao,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_precisao,0.8571,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_anotados,6,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_detectados,15,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_vp_anotados,6,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_vp_detectados,6,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_revocacao,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_precisao,0.4,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_duracao_app_menos_anot_mediana_s,0.2581,18 pares
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,microssonos_sobre_fech_anotado_menor_1s,9,de 15 microssonos do app
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,olhos_quadro_sensibilidade,0.9892,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,olhos_quadro_especificidade,1,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,olhos_quadro_kappa,0.9937,
+2.0 (antes do ajuste),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,olhos_quadro_n,8428,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fps_medio,59.9743,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,excecoes_js,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,calibracao_fim_s_video,11.3942,segundos do trecho
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,base_piscadas_ms,91.95,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,sinc_deslocamento_s,-0.0333,"r=0.987; metades 0.000 e -0.033 s"
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,sinc_correlacao,0.9866,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,piscadas_por_min,17.0542,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,piscada_duracao_mediana_ms,83.684,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_tempo_olho_fechado,12.8625,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,segundos_avaliados,175.9099,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,taxa_rosto,1,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_tempo_alerta,27.5034,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_tempo_atencao,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_tempo_sonolento,72.4966,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,s_tempo_sonolento,127.5287,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,s_tempo_atencao,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,nivel_max,100,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,nivel_medio,60.7287,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,primeiro_vermelho_s_apos_calib,48.3813,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_bocejo,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_fechamento,1,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_microssono,7,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_queda,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_cabeceio,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_cabeca_baixa,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_alarme,1,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_aviso,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,alarmes_por_hora,20.465,extrapolação linear da janela
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,oculos,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_anotados,5,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_anotados_sem_mao,3,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_anotados_com_mao,2,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_detectados,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_vp_anotados,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_vp_sem_mao,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_vp_com_mao,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_vp_detectados,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_revocacao,0,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_precisao,NaN,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_anotados,7,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_detectados,8,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_vp_anotados,7,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_vp_detectados,7,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_revocacao,1,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_precisao,0.875,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_anotados,7,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_detectados,7,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_vp_anotados,7,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_vp_detectados,7,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_revocacao,1,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_precisao,1,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_duracao_app_menos_anot_mediana_s,0.1817,7 pares
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,microssonos_sobre_fech_anotado_menor_1s,0,de 7 microssonos do app
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,olhos_quadro_sensibilidade,0.9979,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,olhos_quadro_especificidade,1,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,olhos_quadro_kappa,0.9988,
+2.0 (antes do ajuste),dmd_gC14_s5,DMD s5 (encenada),gC_14,olhos_quadro_n,8635,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fps_medio,59.9755,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),excecoes_js,0,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),calibracao_fim_s_video,10.0143,segundos do trecho
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),base_piscadas_ms,149.4,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),sinc_deslocamento_s,-0.0333,"r=0.966; metades -0.033 e -0.033 s"
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),sinc_correlacao,0.9659,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),piscadas_por_min,69.2736,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),piscada_duracao_mediana_ms,115.922,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_tempo_olho_fechado,21.3165,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_quadros_lstm_mais10,40.6785,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),segundos_avaliados,171.494,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),taxa_rosto,0.9969,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_tempo_alerta,20.8459,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_tempo_atencao,0.2618,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_tempo_sonolento,78.8923,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),s_tempo_sonolento,135.2956,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),s_tempo_atencao,0.4489,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),nivel_max,100,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),nivel_medio,81.866,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),primeiro_vermelho_s_apos_calib,36.1993,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_bocejo,3,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_fechamento,3,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_microssono,8,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_queda,1,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_cabeceio,1,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_cabeca_baixa,0,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_alarme,1,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_aviso,1,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),alarmes_por_hora,20.992,extrapolação linear da janela
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),oculos,0,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_anotados,6,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_anotados_sem_mao,4,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_anotados_com_mao,2,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_detectados,3,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_vp_anotados,3,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_vp_sem_mao,3,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_vp_com_mao,0,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_vp_detectados,3,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_revocacao,0.5,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_precisao,1,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_anotados,11,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_detectados,11,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_vp_anotados,9,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_vp_detectados,9,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_revocacao,0.8182,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_precisao,0.8182,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_anotados,8,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_detectados,8,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_vp_anotados,6,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_vp_detectados,6,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_revocacao,0.75,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_precisao,0.75,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_duracao_app_menos_anot_mediana_s,0.1062,10 pares
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),microssonos_sobre_fech_anotado_menor_1s,2,de 8 microssonos do app
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),olhos_quadro_sensibilidade,0.7133,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),olhos_quadro_especificidade,0.9912,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),olhos_quadro_kappa,0.7802,
+2.0 (antes do ajuste),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),olhos_quadro_n,6928,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",fps_medio,59.9366,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",excecoes_js,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",calibracao_fim_s_video,9.952,segundos do trecho
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",base_piscadas_ms,133.65,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",piscadas_por_min,13.9993,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",piscada_duracao_mediana_ms,124.9125,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_tempo_olho_fechado,3.1313,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",nivel_max_sem_lstm,0,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",segundos_avaliados,180.0095,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",taxa_rosto,1,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_tempo_alerta,100,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_tempo_atencao,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",s_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",s_tempo_atencao,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",nivel_max,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",nivel_medio,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_bocejo,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_fechamento,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_microssono,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_queda,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_cabeceio,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_cabeca_baixa,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_alarme,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_aviso,0,
+2.0 (antes do ajuste),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",alarmes_por_hora,0,extrapolação linear da janela
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",fps_medio,59.9754,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",excecoes_js,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",calibracao_fim_s_video,9.9735,segundos do trecho
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",base_piscadas_ms,91.5,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",piscadas_por_min,74.6629,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",piscada_duracao_mediana_ms,99.9865,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_tempo_olho_fechado,11.9218,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_quadros_lstm_mais10,50.3102,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",nivel_max_sem_lstm,36,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",segundos_avaliados,180.0091,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",taxa_rosto,1,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_tempo_alerta,72.8353,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_tempo_atencao,27.1647,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",s_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",s_tempo_atencao,48.8989,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",nivel_max,46.3363,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",nivel_medio,23.2727,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_bocejo,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_fechamento,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_microssono,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_queda,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_cabeceio,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_cabeca_baixa,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_alarme,0,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_aviso,3,
+2.0 (antes do ajuste),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",alarmes_por_hora,0,extrapolação linear da janela
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",fps_medio,59.9645,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",excecoes_js,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",calibracao_fim_s_video,9.9764,segundos do trecho
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",base_piscadas_ms,141.65,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",piscadas_por_min,9.6662,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",piscada_duracao_mediana_ms,133.313,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_tempo_olho_fechado,1.9901,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",nivel_max_sem_lstm,0,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",segundos_avaliados,180.0085,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",taxa_rosto,1,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_tempo_alerta,100,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_tempo_atencao,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",s_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",s_tempo_atencao,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",nivel_max,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",nivel_medio,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_bocejo,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_fechamento,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_microssono,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_queda,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_cabeceio,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_cabeca_baixa,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_alarme,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_aviso,0,
+2.0 (antes do ajuste),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",alarmes_por_hora,0,extrapolação linear da janela
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",fps_medio,59.9739,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",excecoes_js,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",calibracao_fim_s_video,9.9675,segundos do trecho
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",base_piscadas_ms,133.8,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",piscadas_por_min,13.3326,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",piscada_duracao_mediana_ms,67.0775,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_tempo_olho_fechado,2.8055,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",nivel_max_sem_lstm,25,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",segundos_avaliados,180.0095,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",taxa_rosto,1,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_tempo_alerta,100,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_tempo_atencao,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",s_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",s_tempo_atencao,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",nivel_max,25,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",nivel_medio,10.4521,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_bocejo,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_fechamento,2,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_microssono,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_queda,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_cabeceio,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_cabeca_baixa,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_alarme,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_aviso,0,
+2.0 (antes do ajuste),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",alarmes_por_hora,0,extrapolação linear da janela
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",fps_medio,59.9741,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",excecoes_js,0,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",calibracao_fim_s_video,9.9736,segundos do trecho
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",base_piscadas_ms,133.65,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",piscadas_por_min,28.6653,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",piscada_duracao_mediana_ms,150.5135,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_tempo_olho_fechado,43.2319,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",segundos_avaliados,180.0087,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",taxa_rosto,1,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_tempo_alerta,6.4528,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_tempo_atencao,0.0283,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_tempo_sonolento,93.519,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",s_tempo_sonolento,168.3422,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",s_tempo_atencao,0.0509,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",nivel_max,100,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",nivel_medio,92.3651,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",primeiro_vermelho_s_apos_calib,11.6652,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_bocejo,1,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_fechamento,9,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_microssono,10,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_queda,0,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_cabeceio,0,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_cabeca_baixa,0,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_alarme,1,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_aviso,1,
+2.0 (antes do ajuste),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",alarmes_por_hora,19.999,extrapolação linear da janela
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",fps_medio,59.979,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",excecoes_js,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",calibracao_fim_s_video,9.9589,segundos do trecho
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",base_piscadas_ms,175.05,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",piscadas_por_min,9.9995,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",piscada_duracao_mediana_ms,174.9905,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_tempo_olho_fechado,2.8884,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",nivel_max_sem_lstm,0,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",segundos_avaliados,180.0091,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",taxa_rosto,1,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_tempo_alerta,100,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_tempo_atencao,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",s_tempo_sonolento,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",s_tempo_atencao,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",nivel_max,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",nivel_medio,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_bocejo,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_fechamento,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_microssono,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_queda,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_cabeceio,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_cabeca_baixa,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_alarme,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_aviso,0,
+2.0 (antes do ajuste),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",alarmes_por_hora,0,extrapolação linear da janela
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,fps_medio,59.931,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,excecoes_js,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,calibracao_fim_s_video,10.4646,segundos do trecho
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,base_piscadas_ms,100.85,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,piscadas_por_min,56.2714,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,piscada_duracao_mediana_ms,100.7255,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_tempo_olho_fechado,11.0423,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_quadros_lstm_mais10,4.0449,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,nivel_max_sem_lstm,60,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,segundos_avaliados,49.048,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,taxa_rosto,0.9915,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_tempo_alerta,66.0891,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_tempo_atencao,33.9109,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_tempo_sonolento,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,s_tempo_sonolento,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,s_tempo_atencao,16.6326,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,nivel_max,69.9731,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,nivel_medio,24.2544,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_bocejo,3,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_fechamento,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_microssono,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_queda,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_cabeceio,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_cabeca_baixa,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_alarme,0,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_aviso,1,
+2.0 (antes do ajuste),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,alarmes_por_hora,0,extrapolação linear da janela
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,fps_medio,59.8991,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,excecoes_js,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,calibracao_fim_s_video,10.2688,segundos do trecho
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,base_piscadas_ms,100,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,piscadas_por_min,52.1337,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,piscada_duracao_mediana_ms,82.9425,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_tempo_olho_fechado,11.3832,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,nivel_max_sem_lstm,88,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,segundos_avaliados,41.432,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,taxa_rosto,1,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_tempo_alerta,32.7418,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_tempo_atencao,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_tempo_sonolento,67.2582,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,s_tempo_sonolento,27.8664,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,s_tempo_atencao,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,nivel_max,88.3508,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,nivel_medio,53.2487,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,primeiro_vermelho_s_apos_calib,13.5663,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_bocejo,3,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_fechamento,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_microssono,1,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_queda,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_cabeceio,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_cabeca_baixa,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_alarme,1,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_aviso,0,
+2.0 (antes do ajuste),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,alarmes_por_hora,86.8894,extrapolação linear da janela
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,fps_medio,59.9668,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,excecoes_js,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,calibracao_fim_s_video,9.9637,segundos do trecho
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,base_piscadas_ms,141.75,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,piscadas_por_min,25.3069,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,piscada_duracao_mediana_ms,74.775,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_tempo_olho_fechado,5.3552,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,nivel_max_sem_lstm,48,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,segundos_avaliados,118.5448,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,taxa_rosto,1,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_tempo_alerta,64.9654,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_tempo_atencao,35.0346,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_tempo_sonolento,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,s_tempo_sonolento,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,s_tempo_atencao,41.5317,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,nivel_max,47.7709,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,nivel_medio,25.2556,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_bocejo,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_fechamento,2,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_microssono,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_queda,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_cabeceio,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_cabeca_baixa,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_alarme,0,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_aviso,1,
+2.0 (antes do ajuste),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,alarmes_por_hora,0,extrapolação linear da janela
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",fps_medio,59.9337,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",excecoes_js,0,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",calibracao_fim_s_video,11.3799,segundos do trecho
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",base_piscadas_ms,NaN,não completou 20 piscadas
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",sinc_deslocamento_s,0,"r=0.985; metades 0.000 e 0.000 s"
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",sinc_correlacao,0.9852,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",piscadas_por_min,5.2454,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",piscada_duracao_mediana_ms,83.83,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_tempo_olho_fechado,9.135,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_quadros_lstm_mais10,0,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",segundos_avaliados,68.6314,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",taxa_rosto,0.9993,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_tempo_alerta,70.544,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_tempo_atencao,0,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_tempo_sonolento,29.456,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",s_tempo_sonolento,20.2161,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",s_tempo_atencao,0,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",nivel_max,100,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",nivel_medio,26.7128,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",primeiro_vermelho_s_apos_calib,48.4153,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_bocejo,0,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_fechamento,0,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_microssono,3,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_queda,2,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_cabeceio,0,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_cabeca_baixa,1,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_alarme,1,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_aviso,0,
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",alarmes_por_hora,52.4541,extrapolação linear da janela
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_dpitch_max,7.4309,pitch (topo perto) 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_absdroll_max,12.8909,pitch (topo perto) 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_absdyaw_max,45.6906,pitch (topo perto) 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_eventos_cabeca,nenhum,"pitch (topo perto) 45°; olhos fechados na anotação: não"
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_vermelho_forcado,0,pitch (topo perto) 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_dpitch_max,0.5147,pitch (topo longe) 40°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_absdroll_max,6.5558,pitch (topo longe) 40°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_absdyaw_max,6.9216,pitch (topo longe) 40°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_eventos_cabeca,nenhum,"pitch (topo longe) 40°; olhos fechados na anotação: não"
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_vermelho_forcado,0,pitch (topo longe) 40°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_dpitch_max,1.0608,achatamento 40°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_absdroll_max,10.847,achatamento 40°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_absdyaw_max,10.4874,achatamento 40°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_eventos_cabeca,nenhum,"achatamento 40°; olhos fechados na anotação: não"
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_vermelho_forcado,0,achatamento 40°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_dpitch_max,0.4038,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_absdroll_max,43.3902,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_absdyaw_max,5.1042,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_eventos_cabeca,cabeca_baixa,"roll 45°; olhos fechados na anotação: não"
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_vermelho_forcado,0,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_dpitch_max,0.1348,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_absdroll_max,40.0531,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_absdyaw_max,3.9855,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_eventos_cabeca,queda,"roll 45°; olhos fechados na anotação: sim"
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_vermelho_forcado,1,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_dpitch_max,1.0485,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_absdroll_max,46.1298,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_absdyaw_max,4.0511,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_eventos_cabeca,queda,"roll 45°; olhos fechados na anotação: sim"
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_vermelho_forcado,1,roll 45°
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",eventos_cabeca_fora_das_janelas,0,cabeça parada (sem transformação) no mesmo clipe
+2.0 (antes do ajuste),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",controle_sem_transformacao_eventos_cabeca_0_80s,0,execução dmd_gC14_s5
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fps_medio,59.9754,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),excecoes_js,0,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),calibracao_fim_s_video,10.1883,segundos do trecho
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),base_piscadas_ms,82.25,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),sinc_deslocamento_s,0,"r=0.974; metades -0.033 e 0.000 s"
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),sinc_correlacao,0.9738,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),piscadas_por_min,28.9537,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),piscada_duracao_mediana_ms,66.172,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_tempo_olho_fechado,18.9083,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),perclos_p95_pct,27.1055,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),perclos_max_pct,28.8299,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),perclos_com_piscadas_max_pct,32.7082,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),segundos_avaliados,169.9265,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),taxa_rosto,0.9997,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_tempo_alerta,25.8727,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_tempo_atencao,1.9331,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),pct_tempo_sonolento,72.1942,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),s_tempo_sonolento,122.6771,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),s_tempo_atencao,3.2849,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),nivel_max,100,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),nivel_medio,73.6399,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),primeiro_vermelho_s_apos_calib,43.9633,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_bocejo,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_fechamento,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_microssono,12,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_queda,0,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_cabeceio,0,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_cabeca_baixa,0,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_alarme,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),n_aviso,0,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),alarmes_por_hora,42.3713,extrapolação linear da janela
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),oculos,1,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_anotados,4,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_anotados_sem_mao,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_anotados_com_mao,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_detectados,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_vp_anotados,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_vp_sem_mao,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_vp_com_mao,0,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_vp_detectados,2,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_revocacao,0.5,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),bocejos_precisao,1,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_anotados,18,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_detectados,14,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_vp_anotados,14,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_vp_detectados,14,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_revocacao,0.7778,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_05s_precisao,1,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_anotados,13,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_detectados,12,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_vp_anotados,12,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_vp_detectados,12,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_revocacao,0.9231,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_1s_precisao,1,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),fech_duracao_app_menos_anot_mediana_s,-0.3205,14 pares
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),microssonos_sobre_fech_anotado_menor_1s,0,de 12 microssonos do app
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),olhos_quadro_sensibilidade,0.795,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),olhos_quadro_especificidade,1,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),olhos_quadro_kappa,0.848,
+2.1 (ajuste final),dmd_gE29_s5,DMD s5 (encenada),gE_29 (óculos),olhos_quadro_n,6851,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fps_medio,59.9815,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,excecoes_js,0,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,calibracao_fim_s_video,9.9701,segundos do trecho
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,base_piscadas_ms,108.2,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,sinc_deslocamento_s,-0.0333,"r=0.993; metades -0.033 e -0.033 s"
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,sinc_correlacao,0.9927,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,piscadas_por_min,16.4295,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,piscada_duracao_mediana_ms,99.988,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_tempo_olho_fechado,16.9487,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,perclos_p95_pct,21.8568,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,perclos_max_pct,23.8576,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,perclos_com_piscadas_max_pct,27.2249,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,segundos_avaliados,171.6427,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,taxa_rosto,0.9999,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_tempo_alerta,17.0114,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_tempo_atencao,4.1848,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,pct_tempo_sonolento,78.8037,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,s_tempo_sonolento,135.2609,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,s_tempo_atencao,7.183,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,nivel_max,100,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,nivel_medio,78.7365,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,primeiro_vermelho_s_apos_calib,36.382,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_bocejo,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_fechamento,5,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_microssono,15,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_queda,0,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_cabeceio,0,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_cabeca_baixa,0,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_alarme,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,n_aviso,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,alarmes_por_hora,20.9738,extrapolação linear da janela
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,oculos,0,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_anotados,9,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_anotados_sem_mao,5,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_anotados_com_mao,4,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_detectados,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_vp_anotados,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_vp_sem_mao,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_vp_com_mao,0,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_vp_detectados,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_revocacao,0.1111,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,bocejos_precisao,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_anotados,18,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_detectados,20,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_vp_anotados,18,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_vp_detectados,18,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_revocacao,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_05s_precisao,0.9,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_anotados,6,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_detectados,15,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_vp_anotados,6,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_vp_detectados,6,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_revocacao,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_1s_precisao,0.4,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,fech_duracao_app_menos_anot_mediana_s,0.2585,18 pares
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,microssonos_sobre_fech_anotado_menor_1s,9,de 15 microssonos do app
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,olhos_quadro_sensibilidade,0.991,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,olhos_quadro_especificidade,1,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,olhos_quadro_kappa,0.9948,
+2.1 (ajuste final),dmd_gZ33_s5,DMD s5 (encenada),gZ_33,olhos_quadro_n,8429,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fps_medio,59.9829,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,excecoes_js,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,calibracao_fim_s_video,11.3853,segundos do trecho
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,base_piscadas_ms,100.05,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,sinc_deslocamento_s,-0.0333,"r=0.988; metades -0.033 e -0.033 s"
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,sinc_correlacao,0.9882,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,piscadas_por_min,16.7115,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,piscada_duracao_mediana_ms,82.892,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_tempo_olho_fechado,12.8156,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,perclos_p95_pct,15.3055,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,perclos_max_pct,15.3062,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,perclos_com_piscadas_max_pct,20.2126,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,segundos_avaliados,175.9266,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,taxa_rosto,0.9999,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_tempo_alerta,27.5104,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_tempo_atencao,35.8284,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,pct_tempo_sonolento,36.6611,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,s_tempo_sonolento,64.4967,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,s_tempo_atencao,63.0317,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,nivel_max,100,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,nivel_medio,53.1776,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,primeiro_vermelho_s_apos_calib,48.3988,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_bocejo,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_fechamento,1,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_microssono,7,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_queda,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_cabeceio,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_cabeca_baixa,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_alarme,6,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,n_aviso,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,alarmes_por_hora,122.7785,extrapolação linear da janela
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,oculos,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_anotados,5,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_anotados_sem_mao,3,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_anotados_com_mao,2,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_detectados,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_vp_anotados,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_vp_sem_mao,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_vp_com_mao,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_vp_detectados,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_revocacao,0,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,bocejos_precisao,NaN,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_anotados,7,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_detectados,8,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_vp_anotados,7,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_vp_detectados,7,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_revocacao,1,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_05s_precisao,0.875,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_anotados,7,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_detectados,7,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_vp_anotados,7,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_vp_detectados,7,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_revocacao,1,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_1s_precisao,1,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,fech_duracao_app_menos_anot_mediana_s,0.1811,7 pares
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,microssonos_sobre_fech_anotado_menor_1s,0,de 7 microssonos do app
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,olhos_quadro_sensibilidade,0.999,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,olhos_quadro_especificidade,1,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,olhos_quadro_kappa,0.9994,
+2.1 (ajuste final),dmd_gC14_s5,DMD s5 (encenada),gC_14,olhos_quadro_n,8636,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fps_medio,59.9769,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),excecoes_js,0,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),calibracao_fim_s_video,9.9966,segundos do trecho
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),base_piscadas_ms,150.05,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),sinc_deslocamento_s,-0.0333,"r=0.961; metades -0.033 e -0.033 s"
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),sinc_correlacao,0.9614,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),piscadas_por_min,69.9674,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),piscada_duracao_mediana_ms,115.302,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_tempo_olho_fechado,21.4736,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),perclos_p95_pct,13.0493,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),perclos_max_pct,14.2995,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),perclos_com_piscadas_max_pct,30.4768,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_quadros_lstm_mais10,22.3226,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),segundos_avaliados,171.5084,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),taxa_rosto,0.9968,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_tempo_alerta,20.862,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_tempo_atencao,0.9435,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),pct_tempo_sonolento,78.1945,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),s_tempo_sonolento,134.1102,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),s_tempo_atencao,1.6182,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),nivel_max,100,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),nivel_medio,79.7088,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),primeiro_vermelho_s_apos_calib,36.2168,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_bocejo,3,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_fechamento,3,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_microssono,8,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_queda,1,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_cabeceio,1,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_cabeca_baixa,0,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_alarme,2,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),n_aviso,1,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),alarmes_por_hora,41.9805,extrapolação linear da janela
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),oculos,0,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_anotados,6,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_anotados_sem_mao,4,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_anotados_com_mao,2,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_detectados,3,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_vp_anotados,3,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_vp_sem_mao,3,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_vp_com_mao,0,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_vp_detectados,3,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_revocacao,0.5,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),bocejos_precisao,1,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_anotados,11,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_detectados,11,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_vp_anotados,9,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_vp_detectados,9,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_revocacao,0.8182,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_05s_precisao,0.8182,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_anotados,8,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_detectados,8,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_vp_anotados,6,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_vp_detectados,6,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_revocacao,0.75,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_1s_precisao,0.75,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),fech_duracao_app_menos_anot_mediana_s,0.093,10 pares
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),microssonos_sobre_fech_anotado_menor_1s,2,de 8 microssonos do app
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),olhos_quadro_sensibilidade,0.7157,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),olhos_quadro_especificidade,0.9893,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),olhos_quadro_kappa,0.7767,
+2.1 (ajuste final),dmd_gB7_s5,DMD s5 (encenada),gB_7 (extra: quedas de cabeça reais no motor offline),olhos_quadro_n,6939,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",fps_medio,59.9552,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",excecoes_js,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",calibracao_fim_s_video,9.9768,segundos do trecho
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",base_piscadas_ms,133.35,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",piscadas_por_min,14.3326,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",piscada_duracao_mediana_ms,116.856,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_tempo_olho_fechado,3.1018,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",perclos_p95_pct,0,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",perclos_max_pct,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",perclos_com_piscadas_max_pct,5.3297,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",nivel_max_sem_lstm,0,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",segundos_avaliados,180.0093,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",taxa_rosto,1,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_tempo_alerta,100,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_tempo_atencao,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",pct_tempo_sonolento,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",s_tempo_sonolento,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",s_tempo_atencao,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",nivel_max,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",nivel_medio,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_bocejo,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_fechamento,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_microssono,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_queda,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_cabeceio,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_cabeca_baixa,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_alarme,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",n_aviso,0,
+2.1 (ajuste final),uta_F1_09_v0,UTA-RLDD 0 (alerta),"Fold1/09, vídeo 0",alarmes_por_hora,0,extrapolação linear da janela
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",fps_medio,59.9696,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",excecoes_js,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",calibracao_fim_s_video,9.9656,segundos do trecho
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",base_piscadas_ms,90.95,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",piscadas_por_min,75.996,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",piscada_duracao_mediana_ms,99.9425,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_tempo_olho_fechado,11.9947,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",perclos_p95_pct,0,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",perclos_max_pct,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",perclos_com_piscadas_max_pct,14.4382,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",nivel_max_sem_lstm,1,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",segundos_avaliados,180.0096,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",taxa_rosto,1,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_tempo_alerta,100,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_tempo_atencao,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",pct_tempo_sonolento,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",s_tempo_sonolento,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",s_tempo_atencao,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",nivel_max,0.7806,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",nivel_medio,0.0936,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_bocejo,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_fechamento,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_microssono,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_queda,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_cabeceio,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_cabeca_baixa,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_alarme,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",n_aviso,0,
+2.1 (ajuste final),uta_F3_31_v0,UTA-RLDD 0 (alerta),"Fold3/31, vídeo 0",alarmes_por_hora,0,extrapolação linear da janela
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",fps_medio,59.9807,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",excecoes_js,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",calibracao_fim_s_video,9.9692,segundos do trecho
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",base_piscadas_ms,141.15,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",piscadas_por_min,9.3328,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",piscada_duracao_mediana_ms,133.281,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_tempo_olho_fechado,1.9782,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",perclos_p95_pct,0,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",perclos_max_pct,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",perclos_com_piscadas_max_pct,4.9661,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",nivel_max_sem_lstm,0,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",segundos_avaliados,180.0101,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",taxa_rosto,1,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_tempo_alerta,100,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_tempo_atencao,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",pct_tempo_sonolento,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",s_tempo_sonolento,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",s_tempo_atencao,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",nivel_max,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",nivel_medio,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_bocejo,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_fechamento,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_microssono,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_queda,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_cabeceio,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_cabeca_baixa,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_alarme,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",n_aviso,0,
+2.1 (ajuste final),uta_F5_51_v0,UTA-RLDD 0 (alerta),"Fold5/51, vídeo 0",alarmes_por_hora,0,extrapolação linear da janela
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",fps_medio,59.9816,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",excecoes_js,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",calibracao_fim_s_video,9.9593,segundos do trecho
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",base_piscadas_ms,133.9,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",piscadas_por_min,12.9994,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",piscada_duracao_mediana_ms,67.36,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_tempo_olho_fechado,2.7953,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",perclos_p95_pct,1.1935,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",perclos_max_pct,1.1938,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",perclos_com_piscadas_max_pct,4.2196,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",nivel_max_sem_lstm,25,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",segundos_avaliados,180.0089,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",taxa_rosto,1,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_tempo_alerta,100,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_tempo_atencao,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",pct_tempo_sonolento,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",s_tempo_sonolento,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",s_tempo_atencao,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",nivel_max,25,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",nivel_medio,10.4522,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_bocejo,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_fechamento,2,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_microssono,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_queda,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_cabeceio,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_cabeca_baixa,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_alarme,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",n_aviso,0,
+2.1 (ajuste final),uta_F1_09_v10,UTA-RLDD 10 (sonolento),"Fold1/09, vídeo 10",alarmes_por_hora,0,extrapolação linear da janela
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",fps_medio,59.979,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",excecoes_js,0,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",calibracao_fim_s_video,9.9668,segundos do trecho
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",base_piscadas_ms,133.45,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",piscadas_por_min,28.6652,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",piscada_duracao_mediana_ms,150.711,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_tempo_olho_fechado,43.1181,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",perclos_p95_pct,74.7601,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",perclos_max_pct,75.9541,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",perclos_com_piscadas_max_pct,82.6739,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",segundos_avaliados,180.0091,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",taxa_rosto,1,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_tempo_alerta,6.4438,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_tempo_atencao,0.0371,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",pct_tempo_sonolento,93.5191,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",s_tempo_sonolento,168.3429,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",s_tempo_atencao,0.0668,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",nivel_max,100,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",nivel_medio,88.8187,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",primeiro_vermelho_s_apos_calib,11.6657,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_bocejo,1,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_fechamento,9,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_microssono,10,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_queda,0,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_cabeceio,0,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_cabeca_baixa,0,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_alarme,1,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",n_aviso,1,
+2.1 (ajuste final),uta_F3_31_v10,UTA-RLDD 10 (sonolento),"Fold3/31, vídeo 10",alarmes_por_hora,19.999,extrapolação linear da janela
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",fps_medio,59.9827,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",excecoes_js,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",calibracao_fim_s_video,9.9703,segundos do trecho
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",base_piscadas_ms,182.85,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",piscadas_por_min,9.9995,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",piscada_duracao_mediana_ms,182.603,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_tempo_olho_fechado,2.8973,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",perclos_p95_pct,0,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",perclos_max_pct,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",perclos_com_piscadas_max_pct,4.0028,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",nivel_max_sem_lstm,0,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",segundos_avaliados,180.0088,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",taxa_rosto,1,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_tempo_alerta,100,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_tempo_atencao,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",pct_tempo_sonolento,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",s_tempo_sonolento,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",s_tempo_atencao,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",nivel_max,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",nivel_medio,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_bocejo,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_fechamento,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_microssono,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_queda,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_cabeceio,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_cabeca_baixa,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_alarme,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",n_aviso,0,
+2.1 (ajuste final),uta_F5_51_v10,UTA-RLDD 10 (sonolento),"Fold5/51, vídeo 10",alarmes_por_hora,0,extrapolação linear da janela
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,fps_medio,59.9356,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,excecoes_js,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,calibracao_fim_s_video,10.4736,segundos do trecho
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,base_piscadas_ms,116.6,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,piscadas_por_min,59.9634,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,piscada_duracao_mediana_ms,100.534,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_tempo_olho_fechado,10.6796,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,perclos_p95_pct,NaN,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,perclos_max_pct,NaN,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_quadros_lstm_mais10,4.0122,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,nivel_max_sem_lstm,50,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,segundos_avaliados,49.0299,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,taxa_rosto,0.9918,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_tempo_alerta,66.1134,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_tempo_atencao,33.8866,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,pct_tempo_sonolento,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,s_tempo_sonolento,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,s_tempo_atencao,16.6146,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,nivel_max,60,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,nivel_medio,22.5663,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_bocejo,3,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_fechamento,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_microssono,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_queda,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_cabeceio,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_cabeca_baixa,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_alarme,0,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,n_aviso,1,
+2.1 (ajuste final),nity_bocejo_F_P1042778,NITYMED bocejo (noite),Yawning/Female P1042778,alarmes_por_hora,0,extrapolação linear da janela
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,fps_medio,59.8995,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,excecoes_js,0,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,calibracao_fim_s_video,10.2562,segundos do trecho
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,base_piscadas_ms,100,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,piscadas_por_min,52.1117,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,piscada_duracao_mediana_ms,75.7125,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_tempo_olho_fechado,11.1497,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,perclos_p95_pct,NaN,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,perclos_max_pct,NaN,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,nivel_max_sem_lstm,72,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,segundos_avaliados,41.4494,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,taxa_rosto,1,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_tempo_alerta,32.7687,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_tempo_atencao,23.8852,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,pct_tempo_sonolento,43.3461,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,s_tempo_sonolento,17.9667,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,s_tempo_atencao,9.9003,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,nivel_max,75,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,nivel_medio,44.7677,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,primeiro_vermelho_s_apos_calib,13.5813,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_bocejo,3,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_fechamento,0,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_microssono,1,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_queda,0,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_cabeceio,0,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_cabeca_baixa,0,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_alarme,2,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,n_aviso,0,
+2.1 (ajuste final),nity_bocejo_M_P1042760,NITYMED bocejo (noite),Yawning/Male P1042760,alarmes_por_hora,173.7058,extrapolação linear da janela
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,fps_medio,59.9659,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,excecoes_js,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,calibracao_fim_s_video,9.9522,segundos do trecho
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,base_piscadas_ms,157.75,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,piscadas_por_min,23.7851,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,piscada_duracao_mediana_ms,83.335,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_tempo_olho_fechado,5.2035,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,perclos_p95_pct,1.417,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,perclos_max_pct,1.4173,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,perclos_com_piscadas_max_pct,8.7898,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,nivel_max_sem_lstm,25,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,segundos_avaliados,118.5618,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,taxa_rosto,0.9999,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_tempo_alerta,100,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_tempo_atencao,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,pct_tempo_sonolento,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,s_tempo_sonolento,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,s_tempo_atencao,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,nivel_max,25,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,nivel_medio,12.0756,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,primeiro_vermelho_s_apos_calib,NaN,nunca ficou vermelho
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_bocejo,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_fechamento,1,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_microssono,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_queda,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_cabeceio,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_cabeca_baixa,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_alarme,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,n_aviso,0,
+2.1 (ajuste final),nity_microssono_M_P1042751,NITYMED microssono (noite),Microsleep/Male P1042751,alarmes_por_hora,0,extrapolação linear da janela
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",fps_medio,59.9617,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",excecoes_js,0,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",silencio_ok,1,--mute-audio + ?volume=0 + ganho 0 conferido
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",calibracao_fim_s_video,11.3887,segundos do trecho
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",base_piscadas_ms,NaN,não completou 20 piscadas
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",sinc_deslocamento_s,0,"r=0.983; metades 0.000 e 0.000 s"
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",sinc_correlacao,0.9832,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",piscadas_por_min,6.1212,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",piscada_duracao_mediana_ms,65.222,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_tempo_olho_fechado,9.128,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",perclos_p95_pct,9.1066,PERCLOS do app após 60 s de observação
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",perclos_max_pct,9.1066,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",perclos_com_piscadas_max_pct,10.436,"informativo: o PERCLOS antigo, com as piscadas"
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_quadros_lstm_mais10,0,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",nivel_max_sem_lstm,100,soma dos outros sinais (limitada a 100)
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",segundos_avaliados,68.6144,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",taxa_rosto,0.9995,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_tempo_alerta,70.5375,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_tempo_atencao,1.6514,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pct_tempo_sonolento,27.8111,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",s_tempo_sonolento,19.0824,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",s_tempo_atencao,1.1331,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",nivel_max,100,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",nivel_medio,25.1067,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",primeiro_vermelho_s_apos_calib,48.4,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_bocejo,0,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_fechamento,0,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_microssono,3,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_queda,2,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_cabeceio,0,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_cabeca_baixa,1,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_alarme,2,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",n_aviso,0,
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",alarmes_por_hora,104.9342,extrapolação linear da janela
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_dpitch_max,7.2026,pitch (topo perto) 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_absdroll_max,12.9334,pitch (topo perto) 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_absdyaw_max,45.1229,pitch (topo perto) 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_eventos_cabeca,nenhum,"pitch (topo perto) 45°; olhos fechados na anotação: não"
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_20s_vermelho_forcado,0,pitch (topo perto) 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_dpitch_max,0.4994,pitch (topo longe) 40°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_absdroll_max,6.5903,pitch (topo longe) 40°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_absdyaw_max,6.9268,pitch (topo longe) 40°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_eventos_cabeca,nenhum,"pitch (topo longe) 40°; olhos fechados na anotação: não"
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",pitch_longe_26s_vermelho_forcado,0,pitch (topo longe) 40°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_dpitch_max,1.0547,achatamento 40°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_absdroll_max,10.8703,achatamento 40°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_absdyaw_max,10.5453,achatamento 40°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_eventos_cabeca,nenhum,"achatamento 40°; olhos fechados na anotação: não"
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",achatar_32s_vermelho_forcado,0,achatamento 40°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_dpitch_max,0.3971,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_absdroll_max,43.4055,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_absdyaw_max,5.0017,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_eventos_cabeca,cabeca_baixa,"roll 45°; olhos fechados na anotação: não"
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_40s_vermelho_forcado,0,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_dpitch_max,0.0892,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_absdroll_max,40.0477,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_absdyaw_max,3.9744,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_eventos_cabeca,queda,"roll 45°; olhos fechados na anotação: sim"
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_62.2s_vermelho_forcado,1,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_dpitch_max,1.0364,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_absdroll_max,46.1394,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_absdyaw_max,4.0479,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_eventos_cabeca,queda,"roll 45°; olhos fechados na anotação: sim"
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",roll_71.1s_vermelho_forcado,1,roll 45°
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",eventos_cabeca_fora_das_janelas,0,cabeça parada (sem transformação) no mesmo clipe
+2.1 (ajuste final),sint_cabeca_gC14,Sintético (cabeça),"gC_14 s5, 0-80 s, com transformações",controle_sem_transformacao_eventos_cabeca_0_80s,0,execução dmd_gC14_s5

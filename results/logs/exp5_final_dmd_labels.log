@@ -1,0 +1,95 @@
+2026-09-27 20:36:23,842 INFO gA_1_2019-03-14T14;26;17+01;00: lag close~EAR=-2 (r0=0.509, r*=0.513) | piscadas P=0.902 R=0.892 F1=0.897 | quadro acc=0.946 bal=0.960
+2026-09-27 20:36:23,977 INFO gA_1_s1_2019-03-08T09;31;15+01;00: quadros 6777 (total_frames 6777, shift 0, fim ações 6776) | não olha x -EAR lag 30 (r0=-0.171, r*=0.050) | x pose lag 2 | falando x boca lag -3
+2026-09-27 20:36:24,214 INFO gA_1_s2_2019-03-08T09;21;03+01;00: quadros 13640 (total_frames 13640, shift 0, fim ações 13640) | não olha x -EAR lag 0 (r0=0.050, r*=0.050) | x pose lag 3 | falando x boca lag -4
+2026-09-27 20:36:24,232 INFO gA_1_s3_2019-03-14T14;31;08+01;00: quadros 1844 (total_frames 1844, shift 0, fim ações 1844) | não olha x -EAR lag nan (r0=nan, r*=nan) | x pose lag nan | falando x boca lag -7
+2026-09-27 20:36:24,274 INFO gA_5_2019-03-13T09;06;49+01;00: lag close~EAR=-3 (r0=0.469, r*=0.484) | piscadas P=0.815 R=1.000 F1=0.898 | quadro acc=0.968 bal=0.903
+2026-09-27 20:36:24,405 INFO gA_5_s1_2019-03-08T10;57;00+01;00: quadros 7009 (total_frames 7009, shift 0, fim ações 7008) | não olha x -EAR lag -30 (r0=-0.028, r*=0.170) | x pose lag -5 | falando x boca lag -11
+2026-09-27 20:36:24,619 INFO gA_5_s2_2019-03-08T10;46;46+01;00: quadros 12416 (total_frames 12416, shift 0, fim ações 12415) | não olha x -EAR lag -1 (r0=0.036, r*=0.041) | x pose lag 3 | falando x boca lag -3
+2026-09-27 20:36:24,665 INFO gA_5_s3_2019-03-13T09;10;35+01;00: quadros 1836 (total_frames 1836, shift 0, fim ações 1835) | não olha x -EAR lag 0 (r0=0.066, r*=0.066) | x pose lag 30 | falando x boca lag nan
+2026-09-27 20:36:24,702 INFO gB_10_2019-03-12T10;35;20+01;00: lag close~EAR=+1 (r0=0.733, r*=0.733) | piscadas P=0.696 R=0.935 F1=0.798 | quadro acc=0.988 bal=0.991
+2026-09-27 20:36:24,738 INFO gB_10_2019-03-13T14;17;28+01;00: lag close~EAR=+0 (r0=0.658, r*=0.658) | piscadas P=0.702 R=0.986 F1=0.820 | quadro acc=0.976 bal=0.985
+2026-09-27 20:36:24,862 INFO gB_10_s1_2019-03-11T15;24;54+01;00: quadros 6399 (total_frames 6399, shift 0, fim ações 6398) | não olha x -EAR lag 0 (r0=-0.023, r*=-0.023) | x pose lag 4 | falando x boca lag 0
+2026-09-27 20:36:25,126 INFO gB_10_s2_2019-03-11T15;15;21+01;00: quadros 15457 (total_frames 15457, shift 0, fim ações 15456) | não olha x -EAR lag 0 (r0=0.236, r*=0.236) | x pose lag 3 | falando x boca lag -2
+2026-09-27 20:36:25,168 INFO gB_10_s3_2019-03-12T10;40;46+01;00: quadros 1894 (total_frames 1894, shift 0, fim ações 1894) | não olha x -EAR lag -26 (r0=0.109, r*=0.117) | x pose lag 2 | falando x boca lag nan
+2026-09-27 20:36:25,213 INFO gB_10_s3_2019-03-13T14;22;40+01;00: quadros 1840 (total_frames 1840, shift 0, fim ações 1839) | não olha x -EAR lag -24 (r0=-0.079, r*=0.040) | x pose lag 3 | falando x boca lag nan
+2026-09-27 20:36:25,246 INFO gB_6_2019-03-13T13;37;11+01;00: lag close~EAR=-1 (r0=0.365, r*=0.368) | piscadas P=0.953 R=0.328 F1=0.488 | quadro acc=0.984 bal=0.815
+2026-09-27 20:36:25,379 INFO gB_6_s1_2019-03-11T13;55;14+01;00: quadros 6748 (total_frames 6748, shift 0, fim ações 6747) | não olha x -EAR lag -30 (r0=-0.049, r*=0.104) | x pose lag 1 | falando x boca lag -1
+2026-09-27 20:36:25,638 INFO gB_6_s2_2019-03-11T13;46;14+01;00: quadros 14882 (total_frames 14882, shift 0, fim ações 14881) | não olha x -EAR lag 0 (r0=0.109, r*=0.109) | x pose lag 3 | falando x boca lag 0
+2026-09-27 20:36:25,706 INFO gB_6_s3_2019-03-13T13;41;02+01;00: quadros 1948 (total_frames 1948, shift 0, fim ações 1947) | não olha x -EAR lag -11 (r0=-0.045, r*=0.148) | x pose lag 2 | falando x boca lag -5
+2026-09-27 20:36:25,752 INFO gB_7_2019-03-13T13;55;52+01;00: lag close~EAR=-2 (r0=0.305, r*=0.315) | piscadas P=0.803 R=0.719 F1=0.759 | quadro acc=0.804 bal=0.780
+2026-09-27 20:36:25,888 INFO gB_7_s1_2019-03-11T14;22;01+01;00: quadros 6489 (total_frames 6489, shift 0, fim ações 6488) | não olha x -EAR lag 22 (r0=0.053, r*=0.139) | x pose lag 0 | falando x boca lag -6
+2026-09-27 20:36:26,127 INFO gB_7_s2_2019-03-11T14;12;25+01;00: quadros 13394 (total_frames 13394, shift 0, fim ações 13393) | não olha x -EAR lag -1 (r0=-0.077, r*=-0.077) | x pose lag 4 | falando x boca lag 1
+2026-09-27 20:36:26,168 INFO gB_7_s3_2019-03-13T13;59;54+01;00: quadros 1847 (total_frames 1847, shift 0, fim ações 1846) | não olha x -EAR lag -30 (r0=-0.033, r*=0.009) | x pose lag 1 | falando x boca lag nan
+2026-09-27 20:36:26,205 INFO gB_9_2019-03-07T16;31;48+01;00: lag close~EAR=+0 (r0=0.649, r*=0.649) | piscadas P=0.722 R=0.737 F1=0.729 | quadro acc=0.980 bal=0.946
+2026-09-27 20:36:26,340 INFO gB_9_s1_2019-03-07T16;36;24+01;00: quadros 7138 (total_frames 7138, shift 0, fim ações 7137) | não olha x -EAR lag 29 (r0=-0.252, r*=-0.003) | x pose lag 2 | falando x boca lag -2
+2026-09-27 20:36:26,555 INFO gB_9_s2_2019-03-07T16;21;20+01;00: quadros 12141 (total_frames 12141, shift 0, fim ações 12140) | não olha x -EAR lag -1 (r0=0.124, r*=0.125) | x pose lag 3 | falando x boca lag -2
+2026-09-27 20:36:26,596 INFO gB_9_s3_2019-03-07T16;29;41+01;00: quadros 1644 (total_frames 1644, shift 0, fim ações 1644) | não olha x -EAR lag -4 (r0=0.022, r*=0.053) | x pose lag 2 | falando x boca lag nan
+2026-09-27 20:36:26,632 INFO gC_13_2019-03-12T10;03;00+01;00: lag close~EAR=+1 (r0=0.451, r*=0.451) | piscadas P=0.899 R=0.989 F1=0.942 | quadro acc=0.990 bal=0.995
+2026-09-27 20:36:26,771 INFO gC_13_s1_2019-03-04T10;26;12+01;00: quadros 7166 (total_frames 7166, shift 0, fim ações 7165) | não olha x -EAR lag 9 (r0=0.025, r*=0.078) | x pose lag 0 | falando x boca lag -4
+2026-09-27 20:36:26,981 INFO gC_13_s2_2019-03-04T10;11;37+01;00: quadros 12215 (total_frames 12215, shift 0, fim ações 12214) | não olha x -EAR lag 0 (r0=0.372, r*=0.372) | x pose lag 0 | falando x boca lag -3
+2026-09-27 20:36:27,027 INFO gC_13_s3_2019-03-12T10;06;34+01;00: quadros 1814 (total_frames 1814, shift 0, fim ações 1813) | não olha x -EAR lag -18 (r0=0.008, r*=0.053) | x pose lag 0 | falando x boca lag nan
+2026-09-27 20:36:27,059 INFO gC_14_2019-03-12T09;18;58+01;00: lag close~EAR=+2 (r0=0.671, r*=0.674) | piscadas P=0.615 R=1.000 F1=0.762 | quadro acc=0.966 bal=0.981
+2026-09-27 20:36:27,227 INFO gC_14_s1_2019-03-04T11;56;20+01;00: quadros 6681 (total_frames 6681, shift 0, fim ações 6681) | não olha x -EAR lag 14 (r0=-0.049, r*=0.125) | x pose lag 1 | falando x boca lag 0
+2026-09-27 20:36:27,445 INFO gC_14_s2_2019-03-04T11;48;02+01;00: quadros 11922 (total_frames 11922, shift 0, fim ações 11921) | não olha x -EAR lag 0 (r0=0.163, r*=0.163) | x pose lag 2 | falando x boca lag -2
+2026-09-27 20:36:27,487 INFO gC_14_s3_2019-03-12T09;23;37+01;00: quadros 1934 (total_frames 1934, shift 0, fim ações 1933) | não olha x -EAR lag -1 (r0=0.244, r*=0.260) | x pose lag 25 | falando x boca lag nan
+2026-09-27 20:36:27,618 INFO gE_28_s1_2019-03-15T10;23;30+01;00: quadros 6898 (total_frames 6898, shift 0, fim ações 6897) | não olha x -EAR lag 0 (r0=0.207, r*=0.207) | x pose lag 1 | falando x boca lag -5
+2026-09-27 20:36:27,866 INFO gE_28_s2_2019-03-15T10;12;30+01;00: quadros 14402 (total_frames 14402, shift 0, fim ações 14401) | não olha x -EAR lag -1 (r0=0.274, r*=0.274) | x pose lag 18 | falando x boca lag -2
+2026-09-27 20:36:27,895 INFO gE_29_2019-03-15T13;51;09+01;00: lag close~EAR=+1 (r0=0.437, r*=0.439) | piscadas P=1.000 R=0.057 F1=0.108 | quadro acc=0.738 bal=0.500
+2026-09-27 20:36:28,035 INFO gE_29_s1_2019-03-15T13;58;00+01;00: quadros 7187 (total_frames 7187, shift 0, fim ações 7187) | não olha x -EAR lag -25 (r0=-0.279, r*=0.018) | x pose lag 0 | falando x boca lag -4
+2026-09-27 20:36:28,271 INFO gE_29_s2_2019-03-15T13;42;24+01;00: quadros 14083 (total_frames 14083, shift 0, fim ações 14082) | não olha x -EAR lag -30 (r0=-0.546, r*=-0.463) | x pose lag 2 | falando x boca lag -5
+2026-09-27 20:36:28,311 INFO gE_29_s3_2019-03-15T13;54;40+01;00: quadros 1709 (total_frames 1709, shift 0, fim ações 1709) | não olha x -EAR lag -30 (r0=-0.147, r*=0.050) | x pose lag 2 | falando x boca lag nan
+2026-09-27 20:36:28,355 INFO gF_23_2019-03-11T10;19;19+01;00: lag close~EAR=+0 (r0=0.492, r*=0.492) | piscadas P=0.892 R=0.858 F1=0.875 | quadro acc=0.989 bal=0.957
+2026-09-27 20:36:28,393 INFO gF_23_2019-03-14T13;49;53+01;00: lag close~EAR=+1 (r0=0.558, r*=0.560) | piscadas P=0.871 R=0.827 F1=0.848 | quadro acc=0.989 bal=0.971
+2026-09-27 20:36:28,535 INFO gF_23_s1_2019-03-04T16;21;10+01;00: quadros 7274 (total_frames 7274, shift 0, fim ações 7273) | não olha x -EAR lag 0 (r0=0.211, r*=0.211) | x pose lag 0 | falando x boca lag -3
+2026-09-27 20:36:28,661 INFO gF_23_s1_2019-03-05T09;23;45+01;00: quadros 6163 (total_frames 6163, shift 0, fim ações 6162) | não olha x -EAR lag 0 (r0=0.285, r*=0.285) | x pose lag 1 | falando x boca lag -4
+2026-09-27 20:36:28,792 INFO gF_23_s1_2019-03-05T10;17;36+01;00: quadros 6760 (total_frames 6760, shift 0, fim ações 6760) | não olha x -EAR lag 1 (r0=0.287, r*=0.289) | x pose lag 1 | falando x boca lag -2
+2026-09-27 20:36:29,046 INFO gF_23_s2_2019-03-04T16;09;26+01;00: quadros 14220 (total_frames 14220, shift 0, fim ações 14219) | não olha x -EAR lag 0 (r0=0.297, r*=0.297) | x pose lag 1 | falando x boca lag -3
+2026-09-27 20:36:29,260 INFO gF_23_s2_2019-03-05T10;09;12+01;00: quadros 12575 (total_frames 12575, shift 0, fim ações 12575) | não olha x -EAR lag 0 (r0=0.311, r*=0.311) | x pose lag 1 | falando x boca lag -6
+2026-09-27 20:36:29,305 INFO gF_23_s3_2019-03-11T09;31;59+01;00: quadros 1851 (total_frames 1851, shift 0, fim ações 1850) | não olha x -EAR lag 8 (r0=-0.220, r*=-0.205) | x pose lag 0 | falando x boca lag nan
+2026-09-27 20:36:29,346 INFO gF_23_s3_2019-03-14T13;54;34+01;00: quadros 1859 (total_frames 1859, shift 0, fim ações 1858) | não olha x -EAR lag 30 (r0=-0.076, r*=-0.015) | x pose lag 1 | falando x boca lag nan
+2026-09-27 20:36:29,383 INFO gZ_33_2019-04-04T09;29;07+02;00: lag close~EAR=-1 (r0=0.628, r*=0.629) | piscadas P=0.822 R=0.811 F1=0.816 | quadro acc=0.948 bal=0.959
+2026-09-27 20:36:29,417 INFO gZ_33_2019-04-04T15;02;29+02;00: lag close~EAR=-3 (r0=0.624, r*=0.639) | piscadas P=0.821 R=0.797 F1=0.809 | quadro acc=0.947 bal=0.940
+2026-09-27 20:36:29,556 INFO gZ_33_s1_2019-04-08T10;08;19+02;00: quadros 7618 (total_frames 7618, shift 0, fim ações 7618) | não olha x -EAR lag 30 (r0=-0.239, r*=-0.025) | x pose lag 2 | falando x boca lag -3
+2026-09-27 20:36:29,702 INFO gZ_33_s1_2019-04-08T16;18;54+02;00: quadros 7562 (total_frames 7562, shift 0, fim ações 7561) | não olha x -EAR lag -30 (r0=-0.054, r*=-0.002) | x pose lag 3 | falando x boca lag -1
+2026-09-27 20:36:29,940 INFO gZ_33_s2_2019-04-08T09;59;25+02;00: quadros 13832 (total_frames 13832, shift 0, fim ações 13833) | não olha x -EAR lag 0 (r0=0.303, r*=0.303) | x pose lag 4 | falando x boca lag -4
+2026-09-27 20:36:30,186 INFO gZ_33_s2_2019-04-08T16;09;44+02;00: quadros 14734 (total_frames 14734, shift 0, fim ações 14733) | não olha x -EAR lag 0 (r0=0.311, r*=0.311) | x pose lag 3 | falando x boca lag -4
+2026-09-27 20:36:30,250 INFO gZ_33_s3_2019-04-04T09;33;20+02;00: quadros 1850 (total_frames 1850, shift 0, fim ações 1849) | não olha x -EAR lag -1 (r0=0.104, r*=0.152) | x pose lag 3 | falando x boca lag -2
+2026-09-27 20:36:30,310 INFO gZ_33_s3_2019-04-04T15;06;45+02;00: quadros 1831 (total_frames 1831, shift 0, fim ações 1830) | não olha x -EAR lag 10 (r0=0.014, r*=0.162) | x pose lag 4 | falando x boca lag 1
+2026-09-27 20:36:30,355 INFO gZ_36_2019-04-09T10;49;32+02;00: lag close~EAR=+1 (r0=0.421, r*=0.421) | piscadas P=0.711 R=0.906 F1=0.797 | quadro acc=0.974 bal=0.969
+2026-09-27 20:36:30,489 INFO gZ_36_s1_2019-04-09T10;55;20+02;00: quadros 7345 (total_frames 7345, shift 0, fim ações 7344) | não olha x -EAR lag -16 (r0=-0.181, r*=0.085) | x pose lag 1 | falando x boca lag -2
+2026-09-27 20:36:30,754 INFO gZ_36_s2_2019-04-09T10;39;38+02;00: quadros 15359 (total_frames 15359, shift 0, fim ações 15358) | não olha x -EAR lag 0 (r0=0.126, r*=0.126) | x pose lag 2 | falando x boca lag -2
+2026-09-27 20:36:30,795 INFO gZ_36_s3_2019-04-09T10;53;18+02;00: quadros 1895 (total_frames 1895, shift 0, fim ações 1894) | não olha x -EAR lag -1 (r0=-0.063, r*=-0.043) | x pose lag 1 | falando x boca lag nan
+2026-09-27 20:36:30,836 INFO gZ_37_2019-04-29T12;06;35+02;00: lag close~EAR=-2 (r0=0.457, r*=0.462) | piscadas P=0.750 R=0.564 F1=0.644 | quadro acc=0.933 bal=0.741
+2026-09-27 20:36:30,966 INFO gZ_37_s1_2019-04-08T15;56;41+02;00: quadros 6872 (total_frames 6872, shift 0, fim ações 6871) | não olha x -EAR lag -26 (r0=0.059, r*=0.120) | x pose lag 0 | falando x boca lag 0
+2026-09-27 20:36:31,191 INFO gZ_37_s2_2019-04-08T15;45;15+02;00: quadros 13070 (total_frames 13070, shift 0, fim ações 13069) | não olha x -EAR lag 0 (r0=0.302, r*=0.302) | x pose lag 2 | falando x boca lag 0
+2026-09-27 20:36:31,237 INFO gZ_37_s3_2019-04-29T12;10;11+02;00: quadros 1839 (total_frames 1839, shift 0, fim ações 1838) | não olha x -EAR lag 4 (r0=-0.029, r*=-0.001) | x pose lag 16 | falando x boca lag nan
+2026-09-27 20:36:31,242 INFO Distração: 49 sessões; nº de quadros = total_frames em 49; frame_shift=0 em 49; fim das ações <= n-1 em 38
+2026-09-27 20:36:31,242 INFO   naoolha_vs_menos_ear: melhor lag (+-30) min -30.0 máx 30.0 | lag amplo (+-300) min -300.0 máx 300.0
+2026-09-27 20:36:31,242 INFO   naoolha_vs_pose: melhor lag (+-30) min -5.0 máx 30.0 | lag amplo (+-300) min -88.0 máx 74.0
+2026-09-27 20:36:31,242 INFO   falando_vs_boca: melhor lag (+-30) min -11.0 máx 1.0 | lag amplo (+-300) min -11.0 máx 1.0
+2026-09-27 20:36:31,243 INFO Média por sessão s5 (k=0,75):
+precisao_piscadas     0.8109
+revocacao_piscadas    0.7754
+f1_piscadas           0.7493
+precisao_fech05       0.6392
+revocacao_fech05      0.8022
+f1_fech05             0.7112
+q_acuracia            0.9449
+q_acuracia_bal        0.8996
+q_sensibilidade       0.8295
+q_especificidade      0.9696
+q_kappa               0.7732
+precisao_bocejo       0.9821
+revocacao_bocejo      0.3467
+2026-09-27 20:36:31,243 INFO Agregado (micro) piscadas: P=0.7903 R=0.7260 (TP=1187, det=1502, anot=1635)
+2026-09-27 20:36:31,243 INFO Erros: FP fragmentação=234, FP sem sobreposição=81, FN vale raso=292, FN outros=156
+2026-09-27 20:36:31,244 INFO Sensibilidade ao k:
+      P_macro  R_macro  F1_macro  acc_bal_macro  F1_fech05_macro
+k                                                               
+0.60   0.7597   0.4476    0.5328         0.7537           0.5897
+0.65   0.8116   0.5732    0.6099         0.8223           0.7126
+0.70   0.8003   0.6872    0.6900         0.8737           0.7127
+0.75   0.8109   0.7754    0.7493         0.8996           0.7112
+0.80   0.7859   0.8314    0.7750         0.9029           0.6869
+0.85   0.7282   0.8619    0.7720         0.8906           0.5961
+0.90   0.6793   0.8606    0.7471         0.8708           0.5443

@@ -1,0 +1,20 @@
+gA_1_2019-03 close: lag*=-2 r*=0.513 r0=0.509 (melhor fora de +-10: 0.374) | blinking: lag*=+0 r*=0.624 r0=0.624
+gA_5_2019-03 close: lag*=-3 r*=0.484 r0=0.469 (melhor fora de +-10: 0.238) | blinking: lag*=+0 r*=0.649 r0=0.649
+gB_10_2019-0 close: lag*=+1 r*=0.733 r0=0.733 (melhor fora de +-10: 0.567) | blinking: lag*=-2 r*=0.705 r0=0.701
+gB_10_2019-0 close: lag*=+0 r*=0.658 r0=0.658 (melhor fora de +-10: 0.538) | blinking: lag*=-1 r*=0.678 r0=0.676
+gB_6_2019-03 close: lag*=-1 r*=0.368 r0=0.365 (melhor fora de +-10: 0.156) | blinking: lag*=+0 r*=0.521 r0=0.521
+gB_7_2019-03 close: lag*=-2 r*=0.315 r0=0.305 (melhor fora de +-10: 0.268) | blinking: lag*=+0 r*=0.575 r0=0.575
+gB_9_2019-03 close: lag*=+0 r*=0.649 r0=0.649 (melhor fora de +-10: 0.344) | blinking: lag*=-1 r*=0.736 r0=0.733
+gC_13_2019-0 close: lag*=+1 r*=0.451 r0=0.451 (melhor fora de +-10: 0.271) | blinking: lag*=+1 r*=0.630 r0=0.628
+gC_14_2019-0 close: lag*=+2 r*=0.674 r0=0.671 (melhor fora de +-10: 0.609) | blinking: lag*=+0 r*=0.687 r0=0.687
+gE_29_2019-0 close: lag*=+1 r*=0.439 r0=0.437 (melhor fora de +-10: 0.365) | blinking: lag*=+1 r*=0.529 r0=0.522
+gF_23_2019-0 close: lag*=+0 r*=0.492 r0=0.492 (melhor fora de +-10: 0.444) | blinking: lag*=-1 r*=0.594 r0=0.592
+gF_23_2019-0 close: lag*=+1 r*=0.560 r0=0.558 (melhor fora de +-10: 0.471) | blinking: lag*=+0 r*=0.644 r0=0.644
+gZ_33_2019-0 close: lag*=-1 r*=0.629 r0=0.628 (melhor fora de +-10: 0.499) | blinking: lag*=+0 r*=0.633 r0=0.633
+gZ_33_2019-0 close: lag*=-3 r*=0.639 r0=0.624 (melhor fora de +-10: 0.536) | blinking: lag*=+0 r*=0.652 r0=0.652
+gZ_36_2019-0 close: lag*=+1 r*=0.421 r0=0.421 (melhor fora de +-10: 0.331) | blinking: lag*=-1 r*=0.552 r0=0.550
+gZ_37_2019-0 close: lag*=-2 r*=0.462 r0=0.457 (melhor fora de +-10: 0.370) | blinking: lag*=+1 r*=0.586 r0=0.584
+melhor lag (close) em [-3, 2]; (blinking) em [-2, 1]; busca +-300 quadros; ganho máx. de r sobre o lag 0 (close) = 0.015
+gA/1 quadros: [('FECHADO', 1389), ('FECHADO', 5317), ('FECHADO 1o quadro', 1823), ('ABERTO', 708), ('ABERTO', 4628)]
+gZ/37 quadros: [('FECHADO', 2058), ('FECHADO', 4856), ('FECHADO 1o quadro', 2206), ('ABERTO', 667), ('ABERTO', 3489)]
+gC/14 quadros: [('FECHADO', 1869), ('FECHADO', 5303), ('FECHADO 1o quadro', 2114), ('ABERTO', 565), ('ABERTO', 4569)]

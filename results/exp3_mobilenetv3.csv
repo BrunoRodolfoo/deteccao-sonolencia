@@ -1,0 +1,63 @@
+protocol,train_on,test_on,fold,stratum,level,metric,value
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,n,16975.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,acc,0.9588217967599411
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,bal_acc,0.9613843354334202
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,f1_macro,0.952161134297252
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,chance,0.6974374079528718
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,auc,0.9920398376425771
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,epochs_run,4.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,best_epoch,1.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,train_s,385.67664313316345
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,val_acc,0.9652000069618225
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,n_train,25001.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,n_val,2500.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,params,583593.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,todos,todos,total_min,6.6390070676803585
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,sem óculos,n,11978.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,sem óculos,acc,0.9686091167139756
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,sem óculos,bal_acc,0.9711552394775994
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,sem óculos,f1_macro,0.9612774201913307
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,sem óculos,chance,0.7269160126899316
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,sem óculos,auc,0.994813714754645
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,com óculos,n,4997.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,com óculos,acc,0.935361216730038
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,com óculos,bal_acc,0.938783088348587
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,com óculos,f1_macro,0.9319293791416476
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,com óculos,chance,0.6267760656393837
+A_intra_mrl_mobilenetv3,MRL,MRL,1,glasses,com óculos,auc,0.984541736429968
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação ruim,n,12451.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação ruim,acc,0.9562284153883223
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação ruim,bal_acc,0.9580651489623598
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação ruim,f1_macro,0.9520337759711887
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação ruim,chance,0.6573769175166653
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação ruim,auc,0.9911870822439706
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação boa,n,4524.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação boa,acc,0.9659593280282935
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação boa,bal_acc,0.9741105637657361
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação boa,f1_macro,0.948137309550353
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação boa,chance,0.8076923076923077
+A_intra_mrl_mobilenetv3,MRL,MRL,1,lighting,iluminação boa,auc,0.9955729510723565
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,sem reflexo,n,15403.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,sem reflexo,acc,0.965266506524703
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,sem reflexo,bal_acc,0.9653419492330305
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,sem reflexo,f1_macro,0.95873001630861
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,sem reflexo,chance,0.7062260598584691
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,sem reflexo,auc,0.9931268544449287
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo pequeno,n,427.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo pequeno,acc,0.9320843091334895
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo pequeno,bal_acc,0.9515771028037383
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo pequeno,f1_macro,0.9161798650267712
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo pequeno,chance,0.7494145199063231
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo pequeno,auc,0.9923481308411215
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo grande,n,1145.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo grande,acc,0.8820960698689956
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo grande,bal_acc,0.8929995295049897
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo grande,f1_macro,0.8820669244930766
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo grande,chance,0.5598253275109171
+A_intra_mrl_mobilenetv3,MRL,MRL,1,reflections,reflexo grande,auc,0.9616732288339153
+A_intra_mrl_mobilenetv3,MRL,MRL,1,sensor,RealSense,n,16975.0
+A_intra_mrl_mobilenetv3,MRL,MRL,1,sensor,RealSense,acc,0.9588217967599411
+A_intra_mrl_mobilenetv3,MRL,MRL,1,sensor,RealSense,bal_acc,0.9613843354334202
+A_intra_mrl_mobilenetv3,MRL,MRL,1,sensor,RealSense,f1_macro,0.952161134297252
+A_intra_mrl_mobilenetv3,MRL,MRL,1,sensor,RealSense,chance,0.6974374079528718
+A_intra_mrl_mobilenetv3,MRL,MRL,1,sensor,RealSense,auc,0.9920398376425771

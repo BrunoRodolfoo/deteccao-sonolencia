@@ -1,0 +1,152 @@
+Exp. 1 intra-conjunto UTA-RLDD — seed 42, épocas 15, esquemas 3c,B1,B2,B3
+[3c] Fold 1: treino (7379, 30, 4) teste (1269, 30, 4) classes teste [228 494 547] | chance seq 0.431 vídeo 0.333
+  LogReg        BSA=0.448 bal=0.503 F1=0.473 AUC=0.616 VA=0.576 (0s)
+  SVM-RBF       BSA=0.555 bal=0.608 F1=0.583 AUC=0.692 VA=0.576 (2s)
+  RandomForest  BSA=0.467 bal=0.559 F1=0.490 AUC=0.671 VA=0.545 (1s)
+  LSTM          BSA=0.322 bal=0.430 F1=0.361 AUC=0.576 VA=0.424 (7s) loss_treino_final=0.441 acc_treino=0.818
+  CNN1D         BSA=0.427 bal=0.515 F1=0.459 AUC=0.624 VA=0.485 (2s) loss_treino_final=0.437 acc_treino=0.816
+
+[3c] Fold 2: treino (6605, 30, 4) teste (2043, 30, 4) classes teste [465 835 743] | chance seq 0.409 vídeo 0.333
+  LogReg        BSA=0.461 bal=0.465 F1=0.460 AUC=0.680 VA=0.361 (0s)
+  SVM-RBF       BSA=0.584 bal=0.606 F1=0.590 AUC=0.770 VA=0.556 (2s)
+  RandomForest  BSA=0.726 bal=0.732 F1=0.741 AUC=0.859 VA=0.694 (0s)
+  LSTM          BSA=0.556 bal=0.581 F1=0.558 AUC=0.758 VA=0.583 (5s) loss_treino_final=0.498 acc_treino=0.788
+  CNN1D         BSA=0.618 bal=0.630 F1=0.620 AUC=0.777 VA=0.583 (2s) loss_treino_final=0.525 acc_treino=0.763
+
+[3c] Fold 3: treino (6465, 30, 4) teste (2196, 30, 4) classes teste [449 771 976] | chance seq 0.444 vídeo 0.333
+  LogReg        BSA=0.482 bal=0.513 F1=0.478 AUC=0.657 VA=0.556 (0s)
+  SVM-RBF       BSA=0.532 bal=0.553 F1=0.515 AUC=0.717 VA=0.500 (2s)
+  RandomForest  BSA=0.519 bal=0.560 F1=0.523 AUC=0.747 VA=0.500 (1s)
+  LSTM          BSA=0.526 bal=0.563 F1=0.526 AUC=0.745 VA=0.500 (5s) loss_treino_final=0.490 acc_treino=0.792
+  CNN1D         BSA=0.519 bal=0.553 F1=0.513 AUC=0.736 VA=0.556 (2s) loss_treino_final=0.552 acc_treino=0.755
+
+[3c] Fold 4: treino (7186, 30, 4) teste (1462, 30, 4) classes teste [211 584 667] | chance seq 0.456 vídeo 0.333
+  LogReg        BSA=0.568 bal=0.542 F1=0.555 AUC=0.779 VA=0.528 (0s)
+  SVM-RBF       BSA=0.508 bal=0.554 F1=0.529 AUC=0.706 VA=0.583 (2s)
+  RandomForest  BSA=0.490 bal=0.510 F1=0.513 AUC=0.677 VA=0.611 (1s)
+  LSTM          BSA=0.533 bal=0.553 F1=0.537 AUC=0.734 VA=0.583 (8s) loss_treino_final=0.519 acc_treino=0.776
+  CNN1D         BSA=0.490 bal=0.515 F1=0.497 AUC=0.692 VA=0.583 (4s) loss_treino_final=0.496 acc_treino=0.793
+
+[3c] Fold 5: treino (6957, 30, 4) teste (1691, 30, 4) classes teste [295 810 586] | chance seq 0.479 vídeo 0.333
+  LogReg        BSA=0.508 bal=0.461 F1=0.460 AUC=0.712 VA=0.515 (0s)
+  SVM-RBF       BSA=0.473 bal=0.487 F1=0.491 AUC=0.612 VA=0.485 (3s)
+  RandomForest  BSA=0.523 bal=0.529 F1=0.535 AUC=0.719 VA=0.515 (1s)
+  LSTM          BSA=0.594 bal=0.560 F1=0.590 AUC=0.758 VA=0.545 (8s) loss_treino_final=0.508 acc_treino=0.785
+  CNN1D         BSA=0.438 bal=0.470 F1=0.477 AUC=0.654 VA=0.545 (4s) loss_treino_final=0.541 acc_treino=0.761
+
+[B1] Fold 1: treino (7379, 30, 4) teste (1269, 30, 4) classes teste [ 228 1041] | chance seq 0.820 vídeo 0.667
+  LogReg        BSA=0.842 bal=0.698 F1=0.712 AUC=0.849 VA=0.788 (0s)
+  SVM-RBF       BSA=0.873 bal=0.813 F1=0.796 AUC=0.925 VA=0.848 (1s)
+  RandomForest  BSA=0.843 bal=0.872 F1=0.787 AUC=0.931 VA=0.788 (1s)
+  LSTM          BSA=0.855 bal=0.865 F1=0.796 AUC=0.925 VA=0.788 (9s) loss_treino_final=0.152 acc_treino=0.933
+  CNN1D         BSA=0.871 bal=0.865 F1=0.811 AUC=0.940 VA=0.788 (4s) loss_treino_final=0.164 acc_treino=0.929
+
+[B1] Fold 2: treino (6605, 30, 4) teste (2043, 30, 4) classes teste [ 465 1578] | chance seq 0.772 vídeo 0.667
+  LogReg        BSA=0.755 bal=0.582 F1=0.590 AUC=0.763 VA=0.667 (0s)
+  SVM-RBF       BSA=0.846 bal=0.774 F1=0.778 AUC=0.902 VA=0.833 (1s)
+  RandomForest  BSA=0.905 bal=0.807 F1=0.845 AUC=0.933 VA=0.833 (1s)
+  LSTM          BSA=0.871 bal=0.775 F1=0.799 AUC=0.894 VA=0.806 (8s) loss_treino_final=0.142 acc_treino=0.938
+  CNN1D         BSA=0.886 bal=0.786 F1=0.818 AUC=0.890 VA=0.806 (4s) loss_treino_final=0.161 acc_treino=0.925
+
+[B1] Fold 3: treino (6465, 30, 4) teste (2196, 30, 4) classes teste [ 449 1747] | chance seq 0.796 vídeo 0.667
+  LogReg        BSA=0.674 bal=0.615 F1=0.585 AUC=0.719 VA=0.694 (0s)
+  SVM-RBF       BSA=0.800 bal=0.774 F1=0.733 AUC=0.865 VA=0.694 (1s)
+  RandomForest  BSA=0.832 bal=0.798 F1=0.767 AUC=0.808 VA=0.778 (0s)
+  LSTM          BSA=0.640 bal=0.690 F1=0.598 AUC=0.709 VA=0.667 (10s) loss_treino_final=0.121 acc_treino=0.951
+  CNN1D         BSA=0.654 bal=0.683 F1=0.604 AUC=0.776 VA=0.667 (4s) loss_treino_final=0.144 acc_treino=0.942
+
+[B1] Fold 4: treino (7186, 30, 4) teste (1462, 30, 4) classes teste [ 211 1251] | chance seq 0.856 vídeo 0.667
+  LogReg        BSA=0.860 bal=0.570 F1=0.587 AUC=0.902 VA=0.667 (0s)
+  SVM-RBF       BSA=0.856 bal=0.778 F1=0.743 AUC=0.887 VA=0.833 (1s)
+  RandomForest  BSA=0.913 bal=0.772 F1=0.803 AUC=0.844 VA=0.861 (1s)
+  LSTM          BSA=0.868 bal=0.722 F1=0.727 AUC=0.878 VA=0.861 (6s) loss_treino_final=0.161 acc_treino=0.928
+  CNN1D         BSA=0.864 bal=0.723 F1=0.724 AUC=0.904 VA=0.778 (3s) loss_treino_final=0.165 acc_treino=0.928
+
+[B1] Fold 5: treino (6957, 30, 4) teste (1691, 30, 4) classes teste [ 295 1396] | chance seq 0.826 vídeo 0.667
+  LogReg        BSA=0.793 bal=0.538 F1=0.539 AUC=0.782 VA=0.727 (0s)
+  SVM-RBF       BSA=0.882 bal=0.763 F1=0.781 AUC=0.919 VA=0.879 (1s)
+  RandomForest  BSA=0.878 bal=0.743 F1=0.766 AUC=0.919 VA=0.848 (0s)
+  LSTM          BSA=0.921 bal=0.813 F1=0.847 AUC=0.946 VA=0.879 (8s) loss_treino_final=0.176 acc_treino=0.925
+  CNN1D         BSA=0.889 bal=0.710 F1=0.757 AUC=0.950 VA=0.818 (4s) loss_treino_final=0.177 acc_treino=0.927
+
+[B2] Fold 1: treino (7379, 30, 4) teste (1269, 30, 4) classes teste [722 547] | chance seq 0.569 vídeo 0.667
+  LogReg        BSA=0.544 bal=0.505 F1=0.479 AUC=0.475 VA=0.727 (0s)
+  SVM-RBF       BSA=0.614 bal=0.596 F1=0.596 AUC=0.593 VA=0.697 (2s)
+  RandomForest  BSA=0.533 bal=0.500 F1=0.485 AUC=0.566 VA=0.667 (1s)
+  LSTM          BSA=0.491 bal=0.458 F1=0.439 AUC=0.546 VA=0.667 (9s) loss_treino_final=0.225 acc_treino=0.904
+  CNN1D         BSA=0.507 bal=0.490 F1=0.489 AUC=0.521 VA=0.636 (4s) loss_treino_final=0.226 acc_treino=0.906
+
+[B2] Fold 2: treino (6605, 30, 4) teste (2043, 30, 4) classes teste [1300  743] | chance seq 0.636 vídeo 0.667
+  LogReg        BSA=0.688 bal=0.647 F1=0.651 AUC=0.712 VA=0.694 (0s)
+  SVM-RBF       BSA=0.761 bal=0.748 F1=0.745 AUC=0.837 VA=0.694 (2s)
+  RandomForest  BSA=0.816 bal=0.808 F1=0.804 AUC=0.868 VA=0.778 (1s)
+  LSTM          BSA=0.681 bal=0.708 F1=0.678 AUC=0.781 VA=0.694 (9s) loss_treino_final=0.303 acc_treino=0.855
+  CNN1D         BSA=0.720 bal=0.761 F1=0.719 AUC=0.786 VA=0.639 (4s) loss_treino_final=0.326 acc_treino=0.857
+
+[B2] Fold 3: treino (6465, 30, 4) teste (2196, 30, 4) classes teste [1220  976] | chance seq 0.556 vídeo 0.667
+  LogReg        BSA=0.721 bal=0.698 F1=0.696 AUC=0.694 VA=0.750 (0s)
+  SVM-RBF       BSA=0.698 bal=0.686 F1=0.687 AUC=0.729 VA=0.722 (2s)
+  RandomForest  BSA=0.688 bal=0.664 F1=0.658 AUC=0.820 VA=0.667 (1s)
+  LSTM          BSA=0.698 bal=0.675 F1=0.672 AUC=0.725 VA=0.667 (8s) loss_treino_final=0.279 acc_treino=0.875
+  CNN1D         BSA=0.690 bal=0.660 F1=0.648 AUC=0.770 VA=0.778 (4s) loss_treino_final=0.315 acc_treino=0.863
+
+[B2] Fold 4: treino (7186, 30, 4) teste (1462, 30, 4) classes teste [795 667] | chance seq 0.544 vídeo 0.667
+  LogReg        BSA=0.720 bal=0.704 F1=0.703 AUC=0.780 VA=0.750 (0s)
+  SVM-RBF       BSA=0.632 bal=0.617 F1=0.612 AUC=0.670 VA=0.722 (2s)
+  RandomForest  BSA=0.623 bal=0.614 F1=0.613 AUC=0.641 VA=0.694 (1s)
+  LSTM          BSA=0.590 bal=0.578 F1=0.575 AUC=0.573 VA=0.722 (10s) loss_treino_final=0.282 acc_treino=0.879
+  CNN1D         BSA=0.570 bal=0.565 F1=0.565 AUC=0.585 VA=0.667 (4s) loss_treino_final=0.291 acc_treino=0.881
+
+[B2] Fold 5: treino (6957, 30, 4) teste (1691, 30, 4) classes teste [1105  586] | chance seq 0.653 vídeo 0.667
+  LogReg        BSA=0.668 bal=0.616 F1=0.619 AUC=0.686 VA=0.758 (0s)
+  SVM-RBF       BSA=0.606 bal=0.546 F1=0.546 AUC=0.480 VA=0.636 (2s)
+  RandomForest  BSA=0.663 bal=0.584 F1=0.583 AUC=0.645 VA=0.697 (1s)
+  LSTM          BSA=0.688 bal=0.620 F1=0.625 AUC=0.630 VA=0.727 (9s) loss_treino_final=0.331 acc_treino=0.852
+  CNN1D         BSA=0.569 bal=0.580 F1=0.560 AUC=0.588 VA=0.758 (5s) loss_treino_final=0.309 acc_treino=0.862
+
+[B3] Fold 1: treino (4385, 30, 4) teste (775, 30, 4) classes teste [228 547] | chance seq 0.706 vídeo 0.500
+  LogReg        BSA=0.677 bal=0.697 F1=0.658 AUC=0.790 VA=0.727 (0s)
+  SVM-RBF       BSA=0.794 bal=0.836 F1=0.781 AUC=0.892 VA=0.818 (0s)
+  RandomForest  BSA=0.819 bal=0.859 F1=0.807 AUC=0.912 VA=0.864 (0s)
+  LSTM          BSA=0.787 bal=0.843 F1=0.777 AUC=0.921 VA=0.864 (7s) loss_treino_final=0.096 acc_treino=0.961
+  CNN1D         BSA=0.805 bal=0.852 F1=0.794 AUC=0.913 VA=0.818 (3s) loss_treino_final=0.108 acc_treino=0.957
+
+[B3] Fold 2: treino (3952, 30, 4) teste (1208, 30, 4) classes teste [465 743] | chance seq 0.615 vídeo 0.500
+  LogReg        BSA=0.715 bal=0.692 F1=0.695 AUC=0.820 VA=0.625 (0s)
+  SVM-RBF       BSA=0.902 bal=0.883 F1=0.893 AUC=0.983 VA=0.792 (0s)
+  RandomForest  BSA=0.925 bal=0.913 F1=0.920 AUC=0.967 VA=0.875 (0s)
+  LSTM          BSA=0.862 bal=0.833 F1=0.846 AUC=0.965 VA=0.792 (6s) loss_treino_final=0.105 acc_treino=0.951
+  CNN1D         BSA=0.887 bal=0.868 F1=0.877 AUC=0.956 VA=0.750 (3s) loss_treino_final=0.116 acc_treino=0.954
+
+[B3] Fold 3: treino (3742, 30, 4) teste (1425, 30, 4) classes teste [449 976] | chance seq 0.685 vídeo 0.500
+  LogReg        BSA=0.701 bal=0.748 F1=0.694 AUC=0.738 VA=0.833 (0s)
+  SVM-RBF       BSA=0.806 bal=0.826 F1=0.793 AUC=0.903 VA=0.750 (0s)
+  RandomForest  BSA=0.831 bal=0.827 F1=0.812 AUC=0.911 VA=0.750 (0s)
+  LSTM          BSA=0.841 bal=0.851 F1=0.826 AUC=0.882 VA=0.750 (7s) loss_treino_final=0.115 acc_treino=0.949
+  CNN1D         BSA=0.820 bal=0.860 F1=0.812 AUC=0.930 VA=0.833 (3s) loss_treino_final=0.124 acc_treino=0.951
+
+[B3] Fold 4: treino (4282, 30, 4) teste (878, 30, 4) classes teste [211 667] | chance seq 0.760 vídeo 0.500
+  LogReg        BSA=0.920 bal=0.857 F1=0.882 AUC=0.958 VA=0.917 (0s)
+  SVM-RBF       BSA=0.860 bal=0.815 F1=0.811 AUC=0.901 VA=0.833 (1s)
+  RandomForest  BSA=0.891 bal=0.805 F1=0.834 AUC=0.884 VA=0.833 (0s)
+  LSTM          BSA=0.885 bal=0.809 F1=0.831 AUC=0.918 VA=0.833 (8s) loss_treino_final=0.121 acc_treino=0.941
+  CNN1D         BSA=0.901 bal=0.813 F1=0.848 AUC=0.966 VA=0.917 (4s) loss_treino_final=0.135 acc_treino=0.950
+
+[B3] Fold 5: treino (4279, 30, 4) teste (881, 30, 4) classes teste [295 586] | chance seq 0.665 vídeo 0.500
+  LogReg        BSA=0.687 bal=0.616 F1=0.621 AUC=0.786 VA=0.773 (0s)
+  SVM-RBF       BSA=0.915 bal=0.888 F1=0.901 AUC=0.950 VA=0.909 (0s)
+  RandomForest  BSA=0.881 bal=0.834 F1=0.856 AUC=0.964 VA=0.955 (0s)
+  LSTM          BSA=0.931 bal=0.903 F1=0.919 AUC=0.973 VA=0.955 (8s) loss_treino_final=0.116 acc_treino=0.952
+  CNN1D         BSA=0.908 bal=0.863 F1=0.888 AUC=0.975 VA=0.955 (3s) loss_treino_final=0.124 acc_treino=0.952
+
+
+| Modelo | BSA | Acur. bal. | F1 macro | AUC macro | VA |
+|---|---|---|---|---|---|
+| Chance(majoritaria) | 44.4 ± 2.4 | — | — | — | 33.3 ± 0.0 |
+| LogReg | 49.4 ± 4.3 | 49.7 ± 3.0 | 48.5 ± 3.6 | 68.9 ± 5.5 | 50.7 ± 7.6 |
+| SVM-RBF | 53.0 ± 3.8 | 56.2 ± 4.5 | 54.2 ± 3.9 | 69.9 ± 5.1 | 54.0 ± 4.0 |
+| RandomForest | 54.5 ± 9.3 | 57.8 ± 7.9 | 56.0 ± 9.1 | 73.5 ± 6.8 | 57.3 ± 7.2 |
+| LSTM | 50.6 ± 9.5 | 53.7 ± 5.5 | 51.5 ± 8.0 | 71.4 ± 7.0 | 52.7 ± 6.0 |
+| CNN1D | 49.8 ± 6.9 | 53.7 ± 5.4 | 51.3 ± 5.6 | 69.7 ± 5.5 | 55.1 ± 3.6 |
+
+Resultados em /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/exp1_intra_e15.csv e /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/exp1_intra_e15.md; log /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/logs/exp1_e15_20260920-183128.log

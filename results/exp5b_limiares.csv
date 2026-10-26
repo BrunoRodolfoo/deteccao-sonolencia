@@ -1,0 +1,105 @@
+execucao,experimento,variante,modelo,esquema,unidade,id_unidade,limiar,acur_bal_na_calibracao,acur_bal_05_na_calibracao,n_calibracao,origem
+20260927-211326,C_dmd_para_uta,principal,RF,todos,modelo_final,DMD inteiro,0.6616666666666666,0.8003179261433113,0.76444933561588,510.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gA_1,0.655,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gA_5,0.8116666666666668,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gB_10,0.6716666666666666,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gB_6,0.5766666666666667,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gB_7,0.6583333333333333,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gB_9,0.6616666666666666,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gC_13,0.7316666666666667,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gC_14,0.5983333333333334,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gE_29,0.5683333333333334,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gF_23,0.655,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gZ_33,0.7616666666666667,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gZ_36,0.6516666666666666,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,RF,DMD,sujeito_teste,gZ_37,0.6433333333333333,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,C_dmd_para_uta,principal,LR,todos,modelo_final,DMD inteiro,0.5354555167838848,0.8033749082905355,0.7862965680280427,510.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gA_1,0.6378103971010066,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gA_5,0.5713394699513054,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gB_10,0.5406691445574101,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gB_6,0.5320215180451293,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gB_7,0.5933712494955055,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gB_9,0.5513527060043304,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gC_13,0.6436789171809452,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gC_14,0.5264892277534214,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gE_29,0.5813855036223724,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gF_23,0.607259636320195,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gZ_33,0.5427182672984348,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gZ_36,0.5460674713035896,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,principal,LR,DMD,sujeito_teste,gZ_37,0.5538585925970899,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,C_dmd_para_uta,sem_normalizacao,RF,todos,modelo_final,DMD inteiro,0.8416666666666667,0.7833211054047444,0.714763185782995,510.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gA_1,0.7516666666666667,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gA_5,0.8049999999999999,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gB_10,0.7316666666666667,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gB_6,0.8483333333333334,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gB_7,0.7816666666666667,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gB_9,0.8200000000000001,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gC_13,0.7383333333333333,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gC_14,0.8049999999999999,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gE_29,0.6716666666666666,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gF_23,0.7783333333333333,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gZ_33,0.855,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gZ_36,0.8049999999999999,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,RF,DMD,sujeito_teste,gZ_37,0.8166666666666667,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,C_dmd_para_uta,sem_normalizacao,LR,todos,modelo_final,DMD inteiro,0.3995525951265307,0.781038558734817,0.7709301377679955,510.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gA_1,0.4737496087149111,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gA_5,0.4242463693325733,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gB_10,0.37523457176921915,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gB_6,0.4186928590740562,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gB_7,0.4326412223482329,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gB_9,0.6848968898987942,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gC_13,0.6183253504764894,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gC_14,0.4667669217037391,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gE_29,0.3771237229953366,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gF_23,0.3708559590715566,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gZ_33,0.5551535820824001,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gZ_36,0.5099716180311293,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,A_dmd_intra,sem_normalizacao,LR,DMD,sujeito_teste,gZ_37,0.4296339330023752,,,,LOSO aninhado nos outros 12 sujeitos
+20260927-211326,C_dmd_para_uta,alerta_s1,RF,todos,modelo_final,DMD inteiro,0.5916666666666667,0.7529898484216382,0.7512515644555695,525.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,alerta_s1,LR,todos,modelo_final,DMD inteiro,0.38222729912382747,0.7651230705047977,0.7448894451397581,525.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,s5_sem_sinal_alerta,RF,todos,modelo_final,DMD inteiro,0.5116666666666667,0.7666626081839305,0.7661350054282207,656.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,s5_sem_sinal_alerta,LR,todos,modelo_final,DMD inteiro,0.43460824220247757,0.7756825860651995,0.7663176371513509,656.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,janela_5s,RF,todos,modelo_final,DMD inteiro,0.5766666666666667,0.778268672256014,0.7738917200942517,545.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,janela_5s,LR,todos,modelo_final,DMD inteiro,0.5122344338782606,0.7833031946955997,0.7785974573949257,545.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,janela_15s,RF,todos,modelo_final,DMD inteiro,0.9583333333333333,0.9120171673819742,0.7339055793991416,474.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,janela_15s,LR,todos,modelo_final,DMD inteiro,0.8308627442814098,0.9195278969957081,0.826716738197425,474.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,ref_s2_espelho,RF,todos,modelo_final,DMD inteiro,0.765,0.8225020504655762,0.8063154339750085,472.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,ref_s2_espelho,LR,todos,modelo_final,DMD inteiro,0.3800740587830479,0.7597819269551793,0.7427992473585179,472.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,sem_gE_29,RF,todos,modelo_final,DMD inteiro,0.5683333333333334,0.8214588634435962,0.7860710583356894,474.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,C_dmd_para_uta,sem_gE_29,LR,todos,modelo_final,DMD inteiro,0.5813855036223724,0.8219300725662049,0.817783432287249,474.0,escores fora da amostra do LOSO do DMD (os de A); a UTA não é consultada
+20260927-211326,B_uta_intra,principal,RF,B3,fold_teste,1,0.5349999999999999,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,RF,B3,fold_teste,2,0.5883333333333334,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,RF,B3,fold_teste,3,0.4916666666666667,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,RF,B3,fold_teste,4,0.585,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,RF,B3,fold_teste,5,0.595,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,LR,B3,fold_teste,1,0.48941642919707895,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,LR,B3,fold_teste,2,0.503481700538752,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,LR,B3,fold_teste,3,0.49075397557858547,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,LR,B3,fold_teste,4,0.487280665186875,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,principal,LR,B3,fold_teste,5,0.4774978635263407,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,RF,B3,fold_teste,1,0.765,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,RF,B3,fold_teste,2,0.605,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,RF,B3,fold_teste,3,0.6950000000000001,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,RF,B3,fold_teste,4,0.7150000000000001,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,RF,B3,fold_teste,5,0.7150000000000001,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,LR,B3,fold_teste,1,0.4739481208609969,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,LR,B3,fold_teste,2,0.5100835551698732,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,LR,B3,fold_teste,3,0.5305131362855662,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,LR,B3,fold_teste,4,0.5450193507494647,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,B_uta_intra,sem_normalizacao,LR,B3,fold_teste,5,0.5050984656278195,,,,validação interna deixando um fold de fora nos 4 folds de treino
+20260927-211326,C_dmd_para_uta,principal,RF,B3,oraculo_uta,UTA inteira,0.3883333333333333,0.6590204376777549,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,principal,LR,B3,oraculo_uta,UTA inteira,0.35686419589880347,0.6593559364543055,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,sem_normalizacao,RF,B3,oraculo_uta,UTA inteira,0.5016666666666667,0.6314638969384756,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,sem_normalizacao,LR,B3,oraculo_uta,UTA inteira,0.1851486664637944,0.6312830534722886,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,alerta_s1,RF,B3,oraculo_uta,UTA inteira,0.5183333333333333,0.5844046413155639,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,alerta_s1,LR,B3,oraculo_uta,UTA inteira,0.5031156830131942,0.6302838301366307,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,s5_sem_sinal_alerta,RF,B3,oraculo_uta,UTA inteira,0.2816666666666667,0.6363710572373604,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,s5_sem_sinal_alerta,LR,B3,oraculo_uta,UTA inteira,0.3059840093946058,0.6669086247921819,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,janela_5s,RF,B3,oraculo_uta,UTA inteira,0.32166666666666666,0.6264736805857484,,12609.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,janela_5s,LR,B3,oraculo_uta,UTA inteira,0.35271630608830196,0.6599439843954724,,12609.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,janela_15s,RF,B3,oraculo_uta,UTA inteira,0.9483333333333333,0.6785729282214044,,12365.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,janela_15s,LR,B3,oraculo_uta,UTA inteira,0.9738262838055394,0.6932674670858587,,12365.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,ref_s2_espelho,RF,B3,oraculo_uta,UTA inteira,0.7783333333333333,0.6815098391375052,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,ref_s2_espelho,LR,B3,oraculo_uta,UTA inteira,0.6147912679598384,0.686349472174224,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,sem_gE_29,RF,B3,oraculo_uta,UTA inteira,0.385,0.6895606670677165,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)
+20260927-211326,C_dmd_para_uta,sem_gE_29,LR,B3,oraculo_uta,UTA inteira,0.3444621086108261,0.6558649934424751,,12487.0,DIAGNÓSTICO: maximiza a acurácia balanceada na própria UTA (olha o rótulo do teste)

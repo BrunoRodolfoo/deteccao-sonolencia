@@ -1,0 +1,246 @@
+# node app/pwa/test_engine.mjs — 2026-09-28T02:10:03Z; node v22.23.2; md5 engine.js c4cc34e59a6a51b8076276d2e41f9a58, test_engine.mjs a9975e793dd32cf7955698f8eefa2441
+[1] EAR de pontos sintéticos
+  ok  - EAR = 0.5 para olho sintético aberto
+  ok  - EAR = 0 para olho fechado
+  ok  - EAR degenerado -> 0 sem divisão por zero
+[2] EAR/MAR a partir de landmarks normalizados
+  ok  - EAR L/R/médio = 0.5/0.25/0.375
+  ok  - MAR = 0.5
+[3] Caixa de recorte do olho
+  ok  - lado = 1.6 x |p1-p4| = 16
+  ok  - centro no centroide dos 6 pontos
+  ok  - caixa limitada ao quadro
+  ok  - lado mínimo e limite superior esquerdo respeitados
+[4] Normalização e quantização do recorte
+  ok  - 0-1
+  ok  - -1-1
+  ok  - mean_std
+  ok  - int8 quantizado = [-128,0,127]
+  ok  - desquantização inversa
+  ok  - softmax soma 1 e argmax=2
+  ok  - mediana ímpar/par
+  ok  - percentil 50
+[5] Detecção de uma piscada sintética -> 4 características
+  ok  - uma piscada detectada
+  ok  - start/bottom/end = 9/11/13
+  ok  - Duration = 5 (esperado 5)
+  ok  - Amplitude = 0.25 (esperado 0.25)
+  ok  - Velocity = 0.125 (esperado 0.125)
+  ok  - Frequency = 7.142857142857143 (esperado 7.142857142857143)
+  ok  - contador = 1
+  ok  - fechamento de 1 quadro não conta como piscada
+  ok  - fechamento de 2 s não conta como piscada (max 1.5 s)
+  ok  - duas piscadas detectadas
+  ok  - Frequency 2ª piscada = 16.666666666666668 (esperado 16.666666666666668)
+  ok  - 2ª piscada: start/bottom/end = 7/9/11, duration 5
+[6] Normalização por sujeito (z-score)
+  ok  - pronto após 4 piscadas
+  ok  - média=2,15,4,0.2 desvio=1,5,1,0.09999999999999999
+  ok  - z-score = 1.000,1.000,1.000,1.000
+  ok  - desvio zero não gera NaN/Infinity
+[7] Janela de 30 piscadas
+  ok  - vazia -> null
+  ok  - parcial preenchida com zeros à esquerda
+  ok  - mantém somente as últimas 30
+  ok  - modo estrito exige 30 piscadas
+[8] Voto majoritário com desempate por escore
+  ok  - maioria simples
+  ok  - empate 0/2 com escore médio 5 (classe 1 não empatada) -> equidistante, fica a classe menor (0)
+  ok  - empate 0/1 com escore médio 2 -> alerta (0)
+  ok  - empate 0/2 com escore médio 8.5 -> sonolento (2)
+  ok  - empate 0/2 com escore médio 1.5 -> alerta (0)
+  ok  - empate 1/2 com escore médio 5 -> pouca vigilância (1)
+  ok  - discretização <3.3 / 3.3-6.6 / >6.6
+  ok  - escore esperado 0..10
+  ok  - lista vazia -> null
+[9] PERCLOS, calibração, suavização, latência, alertas, CSV
+  ok  - PERCLOS = 0.5 (5 de 10 quadros)
+  ok  - janela deslizante esquece quadros antigos
+  ok  - limiar = 0.23249999999999998 (0.75 x mediana 0.31)
+  ok  - suavização converge para a classe 2
+  ok  - p50 = 51
+  ok  - p95 = 95
+  ok  - mantém as últimas 300
+  ok  - olho fechado < 1 s não alerta
+  ok  - olhos fechados >= 1 s e PERCLOS > 0.15 alertam
+  ok  - sonolento sustentado e bocejo
+  ok  - CSV com escape
+[10] Adaptação do models/eye_state.json (frente de exportação) ao contrato da PWA
+  ok  - arquivos fp32/int8 mapeados
+  ok  - input_size/channels a partir de entrada.forma
+  ok  - quantização de entrada mapeada
+  ok  - quantização de saída mapeada
+  ok  - saída prob_open e normalização 0-1 inferidas
+  ok  - JSON já no contrato da PWA passa inalterado
+  ok  - null -> null
+[11] Pose da cabeça a partir de matrizes 4x4 sintéticas (coluna a coluna e linha a linha)
+  ok  - identidade: ângulos 0, layout col, tz = -40
+  ok  - coluna a coluna: translação em data[12..14] (como o packed_data do MediaPipe)
+  ok  - só pitch 20° (col) -> pitch 20.000000
+  ok  - pitch -15 / yaw 30 / roll 10 (col) recuperados
+  ok  - translação recuperada (col)
+  ok  - só pitch 20° (row) -> pitch 20.000000
+  ok  - pitch -15 / yaw 30 / roll 10 (row) recuperados
+  ok  - translação recuperada (row)
+  ok  - pitch > 0 gira a frente do rosto para baixo (-Y da câmera)
+  ok  - escala uniforme na parte 3x3 não altera os ângulos
+  ok  - entrada inválida -> null
+  ok  - matriz real do MediaPipe: layout col, tz -42.3 cm, pitch -22.2° (câmera abaixo do rosto)
+  ok  - detecção automática da ordem linha a linha
+  ok  - blendshapeMap
+[12] Fusão EAR + blendshapes (olho fechado) e trava de olhar para baixo
+  ok  - os dois eyeBlink >= 0,5 -> fechado mesmo com EAR alto
+  ok  - só um olho >= 0,5 não basta pelo blendshape
+  ok  - EAR abaixo do limiar + menor eyeBlink 0,45 (>= 0,4) -> fechado
+  ok  - EAR baixo com um olho só (eyeBlink 0,6 / 0,3: piscadela, sorriso torto) -> aberto
+  ok  - EAR baixo com eyeBlink 0,2 (olho aberto para o blendshape) -> aberto
+  ok  - apertando os olhos (eyeSquint 0,55: risada, sol): EAR sozinho não conta
+  ok  - olhando para o lado (Δyaw -28°): EAR sozinho não conta
+  ok  - pálpebra pesada (eyeBlink de repouso 0,34): 0,55 não basta (limiar = 0,34 + 0,25 = 0,59)
+  ok  - ... e 0,62-0,65 conta como fechado
+  ok  - repouso baixo (0,1): vale o piso de 0,5
+  ok  - cabeça 15° abaixo: EAR baixo sozinho não conta
+  ok  - cabeça abaixo mas blendshape fechado -> fechado
+  ok  - olhar para baixo (eyeLookDown 0,7): EAR sozinho não conta
+  ok  - sem blendshapes: vale o EAR, com a trava da cabeça
+[13] Episódios de olho fechado (piscada, microssono, rosto perdido)
+  ok  - piscada de 6 quadros -> 200 ms
+  ok  - fechamento de 1,5 s: microssono sinalizado 1 vez, duração 1500 ms
+  ok  - rosto perdido por > 0,3 s encerra o fechamento no último quadro visto
+[14] PERCLOS por tempo com denominador mínimo de 60 s
+  ok  - 20 s observados, 3 s fechado: PERCLOS 5.0 % (bruto 15.0 %)
+  ok  - janela cheia (60 s) com os mesmos 3 s: 5.0 %
+  ok  - o fechamento sai da janela depois de 60 s
+  ok  - pausa longa entre quadros conta no máximo 100 ms
+[15] Bocejo: jawOpen sustentado >= 1,5 s; fala não conta
+  ok  - 1 bocejo emitido ao completar 1,5 s (t = 2533 ms)
+  ok  - duração informada ao fechar a boca: 2467 ms
+  ok  - boca aberta 1 s não é bocejo
+  ok  - fala (abre e fecha a cada 0,27 s por 6 s) não vira bocejo
+  ok  - fechamento de 0,1 s no meio não quebra o bocejo
+  ok  - mão na frente (rosto perdido 0,67 s) não encerra o bocejo
+  ok  - sem blendshape: MAR >= base + 0,4 por 1,5 s também conta
+  ok  - jawOpen de repouso alto (0,35) exige >= 0,65
+[16] Cabeça caindo: queda sustentada, cabeceio, olhar para o lado, rosto perdido
+  ok  - cabeça 25° abaixo com olhos fechados: 1 evento "queda" 833 ms após cair
+  ok  - com olhos fechados >= 0,8 s: sustentada (vermelho)
+  ok  - cabeça 25° abaixo 3 s com olhos ABERTOS: só 'cabeça baixa' (distração) aos 2 s, sem vermelho
+  ok  - cabeça baixa 0,7 s com olhos abertos: nenhum evento
+  ok  - cabeceio (queda rápida e volta, olhos fechados): cabeceio
+  ok  - mesma curva com olhos abertos (olhar rápido para o painel): nenhum evento
+  ok  - mesma curva com uma piscada comum (0,13 s) no meio: nenhum evento
+  ok  - caída com olhos fechados: vermelho já em 0,8 s
+  ok  - olhando para o lado (yaw 40°): ignorado
+  ok  - rosto some logo após baixar 12° com os olhos ABERTOS (pegar algo no banco): nenhum evento, sem vermelho
+  ok  - rosto some logo após baixar 12° com os olhos fechados há 0,5 s: queda fora do quadro e vermelho em 2 s
+  ok  - rosto some com a cabeça no neutro: só 'sem rosto'
+  ok  - tombando para o lado (roll 35°) por > 0,8 s: queda
+  ok  - com pitchDownSign = -1, pitch positivo é para cima: nenhum evento
+  ok  - postura 6° abaixo por 4 min: base acompanha (5.19° = 6·(1-e^-2)), sem evento
+[17] Pontos com decaimento linear e teto
+  ok  - 20 pt no evento, 10 pt na metade, 0 no fim
+  ok  - teto de 50 pt com 3 eventos simultâneos; contagem 3
+  ok  - rampa do PERCLOS: 0 até 7,5 %, 40 em 15 %, teto 60
+[18] Nível com subida imediata, descida limitada e histerese
+  ok  - 45 -> ATENÇÃO na hora
+  ok  - desce no máximo 3 pt/s (45 -> 42)
+  ok  - 36: continua em ATENÇÃO (sai só abaixo de 35)
+  ok  - 33: volta a ALERTA
+  ok  - 72 -> SONOLENTO
+  ok  - 63: continua SONOLENTO (sai só abaixo de 60)
+  ok  - 57: volta a ATENÇÃO
+  ok  - condição forçada: VERMELHO e nível >= 75
+[19] Lógica de alarme (sem áudio): sirene, ding, vibração, silenciar
+  ok  - entrou no vermelho: sirene, flash, vibração, alarme contado
+  ok  - sirene contínua; vibração só a cada 1,5 s
+  ok  - saiu do vermelho em 1 s: sirene continua até completar 2 s
+  ok  - após 2 s a sirene para
+  ok  - entrou em ATENÇÃO: ding + vibração curta
+  ok  - novo sinal 5 s depois: sem ding (mínimo 20 s)
+  ok  - novo sinal 21 s depois: ding
+  ok  - sem sinal novo: sem ding
+  ok  - Estou acordado: vermelho por nível silenciado por 30 s
+  ok  - microssono/cabeça caída nunca é silenciado
+  ok  - depois de 30 s a sirene volta se o nível continuar vermelho
+  ok  - Estou acordado corta a sirene na hora, mesmo antes do mínimo de 2 s
+[20] Modelo LSTM como conselheiro (+10 no máximo)
+  ok  - 4 predições 'sonolento': 0 pt
+  ok  - 5 seguidas com p >= 0,6: +10 pt
+  ok  - uma predição 'alerta' zera
+  ok  - 'sonolento' com p 0,55 (< 0,6) não conta
+[21] Monitor completo com quadros sintéticos (30 FPS)
+  ok  - calibração de 10 s concluída
+  ok  - base: limiar EAR 0.225, pitch -5°, jawOpen 0.02
+  ok  - 2 min acordado piscando normalmente: sempre ALERTA, nenhum som, nenhum evento
+  ok  - linha de base das piscadas: 167 ms
+  ok  - microssono: VERMELHO forçado ao completar 1 s (1033 ms)
+  ok  - sirene + eventos 'microssono' e 'alarme' registrados
+  ok  - duração do microssono (1,5 s) informada ao reabrir os olhos
+  ok  - depois de reabrir os olhos o vermelho termina em 1.6 s
+  ok  - ~60 s depois de UM microssono: ainda ATENÇÃO pelo piso de 1 min (nível 40)
+  ok  - 68 s depois de UM microssono: ALERTA de novo (nível 16)
+  ok  - 2 bocejos -> ATENÇÃO com 1 ding (nível 48)
+  ok  - 'Por quê?' lista os bocejos em primeiro
+  ok  - 4 bocejos em 2 min: no máximo ATENÇÃO (nível máximo 50)
+  ok  - 'queda' vale 30 pt (30.0)
+  ok  - cabeça 25° abaixo com olhos fechados: vermelho forçado em 0.83 s
+  ok  - cabeça baixa 3 s com olhos abertos: 'cabeça baixa' no registro, continua ALERTA, sem som
+  ok  - 2 bocejos + 1 cabeceio (sem condição forçada): SONOLENTO pelo nível
+  ok  - LSTM 'sonolento' com 90 % por 1 min, sinais visíveis em 0: +0 pt (elegível, mas não conta), estado máximo ALERTA
+  ok  - com 2 bocejos (sinais visíveis >= 40), o LSTM 'sonolento' soma +10
+  ok  - 20 s sem rosto (cabeça no neutro antes): nenhum alarme
+  ok  - estatísticas: {"bocejo":2,"queda":0,"cabeceio":1,"fechamento":1,"microssono":0,"cabeca_baixa":0}, alarmes 1, avisos 1, dings 1
+  ok  - tempo em cada estado soma a duração da sessão ativa
+[22] Volume do alarme: padrão 20 %, ?volume= da URL sem gravar, curva do ganho
+  ok  - volume padrão = 20 % (baixo, para testes)
+  ok  - sem URL e sem valor salvo: 20 % (padrão)
+  ok  - valor salvo 65 -> 65 %
+  ok  - ?volume=0 sobrepõe o salvo (80) -> 0 %, fonte url
+  ok  - ?volume fora de 0-100 é limitado (150 -> 100, -5 -> 0)
+  ok  - ?volume inválido é ignorado (usa o salvo)
+  ok  - ?volume vazio é ignorado (usa o padrão)
+  ok  - aceita vírgula decimal e %; rejeita booleano/nulo
+  ok  - volume 0 (ou inválido) -> ganho 0: silêncio absoluto
+  ok  - curva quadrática: 100 % -> 1; 50 % -> 0,25; 20 % -> 0,04 (-28 dB)
+  ok  - ganho estritamente crescente de 0 a 100 %
+[23] Roteiro da demonstração (2 min): verde, 2 bocejos -> amarelo, cabeça baixa, microssono -> vermelho, reabrir -> volta
+  ok  - 1) 15 s piscando normalmente: verde o tempo todo, nenhum som
+  ok  - 2a) 1º bocejo: contado (1 em 5 min), ainda verde (nível 23)
+  ok  - 2b) 2º bocejo: ATENÇÃO com "ding" (nível 48)
+  ok  - 3) cabeça baixa 6 s com os olhos abertos: evento 'cabeça baixa' no registro, sem vermelho
+  ok  - 4) olhos fechados 2 s: microssono, VERMELHO forçado e sirene
+  ok  - 5) reabriu: a sirene para e o estado volta ao amarelo em 1.7 s
+  ok  - 5b) e fica em ATENÇÃO (sem vermelho nem sirene) enquanto os sinais decaem (nível 61 após 21 s)
+  ok  - 6) "Por quê?": bocejos +41, fechamentos +20
+  ok  - registro: {"bocejo":2,"queda":0,"cabeceio":0,"fechamento":0,"microssono":1,"cabeca_baixa":1}, alarmes 1
+  ok  - Recalibrar zera nível, estado, sirene e contagens
+[24] Verificação adversarial: sinais negativos da pose, cabeça baixa com piscadas, nível sem travar nem oscilar
+  ok  - pitch +25 / yaw -35 / roll -20 (col) recuperados
+  ok  - pitch +25 / yaw -35 / roll -20 (row) recuperados
+  ok  - yaw > 0 gira a frente do rosto (+Z) para +X
+  ok  - roll > 0 gira o eixo X do rosto para +Y
+  ok  - cabeça baixa 8 s com 6 piscadas comuns: só 'cabeça baixa', sem vermelho (cabeca_baixa)
+  ok  - alvo alternando 66/72 por 10 s: 2 troca(s) de estado
+  ok  - vermelho forçado que acaba (alvo 0): volta ao ALERTA em 13.4 s e nível 0
+[25] Ajuste final: PERCLOS sem piscadas, LSTM só em ATENÇÃO, saída do vermelho forçado, rosto perdido, calibração
+  ok  - 60 piscadas/min de 0,1 s: PERCLOS 0.0 % (com as piscadas seria 10.0 %)
+  ok  - fechamento de 0,6 s conta inteiro, desde o 1º quadro: 1.00 % (0,6 s / 60 s)
+  ok  - fechamento de 0,43 s (piscada longa) não entra
+  ok  - rosto perdido encerra o fechamento: 0,37 s descartado, 0,63 s contado (2.11 %)
+  ok  - com minEpisodeMs = 0 volta ao PERCLOS antigo (todo quadro fechado conta)
+  ok  - 75 piscadas/min por 3 min: sempre ALERTA, nível máx. 0.0 (PERCLOS com piscadas seria 12.5 %)
+  ok  - piscando muito + LSTM 'sonolento' por 1 min: continua ALERTA (modelo elegível, mas não soma)
+  ok  - forçado termina com o alvo em 65: ATENÇÃO em 1.7 s (o nível desce de 75 a 3 pt/s e o limiar de saída é o de entrada, 70)
+  ok  - vermelho que entrou pelo nível (72) e cai para 65: continua vermelho (sai só abaixo de 60)
+  ok  - forçado termina com o alvo em 75: continua vermelho (>= 70); o alvo cai para 68: ATENÇÃO sem esperar os 60
+  ok  - cabeça tombando 40° para o lado com olhos fechados: queda com byRoll e pico lateral 40°
+  ok  - cabeça caindo 28° para a frente: queda sem byRoll, pico 28° para baixo
+  ok  - cabeça 20° abaixo com olhos abertos e depois o rosto some por 3 s (abaixou-se): cabeca_baixa, sem vermelho
+  ok  - calibração com olhos fechados em 17 % dos quadros: aviso para recalibrar
+  ok  - calibração normal (olho fechado em 7 %): sem aviso
+  ok  - roteiro da banca, pior caso (2º bocejo 3 s antes de fechar os olhos): o vermelho termina 8.1 s depois de reabrir (<= 10 s)
+  ok  - histerese desligada no app: com o olho 'fechado' antes, eyeBlink 0,45 já reabre
+  ok  - com reopenHyst = 0,1 (só para avaliação), 0,45 manteria fechado
+
+217 passaram, 0 falharam
+# código de saída: 0

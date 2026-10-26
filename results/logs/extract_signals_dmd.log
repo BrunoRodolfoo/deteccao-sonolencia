@@ -1,0 +1,131 @@
+2026-09-27 16:01:30,069 INFO dmd: 16 vídeos encontrados, 0 já prontos, 16 a processar (workers=6, limit=None)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535690.937387 27335090 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535690.937484 27335088 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535690.937607 27335084 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535690.939233 27335295 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535690.939288 27335082 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+W0000 00:00:1790535690.939321 27335340 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535690.940420 27335086 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+W0000 00:00:1790535690.940649 27335329 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535690.942757 27335329 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535690.943353 27335252 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535690.943486 27335340 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535690.943969 27335295 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535690.944659 27335305 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535690.946438 27335252 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535690.946911 27335305 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535690.959222 27335094 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535690.965129 27335280 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535690.967353 27335280 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535690.987674 27335295 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+W0000 00:00:1790535691.007719 27335252 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+W0000 00:00:1790535691.009306 27335330 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+W0000 00:00:1790535691.023165 27335340 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+W0000 00:00:1790535691.029648 27335305 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+W0000 00:00:1790535691.130657 27335280 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+2026-09-27 16:02:23,191 INFO [1/16] gA_5_2019-03-13T09;06;49+01;00 quadros=5287 rosto=1.000 101 q/s (vídeo) | total 100 q/s agregado, 0.9 min
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535743.944229 27338619 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535743.947053 27338684 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535743.951634 27338680 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/src/features/extract_signals.py:255: RuntimeWarning: Mean of empty slice
+  ear = np.nanmean(M[:, :2], axis=1) if n else np.zeros(0)
+W0000 00:00:1790535743.991119 27338680 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+2026-09-27 16:02:24,068 INFO [2/16] gB_6_2019-03-13T13;37;11+01;00 quadros=5410 rosto=0.998 102 q/s (vídeo) | total 198 q/s agregado, 0.9 min
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/src/features/extract_signals.py:255: RuntimeWarning: Mean of empty slice
+  ear = np.nanmean(M[:, :2], axis=1) if n else np.zeros(0)
+2026-09-27 16:02:24,568 INFO [3/16] gB_7_2019-03-13T13;55;52+01;00 quadros=5405 rosto=0.997 101 q/s (vídeo) | total 295 q/s agregado, 0.9 min
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535744.941677 27338711 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535744.943663 27338791 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535744.946634 27338791 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535744.978819 27338791 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+2026-09-27 16:02:25,091 INFO [4/16] gA_1_2019-03-14T14;26;17+01;00 quadros=5480 rosto=1.000 101 q/s (vídeo) | total 392 q/s agregado, 0.9 min
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535745.489456 27338758 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535745.490938 27338837 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535745.493487 27338837 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/src/features/extract_signals.py:255: RuntimeWarning: Mean of empty slice
+  ear = np.nanmean(M[:, :2], axis=1) if n else np.zeros(0)
+2026-09-27 16:02:25,594 INFO [5/16] gB_10_2019-03-13T14;17;28+01;00 quadros=5417 rosto=0.999 99 q/s (vídeo) | total 486 q/s agregado, 0.9 min
+W0000 00:00:1790535746.062182 27338837 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535746.104293 27338813 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535746.106272 27338892 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535746.110300 27338886 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535746.135655 27338890 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535746.381442 27338855 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535746.383463 27338934 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535746.387811 27338935 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535746.409218 27338942 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/src/features/extract_signals.py:255: RuntimeWarning: Mean of empty slice
+  ear = np.nanmean(M[:, :2], axis=1) if n else np.zeros(0)
+2026-09-27 16:02:32,045 INFO [6/16] gB_10_2019-03-12T10;35;20+01;00 quadros=6055 rosto=0.983 99 q/s (vídeo) | total 533 q/s agregado, 1.0 min
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535752.856989 27339307 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535752.858897 27339377 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535752.863091 27339377 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535752.890659 27339386 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+2026-09-27 16:03:20,335 INFO [7/16] gB_9_2019-03-07T16;31;48+01;00 quadros=5292 rosto=1.000 94 q/s (vídeo) | total 348 q/s agregado, 1.8 min
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535801.271940 27342445 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535801.274026 27342558 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535801.276610 27342562 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535801.303937 27342562 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+2026-09-27 16:03:22,227 INFO [8/16] gC_13_2019-03-12T10;03;00+01;00 quadros=5380 rosto=1.000 94 q/s (vídeo) | total 390 q/s agregado, 1.9 min
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/src/features/extract_signals.py:255: RuntimeWarning: Mean of empty slice
+  ear = np.nanmean(M[:, :2], axis=1) if n else np.zeros(0)
+2026-09-27 16:03:22,653 INFO [9/16] gE_29_2019-03-15T13;51;09+01;00 quadros=5362 rosto=0.999 95 q/s (vídeo) | total 436 q/s agregado, 1.9 min
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535803.226756 27342697 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535803.231850 27342766 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535803.234317 27342766 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535803.263273 27342766 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535803.543026 27342728 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535803.544956 27342808 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535803.549354 27342810 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535803.575369 27342810 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/src/features/extract_signals.py:255: RuntimeWarning: Mean of empty slice
+  ear = np.nanmean(M[:, :2], axis=1) if n else np.zeros(0)
+2026-09-27 16:03:25,712 INFO [10/16] gC_14_2019-03-12T09;18;58+01;00 quadros=5576 rosto=0.992 92 q/s (vídeo) | total 473 q/s agregado, 1.9 min
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790535806.652062 27342947 gl_context.cc:369] GL version: 2.1 (2.1 Metal - 90.5), renderer: Apple M5
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1790535806.654344 27343017 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535806.659200 27343017 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1790535806.681495 27343017 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/src/features/extract_signals.py:255: RuntimeWarning: Mean of empty slice
+  ear = np.nanmean(M[:, :2], axis=1) if n else np.zeros(0)
+2026-09-27 16:03:32,722 INFO [11/16] gF_23_2019-03-11T10;19;19+01;00 quadros=6172 rosto=0.997 93 q/s (vídeo) | total 496 q/s agregado, 2.0 min
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/src/features/extract_signals.py:255: RuntimeWarning: Mean of empty slice
+  ear = np.nanmean(M[:, :2], axis=1) if n else np.zeros(0)
+2026-09-27 16:03:33,486 INFO [12/16] gF_23_2019-03-14T13;49;53+01;00 quadros=5743 rosto=1.000 95 q/s (vídeo) | total 539 q/s agregado, 2.1 min
+2026-09-27 16:04:03,112 INFO [13/16] gZ_33_2019-04-04T09;29;07+02;00 quadros=5407 rosto=1.000 129 q/s (vídeo) | total 470 q/s agregado, 2.6 min
+2026-09-27 16:04:04,852 INFO [14/16] gZ_37_2019-04-29T12;06;35+02;00 quadros=5204 rosto=1.000 136 q/s (vídeo) | total 499 q/s agregado, 2.6 min
+2026-09-27 16:04:04,853 INFO [15/16] gZ_36_2019-04-09T10;49;32+02;00 quadros=5414 rosto=1.000 131 q/s (vídeo) | total 534 q/s agregado, 2.6 min
+2026-09-27 16:04:05,536 INFO [16/16] gZ_33_2019-04-04T15;02;29+02;00 quadros=5618 rosto=1.000 133 q/s (vídeo) | total 567 q/s agregado, 2.6 min
+2026-09-27 16:04:05,656 INFO Índice: /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/data/signals/dmd/index.csv (16 linhas). Erros: 0. Tempo: 2.6 min
+FIM dmd rc=0
