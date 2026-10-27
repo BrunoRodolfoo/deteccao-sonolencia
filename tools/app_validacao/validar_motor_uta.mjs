@@ -406,6 +406,7 @@ const conjunto = (arr) => {
     piscadas_mediana: median(arr.map((m) => m.piscadas_min)),
     olho_fechado_mediana: median(arr.map((m) => m.olho_fechado_pct)),
     calib_aviso: arr.filter((m) => m.calib_aviso).length,
+    calib_olhos_fechados: arr.filter((m) => (m.calib_olhos_fechados_pct ?? 0) > 10).length, // o aviso do app usa 10 %
     t_amarelo_mediana_min: median(arr.filter((m) => m.primeiro_amarelo_s !== null).map((m) => m.primeiro_amarelo_s / 60)),
     t_vermelho_mediana_min: median(arr.filter((m) => m.primeiro_vermelho_s !== null).map((m) => m.primeiro_vermelho_s / 60)),
   };
@@ -520,7 +521,7 @@ function leitura() {
     `3. **Por pessoa:** em ${pD.mais} de ${N} o vídeo sonolento ficou mais tempo fora do verde que o acordado, ${pD.igual} empataram${empatesVerdes && pD.igual ? " (verdes nos dois)" : ""} e ${pD.menos} teve o contrário` +
       (menos.length ? ` (${lista(menos.map((p) => `${nome(p.s)}, que calibrou o vídeo sonolento com os olhos fechados em ${f1(p.d.calib_olhos_fechados_pct)} % do tempo`))})` : "") +
       `. AUC de ${aucTxt(aF)} pelo % do tempo fora do verde e de ${aucTxt(aN)} pelo nível médio: ${acaso}.`,
-    `4. **Calibrar já com sono atrapalha.** Em ${cD.calib_aviso} dos ${cD.videos} vídeos sonolentos, a calibração viu os olhos fechados em mais de 10 % do tempo (o app avisa e pede para recalibrar). Com a calibração do vídeo acordado, ${cX.chegam_amarelo} sonolentos chegaram ao amarelo e ${cX.chegam_vermelho} ao vermelho, o vídeo sonolento ficou mais tempo fora do verde em ${pX.mais} pessoas e menos em ${pX.menos === 0 ? "nenhuma" : pX.menos}, e a AUC passou a ${aucTxt(xF)} e ${aucTxt(xN)}.`,
+    `4. **Calibrar já com sono atrapalha.** Em ${cD.calib_olhos_fechados} dos ${cD.videos} vídeos sonolentos, a calibração viu os olhos fechados em mais de 10 % do tempo, e em ${cD.calib_aviso} houve algum aviso de calibração (o app avisa e pede para recalibrar); nos acordados, os olhos fechados passaram de 10 % em ${cA.calib_olhos_fechados}. Com a calibração do vídeo acordado, ${cX.chegam_amarelo} sonolentos chegaram ao amarelo e ${cX.chegam_vermelho} ao vermelho, o vídeo sonolento ficou mais tempo fora do verde em ${pX.mais} pessoas e menos em ${pX.menos === 0 ? "nenhuma" : pX.menos}, e a AUC passou a ${aucTxt(xF)} e ${aucTxt(xN)}.`,
     `5. **Para a banca:** com sono real, declarado pela própria pessoa, o app saiu do verde em ${cD.chegam_amarelo} de ${cD.videos} sonolentos e em ${cA.chegam_amarelo} de ${cA.videos} acordados, e alarmou ${cD.com_alarme} sonolentos contra ${cA.com_alarme} acordados. Ele reage a sinais visíveis (fechamentos longos e microssonos), não ao sono declarado: ${verdes.length} sonolentos ficaram verdes. O teste foi com pessoas sentadas, não dirigindo.`,
   ];
 }

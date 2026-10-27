@@ -383,8 +383,8 @@ Tudo o que está acima foi medido nos mesmos dados em que as regras foram escolh
 
 Leitura: com o sono declarado pela própria pessoa, o app alarmou 15 dos 24 sonolentos e 2 dos 24 acordados. Ele reage a
 sinais visíveis, não ao sono declarado: 7 sonolentos ficaram verdes o vídeo inteiro, e em 6 deles o app não viu nenhum
-fechamento de 0,5 s ou mais, bocejo ou queda da cabeça. Calibrar já com sono atrapalha: em 8 dos 24 vídeos sonolentos,
-os olhos ficaram fechados em mais de 10% da calibração (o app avisa e pede para recalibrar).
+fechamento de 0,5 s ou mais, bocejo ou queda da cabeça. Calibrar já com sono atrapalha: em 7 dos 24 vídeos sonolentos,
+os olhos ficaram fechados em mais de 10% da calibração, e em 8 houve algum aviso (o app avisa e pede para recalibrar).
 
 Nas mesmas 24 pessoas, a AUC por vídeo dos modelos do Exp. 5b e da regra do rótulo (`results/app_comparacao_uta.md`,
 `src/experiments/comparar_app_uta.py`): RF treinado no DMD, 0,811; regra do rótulo do DMD, 0,853; RF treinado na própria

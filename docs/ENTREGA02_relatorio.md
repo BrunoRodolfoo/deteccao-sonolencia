@@ -525,7 +525,7 @@ Nas mesmas 24 pessoas, a AUC por vídeo dos outros detectores (`results/app_comp
 - A regra foi escolhida por ser explicável. No mesmo falso alarme, ela acha tantas janelas sonolentas quanto a RL do DMD (seção 7.7), sem treino e com o porquê de cada alarme.
 - Os pesos do nível são escolhas de projeto, não ajustes em dados de sonolência real, e a validação no DMD usa os mesmos dados em que as regras foram escolhidas. Variar os pesos em até 30% e os limiares em até 10 pontos quase não muda o comportamento nesses dados (origem de cada número: `app/pwa/README.md`, seção 13).
 - O teste na UTA-RLDD não teve ajuste. Com sono real declarado, o app saiu do verde em 17 de 24 sonolentos e em 5 de 24 acordados. Ele reage a sinais visíveis, não ao sono declarado: 7 sonolentos ficaram verdes, e em 6 deles o app não viu nenhum fechamento de 0,5 s ou mais, bocejo ou queda da cabeça.
-- Calibrar já com sono atrapalha: em 8 dos 24 vídeos sonolentos, os olhos ficaram fechados em mais de 10% da calibração. Com a calibração do vídeo acordado, a AUC sobe para 0,855.
+- Calibrar já com sono atrapalha: em 7 dos 24 vídeos sonolentos, os olhos ficaram fechados em mais de 10% da calibração (e em 8 houve algum aviso de calibração); nos acordados, isso aconteceu em 2. Com a calibração do vídeo acordado, a AUC sobe para 0,855.
 - O app, sem treino, fica no nível do RF treinado no DMD e perto da regra do rótulo, que é a base dos seus sinais de olho. O RF treinado na própria UTA-RLDD só fica bem acima com a centragem pelo vídeo acordado, o atalho discutido no Exp. 5b; sem ela, fica no nível do app.
 - Essas pessoas estavam sentadas, sem dirigir. O falso alarme em movimento continua medido só pela direção real do DMD.
 - A amostra do navegador é pequena (cerca de 40 min).
