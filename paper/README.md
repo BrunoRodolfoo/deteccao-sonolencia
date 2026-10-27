@@ -6,7 +6,7 @@ Turma 8ºA, Equipe 14). Formato IEEE *conference* (`IEEEtran`, duas colunas, de 
 
 **Estado (26/10/2026): versão final revisada.** Depois de uma banca simulada, o texto foi reescrito com a
 leitura nova da PP1 (controles do Exp. 5b em `results/exp5b_robustez.md`), do vazamento e da comparação entre a
-regra e os modelos. São 8 páginas, 30 referências (nenhuma marcada `UNVERIFIED`), as Tabelas I a V e 3 figuras.
+regra e os modelos. São 8 páginas, 31 referências (nenhuma marcada `UNVERIFIED`), as Tabelas I a V e 3 figuras.
 O texto não usa travessões. Nenhum número de resultado é digitado no `.tex`: todos vêm de `numeros.tex` (seção
 "Como os números são gerados").
 
@@ -184,4 +184,4 @@ Em 26/10/2026, depois da banca simulada:
   Nenhum número mudou.
 - 26/10/2026: banca simulada e reescrita. Entraram os controles do Exp. 5b (Tabela II nova, `results/exp5b_robustez.md`),
   a leitura nova da PP1, do vazamento e da regra × modelos e três referências; o artigo passou a ter 8 páginas,
-  30 referências, Tabelas I a V e 3 figuras. Os diagramas de reserva saíram de `figures/`.
+  31 referências, Tabelas I a V e 3 figuras. Os diagramas de reserva saíram de `figures/`.
