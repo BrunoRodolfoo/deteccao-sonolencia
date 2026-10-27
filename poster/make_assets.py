@@ -176,7 +176,7 @@ def fig_metodo():
     x2 = lado + w1 + seta_w
     w2 = x3 - seta_w - x2
     sinais = [
-        ("Olhos", "fechados ≥ 0,5 s", f"κ = {V['AppKappaOffline']}, revocação {V['AppFechUmSRevocacao']}"),
+        ("Olhos", "fechados ≥ 0,5 s", f"κ = {V['AppKappaOffline']}, revocação {V['AppFechMeioSRevocacao']}"),
         ("Bocejo", "boca aberta ≥ 1,5 s", f"revocação {V['AppBocejoRevocacaoSemMao']} sem mão"),
         ("Cabeça", "queda ou cabeceio", "revocação não medida"),
     ]
@@ -260,7 +260,7 @@ def fig_exp5b():
     fig = plt.figure(figsize=(W * CM, H * CM))
     LH = FS * LS / 72 * 2.54
     # --- em cima: perda B − C ---
-    fig.text(0.1 / W, 1 - 0.05 / H, "Perda ao treinar com sono\nencenado (AUC)", fontsize=FS, weight="bold",
+    fig.text(0.1 / W, 1 - 0.05 / H, "Perda ao treinar com sono\nencenado (pontos de AUC)", fontsize=FS, weight="bold",
              color=PRETO, ha="left", va="top", linespacing=LS)
     topo = 0.05 + 2 * LH + 0.2              # cm a partir do alto
     base_barras = 2 * 0.8 + 0.2              # duas linhas de barras + folga
@@ -284,7 +284,7 @@ def fig_exp5b():
     ax.set_yticks([0, 10])
     ax.set_xlim(-0.8, 1.75)
     ax.set_xticks([0, 1.16])
-    ax.set_xticklabels(["principal", "outras"])
+    ax.set_xticklabels(["a principal", "as outras três"])
     ax.set_xlabel("normalização por pessoa", fontsize=FS, labelpad=7)
     ax.tick_params(axis="x", length=0, pad=6)
     ax.grid(True, axis="y", color=GRADE, linewidth=1.0)

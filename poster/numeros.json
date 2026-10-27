@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-26T23:13:25",
+ "gerado_em": "2026-10-27T11:31:47",
  "gerado_por": "src/experiments/make_paper_numbers.py",
  "convencoes": "percentuais sem %; diferenças em pp; IC 95% entre colchetes; texto com vírgula decimal",
  "samsung_medido": false,
@@ -556,6 +556,9 @@
   "CelularIPhoneFPS": "50,2",
   "CelularIPhoneFPSMin": "40,5",
   "CelularIPhoneFPSMax": "60,0",
+  "CelularIPhoneTotalPcinquentaInteiro": "17",
+  "CelularIPhoneTotalPcinquentaMinInteiro": "11",
+  "CelularIPhoneTotalPcinquentaMaxInteiro": "23",
   "CelularIPhoneQuadros": "6.031",
   "CelularIPhoneQuadrosComRosto": "6.031",
   "CelularIPhoneTaxaRosto": "100,0",
@@ -1231,6 +1234,12 @@
   "ExpCincoBLROpRegraSensCCentrada": "24,7",
   "ExpCincoBLROpRegraSensBCentrada": "27,3",
   "ExpCincoBLRTrezeQuedaAUCJanela": "7,0",
+  "ExpCincoBJanelaCincoQuedaAUCJanela": "11,8",
+  "ExpCincoBJanelaCincoQuedaAUCJanelaIC": "[8,4; 15,7]",
+  "ExpCincoBJanelaCincoQuedaAUCJanelaComIC": "11,8 [8,4; 15,7]",
+  "ExpCincoBLRJanelaCincoQuedaAUCJanela": "5,4",
+  "ExpCincoBLRJanelaCincoQuedaAUCJanelaIC": "[−0,1; 10,8]",
+  "ExpCincoBLRJanelaCincoQuedaAUCJanelaComIC": "5,4 [−0,1; 10,8]",
   "ExpCincoBLRControleQuedaCincoDez": "4,6",
   "ExpCincoBLRControleQuedaCincoDezIC": "[−0,2; 9,7]",
   "ExpCincoBLRControleQuedaCincoDezComIC": "4,6 [−0,2; 9,7]",
@@ -1278,7 +1287,22 @@
   "AppUTAAUCForaVerdeCalAcordado": "0,855",
   "AppUTAAUCNivelMedioComIC": "0,839 [0,736; 0,935]",
   "AppUTAAUCNivelMedio": "0,839",
-  "AppUTAAUCNivelMedioCalAcordado": "0,891"
+  "AppUTAAUCNivelMedioCalAcordado": "0,891",
+  "AppCompCRF": "0,811",
+  "AppCompCRFIC": "[0,686; 0,915]",
+  "AppCompCRFComIC": "0,811 [0,686; 0,915]",
+  "AppCompCLR": "0,755",
+  "AppCompCLRIC": "[0,627; 0,894]",
+  "AppCompCLRComIC": "0,755 [0,627; 0,894]",
+  "AppCompBRF": "0,953",
+  "AppCompBRFIC": "[0,898; 0,997]",
+  "AppCompBRFComIC": "0,953 [0,898; 0,997]",
+  "AppCompBRFSemNorm": "0,806",
+  "AppCompBRFSemNormIC": "[0,686; 0,927]",
+  "AppCompBRFSemNormComIC": "0,806 [0,686; 0,927]",
+  "AppCompRegra": "0,853",
+  "AppCompRegraIC": "[0,754; 0,944]",
+  "AppCompRegraComIC": "0,853 [0,754; 0,944]"
  },
  "entradas": [
   {
@@ -10122,6 +10146,75 @@
     },
     "coluna": "fps_medio",
     "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularIPhoneTotalPcinquentaInteiro",
+   "valor": "17",
+   "macros": {
+    "CelularIPhoneTotalPcinquentaInteiro": "17"
+   },
+   "bruto": 17.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro, em ms inteiros",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "CelularIPhoneTotalPcinquenta"
+    ],
+    "expr": "CelularIPhoneTotalPcinquenta"
+   }
+  },
+  {
+   "nome": "CelularIPhoneTotalPcinquentaMinInteiro",
+   "valor": "11",
+   "macros": {
+    "CelularIPhoneTotalPcinquentaMinInteiro": "11"
+   },
+   "bruto": 11.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro (min), em ms inteiros",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "CelularIPhoneTotalPcinquentaMin"
+    ],
+    "expr": "CelularIPhoneTotalPcinquentaMin"
+   }
+  },
+  {
+   "nome": "CelularIPhoneTotalPcinquentaMaxInteiro",
+   "valor": "23",
+   "macros": {
+    "CelularIPhoneTotalPcinquentaMaxInteiro": "23"
+   },
+   "bruto": 23.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro (max), em ms inteiros",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "CelularIPhoneTotalPcinquentaMax"
+    ],
+    "expr": "CelularIPhoneTotalPcinquentaMax"
    }
   },
   {
@@ -20815,6 +20908,86 @@
    }
   },
   {
+   "nome": "ExpCincoBJanelaCincoQuedaAUCJanela",
+   "valor": "11,8",
+   "macros": {
+    "ExpCincoBJanelaCincoQuedaAUCJanela": "11,8",
+    "ExpCincoBJanelaCincoQuedaAUCJanelaIC": "[8,4; 15,7]",
+    "ExpCincoBJanelaCincoQuedaAUCJanelaComIC": "11,8 [8,4; 15,7]"
+   },
+   "bruto": 11.83715364175464,
+   "ic_bruto": [
+    8.357083293472208,
+    15.711830004371196
+   ],
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "pp",
+   "texto": false,
+   "descricao": "Exp. 5b RF: queda B − C de AUC por janela com janelas de 5 s (pp)",
+   "evidencia": "results/exp5b_transferencia.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp5b_transferencia.csv",
+    "coluna": "valor",
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ],
+    "filtros": {
+     "experimento": "queda_B_menos_C",
+     "variante": "janela_5s",
+     "modelo": "RF",
+     "esquema": "B3",
+     "nivel": "janela",
+     "estrato": "todos",
+     "limiar_tipo": "fixo_0.5",
+     "metrica": "auc"
+    }
+   }
+  },
+  {
+   "nome": "ExpCincoBLRJanelaCincoQuedaAUCJanela",
+   "valor": "5,4",
+   "macros": {
+    "ExpCincoBLRJanelaCincoQuedaAUCJanela": "5,4",
+    "ExpCincoBLRJanelaCincoQuedaAUCJanelaIC": "[−0,1; 10,8]",
+    "ExpCincoBLRJanelaCincoQuedaAUCJanelaComIC": "5,4 [−0,1; 10,8]"
+   },
+   "bruto": 5.383945646568334,
+   "ic_bruto": [
+    -0.1042276905267563,
+    10.792484026172446
+   ],
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "pp",
+   "texto": false,
+   "descricao": "Exp. 5b LR: queda B − C de AUC por janela com janelas de 5 s (pp)",
+   "evidencia": "results/exp5b_transferencia.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp5b_transferencia.csv",
+    "coluna": "valor",
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ],
+    "filtros": {
+     "experimento": "queda_B_menos_C",
+     "variante": "janela_5s",
+     "modelo": "LR",
+     "esquema": "B3",
+     "nivel": "janela",
+     "estrato": "todos",
+     "limiar_tipo": "fixo_0.5",
+     "metrica": "auc"
+    }
+   }
+  },
+  {
    "nome": "ExpCincoBLRControleQuedaCincoDez",
    "valor": "4,6",
    "macros": {
@@ -21783,6 +21956,176 @@
     "regex": "\\| AUC\\ do\\ nível\\ médio\\ \\[IC\\ 95\\ %\\] \\| (([\\d,]+) \\[[\\d,]+; [\\d,]+\\]) \\| (([\\d,]+) \\[[\\d,]+; [\\d,]+\\]) \\|",
     "grupo": 4,
     "decimal_virgula": true
+   }
+  },
+  {
+   "nome": "AppCompCRF",
+   "valor": "0,811",
+   "macros": {
+    "AppCompCRF": "0,811",
+    "AppCompCRFIC": "[0,686; 0,915]",
+    "AppCompCRFComIC": "0,811 [0,686; 0,915]"
+   },
+   "bruto": 0.8107638888888888,
+   "ic_bruto": [
+    0.6857638888888888,
+    0.9149739583333332
+   ],
+   "dp_bruto": null,
+   "casas": 3,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "AUC por vídeo nas 24 pessoas do teste do app: RF treinado no DMD, com centragem",
+   "evidencia": "results/app_comparacao_uta.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/app_comparacao_uta.csv",
+    "coluna": "auc",
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ],
+    "filtros": {
+     "detector": "C_treino_DMD_RF",
+     "medida": "principal"
+    }
+   }
+  },
+  {
+   "nome": "AppCompCLR",
+   "valor": "0,755",
+   "macros": {
+    "AppCompCLR": "0,755",
+    "AppCompCLRIC": "[0,627; 0,894]",
+    "AppCompCLRComIC": "0,755 [0,627; 0,894]"
+   },
+   "bruto": 0.7552083333333334,
+   "ic_bruto": [
+    0.6266927083333332,
+    0.8940972222222221
+   ],
+   "dp_bruto": null,
+   "casas": 3,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "AUC por vídeo nas 24 pessoas do teste do app: RL treinada no DMD, com centragem",
+   "evidencia": "results/app_comparacao_uta.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/app_comparacao_uta.csv",
+    "coluna": "auc",
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ],
+    "filtros": {
+     "detector": "C_treino_DMD_LR",
+     "medida": "principal"
+    }
+   }
+  },
+  {
+   "nome": "AppCompBRF",
+   "valor": "0,953",
+   "macros": {
+    "AppCompBRF": "0,953",
+    "AppCompBRFIC": "[0,898; 0,997]",
+    "AppCompBRFComIC": "0,953 [0,898; 0,997]"
+   },
+   "bruto": 0.953125,
+   "ic_bruto": [
+    0.8975694444444445,
+    0.9965277777777778
+   ],
+   "dp_bruto": null,
+   "casas": 3,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "AUC por vídeo nas 24 pessoas do teste do app: RF treinado na UTA-RLDD, com centragem",
+   "evidencia": "results/app_comparacao_uta.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/app_comparacao_uta.csv",
+    "coluna": "auc",
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ],
+    "filtros": {
+     "detector": "B_treino_UTA_RF",
+     "medida": "principal"
+    }
+   }
+  },
+  {
+   "nome": "AppCompBRFSemNorm",
+   "valor": "0,806",
+   "macros": {
+    "AppCompBRFSemNorm": "0,806",
+    "AppCompBRFSemNormIC": "[0,686; 0,927]",
+    "AppCompBRFSemNormComIC": "0,806 [0,686; 0,927]"
+   },
+   "bruto": 0.8055555555555555,
+   "ic_bruto": [
+    0.685720486111111,
+    0.9271267361111112
+   ],
+   "dp_bruto": null,
+   "casas": 3,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "AUC por vídeo nas 24 pessoas do teste do app: RF treinado na UTA-RLDD, sem centragem",
+   "evidencia": "results/app_comparacao_uta.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/app_comparacao_uta.csv",
+    "coluna": "auc",
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ],
+    "filtros": {
+     "detector": "B_treino_UTA_RF",
+     "medida": "sem_normalizacao"
+    }
+   }
+  },
+  {
+   "nome": "AppCompRegra",
+   "valor": "0,853",
+   "macros": {
+    "AppCompRegra": "0,853",
+    "AppCompRegraIC": "[0,754; 0,944]",
+    "AppCompRegraComIC": "0,853 [0,754; 0,944]"
+   },
+   "bruto": 0.8532986111111112,
+   "ic_bruto": [
+    0.7543185763888889,
+    0.9444444444444444
+   ],
+   "dp_bruto": null,
+   "casas": 3,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "AUC por vídeo nas 24 pessoas do teste do app: regra do rótulo do DMD (sem treino)",
+   "evidencia": "results/app_comparacao_uta.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/app_comparacao_uta.csv",
+    "coluna": "auc",
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ],
+    "filtros": {
+     "detector": "regra_rotulo_DMD",
+     "medida": "fracao_janelas"
+    }
    }
   }
  ]

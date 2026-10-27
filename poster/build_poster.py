@@ -226,7 +226,7 @@ def altura_cm(paras):
 TITULO_LINHAS = "Detecção de Sonolência em Dispositivos\nMóveis: Avaliação da Generalização\nentre Sonolência Atuada e Real"
 assert TITULO_LINHAS.replace("\n", " ") == TITULO
 HEAD_TITLE = [P(B(TITULO_LINHAS, RED), size=32, align="c", lh=1.05)]
-HEAD_URL = [P(C("Código e app: ", GRAY), C(REPO_URL, GRAY), size=16, align="c")]
+HEAD_URL = [P(C("Código e app: ", GRAY), C(REPO_URL, GRAY), size=20, align="c")]
 AUTHORS = [
     P("André Luís O. F. da Silva"),
     P("Bruno Rodolfo da Silveira"),
@@ -241,9 +241,10 @@ AUTHORS = [
 # > 90 % = LMDF 90,05 % no NTHU-DDD (lyu2018; paper/related_work_notes.md).
 COL1_TITLE = "Contexto e Pergunta"
 COL1 = [
-    P("Sono e saúde do condutor pesam em ", B("27,8%"), " das ocorrências nas rodovias federais [7]."),
+    P("Condições de saúde do condutor, sono incluído, pesam em ", B("27,8%"), " das ocorrências nas rodovias "
+      "federais [7]."),
     P("Com sono encenado (atuado), os detectores passam de 90% de acurácia [6]. Com sono real (UTA-RLDD), "
-      f"o melhor modelo acerta {N('ExpUmHMLSTMVA')}% dos vídeos, e pessoas, {N('ExpUmHumanosVA')}% [1].",
+      f"o modelo dos autores da base acerta {N('ExpUmHMLSTMVA')}% dos vídeos, e pessoas, {N('ExpUmHumanosVA')}% [1].",
       sb=14),
     P(B("Pergunta central", RED), sb=30),
     P("Um detector treinado com sono encenado reconhece sono real de pessoas nunca vistas, no celular?", sb=4),
@@ -275,7 +276,7 @@ LEAK = [
 # Substitui a frase da direção real do DMD (3,3 % em vermelho), que usava os mesmos vídeos do ajuste.
 APP = [
     P(B(f"App v{N('AppVersao')}")),
-    P(f"Em {N('AppUTASujeitos')} pessoas com sono real, fora do ajuste, separou sonolento de acordado "
+    P(f"Em {N('AppUTASujeitos')} pessoas com sono real, sentadas e fora do ajuste, separou sonolento de acordado "
       f"(AUC{NB}{N('AppUTAAUCForaVerde')}); alarmou {N('AppUTASonolentosVermelho')} sonolentos e "
       f"{N('AppUTAAcordadosAlarme')} acordados."),
 ]
@@ -283,8 +284,8 @@ APP_RESERVA_LINHAS = 0   # linhas guardadas na caixa do app para um resultado fu
 
 # ---- Coluna 3: Conclusões -------------------------------------------------------------------
 COL3_TITLE = "Conclusões"
-SINTESE = [P(f"Sono encenado é mais extremo que o real: o modelo do DMD reconhece só "
-             f"{_int('ExpCincoBCSensJanela')}% das janelas de sono real.", size=24)]
+SINTESE = [P(f"Treinado com sono encenado, o modelo só reconhece {N('ExpCincoBCSensJanela')}% das janelas de "
+             "sono real, com fechamentos mais curtos.", size=24)]
 
 
 def _faixa_ms(pre):
@@ -311,14 +312,15 @@ COL3 = [
     P(B("PP1."), f" A RL do DMD perde de {N('ExpCincoBLRQuedaNormMin')} a {N('ExpCincoBLRQuedaNormMax')} pontos "
       f"de AUC em todas as normalizações testadas; o RF perde {N('ExpCincoBQuedaAUCJanela')} só com a referência "
       "principal na UTA."),
-    P(B("PP2."), " " + _aparelhos(), sb=14),
-    P(B("PP3."), f" A SNR do EAR (abertura do olho) é {N('ExpSeisSNRNoite')} à noite e "
-      f"{N('ExpSeisSNRDMDMovimento')} com o carro andando de dia. Óculos: AUC do olho de "
-      f"{N('ExpTresCEWPatchMRLSemOculosAUC')}{NB}para{NB}{N('ExpTresCEWPatchMRLComOculosAUC')}.", sb=14),
-    P(B("Limitações."), " Um só par de bases.", sb=14),
+    P(B("PP2."), " " + _aparelhos(), sb=6),
+    P(B("PP3."), f" A SNR do EAR (abertura do olho) é {N('ExpSeisSNRNoite')} à noite, "
+      f"{N('ExpSeisSNRDMDMovimento')} com o carro andando e {N('ExpSeisSNRDMDParado')} parado, de dia. Óculos: "
+      "AUC do olho de "
+      f"{N('ExpTresCEWPatchMRLSemOculosAUC')}{NB}para{NB}{N('ExpTresCEWPatchMRLComOculosAUC')}.", sb=6),
+    P(B("Limitações."), " Um só par de bases.", sb=6),
 ]
 # Referências (16 pt), em texto corrido: chaves de paper/refs.bib (NITYMED: dataset + artigo dos autores)
-_REFS = ["Ghoddoosian et al., CVPRW 2019.", "Ortega et al., ECCVW 2020.", "Petrellis et al., IEEE DataPort 2022.",
+_REFS = ["Ghoddoosian et al., CVPRW 2019.", "Ortega et al., ECCVW 2020.", "Petrellis et al., DataPort 2022; DSD 2021.",
          "Fusek, ISVC 2018.", "Song et al., Pattern Recognit. 2014.", "Lyu et al., arXiv 2018.",
          "ABRAMET/PRF, Agência Brasil 2026."]
 REFS = [P(" ".join(f"[{i}]{NB}{r}" for i, r in enumerate(_REFS, 1)), size=16, color=GRAY, lh=1.02)]
@@ -369,7 +371,7 @@ def elements():
     hu = altura_cm(preparar(HEAD_URL, L.TITLE_W))
     y0 = cab_y + (cab_h - (ht + 0.3 + hu)) / 2
     T(L.TITLE_X, y0, L.TITLE_W, HEAD_TITLE, "Titulo", cls="title")
-    T(L.TITLE_X, y0 + ht + 0.3, L.TITLE_W, HEAD_URL, "Endereco do repositorio", cls="ref")
+    T(L.TITLE_X, y0 + ht + 0.3, L.TITLE_W, HEAD_URL, "Endereco do repositorio")
     ha = altura_cm(preparar(AUTHORS, L.AUT_W))
     aut_y, aut_h = L.CARDS[2][1], L.CARDS[2][3]
     T(L.AUT_X, aut_y + (aut_h - ha) / 2, L.AUT_W, AUTHORS, "Autores")
@@ -406,7 +408,7 @@ def elements():
     hr = altura_cm(preparar(REFS, L.C3_W))
     y_ref = L.BOTTOM - hr
     y = L.Y_BODY
-    y += T(L.C3_X, y, L.C3_W, SINTESE, "Sintese") + 0.6
+    y += T(L.C3_X, y, L.C3_W, SINTESE, "Sintese") + 0.35
     T(L.C3_X, y, L.C3_W, COL3, "Corpo col 3", h=y_ref - 0.2 - y, ajustavel=True)
     T(L.C3_X, y_ref, L.C3_W, REFS, "Referencias", cls="ref")
 
@@ -671,7 +673,7 @@ TRACOS = (chr(0x2014), chr(0x2013))   # travessão e meia-risca: proibidos no te
 
 
 def conferir_saidas(el, com_pdf):
-    """Fonte mínima (20 pt; 16 pt nas referências e no endereço), nenhum travessão, nenhuma linha
+    """Fonte mínima (20 pt; 16 pt só nas referências), nenhum travessão, nenhuma linha
     quebrada de outro jeito no PDF e metadados do PDF com título e autores."""
     erros = []
     esperadas = []
@@ -703,11 +705,11 @@ def conferir_saidas(el, com_pdf):
                     continue
                 pt = r.font.size.pt
                 menor_pptx = min(menor_pptx, pt)
-                if sh.name not in ("Referencias", "Endereco do repositorio"):
+                if sh.name != "Referencias":
                     menor_pptx_corpo = min(menor_pptx_corpo, pt)
                 if any(tr in r.text for tr in TRACOS):
                     erros.append(f"pptx: travessão em {r.text!r}")
-    print(f"pptx: menor fonte {menor_pptx:g} pt (fora referências e endereço: {menor_pptx_corpo:g} pt)")
+    print(f"pptx: menor fonte {menor_pptx:g} pt (fora das referências: {menor_pptx_corpo:g} pt)")
     if menor_pptx_corpo < 20 or menor_pptx < 16:
         erros.append("pptx: fonte abaixo do mínimo")
     if com_pdf:
@@ -724,8 +726,8 @@ def conferir_saidas(el, com_pdf):
                     if not s["text"].strip():
                         continue
                     menor = min(menor, s["size"])
-                    if s["size"] < 19.5 and not (s["text"].startswith("[") or "Código e app" in txt or
-                                                 REPO_URL in txt or any(r in txt for r in ("et al.", "ABRAMET", "Fusek"))):
+                    if s["size"] < 19.5 and not (s["text"].startswith("[") or
+                                                 any(r in txt for r in ("et al.", "ABRAMET", "Fusek", "DSD"))):
                         erros.append(f"pdf: {s['text']!r} com {s['size']:.1f} pt")
                     menor_corpo = min(menor_corpo, s["size"]) if s["size"] >= 19.5 else menor_corpo
         texto = pg.get_text()
