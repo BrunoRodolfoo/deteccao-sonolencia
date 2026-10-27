@@ -35,7 +35,7 @@ ROOT = Path(__file__).resolve().parents[2]
 TEX = ROOT / "paper" / "numeros.tex"
 JSN = ROOT / "poster" / "numeros.json"
 MD = ROOT / "results" / "numeros_resumo.md"
-TECTONIC = os.environ.get("TECTONIC", str(Path.home() / ".local" / "bin" / "tectonic"))
+TECTONIC = os.environ.get("TECTONIC") or shutil.which("tectonic") or str(Path.home() / ".local" / "bin" / "tectonic")
 
 
 # ------------------------------- recálculo independente ------------------------------------

@@ -171,7 +171,7 @@ def to_markdown(rows) -> str:
             ("engine_ms_p50", "Motor/LSTM p50 (ms)"), ("engine_ms_p95", "p95"),
             ("motor_ms_p50", "Motor v2 p50 (ms)"), ("motor_ms_p95", "p95"),
             ("total_ms_p50", "Total p50 (ms)"), ("total_ms_p95", "p95"), ("quadros", "Quadros")]
-    out = ["# Exp. 4 — Latência no smartphone (benchmarks de 60 s)", "",
+    out = ["# Exp. 4: Latência no smartphone (benchmarks de 60 s)", "",
            f"Gerado em {dt.datetime.now():%Y-%m-%d %H:%M} por `tools/import_phone_benchmark.py` a partir dos "
            "CSV brutos por quadro gravados no aparelho (p50/p95/média recalculados com numpy.percentile). "
            "Origem `android` = app nativo (TFLite nativo + MediaPipe Tasks); `pwa` = Chrome (tfjs-tflite WASM + "

@@ -1,4 +1,4 @@
-# Exp. 4 — Latência no smartphone (benchmarks de 60 s)
+# Exp. 4: Latência no smartphone (benchmarks de 60 s)
 
 Gerado em 2026-10-06 16:15 por `tools/import_phone_benchmark.py` a partir dos CSV brutos por quadro gravados no aparelho (p50/p95/média recalculados com numpy.percentile). Origem `android` = app nativo (TFLite nativo + MediaPipe Tasks); `pwa` = Chrome (tfjs-tflite WASM + MediaPipe WebAssembly/WebGL).
 

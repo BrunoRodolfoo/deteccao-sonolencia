@@ -10,12 +10,12 @@
 #                           ~2 h); incremental; depois alinhamento DMD e resumo (.venv)
 #   caracteristicas .venv   piscadas, janelas de 10 s (5/15 s), sequências de 30 piscadas      ~3 min
 #   exp1          .venv     Exp. 1 intra UTA-RLDD (características oficiais, 5 folds)           ~10 min
-#   exp2          .venv     Exp. 2 vazamento de identidade                                     ~13 min
+#   exp2          .venv     Exp. 2 vazamento (trechos do mesmo vídeo nos dois lados)          ~13 min
 #   exp3          .venv     Exp. 3 EyeNet MRL <-> CEW + Exp. 4 desktop (TFLite fp32/int8)       ~16 min
 #   exp5a         ambos     Exp. 5a nosso extrator x características oficiais (dlib no .venv-mp) ~5 min
 #                           (+ ~1 h na primeira vez: detector do dlib em 182 vídeos; incremental)
 #   exp5b         .venv     Exp. 5b transferência DMD (atuado) -> UTA-RLDD (real), PP1           ~11-20 min
-#                           + robustez (exp5b_robustez.py -> results/exp5b_robustez.{csv,md})   ~15 min
+#                           + robustez (exp5b_robustez.py -> results/exp5b_robustez.{csv,md})   ~4 min
 #   exp6          ambos     Exp. 6 noite (NITYMED), PP3 (luminância no .venv-mp ~40 min + 1 min) ~40 min
 #   figuras       .venv     amostras do MRL Eye + figuras de resultados                        ~1 min
 #   documentos    .venv     tools/atualizar_celular.sh: importa results/phone (Exp. 4 celular),  ~1 min
@@ -161,7 +161,7 @@ if quer exp1; then
 fi
 if quer exp2; then
   if [ "$SMOKE" -eq 1 ]; then echo "(smoke) exp2 pulado: sobrescreveria results/exp2_leakage.*"
-  else run "exp2: vazamento de identidade (janela / vídeo / sujeito; seeds 42-44)" "$PY" src/experiments/exp2_leakage.py; fi
+  else run "exp2: vazamento (partição aleatória / por vídeo / por sujeito; seeds 42-44)" "$PY" src/experiments/exp2_leakage.py; fi
 fi
 
 # ---------- Exp. 3 e Exp. 4 desktop (Pipeline B) ----------

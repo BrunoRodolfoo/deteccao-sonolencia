@@ -22,6 +22,10 @@ results/figures/exp5_dmd_verificacao_visual.jpg
 results/figures/*verificacao_visual*
 results/**/*_quadros*.jpg
 
+# Capturas dos testes headless do app (podem ter rosto se o teste usar vídeo de uma base)
+headless_out/
+*.mjpeg
+
 # ---- Python / ambientes ----
 __pycache__/
 *.pyc

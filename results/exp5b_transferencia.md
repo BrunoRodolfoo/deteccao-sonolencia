@@ -34,7 +34,7 @@ Leitura automática (regras fixas sobre os IC; a interpretação está na seçã
 
 | Item | Decisão | Por quê |
 |---|---|---|
-| Unidade de análise | janela de **10 s, passo 5 s** (`data/features/final/<base>/windows_10s.csv`) | os trechos `driver_actions/safe_drive` do DMD são curtos demais para as janelas de 30 s da Entrega 01 (item 9 das notas de fechamento; `results/exp5_caracteristicas.md`); 5 s e 15 s como sensibilidade |
+| Unidade de análise | janela de **10 s, passo 5 s** (`data/features/final/<base>/windows_10s.csv`) | os trechos `driver_actions/safe_drive` do DMD são curtos demais para as janelas de 30 s da Entrega 01 (`results/exp5_caracteristicas.md`; relatório da Entrega 02); 5 s e 15 s como sensibilidade |
 | Classe alerta (DMD) | janelas inteiramente dentro de um trecho safe_drive da **sessão s2** (carro parado, direção encenada) | mesma condição de carro parado da s5: a diferença entre as classes é a sonolência encenada; a s1 (carro em movimento) é sensibilidade |
 | Classe sonolento (DMD) | janelas da **s5** com fechamento anotado ≥ 0,5 s ou bocejo anotado (≥ 0,5 s dentro da janela) | único rótulo por janela que a anotação OpenLABEL da s5 permite; janelas da s5 **sem** sinal ficam fora (ambíguas; como alerta, só na sensibilidade) |
 | Rótulo da UTA | do vídeo (KSS autorrelatado 0/5/10): B3 = 0 × 10 (principal), B1 = 0 × 5+10, B2 = 0+5 × 10 | mesmas harmonizações do Exp. 1; o DMD é binário, então B3 é o par comparável |

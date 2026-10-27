@@ -21,7 +21,7 @@ Entradas (rodada final da etapa de características: src/features/, relatório r
     results/exp5_uta_mapeamento_oficial.csv         sujeito oficial <-> pasta (pastas ausentes do arquivo oficial)
     results/exp1_intra.csv                          Exp. 1 (NÃO recalculado; só lido para a comparação)
 
-Desenho (item 9 das notas de fechamento; justificativas no relatório):
+Desenho (justificativas em docs/ENTREGA02_relatorio.md):
   Janela de 10 s, passo 5 s, nas duas bases. DMD: alerta = janelas inteiramente dentro de um trecho
   driver_actions/safe_drive da sessão s2 (carro parado); sonolento = janelas da s5 com fechamento anotado >= 0,5 s
   ou bocejo anotado; referência de normalização = safe_drive da s3 (nunca avaliada); gE_28 (sem s5) fica fora.
@@ -1445,8 +1445,8 @@ def secao_desenho(lt):
     w("| Item | Decisão | Por quê |")
     w("|---|---|---|")
     w("| Unidade de análise | janela de **10 s, passo 5 s** (`data/features/final/<base>/windows_10s.csv`) | os trechos "
-      "`driver_actions/safe_drive` do DMD são curtos demais para as janelas de 30 s da Entrega 01 (item 9 das notas de "
-      "fechamento; `results/exp5_caracteristicas.md`); 5 s e 15 s como sensibilidade |")
+      "`driver_actions/safe_drive` do DMD são curtos demais para as janelas de 30 s da Entrega 01 "
+      "(`results/exp5_caracteristicas.md`; relatório da Entrega 02); 5 s e 15 s como sensibilidade |")
     w("| Classe alerta (DMD) | janelas inteiramente dentro de um trecho safe_drive da **sessão s2** (carro parado, direção "
       "encenada) | mesma condição de carro parado da s5: a diferença entre as classes é a sonolência encenada; a s1 (carro "
       "em movimento) é sensibilidade |")

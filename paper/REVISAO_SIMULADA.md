@@ -1,4 +1,6 @@
-# Revisão por pares simulada — Entrega 03a (artigo IEEE, versão final)
+# Revisão por pares simulada: Entrega 03a (artigo IEEE)
+
+**Aviso de 27/10/2026:** esta revisão é de 28/09 e foi superada. Os pontos dela e de duas revisões posteriores foram tratados no artigo atual (8 páginas, 31 referências), e o repositório público recebeu todo o trabalho em 26/10; ver `docs/ENTREGA02_relatorio.md`.
 
 **Artigo:** "Detecção de Sonolência em Dispositivos Móveis: Avaliação da Generalização entre Sonolência Atuada e Real" (Equipe 14, Turma 8ºA).
 
