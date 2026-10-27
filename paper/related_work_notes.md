@@ -4,8 +4,8 @@ Data da verificação: 20/09/2026. Todas as chaves abaixo correspondem a `paper/
 Cada item traz de 2 a 4 linhas com o que a referência afirma e que interessa ao artigo, com os
 números exatos extraídos da fonte primária (PDF/página do editor/arXiv/página do dataset).
 Itens marcados **[UNVERIFIED]** têm alguma parte não confirmada em fonte primária; use com cautela.
-Acrescentadas na revisão final do artigo (26/10/2026): **perkins2023** (seção 7), **xie2026** e **pradeep2026** (seção 3).
-Para essas três, os metadados vêm do Crossref (comentário no `refs.bib`) e as notas dizem só o que o artigo usa de cada uma.
+Acrescentadas na revisão final do artigo (26/10/2026): **perkins2023** (seção 7), **xie2026** e **pradeep2026** (seção 3) e **skorucak2020** (seção 6).
+Para essas quatro, os metadados vêm do Crossref (comentário no `refs.bib`) e as notas dizem só o que o artigo usa de cada uma.
 
 **Revisão crítica (20/09/2026):** todos os DOIs e identificadores arXiv foram reconferidos (Crossref, DataCite, API do arXiv) e todos os números abaixo foram localizados nos textos extraídos ou nos resumos oficiais. Correções feitas nesta revisão: massoz2018 (70,69 → **70,68 %**), rajkumarsingh2021 (o valor 90,4 % é fisiológico + facial, não "só face"), shen2020/joshi2020/fu2024 agora com veículo, páginas e DOI confirmados.
 
@@ -122,6 +122,10 @@ Para essas três, os metadados vêm do Crossref (comentário no `refs.bib`) e as
 **soukupova2016**: Soukupová & Čech, 21st CVWW, Rimske Toplice, 3 a 5 fev. 2016 (PDF oficial em cmp.felk.cvut.cz conferido). Define o **EAR = (‖p2−p6‖ + ‖p3−p5‖) / (2‖p1−p4‖)** a partir de 6 marcos do olho e detecta piscadas com SVM sobre janela temporal do EAR (tempo real, câmera comum). Observação: o UTA-RLDD usa a variante sem o fator 2 no denominador.
 
 **kazemi2014**: Kazemi & Sullivan, CVPR 2014, DOI 10.1109/CVPR.2014.241. Alinhamento facial por ensemble de árvores de regressão (~1 ms), implementado no dlib (68 marcos) e usado por soukupova2016 e jabbar2018.
+
+**skorucak2020**: Skorucak, Hertig-Godeschalk, Achermann, Mathis e Schreier, Frontiers in Neuroscience 14:8, 2020, DOI 10.3389/fnins.2020.00008.
+- Detecção automática de microssonos no teste de aptidão para dirigir.
+- O que o artigo e o app usam: microssonos duram de 1 a 15 s (definição conferida no texto, segundo o comentário do `refs.bib`). O app usa 1 s, o começo dessa faixa, para o vermelho imediato (`app/pwa/README.md`, seção 13).
 
 **akerstedt1990**: Åkerstedt & Gillberg, Int. J. Neuroscience 52(1-2):29-37, DOI 10.3109/00207459008994241. Escala KSS (1 extremamente alerta … 9 extremamente sonolento); em 8 sujeitos mantidos acordados, correlações intraindividuais altas entre sonolência subjetiva e sinais EEG/EOG; alterações fisiológicas tendem a aparecer só em sonolência extrema.
 

@@ -507,6 +507,10 @@ def exp4_celular():
             add(f"{pre}FPS{at}", {"tipo": "csv", "arquivo": f, "filtros": base, "coluna": "fps_medio", "agg": agg},
                 casas=1, descricao=f"Exp. 4 {ap}: quadros por segundo ({agg} entre execuções)",
                 evidencia="results/exp4_phone_latency.md" if agg != "median" else None)
+        for at in ("", "Min", "Max"):
+            add(f"{pre}TotalPcinquenta{at}Inteiro", {"tipo": "derivado", "deps": [f"{pre}TotalPcinquenta{at}"],
+                                                     "expr": f"{pre}TotalPcinquenta{at}"}, casas=0, unidade="ms",
+                descricao=f"Exp. 4 {ap}: total p50 por quadro{' (' + at.lower() + ')' if at else ''}, em ms inteiros")
         add(f"{pre}Quadros", {"tipo": "csv", "arquivo": f, "filtros": base, "coluna": "quadros", "agg": "sum"}, casas=0,
             descricao=f"Exp. 4 {ap}: quadros somados das execuções")
         add(f"{pre}QuadrosComRosto", {"tipo": "csv", "arquivo": f, "filtros": base, "coluna": "quadros_com_rosto",
@@ -981,6 +985,14 @@ def robustez():
             {"tipo": "derivado", "deps": [f"ExpCincoB{mt}TrezeAUCJanelaB", f"ExpCincoB{mt}AUCJanelaC"],
              "expr": f"ExpCincoB{mt}TrezeAUCJanelaB - 100*ExpCincoB{mt}AUCJanelaC"}, casas=1, unidade="pp",
             descricao=f"Exp. 5b {mn}: queda B − C com B treinado em 13 sujeitos (mediana dos sorteios − C), pp de AUC")
+    # janela de 5 s (sensibilidade), nos dois modelos
+    for mod, mt in [("RF", ""), ("LR", "LR")]:
+        add(f"ExpCincoB{mt}JanelaCincoQuedaAUCJanela",
+            {"tipo": "csv", "arquivo": "results/exp5b_transferencia.csv", "coluna": "valor", "ic": ["ic95_inf", "ic95_sup"],
+             "filtros": dict(experimento="queda_B_menos_C", variante="janela_5s", modelo=mod, esquema="B3",
+                             nivel="janela", estrato="todos", limiar_tipo="fixo_0.5", metrica="auc")},
+            casas=1, unidade="pp", evidencia="results/exp5b_transferencia.md",
+            descricao=f"Exp. 5b {mod}: queda B − C de AUC por janela com janelas de 5 s (pp)")
     # controle KSS 10 × 5 da RL (o do RF está em artigo_extra)
     f5 = "results/exp5b_transferencia.csv"
     add("ExpCincoBLRControleQuedaCincoDez",
@@ -1019,6 +1031,20 @@ def robustez():
                               ("ExpCincoBQuedaOutrasNormMax", "max", quedas_rf, "maior queda do RF sem a referência principal")]:
         add(nome, {"tipo": "derivado", "deps": deps, "expr": f"{fn}({', '.join(deps)})"}, casas=1, unidade="pp",
             descricao=f"Exp. 5b: {d} (pp de AUC por janela)")
+
+
+def app_comparacao():
+    """App × modelos do Exp. 5b nas mesmas 24 pessoas do teste do app (src/experiments/comparar_app_uta.py)."""
+    f = "results/app_comparacao_uta.csv"
+    md = "results/app_comparacao_uta.md"
+    for nome, det, med, d in [("AppCompCRF", "C_treino_DMD_RF", "principal", "RF treinado no DMD, com centragem"),
+                              ("AppCompCLR", "C_treino_DMD_LR", "principal", "RL treinada no DMD, com centragem"),
+                              ("AppCompBRF", "B_treino_UTA_RF", "principal", "RF treinado na UTA-RLDD, com centragem"),
+                              ("AppCompBRFSemNorm", "B_treino_UTA_RF", "sem_normalizacao", "RF treinado na UTA-RLDD, sem centragem"),
+                              ("AppCompRegra", "regra_rotulo_DMD", "fracao_janelas", "regra do rótulo do DMD (sem treino)")]:
+        add(nome, {"tipo": "csv", "arquivo": f, "coluna": "auc", "ic": ["ic95_inf", "ic95_sup"],
+                   "filtros": dict(detector=det, medida=med)}, casas=3, evidencia=md,
+            descricao=f"AUC por vídeo nas 24 pessoas do teste do app: {d}")
 
 
 def app_uta():
@@ -1177,6 +1203,7 @@ def main() -> int:
     robustez()
     app_pesos()
     app_uta()
+    app_comparacao()
     write_tex(tem_samsung)
     write_json(tem_samsung)
     write_md(tem_samsung)

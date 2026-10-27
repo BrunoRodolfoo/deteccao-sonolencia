@@ -4,7 +4,7 @@ Artigo de resultados do TCC **"Detecção de Sonolência em Dispositivos Móveis
 Generalização entre Sonolência Atuada e Real"** (PUCPR, Experiência Criativa: Projeto Transformador II,
 Turma 8ºA, Equipe 14). Formato IEEE *conference* (`IEEEtran`, duas colunas, de 6 a 8 páginas, português).
 
-**Estado (26/10/2026): versão final revisada.** Depois de uma banca simulada, o texto foi reescrito com a
+**Estado (27/10/2026): versão final revisada.** Depois de uma banca simulada, o texto foi reescrito com a
 leitura nova da PP1 (controles do Exp. 5b em `results/exp5b_robustez.md`), do vazamento e da comparação entre a
 regra e os modelos. São 8 páginas, 31 referências (nenhuma marcada `UNVERIFIED`), as Tabelas I a V e 3 figuras.
 O texto não usa travessões. Nenhum número de resultado é digitado no `.tex`: todos vêm de `numeros.tex` (seção
@@ -17,7 +17,7 @@ O texto não usa travessões. Nenhum número de resultado é digitado no `.tex`:
 | `artigo.tex` | fonte do artigo (UTF-8, `babel` brazil, `IEEEtran` conference); faz `\input{numeros}` |
 | `artigo.pdf` | PDF compilado; é refeito por `bash tools/atualizar_celular.sh` (ou pelo `tectonic`, abaixo) |
 | `numeros.tex` | gerado por `src/experiments/make_paper_numbers.py`; não edite à mão |
-| `refs.bib` | referências verificadas; o artigo cita 30 chaves. As duas marcadas `UNVERIFIED` (`xu2025` e `fl3d`) não são citadas |
+| `refs.bib` | referências verificadas; o artigo cita 31 chaves. As duas marcadas `UNVERIFIED` (`xu2025` e `fl3d`) não são citadas |
 | `figures/` | figuras do artigo e o diagrama TikZ da Fig. 1 (ver `figures/README.md`) |
 | `related_work_notes.md`, `dataset_facts.md`, `fontes_brasil.md` | notas de verificação bibliográfica usadas na redação (não entram na compilação) |
 | `REVISAO_SIMULADA.md` | revisão por pares simulada da versão de 28/09: notas por critério, fraquezas com localização e correções |
@@ -53,7 +53,7 @@ sinal de uma piscada, protocolos de partição) e as cópias PNG sem uso foram p
 | VI-B | Exp. 1, 2 e 5a (Tabela III) e o vazamento no cenário do Exp. 5b | `results/exp1_intra.md`, `results/exp2_leakage.md`, `results/exp5a_validacao.md`, `results/exp5b_robustez.md` |
 | VI-C | Exp. 4 (PP2, Tabela IV): quantização e tempo por quadro no celular | `results/exp4_*.csv`, `results/exp4_phone_latency.md` |
 | VI-D | Exp. 3 por condição; Exp. 6 (noite × movimento, disparo; Fig. 3); óculos no DMD | `results/exp3_eye_state.md`, `results/exp6_noite.md`, `results/exp5b_transferencia.md` (seção 11) |
-| VI-E | validação do app 2.1 (Tabela V): offline no DMD, no navegador, teste independente em sono real na UTA-RLDD e sensibilidade dos pesos | `results/app_validacao_dmd.md`, `results/app_validacao.md`, `results/app_validacao_uta.md`, `results/app_sensibilidade_pesos.md` |
+| VI-E | validação do app 2.1 (Tabela V): offline no DMD, no navegador, teste independente em sono real na UTA-RLDD (com a comparação com os modelos nas mesmas pessoas) e sensibilidade dos pesos | `results/app_validacao_dmd.md`, `results/app_validacao.md`, `results/app_validacao_uta.md`, `results/app_comparacao_uta.md`, `results/app_sensibilidade_pesos.md` |
 | VII | discussão de PP1 a PP3 (inclui a regra × modelos no mesmo falso alarme), limitações, ética e LGPD | `results/exp5b_robustez.md` (seção 5) e os demais |
 | VIII | conclusão e trabalhos futuros | n/a |
 
@@ -94,7 +94,7 @@ Diagrama TikZ: `cd figures && tectonic fig_pipeline.tex` (detalhes em `figures/R
   tabela macro → valor → arquivo → coluna e filtro vai para `results/numeros_resumo.md`.
 - `src/experiments/conferir_numeros.py` recalcula cada número com uma implementação independente,
   confere `numeros.tex` × `numeros.json`, procura o valor no `.md` de resultados e compila um documento
-  com todos os macros. Estado em 26/10/2026: 648 números (1.275 macros), 0 divergências.
+  com todos os macros. Estado em 27/10/2026: 658 números (1.299 macros), 0 divergências.
 - Convenções: percentuais **sem** o símbolo `%` (escreva `\ExpCincoBCSensJanela\%`); diferenças em pontos
   percentuais; `\NomeIC` = "[inf; sup]", `\NomeComIC` = "valor [inf; sup]", `\NomeMDP` = "média ± dp";
   negativos com o sinal de menos tipográfico. Depois de um macro seguido de palavra, use `{}`
@@ -144,7 +144,7 @@ Desde 28/09/2026:
   protegidos (`{Ca\~{n}as}`, `{Van Droogenbroeck}`).
 
 Em 26/10/2026, depois da banca simulada:
-- PP1: a RL perde de 7,3 a 9,8 pontos de AUC nas três formas de normalizar; o RF perde 10,9 só na normalização
+- PP1: a RL perde de 5,4 a 9,8 pontos de AUC por janela nas quatro formas de normalizar; o RF perde 10,9 só na normalização
   principal e, com outra referência ou sem centragem, de 2,1 a 2,3 (não detectável), porque na UTA-RLDD as janelas
   alertas saem do mesmo vídeo da referência. O achado mais firme é a intensidade: o modelo do DMD reconhece só
   48,4% das janelas sonolentas reais. O volume do treino explica pouco (B com 13 sujeitos).
@@ -153,7 +153,12 @@ Em 26/10/2026, depois da banca simulada:
   até a UTA-RLDD. No cenário do Exp. 5b, a partição aleatória infla o RF em 12,6 pp e a RL em só 1,2 pp.
 - Regra × modelos: a regra não é "mais precisa"; no mesmo falso alarme, a RL do DMD centrada acha tantas
   janelas sonolentas quanto ela. A vantagem da regra é ser explicável e não precisar de treino.
-- Três referências novas (`perkins2023`, `xie2026`, `pradeep2026`; notas em `related_work_notes.md`).
+- Três referências novas (`perkins2023`, `xie2026`, `pradeep2026`; notas em `related_work_notes.md`) e, depois, a
+  fonte da definição de microssono (`skorucak2020`): 31 no total.
+- App (Seção VI-E e Tabela V): teste independente em sono real na UTA-RLDD, sensibilidade dos pesos e, nas mesmas
+  24 pessoas, a comparação com os modelos do Exp. 5b e com a regra do rótulo (`results/app_comparacao_uta.md`).
+- Celular: o tempo por quadro aparece em milissegundos inteiros, como o iPhone registra (app 1.0: 17 ms de mediana,
+  de 11 a 23 ms entre as 2 execuções); o app 2.1 ainda vai ser medido no iPhone e no Galaxy S23 Ultra.
 
 ## Pendências para a equipe
 

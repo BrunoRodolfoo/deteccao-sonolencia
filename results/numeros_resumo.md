@@ -1,10 +1,10 @@
 # Números do artigo e do pôster (gerados de results/)
 
-Gerado em 26/10/2026 23:13 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
+Gerado em 27/10/2026 11:31 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
 
 Galaxy S23 Ultra: sem dados; macro `\SamsungPendente` = "medição prevista" e `\ifSamsungMedido` falso.
 
-Total: 648 números (1274 macros).
+Total: 658 números (1298 macros).
 
 | Macro | Valor | Unidade | O que é | Arquivo de origem | Coluna / filtro |
 |---|---|---|---|---|---|
@@ -289,6 +289,9 @@ Total: 648 números (1274 macros).
 | `\CelularIPhoneFPS` | 50,2 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (median entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
 | `\CelularIPhoneFPSMin` | 40,5 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (min entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
 | `\CelularIPhoneFPSMax` | 60,0 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (max entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
+| `\CelularIPhoneTotalPcinquentaInteiro` | 17 | ms | Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro, em ms inteiros | `(derivado)` | `CelularIPhoneTotalPcinquenta` com CelularIPhoneTotalPcinquenta |
+| `\CelularIPhoneTotalPcinquentaMinInteiro` | 11 | ms | Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro (min), em ms inteiros | `(derivado)` | `CelularIPhoneTotalPcinquentaMin` com CelularIPhoneTotalPcinquentaMin |
+| `\CelularIPhoneTotalPcinquentaMaxInteiro` | 23 | ms | Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro (max), em ms inteiros | `(derivado)` | `CelularIPhoneTotalPcinquentaMax` com CelularIPhoneTotalPcinquentaMax |
 | `\CelularIPhoneQuadros` | 6.031 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros somados das execuções | `results/exp4_phone_latency.csv` | `quadros` [sum] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
 | `\CelularIPhoneQuadrosComRosto` | 6.031 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros com rosto | `results/exp4_phone_latency.csv` | `quadros_com_rosto` [sum] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
 | `\CelularIPhoneTaxaRosto` | 100,0 | % | Exp. 4 iPhone 17 Pro (512 GB): fração de quadros com rosto detectado | `(derivado)` | `CelularIPhoneQuadrosComRosto / CelularIPhoneQuadros * 100` com CelularIPhoneQuadrosComRosto, CelularIPhoneQuadros |
@@ -618,6 +621,8 @@ Total: 648 números (1274 macros).
 | `\ExpCincoBLROpRegraSensCCentrada` | 24,7 | % | Exp. 5b robustez: RL, C_centrada: sensibilidade no falso alarme da regra nas janelas KSS 0 (diagnóstico) | `results/exp5b_robustez.csv` | `valor` onde analise=ponto_operacao_regra, variante=C_centrada, modelo=LR, nivel=janela, metrica=sensibilidade_no_fa_da_regra |
 | `\ExpCincoBLROpRegraSensBCentrada` | 27,3 | % | Exp. 5b robustez: RL, B_centrada: sensibilidade no falso alarme da regra nas janelas KSS 0 (diagnóstico) | `results/exp5b_robustez.csv` | `valor` onde analise=ponto_operacao_regra, variante=B_centrada, modelo=LR, nivel=janela, metrica=sensibilidade_no_fa_da_regra |
 | `\ExpCincoBLRTrezeQuedaAUCJanela` | 7,0 | pp | Exp. 5b RL: queda B − C com B treinado em 13 sujeitos (mediana dos sorteios − C), pp de AUC | `(derivado)` | `ExpCincoBLRTrezeAUCJanelaB - 100*ExpCincoBLRAUCJanelaC` com ExpCincoBLRTrezeAUCJanelaB, ExpCincoBLRAUCJanelaC |
+| `\ExpCincoBJanelaCincoQuedaAUCJanela` | 11,8 [8,4; 15,7] | pp | Exp. 5b RF: queda B − C de AUC por janela com janelas de 5 s (pp) | `results/exp5b_transferencia.csv` | `valor` onde experimento=queda_B_menos_C, variante=janela_5s, modelo=RF, esquema=B3, nivel=janela, estrato=todos, limiar_tipo=fixo_0.5, metrica=auc; IC `ic95_inf`/`ic95_sup` |
+| `\ExpCincoBLRJanelaCincoQuedaAUCJanela` | 5,4 [−0,1; 10,8] | pp | Exp. 5b LR: queda B − C de AUC por janela com janelas de 5 s (pp) | `results/exp5b_transferencia.csv` | `valor` onde experimento=queda_B_menos_C, variante=janela_5s, modelo=LR, esquema=B3, nivel=janela, estrato=todos, limiar_tipo=fixo_0.5, metrica=auc; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBLRControleQuedaCincoDez` | 4,6 [−0,2; 9,7] | pp | Exp. 5b RL: queda B − C no contraste KSS 10 × 5 (pp de AUC) | `results/exp5b_transferencia.csv` | `valor` onde experimento=queda_B_menos_C, variante=principal, modelo=LR, esquema=K10v5, nivel=janela, estrato=todos, limiar_tipo=fixo_0.5, metrica=auc; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBRefSDoisQuedaAUCJanela` | 9,0 [5,5; 13,2] | pp | Exp. 5b RF: queda B − C de AUC por janela, variante ref_s2_espelho (pp) | `results/exp5b_transferencia.csv` | `valor` onde experimento=queda_B_menos_C, variante=ref_s2_espelho, modelo=RF, esquema=B3, nivel=janela, estrato=todos, limiar_tipo=fixo_0.5, metrica=auc; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBSemNormQuedaAUCVideo` | 0,2 [−5,6; 6,3] | pp | Exp. 5b RF: queda B − C de AUC por video, variante sem_normalizacao (pp) | `results/exp5b_transferencia.csv` | `valor` onde experimento=queda_B_menos_C, variante=sem_normalizacao, modelo=RF, esquema=B3, nivel=video, estrato=todos, limiar_tipo=fixo_0.5, metrica=auc; IC `ic95_inf`/`ic95_sup` |
@@ -656,13 +661,18 @@ Total: 648 números (1274 macros).
 | `\AppUTAAUCNivelMedioComIC` | 0,839 [0,736; 0,935] |  | app em sono real, calibração no próprio vídeo: AUC do nível médio [IC 95 %] | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ nível\ médio\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 1) |
 | `\AppUTAAUCNivelMedio` | 0,839 |  | app em sono real, calibração no próprio vídeo: AUC do nível médio [IC 95 %] (valor) | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ nível\ médio\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 2) |
 | `\AppUTAAUCNivelMedioCalAcordado` | 0,891 |  | app em sono real, calibração do vídeo acordado: AUC do nível médio [IC 95 %] (valor) | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ nível\ médio\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 4) |
+| `\AppCompCRF` | 0,811 [0,686; 0,915] |  | AUC por vídeo nas 24 pessoas do teste do app: RF treinado no DMD, com centragem | `results/app_comparacao_uta.csv` | `auc` onde detector=C_treino_DMD_RF, medida=principal; IC `ic95_inf`/`ic95_sup` |
+| `\AppCompCLR` | 0,755 [0,627; 0,894] |  | AUC por vídeo nas 24 pessoas do teste do app: RL treinada no DMD, com centragem | `results/app_comparacao_uta.csv` | `auc` onde detector=C_treino_DMD_LR, medida=principal; IC `ic95_inf`/`ic95_sup` |
+| `\AppCompBRF` | 0,953 [0,898; 0,997] |  | AUC por vídeo nas 24 pessoas do teste do app: RF treinado na UTA-RLDD, com centragem | `results/app_comparacao_uta.csv` | `auc` onde detector=B_treino_UTA_RF, medida=principal; IC `ic95_inf`/`ic95_sup` |
+| `\AppCompBRFSemNorm` | 0,806 [0,686; 0,927] |  | AUC por vídeo nas 24 pessoas do teste do app: RF treinado na UTA-RLDD, sem centragem | `results/app_comparacao_uta.csv` | `auc` onde detector=B_treino_UTA_RF, medida=sem_normalizacao; IC `ic95_inf`/`ic95_sup` |
+| `\AppCompRegra` | 0,853 [0,754; 0,944] |  | AUC por vídeo nas 24 pessoas do teste do app: regra do rótulo do DMD (sem treino) | `results/app_comparacao_uta.csv` | `auc` onde detector=regra_rotulo_DMD, medida=fracao_janelas; IC `ic95_inf`/`ic95_sup` |
 
 ## Conferência automática
 
-Executada em 26/10/2026 23:13 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
+Executada em 27/10/2026 11:31 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
 
-- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 648 de 648** números (1275 macros em `paper/numeros.tex`, 1275 no JSON; sobrando só no TeX: 0; só no JSON: 0).
-- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 531; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 100.
+- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 658 de 658** números (1299 macros em `paper/numeros.tex`, 1299 no JSON; sobrando só no TeX: 0; só no JSON: 0).
+- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 538; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 103.
 - Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — tectonic rc=0; 0 'Undefined control sequence'.
 - Divergências: 0.
 
@@ -951,6 +961,9 @@ Executada em 26/10/2026 23:13 por `src/experiments/conferir_numeros.py` (leitura
 | `\CelularIPhoneFPS` | 50,2 | ok | — |
 | `\CelularIPhoneFPSMin` | 40,5 | ok | sim |
 | `\CelularIPhoneFPSMax` | 60,0 | ok | sim |
+| `\CelularIPhoneTotalPcinquentaInteiro` | 17 | ok | — |
+| `\CelularIPhoneTotalPcinquentaMinInteiro` | 11 | ok | — |
+| `\CelularIPhoneTotalPcinquentaMaxInteiro` | 23 | ok | — |
 | `\CelularIPhoneQuadros` | 6.031 | ok | — |
 | `\CelularIPhoneQuadrosComRosto` | 6.031 | ok | — |
 | `\CelularIPhoneTaxaRosto` | 100,0 | ok | — |
@@ -1280,6 +1293,8 @@ Executada em 26/10/2026 23:13 por `src/experiments/conferir_numeros.py` (leitura
 | `\ExpCincoBLROpRegraSensCCentrada` | 24,7 | ok | sim |
 | `\ExpCincoBLROpRegraSensBCentrada` | 27,3 | ok | sim |
 | `\ExpCincoBLRTrezeQuedaAUCJanela` | 7,0 | ok | — |
+| `\ExpCincoBJanelaCincoQuedaAUCJanela` | 11,8 | ok | sim |
+| `\ExpCincoBLRJanelaCincoQuedaAUCJanela` | 5,4 | ok | sim |
 | `\ExpCincoBLRControleQuedaCincoDez` | 4,6 | ok | sim |
 | `\ExpCincoBRefSDoisQuedaAUCJanela` | 9,0 | ok | sim |
 | `\ExpCincoBSemNormQuedaAUCVideo` | 0,2 | ok | sim |
@@ -1318,3 +1333,8 @@ Executada em 26/10/2026 23:13 por `src/experiments/conferir_numeros.py` (leitura
 | `\AppUTAAUCNivelMedioComIC` | 0,839 [0,736; 0,935] | ok | — |
 | `\AppUTAAUCNivelMedio` | 0,839 | ok | — |
 | `\AppUTAAUCNivelMedioCalAcordado` | 0,891 | ok | — |
+| `\AppCompCRF` | 0,811 | ok | sim |
+| `\AppCompCLR` | 0,755 | ok | sim |
+| `\AppCompBRF` | 0,953 | ok | sim |
+| `\AppCompBRFSemNorm` | 0,806 | ok | sim |
+| `\AppCompRegra` | 0,853 | ok | sim |
