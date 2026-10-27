@@ -1,6 +1,6 @@
 # Números do artigo e do pôster (gerados de results/)
 
-Gerado em 27/10/2026 11:31 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
+Gerado em 27/10/2026 12:04 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
 
 Galaxy S23 Ultra: sem dados; macro `\SamsungPendente` = "medição prevista" e `\ifSamsungMedido` falso.
 
@@ -669,11 +669,11 @@ Total: 658 números (1298 macros).
 
 ## Conferência automática
 
-Executada em 27/10/2026 11:31 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
+Executada em 27/10/2026 12:04 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
 
 - **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 658 de 658** números (1299 macros em `paper/numeros.tex`, 1299 no JSON; sobrando só no TeX: 0; só no JSON: 0).
 - Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 538; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 103.
-- Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — tectonic rc=0; 0 'Undefined control sequence'.
+- Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — não executada (--sem-latex).
 - Divergências: 0.
 
 ### Por número

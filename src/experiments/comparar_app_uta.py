@@ -96,7 +96,9 @@ def main() -> int:
     L = ["# App × modelos nas mesmas pessoas da UTA-RLDD", "",
          f"Gerado por `src/experiments/comparar_app_uta.py`. {len(sujeitos)} sujeitos (os do teste do app em "
          "`results/app_validacao_uta.md`), um vídeo acordado e um sonolento de cada. AUC por vídeo (sonolento × "
-         "acordado); IC 95% por bootstrap de sujeitos (1.000 reamostragens, semente 42).", "",
+         "acordado); IC 95% por bootstrap de sujeitos (1.000 reamostragens, semente 42). Os IC daqui servem para "
+         "comparar os detectores entre si; para o app, o IC citado no artigo é o de `results/app_validacao_uta.md`, "
+         "que usa outra sequência de sorteios (a AUC é a mesma, e os limites mudam só no último dígito).", "",
          "| Detector | Medida | AUC por vídeo [IC 95%] |", "|---|---|---|"]
     for r in df.itertuples():
         L.append(f"| {nomes[r.detector]} | {medidas[r.medida]} | {v3(r.auc)} [{v3(r.ic95_inf)}; {v3(r.ic95_sup)}] |")
