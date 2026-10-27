@@ -44,7 +44,9 @@ Automático (segue o aparelho), Claro e Escuro. O caminho de uma viagem:
   Barra de baixo: Som (volume e "Testar som"), Recalibrar e Encerrar.
 - **Alarme**: no vermelho, a tela inteira fica vermelha (igual nos dois temas) com o motivo; o
   **"deslize: estou acordado"** precisa ser arrastado até o fim (um toque não silencia; pelo teclado,
-  Enter ou espaço) e silencia só o vermelho por nível, por 30 s; num microssono ele nem aparece.
+  Enter ou espaço) e silencia só o vermelho por nível, por 30 s: a tela volta para a viagem (em vermelho, com
+  "Som silenciado por 30 s") e, se o nível seguir alto quando os 30 s acabarem, o alarme volta com som. Num
+  microssono ele nem aparece.
 - **Encerrar** desliga a câmera e abre o **resumo da viagem** (aba Viagens): gráfico do nível, alarmes,
   avisos, bocejos, olhos fechados e cabeça, tempo em cada estado e os momentos. O último resumo fica salvo
   no aparelho (localStorage) e aparece no Início.

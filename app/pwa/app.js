@@ -1642,7 +1642,9 @@ function atualizarGrafico10() {
 }
 function atualizarAlarme(r) {
   const sc = r.score;
-  const on = S.running && r.phase === "ativo" && !!sc && sc.state === 2;
+  // Depois do "estou acordado", a tela volta para a viagem (ainda em vermelho, com o som silenciado); se o nível
+  // seguir alto quando os 30 s acabarem, o alarme volta. O vermelho forçado (microssono, cabeça caída) sempre mostra.
+  const on = S.running && r.phase === "ativo" && !!sc && sc.state === 2 && (!!sc.forced || !r.alarm?.snoozed);
   if (on !== UI.alarmeVisivel) {
     UI.alarmeVisivel = on;
     $("alarme").classList.toggle("hidden", !on);
@@ -1668,7 +1670,7 @@ function atualizarAlarme(r) {
   const silenciado = !!r.alarm?.snoozed;
   setText("alarme-som", silenciado ? "som silenciado" : S.volumePct === 0 ? "sem som: volume em 0 %" : !Sound.ready ? "toque na tela para liberar o som" : "alarme tocando");
   $("deslizar").classList.toggle("hidden", !!sc.forced || silenciado);
-  setText("alarme-nota", sc.forced ? "O alarme para quando os olhos abrirem e a cabeça voltar." : silenciado ? "Som silenciado por 30 s. O alarme volta se os sinais continuarem." : "Silencia o som por 30 s. Num microssono, o alarme volta na hora.");
+  setText("alarme-nota", sc.forced ? "O alarme para quando os olhos abrirem e a cabeça voltar." : silenciado ? "Som silenciado por 30 s. O alarme volta se os sinais continuarem." : "Silencia o som por 30 s e volta para a viagem. Num microssono, o alarme volta na hora.");
 }
 function estouAcordado() {
   Sound.unlock();
@@ -1743,7 +1745,7 @@ function updateUI(r) {
     if (noFaceMs > 1500 && !sc.forced) sub = `Rosto não detectado há ${br(noFaceMs / 1000, 0)} s: enquadre o rosto.`;
     setStatus(sc.state, STATE_TITLES[sc.state], sub, sc.level);
     setText("status-why", sc.forced ? `Motivo: ${sc.forced}` : "");
-    $("pausa").classList.toggle("hidden", sc.state !== 1);
+    $("pausa").classList.toggle("hidden", sc.state < 1);
     renderPorque(sc);
   }
 
