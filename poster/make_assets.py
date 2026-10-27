@@ -9,8 +9,9 @@ Figuras (tamanho em cm = tamanho no pôster, lido de poster/layout.py; texto em 
   fig_poster_metodo.png      diagrama do método: câmera e MediaPipe, sinais (olhos, bocejo, cabeça),
                              experimentos (Face Mesh, 468 pontos; janelas de 10 s; RF e RL) e
                              app v2.1 (Face Landmarker, 478 pontos; nível de 0 a 100)
-  fig_poster_exp5b.png       PP1 (Exp. 5b): queda B−C da AUC (RF e RL; normalização principal e as outras
-                             duas) e quanto o modelo do DMD (C) reconhece das janelas alertas e sonolentas
+  fig_poster_exp5b.png       PP1 (Exp. 5b): perda de AUC ao treinar com sono encenado (B − C; RF e RL;
+                             normalização principal e as outras três) e quanto o modelo do DMD reconhece
+                             das janelas alertas e sonolentas reais
   qr_repositorio.png         QR do repositório
 
 Regras conferidas antes de salvar cada figura (o script para com erro se falharem):
@@ -240,28 +241,38 @@ def fig_metodo():
 # ------------------------------------------------------------------------------------------------
 QUEDAS = {   # (modelo, normalização) -> macro da queda B − C da AUC por janela (pontos, com IC)
     ("RF", "principal"): "ExpCincoBQuedaAUCJanela",
-    ("RF", "outra referência"): "ExpCincoBRefAltQuedaAUCJanela",
+    ("RF", "outra referência"): "ExpCincoBRefAltQuedaAUCJanela",       # outra referência na UTA-RLDD
     ("RF", "sem centragem"): "ExpCincoBSemNormQuedaAUCJanela",
+    ("RF", "referência do DMD"): "ExpCincoBRefSDoisQuedaAUCJanela",    # referência do DMD na s2
     ("RL", "principal"): "ExpCincoBLRQuedaAUCJanela",
     ("RL", "outra referência"): "ExpCincoBLRRefAltQuedaAUCJanela",
     ("RL", "sem centragem"): "ExpCincoBLRSemNormQuedaAUCJanela",
+    ("RL", "referência do DMD"): "ExpCincoBLRRefSDoisQuedaAUCJanela",
 }
 
 
 def fig_exp5b():
+    """Dois gráficos empilhados: em cima, a perda de AUC ao treinar com sono encenado (B − C) no RF e na
+    RL, na normalização principal e nas outras três (outra referência na UTA-RLDD, sem centragem e
+    referência do DMD na s2); embaixo, quanto o modelo do DMD (C) reconhece das janelas alertas e
+    sonolentas reais (limiar 0,5)."""
     W, H = LY.F5B_W, LY.F5B_H
     fig = plt.figure(figsize=(W * CM, H * CM))
-    bot, top = 1.05, 1.05
-    hgt = H - bot - top
-    ax_x0, ax_w = 1.1, 5.6
-    bx_x0 = 7.15
-    ax = fig.add_axes([ax_x0 / W, bot / H, ax_w / W, hgt / H])
-    bx = fig.add_axes([bx_x0 / W, bot / H, (W - 0.1 - bx_x0) / W, hgt / H])
-
-    # painel 1: queda B − C; "outras" = referência no vídeo de pouca vigilância e sem centragem (lado a lado)
+    LH = FS * LS / 72 * 2.54
+    # --- em cima: perda B − C ---
+    fig.text(0.1 / W, 1 - 0.05 / H, "Perda ao treinar com sono\nencenado (AUC)", fontsize=FS, weight="bold",
+             color=PRETO, ha="left", va="top", linespacing=LS)
+    topo = 0.05 + 2 * LH + 0.2              # cm a partir do alto
+    base_barras = 2 * 0.8 + 0.2              # duas linhas de barras + folga
+    titulo2 = LH + 0.12
+    ticks = 2 * LH + 0.4
+    h_ax = H - topo - ticks - 0.25 - titulo2 - base_barras
+    assert h_ax >= 2.6, f"figura do PP1 baixa demais ({h_ax:.2f} cm para o gráfico de cima)"
+    ax_x0 = 1.1
+    ax = fig.add_axes([ax_x0 / W, (H - topo - h_ax) / H, (W - ax_x0 - 0.15) / W, h_ax / H])
     pos = {("RF", "principal"): -0.24, ("RL", "principal"): 0.24,
-           ("RF", "outra referência"): 0.68, ("RF", "sem centragem"): 0.86,
-           ("RL", "outra referência"): 1.14, ("RL", "sem centragem"): 1.32}
+           ("RF", "outra referência"): 0.78, ("RF", "sem centragem"): 0.92, ("RF", "referência do DMD"): 1.06,
+           ("RL", "outra referência"): 1.26, ("RL", "sem centragem"): 1.4, ("RL", "referência do DMD"): 1.54}
     estilo = {"RF": ("o", PRETO), "RL": ("s", CINZA)}
     for (modelo, norm), nome in QUEDAS.items():
         v, (lo, hi) = val(nome), ic(nome)
@@ -269,40 +280,40 @@ def fig_exp5b():
         ax.errorbar(pos[(modelo, norm)], v, yerr=[[v - lo], [hi - v]], fmt=mk, ms=10, color=cor, mec="white",
                     mew=1.0, elinewidth=2.2, capsize=4, capthick=2.2, zorder=4)
     ax.axhline(0, color=CINZA_ESC, lw=1.4, zorder=2)
-    ax.set_ylim(-4, 21.5)
-    ax.set_yticks([0, 5, 10, 15, 20])
-    ax.set_xlim(-0.5, 1.55)
-    ax.set_xticks([0, 1])
+    ax.set_ylim(-3, 17.5)
+    ax.set_yticks([0, 10])
+    ax.set_xlim(-0.8, 1.75)
+    ax.set_xticks([0, 1.16])
     ax.set_xticklabels(["principal", "outras"])
+    ax.set_xlabel("normalização por pessoa", fontsize=FS, labelpad=7)
     ax.tick_params(axis="x", length=0, pad=6)
     ax.grid(True, axis="y", color=GRADE, linewidth=1.0)
-    for modelo, x in (("RF", -0.24), ("RL", 0.24)):
+    for modelo, sinal in (("RF", -1), ("RL", 1)):
         nome = QUEDAS[(modelo, "principal")]
-        ax.text(x, ic(nome)[1] + 1.4, modelo, ha="center", va="bottom", fontsize=FS, weight="bold",
-                color=estilo[modelo][1])
-    fig.text(0.1 / W, 1 - 0.1 / H, "Queda B−C (AUC)", fontsize=FS, weight="bold", color=PRETO,
-             ha="left", va="top")
+        ax.text(pos[(modelo, "principal")] + sinal * 0.11, val(nome), modelo, ha="right" if sinal < 0 else "left",
+                va="center", fontsize=FS, weight="bold", color=estilo[modelo][1])
 
-    # painel 2: o modelo do DMD (C) na UTA-RLDD, limiar 0,5
-    cats = [("alerta", "ExpCincoBCEspecJanela", CINZA_CLA), ("sono", "ExpCincoBCSensJanela", RED)]
-    for k, (rot, nome, cor) in enumerate(cats):
+    # --- embaixo: o modelo do DMD na UTA-RLDD ---
+    y_t2 = base_barras + titulo2              # cm a partir de baixo (topo do título de baixo)
+    fig.text(0.1 / W, y_t2 / H, "Modelo do DMD reconhece", fontsize=FS, weight="bold", color=PRETO,
+             ha="left", va="top")
+    bx = fig.add_axes([0, 0, 1, base_barras / H])
+    bx.set_xlim(0, W)
+    bx.set_ylim(0, base_barras)
+    bx.axis("off")
+    x0, larg = 3.4, W - 3.4 - 2.4        # início da barra (depois do rótulo) e comprimento de 100 %
+    for k, (rot, nome, cor) in enumerate((("alerta", "ExpCincoBCEspecJanela", CINZA_CLA),
+                                          ("sono real", "ExpCincoBCSensJanela", RED))):
+        yc = base_barras - 0.1 - 0.8 * k - 0.8 / 2
         v, (lo, hi) = val(nome), ic(nome)
-        bx.bar(k, v, width=0.62, color=cor, zorder=3)
-        bx.errorbar(k, v, yerr=[[v - lo], [hi - v]], fmt="none", ecolor=PRETO, elinewidth=2.0, capsize=5,
-                    capthick=2.0, zorder=4)
-        bx.text(k, hi + 2, f"{V[nome]}%", ha="center", va="bottom", fontsize=FS, weight="bold", color=PRETO)
-    bx.set_ylim(0, 104)
-    bx.set_yticks([])
-    bx.spines["left"].set_visible(False)
-    bx.set_xlim(-0.5, 1.5)
-    bx.set_xticks([0, 1])
-    bx.set_xticklabels([c[0] for c in cats])
-    bx.tick_params(axis="x", length=0, pad=6)
-    bx.grid(False)
-    fig.text(1 - 0.05 / W, 1 - 0.1 / H, "C reconhece", fontsize=FS, weight="bold", color=PRETO,
-             ha="right", va="top")
+        bx.barh(yc, larg * v / 100, left=x0, height=0.5, color=cor, zorder=3)
+        bx.errorbar(x0 + larg * v / 100, yc, xerr=[[larg * (v - lo) / 100], [larg * (hi - v) / 100]], fmt="none",
+                    ecolor=PRETO, elinewidth=2.0, capsize=4, capthick=2.0, zorder=4)
+        bx.text(0.1, yc, rot, ha="left", va="center", fontsize=FS, color=PRETO)
+        bx.text(x0 + larg * hi / 100 + 0.25, yc, f"{V[nome]}%", ha="left", va="center", fontsize=FS, weight="bold",
+                color=PRETO)
     conferir(fig, "fig_poster_exp5b")
-    # os rótulos não podem cobrir os pontos e os IC do gráfico
+    # os rótulos não podem cobrir os pontos e os IC do gráfico de cima
     r = fig.canvas.get_renderer()
     marcas = [c.get_window_extent(r) for c in ax.collections + ax.lines if c.get_visible()]
     for t in ax.texts:

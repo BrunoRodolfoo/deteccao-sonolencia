@@ -241,46 +241,45 @@ AUTHORS = [
 # > 90 % = LMDF 90,05 % no NTHU-DDD (lyu2018; paper/related_work_notes.md).
 COL1_TITLE = "Contexto e Pergunta"
 COL1 = [
-    P("A saúde do condutor, sono incluído, aparece em ", B("27,8%"), " das ocorrências nas rodovias "
-      "federais [7]."),
+    P("Sono e saúde do condutor pesam em ", B("27,8%"), " das ocorrências nas rodovias federais [7]."),
     P("Com sono encenado (atuado), os detectores passam de 90% de acurácia [6]. Com sono real (UTA-RLDD), "
       f"o melhor modelo acerta {N('ExpUmHMLSTMVA')}% dos vídeos, e pessoas, {N('ExpUmHumanosVA')}% [1].",
-      sb=8),
-    P("Outro cuidado: dividir treino e teste por janela põe trechos do mesmo vídeo nos dois lados "
-      "(vazamento).", sb=8),
-    P(B("Pergunta central", RED), sb=14),
-    P("Um detector treinado com sono encenado reconhece sono real de pessoas nunca vistas, no celular?", sb=2),
-    P(B("Perguntas de pesquisa", RED), sb=14),
-    P(B("PP1."), " Quanto se perde do sono encenado para o real?", sb=2),
-    P(B("PP2."), " Qual o custo no celular?", sb=5),
-    P(B("PP3."), " Resiste à noite, ao movimento e aos óculos?", sb=5),
+      sb=14),
+    P(B("Pergunta central", RED), sb=30),
+    P("Um detector treinado com sono encenado reconhece sono real de pessoas nunca vistas, no celular?", sb=4),
+    P(B("Perguntas de pesquisa", RED), sb=30),
+    P(B("PP1."), " Quanto se perde do sono encenado para o real?", sb=4),
+    P(B("PP2."), " Qual o custo no celular?", sb=10),
+    P(B("PP3."), " Resiste à noite, ao movimento e aos óculos?", sb=10),
 ]
 
 # ---- Coluna 2: Método e Resultados ----------------------------------------------------------
 COL2_TITLE = "Método e Resultados"
 TABLE = [
-    ["UTA-RLDD [1]", f"sono real, {N('BaseUTASujeitos')} pessoas", "teste real (PP1)"],
-    ["DMD [2]", f"encenado, {N('BaseDMDSujeitos')} pessoas", "treino atuado (PP1)"],
+    ["UTA-RLDD [1]", f"sono real, {N('BaseUTASujeitos')} pessoas", "teste (PP1)"],
+    ["DMD [2]", f"encenado, {N('BaseDMDSujeitos')} pessoas", "treino (PP1)"],
     ["NITYMED [3]", "noite, carro andando", "noite (PP3)"],
     ["MRL + CEW [4, 5]", "recortes de olho", "olho e óculos (PP3)"],
 ]
-# Exp. 5b: B = treino e teste na UTA-RLDD; C = treino no DMD e teste na UTA-RLDD; queda = B - C
-F5B_CAPTION = [P(B("PP1:"), f" C{NB}={NB}DMD{NB}→{NB}UTA, B{NB}={NB}UTA{NB}→{NB}UTA. Outras: outra referência "
-                 "ou sem centragem.")]
+# Exp. 5b (figura do PP1): B = treino e teste na UTA-RLDD; C = treino no DMD e teste na UTA-RLDD; a perda
+# mostrada é B − C. Os rótulos ficam no próprio gráfico (make_assets.py), sem legenda acima.
 # Vazamento (Exp. 2 e Exp. 5b): sem número em destaque; não explica os 90 % da literatura, que foram
 # medidos com outras pessoas no teste
 LEAK = [
     P(B("Vazamento")),
     P("Nas sequências de piscadas, que se sobrepõem, partir por janela infla a acurácia em "
       f"{N('ExpDoisRFInflacaoJanelaBSA')}{NB}pp; nas janelas de 10 s, {N('ExpCincoBVazamentoAcBal')}{NB}pp "
-      f"no RF e {N('ExpCincoBLRVazamentoAcBal')}{NB}pp na RL.", sb=2),
+      f"no RF e {N('ExpCincoBLRVazamentoAcBal')}{NB}pp na RL."),
 ]
-# App v2.1: validação na direção real do DMD (sessões s1), os mesmos vídeos usados no ajuste das regras
+# App v2.1: teste independente em sono real (UTA-RLDD, pessoas que não entraram no ajuste das regras).
+# Substitui a frase da direção real do DMD (3,3 % em vermelho), que usava os mesmos vídeos do ajuste.
 APP = [
     P(B(f"App v{N('AppVersao')}")),
-    P(f"Regras sobre olhos, bocejo e cabeça. Na direção real do DMD ({_int('AppDMDMinutosDirecaoReal')}"
-      f"{NB}min, usados no ajuste), ficou {N('AppDMDVermelhoDirecaoReal')}% do tempo em vermelho.", sb=2),
+    P(f"Em {N('AppUTASujeitos')} pessoas com sono real, fora do ajuste, separou sonolento de acordado "
+      f"(AUC{NB}{N('AppUTAAUCForaVerde')}); alarmou {N('AppUTASonolentosVermelho')} sonolentos e "
+      f"{N('AppUTAAcordadosAlarme')} acordados."),
 ]
+APP_RESERVA_LINHAS = 0   # linhas guardadas na caixa do app para um resultado futuro
 
 # ---- Coluna 3: Conclusões -------------------------------------------------------------------
 COL3_TITLE = "Conclusões"
@@ -309,15 +308,14 @@ def _aparelhos():
 
 
 COL3 = [
-    P(B("PP1."), f" Treinada no DMD, a RL perde de {N('ExpCincoBLRQuedaNormMin')} a "
-      f"{N('ExpCincoBLRQuedaNormMax')} pontos de AUC em todas as normalizações testadas; o RF perde "
-      f"{N('ExpCincoBQuedaAUCJanela')} só na principal."),
-    P(B("PP2."), " " + _aparelhos(), sb=6),
-    P(B("PP3."), f" À noite, a SNR do EAR (abertura do olho) cai para {N('ExpSeisSNRNoite')}, mas o carro "
-      f"andando de dia já dá {N('ExpSeisSNRDMDMovimento')}. Óculos: AUC do olho de "
-      f"{N('ExpTresCEWPatchMRLSemOculosAUC')} para {N('ExpTresCEWPatchMRLComOculosAUC')} (CEW para MRL).", sb=6),
-    P(B("Limitações."), f" Um par de bases, {N('BaseDMDSujeitos')} pessoas no DMD e noite sem classe "
-      "alerta.", sb=6),
+    P(B("PP1."), f" A RL do DMD perde de {N('ExpCincoBLRQuedaNormMin')} a {N('ExpCincoBLRQuedaNormMax')} pontos "
+      f"de AUC em todas as normalizações testadas; o RF perde {N('ExpCincoBQuedaAUCJanela')} só com a referência "
+      "principal na UTA."),
+    P(B("PP2."), " " + _aparelhos(), sb=14),
+    P(B("PP3."), f" A SNR do EAR (abertura do olho) é {N('ExpSeisSNRNoite')} à noite e "
+      f"{N('ExpSeisSNRDMDMovimento')} com o carro andando de dia. Óculos: AUC do olho de "
+      f"{N('ExpTresCEWPatchMRLSemOculosAUC')}{NB}para{NB}{N('ExpTresCEWPatchMRLComOculosAUC')}.", sb=14),
+    P(B("Limitações."), " Um só par de bases.", sb=14),
 ]
 # Referências (16 pt), em texto corrido: chaves de paper/refs.bib (NITYMED: dataset + artigo dos autores)
 _REFS = ["Ghoddoosian et al., CVPRW 2019.", "Ortega et al., ECCVW 2020.", "Petrellis et al., IEEE DataPort 2022.",
@@ -397,20 +395,18 @@ def elements():
         esp = 0.05 if grossa else 0.025
         el.append(("rule", L.C2_X, L.TAB_Y + i * L.TAB_ROW_H - esp / 2, L.C2_W, esp,
                    INK if grossa else "BFBFBF", {}))
-    hc = T(L.C2_X, L.LOW_Y, L.F5B_W, F5B_CAPTION, "Legenda Exp 5b")
-    if hc > L.F5B_CAP_H:
-        raise SystemExit(f"legenda do Exp. 5b ({hc:.2f} cm) maior que L.F5B_CAP_H")
     I("fig_poster_exp5b.png", L.C2_X, L.F5B_Y, L.F5B_W)
     y = L.LOW_Y
-    y += T(L.R_X, y, L.R_W, LEAK, "Vazamento") + 0.45
-    T(L.R_X, y, L.R_W, APP, "App", h=L.BOTTOM - y, ajustavel=True)
+    y += T(L.R_X, y, L.R_W, LEAK, "Vazamento") + 0.2
+    reserva = APP_RESERVA_LINHAS * 20 * 1.1 * PT_CM
+    T(L.R_X, y, L.R_W, APP, "App", h=L.BOTTOM - y - reserva, ajustavel=True)
 
     # coluna 3: frase-síntese, conclusões e, no pé, as referências
     T(L.C3_X, L.Y_SEC_TITLE, L.C3_W, [P(B(COL3_TITLE), size=28, lh=1.05)], "Titulo col 3")
     hr = altura_cm(preparar(REFS, L.C3_W))
     y_ref = L.BOTTOM - hr
     y = L.Y_BODY
-    y += T(L.C3_X, y, L.C3_W, SINTESE, "Sintese") + 0.3
+    y += T(L.C3_X, y, L.C3_W, SINTESE, "Sintese") + 0.6
     T(L.C3_X, y, L.C3_W, COL3, "Corpo col 3", h=y_ref - 0.2 - y, ajustavel=True)
     T(L.C3_X, y_ref, L.C3_W, REFS, "Referencias", cls="ref")
 

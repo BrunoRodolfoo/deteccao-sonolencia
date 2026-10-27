@@ -37,9 +37,8 @@ TAB_COLS = [6.6, 8.2, 7.55]            # base | o que é | papel (soma = C2_W)
 TAB_ROWS = 4
 LOW_Y = TAB_Y + TAB_ROWS * TAB_ROW_H + 0.35
 
-F5B_W = 11.0                           # figura do PP1 (legenda acima, medida no build_poster.py)
-F5B_CAP_H = 2.35                       # até 3 linhas de 20 pt
-F5B_Y = LOW_Y + F5B_CAP_H + 0.1
+F5B_W = 11.0                           # figura do PP1 (os rótulos ficam no próprio gráfico)
+F5B_Y = LOW_Y
 F5B_H = round(BOTTOM - F5B_Y, 2)
 
 R_X = C2_X + F5B_W + 0.5               # textos à direita da figura (vazamento e app)

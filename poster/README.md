@@ -58,7 +58,7 @@ imprime o PDF direto pelo Chrome, sem os autores nos metadados: depois dele, rod
 - **Imagens:** nenhum rosto. Nada do DMD (CC BY-NC-ND e rostos), da UTA-RLDD (autorização de imagem restrita)
   nem do NITYMED; nenhum quadro do NTHU-DDD. As figuras são só gráficos e diagramas.
 - **Conferência feita em 26/10/2026:** PDF com 1 página de 50,80 × 28,57 cm; menor fonte 20 pt no corpo e
-  16 pt nas referências e no endereço, no PDF e no `.pptx`; as 85 linhas de texto do PDF iguais às do
+  16 pt nas referências e no endereço, no PDF e no `.pptx`; as 78 linhas de texto do PDF iguais às do
   `.pptx`; nenhum travessão; metadados com título e autores nos dois arquivos; `.pptx` aberto no Quick Look
   (`qlmanage -t -s 2000`) e comparado com o PDF. **Imprima o PDF.**
 
@@ -67,9 +67,9 @@ imprime o PDF direto pelo Chrome, sem os autores nos metadados: depois dele, rod
 | Coluna | Conteúdo | Fonte |
 |---|---|---|
 | Cabeçalho | título, endereço do repositório, autores, orientador e QR | |
-| 1. Contexto e Pergunta | ABRAMET/PRF 27,8 %; encenado acima de 90 % e real 65,2 % (HM-LSTM), humanos 57,8 %; cuidado com o vazamento; pergunta central; PP1 a PP3 | `paper/fontes_brasil.md`, `results/exp1_intra.md` |
-| 2. Método e Resultados | diagrama do método com a validação dos sinais do app (olhos κ 0,938 e revocação 0,920; bocejo 0,638 sem a mão; cabeça sem revocação medida) e o semáforo (40 e 70); tabela das bases; figura do PP1 (queda B−C: RL de 5,4 a 9,8 por janela em todas as normalizações, RF 10,9 só na principal; C reconhece 82,0 % das janelas alertas e 48,4 % das sonolentas); vazamento (45,3 pp nas sequências; 12,6 pp no RF e 1,2 pp na RL nas janelas de 10 s); app v2.1 (3,3 % do tempo em vermelho em 63 min de direção real do DMD, vídeos usados no ajuste) | `results/exp5b_transferencia.md`, `results/exp2_leakage.md`, `results/app_validacao_dmd.md` |
-| 3. Conclusões | frase-síntese (sono encenado mais extremo; 48 % das janelas de sono real); PP1; PP2 (iPhone 17 Pro, 11 a 23 ms por quadro, app 1.0); PP3 (SNR do EAR 7,2 à noite e 8,7 com o carro andando de dia; óculos, AUC de 93,4 para 65,1 do CEW para o MRL); limitações; referências | `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
+| 1. Contexto e Pergunta | ABRAMET/PRF 27,8 %; encenado acima de 90 % e real 65,2 % (HM-LSTM), humanos 57,8 %; pergunta central; PP1 a PP3 | `paper/fontes_brasil.md`, `results/exp1_intra.md` |
+| 2. Método e Resultados | diagrama do método com a validação dos sinais do app (olhos κ 0,938 e revocação 0,920; bocejo 0,638 sem a mão; cabeça sem revocação medida) e o semáforo (40 e 70); tabela das bases; figura do PP1 com os rótulos no próprio gráfico (perda ao treinar com sono encenado, por normalização: RL de 5,4 a 9,8 em todas, RF 10,9 só com a referência principal na UTA; o modelo do DMD reconhece 82,0 % das janelas alertas e 48,4 % das de sono real); vazamento (45,3 pp nas sequências; 12,6 pp no RF e 1,2 pp na RL nas janelas de 10 s); app v2.1 em sono real (24 pessoas da UTA-RLDD fora do ajuste: AUC 0,812 entre sonolento e acordado; alarme em 15 sonolentos e 2 acordados) | `results/app_validacao*.md`, `results/exp5b_transferencia.md`, `results/exp2_leakage.md` |
+| 3. Conclusões | frase-síntese (sono encenado mais extremo; 48 % das janelas de sono real); PP1; PP2 (iPhone 17 Pro, 11 a 23 ms por quadro, app 1.0); PP3 (SNR do EAR 7,2 à noite e 8,7 com o carro andando de dia; óculos, AUC do olho de 93,4 para 65,1); limitações (um só par de bases); referências | `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
 
 ## Roteiro da apresentação (10 min, 4 falas de 2,5 min)
 
@@ -87,9 +87,9 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
   passam de 90 % de acurácia. Na UTA-RLDD, que tem sono de verdade, o melhor modelo publicado acerta 65,2 % dos
   vídeos, e pessoas olhando os mesmos vídeos acertam 57,8 %. A gente quis entender de onde vem essa
   diferença."
-- **Um cuidado (30 s):** "Muitos trabalhos dividem treino e teste por janela. Aí pedaços do mesmo vídeo
-  caem nos dois lados, e o modelo é testado em algo que já viu. Aqui a pessoa do teste nunca aparece no
-  treino."
+- **Um cuidado (30 s, sem texto no pôster; os números estão no quadro "Vazamento" da coluna 2):** "Muitos
+  trabalhos dividem treino e teste por janela. Aí pedaços do mesmo vídeo caem nos dois lados, e o modelo é
+  testado em algo que já viu. Aqui a pessoa do teste nunca aparece no treino."
 - **Pergunta e PPs (40 s):** ler a pergunta central e as três perguntas. Passar para o André: "o André vai
   mostrar como a gente mediu isso."
 
@@ -101,13 +101,13 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
   logística, sempre testando em pessoas que o modelo nunca viu."
 - **Bases (20 s, tabela):** UTA-RLDD tem sono real (60 pessoas); DMD, sono encenado (13 pessoas); NITYMED é a
   noite; MRL e CEW são recortes de olho.
-- **PP1 (1 min 10 s, figura):** "B treina e testa na UTA. C treina no DMD e testa na UTA. A diferença B menos
-  C é o quanto se perde treinando com sono encenado. Na regressão logística, a perda fica entre 5,4 e 9,8
-  pontos de AUC em todas as formas de normalizar os dados de cada pessoa. No Random Forest, os 10,9 pontos só
-  aparecem na normalização principal: com outra referência ou sem centragem, a diferença fica em uns 2 pontos e
-  não dá para separar de zero. Isso acontece porque, na UTA, as janelas alertas saem do mesmo vídeo usado como
-  referência, e o Random Forest treinado lá aproveita isso. O resultado mais firme está à direita: o modelo do
-  DMD reconhece 82,0 % das janelas alertas, mas só 48,4 % das sonolentas. O sono encenado é mais extremo: nas
+- **PP1 (1 min 10 s, figura):** "O gráfico de cima compara o modelo treinado na UTA com o treinado no DMD,
+  os dois testados na UTA: é o quanto se perde treinando com sono encenado. Na regressão logística, a perda fica
+  entre 5,4 e 9,8 pontos de AUC em todas as formas de normalizar os dados de cada pessoa. No Random Forest, os
+  10,9 pontos só aparecem com a referência principal na UTA: com outra referência na UTA ou sem centragem, a
+  diferença fica em uns 2 pontos e não dá para separar de zero. Isso acontece porque, na UTA, as janelas alertas
+  saem do mesmo vídeo usado como referência, e o Random Forest treinado lá aproveita isso. O resultado mais firme
+  está embaixo: o modelo do DMD reconhece 82,0 % das janelas alertas, mas só 48,4 % das de sono real. O sono encenado é mais extremo: nas
   janelas sonolentas, o maior fechamento de olho tem mediana de 0,97 s no DMD e de 0,17 s na UTA. Quem aprende
   com fechamento longo deixa passar o sono real."
 - **Vazamento (30 s, texto à direita da figura):** "Também medimos o vazamento. Nas sequências de 30 piscadas,
@@ -143,8 +143,9 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
 - **PP2 (30 s):** "No iPhone 17 Pro, a versão 1.0 do app levou de 11 a 23 ms por quadro, em duas execuções. A
   versão 2.1 está sendo medida no iPhone e no Galaxy S23 Ultra." Se o pôster já trouxer a medição nova, ler os
   números dele.
-- **Validação e limitações (30 s):** "Na direção real do DMD, 63 minutos com motoristas acordados, o app ficou
-  3,3 % do tempo em vermelho. Mas são os mesmos vídeos que usamos para ajustar as regras. As limitações: é um
+- **Validação e limitações (30 s):** "Testamos o app em 24 pessoas da UTA-RLDD com sono real, que não entraram no
+  ajuste das regras: ele separou sonolento de acordado com AUC 0,812 e deu alarme em 15 sonolentos e em 2
+  acordados. Na direção real do DMD, ficou 3,3 % do tempo em vermelho, mas são os mesmos vídeos do ajuste. As limitações: é um
   só par de bases, o DMD tem só 13 pessoas, e à noite não temos vídeos de gente alerta."
 - **Fechamento:** "Resumindo: treinar com sono encenado não basta para reconhecer sono real, porque o encenado é
   mais extremo. E o teste tem que ser sempre em pessoas novas." Mostrar o QR.
@@ -155,12 +156,12 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
    institucional e não tinha prazo de resposta. O DMD cumpre o mesmo papel (sono encenado, rótulo por quadro) e
    tem licença para pesquisa. A troca está registrada como alteração do planejamento.
 2. **A queda do PP1 não pode ser só câmera e ambiente?** Pode ter parte disso: com um só par de bases, a troca
-   muda câmera, cenário e tipo de rótulo ao mesmo tempo. O volume do treino explica pouco: com B treinado com só
-   13 pessoas, como o DMD, a queda continua (9,3 pontos no RF e 7,0 na RL). O que aparece em todos os controles
+   muda câmera, cenário e tipo de rótulo ao mesmo tempo. O volume do treino explica pouco: com o modelo da UTA
+   treinado com só 13 pessoas, como o DMD, a perda continua (9,3 pontos no RF e 7,0 na RL). O que aparece em todos os controles
    é o modelo do DMD deixar passar a maior parte das janelas sonolentas reais.
 3. **Por que o RF perde 10,9 e depois quase nada?** Na UTA-RLDD, as janelas alertas saem do mesmo vídeo usado
    como referência na normalização, e o RF treinado lá aproveita isso. Com a referência no vídeo de pouca vigilância ou sem
-   centragem, a AUC de B no RF cai de 80,1 para 68,4 e 69,4, e a queda vira 2,3 [−2,5; 6,8] e
+   centragem, a AUC do RF treinado na UTA cai de 80,1 para 68,4 e 69,4, e a perda vira 2,3 [−2,5; 6,8] e
    2,1 [−1,2; 5,8], que incluem zero. Na RL, a queda por janela fica entre 5,4 e 9,8, sempre com IC acima de zero.
 4. **O resultado não depende do limiar 0,5?** A AUC não depende de limiar. Com o limiar calibrado só no DMD
    (0,662), o modelo reconhece ainda menos janelas sonolentas: 37,0 %.
@@ -210,7 +211,7 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
 ## Números gerados
 
 `poster/numeros.json` (chave `valores`: nome do macro → texto pt-BR, por exemplo
-`"ExpCincoBLRQuedaNormMin": "7,3"`) é gerado por `src/experiments/make_paper_numbers.py` com os MESMOS valores
+`"ExpCincoBLRQuedaNormMin": "5,4"`) é gerado por `src/experiments/make_paper_numbers.py` com os MESMOS valores
 de `paper/numeros.tex`; a origem de cada um está em `results/numeros_resumo.md`. Depois de um benchmark novo no
 celular, `bash tools/atualizar_celular.sh` refaz importação, figura do Exp. 4, números e artigo; em seguida,
 `.venv/bin/python poster/build_poster.py --pdf` refaz o pôster com os metadados completos.
