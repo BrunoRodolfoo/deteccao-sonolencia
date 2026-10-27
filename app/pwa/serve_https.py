@@ -38,12 +38,34 @@ MAX_UPLOAD = 50 * 1024 * 1024  # 50 MB: um benchmark de 60 s tem poucas centenas
 VENDOR_SCRIPT = PWA_DIR.parent.parent / "tools" / "baixar_dependencias_app.sh"
 
 
+def _ipv4_util(ip: str) -> bool:
+    """IPv4 que outro aparelho da rede alcança: não é loopback nem o 192.0.0.x do CLAT (rede só IPv6)."""
+    return bool(ip) and not ip.startswith(("127.", "192.0.0.", "169.254."))
+
+
+def local_ipv6():
+    """IPv6 global e estável do en0 (o "secured" do macOS), para redes só IPv6. None se não houver."""
+    try:
+        out = subprocess.run(["ifconfig", "en0"], capture_output=True, text=True, timeout=5).stdout
+    except Exception:
+        return None
+    candidatos = []
+    for linha in out.splitlines():
+        m = re.match(r"\s*inet6 ([0-9a-f:]+)\s.*", linha)
+        if not m or m.group(1).startswith("fe80") or "clat46" in linha or "deprecated" in linha:
+            continue
+        candidatos.append((0 if "secured" in linha and "temporary" not in linha else 1, m.group(1)))
+    return sorted(candidatos)[0][1] if candidatos else None
+
+
 def local_ip():
-    """IP local preferencial (en0 no macOS); cai para o truque do socket UDP."""
+    """Endereço do Mac que o celular usa: o IPv4 da rede (en0 no macOS ou o truque do socket UDP) ou, numa
+    rede só IPv6 (ex.: Acesso Pessoal do iPhone com operadora só IPv6, em que o Mac fica só com o 192.0.0.2
+    do CLAT), o IPv6 global do en0."""
     try:
         out = subprocess.run(["ipconfig", "getifaddr", "en0"], capture_output=True, text=True, timeout=5)
         ip = out.stdout.strip()
-        if ip:
+        if _ipv4_util(ip):
             return ip
     except Exception:
         pass
@@ -52,9 +74,29 @@ def local_ip():
         s.connect(("8.8.8.8", 80))
         ip = s.getsockname()[0]
         s.close()
-        return ip
+        if _ipv4_util(ip):
+            return ip
     except Exception:
-        return "127.0.0.1"
+        pass
+    return local_ipv6() or "127.0.0.1"
+
+
+def host_url(ip: str) -> str:
+    """IPv6 vai entre colchetes na URL."""
+    return f"[{ip}]" if ":" in ip else ip
+
+
+class ServidorDuplo(http.server.ThreadingHTTPServer):
+    """Escuta em IPv6 e IPv4 ao mesmo tempo ("::" com IPV6_V6ONLY desligado)."""
+
+    address_family = socket.AF_INET6
+
+    def server_bind(self):
+        try:
+            self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
+        except (AttributeError, OSError):
+            pass
+        super().server_bind()
 
 
 def check_vendor(vendor: Path) -> bool:
@@ -168,7 +210,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--port", type=int, default=8443)
     ap.add_argument("--cert-dir", default=DEFAULT_CERT_DIR)
-    ap.add_argument("--bind", default="0.0.0.0")
+    ap.add_argument("--bind", default="::", help='padrão "::" = IPv6 e IPv4 juntos; "0.0.0.0" = só IPv4')
     ap.add_argument("--dir", default=None, help="pasta a servir (padrão: app/pwa)")
     args = ap.parse_args()
     sys.stdout.reconfigure(line_buffering=True)
@@ -181,7 +223,10 @@ def main():
     ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
     ctx.load_cert_chain(certfile=str(cert), keyfile=str(key))
 
-    httpd = http.server.ThreadingHTTPServer((args.bind, args.port), Handler)
+    if args.bind == "::" and socket.has_ipv6:
+        httpd = ServidorDuplo(("::", args.port), Handler)
+    else:
+        httpd = http.server.ThreadingHTTPServer((args.bind if args.bind != "::" else "0.0.0.0", args.port), Handler)
     httpd.socket = ctx.wrap_socket(httpd.socket, server_side=True)
 
     served = Handler.directory_override or PWA_DIR
@@ -196,17 +241,19 @@ def main():
     print()
     print("  URLs:")
     print(f"    neste Mac  : https://localhost:{args.port}/")
-    print(f"    no celular : https://{ip}:{args.port}/")
+    print(f"    no celular : https://{host_url(ip)}:{args.port}/")
+    if ":" in ip:
+        print("    (rede só IPv6, como no Acesso Pessoal com operadora só IPv6: copie o endereço inteiro, com os colchetes)")
     print()
     print("  No celular (iPhone ou Galaxy S23 Ultra, mesma rede Wi-Fi), no Chrome:")
-    print(f"   1. Abra https://{ip}:{args.port}/")
-    print("   2. Na tela 'Sua conexão não é particular' toque em Avançado -> 'Ir para", ip, "(não seguro)'.")
+    print(f"   1. Abra https://{host_url(ip)}:{args.port}/")
+    print("   2. Na tela 'Sua conexão não é particular' toque em Avançado -> 'Ir para", host_url(ip), "(não seguro)'.")
     print("   3. Toque em 'Iniciar viagem' e permita a câmera quando o Chrome pedir; a calibração (10 s olhando")
     print("      para a frente) começa sozinha. 'Recalibrar' (barra de baixo da viagem) refaz a calibração.")
     print("   4. Na tela 'Em viagem', role até 'Detalhes técnicos' e toque em 'Benchmark 60 s'. O resultado vai sozinho para este Mac,")
     print(f"      em {PHONE_DIR} (aparece aqui como 'BENCHMARK RECEBIDO'). Repita 3 vezes.")
     print("   5. Se o Chrome bloquear a câmera por certificado inválido, use chrome://flags ->")
-    print(f"      'Insecure origins treated as secure' e adicione https://{ip}:{args.port} (ou use o GitHub Pages).")
+    print(f"      'Insecure origins treated as secure' e adicione https://{host_url(ip)}:{args.port} (ou use o GitHub Pages).")
     print()
     print("  Alternativa sem certificado: publicar app/pwa no GitHub Pages (HTTPS válido):")
     print("    - Settings -> Pages -> Branch main, pasta /docs (copie app/pwa para docs/) ou use a branch gh-pages;")
