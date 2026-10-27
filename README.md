@@ -215,7 +215,7 @@ node app/pwa/test_engine.mjs        # testes do motor (217 asserções)
 ```
 
 No celular:
-1. Abra a URL, aceite o certificado e toque em **Iniciar câmera**. Em "Detalhes técnicos > Modelos > Bibliotecas", deve aparecer "local (./vendor/)".
+1. Abra a URL, aceite o certificado e toque em **Iniciar viagem**. Em "Detalhes técnicos > Modelos > Bibliotecas", deve aparecer "local (./vendor/)". Na tela "Em viagem", "Detalhes técnicos" fica no fim da página; fora da viagem, em Ajustes.
 2. Faça a calibração com os olhos abertos.
 3. Em "Detalhes técnicos", toque em **Benchmark 60 s**. Ao terminar, o app envia o resultado sozinho ao Mac (`POST /api/benchmark`), e os arquivos vão para `results/phone/`. Os botões de download ficam como reserva.
 4. Depois, rode `bash tools/atualizar_celular.sh`. Ele atualiza a tabela e a figura do Exp. 4, os números, o artigo e o pôster.

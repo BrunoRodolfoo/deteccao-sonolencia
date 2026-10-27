@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <rect width="128" height="128" rx="24" fill="#0b1220"/>
-  <path d="M16 64 Q64 20 112 64 Q64 108 16 64 Z" fill="none" stroke="#4f8cff" stroke-width="7" stroke-linejoin="round"/>
-  <circle cx="64" cy="64" r="16" fill="#4f8cff"/>
-  <circle cx="64" cy="64" r="7" fill="#0b1220"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Olho fechando dentro do arco do nível; o ponto âmbar é o aviso -->
+  <rect width="1024" height="1024" rx="230" fill="#14213D"/>
+  <path d="M302.9 719.1A296 296 0 1 1 721.1 719.1" fill="none" stroke="#FFFFFF" stroke-width="72" stroke-linecap="round"/>
+  <circle cx="721.1" cy="719.1" r="64" fill="#FFB224"/>
+  <path d="M360 498Q512 640 664 498" fill="none" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"/>
+  <g stroke="#FFFFFF" stroke-width="46" stroke-linecap="round"><path d="M512 630v64M420 606l-30 54M604 606l30 54"/></g>
 </svg>

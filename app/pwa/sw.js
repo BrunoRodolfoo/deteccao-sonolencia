@@ -1,8 +1,8 @@
 /* Service worker: cache básico da casca do app (offline após a primeira visita).
    Rede primeiro; se falhar, o cache. Também guarda as dependências: a cópia local em ./vendor/ (mesma origem)
    e, quando o app usa a CDN como reserva, as respostas da CDN e do modelo do MediaPipe. */
-const VERSION = "sonolencia-pwa-v5"; // v5 = dependências em ./vendor/ (26/10/2026): muda o nome para descartar o cache antigo
-const SHELL = ["./", "./index.html", "./app.js", "./engine.js", "./tflite_io.js", "./styles.css", "./manifest.webmanifest", "./icon.svg"];
+const VERSION = "sonolencia-pwa-v6"; // v6 = interface nova e ícones PNG (27/10/2026): muda o nome para descartar o cache antigo
+const SHELL = ["./", "./index.html", "./app.js", "./engine.js", "./tflite_io.js", "./styles.css", "./manifest.webmanifest", "./icon.svg", "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png"];
 const CDN = ["https://cdn.jsdelivr.net/npm/", "https://storage.googleapis.com/mediapipe-models/"];
 
 self.addEventListener("install", (ev) => {

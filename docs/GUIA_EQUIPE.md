@@ -67,8 +67,8 @@ um comando que atualiza a tabela e a figura do Exp. 4, os números, o artigo e o
    - bateria acima de 50%;
    - sem óculos;
    - feche os outros apps.
-6. **Iniciar câmera → calibração.** São 10 s olhando para a frente, com os olhos abertos e a boca fechada. Piscar normalmente é permitido. Se aparecer um aviso, toque em "Recalibrar".
-7. **"Detalhes técnicos" → Benchmark 60 s.** Fique parado, olhando para a tela e piscando normalmente. Não boceje e não feche os olhos: é uma medida de custo.
+6. **Iniciar viagem → calibração.** São 10 s olhando para a frente, com os olhos abertos e a boca fechada. Piscar normalmente é permitido. Se aparecer um aviso, toque em "Recalibrar".
+7. **"Detalhes técnicos" → Benchmark 60 s** (na tela "Em viagem", no fim da página). Fique parado, olhando para a tela e piscando normalmente. Não boceje e não feche os olhos: é uma medida de custo.
 
    Ao terminar, a tela deve dizer "enviado para o computador: results/phone/benchmark_pwa_<data>.json, ..._frames.csv". Se o envio falhar, use os botões de download e copie os dois arquivos para `results/phone/` (cabo ou Drive).
 8. **Repita até ter 3 execuções.** Espere cerca de 1 min entre elas, com a tela ligada. Anote em `results/phone/NOTAS.md`:
@@ -107,7 +107,7 @@ PWA e cita o app nativo como limitação. Só tente se sobrar tempo e houver And
 ### 2.1 Véspera
 
 - `bash tools/baixar_dependencias_app.sh --conferir` deve dizer "vendor/ completa". Se faltar algo, rode sem `--conferir`, em casa, com internet.
-- Teste o caminho todo uma vez: `python3 app/pwa/serve_https.py`, celular na mesma rede, "Iniciar câmera", "local (./vendor/)" em "Detalhes técnicos > Modelos > Bibliotecas".
+- Teste o caminho todo uma vez: `python3 app/pwa/serve_https.py`, celular na mesma rede, "Iniciar viagem", "local (./vendor/)" em "Detalhes técnicos > Modelos > Bibliotecas".
 - Ensaie o roteiro da seção 2.2 duas vezes antes de 16/11, com o volume do alarme em 20%.
 - Grave um vídeo da tela do app fazendo o roteiro inteiro. É o plano B se a câmera ou a rede falharem.
 - Leve: o Mac com o repositório, o carregador, o suporte do celular, óculos escuros e uma forma de reduzir a luz (para o caso de falha deliberado).
@@ -117,7 +117,7 @@ PWA e cita o app nativo como limitação. Só tente se sobrar tempo e houver And
 **Antes de chamar alguém (fora do cronômetro):**
 1. Celular no suporte, na altura do painel, luz de frente, sem contraluz.
 2. Mac e celular na mesma rede (na PUC, o Acesso Pessoal do iPhone). A rede não precisa ter internet.
-3. `python3 app/pwa/serve_https.py` no Mac; no celular, abra o app e toque em "Iniciar câmera" (esse toque também libera o som no iPhone).
+3. `python3 app/pwa/serve_https.py` no Mac; no celular, abra o app e toque em "Iniciar viagem" (esse toque também libera o som no iPhone).
 4. Confira "local (./vendor/)" em "Detalhes técnicos > Modelos > Bibliotecas".
 5. Toque em "Recalibrar" (10 s olhando para a frente): nível 0 e registro limpo.
 
@@ -132,9 +132,9 @@ Terminou a demonstração, volte o controle para 20%.
 | 0:00 a 0:15 | Pisque normalmente, olhando para a frente | Verde, nível 0. Piscadas normais não sobem o nível |
 | 0:15 a 0:45 | Boceje duas vezes, boca bem aberta por uns 2 s, de olhos abertos, com uns 15 s entre os bocejos | "1 bocejo", ainda verde; no segundo, "2 bocejos" e amarelo com um "ding" |
 | 0:45 a 1:00 | Baixe a cabeça uns 30° por 3 ou 4 s, mantendo os olhos abertos, e volte | "cabeça baixa com os olhos abertos: distração, 0 ponto". Sem alarme |
-| 1:00 a 1:05 | Feche os olhos por 2 s | Com 1 s: vermelho, sirene e tela piscando (microssono) |
+| 1:00 a 1:05 | Feche os olhos por 2 s | Com 1 s: tela de alarme vermelha e sirene (microssono) |
 | 1:05 a 1:15 | Reabra os olhos | A sirene para e o app volta ao amarelo em uns 2 s; fica pelo menos 1 min em atenção |
-| 1:15 a 2:00 | Mostre "Por quê?" e o registro de eventos | Cada ponto do nível tem origem: bocejos, microssono, horário de cada evento |
+| 1:15 a 2:00 | Mostre a lista "Por que" (tela "Em viagem") e o registro de eventos (em "Detalhes técnicos") | Cada ponto do nível tem origem: bocejos, microssono, horário de cada evento |
 
 Cuidados:
 - Olhos abertos ao bocejar e ao baixar a cabeça. Olho fechado por 1 s ou mais é microssono para o app, e isso antecipa o vermelho.
@@ -203,7 +203,7 @@ completa, com a origem de cada número e como ele foi testado, está em `app/pwa
 > A gente não otimizou esses pesos porque não existe base de sono real com esses sinais marcados ao longo do tempo. Ajustar no DMD, que é encenado, seria repetir o problema que o próprio trabalho mediu. Para ver se o resultado depende muito dos pesos, variamos todos em até 30% e os limiares 40 e 70 em até 10 pontos, em 300 combinações sorteadas. O falso alarme na direção real ficou entre 1,7% e 4,9% do tempo, perto dos 3,3% da configuração final, e 97% das combinações continuaram boas. O que mais mexe é o limiar de 70 e o teto dos fechamentos, e é isso que a gente calibraria primeiro com dados de sono real.
 
 Se insistirem ("então é achismo?"): não é otimização, mas também não é chute. Cada número tem origem escrita, os
-que dava para comparar foram comparados no DMD, e o "Por quê?" do app mostra de onde vem cada ponto. Num teste
+que dava para comparar foram comparados no DMD, e a lista "Por que" do app mostra de onde vem cada ponto. Num teste
 independente, em 24 pessoas da UTA-RLDD que não entraram no ajuste, o app alarmou 15 dos 24 vídeos sonolentos e 2 dos
 24 acordados. O que ainda falta é testar dirigindo: essas pessoas estavam sentadas.
 
@@ -405,7 +405,7 @@ Confirme que o repositório continua público (o artigo e o QR code do pôster a
 O alarme precisa tocar no dia. Faça estes testes uma vez, em casa, com o volume do alarme em 20% e o ambiente calmo.
 
 1. **Som com o modo silencioso ligado.** O iPhone 17 Pro não tem chave lateral: o silencioso liga pelo botão de Ação ou pela Central de Controle. Com o silencioso ligado:
-   1. toque em "Iniciar câmera", depois em "Testar som";
+   1. toque em "Iniciar viagem", depois em "Som" (barra de baixo) e em "Testar som";
    2. o ding e a sirene devem tocar, porque o app usa `navigator.audioSession.type = "playback"`;
    3. confira o estado em "Detalhes técnicos → Modelos → Áudio";
    4. repita com o silencioso desligado;
@@ -416,6 +416,6 @@ O alarme precisa tocar no dia. Faça estes testes uma vez, em casa, com o volume
    3. se não tocar, um toque na tela deve religar o som (limite conhecido, `app/pwa/README.md`, seção 10).
 
    Anote se foi preciso tocar. Teste também com a tela bloqueada e desbloqueada.
-3. **Falso alarme, acordado.** Use o app de 3 a 5 min, olhando o celular como no painel: deve ficar verde. Se ficar amarelo ou vermelho sem motivo, anote o que aparece em "Por quê?" e no registro de eventos, por exemplo "olhar para baixo".
+3. **Falso alarme, acordado.** Use o app de 3 a 5 min, olhando o celular como no painel: deve ficar verde. Se ficar amarelo ou vermelho sem motivo, anote o que aparece na lista "Por que" e no registro de eventos, por exemplo "olhar para baixo".
 
 Não mude limiar nenhum na véspera: qualquer ajuste precisa ser medido de novo no DMD s1 e s5, como na seção 9 do `app/pwa/README.md`.

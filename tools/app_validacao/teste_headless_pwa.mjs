@@ -4,7 +4,7 @@
  *
  *   node tools/app_validacao/teste_headless_pwa.mjs --url "https://localhost:8766/?autostart=1" \
  *        [--video clipe.mjpeg] [--seconds 60] [--width 390] [--height 844] [--out pasta] \
- *        [--shots 20,45] [--click-sound 15] [--click-at 70:btn-ack] [--open-tech]
+ *        [--shots 20,45] [--click-sound 15] [--click-at 70:btn-ack] [--open-tech] [--ir 40:resumo,45:ajustes] [--escuro]
  *
  * SILÊNCIO OBRIGATÓRIO: o Chrome headless novo toca som de verdade nos alto-falantes do computador.
  * Por isso este script SEMPRE (1) lança o Chrome com --mute-audio e (2) abre o app com ?volume=0
@@ -14,6 +14,12 @@
  * no iPhone o áudio só é liberado por um gesto real. Os cliques de --click-sound e --click-at são cliques
  * CONFIÁVEIS (Input.dispatchMouseEvent do DevTools, isTrusted = true), não element.click(). --autoplay-livre
  * devolve a flag antiga (esconde a exigência de gesto; só para comparação).
+ *
+ * Interface nova (27/10/2026): --click-sound abre a folha "Som do alarme" antes de tocar em "Testar som";
+ * --click-at N:btn-ack ARRASTA o botão "deslize: estou acordado" (um toque sozinho não silencia); --ir N:tela
+ * abre uma tela no segundo N (inicio, calibracao, viagem, resumo, ajustes, como, tecnico); --escuro emula o
+ * modo escuro do aparelho (prefers-color-scheme: dark), que o app segue no "Automático" (--claro força o claro); --encerrar N encerra a
+ * viagem no segundo N (abre o resumo).
  *
  * --video: arquivo .y4m ou .mjpeg para a câmera falsa (sem ele o Chrome gera um padrão sintético,
  * sem rosto). Os vídeos das bases ficam só na máquina local (nunca versionar nem publicar capturas).
@@ -123,6 +129,15 @@ async function trustedClick(elId) {
   for (const type of ["mousePressed", "mouseReleased"]) await send("Input.dispatchMouseEvent", { type, x: box.x, y: box.y, button: "left", clickCount: 1 });
   return true;
 }
+/** Arrasto confiável (dedo no botão até o fim do trilho), para o "deslize: estou acordado". */
+async function trustedDrag(elId, dx = 320) {
+  const box = await evaluate(`(() => { const e = document.getElementById(${JSON.stringify(elId)}); if (!e) return null; const r = e.getBoundingClientRect(); return r.width ? { x: r.left + r.width / 2, y: r.top + r.height / 2 } : null; })()`);
+  if (!box || box.erro) return false;
+  await send("Input.dispatchMouseEvent", { type: "mousePressed", x: box.x, y: box.y, button: "left", clickCount: 1 });
+  for (let i = 1; i <= 8; i++) await send("Input.dispatchMouseEvent", { type: "mouseMoved", x: box.x + (dx * i) / 8, y: box.y, button: "left", buttons: 1 });
+  await send("Input.dispatchMouseEvent", { type: "mouseReleased", x: box.x + dx, y: box.y, button: "left", clickCount: 1 });
+  return true;
+}
 async function shot(name) {
   const r = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
   fs.writeFileSync(path.join(OUT, name), Buffer.from(r.result.data, "base64"));
@@ -131,6 +146,7 @@ await send("Runtime.enable");
 await send("Log.enable");
 await send("Page.enable");
 await send("Emulation.setDeviceMetricsOverride", { width: W, height: H, deviceScaleFactor: 2, mobile: W < 700 });
+if (args.escuro || args.claro) await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: args.escuro ? "dark" : "light" }] });
 await send("Page.navigate", { url: URL_ });
 
 /** Aborta se o app não estiver mudo (volume 0 e ganho 0). */
@@ -147,6 +163,7 @@ async function assertSilent(when) {
   return v;
 }
 const clicks = (args["click-at"] || "").split(",").filter(Boolean).map((s) => s.split(":"));
+const navs = (args.ir || "").split(",").filter(Boolean).map((s) => s.split(":"));
 const soundAt = args["click-sound"] ? Number(args["click-sound"]) : null;
 const samples = [];
 let silentInfo = null;
@@ -154,15 +171,19 @@ for (let s = 1; s <= SECONDS; s++) {
   await sleep(1000);
   if (s === 2 || s % 5 === 0) silentInfo = await assertSilent(`${s} s`);
   if (soundAt === s) {
+    await evaluate("window.__ui && window.__ui.abrirSom()");
+    await sleep(200);
     await trustedClick("btn-sound");
     await sleep(300);
     await assertSilent("após Testar som");
     samples.push({ s, som: await evaluate("({ctx: window.__sound?.ctx?.state ?? null, sirene: !!window.__sound?.siren, ganhoFinal: window.__sound?.out ? window.__sound.out.gain.value : null, erro: window.__sound?.error ?? null})") });
   }
-  for (const [when, el] of clicks) if (Number(when) === s) await trustedClick(el);
-  if (args["open-tech"] && s === 2) await evaluate("document.getElementById('tech').open = true");
+  for (const [when, el] of clicks) if (Number(when) === s) await (el === "btn-ack" ? trustedDrag(el) : trustedClick(el));
+  for (const [when, tela] of navs) if (Number(when) === s) await evaluate(`window.__ui && window.__ui.ir(${JSON.stringify(tela)})`);
+  if (args["open-tech"] && s === 2) await evaluate("window.__ui && window.__ui.ir('tecnico')");
+  if (Number(args.encerrar) === s) await evaluate("window.__ui && window.__ui.encerrar()");
   if (s % 5 === 0) {
-    const st = await evaluate(`(() => { const a = window.__app; const r = a && a.last; return r ? { fase: r.phase, estado: r.score?.state, nivel: Math.round(r.score?.level ?? 0), forcado: r.score?.forced ?? null, fps: a.fps, rosto: a.faceDetected, titulo: document.getElementById('status-title').textContent, sirene_pedida: !!a.sirenWanted, sirene_nos_audio: !!window.__sound?.siren, flash: document.body.classList.contains('flashing') } : { titulo: document.getElementById('status-title')?.textContent }; })()`);
+    const st = await evaluate(`(() => { const a = window.__app; const r = a && a.last; return r ? { fase: r.phase, estado: r.score?.state, nivel: Math.round(r.score?.level ?? 0), forcado: r.score?.forced ?? null, fps: a.fps, rosto: a.faceDetected, titulo: document.getElementById('status-title').textContent, tela: window.__ui?.estado().tela, alarme_na_tela: !!window.__ui?.estado().alarme, sirene_pedida: !!a.sirenWanted, sirene_nos_audio: !!window.__sound?.siren, flash: document.body.classList.contains('flashing') } : { titulo: document.getElementById('status-title')?.textContent }; })()`);
     samples.push({ s, ...st });
   }
   if (SHOTS.includes(s)) await shot(`tela_${s}s.png`);

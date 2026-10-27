@@ -3,175 +3,414 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b1220" />
+  <meta name="theme-color" content="#F2F2F7" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Sonolência" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="description" content="Detecção de sonolência no navegador (MediaPipe + TFLite). PUCPR, Projeto Transformador II, Equipe 14." />
   <title>Sonolência Móvel</title>
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="./icon.svg" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
   <link rel="stylesheet" href="./styles.css" />
+  <script>
+    // Tema escolhido em Ajustes, aplicado antes de desenhar a página (sem piscar): "claro", "escuro" ou automático.
+    try {
+      const t = localStorage.getItem("sonolencia.tema");
+      if (t === "claro" || t === "escuro") document.documentElement.dataset.tema = t;
+    } catch (e) {
+      /* modo privado: fica o automático */
+    }
+  </script>
   <!-- MediaPipe e TensorFlow.js: o app.js carrega de ./vendor/ (tools/baixar_dependencias_app.sh) ou, se faltar, da CDN -->
 </head>
 <body>
-  <div id="flash" class="flash" aria-hidden="true"></div>
-  <header class="topbar">
-    <h1>Sonolência Móvel</h1>
-    <span id="badge-state" class="badge">aguardando</span>
-  </header>
+  <!-- Ícones (SVG em traço, no estilo do sistema) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-logo" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="230" fill="#14213D"/><path d="M302.9 719.1A296 296 0 1 1 721.1 719.1" fill="none" stroke="#fff" stroke-width="72" stroke-linecap="round"/><circle cx="721.1" cy="719.1" r="64" fill="#FFB224"/><path d="M360 498Q512 640 664 498" fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round"/><g stroke="#fff" stroke-width="46" stroke-linecap="round"><path d="M512 630v64M420 606l-30 54M604 606l30 54"/></g></symbol>
+    <symbol id="i-olho" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-boca" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 9.5h1.5M14 9.5h1.5"/><ellipse cx="12" cy="15.4" rx="2.3" ry="2.7"/></symbol>
+    <symbol id="i-cabeca" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c.8-3.9 3.6-6.3 7-6.3s6.2 2.4 7 6.3"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v5.2"/><path d="M12 7.6v.1" stroke-width="2.4"/></symbol>
+    <symbol id="i-som" viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></symbol>
+    <symbol id="i-calibrar" viewBox="0 0 24 24"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M9 10h.01M15 10h.01" stroke-width="2.4"/><path d="M9.5 15c1.4 1 3.6 1 5 0"/></symbol>
+    <symbol id="i-parar" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5"/></symbol>
+    <symbol id="i-carro" viewBox="0 0 24 24"><path d="M5.5 10.5l1.6-4.2A2 2 0 0 1 9 5h6a2 2 0 0 1 1.9 1.3l1.6 4.2A2 2 0 0 1 20 12.4V17a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4.6a2 2 0 0 1 1.5-1.9zM7.6 10h8.8l-1.1-3H8.7l-1.1 3z" fill="currentColor" stroke="none"/><circle cx="7.5" cy="13" r="1.2" fill="#fff" stroke="none" class="farol"/><circle cx="16.5" cy="13" r="1.2" fill="#fff" stroke="none" class="farol"/></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-ajustes" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+    <symbol id="i-celular" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+    <symbol id="i-cafe" viewBox="0 0 24 24"><path d="M4 10h12v4.5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V10z"/><path d="M16 11.5h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c-.6.8-.6 1.7 0 2.5M12 3.5c-.6.8-.6 1.7 0 2.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-voltar" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8"/></symbol>
+    <symbol id="i-seguir" viewBox="0 0 9 15"><path d="M1.5 1.5l6 6-6 6"/></symbol>
+    <symbol id="i-exportar" viewBox="0 0 24 24"><path d="M12 3.5v11M8 7.5l4-4 4 4"/><path d="M7 10.5H6a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 6 20.5h12a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-1"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2l1.5-2h6l1.5 2h2A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5v-9z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-microssono" viewBox="0 0 24 24"><path d="M3 10c2.5 3.5 5.5 5 9 5s6.5-1.5 9-5"/><path d="M6.5 13.5L5 16M12 15v3M17.5 13.5L19 16"/></symbol>
+    <symbol id="i-queda" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M12 13.5v7M8.5 17.5l3.5 3.5 3.5-3.5"/></symbol>
+  </svg>
 
-  <main>
-    <div class="col-main">
-      <!-- Cartão de status: o que a banca olha primeiro -->
-      <section id="status" class="status st-off" aria-live="polite">
-        <div class="status-top">
-          <div class="status-text">
-            <div id="status-title" class="status-title">DESLIGADO</div>
-            <div id="status-sub" class="status-sub">Toque em "Iniciar câmera" e permita o acesso à câmera.</div>
-          </div>
-          <div class="status-level" aria-label="nível de sonolência"><span id="level-num">--</span><small>/100</small></div>
-        </div>
-        <div class="meter" id="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="nível de sonolência de 0 a 100">
-          <div id="meter-fill" class="meter-fill"></div>
-          <span class="meter-mark" style="left:40%"></span>
-          <span class="meter-mark" style="left:70%"></span>
-        </div>
-        <div class="meter-legend"><span>ALERTA</span><span class="m40">40 ATENÇÃO</span><span class="m70">70 SONOLENTO</span></div>
-        <div id="status-why" class="status-why"></div>
-        <button id="btn-ack" class="ack hidden" type="button">Estou acordado: silenciar 30 s</button>
-      </section>
+  <div id="notice" class="aviso hidden" role="status" aria-live="polite"></div>
 
-      <section class="stage" id="stage">
-        <video id="video" playsinline muted autoplay></video>
-        <canvas id="overlay"></canvas>
-        <div class="stage-hud">
-          <span id="hud-fps">FPS --</span>
-          <span id="hud-face">rosto: --</span>
-        </div>
-        <div id="calib-panel" class="calib-panel hidden">
-          <div id="calib-title" class="calib-title">Calibração (10 s)</div>
-          <div id="calib-text" class="calib-text">Apoie o celular como no painel do carro, olhe para a frente com os olhos abertos e a boca fechada.</div>
-          <div class="calib-bar"><div id="calib-fill"></div></div>
-        </div>
-        <div id="blink-calib" class="blink-calib hidden"><div id="blink-calib-fill"></div><span id="blink-calib-text"></span></div>
-      </section>
+  <!-- Câmera: um único <video> (é dele que o detector lê os quadros), posicionado sobre o encaixe da tela atual.
+       Fica sempre visível enquanto a câmera está ligada: o iOS pausa vídeos mudos que saem da tela. -->
+  <div id="camera" class="camera hidden" aria-hidden="true">
+    <video id="video" playsinline muted autoplay></video>
+    <canvas id="overlay"></canvas>
+  </div>
 
-      <!-- Três sinais ao vivo -->
-      <section class="signals" aria-label="sinais ao vivo">
-        <div class="sig" id="sig-eyes">
-          <div class="sig-head"><span class="dot"></span>Olhos</div>
-          <div class="sig-state" id="eyes-state">--</div>
-          <div class="sig-detail" id="eyes-detail">PERCLOS --</div>
-        </div>
-        <div class="sig" id="sig-yawn">
-          <div class="sig-head"><span class="dot"></span>Bocejo</div>
-          <div class="sig-state" id="yawn-state">--</div>
-          <div class="sig-detail" id="yawn-detail">0 em 5 min</div>
-        </div>
-        <div class="sig" id="sig-head">
-          <div class="sig-head"><span class="dot"></span>Cabeça</div>
-          <div class="sig-state" id="head-state">--</div>
-          <div class="sig-detail" id="head-detail">0 quedas em 5 min</div>
-        </div>
-      </section>
-
-      <div id="notice" class="notice hidden"></div>
-
-      <section class="controls main-controls">
-        <button id="btn-start" class="primary" type="button">Iniciar câmera</button>
-        <button id="btn-calib" type="button" disabled>Recalibrar</button>
-        <button id="btn-wake" type="button">Manter tela ligada</button>
-      </section>
-
-      <!-- Som: o volume começa em 20 % (testes sem susto); na demonstração, suba para 100 %. -->
-      <section class="card sound" aria-label="Som do alarme">
-        <div class="sound-row">
-          <button id="btn-sound" type="button">Testar som</button>
-          <div class="vol">
-            <label for="vol">Volume do alarme <output id="vol-out" for="vol">20 %</output></label>
-            <input id="vol" type="range" min="0" max="100" step="1" value="20" aria-describedby="sound-hint" />
+  <main id="app">
+    <!-- ============================== INÍCIO (aba Dirigir) ============================== -->
+    <section class="tela" id="tela-inicio" data-tela="inicio" data-abas="dirigir" aria-labelledby="inicio-titulo">
+      <header class="topo-marca">
+        <svg class="logo" aria-hidden="true"><use href="#i-logo"/></svg>
+        <span class="marca-nome">Sonolência <span>Móvel</span></span>
+      </header>
+      <div class="conteudo">
+        <h1 class="titulo-grande" id="inicio-titulo">Nova viagem</h1>
+        <div class="previa">
+          <div class="encaixe-camera" data-camera="cartao" id="slot-inicio"></div>
+          <div class="previa-vazia" id="previa-vazia">
+            <svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg>
+            <span>A câmera frontal liga quando a viagem começa. Nada é gravado.</span>
           </div>
         </div>
-        <p id="sound-hint" class="hint">Toque em "Testar som" uma vez para liberar o som (o iPhone exige um toque).</p>
-      </section>
-    </div>
-
-    <div class="col-side">
-      <section class="card why">
-        <h2>Por quê?</h2>
-        <ul id="why-list"><li class="muted">Nenhum sinal elevando o nível.</li></ul>
-        <p class="muted small">Nível = soma dos pontos acima (máx. 100). Nenhum sinal sozinho chega a 70, exceto microssono e cabeça caída com os olhos fechados, que forçam o vermelho na hora; depois deles, o app fica pelo menos 1 min em ATENÇÃO. O PERCLOS só conta fechamentos de 0,5 s ou mais: piscadas normais não elevam o nível.</p>
-      </section>
-
-      <section class="card events">
-        <h2>Registro de eventos</h2>
-        <ol id="event-log"><li class="muted">Nenhum evento ainda.</li></ol>
-      </section>
-
-      <section class="card ml">
-        <h2>Modelos de aprendizado de máquina (experimental)</h2>
-        <p id="ml-lstm">LSTM de piscadas: aguardando a calibração.</p>
-        <p id="ml-cnn">CNN dos olhos: --</p>
-        <p class="muted small">Só informam. O LSTM (Exp. 1) soma no máximo 10 pontos, e só com "sonolento" em 5 predições seguidas (p &ge; 0,6) <b>e</b> com os sinais visíveis já em ATENÇÃO (&ge; 40): ele nunca muda a cor sozinho. A CNN não entra no nível. Motivo: a generalização desses modelos para uma pessoa nova é limitada (Exp. 5b).</p>
-      </section>
-
-      <details class="card tech" id="tech">
-        <summary>Detalhes técnicos</summary>
-        <div class="controls">
-          <button id="btn-bench" type="button" disabled>Benchmark 60 s</button>
-          <button id="btn-export" type="button" disabled>Exportar sessão</button>
-          <button id="btn-full" type="button">Tela cheia</button>
-        </div>
-        <div class="metrics">
-          <div class="metric"><label>EAR E / D</label><span id="m-ear">-- / --</span></div>
-          <div class="metric"><label>Limiar EAR (0,75 x mediana)</label><span id="m-thresh">--</span></div>
-          <div class="metric"><label>eyeBlink E / D</label><span id="m-blend">-- / --</span></div>
-          <div class="metric"><label>eyeLookDown (média)</label><span id="m-look">--</span></div>
-          <div class="metric"><label>MAR / jawOpen</label><span id="m-mouth">-- / --</span></div>
-          <div class="metric"><label>Pitch / yaw / roll</label><span id="m-pose">--</span></div>
-          <div class="metric"><label>Δ cabeça (baixo / lado / tombo)</label><span id="m-dpose">--</span></div>
-          <div class="metric"><label>PERCLOS 60 s (fechamentos &ge; 0,5 s)</label><span id="m-perclos">--</span></div>
-          <div class="metric"><label>Piscadas (duração típica)</label><span id="m-blinks">--</span></div>
-          <div class="metric"><label>Fechado por</label><span id="m-closedby">--</span></div>
-          <div class="metric"><label>Calibração</label><span id="m-calib">não calibrado</span></div>
-          <div class="metric"><label>Delegate</label><span id="m-delegate">--</span></div>
-          <div class="metric wide"><label>Última piscada [F, A, D, V] (entrada do LSTM)</label><span id="m-feat" class="small">--</span></div>
-        </div>
-        <div class="crops">
-          <div><canvas id="crop-left" width="48" height="48"></canvas><label>olho E (CNN)</label></div>
-          <div><canvas id="crop-right" width="48" height="48"></canvas><label>olho D (CNN)</label></div>
-        </div>
-        <h3>Latência por estágio (ms) nas últimas 300 medições</h3>
-        <table class="lat">
-          <thead><tr><th>Estágio</th><th>último</th><th>p50</th><th>p95</th></tr></thead>
-          <tbody>
-            <tr><td>Landmarker</td><td id="l-lm-last">--</td><td id="l-lm-p50">--</td><td id="l-lm-p95">--</td></tr>
-            <tr><td>CNN olhos (2 olhos)</td><td id="l-eye-last">--</td><td id="l-eye-p50">--</td><td id="l-eye-p95">--</td></tr>
-            <tr><td>LSTM (30x4)</td><td id="l-tmp-last">--</td><td id="l-tmp-p50">--</td><td id="l-tmp-p95">--</td></tr>
-            <tr><td>Motor v2 (sinais + nível)</td><td id="l-mon-last">--</td><td id="l-mon-p50">--</td><td id="l-mon-p95">--</td></tr>
-            <tr><td>Total por quadro</td><td id="l-tot-last">--</td><td id="l-tot-p50">--</td><td id="l-tot-p95">--</td></tr>
-          </tbody>
-        </table>
-        <h3>Modelos</h3>
-        <ul class="model-list">
-          <li>Face Landmarker: <span id="s-landmarker">não carregado</span></li>
-          <li>eye_state (TFLite): <span id="s-eye">não carregado</span></li>
-          <li>blink_temporal (TFLite): <span id="s-temporal">não carregado</span></li>
-          <li>Áudio: <span id="s-audio">não iniciado</span></li>
-          <li>Bibliotecas: <span id="s-deps">carregando</span></li>
+        <h2 class="secao">Antes de sair</h2>
+        <ul class="lista">
+          <li class="linha"><span class="quadrado" aria-hidden="true"><svg><use href="#i-celular"/></svg></span><span class="texto">Celular firme no painel, câmera para o rosto</span></li>
+          <li class="linha"><span class="quadrado" aria-hidden="true"><svg><use href="#i-som"/></svg></span><span class="texto">Som do alarme</span><span class="sec num" id="som-pct-inicio">20 %</span><button type="button" class="link" id="btn-testar-inicio">Testar</button></li>
         </ul>
-        <h3>Benchmark</h3>
-        <div id="bench-status">Com a câmera ligada e o rosto enquadrado, toque em "Benchmark 60 s". O resultado vai sozinho para o computador (serve_https.py).</div>
-        <pre id="bench-summary" class="hidden"></pre>
-        <div class="controls" id="bench-downloads"></div>
-        <h3>Aparelho</h3>
-        <pre id="device-info"></pre>
-      </details>
+        <button type="button" class="botao primario largo" id="btn-start">Iniciar viagem</button>
+        <div id="ultima-bloco" class="hidden">
+          <h2 class="secao">Última viagem</h2>
+          <ul class="lista">
+            <li><button type="button" class="linha toque" data-ir="resumo" id="ultima-viagem"><span class="texto"><span id="ultima-titulo">--</span><small id="ultima-detalhe"></small></span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <footer>
-        Protótipo de pesquisa da PUCPR, Projeto Transformador II, Equipe 14. Processamento 100% local; nenhum vídeo é armazenado ou enviado. Não substitui descanso: ao sentir sono, pare o carro.
-      </footer>
-    </div>
+    <!-- ============================== CALIBRAÇÃO ============================== -->
+    <section class="tela tela-camera" id="tela-calibracao" data-tela="calibracao" aria-labelledby="calib-title" hidden>
+      <div class="encaixe-camera" data-camera="cheio" id="slot-calibracao"></div>
+      <div class="mascara" aria-hidden="true"></div>
+      <svg class="anel" viewBox="0 0 100 100" aria-hidden="true"><circle class="anel-trilho" cx="50" cy="50" r="47"/><circle class="anel-progresso" id="calib-anel" cx="50" cy="50" r="47" pathLength="100" stroke-dasharray="0 100"/></svg>
+      <header class="barra barra-camera">
+        <button type="button" class="link claro" id="btn-cancelar">Cancelar</button>
+        <strong>Calibração</strong>
+        <span></span>
+      </header>
+      <div class="chip-rosto" id="hud-face"><span class="ponto"></span><span id="hud-face-texto">Procurando o rosto</span></div>
+      <div class="folha-fixa" id="calib-panel">
+        <p class="passo" id="calib-passo">Passo 1 de 2</p>
+        <h1 id="calib-title">Preparando a câmera</h1>
+        <p class="sec" id="calib-text">Baixando o detector de rosto. Na primeira vez, pode levar alguns segundos.</p>
+        <div class="progresso" id="calib-progresso">
+          <div class="progresso-trilho"><div class="progresso-barra" id="calib-fill"></div></div>
+          <span class="sec num" id="calib-seg"></span>
+        </div>
+        <p class="nota" id="calib-nota">Se os olhos ficarem fechados em mais de 10 % do tempo, o app pede para refazer.</p>
+        <div class="acoes-col hidden" id="calib-pronto">
+          <button type="button" class="botao primario largo" id="btn-comecar">Começar a monitorar</button>
+          <button type="button" class="botao texto" id="btn-refazer">Recalibrar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== EM VIAGEM ============================== -->
+    <section class="tela" id="tela-viagem" data-tela="viagem" aria-labelledby="status-title" hidden>
+      <header class="barra">
+        <span class="encaixe-camera redondo" data-camera="redondo" id="slot-viagem"></span>
+        <div class="titulo-barra"><strong>Em viagem</strong><small id="viagem-tempo">0 min</small></div>
+        <button type="button" class="icone" data-ir="como" aria-label="Como o nível funciona"><svg aria-hidden="true"><use href="#i-info"/></svg></button>
+      </header>
+      <div class="conteudo">
+        <div class="mostrador" id="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="nível de sono de 0 a 100">
+          <svg viewBox="0 0 260 236" aria-hidden="true">
+            <g fill="none" stroke-width="18">
+              <path class="zona zona-v" d="M56.46 203.54A104 104 0 1 1 203.54 203.54" pathLength="100" stroke-dasharray="40 100"/>
+              <path class="zona zona-a" d="M56.46 203.54A104 104 0 1 1 203.54 203.54" pathLength="100" stroke-dasharray="0 40 30 100"/>
+              <path class="zona zona-r" d="M56.46 203.54A104 104 0 1 1 203.54 203.54" pathLength="100" stroke-dasharray="0 70 30 100"/>
+              <path class="arco" id="meter-fill" d="M56.46 203.54A104 104 0 1 1 203.54 203.54" pathLength="100" stroke-dasharray="0 200"/>
+            </g>
+            <g class="marcas" stroke-width="3"><path d="M88.23 48.03L77.34 26.64M204.43 75.92L223.84 61.82"/></g>
+          </svg>
+          <div class="numero"><span id="level-num">--</span><small>de 100</small></div>
+        </div>
+        <div class="estado">
+          <h1 id="status-title">Calibrando</h1>
+          <p class="sec" id="status-sub"></p>
+          <p class="motivo" id="status-why"></p>
+          <p class="nota hidden" id="blink-calib">Aprendendo suas piscadas: <span id="blink-calib-text">0 de 20</span></p>
+        </div>
+        <div class="cartao pausa hidden" id="pausa">
+          <span class="pausa-icone" aria-hidden="true"><svg><use href="#i-cafe"/></svg></span>
+          <span class="texto"><strong>Hora de uma pausa</strong><span class="sec">Procure um lugar seguro para parar.</span></span>
+        </div>
+        <h2 class="secao">Sinais</h2>
+        <ul class="lista">
+          <li class="linha sinal" id="sig-eyes"><span class="quadrado" aria-hidden="true"><svg><use href="#i-olho"/></svg></span><span class="texto">Olhos<small class="sig-detail">--</small></span><span class="sig-state">--</span><span class="ponto" aria-hidden="true"></span></li>
+          <li class="linha sinal" id="sig-yawn"><span class="quadrado" aria-hidden="true"><svg><use href="#i-boca"/></svg></span><span class="texto">Bocejos<small class="sig-detail">--</small></span><span class="sig-state">--</span><span class="ponto" aria-hidden="true"></span></li>
+          <li class="linha sinal" id="sig-head"><span class="quadrado" aria-hidden="true"><svg><use href="#i-cabeca"/></svg></span><span class="texto">Cabeça<small class="sig-detail">--</small></span><span class="sig-state">--</span><span class="ponto" aria-hidden="true"></span></li>
+        </ul>
+        <div id="porque" class="hidden">
+          <h2 class="secao" id="porque-titulo">Por que 0</h2>
+          <ul class="lista" id="why-list"></ul>
+          <p class="rodape">Os pontos somem sozinhos com o tempo.</p>
+        </div>
+        <h2 class="secao">Últimos 10 minutos</h2>
+        <div class="cartao grafico">
+          <svg id="grafico-10min" viewBox="0 0 326 56" preserveAspectRatio="none" role="img" aria-label="Nível nos últimos 10 minutos">
+            <path class="limiar limiar-r" d="M0 18.4H326"/><path class="limiar limiar-a" d="M0 32.8H326"/><path class="base" d="M0 52H326"/>
+            <polyline id="grafico-linha" points="" />
+          </svg>
+          <p class="nota" id="grafico-nota">O gráfico começa depois da calibração.</p>
+        </div>
+        <ul class="lista">
+          <li><button type="button" class="linha toque" data-ir="tecnico"><span class="texto">Detalhes técnicos</span><span class="sec">latência e benchmark</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
+        </ul>
+      </div>
+      <nav class="barra-ferramentas" aria-label="Ações da viagem">
+        <button type="button" id="btn-som"><svg aria-hidden="true"><use href="#i-som"/></svg><span>Som <span id="som-pct">20 %</span></span></button>
+        <button type="button" id="btn-calib"><svg aria-hidden="true"><use href="#i-calibrar"/></svg><span>Recalibrar</span></button>
+        <button type="button" id="btn-encerrar" class="perigo"><svg aria-hidden="true"><use href="#i-parar"/></svg><span>Encerrar</span></button>
+      </nav>
+    </section>
+
+    <!-- ============================== RESUMO (aba Viagens) ============================== -->
+    <section class="tela" id="tela-resumo" data-tela="resumo" data-abas="viagens" aria-labelledby="resumo-titulo" hidden>
+      <header class="topo-grande">
+        <h1 class="titulo-grande" id="resumo-titulo">Viagens</h1>
+        <span class="encaixe-camera redondo mini" data-camera="redondo"></span>
+        <button type="button" class="icone" id="btn-exportar-resumo" aria-label="Exportar a sessão (JSON e CSV)"><svg aria-hidden="true"><use href="#i-exportar"/></svg></button>
+      </header>
+      <div class="conteudo">
+        <div class="vazio" id="resumo-vazio">
+          <svg class="ic" aria-hidden="true"><use href="#i-relogio"/></svg>
+          <strong>Nenhuma viagem ainda</strong>
+          <span class="sec">O resumo aparece aqui quando você encerra uma viagem.</span>
+        </div>
+        <div id="resumo-conteudo" class="hidden">
+          <div class="cartao">
+            <div class="linha-titulo"><strong id="res-quando">--</strong><span class="sec" id="res-duracao"></span></div>
+            <svg class="grafico-viagem" id="res-grafico" viewBox="0 0 322 112" preserveAspectRatio="none" role="img" aria-label="Nível durante a viagem">
+              <rect class="faixa faixa-r" x="0" y="4" width="322" height="30"/><rect class="faixa faixa-a" x="0" y="34" width="322" height="30"/><rect class="faixa faixa-v" x="0" y="64" width="322" height="40"/>
+              <polyline id="res-linha" points=""/>
+              <g id="res-pontos"></g>
+            </svg>
+            <div class="eixo sec num"><span id="res-ini"></span><span id="res-fim"></span></div>
+          </div>
+          <div class="contagens" aria-label="Eventos da viagem">
+            <div><span class="bola" id="res-alarmes">0</span><small>alarmes</small></div>
+            <div><span class="bola" id="res-avisos">0</span><small>avisos</small></div>
+            <div><span class="bola" id="res-bocejos">0</span><small>bocejos</small></div>
+            <div><span class="bola" id="res-olhos">0</span><small>olhos fechados</small></div>
+            <div><span class="bola" id="res-cabeca">0</span><small>cabeça</small></div>
+          </div>
+          <h2 class="secao">Tempo em cada estado</h2>
+          <div class="cartao">
+            <div class="barra-estados" aria-hidden="true"><span class="b-v" id="res-b0"></span><span class="b-a" id="res-b1"></span><span class="b-r" id="res-b2"></span></div>
+            <div class="legenda sec">
+              <span><i class="p-v"></i>Alerta <b id="res-t0">0 min</b></span>
+              <span><i class="p-a"></i>Atenção <b id="res-t1">0 min</b></span>
+              <span><i class="p-r"></i>Sonolento <b id="res-t2">0 min</b></span>
+            </div>
+          </div>
+          <h2 class="secao">Momentos</h2>
+          <ol class="lista" id="res-momentos"></ol>
+          <p class="rodape" id="res-nota"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== AJUSTES ============================== -->
+    <section class="tela" id="tela-ajustes" data-tela="ajustes" data-abas="ajustes" aria-labelledby="ajustes-titulo" hidden>
+      <header class="topo-grande">
+        <h1 class="titulo-grande" id="ajustes-titulo">Ajustes</h1>
+        <span class="encaixe-camera redondo mini" data-camera="redondo"></span>
+      </header>
+      <div class="conteudo">
+        <h2 class="secao">Aparência</h2>
+        <div class="cartao">
+          <div class="segmentado" role="radiogroup" aria-label="Aparência">
+            <button type="button" role="radio" data-tema="auto" aria-checked="true">Automático</button>
+            <button type="button" role="radio" data-tema="claro" aria-checked="false">Claro</button>
+            <button type="button" role="radio" data-tema="escuro" aria-checked="false">Escuro</button>
+          </div>
+        </div>
+        <p class="rodape">Automático segue o modo do aparelho. O alarme é sempre vermelho.</p>
+        <h2 class="secao">Alarme</h2>
+        <ul class="lista">
+          <li><button type="button" class="linha toque" id="btn-volume"><span class="texto">Volume do alarme</span><span class="sec num" id="vol-out2">20 %</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
+          <li><button type="button" class="linha toque link-linha" id="btn-testar-ajustes">Testar som</button></li>
+        </ul>
+        <h2 class="secao">Viagem</h2>
+        <ul class="lista">
+          <li class="linha"><span class="texto" id="rot-wake">Manter tela ligada</span><button type="button" class="interruptor" id="btn-wake" role="switch" aria-checked="false" aria-labelledby="rot-wake"><span></span></button></li>
+        </ul>
+        <p class="rodape">Pede ao aparelho para não apagar a tela durante a viagem.</p>
+        <h2 class="secao">Privacidade</h2>
+        <ul class="lista">
+          <li class="linha"><span class="texto">Processamento no aparelho</span><svg class="ok" role="img" aria-label="ativo"><use href="#i-check"/></svg></li>
+        </ul>
+        <p class="rodape">A câmera é analisada no próprio celular. Nenhum vídeo é gravado ou enviado.</p>
+        <ul class="lista espaco">
+          <li><button type="button" class="linha toque" data-ir="como"><span class="texto">Como o nível funciona</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
+          <li><button type="button" class="linha toque" data-ir="tecnico"><span class="texto">Detalhes técnicos</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
+        </ul>
+        <p class="sobre">Sonolência Móvel <span id="versao-app">2.1</span> · Projeto Transformador II<br />PUCPR · Equipe 14. Protótipo de pesquisa: não substitui o descanso. Com sono, pare o carro.</p>
+      </div>
+    </section>
+
+    <!-- ============================== COMO FUNCIONA ============================== -->
+    <section class="tela" id="tela-como" data-tela="como" aria-labelledby="como-titulo" hidden>
+      <header class="barra">
+        <button type="button" class="link voltar" data-voltar><svg aria-hidden="true"><use href="#i-voltar"/></svg>Voltar</button>
+        <div class="titulo-barra"><strong id="como-titulo">Como funciona</strong></div>
+        <span class="encaixe-camera redondo direita" data-camera="redondo"></span>
+      </header>
+      <div class="conteudo" id="como-conteudo">
+        <!-- preenchido pelo app.js a partir de E.CFG (os números vêm do mesmo lugar que o detector usa) -->
+      </div>
+    </section>
+
+    <!-- ============================== DETALHES TÉCNICOS ============================== -->
+    <section class="tela" id="tela-tecnico" data-tela="tecnico" aria-labelledby="tecnico-titulo" hidden>
+      <header class="barra">
+        <button type="button" class="link voltar" data-voltar><svg aria-hidden="true"><use href="#i-voltar"/></svg>Voltar</button>
+        <div class="titulo-barra"><strong id="tecnico-titulo">Detalhes técnicos</strong></div>
+        <span class="encaixe-camera redondo direita" data-camera="redondo"></span>
+      </header>
+      <div class="conteudo tecnico" id="tech">
+        <h2 class="secao">Desempenho</h2>
+        <ul class="lista">
+          <li class="linha"><span class="texto">Detector</span><span class="sec" id="badge-state">aguardando</span></li>
+          <li class="linha"><span class="texto">Rosto</span><span class="sec" id="hud-face-tec">--</span></li>
+        </ul>
+
+        <h2 class="secao">Benchmark</h2>
+        <div class="cartao">
+          <p class="nota" id="bench-status">Com uma viagem em andamento e o rosto enquadrado, toque em "Benchmark 60 s". O resultado vai sozinho para o computador (serve_https.py).</p>
+          <div class="acoes-linha">
+            <button type="button" class="botao secundario" id="btn-bench" disabled>Benchmark 60 s</button>
+            <button type="button" class="botao secundario" id="btn-export" disabled>Exportar sessão</button>
+            <button type="button" class="botao secundario" id="btn-full">Tela cheia</button>
+          </div>
+          <pre id="bench-summary" class="hidden"></pre>
+          <div class="acoes-linha" id="bench-downloads"></div>
+        </div>
+
+        <h2 class="secao">Sinais medidos</h2>
+        <dl class="lista metricas">
+          <div class="linha"><dt>EAR E / D</dt><dd id="m-ear">-- / --</dd></div>
+          <div class="linha"><dt>Limiar EAR (0,75 x mediana)</dt><dd id="m-thresh">--</dd></div>
+          <div class="linha"><dt>eyeBlink E / D</dt><dd id="m-blend">-- / --</dd></div>
+          <div class="linha"><dt>eyeLookDown (média)</dt><dd id="m-look">--</dd></div>
+          <div class="linha"><dt>MAR / jawOpen</dt><dd id="m-mouth">-- / --</dd></div>
+          <div class="linha"><dt>Pitch / yaw / roll</dt><dd id="m-pose">--</dd></div>
+          <div class="linha"><dt>Δ cabeça (baixo / lado / tombo)</dt><dd id="m-dpose">--</dd></div>
+          <div class="linha"><dt>PERCLOS 60 s (fechamentos ≥ 0,5 s)</dt><dd id="m-perclos">--</dd></div>
+          <div class="linha"><dt>Piscadas (duração típica)</dt><dd id="m-blinks">--</dd></div>
+          <div class="linha"><dt>Fechado por</dt><dd id="m-closedby">--</dd></div>
+          <div class="linha"><dt>Calibração</dt><dd id="m-calib">não calibrado</dd></div>
+          <div class="linha"><dt>Delegate</dt><dd id="m-delegate">--</dd></div>
+          <div class="linha largo"><dt>Última piscada [F, A, D, V] (entrada do LSTM)</dt><dd id="m-feat">--</dd></div>
+        </dl>
+        <div class="recortes">
+          <div><canvas id="crop-left" width="48" height="48"></canvas><span class="nota">olho E (CNN)</span></div>
+          <div><canvas id="crop-right" width="48" height="48"></canvas><span class="nota">olho D (CNN)</span></div>
+        </div>
+
+        <h2 class="secao">Modelos</h2>
+        <ul class="lista modelos">
+          <li class="linha"><span class="texto">Face Landmarker<small id="s-landmarker">não carregado</small></span></li>
+          <li class="linha"><span class="texto">eye_state (TFLite)<small id="s-eye">não carregado</small></span></li>
+          <li class="linha"><span class="texto">blink_temporal (TFLite)<small id="s-temporal">não carregado</small></span></li>
+          <li class="linha"><span class="texto">Áudio<small id="s-audio">não iniciado</small></span></li>
+          <li class="linha"><span class="texto">Bibliotecas<small id="s-deps">carregando</small></span></li>
+        </ul>
+
+        <h2 class="secao">Modelos de aprendizado de máquina (experimental)</h2>
+        <div class="cartao">
+          <p id="ml-lstm">LSTM de piscadas: aguardando a calibração.</p>
+          <p id="ml-cnn">CNN dos olhos: --</p>
+          <p class="nota">Só informam. O LSTM (Exp. 1) soma no máximo 10 pontos, e só com "sonolento" em 5 predições seguidas (p ≥ 0,6) <b>e</b> com os sinais visíveis já em Atenção (≥ 40): ele nunca tira ninguém do verde sozinho. A CNN não entra no nível. Motivo: a generalização desses modelos para uma pessoa nova é limitada (Exp. 5b).</p>
+        </div>
+
+        <h2 class="secao">Latência por estágio (ms), últimas 300 medições</h2>
+        <div class="cartao tabela">
+          <table class="lat">
+            <thead><tr><th>Estágio</th><th>último</th><th>p50</th><th>p95</th></tr></thead>
+            <tbody>
+              <tr><td>Landmarker</td><td id="l-lm-last">--</td><td id="l-lm-p50">--</td><td id="l-lm-p95">--</td></tr>
+              <tr><td>CNN olhos (2 olhos)</td><td id="l-eye-last">--</td><td id="l-eye-p50">--</td><td id="l-eye-p95">--</td></tr>
+              <tr><td>LSTM (30x4)</td><td id="l-tmp-last">--</td><td id="l-tmp-p50">--</td><td id="l-tmp-p95">--</td></tr>
+              <tr><td>Motor v2 (sinais + nível)</td><td id="l-mon-last">--</td><td id="l-mon-p50">--</td><td id="l-mon-p95">--</td></tr>
+              <tr><td>Total por quadro</td><td id="l-tot-last">--</td><td id="l-tot-p50">--</td><td id="l-tot-p95">--</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="secao">Registro de eventos</h2>
+        <ol class="lista registro" id="event-log"><li class="linha muted">Nenhum evento ainda.</li></ol>
+
+        <h2 class="secao">Aparelho</h2>
+        <pre class="cartao" id="device-info"></pre>
+      </div>
+    </section>
   </main>
+
+  <!-- Abas (Dirigir, Viagens, Ajustes): somem durante a calibração e a viagem -->
+  <nav class="abas" id="abas" aria-label="Abas">
+    <button type="button" data-aba="dirigir"><svg aria-hidden="true"><use href="#i-carro"/></svg><span>Dirigir</span></button>
+    <button type="button" data-aba="viagens"><svg aria-hidden="true"><use href="#i-relogio"/></svg><span>Viagens</span></button>
+    <button type="button" data-aba="ajustes"><svg aria-hidden="true"><use href="#i-ajustes"/></svg><span>Ajustes</span></button>
+  </nav>
+
+  <!-- Alarme (vermelho): cobre a tela inteira, igual nos dois temas -->
+  <div class="alarme hidden" id="alarme" role="alertdialog" aria-modal="true" aria-labelledby="alarme-titulo" aria-describedby="alarme-texto">
+    <div class="alarme-topo">
+      <svg class="logo-alarme" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="230" fill="#fff"/><path d="M302.9 719.1A296 296 0 1 1 721.1 719.1" fill="none" stroke="#D70015" stroke-width="72" stroke-linecap="round"/><circle cx="721.1" cy="719.1" r="64" fill="#D70015"/><path d="M360 498Q512 640 664 498" fill="none" stroke="#D70015" stroke-width="58" stroke-linecap="round"/><g stroke="#D70015" stroke-width="46" stroke-linecap="round"><path d="M512 630v64M420 606l-30 54M604 606l30 54"/></g></svg>
+      <span class="alarme-som" id="alarme-som">alarme tocando</span>
+    </div>
+    <span class="alarme-icone" aria-hidden="true"><svg><use href="#i-cafe"/></svg></span>
+    <h1 id="alarme-titulo" tabindex="-1">Pare e descanse</h1>
+    <p id="alarme-texto">Sonolência alta. Procure um lugar seguro para parar.</p>
+    <ul class="alarme-motivos" id="alarme-motivos"></ul>
+    <div class="alarme-base">
+      <div class="deslizar" id="deslizar">
+        <span class="deslizar-texto" aria-hidden="true">deslize: estou acordado</span>
+        <button type="button" class="deslizar-botao" id="btn-ack" aria-label="Estou acordado: silenciar o som por 30 segundos"><svg aria-hidden="true"><use href="#i-seta"/></svg></button>
+      </div>
+      <p class="alarme-nota" id="alarme-nota">Silencia o som por 30 s. Num microssono, o alarme volta na hora.</p>
+      <button type="button" class="alarme-link" id="btn-encerrar-alarme">Parei o carro: encerrar viagem</button>
+    </div>
+  </div>
+
+  <!-- Folha do som (volume do alarme e teste) -->
+  <dialog class="folha" id="folha-som" aria-labelledby="folha-som-titulo">
+    <h2 id="folha-som-titulo">Som do alarme</h2>
+    <div class="vol">
+      <label for="vol">Volume do alarme <output id="vol-out" for="vol">20 %</output></label>
+      <input id="vol" type="range" min="0" max="100" step="1" value="20" aria-describedby="sound-hint" />
+    </div>
+    <p id="sound-hint" class="nota">Toque em "Testar som" uma vez para liberar o som (o iPhone exige um toque).</p>
+    <div class="acoes-linha fim">
+      <button type="button" class="botao secundario" id="btn-sound">Testar som</button>
+      <button type="button" class="botao primario" data-fechar>OK</button>
+    </div>
+  </dialog>
+
+  <!-- Confirmação de encerrar -->
+  <dialog class="dialogo" id="dlg-encerrar" aria-labelledby="dlg-encerrar-titulo">
+    <h2 id="dlg-encerrar-titulo">Encerrar a viagem?</h2>
+    <p class="sec">A câmera desliga e o resumo da viagem aparece.</p>
+    <div class="acoes-linha fim">
+      <button type="button" class="botao secundario" data-fechar>Continuar</button>
+      <button type="button" class="botao perigo" id="btn-confirmar-encerrar">Encerrar</button>
+    </div>
+  </dialog>
 
   <script type="module" src="./app.js"></script>
 </body>
