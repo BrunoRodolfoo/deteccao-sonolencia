@@ -354,9 +354,10 @@ barata, porque nos quadros anotados do DMD o olho **fechado** também tem eyeLoo
   1280 px; um clique **real** (gesto do DevTools, sem a flag de autoplay) em "Testar som" deixa o AudioContext
   em `running`, com ganho final 0 (`?volume=0`); 0 exceções; modelos carregados.
 
-**iPhone 17 Pro (iOS 26.6.1, Chrome 154/WebKit), app v1, 27/09/2026** (`results/phone/`): 40,5 FPS e
-total por quadro p50 23 ms / p95 30 ms (`benchmark_pwa_2026-09-27T21-58-22-872Z.json`). O detector v2.1
-ainda **não** foi medido no iPhone (pendência: rodar "Benchmark 60 s" com a versão nova).
+**iPhone 17 Pro (iOS 26.6.1, Chrome 154/WebKit), app 1.0, 27/09/2026** (`results/phone/`, `results/exp4_phone_latency.md`):
+2 execuções de 60 s, com tempo total por quadro (p50) de 11 e 23 ms, mediana de 17 ms, quase todo no Face Landmarker.
+O app 2.1 ainda **não** foi medido no iPhone nem no Galaxy S23 Ultra (pendência até 09/11: rodar "Benchmark 60 s" com a
+versão nova nos dois aparelhos).
 
 ### 8.1 Teste independente em sono real (UTA-RLDD, 26/10/2026)
 
@@ -384,6 +385,11 @@ Leitura: com o sono declarado pela própria pessoa, o app alarmou 15 dos 24 sono
 sinais visíveis, não ao sono declarado: 7 sonolentos ficaram verdes o vídeo inteiro, e em 6 deles o app não viu nenhum
 fechamento de 0,5 s ou mais, bocejo ou queda da cabeça. Calibrar já com sono atrapalha: em 8 dos 24 vídeos sonolentos,
 os olhos ficaram fechados em mais de 10% da calibração (o app avisa e pede para recalibrar).
+
+Nas mesmas 24 pessoas, a AUC por vídeo dos modelos do Exp. 5b e da regra do rótulo (`results/app_comparacao_uta.md`,
+`src/experiments/comparar_app_uta.py`): RF treinado no DMD, 0,811; regra do rótulo do DMD, 0,853; RF treinado na própria
+UTA-RLDD, 0,953 com a centragem pelo vídeo acordado e 0,806 sem ela. O app (0,812), sem treino nessa base, fica no nível
+deles; o RF da UTA-RLDD só passa à frente com o atalho da centragem discutido no Exp. 5b.
 
 Ressalva: essas pessoas estavam sentadas diante da câmera, sem dirigir. Na direção há movimento, luz que muda e
 olhares para os espelhos, e o falso alarme em movimento continua medido só pela direção real do DMD (acima). O teste

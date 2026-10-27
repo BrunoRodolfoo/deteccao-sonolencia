@@ -54,7 +54,7 @@ A **UTA-RLDD** (sonolência real, 60 sujeitos) continua sendo a base de teste. *
 | Novos experimentos | nenhum | Exp. 5a (validação do nosso extrator contra as características oficiais da UTA-RLDD), Exp. 5b (DMD → UTA-RLDD), Exp. 6 (noite) | respondem à PP1 e à PP3 com dados, não só por contraste com a literatura |
 | Condições da PP3 | óculos, óculos escuros, noite | óculos (MRL Eye; no DMD, 3 dos 13 motoristas usam óculos na sessão de sonolência), iluminação (MRL Eye), noite (NITYMED) | **óculos escuros ficam sem cobertura em dado real**. Isso vira limitação declarada e caso de falha na demonstração |
 | Sujeitos no treino atuado | 18 (NTHU-DDD) | 13 (DMD) | menos sujeitos: os intervalos de confiança por bootstrap sobre sujeitos refletem isso |
-| Aparelho do Exp. 4 | Galaxy S23 Ultra | iPhone 17 Pro, além do Galaxy S23 Ultra; execuções e versão do app em `results/exp4_phone_latency.md` | o Galaxy é de um colega e só pode ser medido na PUC; o iPhone é de um dos autores |
+| Aparelho do Exp. 4 | Galaxy S23 Ultra | app 1.0 no iPhone 17 Pro (2 execuções em 27/09); app 2.1 no iPhone e no Galaxy S23 Ultra a medir | o Galaxy é de um colega e só pode ser medido na PUC; o iPhone é de um dos autores |
 
 ## 5. Impacto nos resultados
 

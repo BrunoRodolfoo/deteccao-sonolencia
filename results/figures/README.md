@@ -42,7 +42,7 @@ Observações:
   figura e a copia para `paper/figures/`.
 - `fig_exp2_vazamento`: o que infla (i) são janelas do mesmo vídeo nos dois lados (sequências vizinhas dividem
   28 das 30 piscadas). Em (ii) o resultado fica abaixo de (iii); uma explicação provável, que não isolamos, é que
-  o modelo associa a aparência da pessoa a rótulos que não são os do vídeo de teste. Ver `results/exp2_leakage.md`.
+  o modelo associa o padrão de piscadas da pessoa a rótulos que não são os do vídeo de teste. Ver `results/exp2_leakage.md`.
 - `amostras_mrl` substituiu em 26/10/2026 a antiga `amostras_mrl_cew`, que tinha recortes do CEW e foi para a
   Lixeira (o repositório é público e a licença do CEW proíbe redistribuição).
 

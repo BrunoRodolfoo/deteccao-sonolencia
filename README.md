@@ -6,7 +6,7 @@ Projeto Transformador II (Experiência Criativa), Bacharelado em Ciência da Com
 André Luís Oliveira Ferreira da Silva · Bruno Rodolfo da Silveira · Bruno Sandoval Ribeiro · Paulo Henrique Perin.
 Orientador: Prof. Júlio César Nievola.
 
-> **Estado em 26/10/2026.** Os seis experimentos terminaram e foram conferidos. Em outubro entraram os controles
+> **Estado em 27/10/2026.** Os seis experimentos terminaram e foram conferidos. Em outubro entraram os controles
 > da queda do Exp. 5b (`src/experiments/exp5b_robustez.py`), e o artigo foi reescrito depois de uma banca simulada
 > (8 páginas). O app de demonstração (PWA 2.1) foi validado com vídeos reais e agora funciona sem internet.
 > - Relatório da Entrega 02: [`docs/ENTREGA02_relatorio.md`](docs/ENTREGA02_relatorio.md) (PDF para o Canvas: `docs/ENTREGA02_relatorio.pdf`).
@@ -14,7 +14,8 @@ Orientador: Prof. Júlio César Nievola.
 > - Passo a passo da equipe (celular, demonstração, pôster, revisão por pares, GitHub): [`docs/GUIA_EQUIPE.md`](docs/GUIA_EQUIPE.md).
 > - Árvore de pastas comentada (tamanhos, o que é versionado, limpezas de 28/09, 06/10 e 26/10): [`docs/ESTRUTURA.md`](docs/ESTRUTURA.md).
 >
-> **Celular:** aparelhos, execuções, versão do app e tempo por quadro: ver `results/exp4_phone_latency.md`.
+> **Celular:** até agora, só o app 1.0 foi medido, no iPhone 17 Pro (2 execuções de 27/09; mediana de 17 ms por quadro).
+> O app 2.1 ainda vai ser medido no iPhone e no Galaxy S23 Ultra, até 09/11 (`results/exp4_phone_latency.md`).
 
 ## 1. Visão geral
 
@@ -36,7 +37,7 @@ O processamento do vídeo é todo local, sem nuvem (veja a nota sobre telemetria
 | | Pergunta | Experimentos |
 |---|---|---|
 | **PP1** | Quanto o desempenho cai ao treinar em sonolência atuada e testar em real? | Exp. 5b (DMD atuado → UTA-RLDD real, com controles da normalização); Exp. 2 (inflação por vazamento entre treino e teste); Exp. 1 (teto intra-UTA); Exp. 5a (validação do extrator) |
-| **PP2** | Qual o custo acurácia × latência num celular? | Exp. 4 (TFLite fp32/int8; PWA no iPhone 17 Pro e no Galaxy S23 Ultra) |
+| **PP2** | Qual o custo acurácia × latência num celular? | Exp. 4 (TFLite fp32/int8; app 1.0 no iPhone 17 Pro; app 2.1 no iPhone e no Galaxy S23 Ultra a medir) |
 | **PP3** | A queda se concentra em óculos, iluminação ruim ou noite? | Exp. 3 (estado ocular MRL Eye ↔ CEW por condição); Exp. 6 (noite real, NITYMED, com o DMD em movimento como controle) |
 
 | Exp. | Treino → teste | Unidade | Resultado em |
@@ -93,6 +94,10 @@ models/                    .tflite + contratos .json, EyeNet (.keras), modelos f
 data/                      dados locais, NÃO versionados (data/README.md)
 ```
 
+**Histórico do repositório.** O trabalho foi feito no computador que tem as bases (142 GB, fora do Git). As datas de
+cada etapa estão nos logs de `results/logs/` e no cronograma do relatório da Entrega 02 (seção 9). O envio ao GitHub
+foi feito em 26/10, em commits separados por assunto. Daqui em diante, cada integrante faz o commit da parte que fizer.
+
 ## 5. Instalação: dois ambientes Python
 
 Usamos Python 3.11 (testado em 3.11.16, macOS arm64) e [uv](https://docs.astral.sh/uv/).
@@ -130,6 +135,10 @@ bash run_all.sh --desde figuras         # só figuras, números, artigo e pôste
 bash run_all.sh --pular sinais,exp5a --sem-poster
 ```
 
+O pôster precisa do template do professor (`TemplatePoster.pptx`), que não está no repositório. O `poster/build_poster.py`
+procura o arquivo em `material_disciplina/`, ao lado da pasta do repositório, ou no caminho da variável `POSTER_TEMPLATE`.
+Sem o template, rode com `--sem-poster` (vale para o `run_all.sh` e para o `tools/atualizar_celular.sh`).
+
 Para conferir o repositório em poucos minutos, sem refazer os experimentos, veja a seção "Como verificar em 5 minutos"
 de [`docs/ENTREGA02_relatorio.md`](docs/ENTREGA02_relatorio.md).
 
@@ -152,12 +161,13 @@ Cada etapa, isolada. Os tempos são de um Mac M5 com no máximo 6 processos. Os 
 | **Exp. 4** celular | .venv | benchmark no aparelho (seção 8) → `.venv/bin/python tools/import_phone_benchmark.py results/phone` | segundos | `results/exp4_phone_latency.{csv,md}` |
 | App: sensibilidade dos pesos | node | `node tools/app_validacao/sensibilidade_pesos.mjs` (até 6 threads; `--workers=1` dá o mesmo resultado). Usa os sinais do DMD de `data/signals/app_tasks/dmd/` | 92 s (26/10) | `results/app_sensibilidade_pesos.{csv,md}` |
 | App: teste independente na UTA-RLDD | **.venv-mp** e node | `.venv-mp/bin/python tools/app_validacao/extrair_sinais_app.py --uta-folds 2 4 --uta-rotulos 0 10 --proc 6`; depois `node tools/app_validacao/validar_motor_uta.mjs` | cerca de 40 min de extração (48 vídeos) + segundos | `data/signals/app_tasks/uta/`, `results/app_validacao_uta.{csv,md}` |
+| App × modelos nas mesmas pessoas | .venv | `.venv/bin/python src/experiments/comparar_app_uta.py` (depois do teste do app e dos Exp. 5b e 6) | segundos | `results/app_comparacao_uta.{csv,md}` |
 | Figuras | .venv | `src/pipeline_b/make_figures.py` (amostras do MRL Eye); `src/experiments/make_figures.py` | 1 min | `results/figures/*.{pdf,png}` (inclui `amostras_mrl`) |
 | Números, artigo, pôster | .venv | `bash tools/atualizar_celular.sh` (importa o celular, refaz a figura do Exp. 4, `paper/numeros.tex` + `poster/numeros.json` **conferidos contra a origem**, compila o artigo, gera o pôster) | 1 min | `results/numeros_resumo.md`, `paper/artigo.pdf`, `poster/poster_final.pdf` |
 
-Nenhum número do artigo ou do pôster é digitado à mão. `src/experiments/make_paper_numbers.py` gera cada valor a partir do arquivo e da coluna indicados em `results/numeros_resumo.md`, e `src/experiments/conferir_numeros.py` recalcula todos eles (648 números, 0 divergências em 26/10/2026).
+Nenhum número do artigo ou do pôster é digitado à mão. `src/experiments/make_paper_numbers.py` gera cada valor a partir do arquivo e da coluna indicados em `results/numeros_resumo.md`, e `src/experiments/conferir_numeros.py` recalcula todos eles (658 números, 0 divergências em 27/10/2026).
 
-## 7. Resultados (estado de 26/10/2026)
+## 7. Resultados (estado de 27/10/2026)
 
 Todos os números abaixo foram copiados dos arquivos indicados, que são gerados pelos scripts, e coincidem com as macros de `paper/numeros.tex`.
 Os valores estão em %, salvo indicação. Os intervalos entre colchetes são IC 95% por bootstrap sobre **sujeitos**. "pp" = pontos percentuais.
@@ -168,11 +178,11 @@ A rodada preliminar de 27/09 (janelas de 30 s, só o Fold 1) foi descartada; nad
 | 1 | UTA-RLDD, 3 classes, 5 folds por sujeito: Random Forest com BSA 54,5 ± 9,3 e VA 57,3 ± 7,2. Referências: HM-LSTM 54,0 / 65,2; julgamento humano (VA) 57,8 | `results/exp1_intra.md` |
 | 2 | Os mesmos dados com partição aleatória por janela: RF 99,5, contra 54,2 por sujeito, ou seja, inflação de +45,3 pp (LSTM: +38,1 pp). A causa são janelas do mesmo vídeo nos dois lados: sequências vizinhas dividem 28 das 30 piscadas. A partição por vídeo, em que a pessoa aparece no treino com os outros vídeos, fica *abaixo* da por sujeito (47,2): nesta base, o que infla é o mesmo vídeo (e com ele o mesmo rótulo) nos dois lados, não a mesma pessoa. No cenário do Exp. 5b (janelas de 10 s, duas classes), a partição aleatória infla a acurácia balanceada do RF em 12,6 pp e a da RL em só 1,2 pp | `results/exp2_leakage.md`, `results/exp5b_robustez.md` (seção 4) |
 | 3 | EyeNet: MRL → MRL 94,1 ± 3,4; MRL → CEW 79,0 ± 8,5 (modelo final 85,7/90,0); CEW → MRL 68,1 ± 1,9. Com óculos, no sentido CEW → MRL, a AUC cai para 65,1, contra 93,4 sem óculos | `results/exp3_eye_state.md` |
-| 4 | EyeNet int8 com 72,1 KB (fp32: 248,2 KB) e queda de no máximo 0,31 pp. Tempo por quadro no celular (PWA): ver `results/exp4_phone_latency.md` | `results/exp4_tflite_eval.csv`, `results/exp4_phone_latency.md` |
+| 4 | EyeNet int8 com 72,1 KB (fp32: 248,2 KB) e queda de no máximo 0,31 pp. No iPhone 17 Pro, o app 1.0 levou 11 e 23 ms por quadro (p50) em 2 execuções, mediana de 17 ms; o app 2.1 ainda vai ser medido no iPhone e no Galaxy S23 Ultra | `results/exp4_tflite_eval.csv`, `results/exp4_phone_latency.md` |
 | 5a | Trocar o extrator (dlib → MediaPipe) num RF treinado nas características oficiais custa +2,0 pp [−4,8; +8,5] (3 classes, 47 sujeitos), com IC que inclui zero. Com cada extrator no próprio treino e teste, o nosso é melhor em B3 nos 5 folds (oficial − nosso = −6,7 pp [−12,9; −1,8], p = 0,029), mas, deixando um sujeito de fora por vez, a diferença não se distingue de zero (−4,5 [−11,0; 0,6]) | `results/exp5a_validacao.md` |
 | 5b | PP1. AUC por janela (B3, RF): DMD → DMD 82,4, UTA → UTA 80,1, DMD → UTA 69,2. A RL perde de 5,4 a 9,8 pontos de AUC por janela nas quatro formas testadas de normalizar (principal: 9,8 [3,7; 16,0]), sempre com IC acima de zero. O RF perde 10,9 [6,7; 15,7] na normalização principal, mas, com a referência no vídeo de pouca vigilância ou sem centragem, perde de 2,1 a 2,3, sem diferença detectável: na UTA-RLDD, as janelas alertas saem do mesmo vídeo da referência, e o RF treinado nela aproveita essa semelhança. O achado mais firme: na UTA real, o modelo treinado em sono encenado reconhece 82,0% das janelas alertas, mas só 48,4% das sonolentas (limiar 0,5); a sonolência atuada é mais extrema que a real (maior fechamento mediano de 0,97 s no DMD e 0,17 s na UTA-RLDD). O volume do treino explica pouco: com B treinado em só 13 sujeitos, a queda fica em 9,3 (RF) e 7,0 (RL) | `results/exp5b_transferencia.md`, `results/exp5b_robustez.md` |
 | 6 | PP3. SNR do EAR: noite (NITYMED) 7,2, UTA-RLDD 21,5, DMD parado 13,6, DMD em movimento 8,7. Noite − movimento = −1,6 [−3,7; +1,1], com IC que inclui zero: só o carro andar já leva a SNR para perto do nível noturno. Em pessoas acordadas (UTA KSS 0), no limiar 0,5, os RF com características brutas disparam em 26,0% (modelo do DMD) e 43,6% (modelo da UTA) das janelas, e a regra por sinais visíveis em 2,6%. Esse limiar é arbitrário: com o mesmo falso alarme da regra, a RL do DMD centrada acha tantas janelas sonolentas quanto ela (24,7% contra 24,1%) | `results/exp6_noite.md`, `results/exp5b_robustez.md` (seção 5) |
-| App 2.1 | Falso alarme em pessoas acordadas: DMD em direção real (s1, 17 sessões, 63,3 min) ficou 3,3% do tempo em vermelho, e 16 de 17 sessões não tiveram alarme. O caso restante é o motorista gA_5, que olha para baixo e é lido como olho fechado. A lógica 1.0 ficava 55,6% do tempo em vermelho. UTA-RLDD acordado: 3 vídeos 100% verdes, 0 alarmes. Detecção: estado do olho por quadro com kappa 0,938 (offline) e 0,902 (navegador); fechamentos de 1 s ou mais com revocação 0,920; bocejo com revocação 0,638 sem a mão e quase nula com a mão na boca; UTA sonolento: só 1 de 3 pessoas chegou ao vermelho. Cabeça: sem revocação medida. Teste independente em sono real (24 pessoas da UTA-RLDD dos folds 2 e 4, fora do ajuste, sentadas e sem dirigir; o rótulo é o sono declarado): alarme em 2 dos 24 vídeos acordados (0,46% do tempo em vermelho); 15 dos 24 sonolentos chegaram ao vermelho, e 7 ficaram verdes o vídeo inteiro; AUC sonolento × acordado de 0,812 [0,705; 0,918]. Sensibilidade dos pesos: em 300 combinações sorteadas (cada peso, teto e decaimento de 0,7 a 1,3 vez; limiares 40 e 70 deslocados em até 10 pontos), o falso alarme na direção real ficou de 1,7% a 4,9% do tempo (percentis 5 e 95; a configuração final dá 3,3%) | `results/app_validacao_dmd.md`, `results/app_validacao.md`, `results/app_validacao_uta.md`, `results/app_sensibilidade_pesos.md` |
+| App 2.1 | Falso alarme em pessoas acordadas: DMD em direção real (s1, 17 sessões, 63,3 min) ficou 3,3% do tempo em vermelho, e 16 de 17 sessões não tiveram alarme. O caso restante é o motorista gA_5, que olha para baixo e é lido como olho fechado. A lógica 1.0 ficava 55,6% do tempo em vermelho. UTA-RLDD acordado: 3 vídeos 100% verdes, 0 alarmes. Detecção: estado do olho por quadro com kappa 0,938 (offline) e 0,902 (navegador); fechamentos de 1 s ou mais com revocação 0,920; bocejo com revocação 0,638 sem a mão e quase nula com a mão na boca; UTA sonolento: só 1 de 3 pessoas chegou ao vermelho. Cabeça: sem revocação medida. Teste independente em sono real (24 pessoas da UTA-RLDD dos folds 2 e 4, fora do ajuste, sentadas e sem dirigir; o rótulo é o sono declarado): alarme em 2 dos 24 vídeos acordados (0,46% do tempo em vermelho); 15 dos 24 sonolentos chegaram ao vermelho, e 7 ficaram verdes o vídeo inteiro; AUC sonolento × acordado de 0,812 [0,705; 0,918]. Sensibilidade dos pesos: em 300 combinações sorteadas (cada peso, teto e decaimento de 0,7 a 1,3 vez; limiares 40 e 70 deslocados em até 10 pontos), o falso alarme na direção real ficou de 1,7% a 4,9% do tempo (percentis 5 e 95; a configuração final dá 3,3%). Nas mesmas 24 pessoas do teste independente, a AUC por vídeo do RF treinado no DMD foi 0,811, a da regra do rótulo 0,853 e a do RF treinado na própria UTA-RLDD 0,953 com a centragem pelo vídeo acordado e 0,806 sem ela: o app (0,812), sem treino, fica no nível deles | `results/app_validacao_dmd.md`, `results/app_validacao.md`, `results/app_validacao_uta.md`, `results/app_sensibilidade_pesos.md`, `results/app_comparacao_uta.md` |
 
 Leitura em uma linha:
 - misturar janelas do mesmo vídeo no treino e no teste infla muito a acurácia (de 54,2% para 99,5% nas sequências de piscadas), mas isso não explica os 90% do NTHU-DDD da literatura, que foram medidos com outras pessoas no teste (Exp. 2 e 5b);

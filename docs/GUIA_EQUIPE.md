@@ -29,8 +29,9 @@ cd "<pasta onde está o repositório>/deteccao-sonolencia"   # ajuste ao seu com
 
 ## 1. Medir o app no celular
 
-Situação: aparelhos, execuções e versão do app medidos estão em `results/exp4_phone_latency.md`. Use esta seção para
-repetir uma medição, por exemplo se o app mudar antes de 09/11.
+Situação: até agora, só o app 1.0 foi medido, no iPhone 17 Pro (2 execuções de 27/09). Falta medir o app 2.1 no iPhone
+e no Galaxy S23 Ultra até 09/11, na PUC ou com o colega que tem o Galaxy. Esta seção serve para essa medição e para
+repeti-la se o app mudar.
 
 **Objetivo:** 3 benchmarks de 60 s da PWA 2.1 em cada aparelho, gravados sozinhos em `results/phone/`, e depois
 um comando que atualiza a tabela e a figura do Exp. 4, os números, o artigo e o pôster.
@@ -84,6 +85,9 @@ um comando que atualiza a tabela e a figura do Exp. 4, os números, o artigo e o
     bash tools/atualizar_celular.sh            # importa -> figura do Exp. 4 -> números conferidos -> artigo -> pôster
     #   --sem-artigo / --sem-poster para pular um dos dois
     ```
+    O comando também refaz o pôster com título e autores nos metadados (chama `poster/build_poster.py --pdf`). O pôster
+    precisa do template do professor em `material_disciplina/`, ao lado do repositório, ou no caminho de `POSTER_TEMPLATE`;
+    sem ele, use `--sem-poster`.
     Confira:
     - `results/exp4_phone_latency.md`: uma linha por execução, com a coluna "Versão do app";
     - a figura `results/figures/fig_exp4_latencia.png`: cada aparelho com a sua barra;
@@ -179,9 +183,9 @@ Se a pessoa quiser mais detalhe:
 - "E esses 90% da literatura, são vazamento?" Não dá para dizer isso. Os 90% do NTHU-DDD foram medidos com outras pessoas no teste. O que a gente mostrou é que, se o mesmo vídeo cai nos dois lados, o número infla muito; com outra pessoa no teste, isso não acontece.
 - "E à noite?" O sinal do olho piora (SNR 7,2 contra 21,5 na UTA-RLDD), mas o carro andando, de dia, já piora quase igual (8,7).
 - "E com óculos?" O estado do olho transfere pior entre bases: AUC 65,1 com óculos, contra 93,4 sem. Óculos escuros a gente não conseguiu testar com dado real.
-- "E com sono de verdade, funciona?" Testamos em 24 pessoas da UTA-RLDD que não entraram no ajuste, sentadas e sem dirigir. Houve alarme em 2 dos 24 vídeos acordados, e 15 dos 24 sonolentos chegaram ao vermelho; a AUC entre sonolento e acordado foi 0,812. Mas 7 sonolentos ficaram verdes: o app reage a olho fechado e bocejo, e quem diz que está com sono sem mostrar esses sinais não é pego.
+- "E com sono de verdade, funciona?" Testamos em 24 pessoas da UTA-RLDD que não entraram no ajuste, sentadas e sem dirigir. Houve alarme em 2 dos 24 vídeos acordados, e 15 dos 24 sonolentos chegaram ao vermelho; a AUC entre sonolento e acordado foi 0,812. Mas 7 sonolentos ficaram verdes: o app reage a olho fechado e bocejo, e quem diz que está com sono sem mostrar esses sinais não é pego. Nas mesmas pessoas, o modelo treinado no DMD deu AUC 0,811 e a regra do rótulo, 0,853; o modelo treinado na própria UTA-RLDD só passa disso (0,953) com o atalho da centragem pelo vídeo acordado, e sem ele fica em 0,806. O app, sem treino nenhum, ficou no nível deles.
 - "Funciona no carro de verdade?" Não testamos em campo. Em vídeos de direção real com motoristas acordados, o app ficou 3,3% do tempo em vermelho.
-- "Quanto tempo leva no celular?" Ver `results/exp4_phone_latency.md`.
+- "Quanto tempo leva no celular?" Com o app 1.0, no iPhone 17 Pro, 17 ms por quadro (mediana de 2 execuções, de 11 a 23 ms), quase todo no detector de rosto. O app 2.1 ainda vai ser medido no iPhone e no Galaxy S23 Ultra.
 
 ### 3.1 "Como vocês definiram as regras e os pesos?"
 
@@ -192,7 +196,7 @@ completa, com a origem de cada número e como ele foi testado, está em `app/pwa
 >
 > Uma parte vem da literatura: o PERCLOS em 60 segundos contando só os fechamentos lentos, de meio segundo ou mais, e o microssono de 1 segundo, que é onde começa a faixa de 1 a 15 segundos usada para microssono. O limite de 15% do PERCLOS é nosso: é mais alto que os 8% a 12% de outros trabalhos, para o app não alarmar à toa.
 >
-> Outra parte a gente escolheu comparando variantes com a anotação quadro a quadro do DMD: o limiar do EAR, a regra do olho fechado, que saiu de 11 variantes, e o bocejo. Por exemplo, com 1 segundo de boca aberta o app achava mais bocejos, mas na direção real, com motoristas acordados, o tempo em vermelho subia de 3,3% para 5,0%. Por isso ficou 1,5 segundo.
+> Outra parte a gente conferiu ou escolheu com a anotação quadro a quadro do DMD. O fator 0,75 do limiar do EAR foi fixado antes e só conferido lá: deu a maior concordância por quadro. A regra do olho fechado saiu de 11 variantes, e o bocejo, de uma grade de valores. Por exemplo, com 1 segundo de boca aberta o app achava mais bocejos, mas na direção real, com motoristas acordados, o tempo em vermelho subia de 3,3% para 5,0%. Por isso ficou 1,5 segundo.
 >
 > E os pontos do nível são regra de projeto, com critério escrito: os pontos de um sinal só não chegam ao vermelho, dois sinais diferentes juntos chegam, microssono e cabeça caindo de olhos fechados levam direto ao vermelho, e evento antigo perde peso em 2 a 5 minutos.
 >
@@ -315,7 +319,7 @@ Quase tudo já tem resposta no texto:
 - Vazamento e literatura: a inflação vem de janelas do mesmo vídeo nos dois lados; os 90% do NTHU-DDD foram medidos com outras pessoas no teste.
 - Regra × modelos: no mesmo falso alarme, a RL do DMD acha tantas janelas sonolentas quanto a regra.
 - NITYMED sem classe alerta: ele só entra como condição noite, sem acurácia.
-- Celular: aparelhos, execuções e versão do app em `results/exp4_phone_latency.md`; o app Android nativo não foi avaliado.
+- Celular: só o app 1.0 foi medido, no iPhone, em 2 execuções; o app 2.1 e o Galaxy ainda vão ser medidos; o app Android nativo não foi avaliado.
 - Pesos do nível do app escolhidos, não ajustados, e validação feita nos mesmos dados em que as regras foram escolhidas (números de desenvolvimento). Resposta pronta na seção 3.1.
 - Validação do app fora do ajuste: o teste independente na UTA-RLDD (24 pessoas, Tabela V) responde, mas com pessoas sentadas e o sono declarado como rótulo.
 
@@ -325,7 +329,8 @@ Se recebermos pareceres sobre o nosso artigo, as correções entram até 14/11. 
 
 **Situação (26/10, noite):**
 - o repositório `github.com/BrunoRodolfoo/deteccao-sonolencia` é público;
-- todo o trabalho até a noite de 26/10 foi enviado nesse dia, em commits separados por assunto no nome de quem fez;
+- todo o trabalho até a noite de 26/10 foi enviado nesse dia, em commits separados por assunto. Esses commits são do André, que fez o trabalho no computador com as bases;
+- daqui em diante, cada um faz o commit do que fizer (por exemplo, o Paulo, a medição do Galaxy);
 - falta só a medição do app 2.1 no iPhone e no Galaxy S23 Ultra, que entra num commit próprio, de quem medir.
 
 O `.gitignore` já exclui:
@@ -343,17 +348,15 @@ git status --short -uall | awk '{print $2}' | while read f; do [ -f "$f" ] && ec
 #   maior esperado: results/exp5b_predicoes.csv (~32 MB; fonte dos IC do Exp. 5b); nenhum arquivo > 50 MB
 git status --short -uall | grep -iE "\.(jpg|jpeg|mp4|mov|y4m)$"   # deve sair vazio (a figura com rostos é ignorada)
 git check-ignore -v results/figures/exp5_dmd_verificacao_visual.jpg app/.pwa-cert app/pwa/vendor   # as três devem aparecer
-git add -A
-git commit -m "Entrega 02: testes do app (sensibilidade dos pesos e sono real na UTA-RLDD) e ajustes finais"
-git tag -a entrega02 -m "Entrega 02 - 31/10/2026"
-git push origin main && git push origin entrega02
 ```
 
-Depois de uma medição nova no celular:
+O que falta, depois da medição do app 2.1 nos celulares e do `bash tools/atualizar_celular.sh`:
 
 ```bash
 git add results/phone results/exp4_phone_latency.* results/figures/fig_exp4_latencia.* paper poster results/numeros_resumo.md
-git commit -m "Exp. 4: benchmark do app no celular"
+git commit -m "Exp. 4: app 2.1 no iPhone 17 Pro e no Galaxy S23 Ultra"
+git tag -a entrega02 -m "Entrega 02 - 31/10/2026"
+git push origin main && git push origin entrega02
 ```
 
 Confirme que o repositório continua público (o artigo e o QR code do pôster apontam para ele).
@@ -368,7 +371,8 @@ Confirme que o repositório continua público (o artigo e o QR code do pôster a
 - [ ] `results/exp4_phone_latency.md` com as execuções do app 2.1 nos celulares
 - [ ] `.venv/bin/python src/experiments/conferir_numeros.py` sem divergências
 - [ ] `docs/ENTREGA02_relatorio.md` revisado pelos quatro; `docs/ENTREGA02_relatorio.pdf` enviado no Canvas
-- [ ] Commit, tag `entrega02` e push, com o repositório público; o link vai no documento enviado ao professor
+- [x] Envio ao GitHub em 26/10, em commits por assunto, com o repositório público; o link vai no documento enviado ao professor
+- [ ] Commit da medição do app 2.1 nos celulares, tag `entrega02` e push (seção 6)
 
 ### 7.2 Entrega 03a (09/11): artigo IEEE (de 6 a 8 páginas) e pôster
 

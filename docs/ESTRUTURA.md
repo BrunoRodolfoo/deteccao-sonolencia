@@ -36,7 +36,7 @@ files (3)/
 | `data/` | 142 GB | não (só `data/README.md`) | bases, sinais e características (seção 2.2). Caro de refazer: não apagar |
 | `.venv/` | 2,8 GB | não | Python 3.11: TensorFlow 2.21, sklearn, treino e figuras (`requirements.txt`, `requirements-lock.txt`) |
 | `.venv-mp/` | 730 MB | não | MediaPipe 0.10.21 + OpenCV, só para extrair sinais de vídeo e rodar a demo da webcam (`requirements-mediapipe*.txt`) |
-| `.git/` | 52 MB | não se aplica | histórico: os commits de 26/10/2026, separados por assunto, foram enviados ao GitHub na mesma noite (antes, o último envio era de 26/08, `d8154ae`) |
+| `.git/` | 56 MB | não se aplica | histórico: os commits de 26/10/2026, separados por assunto, foram enviados ao GitHub na mesma noite (antes, o último envio era de 26/08, `d8154ae`) |
 
 Arquivos soltos na raiz do repositório: `README.md`, `run_all.sh` (pipeline completo; `--lista` mostra as
 11 etapas), `requirements.txt`, `requirements-lock.txt`, `requirements-mediapipe.txt`,
@@ -50,7 +50,8 @@ deteccao-sonolencia/
 │   ├── baseline/          baseline de agosto (RF/SVM/LogReg nos .npy oficiais da UTA-RLDD)
 │   ├── experiments/       Exp. 1, 2, 5a, 5b e 6 (exp*.py, run_exp*.sh), exp5b_robustez.py (controles da
 │   │                      queda do Exp. 5b), make_figures.py, make_paper_numbers.py (gera paper/numeros.tex
-│   │                      e poster/numeros.json) e conferir_numeros.py
+│   │                      e poster/numeros.json), conferir_numeros.py e comparar_app_uta.py (app × modelos
+│   │                      nas mesmas pessoas da UTA-RLDD)
 │   ├── features/          sinais por quadro (extract_signals.py, MediaPipe), piscadas, janelas de 10 s,
 │   │                      sequências de 30 piscadas, rótulos do DMD, relatório do Exp. 5, test_features.py
 │   ├── pipeline_b/        Exp. 3 (EyeNet, MRL Eye <-> CEW), exportação TFLite do Exp. 4 e a figura de
@@ -70,7 +71,7 @@ deteccao-sonolencia/
 │   └── android/           projeto Gradle (Kotlin), lógica 1.0, não compilado
 ├── models/                (seção 2.3)
 ├── results/
-│   ├── exp1_* a exp6_*, app_validacao*, app_sensibilidade_pesos.*, sinais_*   relatórios .md e tabelas .csv finais
+│   ├── exp1_* a exp6_*, app_validacao*, app_sensibilidade_pesos.*, app_comparacao_uta.*, sinais_*   relatórios .md e tabelas .csv finais
 │   │                      (inclui exp5b_robustez.{csv,md}, de 26/10)
 │   ├── figures/           figuras de resultados (.pdf/.png), inclusive amostras_mrl (só recortes do MRL Eye)
 │   ├── phone/             benchmarks do celular (JSON e CSV por quadro, só números) + aparelhos.json
@@ -143,7 +144,7 @@ Pasta da Lixeira: `TCC_limpeza_2026-10-06`.
 | Zips do MRL e do CEW e os rostos brutos do CEW | o conteúdo extraído fica; nenhum código lia os rostos brutos |
 | `results/figures/exp5_dmd_verificacao_visual.jpg` | figura interna com rostos do DMD, que não pode ser publicada |
 | `paper/artigo.log`, `paper/artigo.blg`, `.DS_Store`, caches de Python | restos de compilação, recriados sozinhos |
-| Fora do repositório: histórico da Entrega 01, pasta do pedido do NTHU-DDD, arquivo de contexto antigo e sobras do TCC em Downloads | pedido da equipe: deixar só o necessário para as entregas |
+| Fora do repositório: histórico da Entrega 01, pasta do pedido do NTHU-DDD, anotações antigas da equipe e sobras do TCC em Downloads | pedido da equipe: deixar só o necessário para as entregas |
 
 `results/sinais_resumo.md` (e os CSVs dele), que ainda descrevia só a primeira extração, foi regenerado com todas
 as sessões e folds.
@@ -156,9 +157,11 @@ Saíram 7 pastas `__pycache__/`, `.pytest_cache/` e `data/signals/_teste/` (saí
 
 Todo o trabalho até a noite de 26/10/2026 foi enviado ao GitHub nesse dia, em commits separados por assunto: código,
 resultados e logs dos experimentos, os testes do app (sensibilidade dos pesos e teste independente na UTA-RLDD),
-o artigo, o pôster e estes documentos. Fica para depois só a medição do app 2.1 no iPhone e no Galaxy S23 Ultra.
+o artigo, o pôster e estes documentos. O que mudou depois (em 27/10, a comparação do app com os modelos nas mesmas
+pessoas e ajustes do artigo, do pôster e destes documentos) entra no próximo commit, e a medição do app 2.1 no iPhone
+e no Galaxy S23 Ultra, no seguinte.
 
-Com esse commit, a árvore versionada fica com cerca de 105 MB em 395 arquivos. O maior arquivo é
+A árvore versionada tem cerca de 105 MB em 395 arquivos. O maior arquivo é
 `results/exp5b_predicoes.csv` (32 MB), abaixo do aviso de 50 MB do GitHub. A lista não inclui `data/`
 (só `data/README.md`), `.venv*`, caches, certificados, chaves, `app/pwa/vendor/`, `models/exp1/` nem `models/exp6/`.
 Esses números mudam a cada arquivo novo; refaça a conta antes do commit (comando abaixo).
