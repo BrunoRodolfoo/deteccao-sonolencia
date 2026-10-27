@@ -677,7 +677,7 @@ export const CFG = deepFreeze({
     windowMs: 300000, //   contagem em 5 min
   },
   score: {
-    perclos: { from: 0.075, at: 0.15, points: 40, cap: 60 }, // 0 pt até 7,5 %; 40 pt em 15 % (critério clássico); teto 60
+    perclos: { from: 0.075, at: 0.15, points: 40, cap: 60 }, // 0 pt até 7,5 %; 40 pt em 15 % (referência do app: mais conservadora que os 8 a 12 % usuais); teto 60
     longClosure: { points: 25, decayMs: 120000, countMs: 60000 }, // cada fechamento 0,5-1 s: 25 pt, somem em 2 min
     // microssono: o efeito principal é o VERMELHO imediato (forçado) enquanto os olhos estão fechados; depois de
     // reabrir, ele conta no nível como mais um fechamento longo (a especificação E pede "fechamentos longos por
@@ -1618,7 +1618,7 @@ export class DrowsinessMonitor {
     const contrib = [];
     const P = this.perclos.value;
     const pPerclos = ramp(P, S.perclos.from, S.perclos.at, S.perclos.points, S.perclos.cap);
-    contrib.push({ key: "perclos", points: pPerclos, label: `PERCLOS ${fmtBR(P * 100, 1)} % em 60 s, só fechamentos >= 0,5 s (critério clássico: 15 %)` });
+    contrib.push({ key: "perclos", points: pPerclos, label: `PERCLOS ${fmtBR(P * 100, 1)} % em 60 s, só fechamentos >= 0,5 s (referência do app: 15 %)` });
     const nLong1m = this.evLong.count(t, S.longClosure.countMs) + this.evMicro.count(t, S.longClosure.countMs);
     const pClos = Math.min(S.closuresCap, this.evLong.points(t) + this.evMicro.points(t));
     const nMicro5 = this.evMicro.count(t);

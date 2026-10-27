@@ -32,7 +32,8 @@ olhos depois de um microssono, o app volta ao amarelo em ~2 s (antes ficava ~1,5
 ## 1. O que o app detecta
 
 Todos os limiares e pesos estão num único lugar: `CFG` em `engine.js`. A tabela diz o valor e o
-porquê de cada um. "Validação offline" = `tools/app_validacao/validar_motor_dmd.mjs` sobre o DMD
+porquê de cada um. A origem de cada número (literatura, comparação no DMD ou regra de projeto) e como ele foi
+testado estão na seção 13. "Validação offline" = `tools/app_validacao/validar_motor_dmd.mjs` sobre o DMD
 (seção 8; log `results/logs/app_validacao_dmd_20260927-225227.log`).
 
 ### 1.1 Olhos
@@ -46,7 +47,7 @@ porquê de cada um. "Validação offline" = `tools/app_validacao/validar_motor_d
 | Piscada | fechamento de 50 ms a 0,5 s | abaixo de 50 ms é ruído de 1 quadro; entra na duração típica da pessoa. |
 | Fechamento longo | 0,5 s a 1 s | conta como sinal (pontos que decaem em 2 min) e aparece por minuto no cartão "Olhos". |
 | **Microssono** | olhos fechados >= 1 s | **VERMELHO imediato** (escolha conservadora: já não é piscada). A duração do app vai de eyeBlink >= 0,5 na descida a < 0,5 na subida (meio fechamento), por isso sai 0,17 s mais longa que o "fechado" da anotação do DMD, que exclui o "fechando" e o "abrindo" (mediana de 231 pares em s5; p25-p75: 0,07-0,24 s). Subir o limiar para 1,2 s foi avaliado e **rejeitado** (seção 9). |
-| **PERCLOS** | tempo de olho fechado **em fechamentos >= 0,5 s** / max(tempo observado; 60 s), janela de 60 s | O PERCLOS clássico (P80: olhos pelo menos 80 % fechados; Wierwille et al., 1994) mede fechamentos **lentos** da pálpebra, não piscadas (Dinges e Grace, 1998); PERCLOS > 15 % é o critério clássico. Um fechamento só entra quando completa 0,5 s (o mesmo limite de "fechamento longo") e aí entra inteiro. Na v2.0 as piscadas contavam: quem pisca 75 vezes por minuto acordado passava de 12 % (seção 9). O denominador mínimo de 60 s impede que UM fechamento logo após a calibração infle o PERCLOS. O PERCLOS "com as piscadas" continua visível em "Detalhes técnicos", só como informação. |
+| **PERCLOS** | tempo de olho fechado **em fechamentos >= 0,5 s** / max(tempo observado; 60 s), janela de 60 s | O PERCLOS clássico (P80: olhos pelo menos 80 % fechados; Wierwille et al., 1994) mede fechamentos **lentos** da pálpebra, não piscadas (Dinges e Grace, 1998). Não há um limite único: estudos e monitores usam de 8 % a 12 % sobre o PERCLOS de todos os fechamentos (12 % no relatório da AAA de 2018, citando Wierwille et al., 1994). O app usa 15 % sobre um PERCLOS mais restrito, só com fechamentos de 0,5 s ou mais, o que é mais conservador: uma escolha de projeto para evitar falso alarme. Um fechamento só entra quando completa 0,5 s (o mesmo limite de "fechamento longo") e aí entra inteiro. Na v2.0 as piscadas contavam: quem pisca 75 vezes por minuto acordado passava de 12 % (seção 9). O denominador mínimo de 60 s impede que UM fechamento logo após a calibração infle o PERCLOS. O PERCLOS "com as piscadas" continua visível em "Detalhes técnicos", só como informação. |
 | Rosto perdido | > 0,3 s encerra o fechamento em andamento | não inventa olho fechado quando o rosto some. |
 | Histerese na reabertura (`reopenHyst`) | **desligada** (0) | Avaliada (reabrir só abaixo de 0,4) e rejeitada: na direção real os fechamentos de 0,5-1 s foram de 15 para 46 e os avisos de 1,9 para 17,1 por hora (seção 9). |
 
@@ -54,7 +55,7 @@ porquê de cada um. "Validação offline" = `tools/app_validacao/validar_motor_d
 
 | Regra | Valor | Por quê |
 |---|---|---|
-| Boca aberta | `jawOpen >= max(0,4; jawOpen de repouso + 0,3)` **ou** MAR >= MAR de repouso + 0,4 | O `jawOpen` do blendshape é mais robusto que o MAR sozinho (o detector v1, MAR > 0,6 por 2 s, achou 32 % dos bocejos sem a mão no DMD; este acha 64 %). O MAR relativo é apoio. |
+| Boca aberta | `jawOpen >= max(0,4; jawOpen de repouso + 0,3)` **ou** MAR >= MAR de repouso + 0,4 | O `jawOpen` do blendshape funciona melhor que o MAR sozinho (o detector v1, MAR > 0,6 por 2 s, achou 32 % dos bocejos sem a mão no DMD; este acha 64 %). O MAR relativo é apoio. |
 | Duração mínima | 1,5 s | Na direção real (DMD s1), 1,5 s deu **0 bocejo falso por hora** (fala, rádio, bebida); 1,0 s deu 1,9 por hora. Bocejos espontâneos duram em média cerca de 6 s (Provine, 1986): 1,5 s de boca bem aberta cabe num bocejo de verdade. Os bocejos que o app perde no DMD são **encenados** e curtos (0,5-1,4 s de boca aberta). Baixar para 1,0 s foi avaliado e **rejeitado** (seção 9). |
 | Tolerâncias | boca fecha < 0,15 s no meio: continua o mesmo bocejo; rosto perdido (mão na frente) até 1 s: continua | bocejos reais "respiram"; a fala abre e fecha por mais tempo. |
 | Contagem | bocejos nos últimos 5 min | é o que o cartão "Bocejo" mostra. |
@@ -95,7 +96,7 @@ essas parcelas.
 
 | Parcela | Pontos | Decaimento / teto | Por quê |
 |---|---|---|---|
-| PERCLOS (60 s, só fechamentos >= 0,5 s) | 0 até 7,5 %; **40 em 15 %**; mesma inclinação depois | teto 60 | 15 % (critério clássico) sozinho leva a ATENÇÃO, nunca a vermelho. |
+| PERCLOS (60 s, só fechamentos >= 0,5 s) | 0 até 7,5 %; **40 em 15 %**; mesma inclinação depois | teto 60 | 15 % (referência de projeto, mais conservadora que os 8 % a 12 % usuais) sozinho leva a ATENÇÃO, nunca a vermelho. |
 | Fechamento de 0,5-1 s | 25 cada | some em 2 min; teto 60 (junto com microssonos) | a especificação pede "fechamentos longos por minuto"; 2 em pouco tempo = ATENÇÃO. |
 | Microssono (depois de reabrir) | 25 cada | some em 2 min; teto 60 (junto com os de 0,5-1 s) | o efeito principal do microssono é o **vermelho imediato** enquanto os olhos estão fechados; depois ele conta como mais um fechamento longo, e o piso abaixo garante 1 min de ATENÇÃO. |
 | Bocejo | 25 cada | some em 5 min; teto 50 | 1 bocejo não alarma ninguém; 2 bocejos em até ~2 min = ATENÇÃO. |
@@ -174,7 +175,7 @@ essas parcelas.
 
 1. **Fase 1: 10 s olhando para a frente** (barra de progresso no vídeo): "Apoie o celular como no
    painel do carro, olhe para a frente com os olhos abertos e a boca fechada. Pode piscar
-   normalmente." Mede, por mediana (robusta às piscadas): limiar do EAR, eyeBlink de repouso, jawOpen
+   normalmente." Mede, por mediana (que as piscadas não deslocam): limiar do EAR, eyeBlink de repouso, jawOpen
    e MAR de repouso e a pose neutra (pitch/yaw/roll). O tempo só conta com o rosto visível.
 2. Avisos ao fim da fase 1 (na tela, com o pedido de **Recalibrar**): EAR de olho aberto muito baixo;
    rosto muito de lado; sem pose; e, na v2.1, **olhos fechados em mais de 10 % dos quadros** (os dois
@@ -302,7 +303,7 @@ acordados (17 sessões, 63,3 min). "v2.0" = log `results/logs/app_validacao_dmd_
 | Direção real (s1): % do tempo em vermelho (sirene) | **3,3 %** | 5,8 % | v1 (sem o LSTM): 55,6 % |
 | Direção real (s1): % do tempo em amarelo / avisos por hora | 4,1 % / 1,90 | 2,2 % / 1,90 | sem referência |
 | Direção real (s1): entradas no vermelho (alarmes) | 4 em 63 min (3,79/h), **todas do mesmo motorista** (gA_5); 16 de 17 sessões sem alarme | 1 (0,95/h), o mesmo motorista, que ficou 97 % do tempo no vermelho | v1: 49,6/h |
-| Direção real (s1): PERCLOS p95 (após 60 s) | **1,2 %** | 10,0 % | critério clássico: 15 % |
+| Direção real (s1): PERCLOS p95 (após 60 s) | **1,2 %** | 10,0 % | referência do app: 15 % |
 | Sonolência encenada (s5): % do tempo em vermelho / sessões com alarme | 68,6 % / 16 de 16 | 74,4 % / 16 de 16 | sem referência |
 | Sinal do pitch (33 vídeos) | correlação > 0 em 33 de 33 (mediana 0,857) | igual | sem referência |
 
@@ -357,6 +358,37 @@ barata, porque nos quadros anotados do DMD o olho **fechado** também tem eyeLoo
 total por quadro p50 23 ms / p95 30 ms (`benchmark_pwa_2026-09-27T21-58-22-872Z.json`). O detector v2.1
 ainda **não** foi medido no iPhone (pendência: rodar "Benchmark 60 s" com a versão nova).
 
+### 8.1 Teste independente em sono real (UTA-RLDD, 26/10/2026)
+
+Tudo o que está acima foi medido nos mesmos dados em que as regras foram escolhidas. Este teste não teve ajuste
+(`results/app_validacao_uta.md`; `tools/app_validacao/validar_motor_uta.mjs`; log
+`results/logs/app_validacao_uta_20261026-230247.log`).
+
+- Amostra, com a regra fixada antes de rodar: todas as 24 pessoas dos folds oficiais 2 e 4 da UTA-RLDD, que não
+  entraram em nenhuma etapa do ajuste nem no teste no navegador. De cada uma, o vídeo acordado (KSS de 1 a 3) e o
+  sonolento (KSS 8 e 9), com cerca de 10 min cada: 48 vídeos e 8,2 h avaliadas.
+- O que roda: o `engine.js` do app, importado sem cópia, com a configuração final e sem o LSTM, sobre os sinais do
+  mesmo Face Landmarker da PWA (`tools/app_validacao/extrair_sinais_app.py --uta-folds 2 4 --uta-rotulos 0 10`, em
+  `data/signals/app_tasks/uta/`). A calibração é a do app, nos 10 s iniciais de cada vídeo; numa variante, o vídeo
+  sonolento usa a calibração do vídeo acordado da mesma pessoa.
+
+| Medida | Calibração no próprio vídeo | Calibração do vídeo acordado |
+|---|---|---|
+| Acordados com algum alarme | 2 de 24 (0,46% do tempo em vermelho; 3 alarmes em 4,0 h) | igual |
+| Acordados que chegam ao amarelo | 5 de 24 | igual |
+| Sonolentos que chegam ao amarelo / ao vermelho | 17 / 15 de 24 | 19 / 17 de 24 |
+| Pessoas com mais tempo fora do verde no vídeo sonolento (mais / igual / menos) | 16 / 7 / 1 | 19 / 5 / 0 |
+| AUC do % do tempo fora do verde, sonolento × acordado [IC 95%] | 0,812 [0,705; 0,918] | 0,855 [0,760; 0,948] |
+
+Leitura: com o sono declarado pela própria pessoa, o app alarmou 15 dos 24 sonolentos e 2 dos 24 acordados. Ele reage a
+sinais visíveis, não ao sono declarado: 7 sonolentos ficaram verdes o vídeo inteiro, e em 6 deles o app não viu nenhum
+fechamento de 0,5 s ou mais, bocejo ou queda da cabeça. Calibrar já com sono atrapalha: em 8 dos 24 vídeos sonolentos,
+os olhos ficaram fechados em mais de 10% da calibração (o app avisa e pede para recalibrar).
+
+Ressalva: essas pessoas estavam sentadas diante da câmera, sem dirigir. Na direção há movimento, luz que muda e
+olhares para os espelhos, e o falso alarme em movimento continua medido só pela direção real do DMD (acima). O teste
+roda no Mac, com o código do motor do app, e não no celular.
+
 ## 9. Ajuste final (27/09/2026): o que mudou, por quê e o efeito medido
 
 Ponto de partida: a validação da v2.0 com vídeos reais (`results/app_validacao.md`, seção "Antes do
@@ -403,9 +435,11 @@ os mesmos clipes da validação anterior rodaram de novo no navegador (seção 8
   encenada gC_14, 36,7 % do tempo em vermelho, contra 72,5 % na v2.0 (cada microssono continua disparando o
   vermelho na hora). É o preço de o app "voltar" em segundos depois que a pessoa abre os olhos.
 - Pessoas que parecem acordadas mas relatam sono (UTA-RLDD, rótulo por autoavaliação) não mostram sinais
-  visíveis e não são acusadas: o app mede sinais visíveis, não "sono" em geral.
-- Os pesos do nível são **escolhas de projeto documentadas**, não ajustadas em dados de sonolência
-  real; o DMD s5 é encenado. A amostra da validação com vídeos é pequena (~40 min).
+  visíveis e não são acusadas: o app mede sinais visíveis, não "sono" em geral. No teste independente, 7 de 24
+  sonolentos ficaram verdes (seção 8.1).
+- Os pesos do nível são **escolhas de projeto documentadas** (origem de cada um na seção 13), não ajustadas em dados de sonolência
+  real; o DMD s5 é encenado. A amostra da validação com vídeos é pequena (~40 min no navegador; 8,2 h no teste
+  independente da seção 8.1, com pessoas sentadas).
 - A PWA usa WebAssembly/WebGL; o tempo medido é limite superior em relação a um app nativo.
 - No iPhone: sem vibração; o volume de mídia do aparelho limita o alarme; a tela pode apagar se o
   navegador não oferecer Wake Lock (desligue o bloqueio automático). A liberação do som depois de voltar
@@ -426,7 +460,7 @@ os mesmos clipes da validação anterior rodaram de novo no navegador (seção 8
 | `check_tflite_web.py` | verifica se um `.tflite` carrega no runtime da PWA |
 | `models/` | cópias dos `.tflite`/`.json` (ver `models/README.md`) |
 | `vendor/` | dependências locais, fora do Git: `bash tools/baixar_dependencias_app.sh` |
-| `../../tools/app_validacao/` | `extrair_sinais_app.py` (sinais do DMD com o mesmo modelo), `validar_motor_dmd.mjs` (validação offline e alternativas do ajuste final), `teste_headless_pwa.mjs` (teste da interface no Chrome headless, sempre mudo), `preparar_clipe.py` + `rodar_app_video.mjs` + `analisar_app_videos.mjs` (app no navegador com vídeos reais como câmera) |
+| `../../tools/app_validacao/` | `extrair_sinais_app.py` (sinais do DMD e, com `--uta-folds`, da UTA-RLDD, com o mesmo modelo), `validar_motor_dmd.mjs` (validação offline e alternativas do ajuste final), `sensibilidade_pesos.mjs` (sensibilidade dos pesos do nível, seção 13), `validar_motor_uta.mjs` (teste independente na UTA-RLDD, seção 8.1), `teste_headless_pwa.mjs` (teste da interface no Chrome headless, sempre mudo), `preparar_clipe.py` + `rodar_app_video.mjs` + `analisar_app_videos.mjs` (app no navegador com vídeos reais como câmera) |
 
 Dependências (primeiro `vendor/`, depois a CDN): `@mediapipe/tasks-vision@1.0.1` + `face_landmarker.task`
 float16 v1; `@tensorflow/tfjs-core@4.22.0`, `@tensorflow/tfjs-backend-cpu@4.22.0`,
@@ -439,6 +473,8 @@ float16 v1; `@tensorflow/tfjs-core@4.22.0`, `@tensorflow/tfjs-backend-cpu@4.22.0
 node --check app/pwa/app.js && node --check app/pwa/engine.js && node --check app/pwa/tflite_io.js
 node app/pwa/test_engine.mjs                                   # 217 asserções
 node tools/app_validacao/validar_motor_dmd.mjs                 # precisa de data/signals/app_tasks/dmd (local)
+node tools/app_validacao/sensibilidade_pesos.mjs               # idem; 353 configurações, cerca de 1,5 min com 6 threads
+node tools/app_validacao/validar_motor_uta.mjs                 # precisa de data/signals/app_tasks/uta (local; extrair_sinais_app.py --uta-folds 2 4)
 python3 app/pwa/serve_https.py --port 8767 &                   # outra porta: nunca derrube a 8443 do celular
 node tools/app_validacao/teste_headless_pwa.mjs --url "https://localhost:8767/?autostart=1" --seconds 20
 ```
@@ -456,3 +492,76 @@ iPhone.
 Referências citadas: Wierwille et al. (1994), DOT HS 808 247; Dinges e Grace (1998), FHWA-MCRT-98-006
 (ambas em `paper/refs.bib`); Provine, R. R. (1986), "Yawning as a stereotyped action pattern and
 releasing stimulus", *Ethology* 72(2):109-122 (não está no `refs.bib`).
+
+## 13. De onde vem cada parâmetro
+
+A pergunta da banca é justa: os números do app foram calculados ou escolhidos no olho? Cada parâmetro de `CFG`
+(`engine.js`) tem uma destas três origens:
+
+- (a) literatura ou definição clássica;
+- (b) escolhido comparando variantes contra a anotação quadro a quadro do DMD (`tools/app_validacao/validar_motor_dmd.mjs`; s5 = sonolência encenada, para a detecção; s1 = direção real com motoristas acordados, para o falso alarme);
+- (c) regra de projeto, sem ajuste em dados, seguindo os critérios da seção 13.2.
+
+### 13.1 Tabela
+
+| Parâmetro (`CFG`) | Valor | Origem | Como foi testado |
+|---|---|---|---|
+| Janela do PERCLOS (`perclos.windowMs`) | 60 s | (a) Wierwille et al. (1994); Dinges e Grace (1998) | testes do motor (PERCLOS medido por tempo) |
+| PERCLOS só com fechamentos lentos (`perclos.minEpisodeMs`) | conta só fechamentos de 0,5 s ou mais | (a) o PERCLOS mede fechamentos lentos da pálpebra, não piscadas (Dinges e Grace, 1998); o corte de 0,5 s é o mesmo do fechamento longo (c) | direção real do DMD: com as piscadas dentro, PERCLOS p95 de 10,0% e 5,1% do tempo em vermelho; só com fechamentos de 0,5 s ou mais, 1,2% e 3,3% (`results/app_validacao_dmd_ajuste_final.csv`). Teste do motor: 75 piscadas por minuto por 3 min ficam sempre no verde |
+| Pontos do PERCLOS (`score.perclos`) | 0 até 7,5%; 40 pontos em 15%; teto de 60 | (c) regra de projeto; a literatura não tem um limite único (de 8% a 12% sobre o PERCLOS de todos os fechamentos), e o nosso PERCLOS conta só fechamentos de 0,5 s ou mais | testes do motor |
+| Microssono (`eyes.microsleepMs`) | olhos fechados por 1 s ou mais: vermelho na hora | (a) microssonos duram de 1 a 15 s (Skorucak et al., 2020); um fechamento de 1 s já não é piscada | 1,2 s foi avaliado no DMD e rejeitado: os fechamentos anotados de 1 s ou mais que disparam o vermelho caem de 104 para 95 de 113 |
+| Piscada e fechamento longo (`eyes.blinkMinMs`, `blinkMaxMs`, `longMs`) | piscada de 50 ms a 0,5 s; fechamento longo de 0,5 a 1 s | 0,5 s: (a) uma piscada dura de 0,1 a 0,4 s; 50 ms: (c) 1 quadro a 30 a 60 quadros por segundo | DMD s5: fechamentos de 0,5 s ou mais com revocação 0,929 e precisão 0,786 |
+| Limiar do EAR (`calib.earFactor`) | 0,75 × mediana do EAR na calibração | (b) fixado antes e conferido no DMD: entre 0,60 e 0,90, deu o maior kappa por quadro (0,773); o F1 de piscadas foi um pouco maior com 0,80 (0,775 contra 0,749) | `results/exp5_dmd_sensibilidade_limiar.csv` (16 sessões) |
+| Regra do olho fechado (`eyes.blendClosed`, `blendRel`, `blendSupport`, `earPath`) | os dois eyeBlink em 0,5 ou mais e 0,25 acima do repouso; o EAR também marca fechado quando o menor eyeBlink passa de 0,4 e nenhuma trava está ativa | (b) escolhida entre 11 variantes: só o EAR, só o eyeBlink (limiar de 0,45 a 0,55, folga de 0,25 ou 0,30 sobre o repouso) e fusões do eyeBlink com o EAR (apoio de 0,35 a 0,45, com 2 ou 4 travas) | kappa por quadro de 0,938 (EAR sozinho: 0,831); 3,3% do tempo em vermelho na direção real (EAR sozinho: 26,1%). As variantes com folga de 0,30 baixavam esse vermelho para 0,1%, mas perdiam fechamentos de 1 s ou mais (revocação de 0,876 contra 0,920). `results/app_validacao_dmd_variantes_olhos.csv` |
+| Valores das travas (`lookDownGate`, `headDownGateDeg`, `squintGate`, `asideGateDeg`) | olhar para baixo 0,6; cabeça 10° abaixo; olhos apertados 0,45; olhar para o lado 20° | (c) regra de projeto; a comparação foi entre ter 2 ou 4 travas, não entre valores de cada uma | dentro da comparação das 11 variantes |
+| Histerese na reabertura (`eyes.reopenHyst`) | desligada | (b) avaliada no DMD e rejeitada | direção real: fechamentos de 0,5 a 1 s foram de 15 para 46, e os avisos, de 1,9 para 17,1 por hora |
+| Boca aberta (`yawn.jawOpen`, `jawRel`, `marRel`) | jawOpen de 0,4 ou mais e 0,3 acima do repouso, ou MAR 0,4 acima do repouso | jawOpen: (b) grade no DMD; folgas sobre o repouso: (c) | na grade (`results/app_validacao_dmd_bocejo_grade.csv`), com 1,5 s, jawOpen de 0,3 a 0,5 dá revocação sem a mão de 0,617 a 0,681 e nenhum bocejo falso na direção real. O valor 0,4 fica no meio da faixa; não é o melhor ponto da grade |
+| Duração mínima do bocejo (`yawn.minMs`) | 1,5 s | (b) grade no DMD; combina com a duração média de um bocejo espontâneo, cerca de 6 s (Provine, 1986) | com 1,0 s, a revocação sem a mão sobe de 0,638 para 0,723, mas aparecem 1,9 bocejos falsos por hora na direção real, e o tempo em vermelho sobe de 3,3% para 5,0% |
+| Tolerâncias e contagem do bocejo (`yawn.gapMs`, `lostMaxMs`, `windowMs`) | a boca pode fechar por menos de 0,15 s; mão ou rosto perdido até 1 s; contagem em 5 min | (c) | testes do motor |
+| Queda da cabeça (`head.dropDeg`, `dropMs`, `eyesMs`) | 18° por 0,8 s, com os olhos fechados por 0,4 s seguidos | (c) especificação do projeto (de 15 a 20° e 0,8 s). Os olhos fechados separam sono de olhar o painel, e 0,4 s fica acima de uma piscada comum (0,1 a 0,3 s) | sem revocação medida, porque o DMD não anota cabeceio; na direção real, 1 queda falsa em 63,3 min; testes sintéticos |
+| Cabeceio e cabeça de lado (`nodDeg`, `nodOnsetMs`, `nodMaxMs`, `rollDeg`, `yawAsideDeg`) | desce 15° em até 0,5 s e volta em até 1,5 s; tombar 30° conta como queda; olhar 25° para o lado anula o episódio | (c) | testes sintéticos |
+| Rosto que some depois de baixar (`head.lostEyesMs`) | só vira queda com os olhos fechados por 0,4 s seguidos | (c) a mesma exigência da queda com o rosto visível | no navegador, as 2 quedas falsas do fim de clipes do NITYMED sumiram |
+| Cabeça baixa de olhos abertos (`head.downOpenMs`) | 2 s ou mais: distração, 0 ponto | (c) | testes do motor; roteiro da banca |
+| Calibração (`calib.neutralMs`, `nBlinks`, `maxClosedFrac`) | 10 s olhando para a frente; 20 piscadas; aviso se os olhos ficarem fechados em mais de 10% do tempo | (c). O aviso: acordado, de 15 a 20 piscadas por minuto, de 0,1 a 0,3 s cada, dão de 2% a 10% do tempo com o olho fechado | no navegador, o aviso só apareceu no vídeo sonolento Fold3/31 da UTA-RLDD (23% da calibração) |
+| Pontos por evento (`score`) | fechamento de 0,5 a 1 s: 25; microssono, depois de reabrir: 25; bocejo: 25; queda ou cabeceio: 30; piscadas mais lentas: de 0 (1,25 vez a duração da calibração) a 20 (2 vezes) | (c) critérios da seção 13.2 | testes do motor (2 bocejos levam ao amarelo, com nível 48; 2 bocejos e 1 cabeceio levam ao vermelho); direção real do DMD com 3,3% do tempo em vermelho e 16 de 17 sessões sem alarme; sensibilidade dos pesos: em 300 configurações sorteadas (cada peso, teto e decaimento de 0,7 a 1,3 vez; limiares 40 e 70 a até 10 pontos), o vermelho na direção real ficou entre 1,7% e 4,9% (percentis 5 e 95) e o da sonolência encenada entre 56,2% e 72,9% |
+| Tetos | fechamentos e microssonos: 60; PERCLOS: 60; bocejo: 50; cabeça: 60; piscadas lentas: 20 | (c) os pontos de um sinal só não chegam a 70 | os mesmos testes da linha acima |
+| Decaimento | fechamentos e microssono: 2 min; bocejo e cabeça: 5 min | (c) evento antigo perde peso | os mesmos testes |
+| Estados (`levels`) | amarelo a partir de 40 (sai abaixo de 35); vermelho a partir de 70 (sai abaixo de 60) | (c) histerese contra o pisca-pisca entre estados | testes do motor |
+| Vermelho forçado e piso (`forcedFloor`, `postForced`) | microssono ou cabeça caída com os olhos fechados: nível exibido de pelo menos 75; depois, pelo menos 40 por 1 min | (c) | roteiro da banca: ao reabrir os olhos, amarelo em 1,7 s; na versão 2.0 (microssono com 40 pontos por 5 min, sem o piso e com saída em 60), o vermelho continuava por cerca de 1,5 min |
+| LSTM (`score.ml`) | no máximo 10 pontos, com "sonolento" (p de 0,6 ou mais) em 5 predições seguidas e só com o resto já em 40 ou mais | (c) um modelo com 57,2% de acurácia por vídeo (Exp. 1) só reforça um quadro de cansaço | num vídeo de pessoa acordada da UTA-RLDD, os avisos causados pelo LSTM caíram de 3 para 0 |
+| Descida do nível (`maxFallPerS`) | no máximo 3 pontos por segundo | (c) | testes do motor |
+| Alarme (`alarm`) e volume | sirene de pelo menos 2 s; "ding" no máximo a cada 20 s; "Estou acordado" silencia por 30 s; volume padrão de 20% | (c) | testes do motor e da interface, sempre mudos |
+
+Referências: Wierwille et al. (1994) e Dinges e Grace (1998) para o PERCLOS; Provine (1986) para a duração do
+bocejo; Skorucak et al. (2020, Frontiers in Neuroscience 14:8) para o microssono de 1 a 15 s. O limite de 15% do PERCLOS
+não vem de uma fonte: é regra de projeto, mais conservadora que os 8% a 12% usados em outros trabalhos.
+
+### 13.2 Critérios dos pesos
+
+Os pontos, os tetos e os tempos de decaimento seguem regras escritas antes, e não um ajuste em dados:
+
+- um evento isolado não muda a cor: 1 bocejo, 1 fechamento longo ou 1 queda ficam no verde (25 ou 30 pontos);
+- dois eventos do mesmo tipo levam ao amarelo (2 bocejos: nível 48 no teste do motor);
+- os pontos de um sinal só não chegam ao vermelho: todo teto é de 60 ou menos, e o vermelho pelo nível começa em 70;
+- dois sinais diferentes juntos chegam ao vermelho (2 bocejos e 1 cabeceio, no teste do motor);
+- perigo imediato força o vermelho na hora: microssono e cabeça caindo com os olhos fechados;
+- evento antigo perde peso: os pontos caem em linha reta até zerar em 2 min (olhos) ou 5 min (bocejo e cabeça);
+- o LSTM só reforça um quadro que já é de cansaço e nunca muda a cor sozinho.
+
+### 13.3 Por que os pesos não foram calculados por otimização
+
+Para otimizar os pesos, seria preciso uma base de sono real com esses sinais marcados ao longo do tempo, e ela não
+existe. A UTA-RLDD tem sono real, mas só um rótulo por vídeo (o KSS que a própria pessoa relatou), sem dizer em que
+momento ela estava sonolenta nem que sinal apareceu. O DMD tem eventos marcados quadro a quadro, mas encenados.
+Ajustar os pesos no DMD repetiria o problema da PP1: o que se aprende com sono encenado transfere mal para o real
+(no Exp. 5b, o modelo treinado no DMD reconhece só 48,4% das janelas sonolentas da UTA-RLDD). Por isso os pesos
+seguem critérios que qualquer pessoa confere no "Por quê?" do app, e o DMD serviu para medir a detecção dos eventos
+(s5) e o falso alarme em quem está acordado (s1).
+
+### 13.4 O que dá para afirmar
+
+- Os números do DMD da seção 8 são de desenvolvimento: a regra dos olhos, o bocejo e os ajustes finais foram
+  escolhidos comparando variantes nessas mesmas sessões.
+- Os pesos não foram ajustados em sono real. No teste independente da seção 8.1 (24 pessoas da UTA-RLDD fora do
+  ajuste, sentadas, sem dirigir), o app alarmou 15 dos 24 vídeos sonolentos e 2 dos 24 acordados.
+- Sensibilidade dos pesos (cada peso variado em até 30%; `results/app_sensibilidade_pesos.md`): mudando um número por vez, só o teto de 60 pontos dos fechamentos somados, o limiar de 70 e a descida máxima do nível mexem no falso alarme (de 1,8% a 4,7% do tempo em vermelho na direção real); os outros mudam menos de 0,05 ponto. Com tudo variando junto, em 300 configurações sorteadas, o vermelho na direção real ficou entre 1,7% e 4,9% (percentis 5 e 95; a configuração final dá 3,3%) e o da sonolência encenada entre 56,2% e 72,9%; 291 das 300 (97%) mantêm o falso alarme até 5% e a sonolência encenada acima de 50%. As 9 que passaram de 5% têm o limiar de SONOLENTO entre 60 e 65. Todo o vermelho da direção real está numa sessão só (gA_5), em episódios que começaram com um microssono detectado num motorista que olhava para baixo.
