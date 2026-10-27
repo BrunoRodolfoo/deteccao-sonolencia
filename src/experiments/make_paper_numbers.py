@@ -1021,6 +1021,60 @@ def robustez():
             descricao=f"Exp. 5b: {d} (pp de AUC por janela)")
 
 
+def app_uta():
+    """Teste independente do app em sono real (tools/app_validacao/validar_motor_uta.mjs): 24 pessoas da UTA-RLDD
+    (folds oficiais 2 e 4), vídeos acordado e sonolento, calibração no início de cada vídeo (coluna principal)."""
+    md = "results/app_validacao_uta.md"
+
+    def linha(rotulo):
+        return r"\| " + re.escape(rotulo) + r" \| "
+
+    add("AppUTASujeitos", {"tipo": "md", "arquivo": md, "regex": r"\*\*Amostra:\*\* (\d+) sujeitos"}, casas=0,
+        descricao="app em sono real (UTA-RLDD): pessoas testadas, fora do ajuste")
+    for rot, nome, d in [("Acordados com algum alarme vermelho", "AppUTAAcordadosAlarme", "vídeos acordados com alarme"),
+                         ("Acordados que chegam ao amarelo", "AppUTAAcordadosAmarelo", "vídeos acordados que chegam ao amarelo"),
+                         ("Sonolentos que chegam ao amarelo", "AppUTASonolentosAmarelo", "vídeos sonolentos que chegam ao amarelo"),
+                         ("Sonolentos que chegam ao vermelho", "AppUTASonolentosVermelho", "vídeos sonolentos que chegam ao vermelho")]:
+        add(nome, {"tipo": "md", "arquivo": md, "regex": linha(rot) + r"(\d+)/\d+"}, casas=0,
+            descricao=f"app em sono real (UTA-RLDD), calibração no próprio vídeo: {d}")
+    add("AppUTASonolentosVerdes", {"tipo": "derivado", "deps": ["AppUTASujeitos", "AppUTASonolentosAmarelo"],
+                                   "expr": "AppUTASujeitos - AppUTASonolentosAmarelo"}, casas=0,
+        descricao="app em sono real: vídeos sonolentos que ficaram verdes o tempo todo")
+    add("AppUTAAcordadosPctVermelho", {"tipo": "md", "arquivo": md, "decimal_virgula": True,
+                                       "regex": linha("Tempo em vermelho nos acordados") + r"([\d,]+) %"},
+        casas=2, unidade="%", descricao="app em sono real: % do tempo em vermelho nos vídeos acordados")
+    rx = linha("Pessoas com mais tempo fora do verde no vídeo sonolento (mais / igual / menos)") + r"(\d+) / (\d+) / (\d+) \|"
+    for grupo, nome, d in [(1, "AppUTAParesMais", "mais"), (2, "AppUTAParesEmpate", "empate"), (3, "AppUTAParesMenos", "menos")]:
+        add(nome, {"tipo": "md", "arquivo": md, "regex": rx, "grupo": grupo}, casas=0,
+            descricao=f"app em sono real: pessoas com o vídeo sonolento mais tempo fora do verde que o acordado ({d})")
+    for rot, nome in [("AUC do % do tempo fora do verde [IC 95 %]", "AppUTAAUCForaVerde"),
+                      ("AUC do nível médio [IC 95 %]", "AppUTAAUCNivelMedio")]:
+        rxa = linha(rot) + r"(([\d,]+) \[[\d,]+; [\d,]+\]) \| (([\d,]+) \[[\d,]+; [\d,]+\]) \|"
+        add(f"{nome}ComIC", {"tipo": "md", "arquivo": md, "regex": rxa, "grupo": 1, "texto": True}, texto=True,
+            descricao=f"app em sono real, calibração no próprio vídeo: {rot}")
+        add(nome, {"tipo": "md", "arquivo": md, "regex": rxa, "grupo": 2, "decimal_virgula": True}, casas=3,
+            descricao=f"app em sono real, calibração no próprio vídeo: {rot} (valor)")
+        add(f"{nome}CalAcordado", {"tipo": "md", "arquivo": md, "regex": rxa, "grupo": 4, "decimal_virgula": True},
+            casas=3, descricao=f"app em sono real, calibração do vídeo acordado: {rot} (valor)")
+
+
+def app_pesos():
+    """Sensibilidade dos pesos do nível do app (tools/app_validacao/sensibilidade_pesos.mjs): 300 configurações
+    sorteadas, com cada peso, teto e decaimento de 0,7 a 1,3 vez e os limiares 40 e 70 a até 10 pontos."""
+    md = "results/app_sensibilidade_pesos.md"
+    for linha, lt in [("s1: % do tempo em vermelho", "SUm"), ("s5: % do tempo em vermelho", "SCinco")]:
+        rx = r"\| " + re.escape(linha) + r" \| ([\d,]+) \| ([\d,]+) \| ([\d,]+) \| ([\d,]+) \|"
+        for grupo, gt in [(2, "Mediana"), (3, "Pcinco"), (4, "Pnoventaecinco")]:
+            add(f"AppPesos{lt}Vermelho{gt}", {"tipo": "md", "arquivo": md, "regex": rx, "grupo": grupo,
+                                              "decimal_virgula": True}, casas=1, unidade="%",
+                descricao=f"app, pesos sorteados (300): {linha}, {gt.lower()}")
+    rx = r"\*\*as duas coisas juntas: (\d+) de (\d+) \((\d+) %\)\*\*"
+    for grupo, gt in [(1, "Boas"), (2, "Total"), (3, "BoasPct")]:
+        add(f"AppPesos{gt}", {"tipo": "md", "arquivo": md, "regex": rx, "grupo": grupo}, casas=0,
+            descricao="app, pesos sorteados: configurações com s1 em vermelho até 5% e s5 acima de 50% "
+                      + {"Boas": "(quantas)", "Total": "(total sorteado)", "BoasPct": "(%)"}[gt])
+
+
 # ----------------------------------------------------------------------------------------------
 # Saídas
 # ----------------------------------------------------------------------------------------------
@@ -1121,6 +1175,8 @@ def main() -> int:
     artigo_extra()
     revisao_pares()
     robustez()
+    app_pesos()
+    app_uta()
     write_tex(tem_samsung)
     write_json(tem_samsung)
     write_md(tem_samsung)

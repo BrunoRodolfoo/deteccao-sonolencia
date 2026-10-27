@@ -53,7 +53,7 @@ sinal de uma piscada, protocolos de partição) e as cópias PNG sem uso foram p
 | VI-B | Exp. 1, 2 e 5a (Tabela III) e o vazamento no cenário do Exp. 5b | `results/exp1_intra.md`, `results/exp2_leakage.md`, `results/exp5a_validacao.md`, `results/exp5b_robustez.md` |
 | VI-C | Exp. 4 (PP2, Tabela IV): quantização e tempo por quadro no celular | `results/exp4_*.csv`, `results/exp4_phone_latency.md` |
 | VI-D | Exp. 3 por condição; Exp. 6 (noite × movimento, disparo; Fig. 3); óculos no DMD | `results/exp3_eye_state.md`, `results/exp6_noite.md`, `results/exp5b_transferencia.md` (seção 11) |
-| VI-E | validação do app 2.1 (Tabela V), offline no DMD e no navegador | `results/app_validacao_dmd.md`, `results/app_validacao.md` |
+| VI-E | validação do app 2.1 (Tabela V): offline no DMD, no navegador, teste independente em sono real na UTA-RLDD e sensibilidade dos pesos | `results/app_validacao_dmd.md`, `results/app_validacao.md`, `results/app_validacao_uta.md`, `results/app_sensibilidade_pesos.md` |
 | VII | discussão de PP1 a PP3 (inclui a regra × modelos no mesmo falso alarme), limitações, ética e LGPD | `results/exp5b_robustez.md` (seção 5) e os demais |
 | VIII | conclusão e trabalhos futuros | n/a |
 
@@ -94,7 +94,7 @@ Diagrama TikZ: `cd figures && tectonic fig_pipeline.tex` (detalhes em `figures/R
   tabela macro → valor → arquivo → coluna e filtro vai para `results/numeros_resumo.md`.
 - `src/experiments/conferir_numeros.py` recalcula cada número com uma implementação independente,
   confere `numeros.tex` × `numeros.json`, procura o valor no `.md` de resultados e compila um documento
-  com todos os macros. Estado em 26/10/2026: 615 números (1.234 macros), 0 divergências.
+  com todos os macros. Estado em 26/10/2026: 648 números (1.275 macros), 0 divergências.
 - Convenções: percentuais **sem** o símbolo `%` (escreva `\ExpCincoBCSensJanela\%`); diferenças em pontos
   percentuais; `\NomeIC` = "[inf; sup]", `\NomeComIC` = "valor [inf; sup]", `\NomeMDP` = "média ± dp";
   negativos com o sinal de menos tipográfico. Depois de um macro seguido de palavra, use `{}`
@@ -110,7 +110,9 @@ Diagrama TikZ: `cd figures && tectonic fig_pipeline.tex` (detalhes em `figures/R
   referência no vídeo KSS 5 (`\ExpCincoBRefAlt...`), IC em dois níveis (`\ExpCincoBBootDuplo...`), B com 13
   sujeitos (`\ExpCincoBTreze...`), vazamento no cenário do Exp. 5b (`\ExpCincoBVazamento...`) e ponto de operação
   da regra (`\ExpCincoBOpRegra...`), além das faixas derivadas `\ExpCincoBLRQuedaNormMin/Max` e
-  `\ExpCincoBQuedaOutrasNormMin/Max`. Todos passam pela mesma conferência.
+  `\ExpCincoBQuedaOutrasNormMin/Max`. Também em 26/10 entraram os números dos dois testes novos do app: o teste independente na
+  UTA-RLDD (`\AppUTA...`, de `results/app_validacao_uta.csv`) e a sensibilidade dos pesos (`\AppPesos...`, de
+  `results/app_sensibilidade_pesos.csv`). Todos passam pela mesma conferência.
 - Regerar tudo: `.venv/bin/python src/experiments/make_paper_numbers.py && .venv/bin/python src/experiments/conferir_numeros.py`
   e recompilar.
 

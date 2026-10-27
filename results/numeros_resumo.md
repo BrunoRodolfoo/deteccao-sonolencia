@@ -1,10 +1,10 @@
 # Números do artigo e do pôster (gerados de results/)
 
-Gerado em 26/10/2026 20:55 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
+Gerado em 26/10/2026 23:13 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
 
 Galaxy S23 Ultra: sem dados; macro `\SamsungPendente` = "medição prevista" e `\ifSamsungMedido` falso.
 
-Total: 623 números (1249 macros).
+Total: 648 números (1274 macros).
 
 | Macro | Valor | Unidade | O que é | Arquivo de origem | Coluna / filtro |
 |---|---|---|---|---|---|
@@ -631,13 +631,38 @@ Total: 623 números (1249 macros).
 | `\ExpCincoBLRQuedaNormMax` | 9,8 | pp | Exp. 5b: maior queda da RL entre as quatro normalizações (pp de AUC por janela) | `(derivado)` | `max(ExpCincoBLRQuedaAUCJanela, ExpCincoBLRSemNormQuedaAUCJanela, ExpCincoBLRRefAltQuedaAUCJanela, ExpCincoBLRRefSDoisQuedaAUCJanela)` com ExpCincoBLRQuedaAUCJanela, ExpCincoBLRSemNormQuedaAUCJanela, ExpCincoBLRRefAltQuedaAUCJanela, ExpCincoBLRRefSDoisQuedaAUCJanela |
 | `\ExpCincoBQuedaOutrasNormMin` | 2,1 | pp | Exp. 5b: menor queda do RF sem a referência principal (pp de AUC por janela) | `(derivado)` | `min(ExpCincoBSemNormQuedaAUCJanela, ExpCincoBRefAltQuedaAUCJanela)` com ExpCincoBSemNormQuedaAUCJanela, ExpCincoBRefAltQuedaAUCJanela |
 | `\ExpCincoBQuedaOutrasNormMax` | 2,3 | pp | Exp. 5b: maior queda do RF sem a referência principal (pp de AUC por janela) | `(derivado)` | `max(ExpCincoBSemNormQuedaAUCJanela, ExpCincoBRefAltQuedaAUCJanela)` com ExpCincoBSemNormQuedaAUCJanela, ExpCincoBRefAltQuedaAUCJanela |
+| `\AppPesosSUmVermelhoMediana` | 3,3 | % | app, pesos sorteados (300): s1: % do tempo em vermelho, mediana | `results/app_sensibilidade_pesos.md` | regex `\&#124; s1:\ %\ do\ tempo\ em\ vermelho \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124;` (grupo 2) |
+| `\AppPesosSUmVermelhoPcinco` | 1,7 | % | app, pesos sorteados (300): s1: % do tempo em vermelho, pcinco | `results/app_sensibilidade_pesos.md` | regex `\&#124; s1:\ %\ do\ tempo\ em\ vermelho \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124;` (grupo 3) |
+| `\AppPesosSUmVermelhoPnoventaecinco` | 4,9 | % | app, pesos sorteados (300): s1: % do tempo em vermelho, pnoventaecinco | `results/app_sensibilidade_pesos.md` | regex `\&#124; s1:\ %\ do\ tempo\ em\ vermelho \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124;` (grupo 4) |
+| `\AppPesosSCincoVermelhoMediana` | 67,7 | % | app, pesos sorteados (300): s5: % do tempo em vermelho, mediana | `results/app_sensibilidade_pesos.md` | regex `\&#124; s5:\ %\ do\ tempo\ em\ vermelho \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124;` (grupo 2) |
+| `\AppPesosSCincoVermelhoPcinco` | 56,2 | % | app, pesos sorteados (300): s5: % do tempo em vermelho, pcinco | `results/app_sensibilidade_pesos.md` | regex `\&#124; s5:\ %\ do\ tempo\ em\ vermelho \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124;` (grupo 3) |
+| `\AppPesosSCincoVermelhoPnoventaecinco` | 72,9 | % | app, pesos sorteados (300): s5: % do tempo em vermelho, pnoventaecinco | `results/app_sensibilidade_pesos.md` | regex `\&#124; s5:\ %\ do\ tempo\ em\ vermelho \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124; ([\d,]+) \&#124;` (grupo 4) |
+| `\AppPesosBoas` | 291 |  | app, pesos sorteados: configurações com s1 em vermelho até 5% e s5 acima de 50% (quantas) | `results/app_sensibilidade_pesos.md` | regex `\*\*as duas coisas juntas: (\d+) de (\d+) \((\d+) %\)\*\*` (grupo 1) |
+| `\AppPesosTotal` | 300 |  | app, pesos sorteados: configurações com s1 em vermelho até 5% e s5 acima de 50% (total sorteado) | `results/app_sensibilidade_pesos.md` | regex `\*\*as duas coisas juntas: (\d+) de (\d+) \((\d+) %\)\*\*` (grupo 2) |
+| `\AppPesosBoasPct` | 97 |  | app, pesos sorteados: configurações com s1 em vermelho até 5% e s5 acima de 50% (%) | `results/app_sensibilidade_pesos.md` | regex `\*\*as duas coisas juntas: (\d+) de (\d+) \((\d+) %\)\*\*` (grupo 3) |
+| `\AppUTASujeitos` | 24 |  | app em sono real (UTA-RLDD): pessoas testadas, fora do ajuste | `results/app_validacao_uta.md` | regex `\*\*Amostra:\*\* (\d+) sujeitos` (grupo 1) |
+| `\AppUTAAcordadosAlarme` | 2 |  | app em sono real (UTA-RLDD), calibração no próprio vídeo: vídeos acordados com alarme | `results/app_validacao_uta.md` | regex `\&#124; Acordados\ com\ algum\ alarme\ vermelho \&#124; (\d+)/\d+` (grupo 1) |
+| `\AppUTAAcordadosAmarelo` | 5 |  | app em sono real (UTA-RLDD), calibração no próprio vídeo: vídeos acordados que chegam ao amarelo | `results/app_validacao_uta.md` | regex `\&#124; Acordados\ que\ chegam\ ao\ amarelo \&#124; (\d+)/\d+` (grupo 1) |
+| `\AppUTASonolentosAmarelo` | 17 |  | app em sono real (UTA-RLDD), calibração no próprio vídeo: vídeos sonolentos que chegam ao amarelo | `results/app_validacao_uta.md` | regex `\&#124; Sonolentos\ que\ chegam\ ao\ amarelo \&#124; (\d+)/\d+` (grupo 1) |
+| `\AppUTASonolentosVermelho` | 15 |  | app em sono real (UTA-RLDD), calibração no próprio vídeo: vídeos sonolentos que chegam ao vermelho | `results/app_validacao_uta.md` | regex `\&#124; Sonolentos\ que\ chegam\ ao\ vermelho \&#124; (\d+)/\d+` (grupo 1) |
+| `\AppUTASonolentosVerdes` | 7 |  | app em sono real: vídeos sonolentos que ficaram verdes o tempo todo | `(derivado)` | `AppUTASujeitos - AppUTASonolentosAmarelo` com AppUTASujeitos, AppUTASonolentosAmarelo |
+| `\AppUTAAcordadosPctVermelho` | 0,46 | % | app em sono real: % do tempo em vermelho nos vídeos acordados | `results/app_validacao_uta.md` | regex `\&#124; Tempo\ em\ vermelho\ nos\ acordados \&#124; ([\d,]+) %` (grupo 1) |
+| `\AppUTAParesMais` | 16 |  | app em sono real: pessoas com o vídeo sonolento mais tempo fora do verde que o acordado (mais) | `results/app_validacao_uta.md` | regex `\&#124; Pessoas\ com\ mais\ tempo\ fora\ do\ verde\ no\ vídeo\ sonolento\ \(mais\ /\ igual\ /\ menos\) \&#124; (\d+) / (\d+) / (\d+) \&#124;` (grupo 1) |
+| `\AppUTAParesEmpate` | 7 |  | app em sono real: pessoas com o vídeo sonolento mais tempo fora do verde que o acordado (empate) | `results/app_validacao_uta.md` | regex `\&#124; Pessoas\ com\ mais\ tempo\ fora\ do\ verde\ no\ vídeo\ sonolento\ \(mais\ /\ igual\ /\ menos\) \&#124; (\d+) / (\d+) / (\d+) \&#124;` (grupo 2) |
+| `\AppUTAParesMenos` | 1 |  | app em sono real: pessoas com o vídeo sonolento mais tempo fora do verde que o acordado (menos) | `results/app_validacao_uta.md` | regex `\&#124; Pessoas\ com\ mais\ tempo\ fora\ do\ verde\ no\ vídeo\ sonolento\ \(mais\ /\ igual\ /\ menos\) \&#124; (\d+) / (\d+) / (\d+) \&#124;` (grupo 3) |
+| `\AppUTAAUCForaVerdeComIC` | 0,812 [0,705; 0,918] |  | app em sono real, calibração no próprio vídeo: AUC do % do tempo fora do verde [IC 95 %] | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ %\ do\ tempo\ fora\ do\ verde\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 1) |
+| `\AppUTAAUCForaVerde` | 0,812 |  | app em sono real, calibração no próprio vídeo: AUC do % do tempo fora do verde [IC 95 %] (valor) | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ %\ do\ tempo\ fora\ do\ verde\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 2) |
+| `\AppUTAAUCForaVerdeCalAcordado` | 0,855 |  | app em sono real, calibração do vídeo acordado: AUC do % do tempo fora do verde [IC 95 %] (valor) | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ %\ do\ tempo\ fora\ do\ verde\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 4) |
+| `\AppUTAAUCNivelMedioComIC` | 0,839 [0,736; 0,935] |  | app em sono real, calibração no próprio vídeo: AUC do nível médio [IC 95 %] | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ nível\ médio\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 1) |
+| `\AppUTAAUCNivelMedio` | 0,839 |  | app em sono real, calibração no próprio vídeo: AUC do nível médio [IC 95 %] (valor) | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ nível\ médio\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 2) |
+| `\AppUTAAUCNivelMedioCalAcordado` | 0,891 |  | app em sono real, calibração do vídeo acordado: AUC do nível médio [IC 95 %] (valor) | `results/app_validacao_uta.md` | regex `\&#124; AUC\ do\ nível\ médio\ \[IC\ 95\ %\] \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124; (([\d,]+) \[[\d,]+; [\d,]+\]) \&#124;` (grupo 4) |
 
 ## Conferência automática
 
-Executada em 26/10/2026 20:55 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
+Executada em 26/10/2026 23:13 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
 
-- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 623 de 623** números (1250 macros em `paper/numeros.tex`, 1250 no JSON; sobrando só no TeX: 0; só no JSON: 0).
-- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 531; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 75.
+- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 648 de 648** números (1275 macros em `paper/numeros.tex`, 1275 no JSON; sobrando só no TeX: 0; só no JSON: 0).
+- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 531; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 100.
 - Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — tectonic rc=0; 0 'Undefined control sequence'.
 - Divergências: 0.
 
@@ -1268,3 +1293,28 @@ Executada em 26/10/2026 20:55 por `src/experiments/conferir_numeros.py` (leitura
 | `\ExpCincoBLRQuedaNormMax` | 9,8 | ok | — |
 | `\ExpCincoBQuedaOutrasNormMin` | 2,1 | ok | — |
 | `\ExpCincoBQuedaOutrasNormMax` | 2,3 | ok | — |
+| `\AppPesosSUmVermelhoMediana` | 3,3 | ok | — |
+| `\AppPesosSUmVermelhoPcinco` | 1,7 | ok | — |
+| `\AppPesosSUmVermelhoPnoventaecinco` | 4,9 | ok | — |
+| `\AppPesosSCincoVermelhoMediana` | 67,7 | ok | — |
+| `\AppPesosSCincoVermelhoPcinco` | 56,2 | ok | — |
+| `\AppPesosSCincoVermelhoPnoventaecinco` | 72,9 | ok | — |
+| `\AppPesosBoas` | 291 | ok | — |
+| `\AppPesosTotal` | 300 | ok | — |
+| `\AppPesosBoasPct` | 97 | ok | — |
+| `\AppUTASujeitos` | 24 | ok | — |
+| `\AppUTAAcordadosAlarme` | 2 | ok | — |
+| `\AppUTAAcordadosAmarelo` | 5 | ok | — |
+| `\AppUTASonolentosAmarelo` | 17 | ok | — |
+| `\AppUTASonolentosVermelho` | 15 | ok | — |
+| `\AppUTASonolentosVerdes` | 7 | ok | — |
+| `\AppUTAAcordadosPctVermelho` | 0,46 | ok | — |
+| `\AppUTAParesMais` | 16 | ok | — |
+| `\AppUTAParesEmpate` | 7 | ok | — |
+| `\AppUTAParesMenos` | 1 | ok | — |
+| `\AppUTAAUCForaVerdeComIC` | 0,812 [0,705; 0,918] | ok | — |
+| `\AppUTAAUCForaVerde` | 0,812 | ok | — |
+| `\AppUTAAUCForaVerdeCalAcordado` | 0,855 | ok | — |
+| `\AppUTAAUCNivelMedioComIC` | 0,839 [0,736; 0,935] | ok | — |
+| `\AppUTAAUCNivelMedio` | 0,839 | ok | — |
+| `\AppUTAAUCNivelMedioCalAcordado` | 0,891 | ok | — |
