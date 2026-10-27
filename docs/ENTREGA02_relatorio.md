@@ -7,7 +7,7 @@ André Luís O. F. da Silva, Bruno Rodolfo da Silveira, Bruno Sandoval Ribeiro, 
 
 Versão de 26/10/2026 (prazo da entrega: 31/10/2026). Repositório: https://github.com/BrunoRodolfoo/deteccao-sonolencia
 
-> Todos os números deste relatório foram copiados dos arquivos de `results/` gerados pelos scripts. O arquivo de cada tabela aparece entre parênteses, e os mesmos valores estão em `paper/numeros.tex`, conferidos por `src/experiments/conferir_numeros.py` (615 números, 0 divergências em 26/10/2026). Nenhum valor foi digitado à mão ou estimado.
+> Todos os números deste relatório foram copiados dos arquivos de `results/` gerados pelos scripts. O arquivo de cada tabela aparece entre parênteses, e os mesmos valores estão em `paper/numeros.tex`, conferidos por `src/experiments/conferir_numeros.py` (648 números, 0 divergências em 26/10/2026). Nenhum valor foi digitado à mão ou estimado.
 >
 > Os números do celular (aparelhos, execuções, versão do app e tempos) estão em `results/exp4_phone_latency.md`.
 >
@@ -37,6 +37,8 @@ Achados centrais:
   - Na direção real do DMD, com motoristas acordados, o app ficou 3,3% do tempo em vermelho, e 16 de 17 sessões não tiveram alarme.
   - O estado do olho por quadro tem kappa 0,938 (offline) e 0,902 (navegador).
   - Desde 26/10, o app funciona sem internet (`app/pwa/vendor/`, baixada por `tools/baixar_dependencias_app.sh`).
+  - Teste independente em sono real (26/10): em 24 pessoas da UTA-RLDD que não entraram no ajuste, sentadas e sem dirigir, houve alarme em 2 dos 24 vídeos acordados, e 15 dos 24 sonolentos chegaram ao vermelho; 7 sonolentos ficaram verdes. AUC sonolento × acordado de 0,812 [0,705; 0,918].
+  - Sensibilidade dos pesos (26/10): em 300 combinações sorteadas dos pesos e limiares do nível, o falso alarme na direção real do DMD ficou de 1,7% a 4,9% do tempo (percentis 5 e 95; a configuração final dá 3,3%).
 
 ## 2. O que foi feito em outubro
 
@@ -46,9 +48,11 @@ Achados centrais:
 | 06/10 | Artigo enxugado para 7 páginas, sem travessões e com a Fig. 1 refeita em preto e branco; números, artigo e pôster refeitos e conferidos | `results/logs/atualizar_celular_20261006_161528.log` |
 | 06/10 | Limpeza da pasta: rodada preliminar, logs repetidos e cópias sem uso foram para a Lixeira | `docs/ESTRUTURA.md`, seção 3 |
 | 26/10 | Controles da queda do Exp. 5b: referência no vídeo de pouca vigilância, IC em dois níveis (motoristas do DMD reamostrados e C treinado de novo), B treinado com 13 sujeitos, vazamento no cenário do Exp. 5b e ponto de operação da regra | `results/exp5b_robustez.md`; log `results/logs/exp5b_robustez_20261026-2051.log` |
-| 26/10 | Banca simulada e reescrita do artigo, com a leitura nova da PP1, do vazamento e da regra × modelos: 8 páginas, 30 referências, Tabelas I a V e 3 figuras; números refeitos e conferidos (615, 0 divergências) | `paper/README.md`, `results/numeros_resumo.md` |
+| 26/10 | Banca simulada e reescrita do artigo, com a leitura nova da PP1, do vazamento e da regra × modelos: 8 páginas, 30 referências, Tabelas I a V e 3 figuras; números refeitos e conferidos (0 divergências) | `paper/README.md`, `results/numeros_resumo.md` |
 | 26/10 | App 2.1 sem internet: dependências locais em `app/pwa/vendor/` (13 arquivos, cerca de 36 MB, fora do Git), baixadas e conferidas pelo SHA-256 por `tools/baixar_dependencias_app.sh`; o `serve_https.py` confere a pasta ao subir e oferece baixar o que faltar | `app/pwa/README.md`, seção 7 |
 | 26/10 | Medição do app 2.1 no iPhone 17 Pro e no Galaxy S23 Ultra | `results/exp4_phone_latency.md` |
+| 26/10 | Sensibilidade dos pesos do nível do app: 353 configurações no DMD (uma mudança por vez e 300 sorteadas, com cada peso, teto e decaimento de 0,7 a 1,3 vez e os limiares 40 e 70 deslocados em até 10 pontos) | `results/app_sensibilidade_pesos.md`; log `results/logs/app_sensibilidade_pesos_20261026-224834.log` |
+| 26/10 | Teste independente do app em sono real: o motor do app em 24 pessoas da UTA-RLDD (todas as dos folds 2 e 4, regra fixada antes de rodar), um vídeo acordado e um sonolento de cada | `results/app_validacao_uta.md`; log `results/logs/app_validacao_uta_20261026-230247.log` |
 | 26/10 | Figura de amostras refeita só com o MRL Eye (a anterior tinha recortes do CEW, cuja licença proíbe redistribuição); figuras de reserva do artigo e `src/pipeline_b/run_all_eye.sh` foram para a Lixeira; o `run_all.sh` passou a gravar os logs do Exp. 3 e a rodar os controles do Exp. 5b | `docs/ESTRUTURA.md`, seção 3 |
 
 ## 3. Como verificar em 5 minutos
@@ -67,7 +71,7 @@ bash run_all.sh --dry-run                                     # o pipeline intei
 | `test_engine.mjs` | o motor do app (`engine.js`): EAR, piscadas, PERCLOS, bocejo, cabeça, nível e histerese | "217 passaram, 0 falharam", em menos de 1 s |
 | `test_features.py` | detector de piscadas, janelas de 10 s, sequências de 30 piscadas e rótulos do DMD | "19 passed", em cerca de 1 s |
 | `run_all.sh --dry-run` | a ordem das 11 etapas (`--lista`) e o comando de cada uma, inclusive `exp5b_robustez.py` na etapa exp5b | lista os comandos e termina sem rodar nada |
-| `conferir_numeros.py` | recalcula cada número de `paper/numeros.tex` e `poster/numeros.json` a partir dos CSV de `results/`, com leitura e formatação próprias | "615/615 ok" e "divergências 0", em poucos segundos |
+| `conferir_numeros.py` | recalcula cada número de `paper/numeros.tex` e `poster/numeros.json` a partir dos CSV de `results/`, com leitura e formatação próprias | "648/648 ok" e "divergências 0", em poucos segundos |
 
 O `conferir_numeros.py` reescreve a seção "Conferência automática" de `results/numeros_resumo.md` e compila um documento de teste com o tectonic; sem o tectonic instalado, use `--sem-latex`. Para ir além, escolha um número do artigo (por exemplo, 48,4) e procure-o em `results/numeros_resumo.md`, que diz o arquivo e a coluna de origem.
 
@@ -85,10 +89,10 @@ O `conferir_numeros.py` reescreve a seção "Conferência automática" de `resul
 | `src/experiments/exp5_transfer.py` | Exp. 5b: DMD → UTA-RLDD (A, B e C), 8 sensibilidades, controle do vídeo de referência, importância por permutação | referência de normalização separada da avaliação (0 janelas sobrepostas) |
 | `src/experiments/exp5b_robustez.py` (26/10) | controles da queda B − C: referência no vídeo de pouca vigilância, bootstrap em dois níveis com C treinado de novo, B com 13 sujeitos (20 sorteios), vazamento no cenário do Exp. 5b, ponto de operação da regra | antes das análises, refaz a queda principal e confere com o Exp. 5b (10,9 [6,7; 15,7] no RF e 9,8 [3,7; 16,0] na RL) |
 | `src/experiments/exp6_*.py` | Exp. 6: detecção de rosto, qualidade do EAR, taxa de disparo, luminância medida | DMD em movimento × parado como controle, pareado por motorista |
-| `src/experiments/make_paper_numbers.py`, `conferir_numeros.py` | todos os números do artigo e do pôster (615 em 26/10) → `paper/numeros.tex`, `poster/numeros.json`, `results/numeros_resumo.md` | recálculo independente: 0 divergências |
+| `src/experiments/make_paper_numbers.py`, `conferir_numeros.py` | todos os números do artigo e do pôster (648 em 26/10) → `paper/numeros.tex`, `poster/numeros.json`, `results/numeros_resumo.md` | recálculo independente: 0 divergências |
 | `app/pwa/` (demonstração, 2.1) | câmera → MediaPipe Face Landmarker (WASM/WebGL) → olhos (EAR + blendshape), bocejo (jawOpen/MAR), cabeça (matriz de pose) → nível de 0 a 100 com histerese → alarme sonoro; CNN e LSTM como estimativa; benchmark de 60 s enviado ao Mac; funciona sem internet com `vendor/` | 217 asserções em Node; validação offline no DMD e no navegador com 14 vídeos reais (`results/app_validacao*.md`) |
 | `app/android/` (Kotlin) | lógica anterior (1.0): PERCLOS e LSTM; benchmark nativo | nunca compilado (sem JDK e SDK); JUnit escrito, não executado |
-| `tools/` | obtenção de dados (UTA-RLDD, DMD), dependências do app (`baixar_dependencias_app.sh`, com conferência por SHA-256), importação do benchmark do celular, `atualizar_celular.sh` (um comando: importa → figura → números → artigo → pôster), validação do app | testado de ponta a ponta com os dados atuais |
+| `tools/` | obtenção de dados (UTA-RLDD, DMD), dependências do app (`baixar_dependencias_app.sh`, com conferência por SHA-256), importação do benchmark do celular, `atualizar_celular.sh` (um comando: importa → figura → números → artigo → pôster), `gerar_pdf_relatorio.py` (PDF deste relatório) e validação do app em `app_validacao/`: motor offline no DMD, app no navegador com vídeos reais, sensibilidade dos pesos (`sensibilidade_pesos.mjs`) e teste independente na UTA-RLDD (`validar_motor_uta.mjs`, com os sinais de `extrair_sinais_app.py --uta-folds`) | testado de ponta a ponta com os dados atuais; a sensibilidade só grava resultado se a configuração sem mudança reproduzir a validação do DMD |
 | `paper/`, `poster/` | artigo IEEE (`artigo.tex`, `refs.bib` verificado), pôster no template do professor | compilação com tectonic; PDF do pôster pelo Chrome headless, mudo |
 | `run_all.sh`, `requirements*.txt` | reprodução completa em 11 etapas (a etapa exp5b roda também os controles); dois ambientes (`.venv`, `.venv-mp`) com congelamento completo | `--dry-run`, `--smoke` |
 
@@ -255,6 +259,8 @@ O NITYMED não tem classe alerta, e nenhuma acurácia é calculada nele. Também
 **Validação.**
 - Offline: o mesmo `engine.js`, nas 16 sessões s5 do DMD (detecção, com anotação) e nas 17 sessões s1 (falso alarme em motoristas acordados, direção real).
 - No navegador: o app, rodando no Chrome headless mudo, recebe 14 trechos reais pela câmera falsa: DMD s5, UTA-RLDD alerta e sonolento, e NITYMED.
+- Teste independente em sono real (26/10): o mesmo motor, com a configuração final e sem o LSTM, em 24 pessoas da UTA-RLDD que não entraram no ajuste (todas as dos folds oficiais 2 e 4, regra fixada antes de rodar), com o vídeo acordado e o sonolento de cada uma. A calibração é a do app, nos 10 s iniciais de cada vídeo; numa variante, o vídeo sonolento usa a calibração do acordado. Sinais do mesmo Face Landmarker da PWA, em todos os quadros.
+- Sensibilidade dos pesos (26/10): nos mesmos sinais do DMD, só os números do nível mudam (pontos, tetos, decaimentos e limiares), uma mudança por vez e em 300 combinações sorteadas. A configuração sem mudança reproduz a validação do DMD.
 
 ## 7. Resultados
 
@@ -473,7 +479,7 @@ Regra × modelos no mesmo ponto de operação (`results/exp5b_robustez.md`, seç
 - Sem classe alerta noturna, não há acurácia. Nenhum limiar pode ser calibrado para a noite.
 - O NITYMED não entra na PP1. A autenticidade dos comportamentos dele não é documentada.
 
-### 7.8 App de demonstração, PWA 2.1 (`results/app_validacao_dmd.md`, `results/app_validacao.md`, `app/pwa/README.md`)
+### 7.8 App de demonstração, PWA 2.1 (`results/app_validacao_dmd.md`, `results/app_validacao.md`, `results/app_validacao_uta.md`, `results/app_sensibilidade_pesos.md`, `app/pwa/README.md`)
 
 | Medida | Resultado | Onde |
 |---|---|---|
@@ -485,11 +491,27 @@ Regra × modelos no mesmo ponto de operação (`results/exp5b_robustez.md`, seç
 | Bocejo (DMD s5) | revocação 0,638 sem a mão e 0,026 com a mão na boca (offline); 6 de 24 no navegador, nenhum com a mão | ambos |
 | UTA-RLDD, vídeos sonolentos (3 pessoas) | só 1 de 3 chegou ao vermelho (Fold3/31: 93,5% do tempo); os outros dois ficaram 100% verdes | navegador |
 | Cabeça | sem revocação medida: o DMD não anota cabeceio. Há só o teste sintético (0 eventos falsos com a cabeça parada) e casos isolados | navegador |
+| Sensibilidade dos pesos (300 combinações sorteadas) | falso alarme na direção real de 1,7% a 4,9% do tempo e vermelho na sonolência encenada de 56,2% a 72,9% (percentis 5 e 95); 291 das 300 mantêm o falso alarme até 5% e a sonolência encenada acima de 50%. O que mais pesa: o limiar de 70 e o teto de 60 pontos dos fechamentos | motor offline |
+
+Teste independente em sono real (`results/app_validacao_uta.md`): 24 pessoas da UTA-RLDD fora do ajuste, um vídeo acordado (KSS de 1 a 3) e um sonolento (KSS 8 e 9) de cada, 8,2 h avaliadas.
+
+| Medida | Calibração no próprio vídeo | Calibração do vídeo acordado |
+|---|---|---|
+| Acordados com algum alarme | 2 de 24 (0,46% do tempo em vermelho; 3 alarmes em 4,0 h) | igual |
+| Acordados que chegam ao amarelo | 5 de 24 | igual |
+| Sonolentos que chegam ao amarelo | 17 de 24 | 19 de 24 |
+| Sonolentos que chegam ao vermelho | 15 de 24 | 17 de 24 |
+| Pessoas com mais tempo fora do verde no vídeo sonolento (mais / igual / menos) | 16 / 7 / 1 | 19 / 5 / 0 |
+| AUC do % do tempo fora do verde, sonolento × acordado [IC 95%] | 0,812 [0,705; 0,918] | 0,855 [0,760; 0,948] |
+| AUC do nível médio [IC 95%] | 0,839 [0,736; 0,935] | 0,891 [0,811; 0,965] |
 
 **Leitura.**
 - O app mede sinais visíveis, não o estado interno. Quem relata sono sem mostrar sinais não é acusado.
 - A regra foi escolhida por ser explicável. No mesmo falso alarme, ela acha tantas janelas sonolentas quanto a RL do DMD (seção 7.7), sem treino e com o porquê de cada alarme.
-- Os pesos do nível são escolhas de projeto, não ajustes em dados de sonolência real, e a validação usa os mesmos dados em que as regras foram escolhidas.
+- Os pesos do nível são escolhas de projeto, não ajustes em dados de sonolência real, e a validação no DMD usa os mesmos dados em que as regras foram escolhidas. Variar os pesos em até 30% e os limiares em até 10 pontos quase não muda o comportamento nesses dados (origem de cada número: `app/pwa/README.md`, seção 13).
+- O teste na UTA-RLDD não teve ajuste. Com sono real declarado, o app saiu do verde em 17 de 24 sonolentos e em 5 de 24 acordados. Ele reage a sinais visíveis, não ao sono declarado: 7 sonolentos ficaram verdes, e em 6 deles o app não viu nenhum fechamento de 0,5 s ou mais, bocejo ou queda da cabeça.
+- Calibrar já com sono atrapalha: em 8 dos 24 vídeos sonolentos, os olhos ficaram fechados em mais de 10% da calibração. Com a calibração do vídeo acordado, a AUC sobe para 0,855.
+- Essas pessoas estavam sentadas, sem dirigir. O falso alarme em movimento continua medido só pela direção real do DMD.
 - A amostra do navegador é pequena (cerca de 40 min).
 - O app funciona sem internet com `app/pwa/vendor/` completa; com internet, a biblioteca do MediaPipe envia telemetria de uso a um servidor do Google depois de cerca de 60 s, sem quadros de vídeo (`README.md`, seção 9).
 - Limites conhecidos: `app/pwa/README.md`, seção 10.
@@ -517,7 +539,7 @@ As datas da coluna "Quando" saem dos logs de `results/logs/` (o nome de cada log
 | F2 Pipeline A e Exp. 1 | 14/09 a 11/10 | Exp. 1 (5 modelos, 4 esquemas, BSA e VA); extrator próprio validado (Exp. 5a); janelas de 10 s | Exp. 1 em 20/09 (`exp1_20260920-182858.log`); Exp. 5a em 27/09 (`exp5a_validacao_20260927-221239.log`) | concluída antes do prazo |
 | F3 Pipeline B | 28/09 a 25/10 | EyeNet (62.865 parâmetros) no MRL e no CEW, por óculos, iluminação, reflexo e sensor; MobileNetV3 como referência | 20/09 (`exp3_eye_state_train.log`, `exp3_mobilenetv3.log`) | concluída antes do prazo |
 | F4 Exp. 2 e 3 do plano (treino atuado, teste real, por condição) | 12 a 25/10 | Exp. 5b (DMD → UTA-RLDD) com 8 sensibilidades; Exp. 6 (noite); Exp. 2 (vazamento) e Exp. 3 (MRL ↔ CEW) como complementares; controles da queda do Exp. 5b | Exp. 2 em 20/09 (`exp2_20260920-183128.log`); Exp. 5b e 6 em 27/09 (`exp5b_transferencia.log`, `exp6_final_noite.log`); controles em 26/10 (`exp5b_robustez_20261026-2051.log`) | concluída em 27/09; os controles, pedidos pelas revisões simuladas, entraram em 26/10 |
-| F5 Exp. 4 e consolidação | 12/10 a 08/11 | int8 e desktop; PWA 2.1 validada; app sem internet; medição do app 2.1 nos celulares; números conferidos | Exp. 4 desktop em 20/09 (`exp4_export_tflite.log`); validação do app em 27/09 (`app_validacao_dmd_20260927-225227.log`, `app_validacao_20260927-232519.log`, `pwa_test_engine_20260927-231003.log`); app 1.0 no iPhone em 27/09 (`results/phone/`); números refeitos em 28/09 e 06/10 (`atualizar_celular_*.log`) e em 26/10 (`results/numeros_resumo.md`); app 2.1 nos celulares em 26/10 (`results/exp4_phone_latency.md`) | dentro do prazo |
+| F5 Exp. 4 e consolidação | 12/10 a 08/11 | int8 e desktop; PWA 2.1 validada, inclusive num teste independente em sono real; app sem internet; medição do app 2.1 nos celulares; números conferidos | Exp. 4 desktop em 20/09 (`exp4_export_tflite.log`); validação do app em 27/09 (`app_validacao_dmd_20260927-225227.log`, `app_validacao_20260927-232519.log`, `pwa_test_engine_20260927-231003.log`); app 1.0 no iPhone em 27/09 (`results/phone/`); números refeitos em 28/09 e 06/10 (`atualizar_celular_*.log`) e em 26/10 (`results/numeros_resumo.md`); app 2.1 nos celulares em 26/10 (`results/exp4_phone_latency.md`); sensibilidade dos pesos e teste independente do app na UTA-RLDD em 26/10 (`app_sensibilidade_pesos_20261026-224834.log`, `app_validacao_uta_20261026-230247.log`) | dentro do prazo |
 | F6 Comunicação | 28/09 a 16/11 | artigo e pôster reescritos para DMD, NITYMED, Exp. 5a, 5b e 6 e app 2.1; artigo com 7 páginas em 06/10 e reescrito depois da banca simulada em 26/10 (8 páginas); pôster de 06/10, refeito com os números novos por `bash tools/atualizar_celular.sh` | `atualizar_celular_20260928_014152.log`, `atualizar_celular_20261006_161528.log`; `paper/numeros.tex` de 26/10 | em andamento: falta a leitura final da equipe e do orientador |
 
 **O que mudou em relação ao planejamento** (justificativa completa em `docs/TROCA_DATASETS.md`):
@@ -547,7 +569,7 @@ As datas da coluna "Quando" saem dos logs de `results/logs/` (o nome de cada log
 Próximos passos, com responsável sugerido conforme a divisão do plano:
 
 1. Feito (04/10). O orientador autorizou a troca de bases verbalmente; registro em `docs/TROCA_DATASETS.md`.
-2. Feito (26/10). Controles do Exp. 5b, reescrita do artigo depois da banca simulada e app sem internet.
+2. Feito (26/10). Controles do Exp. 5b, reescrita do artigo depois da banca simulada, app sem internet, sensibilidade dos pesos do app e teste independente do app em sono real na UTA-RLDD.
 3. 26/10. Medição do app 2.1 no iPhone 17 Pro e no Galaxy S23 Ultra; depois, `bash tools/atualizar_celular.sh` refaz tabela, figura, números, artigo e pôster (Bruno Rodolfo, com o André). Passo a passo: `docs/GUIA_EQUIPE.md`, seção 1.
 4. Até 31/10 (Entrega 02). Este relatório lido pelos quatro e o PDF (`docs/ENTREGA02_relatorio.pdf`) enviado no Canvas; commit, tag `entrega02` e push, depois do "ok" do André (`docs/GUIA_EQUIPE.md`, seção 6) (Bruno Rodolfo).
 5. Até 09/11 (artigo e pôster). Leitura final do artigo pelos quatro e pelo orientador; conferir as 8 páginas e as citações obrigatórias do NITYMED e do DMD depois de cada edição; pôster final com teste de legibilidade impresso (Paulo, com revisão de todos).

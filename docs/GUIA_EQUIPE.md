@@ -153,7 +153,7 @@ duas câmeras). Ela calibra o EAR nos primeiros segundos, com os olhos abertos, 
 2. "É o que medimos no Exp. 3: com óculos, a transferência do estado do olho cai para AUC 65,1, contra 93,4 sem óculos. No Exp. 6, à noite a qualidade do sinal cai, mas o carro em movimento, de dia, já derruba o sinal quase tanto quanto a noite."
 3. "A gente ficou com a regra por sinais visíveis, mas não porque ela acerta mais. Com o mesmo falso alarme, a regressão logística treinada no DMD acha tantas janelas sonolentas quanto a regra (24,7% contra 24,1%). A regra ganha por explicar cada alarme e por não precisar de treino. Na direção real do DMD, o app ficou 3,3% do tempo em vermelho, e o falso alarme que sobrou é de um motorista que olha para baixo."
 
-Se perguntarem sobre sono real, a resposta honesta é do Exp. 5b: o modelo treinado em sono encenado reconhece 82,0% das janelas alertas reais, mas só 48,4% das sonolentas. E pessoas que relatam sono sem mostrar sinais não são detectadas pelo app.
+Se perguntarem sobre sono real, a resposta honesta é do Exp. 5b: o modelo treinado em sono encenado reconhece 82,0% das janelas alertas reais, mas só 48,4% das sonolentas. O app foi testado à parte em 24 pessoas da UTA-RLDD fora do ajuste, sentadas e sem dirigir: alarme em 2 dos 24 vídeos acordados e vermelho em 15 dos 24 sonolentos. Os outros sonolentos não mostraram sinais visíveis, e o app não os detecta.
 
 Se perguntarem sobre privacidade: o vídeo não sai do celular. Com internet, a biblioteca do MediaPipe manda telemetria de uso para um servidor do Google depois de cerca de 60 s, sem imagem; sem internet, nada sai do aparelho.
 
@@ -171,7 +171,7 @@ Para falar, não para ler. Cada um treina com as próprias palavras; o important
 >
 > A gente também mediu um erro de protocolo fácil de cometer: se trechos do mesmo vídeo caem no treino e no teste, a acurácia pula de 54,2% para 99,5%.
 >
-> E fizemos um app que roda no próprio celular, sem mandar vídeo para lugar nenhum, e funciona até sem internet. Ele usa regras simples de olhos, bocejo e cabeça e sempre mostra por que alarmou. Quer ver?
+> E fizemos um app que roda no próprio celular, sem mandar vídeo para lugar nenhum, e funciona até sem internet. Ele usa regras simples de olhos, bocejo e cabeça e sempre mostra por que alarmou. A gente testou o app em 24 pessoas com sono de verdade, que não entraram em nenhum ajuste: ele alarmou em 15 dos 24 vídeos com sono e em 2 dos 24 sem sono. Eram pessoas sentadas, não dirigindo. Quer ver?
 
 Se a pessoa quiser mais detalhe:
 - "Então o modelo não serve?" Ele fica acima do acaso (AUC 69,2 na UTA-RLDD), mas deixa passar metade do sono real. Na regressão logística, a perda fica de 5,4 a 9,8 pontos de AUC em todas as formas de normalizar. No Random Forest, a perda depende de como normalizamos os dados de cada pessoa.
@@ -179,8 +179,29 @@ Se a pessoa quiser mais detalhe:
 - "E esses 90% da literatura, são vazamento?" Não dá para dizer isso. Os 90% do NTHU-DDD foram medidos com outras pessoas no teste. O que a gente mostrou é que, se o mesmo vídeo cai nos dois lados, o número infla muito; com outra pessoa no teste, isso não acontece.
 - "E à noite?" O sinal do olho piora (SNR 7,2 contra 21,5 na UTA-RLDD), mas o carro andando, de dia, já piora quase igual (8,7).
 - "E com óculos?" O estado do olho transfere pior entre bases: AUC 65,1 com óculos, contra 93,4 sem. Óculos escuros a gente não conseguiu testar com dado real.
+- "E com sono de verdade, funciona?" Testamos em 24 pessoas da UTA-RLDD que não entraram no ajuste, sentadas e sem dirigir. Houve alarme em 2 dos 24 vídeos acordados, e 15 dos 24 sonolentos chegaram ao vermelho; a AUC entre sonolento e acordado foi 0,812. Mas 7 sonolentos ficaram verdes: o app reage a olho fechado e bocejo, e quem diz que está com sono sem mostrar esses sinais não é pego.
 - "Funciona no carro de verdade?" Não testamos em campo. Em vídeos de direção real com motoristas acordados, o app ficou 3,3% do tempo em vermelho.
 - "Quanto tempo leva no celular?" Ver `results/exp4_phone_latency.md`.
+
+### 3.1 "Como vocês definiram as regras e os pesos?"
+
+O professor já perguntou ("cálculo ou achismo?"). Resposta curta, para falar com as próprias palavras. A tabela
+completa, com a origem de cada número e como ele foi testado, está em `app/pwa/README.md`, seção 13.
+
+> Nem tudo veio do mesmo lugar, e a gente separa em três tipos.
+>
+> Uma parte vem da literatura: o PERCLOS em 60 segundos contando só os fechamentos lentos, de meio segundo ou mais, e o microssono de 1 segundo, que é onde começa a faixa de 1 a 15 segundos usada para microssono. O limite de 15% do PERCLOS é nosso: é mais alto que os 8% a 12% de outros trabalhos, para o app não alarmar à toa.
+>
+> Outra parte a gente escolheu comparando variantes com a anotação quadro a quadro do DMD: o limiar do EAR, a regra do olho fechado, que saiu de 11 variantes, e o bocejo. Por exemplo, com 1 segundo de boca aberta o app achava mais bocejos, mas na direção real, com motoristas acordados, o tempo em vermelho subia de 3,3% para 5,0%. Por isso ficou 1,5 segundo.
+>
+> E os pontos do nível são regra de projeto, com critério escrito: os pontos de um sinal só não chegam ao vermelho, dois sinais diferentes juntos chegam, microssono e cabeça caindo de olhos fechados levam direto ao vermelho, e evento antigo perde peso em 2 a 5 minutos.
+>
+> A gente não otimizou esses pesos porque não existe base de sono real com esses sinais marcados ao longo do tempo. Ajustar no DMD, que é encenado, seria repetir o problema que o próprio trabalho mediu. Para ver se o resultado depende muito dos pesos, variamos todos em até 30% e os limiares 40 e 70 em até 10 pontos, em 300 combinações sorteadas. O falso alarme na direção real ficou entre 1,7% e 4,9% do tempo, perto dos 3,3% da configuração final, e 97% das combinações continuaram boas. O que mais mexe é o limiar de 70 e o teto dos fechamentos, e é isso que a gente calibraria primeiro com dados de sono real.
+
+Se insistirem ("então é achismo?"): não é otimização, mas também não é chute. Cada número tem origem escrita, os
+que dava para comparar foram comparados no DMD, e o "Por quê?" do app mostra de onde vem cada ponto. Num teste
+independente, em 24 pessoas da UTA-RLDD que não entraram no ajuste, o app alarmou 15 dos 24 vídeos sonolentos e 2 dos
+24 acordados. O que ainda falta é testar dirigindo: essas pessoas estavam sentadas.
 
 ## 4. Overleaf
 
@@ -295,16 +316,17 @@ Quase tudo já tem resposta no texto:
 - Regra × modelos: no mesmo falso alarme, a RL do DMD acha tantas janelas sonolentas quanto a regra.
 - NITYMED sem classe alerta: ele só entra como condição noite, sem acurácia.
 - Celular: aparelhos, execuções e versão do app em `results/exp4_phone_latency.md`; o app Android nativo não foi avaliado.
-- Pesos do nível do app escolhidos, não ajustados, e validação feita nos mesmos dados em que as regras foram escolhidas (números de desenvolvimento).
+- Pesos do nível do app escolhidos, não ajustados, e validação feita nos mesmos dados em que as regras foram escolhidas (números de desenvolvimento). Resposta pronta na seção 3.1.
+- Validação do app fora do ajuste: o teste independente na UTA-RLDD (24 pessoas, Tabela V) responde, mas com pessoas sentadas e o sono declarado como rótulo.
 
 Se recebermos pareceres sobre o nosso artigo, as correções entram até 14/11. Qualquer número novo passa por `make_paper_numbers.py`, nunca por digitação.
 
-## 6. Subir para o GitHub (comandos para a equipe; ninguém executou; só com o "ok" do André)
+## 6. Subir para o GitHub (push só com o "ok" do André)
 
-**Situação:**
+**Situação (26/10, noite):**
 - o repositório `github.com/BrunoRodolfoo/deteccao-sonolencia` é público;
-- o último push foi em 26/08 (`d8154ae`);
-- todo o trabalho de setembro e outubro está sem commit.
+- todo o trabalho até a noite de 26/10 foi enviado nesse dia, em commits separados por assunto no nome de quem fez;
+- falta só a medição do app 2.1 no iPhone e no Galaxy S23 Ultra, que entra num commit próprio, de quem medir.
 
 O `.gitignore` já exclui:
 - `data/` e os vídeos;
@@ -322,7 +344,7 @@ git status --short -uall | awk '{print $2}' | while read f; do [ -f "$f" ] && ec
 git status --short -uall | grep -iE "\.(jpg|jpeg|mp4|mov|y4m)$"   # deve sair vazio (a figura com rostos é ignorada)
 git check-ignore -v results/figures/exp5_dmd_verificacao_visual.jpg app/.pwa-cert app/pwa/vendor   # as três devem aparecer
 git add -A
-git commit -m "Entrega 02: Exp. 1 a 6 (UTA-RLDD, DMD, NITYMED, MRL e CEW), app PWA 2.1, artigo, pôster e docs"
+git commit -m "Entrega 02: testes do app (sensibilidade dos pesos e sono real na UTA-RLDD) e ajustes finais"
 git tag -a entrega02 -m "Entrega 02 - 31/10/2026"
 git push origin main && git push origin entrega02
 ```
@@ -372,7 +394,7 @@ Confirme que o repositório continua público (o artigo e o QR code do pôster a
 - [ ] Pôster impresso ou em tela, conforme a disciplina; PDF de reserva no celular
 - [ ] Dois ensaios da demonstração sem internet (seção 2); volume em 100% só na hora; plano B com o vídeo gravado
 - [ ] Pitch de 60 a 90 s ensaiado pelos quatro (seção 3)
-- [ ] Respostas curtas prontas (seção 3): PP1, vazamento, noite × movimento, regra × modelos, falso alarme do app, limites (mão na boca, óculos escuros, cabeça sem revocação medida)
+- [ ] Respostas curtas prontas (seção 3): PP1, vazamento, noite × movimento, regra × modelos, falso alarme do app, limites (mão na boca, óculos escuros, cabeça sem revocação medida); origem das regras e dos pesos do app (seção 3.1)
 
 ## 8. Som no iPhone
 

@@ -23,7 +23,7 @@ files (3)/
 | Pasta | Tamanho | Git | Papel |
 |---|---:|---|---|
 | `src/` | 1,5 MB | sim | código dos experimentos (detalhe abaixo) |
-| `tools/` | 0,2 MB | sim | obtenção das bases, dependências do app, importação do benchmark do celular, validação do app |
+| `tools/` | 0,3 MB | sim | obtenção das bases, dependências do app, importação do benchmark do celular, PDF do relatório, validação do app |
 | `app/pwa/` | 0,9 MB | sim | app de demonstração (PWA 2.1), a versão usada na banca; ver `app/pwa/README.md` |
 | `app/pwa/vendor/` | cerca de 36 MB | não | dependências locais do app (MediaPipe com WASM, `face_landmarker.task`, TensorFlow.js e tfjs-tflite; 13 arquivos). Com ela, o app funciona sem internet. Baixada e conferida por `bash tools/baixar_dependencias_app.sh` |
 | `app/android/` | 4,3 MB | parcial | app Android nativo: mantém a lógica 1.0 e nunca foi compilado. Ignorados: `*.tflite` e `face_landmarker.task` em `assets/` (baixados por `app/android/tools/fetch_assets.sh`) e as pastas de build. `app/android/tools/import_phone_benchmark.py` continua, porque o importador de `tools/` o usa |
@@ -36,7 +36,7 @@ files (3)/
 | `data/` | 142 GB | não (só `data/README.md`) | bases, sinais e características (seção 2.2). Caro de refazer: não apagar |
 | `.venv/` | 2,8 GB | não | Python 3.11: TensorFlow 2.21, sklearn, treino e figuras (`requirements.txt`, `requirements-lock.txt`) |
 | `.venv-mp/` | 730 MB | não | MediaPipe 0.10.21 + OpenCV, só para extrair sinais de vídeo e rodar a demo da webcam (`requirements-mediapipe*.txt`) |
-| `.git/` | 24 MB | não se aplica | histórico; último push em 26/08 (HEAD `d8154ae`); o trabalho novo ainda está sem commit |
+| `.git/` | 52 MB | não se aplica | histórico: os commits de 26/10/2026, separados por assunto, foram enviados ao GitHub na mesma noite (antes, o último envio era de 26/08, `d8154ae`) |
 
 Arquivos soltos na raiz do repositório: `README.md`, `run_all.sh` (pipeline completo; `--lista` mostra as
 11 etapas), `requirements.txt`, `requirements-lock.txt`, `requirements-mediapipe.txt`,
@@ -60,14 +60,17 @@ deteccao-sonolencia/
 │   ├── prepare_data.py, watch_downloads.sh, download_dmd.py     obtenção das bases
 │   ├── baixar_dependencias_app.sh                               app/pwa/vendor/ (app sem internet)
 │   ├── import_phone_benchmark.py, atualizar_celular.sh          celular -> figura, números, artigo e pôster
-│   └── app_validacao/     validação do app com vídeos reais (câmera falsa do Chrome e motor offline no DMD)
+│   ├── gerar_pdf_relatorio.py                                   docs/ENTREGA02_relatorio.pdf a partir do .md
+│   └── app_validacao/     validação do app: câmera falsa do Chrome, motor offline no DMD (validar_motor_dmd.mjs),
+│                          sensibilidade dos pesos (sensibilidade_pesos.mjs) e teste independente na UTA-RLDD
+│                          (validar_motor_uta.mjs, com os sinais de extrair_sinais_app.py --uta-folds)
 ├── app/
 │   ├── pwa/               index.html, app.js, engine.js, sw.js, models/ (TFLite + JSON), serve_https.py,
 │   │                      test_engine.mjs, README.md e vendor/ (fora do Git)
 │   └── android/           projeto Gradle (Kotlin), lógica 1.0, não compilado
 ├── models/                (seção 2.3)
 ├── results/
-│   ├── exp1_* a exp6_*, app_validacao*, sinais_*   relatórios .md e tabelas .csv finais
+│   ├── exp1_* a exp6_*, app_validacao*, app_sensibilidade_pesos.*, sinais_*   relatórios .md e tabelas .csv finais
 │   │                      (inclui exp5b_robustez.{csv,md}, de 26/10)
 │   ├── figures/           figuras de resultados (.pdf/.png), inclusive amostras_mrl (só recortes do MRL Eye)
 │   ├── phone/             benchmarks do celular (JSON e CSV por quadro, só números) + aparelhos.json
@@ -87,7 +90,7 @@ deteccao-sonolencia/
 | `uta_rldd_videos/` | 112 GB | vídeos da UTA-RLDD, 5 folds (de 20 a 25 GB cada) |
 | `dmd/` | 27 GB | DMD: 14 sujeitos, sessões s1, s2 e s3 (distração) e s5 (sonolência), READMEs oficiais |
 | `nitymed/` | 1,3 GB | NITYMED 720p (126 vídeos extraídos) + `nitymed_720p.zip` (lido por `exp6_noite.py` na ficha de integridade) + `index.csv` |
-| `signals/` | 768 MB | sinais por quadro (EAR, MAR, pose) de `uta/`, `dmd/`, `nitymed/`; `app_headless/` e `app_tasks/` são da validação do app |
+| `signals/` | 848 MB | sinais por quadro (EAR, MAR, pose) de `uta/`, `dmd/`, `nitymed/`; `app_headless/` e `app_tasks/` são da validação do app: `app_tasks/dmd/` (17 MB) e `app_tasks/uta/` (cerca de 80 MB, 48 vídeos dos folds 2 e 4, do teste independente de 26/10) |
 | `mrl_eye/` | 460 MB | MRL Eye extraído (84.898 imagens) + `index.csv` |
 | `cache/` | 128 MB | caches do Exp. 3 (`*_48.npz`) e o modelo `face_landmarker` do MediaPipe |
 | `features/final/` | 64 MB | piscadas, janelas, sequências, luminância e vídeos do Exp. 6 (rodada final) |
@@ -149,23 +152,13 @@ as sessões e folds.
 
 Saíram 7 pastas `__pycache__/`, `.pytest_cache/` e `data/signals/_teste/` (saída do teste rápido de extração).
 
-## 4. O que o próximo commit leva
+## 4. O que está no GitHub
 
-Em 26/10/2026 (noite), `git status --short -uall` lista 363 caminhos (5 modificados e 358 novos), com
-79,4 MB, já contando o PDF do relatório:
+Todo o trabalho até a noite de 26/10/2026 foi enviado ao GitHub nesse dia, em commits separados por assunto: código,
+resultados e logs dos experimentos, os testes do app (sensibilidade dos pesos e teste independente na UTA-RLDD),
+o artigo, o pôster e estes documentos. Fica para depois só a medição do app 2.1 no iPhone e no Galaxy S23 Ultra.
 
-| Pasta | Tamanho |
-|---|---:|
-| `results/` | 52,2 MB |
-| `models/` | 19,2 MB |
-| `poster/` | 4,2 MB |
-| `src/` | 1,1 MB |
-| `app/` | 0,9 MB |
-| `docs/` | 0,9 MB |
-| `paper/` | 0,7 MB |
-| `tools/` e raiz | 0,2 MB |
-
-Depois do commit, a árvore versionada fica com cerca de 105 MB em 386 arquivos. O maior arquivo é
+Com esse commit, a árvore versionada fica com cerca de 105 MB em 395 arquivos. O maior arquivo é
 `results/exp5b_predicoes.csv` (32 MB), abaixo do aviso de 50 MB do GitHub. A lista não inclui `data/`
 (só `data/README.md`), `.venv*`, caches, certificados, chaves, `app/pwa/vendor/`, `models/exp1/` nem `models/exp6/`.
 Esses números mudam a cada arquivo novo; refaça a conta antes do commit (comando abaixo).

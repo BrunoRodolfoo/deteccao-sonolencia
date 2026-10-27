@@ -4,7 +4,7 @@ Esta pasta é preenchida localmente; o `.gitignore` exclui tudo, menos este arqu
 público: **nunca** faça commit de vídeos, quadros, sinais por quadro ou recortes das bases. Papel de cada
 base, licenças e citações obrigatórias: `README.md`, seção 3. Espaço usado nesta máquina (conferido em
 26/10/2026 com `du -sh`): 112 GB (UTA-RLDD) + 27 GB (DMD) + 1,3 GB (NITYMED) + 0,5 GB (MRL + CEW, já
-extraídos) + cerca de 0,9 GB de derivados (sinais, características e caches).
+extraídos) + cerca de 1 GB de derivados (sinais, características e caches).
 
 ## Estrutura esperada
 
@@ -20,7 +20,7 @@ data/
 ├── cew/cew_eyes_24x24/, cew/cew_faces_100x100/                                           -> Exp. 3
 ├── cache/                     recortes 48x48 (*.npz) + face_landmarker (gerados)
 ├── signals/<base>/*.npz       sinais por quadro (EAR, MAR, pose), gerados no .venv-mp
-│      app_tasks/, app_headless/  sinais e registros da validação do app (só números)
+│      app_tasks/{dmd,uta}/, app_headless/  sinais e registros da validação do app (só números)
 └── features/final/<base>/     piscadas, janelas de 10 s (5/15 s), sequências (gerados)
 ```
 
@@ -114,5 +114,6 @@ por DMD + NITYMED: `docs/TROCA_DATASETS.md`.
 | `signals/{dmd,nitymed,uta}/` | `src/features/extract_signals.py --dataset <base>` | `.venv-mp` |
 | `features/final/<base>/` | `bash src/features/run_features.sh` | `.venv` |
 | `signals/app_tasks/dmd/` | `tools/app_validacao/extrair_sinais_app.py` | `.venv-mp` |
+| `signals/app_tasks/uta/` (cerca de 80 MB, 48 vídeos dos folds 2 e 4; teste independente do app) | `tools/app_validacao/extrair_sinais_app.py --uta-folds 2 4 --uta-rotulos 0 10`, lido por `tools/app_validacao/validar_motor_uta.mjs` | `.venv-mp` |
 | `signals/app_headless/` | `tools/app_validacao/rodar_app_video.mjs` (Chrome headless, mudo) | node |
 | `cache/` | `src/pipeline_b/datasets.py` | `.venv` |
