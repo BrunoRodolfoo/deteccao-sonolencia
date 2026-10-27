@@ -1,0 +1,189 @@
+# Sensibilidade dos pesos do nível do app no DMD, 2026-10-27T01:48:34.571Z
+# comando (na raiz do repositório): node tools/app_validacao/sensibilidade_pesos.mjs
+# node v22.23.2; 6 thread(s) em paralelo; 10 núcleos
+# motor: app/pwa/engine.js (md5 ef2c9d3e85dc51bcdb582c9b5a34d354, modificado em 2026-10-26 21:29:28)
+# configurações: 353 (1 final, 52 com uma mudança, 300 sorteadas com semente 42)
+# CFG.score final = {"perclos":{"from":0.075,"at":0.15,"points":40,"cap":60},"longClosure":{"points":25,"decayMs":120000,"countMs":60000},"microsleep":{"points":25,"decayMs":120000},"closuresCap":60,"yawn":{"points":25,"decayMs":300000,"cap":50},"head":{"points":30,"decayMs":300000,"cap":60},"blinkDur":{"from":1.25,"at":2,"points":20,"cap":20,"minBlinks":5,"windowMs":120000},"ml":{"points":10,"minProb":0.6,"consecutive":5,"minBase":40},"postForced":{"floor":40,"holdMs":60000},"forcedFloor":75,"maxFallPerS":3}; CFG.levels final = {"attention":40,"attentionExit":35,"drowsy":70,"drowsyExit":60}
+# sinais: data/signals/app_tasks/dmd (33 vídeos: 17 s1, 16 s5), carregados em 1.1 s
+final avaliada em 0.9 s: s1 3.3122 % vermelho, 4 alarmes; s5 68.5594 % vermelho, 34 alarmes
+
+## Conferência com a linha "final" de results/app_validacao_dmd_ajuste_final.csv
+  s1_min: referência 63.2533, agora 63.2533
+  s1_pct_vermelho: referência 3.3122, agora 3.3122
+  s1_pct_amarelo: referência 4.1241, agora 4.1241
+  s1_alarmes: referência 4, agora 4
+  s1_alarmes_h: referência 3.7943, agora 3.7943
+  s1_avisos_h: referência 1.8971, agora 1.8971
+  s1_microssonos: referência 8, agora 8
+  s1_fech05_1s: referência 15, agora 15
+  s1_bocejos: referência 0, agora 0
+  s1_quedas_cabeceios: referência 1, agora 1
+  s5_min: referência 46.6420, agora 46.6420
+  s5_pct_vermelho: referência 68.5594, agora 68.5594
+  s5_pct_amarelo: referência 9.8254, agora 9.8254
+  s5_alarmes: referência 34, agora 34
+  s5_microssonos: referência 134, agora 134
+  s5_bocejos: referência 31, agora 31
+  s5_revoc_fech1: referência 0.9204, agora 0.9204
+  s5_micro_revoc_anot1s: referência 104/113, agora 104/113
+OK: os 18 números conferidos são idênticos (mesma precisão do CSV de referência).
+  25/352 configurações (8 s)
+  50/352 configurações (14 s)
+  75/352 configurações (18 s)
+  100/352 configurações (22 s)
+  125/352 configurações (27 s)
+  150/352 configurações (33 s)
+  175/352 configurações (39 s)
+  200/352 configurações (47 s)
+  225/352 configurações (53 s)
+  250/352 configurações (60 s)
+  275/352 configurações (68 s)
+  300/352 configurações (76 s)
+  325/352 configurações (83 s)
+  350/352 configurações (90 s)
+  352/352 configurações (90 s)
+
+motor sem mudança durante a execução (md5 ef2c9d3e85dc51bcdb582c9b5a34d354)
+
+## Definições fixas: eventos detectados e vermelho forçado iguais aos da final em 353 de 353 configurações
+  s1: {"bocejo":0,"queda":1,"cabeceio":0,"fechamento":15,"microssono":8,"cabeca_baixa":0}; s5: {"bocejo":31,"queda":5,"cabeceio":1,"fechamento":95,"microssono":134,"cabeca_baixa":4}
+
+  -> results/app_sensibilidade_pesos.csv (353 linhas)
+  -> results/app_sensibilidade_pesos.md
+
+# Sensibilidade dos pesos do nível do app (DMD)
+
+Gerado em 2026-10-27T01:50:06.669Z por `tools/app_validacao/sensibilidade_pesos.mjs` em 92 s (6 threads; log: `results/logs/app_sensibilidade_pesos_20261026-224834.log`). Tabela completa, uma linha por configuração e com todos os fatores: `results/app_sensibilidade_pesos.csv`.
+
+**Pergunta.** Os limiares de detecção de cada sinal (olho fechado, bocejo, cabeça) foram escolhidos comparando variantes contra a anotação do DMD (`results/app_validacao_dmd.md`). Já os números do nível de 0 a 100 (pontos por evento, tetos, decaimentos e os limiares 40 e 70) são regras de projeto. Aqui se mede quanto o comportamento do app muda quando esses números mudam.
+
+**Como.** Os mesmos sinais e a mesma calibração da validação offline (`tools/app_validacao/validar_motor_dmd.mjs`): o monitor completo do app (`app/pwa/engine.js`, importado sem cópia) roda quadro a quadro nos 33 vídeos do DMD, 17 de direção real com motoristas acordados (s1, 63,3 min depois da calibração; todo vermelho ali é falso alarme) e 16 de sonolência encenada com o carro parado (s5, 46,6 min). Só mudam os números do nível (`CFG.score` e `CFG.levels`), em 353 configurações. Ficam fixos as definições dos sinais (olho fechado, PERCLOS e as suas rampas de 7,5 % e 15 %, bocejo, cabeça), o microssono de 1 s e a cabeça caída com olhos fechados, que são os dois vermelhos forçados, e o alarme. O LSTM não roda offline (como na validação existente), então o peso dele não tem efeito aqui.
+
+**Conferência.** A configuração sem mudança reproduz a linha `final` de `results/app_validacao_dmd_ajuste_final.csv` nos 18 números comparados, na precisão do arquivo (minutos, % do tempo em vermelho e em amarelo, alarmes, avisos por hora, eventos detectados e fechamentos anotados com vermelho imediato): s1 com 3,3 % do tempo em vermelho (3,3122), 4,1 % em amarelo e 4 alarmes (3,79 por hora); s5 com 68,6 % em vermelho (68,5594) e 34 alarmes.
+
+## De onde vem o vermelho
+
+Configuração final. "Pelo nível" quer dizer o nível de 0 a 100 acima do limiar de SONOLENTO (entra em 70; quando entrou pelo nível, sai abaixo de 60).
+
+| Parte do tempo | s1, direção real | s5, sonolência encenada |
+|---|---:|---:|
+| Vermelho forçado: olhos fechados há 1 s ou mais, ou cabeça caída com olhos fechados | 0,11 % | 3,63 % |
+| Vermelho pelo nível, logo depois de um vermelho forçado (no mesmo episódio de vermelho) | 3,21 % | 52,98 % |
+| Vermelho pelo nível, sem vermelho forçado antes no mesmo episódio | 0,00 % | 11,94 % |
+| **Total em vermelho** | **3,31 %** | **68,56 %** |
+
+Em s5, só 3,6 % do tempo é vermelho forçado, porque ele dura apenas enquanto os olhos estão fechados (ou a cabeça caída). Os outros 64,9 % vêm do nível, 82 % deles logo depois de um forçado: os pontos do próprio microssono, dos fechamentos e do PERCLOS seguram o vermelho depois que os olhos abrem. Em s1, 0,11 % é forçado e 3,21 % vem do nível; 99,9 % desse vermelho está em episódios que começaram com um vermelho forçado, todos em 1 sessão de 17 (gA_5_s1), a mesma que lidera as sessões s1 com mais tempo em SONOLENTO em `results/app_validacao_dmd.md`.
+
+O vermelho forçado e todos os eventos detectados saíram idênticos nas 353 configurações, porque dependem só das definições fixas: em s1, 8 microssonos, 15 fechamentos de 0,5 a 1 s, 0 bocejos, 1 queda e 0 cabeceios da cabeça; em s5, 134 microssonos, 95 fechamentos de 0,5 a 1 s, 31 bocejos, 5 quedas e 1 cabeceio da cabeça. Pelo mesmo motivo, a revocação de eventos anotados que a validação existente mede no app também não muda com os pesos: 104 de 113 fechamentos anotados de 1 s ou mais em s5 deram vermelho imediato em todas as configurações.
+
+## Uma mudança por vez
+
+Cada linha é a configuração final com UMA mudança. Grupos de pontos: os pontos e o teto do próprio grupo vezes o fator; o teto de fechamentos e microssonos somados, que os dois grupos dividem, tem linha própria; no microssono mudam só os pontos que ele soma no nível depois que os olhos reabrem (o vermelho imediato não muda). Decaimentos: o tempo até os pontos de um evento sumirem, vezes 0,5 ou 2; a descida máxima do nível é uma velocidade (vezes 0,5 = desce mais devagar). Limiares: a saída fica na mesma distância (ATENÇÃO sai 5 abaixo da entrada; SONOLENTO, 10 abaixo). Dois números são definidos a partir dos limiares e acompanham: o piso de ATENÇÃO por 1 min depois de um vermelho forçado (40) e o nível exibido durante o forçado (75, de onde o nível desce depois que os olhos abrem); o portão do LSTM (40) também acompanha, sem efeito aqui. Nas linhas "só o limiar" eles ficam como estão. Alarme = entrada no vermelho; menos alarmes pode querer dizer vermelho mais longo e contínuo, por isso a medida principal é o % do tempo em vermelho.
+
+| Mudança | s1 % vermelho | s1 % amarelo | s1 alarmes por hora | s1 sessões sem alarme | s5 % vermelho | s5 alarmes |
+|---|---:|---:|---:|---:|---:|---:|
+| **configuração final do app (sem mudança)** | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| PERCLOS (40 pt, teto 60 pt) × 0,7 | 2,9 | 4,5 | 4,74 | 16 de 17 | 68,3 | 34 |
+| PERCLOS (40 pt, teto 60 pt) × 0,85 | 3,3 | 4,2 | 3,79 | 16 de 17 | 68,5 | 34 |
+| PERCLOS (40 pt, teto 60 pt) × 1,15 | 3,4 | 4,1 | 3,79 | 16 de 17 | 68,7 | 34 |
+| PERCLOS (40 pt, teto 60 pt) × 1,3 | 3,4 | 4,0 | 3,79 | 16 de 17 | 68,7 | 34 |
+| fechamento de 0,5 a 1 s (25 pt) × 0,7 | 3,3 | 3,1 | 3,79 | 16 de 17 | 66,3 | 35 |
+| fechamento de 0,5 a 1 s (25 pt) × 0,85 | 3,3 | 3,4 | 3,79 | 16 de 17 | 67,0 | 33 |
+| fechamento de 0,5 a 1 s (25 pt) × 1,15 | 3,3 | 4,6 | 3,79 | 16 de 17 | 69,3 | 31 |
+| fechamento de 0,5 a 1 s (25 pt) × 1,3 | 3,3 | 5,0 | 3,79 | 16 de 17 | 69,9 | 31 |
+| microssono (25 pt) × 0,7 | 3,3 | 4,1 | 3,79 | 16 de 17 | 65,9 | 35 |
+| microssono (25 pt) × 0,85 | 3,3 | 4,1 | 3,79 | 16 de 17 | 66,8 | 33 |
+| microssono (25 pt) × 1,15 | 3,3 | 4,2 | 3,79 | 16 de 17 | 69,7 | 29 |
+| microssono (25 pt) × 1,3 | 3,3 | 4,2 | 3,79 | 16 de 17 | 70,3 | 29 |
+| teto de fechamentos e microssonos somados (60 pt) × 0,7 | 1,8 | 5,6 | 3,79 | 16 de 17 | 58,6 | 39 |
+| teto de fechamentos e microssonos somados (60 pt) × 0,85 | 1,9 | 5,5 | 3,79 | 16 de 17 | 68,4 | 34 |
+| teto de fechamentos e microssonos somados (60 pt) × 1,15 | 3,5 | 4,0 | 3,79 | 16 de 17 | 68,8 | 34 |
+| teto de fechamentos e microssonos somados (60 pt) × 1,3 | 4,4 | 3,0 | 1,90 | 16 de 17 | 70,4 | 33 |
+| bocejo (25 pt, teto 50 pt) × 0,7 | 3,3 | 4,1 | 3,79 | 16 de 17 | 66,6 | 34 |
+| bocejo (25 pt, teto 50 pt) × 0,85 | 3,3 | 4,1 | 3,79 | 16 de 17 | 66,7 | 33 |
+| bocejo (25 pt, teto 50 pt) × 1,15 | 3,3 | 4,1 | 3,79 | 16 de 17 | 69,5 | 29 |
+| bocejo (25 pt, teto 50 pt) × 1,3 | 3,3 | 4,1 | 3,79 | 16 de 17 | 70,2 | 29 |
+| queda ou cabeceio (30 pt, teto 60 pt) × 0,7 | 3,3 | 3,5 | 3,79 | 16 de 17 | 68,6 | 34 |
+| queda ou cabeceio (30 pt, teto 60 pt) × 0,85 | 3,3 | 3,8 | 3,79 | 16 de 17 | 68,6 | 34 |
+| queda ou cabeceio (30 pt, teto 60 pt) × 1,15 | 3,3 | 4,4 | 3,79 | 16 de 17 | 68,6 | 34 |
+| queda ou cabeceio (30 pt, teto 60 pt) × 1,3 | 3,3 | 4,5 | 3,79 | 16 de 17 | 68,6 | 34 |
+| piscadas mais longas (20 pt, teto 20 pt) × 0,7 | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| piscadas mais longas (20 pt, teto 20 pt) × 0,85 | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| piscadas mais longas (20 pt, teto 20 pt) × 1,15 | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| piscadas mais longas (20 pt, teto 20 pt) × 1,3 | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| LSTM (10 pt) × 0,7 | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| LSTM (10 pt) × 0,85 | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| LSTM (10 pt) × 1,15 | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| LSTM (10 pt) × 1,3 | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| decaimento do fechamento (2 min) × 0,5 = 1 min | 3,3 | 2,4 | 3,79 | 16 de 17 | 65,5 | 40 |
+| decaimento do fechamento (2 min) × 2 = 4 min | 3,3 | 6,0 | 3,79 | 16 de 17 | 69,0 | 32 |
+| decaimento do microssono (2 min) × 0,5 = 1 min | 3,3 | 3,5 | 3,79 | 16 de 17 | 65,2 | 38 |
+| decaimento do microssono (2 min) × 2 = 4 min | 3,3 | 4,6 | 3,79 | 16 de 17 | 69,1 | 30 |
+| decaimento do bocejo (5 min) × 0,5 = 2,5 min | 3,3 | 4,1 | 3,79 | 16 de 17 | 67,1 | 34 |
+| decaimento do bocejo (5 min) × 2 = 10 min | 3,3 | 4,1 | 3,79 | 16 de 17 | 69,0 | 32 |
+| decaimento da cabeça (5 min) × 0,5 = 2,5 min | 3,3 | 3,7 | 3,79 | 16 de 17 | 68,6 | 34 |
+| decaimento da cabeça (5 min) × 2 = 10 min | 3,3 | 4,5 | 3,79 | 16 de 17 | 68,6 | 34 |
+| descida máxima do nível (3 pontos por segundo) × 0,5 = 1,5 pontos por segundo | 3,7 | 3,7 | 3,79 | 16 de 17 | 69,5 | 33 |
+| descida máxima do nível (3 pontos por segundo) × 2 = 6 pontos por segundo | 3,1 | 4,4 | 5,69 | 16 de 17 | 68,1 | 35 |
+| ATENÇÃO mantida depois do vermelho forçado (1 min) × 0,5 = 30 s | 3,3 | 4,1 | 3,79 | 16 de 17 | 68,6 | 34 |
+| ATENÇÃO mantida depois do vermelho forçado (1 min) × 2 = 2 min | 3,3 | 4,6 | 3,79 | 16 de 17 | 68,6 | 34 |
+| ATENÇÃO em 30 (sai em 25); piso de ATENÇÃO depois do forçado em 30 | 3,3 | 5,3 | 3,79 | 16 de 17 | 68,6 | 34 |
+| ATENÇÃO em 30 (sai em 25), só o limiar; piso de ATENÇÃO depois do forçado em 40 | 3,3 | 5,3 | 3,79 | 16 de 17 | 68,6 | 34 |
+| ATENÇÃO em 50 (sai em 45); piso de ATENÇÃO depois do forçado em 50 | 3,3 | 2,6 | 3,79 | 16 de 17 | 68,6 | 34 |
+| ATENÇÃO em 50 (sai em 45), só o limiar; piso de ATENÇÃO depois do forçado em 40 | 3,3 | 2,6 | 3,79 | 16 de 17 | 68,6 | 34 |
+| SONOLENTO em 60 (sai em 50); nível exibido no forçado em 65 | 4,7 | 2,7 | 1,90 | 16 de 17 | 73,3 | 25 |
+| SONOLENTO em 60 (sai em 50), só o limiar; nível exibido no forçado em 75 | 4,7 | 2,7 | 1,90 | 16 de 17 | 73,9 | 23 |
+| SONOLENTO em 80 (sai em 70); nível exibido no forçado em 85 | 1,8 | 5,6 | 3,79 | 16 de 17 | 66,2 | 35 |
+| SONOLENTO em 80 (sai em 70), só o limiar; nível exibido no forçado em 75 | 1,6 | 5,8 | 6,64 | 16 de 17 | 65,2 | 37 |
+
+**O que mais mexe, uma mudança por vez** (do menor ao maior vermelho, com o valor que deu cada ponta):
+
+- no falso alarme (vermelho de s1; 3,3 % na final): teto de fechamentos e microssonos somados, de 1,8 % com 42 pt a 4,4 % com 78 pt; limiar de SONOLENTO, de 1,8 % com limiar em 80 a 4,7 % com limiar em 60; descida máxima do nível, de 3,1 % com 6 pontos por segundo a 3,7 % com 1,5 pontos por segundo;
+- no vermelho de s5 (68,6 % na final): teto de fechamentos e microssonos somados, de 58,6 % com 42 pt a 70,4 % com 78 pt; limiar de SONOLENTO, de 66,2 % com limiar em 80 a 73,3 % com limiar em 60; decaimento do microssono, de 65,2 % com 1 min a 69,1 % com 4 min.
+
+**No falso alarme, só 4 dos 16 itens testados mexeram mais que 0,05 ponto percentual:** PERCLOS, teto de fechamentos e microssonos somados, descida máxima do nível e limiar de SONOLENTO. Em s1 o app detectou 0 bocejos e 1 queda ou cabeceio da cabeça, por isso os pesos desses dois sinais quase não têm como mexer no falso alarme medido aqui. Não mudaram nada (tempo em cada estado e alarmes exatamente iguais aos da final): piscadas mais longas e LSTM; o LSTM não roda offline, e as piscadas mais longas somaram no máximo 6,7 pontos, em 3 das 33 sessões.
+
+## Todos juntos, ao acaso (300 configurações)
+
+Cada configuração sorteada (gerador mulberry32, semente 42) multiplica cada um dos 18 pesos, tetos e decaimentos por um fator próprio, uniforme de 0,7 a 1,3, e desloca os limiares 40 e 70 por um inteiro uniforme de -10 a +10 (ATENÇÃO de 30 a 50 e SONOLENTO de 60 a 80, com as saídas e os números que acompanham na mesma distância). Percentis pelo posto mais próximo: 5 % das configurações ficam abaixo do percentil 5 e 5 % acima do percentil 95.
+
+| Métrica | Final | Mediana | Percentil 5 | Percentil 95 | Menor | Maior |
+|---|---:|---:|---:|---:|---:|---:|
+| s1: % do tempo em vermelho | 3,3 | 3,3 | 1,7 | 4,9 | 0,4 | 6,5 |
+| s1: % do tempo em amarelo | 4,1 | 4,1 | 1,4 | 7,0 | 0,3 | 12,0 |
+| s1: alarmes por hora | 3,79 | 3,79 | 1,90 | 6,64 | 0,95 | 7,59 |
+| s1: sessões sem alarme (de 17) | 16 | 16 | 16 | 16 | 15 | 16 |
+| s5: % do tempo em vermelho | 68,6 | 67,7 | 56,2 | 72,9 | 50,0 | 74,1 |
+| s5: % do tempo em vermelho pelo nível | 64,9 | 64,1 | 52,5 | 69,3 | 46,4 | 70,4 |
+| s5: alarmes | 34 | 33 | 25 | 45 | 24 | 52 |
+
+- s1 em vermelho até 5 % do tempo: 291 de 300 (97 %);
+- s5 em vermelho acima de 50 % do tempo: 300 de 300 (100 %);
+- **as duas coisas juntas: 291 de 300 (97 %)**.
+
+As 9 que passaram de 5 % em s1 (até 6,5 %) têm o limiar de SONOLENTO entre 60 e 65 (9 das 74 sorteadas com o limiar até 65; o sorteio cobriu de 60 a 80) e o teto de fechamentos e microssonos vezes 1,04 a 1,29.
+
+Sessões de s1 com algum vermelho, nas 300 sorteadas: gA_5_s1 em 300 e gZ_33_s1 de 08/04 às 16h18 em 12; só 12 das 300 criaram vermelho numa sessão em que a final não tem nenhum.
+
+## O que mais pesa quando tudo varia junto
+
+Correlação de postos (Spearman) entre cada número sorteado e cada resultado, nas 300 sorteadas: perto de 0, o número quase não mexe; perto de +1 ou -1, mexe muito (+ = mais daquele resultado quando o número cresce; nos limiares, "cresce" = limiar mais alto). Para saber o tamanho do acaso, valem os números que não podem ter efeito: o peso do LSTM (não roda offline) e, nas métricas de s1, os do bocejo (s1 não tem bocejo). Eles chegaram a 0,13; a tabela mostra só os números que passaram disso em pelo menos um resultado.
+
+| Número | s1 % vermelho | s1 alarmes por hora | s5 % vermelho |
+|---|---:|---:|---:|
+| teto de fechamentos e microssonos somados (60 pt) | 0,78 | -0,49 | 0,37 |
+| limiar de SONOLENTO (70) | -0,53 | 0,24 | -0,70 |
+| descida máxima do nível (3 pontos por segundo) | -0,19 | 0,46 | 0,02 |
+| pontos por microssono (25 pt) | -0,01 | 0,01 | 0,24 |
+| pontos por bocejo (25 pt) | -0,11 | 0,13 | 0,24 |
+| pontos por fechamento de 0,5 a 1 s (25 pt) | -0,03 | 0,07 | 0,18 |
+| teto do PERCLOS (60 pt) | 0,08 | -0,14 | 0,04 |
+
+Os outros 13 números ficaram com correlação entre -0,13 e 0,13 nos três resultados, o tamanho do acaso.
+
+## Onde é estável e onde é sensível
+
+**Estável:** 12 dos 16 itens testados não mexem no falso alarme (vermelho em s1) nem 0,05 ponto percentual quando mudam sozinhos. Com uma mudança isolada, inclusive os limiares em 10 pontos, o falso alarme ficou sempre entre 1,6 % e 4,7 % (era 3,3 %), o vermelho de s5 entre 58,6 % e 73,9 % (era 68,6 %), e sempre 16 das 17 sessões de s1 ficaram sem alarme. Com tudo sorteado junto, 291 de 300 configurações (97 %) continuaram com s1 até 5 % e s5 acima de 50 %. O peso do bocejo não mexe no falso alarme (s1 tem 0 bocejos detectados) e muda o vermelho de s5 de 66,6 % com 17,5 pt a 70,2 % com 32,5 pt. **Sensível:** os dois itens que mais mexem no falso alarme, uma mudança por vez, são teto de fechamentos e microssonos somados, de 1,8 % com 42 pt a 4,4 % com 78 pt, e limiar de SONOLENTO, de 1,8 % com limiar em 80 a 4,7 % com limiar em 60. Com tudo junto, os que mais pesam são os mesmos dois: teto de fechamentos e microssonos somados (correlação 0,78) e limiar de SONOLENTO (correlação -0,53); as 9 configurações que passaram de 5 % têm o limiar de SONOLENTO entre 60 e 65. No vermelho de s5, o item que mais mexe é teto de fechamentos e microssonos somados, de 58,6 % com 42 pt a 70,4 % com 78 pt. **Limite:** todo o falso alarme medido está em 1 sessão de 17 (gA_5_s1), e 99,9 % dele começa com um vermelho forçado (microssono ou cabeça caída com olhos fechados); os pesos mudam sobretudo quanto tempo esse vermelho dura (só 12 das 300 sorteadas criaram vermelho em outra sessão). São 63 min de direção real e 47 min de sonolência encenada: nestes dados o comportamento não depende de um ajuste fino desses números, mas isso não os transforma em números ajustados com sonolência real.
+
+
+# tempo de execução: 92.1 s (6 thread(s))

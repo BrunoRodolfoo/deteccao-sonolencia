@@ -1,0 +1,148 @@
+# Teste independente do motor do app na UTA-RLDD (sono real), 2026-10-27T02:02:47.642Z
+# node v22.23.2; app 2.1; engine.js md5 ef2c9d3e85dc51bcdb582c9b5a34d354; LSTM fora (mlProbs = null)
+# CFG = {"calib":{"neutralMs":10000,"earFactor":0.75,"nBlinks":20,"maxClosedFrac":0.1},"eyes":{"blendClosed":0.5,"blendRel":0.25,"earPath":true,"blendSupport":0.4,"supportUseMin":true,"lookDownGate":0.6,"headDownGateDeg":10,"squintGate":0.45,"asideGateDeg":20,"reopenHyst":0,"longMs":500,"microsleepMs":1000,"blinkMinMs":50,"blinkMaxMs":500,"lostGraceMs":300},"perclos":{"windowMs":60000,"minWindowMs":60000,"maxDtMs":100,"minEpisodeMs":500},"yawn":{"jawOpen":0.4,"jawRel":0.3,"marRel":0.4,"minMs":1500,"gapMs":150,"lostMaxMs":1000,"windowMs":300000},"head":{"pitchDownSign":1,"neutralDeg":5,"nodDeg":15,"dropDeg":18,"dropMs":800,"eyesMs":400,"releaseDeg":10,"rollDeg":30,"rollReleaseDeg":20,"redEyesMs":800,"redLostMs":2000,"downOpenMs":2000,"yawAsideDeg":25,"nodOnsetMs":500,"nodMaxMs":1500,"lostWindowMs":300,"lostDownDeg":10,"lostEyesMs":400,"lostMaxMs":4000,"driftBandDeg":8,"driftTauMs":120000,"windowMs":300000},"score":{"perclos":{"from":0.075,"at":0.15,"points":40,"cap":60},"longClosure":{"points":25,"decayMs":120000,"countMs":60000},"microsleep":{"points":25,"decayMs":120000},"closuresCap":60,"yawn":{"points":25,"decayMs":300000,"cap":50},"head":{"points":30,"decayMs":300000,"cap":60},"blinkDur":{"from":1.25,"at":2,"points":20,"cap":20,"minBlinks":5,"windowMs":120000},"ml":{"points":10,"minProb":0.6,"consecutive":5,"minBase":40},"postForced":{"floor":40,"holdMs":60000},"forcedFloor":75,"maxFallPerS":3},"levels":{"attention":40,"attentionExit":35,"drowsy":70,"drowsyExit":60},"alarm":{"sirenMinMs":2000,"dingGapMs":20000,"vibrateEveryMs":1500,"snoozeMs":30000}}
+# sinais: data/signals/app_tasks/uta; folds: 2, 4; sujeitos do teste no navegador (excluídos): F1_09, F3_31, F5_51
+# regra: todos os sujeitos dos folds 2 e 4 em data/features/final/uta/windows_10s.csv (24): F2_13 F2_14 F2_15 F2_16 F2_17 F2_18 F2_19 F2_20 F2_21 F2_22 F2_23 F2_24 F4_37 F4_38 F4_39 F4_40 F4_41 F4_42 F4_43 F4_44 F4_45 F4_46 F4_47 F4_48
+F2_13: rosto 99.7/100.0 %; limiar EAR 0.262/0.223; olhos fechados na calibração 0.7/1.7 %; pitch base 9.4/2.7°, yaw base 2.7/3.7°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 48.6/18.2/33.3 % alarmes 7 nível 48.9 (máx 100.0) | sonolento c/ calibração acordada 48.6/18.2/33.3 % alarmes 7 nível 48.9 (máx 100.0) |
+  eventos sonolento: fech 11, micro 24, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F2_14: rosto 100.0/100.0 %; limiar EAR 0.235/0.234; olhos fechados na calibração 0.0/0.0 %; pitch base 3.0/-1.7°, yaw base 0.1/4.9°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 67.7/32.3/0.0 % alarmes 0 nível 24.3 (máx 60.0) | sonolento c/ calibração acordada 67.7/32.3/0.0 % alarmes 0 nível 24.3 (máx 60.0) |
+  eventos sonolento: fech 13, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F2_15: rosto 100.0/100.0 %; limiar EAR 0.195/0.198; olhos fechados na calibração 4.3/2.3 %; pitch base 5.1/4.7°, yaw base -1.1/0.2°
+  acordado verde/amarelo/vermelho 85.0/5.1/9.9 % alarmes 1 nível 14.8 (máx 91.0) | sonolento 82.4/9.3/8.2 % alarmes 1 nível 16.3 (máx 89.9) | sonolento c/ calibração acordada 82.4/9.3/8.2 % alarmes 1 nível 16.3 (máx 89.9) |
+  eventos sonolento: fech 3, micro 0, boc 0, queda 1, cabeceio 0; acordado: fech 4, micro 3, boc 0, queda 0, cabeceio 0
+F2_16: rosto 100.0/100.0 %; limiar EAR 0.249/0.232; olhos fechados na calibração 0.0/0.0 %; pitch base -13.2/-2.2°, yaw base -10.2/-12.9°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento c/ calibração acordada 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) |
+  eventos sonolento: fech 0, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F2_17: rosto 100.0/99.8 %; limiar EAR 0.256/0.250; olhos fechados na calibração 1.7/4.0 %; pitch base 1.0/-0.4°, yaw base -2.2/-7.4°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 44.5/44.0/11.5 % alarmes 3 nível 35.2 (máx 83.8) | sonolento c/ calibração acordada 44.5/44.0/11.5 % alarmes 3 nível 35.2 (máx 83.8) |
+  eventos sonolento: fech 13, micro 3, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F2_18: rosto 100.0/100.0 %; limiar EAR 0.199/0.112; olhos fechados na calibração 12.8/47.2 %; pitch base 3.5/-1.9°, yaw base 2.0/0.4°
+  acordado verde/amarelo/vermelho 94.1/5.9/0.0 % alarmes 0 nível 5.1 (máx 49.7) | sonolento 13.3/64.4/22.3 % alarmes 12 nível 54.3 (máx 80.9) | sonolento c/ calibração acordada 1.0/1.3/97.7 % alarmes 3 nível 97.5 (máx 100.0) |
+  eventos sonolento: fech 21, micro 10, boc 1, queda 0, cabeceio 0; acordado: fech 2, micro 0, boc 0, queda 0, cabeceio 0
+F2_19: rosto 100.0/100.0 %; limiar EAR 0.223/0.243; olhos fechados na calibração 6.0/5.0 %; pitch base -14.0/-5.6°, yaw base -11.7/-10.6°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento c/ calibração acordada 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) |
+  eventos sonolento: fech 0, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F2_20: rosto 99.3/99.4 %; limiar EAR 0.174/0.155; olhos fechados na calibração 3.7/19.6 %; pitch base -8.9/-8.4°, yaw base -3.6/0.6°
+  acordado verde/amarelo/vermelho 96.8/3.2/0.0 % alarmes 0 nível 4.7 (máx 43.6) | sonolento 25.3/0.6/74.1 % alarmes 2 nível 76.7 (máx 100.0) | sonolento c/ calibração acordada 10.7/14.9/74.4 % alarmes 3 nível 83.5 (máx 100.0) |
+  eventos sonolento: fech 11, micro 24, boc 0, queda 4, cabeceio 0; acordado: fech 2, micro 0, boc 0, queda 0, cabeceio 0
+F2_21: rosto 100.0/100.0 %; limiar EAR 0.201/0.183; olhos fechados na calibração 4.6/17.5 %; pitch base -7.3/0.9°, yaw base 11.3/-6.0°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 81.8/17.7/0.5 % alarmes 1 nível 13.2 (máx 75.0) | sonolento c/ calibração acordada 81.8/17.7/0.5 % alarmes 1 nível 13.2 (máx 75.0) |
+  eventos sonolento: fech 1, micro 1, boc 2, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F2_22: rosto 100.0/100.0 %; limiar EAR 0.200/0.187; olhos fechados na calibração 3.3/7.3 %; pitch base -11.8/-15.3°, yaw base -0.5/4.7°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 16.2/69.8/13.9 % alarmes 2 nível 52.0 (máx 79.3) | sonolento c/ calibração acordada 16.2/69.8/13.9 % alarmes 2 nível 52.0 (máx 79.3) |
+  eventos sonolento: fech 36, micro 2, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F2_23: rosto 95.0/99.1 %; limiar EAR 0.264/0.251; olhos fechados na calibração 0.0/6.3 %; pitch base -6.5/-6.7°, yaw base -3.8/0.4°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 75.7/24.1/0.3 % alarmes 1 nível 23.5 (máx 75.0) | sonolento c/ calibração acordada 75.7/24.1/0.3 % alarmes 1 nível 23.5 (máx 75.0) |
+  eventos sonolento: fech 5, micro 1, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F2_24: rosto 100.0/100.0 %; limiar EAR 0.209/0.074; olhos fechados na calibração 0.0/2.6 %; pitch base -1.6/4.3°, yaw base -2.5/-2.7°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 6.1 (máx 25.0) | sonolento 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento c/ calibração acordada 97.1/2.7/0.2 % alarmes 1 nível 9.6 (máx 75.0) |
+  eventos sonolento: fech 0, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 1, micro 0, boc 1, queda 0, cabeceio 0
+F4_37: rosto 100.0/99.8 %; limiar EAR 0.170/0.195; olhos fechados na calibração 1.7/0.3 %; pitch base 6.6/10.7°, yaw base -4.5/-0.1°
+  acordado verde/amarelo/vermelho 95.4/4.6/0.0 % alarmes 0 nível 8.9 (máx 47.8) | sonolento 47.8/41.0/11.2 % alarmes 9 nível 34.1 (máx 82.9) | sonolento c/ calibração acordada 47.8/41.0/11.2 % alarmes 9 nível 34.1 (máx 82.9) |
+  eventos sonolento: fech 10, micro 8, boc 0, queda 0, cabeceio 0; acordado: fech 4, micro 0, boc 0, queda 0, cabeceio 0
+F4_38: rosto 100.0/100.0 %; limiar EAR 0.209/0.202; olhos fechados na calibração 0.0/3.3 %; pitch base -2.1/5.1°, yaw base -2.7/-1.9°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 1.9 (máx 11.1) | sonolento 17.0/29.3/53.7 % alarmes 5 nível 67.2 (máx 100.0) | sonolento c/ calibração acordada 17.0/29.3/53.7 % alarmes 5 nível 67.2 (máx 100.0) |
+  eventos sonolento: fech 2, micro 22, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_39: rosto 100.0/100.0 %; limiar EAR 0.197/0.179; olhos fechados na calibração 0.0/13.3 %; pitch base -1.7/-3.4°, yaw base -5.4/-4.8°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 89.6/10.1/0.3 % alarmes 1 nível 11.7 (máx 75.0) | sonolento c/ calibração acordada 79.0/20.7/0.3 % alarmes 1 nível 15.8 (máx 75.0) |
+  eventos sonolento: fech 3, micro 1, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_40: rosto 100.0/100.0 %; limiar EAR 0.241/0.209; olhos fechados na calibração 2.7/8.3 %; pitch base 8.6/3.9°, yaw base -0.5/2.0°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 100.0/0.0/0.0 % alarmes 0 nível 2.7 (máx 25.0) | sonolento c/ calibração acordada 100.0/0.0/0.0 % alarmes 0 nível 2.7 (máx 25.0) |
+  eventos sonolento: fech 2, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_41: rosto 100.0/100.0 %; limiar EAR 0.213/0.208; olhos fechados na calibração 0.0/3.6 %; pitch base -0.0/4.3°, yaw base 1.0/-0.2°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 22.9/9.2/67.9 % alarmes 4 nível 58.7 (máx 100.0) | sonolento c/ calibração acordada 22.4/9.4/68.2 % alarmes 4 nível 62.9 (máx 100.0) |
+  eventos sonolento: fech 1, micro 4, boc 0, queda 1, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_42: rosto 99.9/99.9 %; limiar EAR 0.209/0.157; olhos fechados na calibração 0.0/12.4 %; pitch base 7.2/7.6°, yaw base 3.4/0.6°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento c/ calibração acordada 91.0/9.0/0.0 % alarmes 0 nível 12.3 (máx 47.8) |
+  eventos sonolento: fech 0, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_43: rosto 99.9/99.9 %; limiar EAR 0.203/0.205; olhos fechados na calibração 3.0/5.3 %; pitch base 6.0/3.3°, yaw base 8.2/9.5°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 3.7) | sonolento c/ calibração acordada 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 3.7) |
+  eventos sonolento: fech 0, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_44: rosto 100.0/99.9 %; limiar EAR 0.167/0.137; olhos fechados na calibração 12.3/21.3 %; pitch base 4.9/5.3°, yaw base 1.5/-3.0°
+  acordado verde/amarelo/vermelho 78.5/20.8/0.7 % alarmes 2 nível 14.7 (máx 75.0) | sonolento 89.0/11.0/0.0 % alarmes 0 nível 14.8 (máx 60.0) | sonolento c/ calibração acordada 31.9/59.0/9.1 % alarmes 2 nível 44.5 (máx 83.9) |
+  eventos sonolento: fech 6, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 4, micro 2, boc 0, queda 0, cabeceio 0
+F4_45: rosto 100.0/99.8 %; limiar EAR 0.216/0.216; olhos fechados na calibração 4.8/4.2 %; pitch base -15.2/-16.6°, yaw base -4.4/5.9°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 70.5/28.5/1.1 % alarmes 3 nível 20.8 (máx 75.0) | sonolento c/ calibração acordada 70.5/28.5/1.1 % alarmes 3 nível 20.8 (máx 75.0) |
+  eventos sonolento: fech 7, micro 3, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_46: rosto 100.0/100.0 %; limiar EAR 0.166/0.158; olhos fechados na calibração 1.7/10.3 %; pitch base -4.7/0.7°, yaw base 0.7/5.2°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 78.6/20.6/0.8 % alarmes 2 nível 14.5 (máx 75.0) | sonolento c/ calibração acordada 83.2/16.0/0.8 % alarmes 2 nível 14.5 (máx 75.0) |
+  eventos sonolento: fech 2, micro 2, boc 1, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_47: rosto 100.0/100.0 %; limiar EAR 0.222/0.211; olhos fechados na calibração 1.0/3.0 %; pitch base -7.2/-2.8°, yaw base -7.2/-4.9°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 0.0 (máx 0.0) | sonolento 100.0/0.0/0.0 % alarmes 0 nível 0.2 (máx 8.6) | sonolento c/ calibração acordada 100.0/0.0/0.0 % alarmes 0 nível 0.2 (máx 8.6) |
+  eventos sonolento: fech 0, micro 0, boc 0, queda 0, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+F4_48: rosto 100.0/100.0 %; limiar EAR 0.199/0.209; olhos fechados na calibração 3.6/0.0 %; pitch base -2.4/-9.9°, yaw base 3.1/10.0°
+  acordado verde/amarelo/vermelho 100.0/0.0/0.0 % alarmes 0 nível 3.2 (máx 11.1) | sonolento 48.2/26.2/25.6 % alarmes 5 nível 40.4 (máx 100.0) | sonolento c/ calibração acordada 48.2/26.2/25.6 % alarmes 5 nível 40.4 (máx 100.0) |
+  eventos sonolento: fech 13, micro 8, boc 0, queda 1, cabeceio 0; acordado: fech 0, micro 0, boc 0, queda 0, cabeceio 0
+
+# Conjunto (24 sujeitos, 48 vídeos; 8,24 h avaliadas)
+acordados: 24 vídeos, 4,04 h; com alarme 2; chegam ao amarelo 5; ao vermelho 2; tempo em vermelho 0,46 %, amarelo 1,68 %, fora do verde 2,14 %; alarmes 3 (0,74/h), avisos 0,99/h; fora do verde mediano 0,00 %, nível médio mediano 0,00; eventos {"fechamentos_05_1s":17,"microssonos":5,"bocejos":1,"quedas":0,"cabeceios":0,"cabeca_baixa":0}; vídeos com evento de sono 6; piscadas/min mediana 7,3, olho fechado mediano 1,9 %; aviso de calibração 2; 1º amarelo mediano 2,8 min e 1º vermelho mediano 3,9 min depois de calibrar (entre os que chegam)
+sonolentos: 24 vídeos, 4,20 h; com alarme 15; chegam ao amarelo 17; ao vermelho 15; tempo em vermelho 15,03 %, amarelo 18,74 %, fora do verde 33,76 %; alarmes 58 (13,81/h), avisos 6,91/h; fora do verde mediano 22,88 %, nível médio mediano 18,55; eventos {"fechamentos_05_1s":160,"microssonos":113,"bocejos":4,"quedas":7,"cabeceios":0,"cabeca_baixa":8}; vídeos com evento de sono 18; piscadas/min mediana 13,3, olho fechado mediano 7,0 %; aviso de calibração 8; 1º amarelo mediano 3,0 min e 1º vermelho mediano 3,9 min depois de calibrar (entre os que chegam)
+sonolentos com a calibração do acordado: 24 vídeos, 4,20 h; com alarme 17; chegam ao amarelo 19; ao vermelho 17; tempo em vermelho 18,58 %, amarelo 19,41 %, fora do verde 37,98 %; alarmes 53 (12,62/h), avisos 8,81/h; fora do verde mediano 26,93 %, nível médio mediano 22,16; eventos {"fechamentos_05_1s":220,"microssonos":174,"bocejos":6,"quedas":10,"cabeceios":1,"cabeca_baixa":6}; vídeos com evento de sono 20; piscadas/min mediana 16,0, olho fechado mediano 8,9 %; aviso de calibração 2; 1º amarelo mediano 2,2 min e 1º vermelho mediano 3,9 min depois de calibrar (entre os que chegam)
+pareado (fora do verde, sonolento contra acordado): mais 16, igual 7, menos 1, teste do sinal p < 0,001 (p = 2.75e-4); com a calibração do acordado: mais 19, igual 5, menos 0, p < 0,001 (p = 3.81e-6)
+pareado (nível médio maior no sonolento): 20/24; com a calibração do acordado: 22/24
+AUC propria:fora_do_verde_pct: 0,812 [0,705; 0,918] (bootstrap de 1000 reamostras de sujeitos, semente 42)
+AUC propria:nivel_medio: 0,839 [0,736; 0,935] (bootstrap de 1000 reamostras de sujeitos, semente 42)
+AUC acordado:fora_do_verde_pct: 0,855 [0,760; 0,948] (bootstrap de 1000 reamostras de sujeitos, semente 42)
+AUC acordado:nivel_medio: 0,891 [0,811; 0,965] (bootstrap de 1000 reamostras de sujeitos, semente 42)
+bootstrap: primeira reamostra = F4_39 F2_23 F4_45 F4_41 F2_17 F4_37 F2_19 F4_39 F4_45 F2_24 F2_18 F4_46 F4_42 F2_20 F2_17 F4_37 F4_41 F4_39 F2_13 F2_24 F4_45 F2_14 F4_39 F2_13
+  -> results/app_validacao_uta.csv (48 linhas)
+# extração: piloto F4_43_10 em 117.7 s (1 processo); lote 47 vídeos novos em 87.3 min com 6 processos (50.1 min suspenso); por vídeo de 53.7 a 3682.5 s; soma 521.1 min
+  -> results/app_validacao_uta.md
+
+# Log da extração dos sinais (data/signals/app_tasks/uta/extracao.log):
+2026-10-26 21:28:21,803 extração de sinais do app (Face Landmarker Tasks, blendshapes + matrizes): 1 vídeos, UTA-RLDD folds [4], vídeos ['10'], 1 processos
+2026-10-26 21:30:19,925 F4_43_10: 18080 quadros, rosto 0.9992 (118 s, 154 q/s)
+2026-10-26 21:30:19,929 fim: 18080 quadros novos em 2.0 min
+2026-10-26 21:31:13,103 extração de sinais do app (Face Landmarker Tasks, blendshapes + matrizes): 48 vídeos, UTA-RLDD folds [2, 4], vídeos ['0', '10'], 6 processos
+2026-10-26 21:35:28,262 F2_14_10: 18692 quadros, rosto 1.0000 (254 s, 74 q/s)
+2026-10-26 21:36:21,087 F2_14_0: 18386 quadros, rosto 1.0000 (307 s, 60 q/s)
+2026-10-26 21:38:53,899 F4_48_0: 18907 quadros, rosto 0.9998 (460 s, 41 q/s)
+2026-10-26 21:39:00,587 F4_39_0: 19376 quadros, rosto 1.0000 (467 s, 42 q/s)
+2026-10-26 21:39:29,666 F2_20_0: 19585 quadros, rosto 0.9928 (496 s, 40 q/s)
+2026-10-26 22:32:14,983 F2_13_10: 18486 quadros, rosto 1.0000 (3407 s, 5 q/s)
+2026-10-26 22:32:20,864 F4_48_10: 18377 quadros, rosto 1.0000 (3360 s, 5 q/s)
+2026-10-26 22:32:36,462 F4_41_10: 28325 quadros, rosto 1.0000 (3682 s, 8 q/s)
+2026-10-26 22:35:35,313 F2_22_10: 18316 quadros, rosto 1.0000 (3395 s, 5 q/s)
+2026-10-26 22:35:37,720 F4_47_10: 18340 quadros, rosto 1.0000 (3404 s, 5 q/s)
+2026-10-26 22:36:20,573 F2_13_0: 18236 quadros, rosto 0.9974 (3411 s, 5 q/s)
+2026-10-26 22:39:27,070 F4_39_10: 18158 quadros, rosto 0.9999 (426 s, 43 q/s)
+2026-10-26 22:39:59,544 F2_22_0: 18221 quadros, rosto 1.0000 (465 s, 39 q/s)
+2026-10-26 22:40:15,558 F2_19_10: 18064 quadros, rosto 1.0000 (459 s, 39 q/s)
+2026-10-26 22:44:01,114 F4_38_10: 18062 quadros, rosto 1.0000 (506 s, 36 q/s)
+2026-10-26 22:44:05,445 F4_38_0: 18056 quadros, rosto 1.0000 (508 s, 36 q/s)
+2026-10-26 22:44:23,105 F2_19_0: 18029 quadros, rosto 1.0000 (482 s, 37 q/s)
+2026-10-26 22:47:40,659 F2_15_0: 19301 quadros, rosto 1.0000 (198 s, 98 q/s)
+2026-10-26 22:47:54,272 F4_42_10: 18029 quadros, rosto 0.9994 (507 s, 36 q/s)
+2026-10-26 22:48:33,981 F4_47_0: 18027 quadros, rosto 1.0000 (514 s, 35 q/s)
+2026-10-26 22:49:00,930 F2_24_0: 11045 quadros, rosto 1.0000 (295 s, 37 q/s)
+2026-10-26 22:49:04,391 F4_42_0: 18021 quadros, rosto 0.9992 (529 s, 34 q/s)
+2026-10-26 22:49:16,442 F2_24_10: 11515 quadros, rosto 1.0000 (315 s, 37 q/s)
+2026-10-26 22:49:16,443 F4_43_10: já existia (0 s, 0 q/s)
+2026-10-26 22:50:42,933 F4_41_0: 18839 quadros, rosto 1.0000 (182 s, 103 q/s)
+2026-10-26 22:51:00,113 F2_15_10: 18483 quadros, rosto 1.0000 (186 s, 99 q/s)
+2026-10-26 22:51:33,260 F2_23_10: 18187 quadros, rosto 0.9913 (179 s, 101 q/s)
+2026-10-26 22:52:09,207 F4_43_0: 18118 quadros, rosto 0.9993 (185 s, 98 q/s)
+2026-10-26 22:52:13,436 F2_21_0: 18151 quadros, rosto 1.0000 (192 s, 94 q/s)
+2026-10-26 22:52:13,829 F4_40_0: 18060 quadros, rosto 1.0000 (177 s, 102 q/s)
+2026-10-26 22:53:45,459 F2_21_10: 18055 quadros, rosto 1.0000 (182 s, 99 q/s)
+2026-10-26 22:53:49,011 F4_40_10: 18029 quadros, rosto 1.0000 (169 s, 107 q/s)
+2026-10-26 22:54:10,980 F2_23_0: 17567 quadros, rosto 0.9502 (158 s, 111 q/s)
+2026-10-26 22:54:49,145 F4_46_10: 17773 quadros, rosto 1.0000 (155 s, 114 q/s)
+2026-10-26 22:55:08,616 F4_37_0: 20483 quadros, rosto 1.0000 (179 s, 114 q/s)
+2026-10-26 22:55:11,850 F4_37_10: 20396 quadros, rosto 0.9979 (178 s, 114 q/s)
+2026-10-26 22:55:56,294 F2_16_0: 11357 quadros, rosto 1.0000 (105 s, 108 q/s)
+2026-10-26 22:56:02,348 F2_16_10: 14491 quadros, rosto 0.9997 (133 s, 109 q/s)
+2026-10-26 22:56:14,862 F2_18_10: 7676 quadros, rosto 1.0000 (66 s, 116 q/s)
+2026-10-26 22:56:15,310 F4_44_0: 7369 quadros, rosto 0.9999 (63 s, 116 q/s)
+2026-10-26 22:56:20,402 F4_46_0: 17630 quadros, rosto 0.9999 (155 s, 114 q/s)
+2026-10-26 22:56:29,111 F2_18_0: 11672 quadros, rosto 1.0000 (100 s, 117 q/s)
+2026-10-26 22:56:57,948 F4_44_10: 7298 quadros, rosto 0.9988 (62 s, 118 q/s)
+2026-10-26 22:57:22,854 F4_45_0: 7717 quadros, rosto 1.0000 (54 s, 144 q/s)
+2026-10-26 22:57:26,978 F4_45_10: 9250 quadros, rosto 0.9985 (67 s, 139 q/s)
+2026-10-26 22:58:04,391 F2_17_0: 18121 quadros, rosto 1.0000 (122 s, 148 q/s)
+2026-10-26 22:58:10,070 F2_17_10: 18212 quadros, rosto 0.9982 (115 s, 159 q/s)
+2026-10-26 22:58:31,244 F2_20_10: 21527 quadros, rosto 0.9945 (136 s, 158 q/s)
+2026-10-26 22:58:31,261 fim: 794015 quadros novos em 87.3 min
+2026-10-26 22:58:52,000 nota: o computador ficou suspenso de 21:40:40 a 22:30:46 (tampa fechada, registro do pmset) com este lote em andamento; os tempos dos 6 vídeos em processamento nesse intervalo (F2_13_10, F4_48_10, F4_41_10, F2_22_10, F4_47_10, F2_13_0) e o fim do lote incluem a suspensão.
