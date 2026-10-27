@@ -85,7 +85,7 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
   federais entre 2014 e 2024 tiveram a ver com a saúde do condutor, e o sono entra aí. A ideia é ter um celular no
   painel que avise o motorista."
 - **O problema (1 min):** "Os trabalhos que usam sono encenado, em que a pessoa finge que está com sono,
-  passam de 90 % de acurácia. Na UTA-RLDD, que tem sono de verdade, o melhor modelo publicado acerta 65,2 % dos
+  passam de 90 % de acurácia. Na UTA-RLDD, que tem sono de verdade, o modelo dos autores da base acerta 65,2 % dos
   vídeos, e pessoas olhando os mesmos vídeos acertam 57,8 %. A gente quis entender de onde vem essa
   diferença."
 - **Um cuidado (30 s, sem texto no pôster; os números estão no quadro "Vazamento" da coluna 2):** "Muitos
