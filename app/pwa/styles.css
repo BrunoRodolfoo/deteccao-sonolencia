@@ -379,9 +379,10 @@ body:not(.rodando) .barra .encaixe-camera.direita { visibility: hidden; }
 .valor { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .tecnico .lista .linha { font-size: 15px; }
 .metricas { margin: 0; }
-.metricas .linha { padding-top: 8px; padding-bottom: 8px; }
-.metricas dt { flex: 1; min-width: 0; font-size: 15px; }
-.metricas dd { margin: 0; font-size: 15px; color: var(--tx2); text-align: right; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.metricas .linha { align-items: flex-start; padding-top: 8px; padding-bottom: 8px; }
+/* rótulo e valor dividem a linha (valor longo quebra na sua metade, sem espremer o rótulo) */
+.metricas dt { flex: 1 1 45%; min-width: 0; font-size: 15px; }
+.metricas dd { flex: 1 1 55%; min-width: 0; margin: 0; font-size: 15px; color: var(--tx2); text-align: right; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .metricas .largo { flex-direction: column; align-items: flex-start; gap: 4px; }
 .metricas .largo dd { text-align: left; font-size: 13px; }
 .modelos small { overflow-wrap: anywhere; }
