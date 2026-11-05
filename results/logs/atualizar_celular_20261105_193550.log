@@ -1,0 +1,68 @@
+
+==> 1/5 Importando os benchmarks do celular (results/phone)
+  origem                                            arquivo versao_app                  aparelho                      data        soc     sistema                       navegador delegate_landmarker            modelo_olho        modelo_temporal  quadros  quadros_com_rosto  duracao_s  fps_medio  landmarker_ms_p50  landmarker_ms_p95  landmarker_ms_media  cnn_ms_p50  cnn_ms_p95  cnn_ms_media  engine_ms_p50  engine_ms_p95  engine_ms_media  motor_ms_p50  motor_ms_p95  motor_ms_media  total_ms_p50  total_ms_p95  total_ms_media  tam_landmarker_kb  tam_temporal_kb  tam_olho_int8_kb  tam_olho_fp32_kb
+0    pwa  benchmark_pwa_2026-09-27T21-58-22-872Z_frames.csv        1.0    iPhone 17 Pro (512 GB)  2026-09-27T21:58:22.872Z  n/d (PWA)  iOS 26.6.1  Chrome 154 (iOS, motor WebKit)                 GPU  eye_state_int8.tflite  blink_temporal.tflite     2431               2431      60.01      40.51              19.00              26.00                19.05         3.0         6.0          3.47            1.0            1.0             1.00           NaN           NaN             NaN          23.0         30.00           22.82                NaN              NaN               NaN               NaN
+1    pwa  benchmark_pwa_2026-09-27T22-41-35-365Z_frames.csv        1.0    iPhone 17 Pro (512 GB)  2026-09-27T22:41:35.365Z  n/d (PWA)  iOS 26.6.1  Chrome 154 (iOS, motor WebKit)                 GPU  eye_state_int8.tflite  blink_temporal.tflite     3600               3600      60.01      59.99               9.00              11.00                 9.09         2.0         3.0          2.16            1.0            1.0             1.01           NaN           NaN             NaN          11.0         14.00           11.39                NaN              NaN               NaN               NaN
+2    pwa  benchmark_pwa_2026-11-05T22-28-27-983Z_frames.csv        2.1  Samsung Galaxy S23 Ultra  2026-11-05T22:28:27.983Z  n/d (PWA)  Android 16                      Chrome 156                 GPU  eye_state_int8.tflite  blink_temporal.tflite     1344               1344      60.00      22.40              22.15              26.00                22.47        16.3        28.8         18.39            0.6            0.8             0.61           0.1           0.2            0.10          40.1         53.08           41.75                NaN              NaN               NaN               NaN
+3    pwa  benchmark_pwa_2026-11-05T22-29-38-737Z_frames.csv        2.1  Samsung Galaxy S23 Ultra  2026-11-05T22:29:38.737Z  n/d (PWA)  Android 16                      Chrome 156                 GPU  eye_state_int8.tflite  blink_temporal.tflite     1368               1368      60.02      22.79              21.80              24.70                22.01        15.9        28.9         18.15            0.6            0.7             0.58           0.1           0.2            0.11          39.1         52.80           41.05                NaN              NaN               NaN               NaN
+4    pwa  benchmark_pwa_2026-11-05T22-30-44-106Z_frames.csv        2.1  Samsung Galaxy S23 Ultra  2026-11-05T22:30:44.106Z  n/d (PWA)  Android 16                      Chrome 156                 GPU  eye_state_int8.tflite  blink_temporal.tflite     1356               1356      60.04      22.59              21.90              24.82                22.17        16.1        29.7         18.42            0.6            0.7             0.57           0.1           0.2            0.12          39.5         53.52           41.46                NaN              NaN               NaN               NaN
+
+Escrito: results/exp4_phone_latency.csv, results/exp4_phone_latency.md, results/logs/exp4_phone_import_20261105_193550.log
+
+Execuções por aparelho (versão do app):
+  - iPhone 17 Pro (512 GB): 2 execução(ões); app 1.0; total por quadro p50 23, 11 ms
+  - Samsung Galaxy S23 Ultra: 3 execução(ões); app 2.1; total por quadro p50 40.1, 39.1, 39.5 ms
+
+==> 2/5 Figura do Exp. 4 (agrupada por aparelho)
+1 extra bytes in post.stringData array
+'created' timestamp seems very low; regarding as unix timestamp
+1 extra bytes in post.stringData array
+'created' timestamp seems very low; regarding as unix timestamp
+fig_exp4_latencia: 8.50 x 11.68 cm -> /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/figures/fig_exp4_latencia.pdf (+ .png 300 dpi)
+
+==> 3/5 Números do artigo e do pôster + conferência automática
+703 números, 1343 macros -> paper/numeros.tex, poster/numeros.json, results/numeros_resumo.md; Samsung medido: True
+conferência: 703/703 ok; no .md 565 (+17 parcial, 0 não); LaTeX ok; divergências 0
+
+==> 4/5 Recompilando o artigo (paper/artigo.tex)
+note: Running TeX ...
+warning: artigo.tex:212: Underfull \vbox (badness 1221) has occurred while \output is active
+warning: artigo.tex:345: Underfull \vbox (badness 1092) has occurred while \output is active
+note: Running BibTeX on artigo.aux ...
+note: Rerunning TeX because bibtex was run ...
+warning: artigo.tex:212: Underfull \vbox (badness 1221) has occurred while \output is active
+warning: artigo.tex:345: Underfull \vbox (badness 1092) has occurred while \output is active
+note: Rerunning TeX because "artigo.out" changed ...
+warning: artigo.tex:178: Underfull \vbox (badness 3396) has occurred while \output is active
+warning: artigo.tex:343: Underfull \vbox (badness 1092) has occurred while \output is active
+note: Rerunning TeX because "artigo.aux" changed ...
+warning: artigo.tex:178: Underfull \vbox (badness 3396) has occurred while \output is active
+warning: artigo.tex:343: Underfull \vbox (badness 1092) has occurred while \output is active
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Running xdvipdfmx ...
+note: Writing `artigo.blg` (440 B)
+note: Writing `artigo.log` (14.544921875 KiB)
+note: Writing `artigo.pdf` (148.1806640625 KiB)
+note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
+artigo.pdf: 8 páginas (limite 6-8); macros indefinidos: 0; referências/citações indefinidas: 0; Overfull hbox: 0
+
+==> 5/5 Pôster (pptx + html -> pdf)
+qr_repositorio.png -> https://github.com/BrunoRodolfoo/deteccao-sonolencia
+fig_poster_metodo: 2639x708 px = 22.34 x 5.99 cm -> /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/poster/assets/fig_poster_metodo.png
+fig_poster_exp5b: 1299x1127 px = 11.00 x 9.54 cm -> /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/poster/assets/fig_poster_exp5b.png
+Corpo col 3: espaço entre linhas reduzido para 1.06 para caber
+Samsung medido: True
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/poster/poster_final.pptx
+/Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/poster/poster_final.html
+poster_final.pdf: 1 página(s), 50.80 x 28.57 cm
+poster_final_preview.png atualizado
+pptx: menor fonte 16 pt (fora das referências: 20 pt)
+pdf: menor fonte 16.0 pt; 82 linhas de texto, todas iguais às do .pptx
+conferência: ok (fontes, traços, quebras de linha e metadados)
+
+==> Concluído
+Arquivos: results/exp4_phone_latency.{csv,md}, results/figures/fig_exp4_latencia.{pdf,png},
+          paper/numeros.tex, poster/numeros.json, results/numeros_resumo.md,
+          paper/artigo.pdf,
+          poster/poster_final.{pptx,html,pdf}, poster/poster_final_preview.png
+Log: /Users/andreluis/Desktop/files (3)/tcc/deteccao-sonolencia/results/logs/atualizar_celular_20261105_193550.log

@@ -504,8 +504,10 @@ def fig_exp4_latencia(lat: pd.DataFrame, blink: dict, phone: pd.DataFrame | None
         n_exec = len(phone)
         axp.set_title(f"(c) Smartphone (PWA): {n_d} aparelho{'s' if n_d > 1 else ''}, "
                       f"{n_exec} execuç{'ão' if n_exec == 1 else 'ões'} de 60 s", fontsize=FS_S, pad=3)
-        fps = ", ".join(f"{br(float(g.fps_medio.min()), 0)}–{br(float(g.fps_medio.max()), 0)}"
-                        if len(g) > 1 else br(float(g.fps_medio.iloc[0]), 0) for _, g, _ in devs)
+        def _curto(nome):  # nome curto do aparelho na legenda do FPS
+            return "iPhone" if "iPhone" in nome else "Galaxy" if "Galaxy" in nome else nome
+        fps = "; ".join(f"{_curto(ap)} {br(float(g.fps_medio.min()), 0)} a {br(float(g.fps_medio.max()), 0)}"
+                        if len(g) > 1 else f"{_curto(ap)} {br(float(g.fps_medio.iloc[0]), 0)}" for ap, g, _ in devs)
         axp.set_xlabel(f"barra = mediana dos p50 das execuções; bigode = maior p95\n"
                        f"FPS médio por execução: {fps}", fontsize=FS_S - 1.5, color=INK2)
         handles, labels = axp.get_legend_handles_labels()

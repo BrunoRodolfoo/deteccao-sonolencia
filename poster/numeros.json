@@ -1,10 +1,9 @@
 {
- "gerado_em": "2026-10-27T11:31:47",
+ "gerado_em": "2026-11-05T19:35:51",
  "gerado_por": "src/experiments/make_paper_numbers.py",
  "convencoes": "percentuais sem %; diferenças em pp; IC 95% entre colchetes; texto com vírgula decimal",
- "samsung_medido": false,
+ "samsung_medido": true,
  "valores": {
-  "SamsungPendente": "medição prevista",
   "BaseUTASujeitos": "60",
   "BaseUTAVideos": "180",
   "BaseUTAArquivos": "182",
@@ -562,6 +561,51 @@
   "CelularIPhoneQuadros": "6.031",
   "CelularIPhoneQuadrosComRosto": "6.031",
   "CelularIPhoneTaxaRosto": "100,0",
+  "CelularSamsungNome": "Samsung Galaxy S23 Ultra",
+  "CelularSamsungExecucoes": "3",
+  "CelularSamsungVersaoApp": "2.1",
+  "CelularSamsungSistema": "Android 16",
+  "CelularSamsungNavegador": "Chrome 156",
+  "CelularSamsungDelegate": "GPU",
+  "CelularSamsungTotalPcinquenta": "39,5",
+  "CelularSamsungTotalPcinquentaMin": "39,1",
+  "CelularSamsungTotalPcinquentaMax": "40,1",
+  "CelularSamsungTotalPnoventaecinco": "53,1",
+  "CelularSamsungTotalPnoventaecincoMin": "52,8",
+  "CelularSamsungTotalPnoventaecincoMax": "53,5",
+  "CelularSamsungLandmarkerPcinquenta": "21,9",
+  "CelularSamsungLandmarkerPcinquentaMin": "21,8",
+  "CelularSamsungLandmarkerPcinquentaMax": "22,1",
+  "CelularSamsungLandmarkerPnoventaecinco": "24,8",
+  "CelularSamsungLandmarkerPnoventaecincoMin": "24,7",
+  "CelularSamsungLandmarkerPnoventaecincoMax": "26,0",
+  "CelularSamsungCNNPcinquenta": "16,1",
+  "CelularSamsungCNNPcinquentaMin": "15,9",
+  "CelularSamsungCNNPcinquentaMax": "16,3",
+  "CelularSamsungCNNPnoventaecinco": "28,9",
+  "CelularSamsungCNNPnoventaecincoMin": "28,8",
+  "CelularSamsungCNNPnoventaecincoMax": "29,7",
+  "CelularSamsungLSTMPcinquenta": "0,6",
+  "CelularSamsungLSTMPcinquentaMin": "0,6",
+  "CelularSamsungLSTMPcinquentaMax": "0,6",
+  "CelularSamsungLSTMPnoventaecinco": "0,7",
+  "CelularSamsungLSTMPnoventaecincoMin": "0,7",
+  "CelularSamsungLSTMPnoventaecincoMax": "0,8",
+  "CelularSamsungMotorPcinquenta": "0,1",
+  "CelularSamsungMotorPcinquentaMin": "0,1",
+  "CelularSamsungMotorPcinquentaMax": "0,1",
+  "CelularSamsungMotorPnoventaecinco": "0,2",
+  "CelularSamsungMotorPnoventaecincoMin": "0,2",
+  "CelularSamsungMotorPnoventaecincoMax": "0,2",
+  "CelularSamsungFPS": "22,6",
+  "CelularSamsungFPSMin": "22,4",
+  "CelularSamsungFPSMax": "22,8",
+  "CelularSamsungTotalPcinquentaInteiro": "40",
+  "CelularSamsungTotalPcinquentaMinInteiro": "39",
+  "CelularSamsungTotalPcinquentaMaxInteiro": "40",
+  "CelularSamsungQuadros": "4.068",
+  "CelularSamsungQuadrosComRosto": "4.068",
+  "CelularSamsungTaxaRosto": "100,0",
   "CelularVUmFalsoAlarmePERCLOS": "25,8",
   "CelularVUmFalsoAlarmeQuadros": "2.281",
   "CelularVUmFalsoAlarmeQuadrosTotal": "3.600",
@@ -10290,6 +10334,1159 @@
     "deps": [
      "CelularIPhoneQuadrosComRosto",
      "CelularIPhoneQuadros"
+    ]
+   }
+  },
+  {
+   "nome": "CelularSamsungNome",
+   "valor": "Samsung Galaxy S23 Ultra",
+   "macros": {
+    "CelularSamsungNome": "Samsung Galaxy S23 Ultra"
+   },
+   "bruto": "Samsung Galaxy S23 Ultra",
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": true,
+   "descricao": "Exp. 4 nome do aparelho (Samsung Galaxy S23 Ultra)",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv_texto",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "aparelho"
+   }
+  },
+  {
+   "nome": "CelularSamsungExecucoes",
+   "valor": "3",
+   "macros": {
+    "CelularSamsungExecucoes": "3"
+   },
+   "bruto": 3.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: número de execuções de 60 s",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "agg": "count"
+   }
+  },
+  {
+   "nome": "CelularSamsungVersaoApp",
+   "valor": "2.1",
+   "macros": {
+    "CelularSamsungVersaoApp": "2.1"
+   },
+   "bruto": "2.1",
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": true,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: versao_app (valores distintos entre as execuções, em ordem)",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv_texto",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "versao_app"
+   }
+  },
+  {
+   "nome": "CelularSamsungSistema",
+   "valor": "Android 16",
+   "macros": {
+    "CelularSamsungSistema": "Android 16"
+   },
+   "bruto": "Android 16",
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": true,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: sistema (valores distintos entre as execuções, em ordem)",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv_texto",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "sistema"
+   }
+  },
+  {
+   "nome": "CelularSamsungNavegador",
+   "valor": "Chrome 156",
+   "macros": {
+    "CelularSamsungNavegador": "Chrome 156"
+   },
+   "bruto": "Chrome 156",
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": true,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: navegador (valores distintos entre as execuções, em ordem)",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv_texto",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "navegador"
+   }
+  },
+  {
+   "nome": "CelularSamsungDelegate",
+   "valor": "GPU",
+   "macros": {
+    "CelularSamsungDelegate": "GPU"
+   },
+   "bruto": "GPU",
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": true,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: delegate_landmarker (valores distintos entre as execuções, em ordem)",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv_texto",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "delegate_landmarker"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPcinquenta",
+   "valor": "39,5",
+   "macros": {
+    "CelularSamsungTotalPcinquenta": "39,5"
+   },
+   "bruto": 39.5,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total_ms p50 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "total_ms_p50",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPcinquentaMin",
+   "valor": "39,1",
+   "macros": {
+    "CelularSamsungTotalPcinquentaMin": "39,1"
+   },
+   "bruto": 39.1,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total_ms p50 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "total_ms_p50",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPcinquentaMax",
+   "valor": "40,1",
+   "macros": {
+    "CelularSamsungTotalPcinquentaMax": "40,1"
+   },
+   "bruto": 40.1,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total_ms p50 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "total_ms_p50",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPnoventaecinco",
+   "valor": "53,1",
+   "macros": {
+    "CelularSamsungTotalPnoventaecinco": "53,1"
+   },
+   "bruto": 53.08,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total_ms p95 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "total_ms_p95",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPnoventaecincoMin",
+   "valor": "52,8",
+   "macros": {
+    "CelularSamsungTotalPnoventaecincoMin": "52,8"
+   },
+   "bruto": 52.8,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total_ms p95 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "total_ms_p95",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPnoventaecincoMax",
+   "valor": "53,5",
+   "macros": {
+    "CelularSamsungTotalPnoventaecincoMax": "53,5"
+   },
+   "bruto": 53.52,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total_ms p95 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "total_ms_p95",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungLandmarkerPcinquenta",
+   "valor": "21,9",
+   "macros": {
+    "CelularSamsungLandmarkerPcinquenta": "21,9"
+   },
+   "bruto": 21.9,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p50 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "landmarker_ms_p50",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungLandmarkerPcinquentaMin",
+   "valor": "21,8",
+   "macros": {
+    "CelularSamsungLandmarkerPcinquentaMin": "21,8"
+   },
+   "bruto": 21.8,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p50 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "landmarker_ms_p50",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungLandmarkerPcinquentaMax",
+   "valor": "22,1",
+   "macros": {
+    "CelularSamsungLandmarkerPcinquentaMax": "22,1"
+   },
+   "bruto": 22.15,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p50 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "landmarker_ms_p50",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungLandmarkerPnoventaecinco",
+   "valor": "24,8",
+   "macros": {
+    "CelularSamsungLandmarkerPnoventaecinco": "24,8"
+   },
+   "bruto": 24.82,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p95 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "landmarker_ms_p95",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungLandmarkerPnoventaecincoMin",
+   "valor": "24,7",
+   "macros": {
+    "CelularSamsungLandmarkerPnoventaecincoMin": "24,7"
+   },
+   "bruto": 24.7,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p95 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "landmarker_ms_p95",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungLandmarkerPnoventaecincoMax",
+   "valor": "26,0",
+   "macros": {
+    "CelularSamsungLandmarkerPnoventaecincoMax": "26,0"
+   },
+   "bruto": 26.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p95 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "landmarker_ms_p95",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungCNNPcinquenta",
+   "valor": "16,1",
+   "macros": {
+    "CelularSamsungCNNPcinquenta": "16,1"
+   },
+   "bruto": 16.1,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p50 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "cnn_ms_p50",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungCNNPcinquentaMin",
+   "valor": "15,9",
+   "macros": {
+    "CelularSamsungCNNPcinquentaMin": "15,9"
+   },
+   "bruto": 15.9,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p50 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "cnn_ms_p50",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungCNNPcinquentaMax",
+   "valor": "16,3",
+   "macros": {
+    "CelularSamsungCNNPcinquentaMax": "16,3"
+   },
+   "bruto": 16.3,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p50 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "cnn_ms_p50",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungCNNPnoventaecinco",
+   "valor": "28,9",
+   "macros": {
+    "CelularSamsungCNNPnoventaecinco": "28,9"
+   },
+   "bruto": 28.9,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p95 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "cnn_ms_p95",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungCNNPnoventaecincoMin",
+   "valor": "28,8",
+   "macros": {
+    "CelularSamsungCNNPnoventaecincoMin": "28,8"
+   },
+   "bruto": 28.8,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p95 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "cnn_ms_p95",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungCNNPnoventaecincoMax",
+   "valor": "29,7",
+   "macros": {
+    "CelularSamsungCNNPnoventaecincoMax": "29,7"
+   },
+   "bruto": 29.7,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p95 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "cnn_ms_p95",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungLSTMPcinquenta",
+   "valor": "0,6",
+   "macros": {
+    "CelularSamsungLSTMPcinquenta": "0,6"
+   },
+   "bruto": 0.6,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p50 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "engine_ms_p50",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungLSTMPcinquentaMin",
+   "valor": "0,6",
+   "macros": {
+    "CelularSamsungLSTMPcinquentaMin": "0,6"
+   },
+   "bruto": 0.6,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p50 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "engine_ms_p50",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungLSTMPcinquentaMax",
+   "valor": "0,6",
+   "macros": {
+    "CelularSamsungLSTMPcinquentaMax": "0,6"
+   },
+   "bruto": 0.6,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p50 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "engine_ms_p50",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungLSTMPnoventaecinco",
+   "valor": "0,7",
+   "macros": {
+    "CelularSamsungLSTMPnoventaecinco": "0,7"
+   },
+   "bruto": 0.7,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p95 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "engine_ms_p95",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungLSTMPnoventaecincoMin",
+   "valor": "0,7",
+   "macros": {
+    "CelularSamsungLSTMPnoventaecincoMin": "0,7"
+   },
+   "bruto": 0.7,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p95 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "engine_ms_p95",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungLSTMPnoventaecincoMax",
+   "valor": "0,8",
+   "macros": {
+    "CelularSamsungLSTMPnoventaecincoMax": "0,8"
+   },
+   "bruto": 0.8,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p95 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "engine_ms_p95",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungMotorPcinquenta",
+   "valor": "0,1",
+   "macros": {
+    "CelularSamsungMotorPcinquenta": "0,1"
+   },
+   "bruto": 0.1,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p50 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p50",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungMotorPcinquentaMin",
+   "valor": "0,1",
+   "macros": {
+    "CelularSamsungMotorPcinquentaMin": "0,1"
+   },
+   "bruto": 0.1,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p50 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p50",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungMotorPcinquentaMax",
+   "valor": "0,1",
+   "macros": {
+    "CelularSamsungMotorPcinquentaMax": "0,1"
+   },
+   "bruto": 0.1,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p50 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p50",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungMotorPnoventaecinco",
+   "valor": "0,2",
+   "macros": {
+    "CelularSamsungMotorPnoventaecinco": "0,2"
+   },
+   "bruto": 0.2,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p95 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p95",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungMotorPnoventaecincoMin",
+   "valor": "0,2",
+   "macros": {
+    "CelularSamsungMotorPnoventaecincoMin": "0,2"
+   },
+   "bruto": 0.2,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p95 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p95",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungMotorPnoventaecincoMax",
+   "valor": "0,2",
+   "macros": {
+    "CelularSamsungMotorPnoventaecincoMax": "0,2"
+   },
+   "bruto": 0.2,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p95 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p95",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungFPS",
+   "valor": "22,6",
+   "macros": {
+    "CelularSamsungFPS": "22,6"
+   },
+   "bruto": 22.59,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: quadros por segundo (median entre execuções)",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "fps_medio",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularSamsungFPSMin",
+   "valor": "22,4",
+   "macros": {
+    "CelularSamsungFPSMin": "22,4"
+   },
+   "bruto": 22.4,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: quadros por segundo (min entre execuções)",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "fps_medio",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularSamsungFPSMax",
+   "valor": "22,8",
+   "macros": {
+    "CelularSamsungFPSMax": "22,8"
+   },
+   "bruto": 22.79,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: quadros por segundo (max entre execuções)",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "fps_medio",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPcinquentaInteiro",
+   "valor": "40",
+   "macros": {
+    "CelularSamsungTotalPcinquentaInteiro": "40"
+   },
+   "bruto": 39.5,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total p50 por quadro, em ms inteiros",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "CelularSamsungTotalPcinquenta"
+    ],
+    "expr": "CelularSamsungTotalPcinquenta"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPcinquentaMinInteiro",
+   "valor": "39",
+   "macros": {
+    "CelularSamsungTotalPcinquentaMinInteiro": "39"
+   },
+   "bruto": 39.1,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total p50 por quadro (min), em ms inteiros",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "CelularSamsungTotalPcinquentaMin"
+    ],
+    "expr": "CelularSamsungTotalPcinquentaMin"
+   }
+  },
+  {
+   "nome": "CelularSamsungTotalPcinquentaMaxInteiro",
+   "valor": "40",
+   "macros": {
+    "CelularSamsungTotalPcinquentaMaxInteiro": "40"
+   },
+   "bruto": 40.1,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: total p50 por quadro (max), em ms inteiros",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "CelularSamsungTotalPcinquentaMax"
+    ],
+    "expr": "CelularSamsungTotalPcinquentaMax"
+   }
+  },
+  {
+   "nome": "CelularSamsungQuadros",
+   "valor": "4.068",
+   "macros": {
+    "CelularSamsungQuadros": "4.068"
+   },
+   "bruto": 4068.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: quadros somados das execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "quadros",
+    "agg": "sum"
+   }
+  },
+  {
+   "nome": "CelularSamsungQuadrosComRosto",
+   "valor": "4.068",
+   "macros": {
+    "CelularSamsungQuadrosComRosto": "4.068"
+   },
+   "bruto": 4068.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 0,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: quadros com rosto",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "Samsung Galaxy S23 Ultra",
+     "versao_app": "2.1"
+    },
+    "coluna": "quadros_com_rosto",
+    "agg": "sum"
+   }
+  },
+  {
+   "nome": "CelularSamsungTaxaRosto",
+   "valor": "100,0",
+   "macros": {
+    "CelularSamsungTaxaRosto": "100,0"
+   },
+   "bruto": 100.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "%",
+   "texto": false,
+   "descricao": "Exp. 4 Samsung Galaxy S23 Ultra: fração de quadros com rosto detectado",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "expr": "CelularSamsungQuadrosComRosto / CelularSamsungQuadros * 100",
+    "deps": [
+     "CelularSamsungQuadrosComRosto",
+     "CelularSamsungQuadros"
     ]
    }
   },

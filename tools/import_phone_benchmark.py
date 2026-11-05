@@ -102,7 +102,7 @@ def identify_device(ua: str, dev: dict, fname: str):
     if m_ios:
         sistema = "iOS " + ".".join(x for x in m_ios.groups() if x)
     elif dev.get("versao_plataforma") and "Android" in ua:
-        sistema = f"Android {dev['versao_plataforma']}"
+        sistema = "Android " + re.sub(r"(\.0)+$", "", str(dev["versao_plataforma"]))  # "16.0.0" -> "16"
     elif m_and:
         sistema = f"Android {m_and.group(1)}"
     else:
@@ -111,7 +111,7 @@ def identify_device(ua: str, dev: dict, fname: str):
     if m_crios:
         navegador = f"Chrome {m_crios.group(1)} (iOS, motor WebKit)"
     elif m_chrome:
-        navegador = f"Chrome {m_chrome.group(1)} (Android)" if "Android" in ua else f"Chrome {m_chrome.group(1)}"
+        navegador = f"Chrome {m_chrome.group(1)}"  # o sistema (Android) já vem na coluna ao lado
     elif "Safari" in ua:
         navegador = "Safari"
     else:

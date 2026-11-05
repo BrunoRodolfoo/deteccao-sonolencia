@@ -302,10 +302,12 @@ def _aparelhos():
     vers = [N(pre + "VersaoApp") for _, _, pre in aps]
     if len(aps) == 1:
         return f"No {aps[0][0]}, {_faixa_ms(aps[0][2])} por quadro (app {vers[0]})."
-    partes = " e ".join(f"{_faixa_ms(pre)} no {nome}" for nome, _, pre in aps)
-    app = (f"app {vers[0]}" if len(set(vers)) == 1 else
-           "app " + " e ".join(f"{v} no {curto}" for (_, curto, _), v in zip(aps, vers)))
-    return f"Por quadro, {partes} ({app})."
+    if len(set(vers)) == 1:
+        partes = " e ".join(f"{_faixa_ms(pre)} no {nome}" for nome, _, pre in aps)
+        return f"Por quadro, {partes} (app {vers[0]})."
+    # versões diferentes: cada aparelho com a sua, como "v1.0" (cabe em 3 linhas na coluna 3)
+    partes = " e ".join(f"{_faixa_ms(pre)} no {nome} (v{v})" for (nome, _, pre), v in zip(aps, vers))
+    return f"Por quadro, {partes}."
 
 
 COL3 = [

@@ -1,10 +1,10 @@
 # Números do artigo e do pôster (gerados de results/)
 
-Gerado em 27/10/2026 12:04 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
+Gerado em 05/11/2026 19:35 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
 
-Galaxy S23 Ultra: sem dados; macro `\SamsungPendente` = "medição prevista" e `\ifSamsungMedido` falso.
+Galaxy S23 Ultra: medido (macros `\CelularSamsung...`; `\ifSamsungMedido` verdadeiro).
 
-Total: 658 números (1298 macros).
+Total: 703 números (1343 macros).
 
 | Macro | Valor | Unidade | O que é | Arquivo de origem | Coluna / filtro |
 |---|---|---|---|---|---|
@@ -295,6 +295,51 @@ Total: 658 números (1298 macros).
 | `\CelularIPhoneQuadros` | 6.031 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros somados das execuções | `results/exp4_phone_latency.csv` | `quadros` [sum] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
 | `\CelularIPhoneQuadrosComRosto` | 6.031 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros com rosto | `results/exp4_phone_latency.csv` | `quadros_com_rosto` [sum] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
 | `\CelularIPhoneTaxaRosto` | 100,0 | % | Exp. 4 iPhone 17 Pro (512 GB): fração de quadros com rosto detectado | `(derivado)` | `CelularIPhoneQuadrosComRosto / CelularIPhoneQuadros * 100` com CelularIPhoneQuadrosComRosto, CelularIPhoneQuadros |
+| `\CelularSamsungNome` | Samsung Galaxy S23 Ultra |  | Exp. 4 nome do aparelho (Samsung Galaxy S23 Ultra) | `results/exp4_phone_latency.csv` | `aparelho` (valores distintos) onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungExecucoes` | 3 |  | Exp. 4 Samsung Galaxy S23 Ultra: número de execuções de 60 s | `results/exp4_phone_latency.csv` | `(linhas)` [count] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungVersaoApp` | 2.1 |  | Exp. 4 Samsung Galaxy S23 Ultra: versao_app (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `versao_app` (valores distintos) onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungSistema` | Android 16 |  | Exp. 4 Samsung Galaxy S23 Ultra: sistema (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `sistema` (valores distintos) onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungNavegador` | Chrome 156 |  | Exp. 4 Samsung Galaxy S23 Ultra: navegador (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `navegador` (valores distintos) onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungDelegate` | GPU |  | Exp. 4 Samsung Galaxy S23 Ultra: delegate_landmarker (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `delegate_landmarker` (valores distintos) onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungTotalPcinquenta` | 39,5 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `total_ms_p50` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungTotalPcinquentaMin` | 39,1 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `total_ms_p50` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungTotalPcinquentaMax` | 40,1 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `total_ms_p50` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungTotalPnoventaecinco` | 53,1 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `total_ms_p95` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungTotalPnoventaecincoMin` | 52,8 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `total_ms_p95` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungTotalPnoventaecincoMax` | 53,5 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `total_ms_p95` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLandmarkerPcinquenta` | 21,9 | ms | Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLandmarkerPcinquentaMin` | 21,8 | ms | Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLandmarkerPcinquentaMax` | 22,1 | ms | Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLandmarkerPnoventaecinco` | 24,8 | ms | Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLandmarkerPnoventaecincoMin` | 24,7 | ms | Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLandmarkerPnoventaecincoMax` | 26,0 | ms | Exp. 4 Samsung Galaxy S23 Ultra: landmarker_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungCNNPcinquenta` | 16,1 | ms | Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungCNNPcinquentaMin` | 15,9 | ms | Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungCNNPcinquentaMax` | 16,3 | ms | Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungCNNPnoventaecinco` | 28,9 | ms | Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungCNNPnoventaecincoMin` | 28,8 | ms | Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungCNNPnoventaecincoMax` | 29,7 | ms | Exp. 4 Samsung Galaxy S23 Ultra: cnn_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLSTMPcinquenta` | 0,6 | ms | Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `engine_ms_p50` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLSTMPcinquentaMin` | 0,6 | ms | Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `engine_ms_p50` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLSTMPcinquentaMax` | 0,6 | ms | Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `engine_ms_p50` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLSTMPnoventaecinco` | 0,7 | ms | Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `engine_ms_p95` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLSTMPnoventaecincoMin` | 0,7 | ms | Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `engine_ms_p95` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungLSTMPnoventaecincoMax` | 0,8 | ms | Exp. 4 Samsung Galaxy S23 Ultra: engine_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `engine_ms_p95` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungMotorPcinquenta` | 0,1 | ms | Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `motor_ms_p50` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungMotorPcinquentaMin` | 0,1 | ms | Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `motor_ms_p50` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungMotorPcinquentaMax` | 0,1 | ms | Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `motor_ms_p50` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungMotorPnoventaecinco` | 0,2 | ms | Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `motor_ms_p95` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungMotorPnoventaecincoMin` | 0,2 | ms | Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `motor_ms_p95` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungMotorPnoventaecincoMax` | 0,2 | ms | Exp. 4 Samsung Galaxy S23 Ultra: motor_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `motor_ms_p95` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungFPS` | 22,6 |  | Exp. 4 Samsung Galaxy S23 Ultra: quadros por segundo (median entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [median] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungFPSMin` | 22,4 |  | Exp. 4 Samsung Galaxy S23 Ultra: quadros por segundo (min entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [min] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungFPSMax` | 22,8 |  | Exp. 4 Samsung Galaxy S23 Ultra: quadros por segundo (max entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [max] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungTotalPcinquentaInteiro` | 40 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total p50 por quadro, em ms inteiros | `(derivado)` | `CelularSamsungTotalPcinquenta` com CelularSamsungTotalPcinquenta |
+| `\CelularSamsungTotalPcinquentaMinInteiro` | 39 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total p50 por quadro (min), em ms inteiros | `(derivado)` | `CelularSamsungTotalPcinquentaMin` com CelularSamsungTotalPcinquentaMin |
+| `\CelularSamsungTotalPcinquentaMaxInteiro` | 40 | ms | Exp. 4 Samsung Galaxy S23 Ultra: total p50 por quadro (max), em ms inteiros | `(derivado)` | `CelularSamsungTotalPcinquentaMax` com CelularSamsungTotalPcinquentaMax |
+| `\CelularSamsungQuadros` | 4.068 |  | Exp. 4 Samsung Galaxy S23 Ultra: quadros somados das execuções | `results/exp4_phone_latency.csv` | `quadros` [sum] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungQuadrosComRosto` | 4.068 |  | Exp. 4 Samsung Galaxy S23 Ultra: quadros com rosto | `results/exp4_phone_latency.csv` | `quadros_com_rosto` [sum] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
+| `\CelularSamsungTaxaRosto` | 100,0 | % | Exp. 4 Samsung Galaxy S23 Ultra: fração de quadros com rosto detectado | `(derivado)` | `CelularSamsungQuadrosComRosto / CelularSamsungQuadros * 100` com CelularSamsungQuadrosComRosto, CelularSamsungQuadros |
 | `\CelularVUmFalsoAlarmePERCLOS` | 25,8 | % (×100) | app v1.0 no iPhone (22:41Z, usuário acordado): PERCLOS no fim do benchmark | `results/phone/benchmark_pwa_2026-09-27T22-41-35-365Z.json` | chave `perclos_final` |
 | `\CelularVUmFalsoAlarmeQuadros` | 2.281 |  | app v1.0 no iPhone (22:41Z): quadros com alarme ligado | `results/phone/benchmark_pwa_2026-09-27T22-41-35-365Z.json` | chave `quadros_em_alerta` |
 | `\CelularVUmFalsoAlarmeQuadrosTotal` | 3.600 |  | app v1.0 no iPhone (22:41Z): quadros do benchmark | `results/phone/benchmark_pwa_2026-09-27T22-41-35-365Z.json` | chave `quadros` |
@@ -669,11 +714,11 @@ Total: 658 números (1298 macros).
 
 ## Conferência automática
 
-Executada em 27/10/2026 12:04 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
+Executada em 05/11/2026 20:01 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
 
-- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 658 de 658** números (1299 macros em `paper/numeros.tex`, 1299 no JSON; sobrando só no TeX: 0; só no JSON: 0).
-- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 538; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 103.
-- Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — não executada (--sem-latex).
+- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 703 de 703** números (1343 macros em `paper/numeros.tex`, 1343 no JSON; sobrando só no TeX: 0; só no JSON: 0).
+- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 565; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 121.
+- Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — tectonic rc=0; 0 'Undefined control sequence'.
 - Divergências: 0.
 
 ### Por número
@@ -967,6 +1012,51 @@ Executada em 27/10/2026 12:04 por `src/experiments/conferir_numeros.py` (leitura
 | `\CelularIPhoneQuadros` | 6.031 | ok | — |
 | `\CelularIPhoneQuadrosComRosto` | 6.031 | ok | — |
 | `\CelularIPhoneTaxaRosto` | 100,0 | ok | — |
+| `\CelularSamsungNome` | Samsung Galaxy S23 Ultra | ok | sim |
+| `\CelularSamsungExecucoes` | 3 | ok | — |
+| `\CelularSamsungVersaoApp` | 2.1 | ok | sim |
+| `\CelularSamsungSistema` | Android 16 | ok | sim |
+| `\CelularSamsungNavegador` | Chrome 156 | ok | sim |
+| `\CelularSamsungDelegate` | GPU | ok | sim |
+| `\CelularSamsungTotalPcinquenta` | 39,5 | ok | — |
+| `\CelularSamsungTotalPcinquentaMin` | 39,1 | ok | sim |
+| `\CelularSamsungTotalPcinquentaMax` | 40,1 | ok | sim |
+| `\CelularSamsungTotalPnoventaecinco` | 53,1 | ok | — |
+| `\CelularSamsungTotalPnoventaecincoMin` | 52,8 | ok | sim |
+| `\CelularSamsungTotalPnoventaecincoMax` | 53,5 | ok | sim |
+| `\CelularSamsungLandmarkerPcinquenta` | 21,9 | ok | — |
+| `\CelularSamsungLandmarkerPcinquentaMin` | 21,8 | ok | sim |
+| `\CelularSamsungLandmarkerPcinquentaMax` | 22,1 | ok | sim |
+| `\CelularSamsungLandmarkerPnoventaecinco` | 24,8 | ok | — |
+| `\CelularSamsungLandmarkerPnoventaecincoMin` | 24,7 | ok | sim |
+| `\CelularSamsungLandmarkerPnoventaecincoMax` | 26,0 | ok | sim |
+| `\CelularSamsungCNNPcinquenta` | 16,1 | ok | — |
+| `\CelularSamsungCNNPcinquentaMin` | 15,9 | ok | sim |
+| `\CelularSamsungCNNPcinquentaMax` | 16,3 | ok | sim |
+| `\CelularSamsungCNNPnoventaecinco` | 28,9 | ok | — |
+| `\CelularSamsungCNNPnoventaecincoMin` | 28,8 | ok | sim |
+| `\CelularSamsungCNNPnoventaecincoMax` | 29,7 | ok | sim |
+| `\CelularSamsungLSTMPcinquenta` | 0,6 | ok | — |
+| `\CelularSamsungLSTMPcinquentaMin` | 0,6 | ok | sim |
+| `\CelularSamsungLSTMPcinquentaMax` | 0,6 | ok | sim |
+| `\CelularSamsungLSTMPnoventaecinco` | 0,7 | ok | — |
+| `\CelularSamsungLSTMPnoventaecincoMin` | 0,7 | ok | sim |
+| `\CelularSamsungLSTMPnoventaecincoMax` | 0,8 | ok | sim |
+| `\CelularSamsungMotorPcinquenta` | 0,1 | ok | — |
+| `\CelularSamsungMotorPcinquentaMin` | 0,1 | ok | sim |
+| `\CelularSamsungMotorPcinquentaMax` | 0,1 | ok | sim |
+| `\CelularSamsungMotorPnoventaecinco` | 0,2 | ok | — |
+| `\CelularSamsungMotorPnoventaecincoMin` | 0,2 | ok | sim |
+| `\CelularSamsungMotorPnoventaecincoMax` | 0,2 | ok | sim |
+| `\CelularSamsungFPS` | 22,6 | ok | — |
+| `\CelularSamsungFPSMin` | 22,4 | ok | sim |
+| `\CelularSamsungFPSMax` | 22,8 | ok | sim |
+| `\CelularSamsungTotalPcinquentaInteiro` | 40 | ok | — |
+| `\CelularSamsungTotalPcinquentaMinInteiro` | 39 | ok | — |
+| `\CelularSamsungTotalPcinquentaMaxInteiro` | 40 | ok | — |
+| `\CelularSamsungQuadros` | 4.068 | ok | — |
+| `\CelularSamsungQuadrosComRosto` | 4.068 | ok | — |
+| `\CelularSamsungTaxaRosto` | 100,0 | ok | — |
 | `\CelularVUmFalsoAlarmePERCLOS` | 25,8 | ok | — |
 | `\CelularVUmFalsoAlarmeQuadros` | 2.281 | ok | — |
 | `\CelularVUmFalsoAlarmeQuadrosTotal` | 3.600 | ok | — |
