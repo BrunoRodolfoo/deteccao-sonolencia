@@ -299,9 +299,10 @@ predições do LSTM.
 - **Depois do teste:** `bash tools/atualizar_celular.sh` importa `results/phone/`, refaz a figura do Exp. 4, os números
   do artigo e do pôster (conferidos) e recompila os dois. Na PUC a rede isola os aparelhos: ponha o Mac e o celular no
   Acesso Pessoal (hotspot) do iPhone. Passo a passo: `docs/GUIA_EQUIPE.md`, seção 1.
-- **O que já está em `results/phone/`:** duas execuções no iPhone 17 Pro com a **v1.0** (21:58Z e 22:41Z de 27/09;
-  `results/exp4_phone_latency.md`), válidas só para o custo computacional. Na de 22:41Z a v1 deu falso alarme por
-  PERCLOS com o usuário acordado, um dos motivos da reescrita. A v2.1 ainda não foi medida no iPhone nem no Galaxy.
+- **O que já está em `results/phone/`:** duas execuções no iPhone 17 Pro com a **v1.0** (21:58Z e 22:41Z de 27/09),
+  válidas só para o custo computacional. Na de 22:41Z a v1 deu falso alarme por PERCLOS com o usuário acordado, um dos
+  motivos da reescrita. E três execuções no Galaxy S23 Ultra com a **v2.1** (05/11, de 39,1 a 40,1 ms por quadro;
+  condições em `results/phone/NOTAS.md`). A v2.1 ainda não foi medida no iPhone. Tabela: `results/exp4_phone_latency.md`.
 
 ## 8. Validação (números de execuções reais, com a origem)
 

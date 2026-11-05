@@ -157,8 +157,11 @@ Em 26/10/2026, depois da banca simulada:
   fonte da definição de microssono (`skorucak2020`): 31 no total.
 - App (Seção VI-E e Tabela V): teste independente em sono real na UTA-RLDD, sensibilidade dos pesos e, nas mesmas
   24 pessoas, a comparação com os modelos do Exp. 5b e com a regra do rótulo (`results/app_comparacao_uta.md`).
-- Celular: o tempo por quadro aparece em milissegundos inteiros, como o iPhone registra (app 1.0: 17 ms de mediana,
-  de 11 a 23 ms entre as 2 execuções); o app 2.1 ainda vai ser medido no iPhone e no Galaxy S23 Ultra.
+- Celular: o tempo do iPhone aparece em milissegundos inteiros, como ele registra (app 1.0: 17 ms de mediana, de 11 a
+  23 ms entre as 2 execuções). O Galaxy S23 Ultra (app 2.1, 05/11) registra décimos: de 39,1 a 40,1 ms, mediana de
+  39,5 ms (40 ms no resumo e na conclusão). Com versões diferentes nos dois aparelhos, o texto dá a versão de cada um
+  (`\ifMesmaVersaoApp` em `artigo.tex`). Com o Galaxy, a conclusão da PP2 passou a dar os tempos sem chamar o custo
+  de pequeno: lá, a CNN dos olhos leva 16,1 dos 39,5 ms. O app 2.1 no iPhone ainda vai ser medido.
 
 ## Pendências para a equipe
 

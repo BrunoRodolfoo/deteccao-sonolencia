@@ -6,8 +6,8 @@
 > uma pessoa acordada (PWA v1 no iPhone, 27/09), e a regra v1 da PWA (EAR + PERCLOS > 15 % + olho fechado >= 1 s, sem
 > o LSTM) ficou 55,6 % do tempo em vermelho na direção real do DMD (`results/app_validacao_dmd.md`); este app Kotlin
 > não foi avaliado nesses dados. O projeto **nunca foi compilado**. A **versão de demonstração é a PWA**; este app
-> serve, no máximo, como caminho alternativo para medir latência de TFLite nativo. O aparelho medido até agora é o
-> iPhone 17 Pro (PWA); o Galaxy S23 Ultra é medição prevista (`docs/GUIA_EQUIPE.md`).
+> serve, no máximo, como caminho alternativo para medir latência de TFLite nativo. Os aparelhos medidos são o
+> iPhone 17 Pro e o Galaxy S23 Ultra, os dois com a PWA (`results/exp4_phone_latency.md`).
 
 Aplicativo Kotlin que roda **totalmente no aparelho** o pipeline do TCC:
 

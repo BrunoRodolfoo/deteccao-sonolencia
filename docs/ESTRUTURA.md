@@ -74,7 +74,7 @@ deteccao-sonolencia/
 │   ├── exp1_* a exp6_*, app_validacao*, app_sensibilidade_pesos.*, app_comparacao_uta.*, sinais_*   relatórios .md e tabelas .csv finais
 │   │                      (inclui exp5b_robustez.{csv,md}, de 26/10)
 │   ├── figures/           figuras de resultados (.pdf/.png), inclusive amostras_mrl (só recortes do MRL Eye)
-│   ├── phone/             benchmarks do celular (JSON e CSV por quadro, só números) + aparelhos.json
+│   ├── phone/             benchmarks do celular (JSON e CSV por quadro, só números) + aparelhos.json e NOTAS.md
 │   └── logs/              logs das execuções citadas nos relatórios e da última execução de cada etapa
 ├── paper/
 │   ├── artigo.tex, artigo.pdf, refs.bib, numeros.tex (gerado)
@@ -157,11 +157,11 @@ Saíram 7 pastas `__pycache__/`, `.pytest_cache/` e `data/signals/_teste/` (saí
 
 Todo o trabalho até a noite de 26/10/2026 foi enviado ao GitHub nesse dia, em commits separados por assunto: código,
 resultados e logs dos experimentos, os testes do app (sensibilidade dos pesos e teste independente na UTA-RLDD),
-o artigo, o pôster e estes documentos. O que mudou depois (em 27/10, a comparação do app com os modelos nas mesmas
-pessoas e ajustes do artigo, do pôster e destes documentos) entra no próximo commit, e a medição do app 2.1 no iPhone
-e no Galaxy S23 Ultra, no seguinte.
+o artigo, o pôster e estes documentos. Em 27/10 entraram a comparação do app com os modelos nas mesmas pessoas, os
+ajustes do artigo, do pôster e destes documentos e a interface nova do app; em 05/11, a medição do app 2.1 no Galaxy
+S23 Ultra. A do app 2.1 no iPhone entra no commit seguinte.
 
-A árvore versionada tem cerca de 105 MB em 395 arquivos. O maior arquivo é
+A árvore versionada tem cerca de 106 MB em 410 arquivos. O maior arquivo é
 `results/exp5b_predicoes.csv` (32 MB), abaixo do aviso de 50 MB do GitHub. A lista não inclui `data/`
 (só `data/README.md`), `.venv*`, caches, certificados, chaves, `app/pwa/vendor/`, `models/exp1/` nem `models/exp6/`.
 Esses números mudam a cada arquivo novo; refaça a conta antes do commit (comando abaixo).
