@@ -14,9 +14,9 @@ Orientador: Prof. Júlio César Nievola.
 > - Passo a passo da equipe (celular, demonstração, pôster, revisão por pares, GitHub): [`docs/GUIA_EQUIPE.md`](docs/GUIA_EQUIPE.md).
 > - Árvore de pastas comentada (tamanhos, o que é versionado, limpezas de 28/09, 06/10 e 26/10): [`docs/ESTRUTURA.md`](docs/ESTRUTURA.md).
 >
-> **Celular:** o app 2.1 foi medido no Galaxy S23 Ultra em 05/11 (3 execuções; mediana de 39,5 ms por quadro, cerca de
-> 23 quadros por segundo). No iPhone 17 Pro, só o app 1.0 foi medido (2 execuções de 27/09; mediana de 17 ms); o app 2.1
-> no iPhone ainda vai ser medido, até 09/11 (`results/exp4_phone_latency.md`).
+> **Celular:** o app 2.1 foi medido nos dois aparelhos, com 3 execuções de 60 s em cada: no iPhone 17 Pro em 06/11
+> (mediana de 11 ms por quadro) e no Galaxy S23 Ultra em 05/11 (mediana de 39,5 ms, cerca de 23 quadros por segundo).
+> Detalhes em `results/exp4_phone_latency.md` e `results/phone/NOTAS.md`.
 
 ## 1. Visão geral
 
@@ -38,7 +38,7 @@ O processamento do vídeo é todo local, sem nuvem (veja a nota sobre telemetria
 | | Pergunta | Experimentos |
 |---|---|---|
 | **PP1** | Quanto o desempenho cai ao treinar em sonolência atuada e testar em real? | Exp. 5b (DMD atuado → UTA-RLDD real, com controles da normalização); Exp. 2 (inflação por vazamento entre treino e teste); Exp. 1 (teto intra-UTA); Exp. 5a (validação do extrator) |
-| **PP2** | Qual o custo acurácia × latência num celular? | Exp. 4 (TFLite fp32/int8; app 1.0 no iPhone 17 Pro; app 2.1 no Galaxy S23 Ultra; app 2.1 no iPhone a medir) |
+| **PP2** | Qual o custo acurácia × latência num celular? | Exp. 4 (TFLite fp32/int8; app 2.1 no iPhone 17 Pro e no Galaxy S23 Ultra) |
 | **PP3** | A queda se concentra em óculos, iluminação ruim ou noite? | Exp. 3 (estado ocular MRL Eye ↔ CEW por condição); Exp. 6 (noite real, NITYMED, com o DMD em movimento como controle) |
 
 | Exp. | Treino → teste | Unidade | Resultado em |
@@ -166,7 +166,7 @@ Cada etapa, isolada. Os tempos são de um Mac M5 com no máximo 6 processos. Os 
 | Figuras | .venv | `src/pipeline_b/make_figures.py` (amostras do MRL Eye); `src/experiments/make_figures.py` | 1 min | `results/figures/*.{pdf,png}` (inclui `amostras_mrl`) |
 | Números, artigo, pôster | .venv | `bash tools/atualizar_celular.sh` (importa o celular, refaz a figura do Exp. 4, `paper/numeros.tex` + `poster/numeros.json` **conferidos contra a origem**, compila o artigo, gera o pôster) | 1 min | `results/numeros_resumo.md`, `paper/artigo.pdf`, `poster/poster_final.pdf` |
 
-Nenhum número do artigo ou do pôster é digitado à mão. `src/experiments/make_paper_numbers.py` gera cada valor a partir do arquivo e da coluna indicados em `results/numeros_resumo.md`, e `src/experiments/conferir_numeros.py` recalcula todos eles (658 números, 0 divergências em 27/10/2026).
+Nenhum número do artigo ou do pôster é digitado à mão. `src/experiments/make_paper_numbers.py` gera cada valor a partir do arquivo e da coluna indicados em `results/numeros_resumo.md`, e `src/experiments/conferir_numeros.py` recalcula todos eles (709 números, 0 divergências em 06/11/2026).
 
 ## 7. Resultados (estado de 27/10/2026)
 
@@ -179,7 +179,7 @@ A rodada preliminar de 27/09 (janelas de 30 s, só o Fold 1) foi descartada; nad
 | 1 | UTA-RLDD, 3 classes, 5 folds por sujeito: Random Forest com BSA 54,5 ± 9,3 e VA 57,3 ± 7,2. Referências: HM-LSTM 54,0 / 65,2; julgamento humano (VA) 57,8 | `results/exp1_intra.md` |
 | 2 | Os mesmos dados com partição aleatória por janela: RF 99,5, contra 54,2 por sujeito, ou seja, inflação de +45,3 pp (LSTM: +38,1 pp). A causa são janelas do mesmo vídeo nos dois lados: sequências vizinhas dividem 28 das 30 piscadas. A partição por vídeo, em que a pessoa aparece no treino com os outros vídeos, fica *abaixo* da por sujeito (47,2): nesta base, o que infla é o mesmo vídeo (e com ele o mesmo rótulo) nos dois lados, não a mesma pessoa. No cenário do Exp. 5b (janelas de 10 s, duas classes), a partição aleatória infla a acurácia balanceada do RF em 12,6 pp e a da RL em só 1,2 pp | `results/exp2_leakage.md`, `results/exp5b_robustez.md` (seção 4) |
 | 3 | EyeNet: MRL → MRL 94,1 ± 3,4; MRL → CEW 79,0 ± 8,5 (modelo final 85,7/90,0); CEW → MRL 68,1 ± 1,9. Com óculos, no sentido CEW → MRL, a AUC cai para 65,1, contra 93,4 sem óculos | `results/exp3_eye_state.md` |
-| 4 | EyeNet int8 com 72,1 KB (fp32: 248,2 KB) e queda de no máximo 0,31 pp. No iPhone 17 Pro, o app 1.0 levou 11 e 23 ms por quadro (p50) em 2 execuções, mediana de 17 ms. No Galaxy S23 Ultra, o app 2.1 levou de 39,1 a 40,1 ms em 3 execuções, mediana de 39,5 ms (21,9 ms no Face Landmarker e 16,1 ms na CNN); o app 2.1 no iPhone ainda vai ser medido | `results/exp4_tflite_eval.csv`, `results/exp4_phone_latency.md` |
+| 4 | EyeNet int8 com 72,1 KB (fp32: 248,2 KB) e queda de no máximo 0,31 pp. Com o app 2.1, em 3 execuções por aparelho, o tempo por quadro (p50) foi de 11 a 12 ms no iPhone 17 Pro, mediana de 11 ms (9 ms no Face Landmarker e 2 ms na CNN), e de 39,1 a 40,1 ms no Galaxy S23 Ultra, mediana de 39,5 ms (21,9 ms no Face Landmarker e 16,1 ms na CNN) | `results/exp4_tflite_eval.csv`, `results/exp4_phone_latency.md` |
 | 5a | Trocar o extrator (dlib → MediaPipe) num RF treinado nas características oficiais custa +2,0 pp [−4,8; +8,5] (3 classes, 47 sujeitos), com IC que inclui zero. Com cada extrator no próprio treino e teste, o nosso é melhor em B3 nos 5 folds (oficial − nosso = −6,7 pp [−12,9; −1,8], p = 0,029), mas, deixando um sujeito de fora por vez, a diferença não se distingue de zero (−4,5 [−11,0; 0,6]) | `results/exp5a_validacao.md` |
 | 5b | PP1. AUC por janela (B3, RF): DMD → DMD 82,4, UTA → UTA 80,1, DMD → UTA 69,2. A RL perde de 5,4 a 9,8 pontos de AUC por janela nas quatro formas testadas de normalizar (principal: 9,8 [3,7; 16,0]), sempre com IC acima de zero. O RF perde 10,9 [6,7; 15,7] na normalização principal, mas, com a referência no vídeo de pouca vigilância ou sem centragem, perde de 2,1 a 2,3, sem diferença detectável: na UTA-RLDD, as janelas alertas saem do mesmo vídeo da referência, e o RF treinado nela aproveita essa semelhança. O achado mais firme: na UTA real, o modelo treinado em sono encenado reconhece 82,0% das janelas alertas, mas só 48,4% das sonolentas (limiar 0,5); a sonolência atuada é mais extrema que a real (maior fechamento mediano de 0,97 s no DMD e 0,17 s na UTA-RLDD). O volume do treino explica pouco: com B treinado em só 13 sujeitos, a queda fica em 9,3 (RF) e 7,0 (RL) | `results/exp5b_transferencia.md`, `results/exp5b_robustez.md` |
 | 6 | PP3. SNR do EAR: noite (NITYMED) 7,2, UTA-RLDD 21,5, DMD parado 13,6, DMD em movimento 8,7. Noite − movimento = −1,6 [−3,7; +1,1], com IC que inclui zero: só o carro andar já leva a SNR para perto do nível noturno. Em pessoas acordadas (UTA KSS 0), no limiar 0,5, os RF com características brutas disparam em 26,0% (modelo do DMD) e 43,6% (modelo da UTA) das janelas, e a regra por sinais visíveis em 2,6%. Esse limiar é arbitrário: com o mesmo falso alarme da regra, a RL do DMD centrada acha tantas janelas sonolentas quanto ela (24,7% contra 24,1%) | `results/exp6_noite.md`, `results/exp5b_robustez.md` (seção 5) |

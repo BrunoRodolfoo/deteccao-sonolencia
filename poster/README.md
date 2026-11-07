@@ -70,7 +70,7 @@ também chama `build_poster.py --pdf`, então o PDF sai com título e autores no
 | Cabeçalho | título, endereço do repositório, autores, orientador e QR | |
 | 1. Contexto e Pergunta | ABRAMET/PRF 27,8 % (condições de saúde do condutor, sono incluído); encenado acima de 90 % e real 65,2 % (modelo dos autores da base), humanos 57,8 %; pergunta central; PP1 a PP3 | `paper/fontes_brasil.md`, `results/exp1_intra.md` |
 | 2. Método e Resultados | diagrama do método com a validação dos sinais do app (olhos κ 0,938 e revocação 0,929 dos fechamentos de 0,5 s ou mais; bocejo 0,638 sem a mão; cabeça sem revocação medida) e o semáforo (40 e 70); tabela das bases; figura do PP1 com os rótulos no próprio gráfico (perda ao treinar com sono encenado, por normalização: RL de 5,4 a 9,8 em todas, RF 10,9 só com a referência principal na UTA; o modelo do DMD reconhece 82,0 % das janelas alertas e 48,4 % das de sono real); vazamento (45,3 pp nas sequências; 12,6 pp no RF e 1,2 pp na RL nas janelas de 10 s); app v2.1 em sono real (24 pessoas da UTA-RLDD, sentadas e fora do ajuste: AUC 0,812 entre sonolento e acordado; alarme em 15 sonolentos e 2 acordados) | `results/app_validacao*.md`, `results/exp5b_transferencia.md`, `results/exp2_leakage.md` |
-| 3. Conclusões | frase-síntese (treinado com sono encenado, o modelo só reconhece 48,4 % das janelas de sono real, com fechamentos mais curtos); PP1; PP2 (por quadro, 11 a 23 ms no iPhone 17 Pro, app 1.0, e 39 a 40 ms no Galaxy S23 Ultra, app 2.1); PP3 (SNR do EAR 7,2 à noite, 8,7 com o carro andando e 13,6 parado, de dia; óculos, AUC do olho de 93,4 para 65,1); limitações (um só par de bases); referências | `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
+| 3. Conclusões | frase-síntese (treinado com sono encenado, o modelo só reconhece 48,4 % das janelas de sono real, com fechamentos mais curtos); PP1; PP2 (por quadro, 11 a 12 ms no iPhone 17 Pro e 39 a 40 ms no Galaxy S23 Ultra, app 2.1); PP3 (SNR do EAR 7,2 à noite, 8,7 com o carro andando e 13,6 parado, de dia; óculos, AUC do olho de 93,4 para 65,1); limitações (um só par de bases); referências | `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
 
 ## Roteiro da apresentação (10 min, 4 falas de 2,5 min)
 
@@ -141,9 +141,8 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
   fora."
 - **Demonstração (40 s, se não houver fila):** piscar normal fica verde; fechar os olhos por 2 s vai ao vermelho
   com sirene; abrir os olhos volta ao amarelo. Antes, subir o volume para 100 % (o padrão é 20 %).
-- **PP2 (30 s):** "Por quadro, a versão 1.0 do app levou de 11 a 23 ms no iPhone 17 Pro, em duas execuções, e a
-  versão 2.1, de 39 a 40 ms no Galaxy S23 Ultra, em três. Falta medir a 2.1 no iPhone." Se o pôster já trouxer a
-  medição nova, ler os números dele.
+- **PP2 (30 s):** "Por quadro, a versão 2.1 do app levou de 11 a 12 ms no iPhone 17 Pro e de 39 a 40 ms no Galaxy
+  S23 Ultra, em três execuções de 60 s em cada." Se o pôster mudar, ler os números dele.
 - **Validação e limitações (30 s):** "Testamos o app em 24 pessoas da UTA-RLDD com sono real, sentadas e fora do
   ajuste das regras: ele separou sonolento de acordado com AUC 0,812, no nível do Random Forest treinado no DMD
   (0,811), e deu alarme em 15 de 24 sonolentos e em 2 de 24 acordados. Na direção real do DMD, ficou 3,3 % do tempo em vermelho, mas são os mesmos vídeos do ajuste. As limitações: é um
@@ -202,14 +201,14 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
     da v2.1 foram escolhidos olhando os mesmos vídeos do DMD da validação; por isso os números do app no DMD são
     de desenvolvimento. O teste independente é o da UTA-RLDD: 24 pessoas sentadas e fora do ajuste, AUC 0,812
     (o RF do DMD dá 0,811), 15 de 24 sonolentos no vermelho e 2 de 24 acordados com alarme.
-13. **O iPhone mostra o custo do app final?** Ainda não: as duas execuções no iPhone 17 Pro usaram a versão
-    1.0, e a 2.1 ainda vai ser medida nele. O custo maior é o MediaPipe (9 a 19 ms dos 11 a 23 ms por quadro), que
-    a v2.1 também usa. A v2.1 foi medida no Galaxy S23 Ultra: 39,5 ms por quadro (mediana de 3 execuções), com
-    21,9 ms no MediaPipe e 16,1 ms na CNN dos olhos. Numa das execuções do iPhone, a v1 deu falso alarme com o André
-    acordado (PERCLOS 25,8 %, alarme em 63,4 % dos quadros), e foi isso que levou à reescrita.
+13. **O tempo no celular é do app final?** Sim: os dois aparelhos rodaram a versão 2.1, com 3 execuções de 60 s
+    em cada. No iPhone 17 Pro, 11 ms por quadro (mediana), 9 ms deles no MediaPipe; no Galaxy S23 Ultra, 39,5 ms,
+    com 21,9 ms no MediaPipe e 16,1 ms na CNN dos olhos. Em setembro, a versão 1.0 tinha sido medida no iPhone, e
+    numa daquelas execuções a v1 deu falso alarme com o André acordado (PERCLOS 25,8 %, alarme em 63,4 % dos
+    quadros): foi isso que levou à reescrita.
 14. **O planejamento previa o Galaxy S23 Ultra. Por que também o iPhone?** O S23 Ultra é de um colega e só foi
     medido em 05/11; antes disso, a versão 1.0 já tinha sido medida no iPhone 17 Pro de um dos autores. O pôster
-    mostra os dois, cada um com a sua versão do app.
+    mostra os dois, ambos com a versão 2.1 do app.
 15. **E os óculos escuros?** Não medimos óculos escuros. Com óculos comuns, a CNN do olho treinada no CEW e
     testada no MRL cai de AUC 93,4 para 65,1; no DMD, o detector de piscadas falhou num dos três motoristas de
     óculos.

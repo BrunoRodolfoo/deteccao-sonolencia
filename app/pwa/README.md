@@ -301,8 +301,9 @@ predições do LSTM.
   Acesso Pessoal (hotspot) do iPhone. Passo a passo: `docs/GUIA_EQUIPE.md`, seção 1.
 - **O que já está em `results/phone/`:** duas execuções no iPhone 17 Pro com a **v1.0** (21:58Z e 22:41Z de 27/09),
   válidas só para o custo computacional. Na de 22:41Z a v1 deu falso alarme por PERCLOS com o usuário acordado, um dos
-  motivos da reescrita. E três execuções no Galaxy S23 Ultra com a **v2.1** (05/11, de 39,1 a 40,1 ms por quadro;
-  condições em `results/phone/NOTAS.md`). A v2.1 ainda não foi medida no iPhone. Tabela: `results/exp4_phone_latency.md`.
+  motivos da reescrita. E três execuções da **v2.1** em cada aparelho: no Galaxy S23 Ultra em 05/11 (de 39,1 a 40,1 ms
+  por quadro) e no iPhone 17 Pro em 06/11 (de 11 a 12 ms); condições em `results/phone/NOTAS.md`. Tabela:
+  `results/exp4_phone_latency.md`.
 
 ## 8. Validação (números de execuções reais, com a origem)
 

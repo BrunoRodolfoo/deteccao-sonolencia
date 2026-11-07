@@ -94,7 +94,7 @@ Diagrama TikZ: `cd figures && tectonic fig_pipeline.tex` (detalhes em `figures/R
   tabela macro → valor → arquivo → coluna e filtro vai para `results/numeros_resumo.md`.
 - `src/experiments/conferir_numeros.py` recalcula cada número com uma implementação independente,
   confere `numeros.tex` × `numeros.json`, procura o valor no `.md` de resultados e compila um documento
-  com todos os macros. Estado em 27/10/2026: 658 números (1.299 macros), 0 divergências.
+  com todos os macros. Estado em 06/11/2026: 709 números (1.349 macros), 0 divergências.
 - Convenções: percentuais **sem** o símbolo `%` (escreva `\ExpCincoBCSensJanela\%`); diferenças em pontos
   percentuais; `\NomeIC` = "[inf; sup]", `\NomeComIC` = "valor [inf; sup]", `\NomeMDP` = "média ± dp";
   negativos com o sinal de menos tipográfico. Depois de um macro seguido de palavra, use `{}`
@@ -157,11 +157,11 @@ Em 26/10/2026, depois da banca simulada:
   fonte da definição de microssono (`skorucak2020`): 31 no total.
 - App (Seção VI-E e Tabela V): teste independente em sono real na UTA-RLDD, sensibilidade dos pesos e, nas mesmas
   24 pessoas, a comparação com os modelos do Exp. 5b e com a regra do rótulo (`results/app_comparacao_uta.md`).
-- Celular: o tempo do iPhone aparece em milissegundos inteiros, como ele registra (app 1.0: 17 ms de mediana, de 11 a
-  23 ms entre as 2 execuções). O Galaxy S23 Ultra (app 2.1, 05/11) registra décimos: de 39,1 a 40,1 ms, mediana de
-  39,5 ms (40 ms no resumo e na conclusão). Com versões diferentes nos dois aparelhos, o texto dá a versão de cada um
+- Celular: app 2.1 nos dois aparelhos, com 3 execuções em cada. O iPhone (06/11) registra milissegundos inteiros: de
+  11 a 12 ms, mediana de 11 ms. O Galaxy S23 Ultra (05/11) registra décimos: de 39,1 a 40,1 ms, mediana de 39,5 ms
+  (40 ms no resumo e na conclusão). Se as versões dos dois aparelhos forem diferentes, o texto dá a versão de cada um
   (`\ifMesmaVersaoApp` em `artigo.tex`). Com o Galaxy, a conclusão da PP2 passou a dar os tempos sem chamar o custo
-  de pequeno: lá, a CNN dos olhos leva 16,1 dos 39,5 ms. O app 2.1 no iPhone ainda vai ser medido.
+  de pequeno: lá, a CNN dos olhos leva 16,1 dos 39,5 ms.
 
 ## Pendências para a equipe
 

@@ -158,10 +158,10 @@ Saíram 7 pastas `__pycache__/`, `.pytest_cache/` e `data/signals/_teste/` (saí
 Todo o trabalho até a noite de 26/10/2026 foi enviado ao GitHub nesse dia, em commits separados por assunto: código,
 resultados e logs dos experimentos, os testes do app (sensibilidade dos pesos e teste independente na UTA-RLDD),
 o artigo, o pôster e estes documentos. Em 27/10 entraram a comparação do app com os modelos nas mesmas pessoas, os
-ajustes do artigo, do pôster e destes documentos e a interface nova do app; em 05/11, a medição do app 2.1 no Galaxy
-S23 Ultra. A do app 2.1 no iPhone entra no commit seguinte.
+ajustes do artigo, do pôster e destes documentos e a interface nova do app; em 05/11 e 06/11, a medição do app 2.1
+no Galaxy S23 Ultra e no iPhone 17 Pro.
 
-A árvore versionada tem cerca de 106 MB em 410 arquivos. O maior arquivo é
+A árvore versionada tem cerca de 109 MB em 418 arquivos. O maior arquivo é
 `results/exp5b_predicoes.csv` (32 MB), abaixo do aviso de 50 MB do GitHub. A lista não inclui `data/`
 (só `data/README.md`), `.venv*`, caches, certificados, chaves, `app/pwa/vendor/`, `models/exp1/` nem `models/exp6/`.
 Esses números mudam a cada arquivo novo; refaça a conta antes do commit (comando abaixo).
