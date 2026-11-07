@@ -11,7 +11,8 @@
  *               CABEÇA = pitch/yaw/roll da matriz -> queda >= 18° por 0,8 s, cabeceio
  *          -> nível 0-100 (soma de pontos explicada em "Por que N", na tela Em viagem) com histerese
  *          -> ALERTA (verde) / ATENÇÃO (amarelo + ding) / SONOLENTO (vermelho + sirene + tela de alarme)
- *   Em paralelo, só como informação: recorte dos olhos 48x48 -> eye_state.tflite (CNN, Exp. 3) e
+ *   Em paralelo, só como informação: recorte dos olhos 48x48 -> eye_state.tflite (CNN, Exp. 3), que roda só com
+ *   a tela Detalhes técnicos aberta e no benchmark (onde segue a cada quadro, como nas medições do Exp. 4), e
  *   4 características por piscada -> z-score -> janela 30x4 -> blink_temporal.tflite (LSTM, Exp. 1),
  *   que soma no máximo +10 pontos, e só quando os sinais visíveis já estão em ATENÇÃO (>= 40).
  * Som: sirene/ding pelo Web Audio, liberado no primeiro toque (iOS), com o controle "Volume do alarme"
@@ -20,9 +21,11 @@
  * Sem etapa de build: vanilla JS + ES modules. Dependências de ./vendor/ ou, se faltarem, da CDN. Todos os
  * textos em pt-BR.
  *
- * Interface (27/10/2026): telas no estilo do iPhone, com tema claro e escuro (Ajustes > Aparência). Início ->
- * Calibração (câmera em tela cheia) -> Em viagem (mostrador do nível, sinais, "Por que N") -> alarme vermelho em
- * tela cheia -> Encerrar -> resumo da viagem (aba Viagens). Detector, parâmetros e benchmark iguais aos da 2.1.
+ * Interface "Painel de estrada" (07/11/2026): estados com a forma das placas de trânsito, um número grande e uma
+ * frase; o detalhe fica no "Por quê?". Primeiro uso -> Início (checagens) -> Calibração guiada -> Em viagem (sempre
+ * escura) -> alarme ("segure: estou acordado") ou "Acorde!" (microssono) -> "segure: encerrar" -> resumo (aba
+ * Viagens). Também: Como funciona (interativo), Ajustes, Modo pôster e, no modo pesquisador, Detalhes técnicos.
+ * Detector, parâmetros e benchmark iguais aos da 2.1.
  */
 import * as E from "./engine.js";
 import { adaptEyeMeta, tfliteIO, runTflite as runTfliteRaw } from "./tflite_io.js";
@@ -115,7 +118,15 @@ const S = {
   soundTimers: [0, 0],
   volumePct: E.SOUND.defaultVolumePct, // volume do alarme (0-100 %)
   volumeSource: "padrão", // "padrão" | "salvo" | "url"
+  somTestado: false, // "Testar" tocou nesta visita (checagem do Início)
+  vibrarOn: true, // Ajustes > Vibrar junto com o som (só existe no Android)
+  pesquisa: false, // modo pesquisador: Detalhes técnicos, benchmark e exportação
   userTapped: false, // houve toque real (isTrusted) na página: libera a vibração
+  // câmera ligada para quê: "viagem" (Iniciar viagem) ou "poster" (Modo pôster); null com a câmera desligada
+  modo: null,
+  faceBox: null, // caixa do rosto na imagem (0-1): centro e altura, para a calibração guiada
+  calibPiscadas: 0, // piscadas vistas na fase 1 da calibração (só para a tela)
+  calibFechado: false,
   wakeLock: null,
   wakeWanted: false,
   lastUi: 0,
@@ -297,6 +308,10 @@ const Sound = {
         this.mix.connect(comp);
         comp.connect(this.out);
         this.out.connect(ctx.destination);
+        // medidor do teste de som (Primeiro uso): lê o sinal DEPOIS do volume do alarme, o que sai de fato
+        this.analyser = ctx.createAnalyser();
+        this.analyser.fftSize = 256;
+        this.out.connect(this.analyser);
         ctx.onstatechange = () => updateAudioStatus();
       }
       if (this.ctx.state !== "running") this.ctx.resume().catch(() => {});
@@ -426,11 +441,16 @@ function saveVolume(pct) {
     return false;
   }
 }
+/** O volume aparece em vários lugares (folha do Som, Ajustes, Primeiro uso, chip da viagem, checagem do Início). */
 function showVolume() {
-  $("vol-out").textContent = `${S.volumePct} %`;
-  $("vol").setAttribute("aria-valuetext", `${S.volumePct} %`);
-  for (const id of ["vol-out2", "som-pct", "som-pct-inicio"]) setText(id, `${S.volumePct} %`);
+  for (const el of document.querySelectorAll(".vol-slider")) {
+    if (el.value !== String(S.volumePct)) el.value = String(S.volumePct);
+    el.setAttribute("aria-valuetext", `${S.volumePct} %`);
+  }
+  for (const id of ["vol-out", "vol-out2", "pu-vol-out"]) setText(id, `${S.volumePct} %`);
   updateAudioStatus();
+  atualizarSomChip();
+  if (UI.tela === "inicio") Checagem.atualizar();
 }
 function initVolume() {
   const params = new URLSearchParams(location.search);
@@ -438,21 +458,21 @@ function initVolume() {
   S.volumePct = r.pct;
   S.volumeSource = r.source;
   Sound.setVolume(r.pct);
-  const el = $("vol");
-  el.value = String(r.pct);
-  el.addEventListener("input", () => {
-    const v = E.parseVolumePct(el.value);
-    if (v === null) return;
-    S.volumePct = v;
-    Sound.setVolume(v);
-    showVolume();
-  });
-  el.addEventListener("change", () => {
-    saveVolume(S.volumePct);
-    // Prévia curta no volume escolhido (só se o som já foi liberado por um toque).
-    if (S.volumePct > 0 && Sound.ready && !S.sirenWanted) Sound.ding();
-    showVolume();
-  });
+  for (const el of document.querySelectorAll(".vol-slider")) {
+    el.addEventListener("input", () => {
+      const v = E.parseVolumePct(el.value);
+      if (v === null) return;
+      S.volumePct = v;
+      Sound.setVolume(v);
+      showVolume();
+    });
+    el.addEventListener("change", () => {
+      saveVolume(S.volumePct);
+      // Prévia curta no volume escolhido (só se o som já foi liberado por um toque).
+      if (S.volumePct > 0 && Sound.ready && !S.sirenWanted) Sound.ding();
+      showVolume();
+    });
+  }
   showVolume();
 }
 
@@ -465,7 +485,7 @@ function updateAudioStatus() {
   if (S.volumePct === 0) txt = "Volume do alarme em 0 %: o alarme NÃO vai tocar (a tela ainda pisca e, no Android, o celular vibra).";
   else if (!Sound.ctx) txt = 'Toque em "Testar som" uma vez para liberar o som (o iPhone exige um toque).';
   else if (Sound.ctx.state !== "running") txt = 'Som pausado pelo sistema: toque em "Testar som" para reativar.';
-  else if (S.volumePct < 50) txt = `Volume baixo (${S.volumePct} %), bom para testar sem susto. Na demonstração, suba para 100 % e deixe o volume de mídia do aparelho alto.`;
+  else if (S.volumePct < 50) txt = `Volume baixo (${S.volumePct} %), bom para testar sem susto. Na estrada ou na demonstração, suba para 100 % e deixe o volume de mídia do aparelho alto.`;
   else txt = `Som ativo (${S.volumePct} %). O volume final também depende do volume de mídia do aparelho.`;
   if (S.volumeSource === "url") txt += " (Volume definido pela URL ?volume=; não é salvo.)";
   hint.textContent = txt;
@@ -474,6 +494,8 @@ function updateAudioStatus() {
 function testSound() {
   Sound.unlock();
   S.soundTesting = true;
+  S.somTestado = true;
+  if (UI.tela === "inicio") Checagem.atualizar();
   Sound.ding();
   clearTimeout(S.soundTimers[0]);
   clearTimeout(S.soundTimers[1]);
@@ -489,7 +511,7 @@ function testSound() {
 function vibrate(kind) {
   try {
     // Só depois de um toque real: o Chrome bloqueia (e reclama no console) vibração sem gesto do usuário.
-    if (!navigator.vibrate || !S.userTapped) return;
+    if (!navigator.vibrate || !S.userTapped || !S.vibrarOn) return;
     navigator.vibrate(kind === "alarme" ? [400, 150, 400, 150, 400] : [120, 80, 120]);
   } catch {
     /* ignora */
@@ -732,17 +754,17 @@ function stopStream() {
   S.stream = null;
   video.srcObject = null;
 }
-async function startCamera() {
+/** Liga a câmera e o detector para uma viagem ("viagem") ou para o Modo pôster ("poster"). */
+async function startCamera(modo = "viagem") {
   const btn = $("btn-start");
   if (S.running) return;
-  // "Cancelar" (ou "Encerrar") durante o carregamento troca a ficha: depois de cada espera, uma ficha velha
-  // desiste em silêncio, em vez de ligar a câmera de uma viagem que já foi cancelada.
+  // "Cancelar" (ou sair do modo pôster) durante o carregamento troca a ficha: depois de cada espera, uma ficha
+  // velha desiste em silêncio, em vez de ligar a câmera de uma viagem que já foi cancelada.
   const ficha = (S.fichaInicio = (S.fichaInicio || 0) + 1);
   const cancelado = () => ficha !== S.fichaInicio;
+  S.modo = modo;
   btn.disabled = true;
-  btn.textContent = "Carregando...";
   setBadge("carregando modelos", "warn");
-  setCalibCarregando();
   try {
     if (!navigator.mediaDevices?.getUserMedia) throw new Error("getUserMedia indisponível (a página precisa de HTTPS ou localhost).");
     stopStream(); // um novo toque depois de uma falha não deixa um segundo stream aberto
@@ -753,7 +775,6 @@ async function startCamera() {
     if (cancelado()) {
       stopStream();
       btn.disabled = false;
-      btn.textContent = "Iniciar viagem";
       return;
     }
     video.srcObject = S.stream;
@@ -768,27 +789,25 @@ async function startCamera() {
       stopStream();
       placeCamera();
       btn.disabled = false;
-      btn.textContent = "Iniciar viagem";
       return;
     }
     S.running = true;
-    btn.textContent = "Viagem em andamento";
-    $("btn-calib").disabled = false;
-    $("btn-bench").disabled = false;
+    $("btn-bench").disabled = modo !== "viagem";
     $("btn-export").disabled = false;
     document.body.classList.add("rodando");
-    $("previa-vazia").classList.add("hidden");
     placeCamera();
     setBadge(`${S.delegate} · FPS --`, "ok");
     console.log(`[app] câmera ${video.videoWidth}x${video.videoHeight}, landmarker delegate=${S.delegate}, eye_state=${S.eyeFile || "ausente"}, temporal=${S.tmpFile || "ausente"}, dependências mediapipe=${S.deps.mediapipe} tfjs=${S.deps.tfjs}`);
     S.wasmSimd = await detectSimd();
     showDeviceInfo({ delegate: S.delegate, video: `${video.videoWidth}x${video.videoHeight}`, wasmSimd: S.wasmSimd });
     requestWakeLock();
-    startCalibration();
+    if (modo === "poster") Poster.esperar();
+    else startCalibration();
     requestAnimationFrame(loop);
   } catch (e) {
     console.error(e);
     S.running = false;
+    S.modo = null;
     stopStream(); // a câmera não fica ligada se o detector não subiu
     S.viagem = null;
     document.body.classList.remove("rodando");
@@ -796,8 +815,7 @@ async function startCamera() {
     notice(`Erro ao iniciar: ${e.message}`, "error");
     setBadge("erro", "danger");
     btn.disabled = false;
-    btn.textContent = "Iniciar viagem";
-    ir("inicio", { historico: false });
+    ir(modo === "poster" ? "ajustes" : "inicio", { historico: false });
   }
 }
 
@@ -808,17 +826,23 @@ async function startCamera() {
 // ---------------------------------------------------------------------------
 function startCalibration() {
   S.monitor.startCalibration(performance.now());
-  S.normalizer.reset();
-  S.blinkWindow.reset();
-  S.smoother.reset();
-  S.temporal = null;
-  S.detector = null;
+  resetarCaminhoLSTM();
   S.faceLostSince = null;
   resetCalibUI();
   $("blink-calib").classList.add("hidden");
   $("m-calib").textContent = "fase 1: 10 s olhando para a frente";
   addLog({ id: `c${Date.now()}`, type: "info", text: "calibração iniciada" });
   if (UI.tela !== "calibracao") ir("calibracao");
+}
+/** Zera o caminho do LSTM (detector de piscadas, z-score e janela): ele depende da calibração do monitor. */
+function resetarCaminhoLSTM() {
+  S.normalizer.reset();
+  S.blinkWindow.reset();
+  S.smoother.reset();
+  S.temporal = null;
+  S.detector = null;
+  S.calibPiscadas = 0;
+  S.calibFechado = false;
 }
 
 // ---------------------------------------------------------------------------
@@ -951,6 +975,15 @@ function processFrame() {
     }
     const mat = res.facialTransformationMatrixes?.[0];
     if (mat?.data) S.pose = E.poseFromMatrix(mat.data);
+    // caixa do rosto (testa 10, queixo 152, bochechas 234 e 454), para a calibração guiada
+    const xs = [lms[234].x, lms[454].x];
+    S.faceBox = { cx: (xs[0] + xs[1]) / 2, cy: (lms[10].y + lms[152].y) / 2, h: Math.abs(lms[152].y - lms[10].y) };
+    // piscadas vistas na fase 1 da calibração (só para a tela): os dois eyeBlink passam de 0,5
+    if (S.monitor.phase === "calibrando" && S.blend) {
+      const fechado = Math.min(S.blend.eyeBlinkLeft ?? 0, S.blend.eyeBlinkRight ?? 0) >= E.CFG.eyes.blendClosed;
+      if (fechado && !S.calibFechado) S.calibPiscadas += 1;
+      S.calibFechado = fechado;
+    }
 
     // Caminho do LSTM: detector de piscadas no EAR com o limiar calibrado pelo monitor
     if (S.monitor.calibrated && !S.detector) {
@@ -981,8 +1014,9 @@ function processFrame() {
       }
     }
 
-    // CNN dos olhos (informativa, a cada quadro)
-    if (S.eyeModel) {
+    // CNN dos olhos (informativa): só com a tela Detalhes técnicos aberta e no benchmark, onde roda a cada quadro
+    // como nas medições do Exp. 4; no uso normal, ela não entra no nível e não precisa gastar bateria
+    if (S.eyeModel && (S.bench || UI.tela === "tecnico")) {
       const size = S.eyeMeta?.input_size || EYE_SIZE_DEFAULT;
       const te = performance.now();
       try {
@@ -1103,13 +1137,14 @@ function addLog(entry) {
 function handleEvents(r) {
   for (const e of r.events) {
     addLog({ id: e.id, type: e.type, text: eventText(e), ev: e });
+    aoEvento(e); // ficha da viagem, faixa de Atenção, linha do tempo do modo pôster
     if (e.type === "calibrado") {
-      $("blink-calib").classList.remove("hidden");
       const b = e.baseline;
       $("m-calib").textContent = `fase 2: piscadas (limiar EAR ${fmt(b.earThr)}, pitch ${fmt(b.pitch0, 1)}°, jawOpen ${fmt(b.jaw0, 2)})`;
       $("m-thresh").textContent = `${fmt(b.earThr)} (mediana ${fmt(b.earMedian)})`;
       if (b.warnings.length) addLog({ id: `w${e.id}`, type: "info", kind: "warn", text: `calibração com aviso: ${b.warnings.join(" ")}` });
-      mostrarCalibPronta(b.warnings);
+      if (S.modo === "poster") Poster.calibrado();
+      else mostrarCalibPronta(b.warnings);
     }
     if (e.type === "base_piscadas") {
       $("blink-calib").classList.add("hidden");
@@ -1166,16 +1201,41 @@ function drawHeadAxis(lms, w, h, head) {
 }
 
 // ---------------------------------------------------------------------------
-// Interface: telas (Início, Calibração, Em viagem, Viagens, Ajustes, Como funciona, Detalhes técnicos),
-// tema claro/escuro, alarme em tela cheia e resumo da viagem. A tela só lê o resultado do monitor; nada
-// aqui muda o detector, e a atualização da tela fica fora do tempo medido por quadro (benchmark).
+// Interface "Painel de estrada" (07/11/2026): Primeiro uso, Início (checagens reais), Calibração guiada, Em viagem
+// (placa, arco por sinal, "Por quê?", alarme com "segure"), Viagens (resumo), Como funciona (interativo, com as
+// classes do motor), Ajustes, Detalhes técnicos (modo pesquisador) e Modo pôster. A tela só LÊ o resultado do
+// monitor (e, para o "some em", os eventos que ele guarda); nada aqui muda o detector, e a atualização da tela fica
+// fora do tempo medido por quadro (benchmark).
 // ---------------------------------------------------------------------------
-const UI = { tela: "inicio", historico: [], autoAvanco: 0, ultimoGrafico: 0, alarmeVisivel: false, cameraAgendada: false };
+const UI = {
+  tela: "inicio",
+  historico: [],
+  autoAvanco: 0,
+  alarmeVisivel: false,
+  microVisivel: false,
+  cameraAgendada: false,
+  calibPronta: false,
+  faixaAte: 0, //      até quando mostrar a faixa "Sinais de cansaço" (entrada em Atenção)
+  placa: "",
+  toastTimer: 0,
+  toquesVersao: 0,
+  segsViagem: null,
+  htmlSinais: "",
+  htmlPorque: "",
+};
 const STATE_TITLES = ["Alerta", "Atenção", "Sonolento"];
+const PLACAS = ["p-verde", "p-ambar", "p-vermelha"];
 const WHY_SHORT = { perclos: "PERCLOS", fechamentos: "olhos fechados", bocejos: "bocejos", cabeca: "cabeça", piscadas: "piscadas lentas", modelo: "modelo LSTM", pos_evento: "após microssono/cabeça" };
-const HEAD_TXT = { neutra: "Erguida", baixando: "Baixando", caida: "Caída", lado: "Olhando para o lado", sem_rosto: "Sem rosto", sem_base: "Sem pose" };
 const TEMA_KEY = "sonolencia.tema";
 const RESUMO_KEY = "sonolencia.ultimaViagem";
+const INTRO_KEY = "sonolencia.introVista";
+const PESQUISA_KEY = "sonolencia.pesquisador";
+const VIBRAR_KEY = "sonolencia.vibrar";
+const SEM_LEITURA_MS = 10000; // sem rosto por 10 s: "Sem leitura" (o estado nunca parece verde sem leitura)
+const ARCO = "M68.08 251.92 A130 130 0 1 1 251.92 251.92";
+const SVGNS = "http://www.w3.org/2000/svg";
+const TELAS_ESCURAS = new Set(["calibracao", "viagem", "poster"]);
+const TELAS_COM_CAMERA = new Set(["calibracao", "poster"]);
 
 function cap(s) {
   return s ? s[0].toUpperCase() + s.slice(1) : s;
@@ -1184,6 +1244,9 @@ function setText(id, txt) {
   const el = $(id);
   if (el && el.textContent !== txt) el.textContent = txt;
 }
+function esc(s) {
+  return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+}
 function horaCurta(d) {
   return d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", hour12: false });
 }
@@ -1191,8 +1254,8 @@ function diaRelativo(d) {
   const hoje = new Date();
   const ontem = new Date(hoje);
   ontem.setDate(hoje.getDate() - 1);
-  if (d.toDateString() === hoje.toDateString()) return "Hoje";
-  if (d.toDateString() === ontem.toDateString()) return "Ontem";
+  if (d.toDateString() === hoje.toDateString()) return "hoje";
+  if (d.toDateString() === ontem.toDateString()) return "ontem";
   return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
 }
 function duracaoTexto(seg) {
@@ -1202,26 +1265,43 @@ function duracaoTexto(seg) {
 function plural(n, um, varios) {
   return `${n} ${n === 1 ? um : varios}`;
 }
-/** Rótulo dos pontos em linguagem simples (o do motor é técnico: "microssono(s)", ">= 0,5 s"). */
-function rotulo(c) {
-  if (c.key === "perclos") {
-    const m = c.label.match(/PERCLOS ([\d,]+) %/);
-    return m ? `PERCLOS de ${m[1]} % no último minuto` : "PERCLOS no último minuto";
+/** 75 s -> "1:15" (contagem regressiva das faixas e do "some em"). */
+function mmss(seg) {
+  const s = Math.max(0, Math.ceil(seg));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+/** Tempo de viagem em horas e minutos: 42 min -> "0:42". */
+function horasMin(ms) {
+  const m = Math.max(0, Math.floor(ms / 60000));
+  return `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")}`;
+}
+function lerLocal(chave) {
+  try {
+    return window.localStorage.getItem(chave);
+  } catch {
+    return null; // modo privado, dados bloqueados etc.
   }
-  if (c.key === "modelo") return "Modelo LSTM (experimental)";
-  let t = c.label;
-  if (c.key === "piscadas") t = t.replace(/\s*\([^)]*\)\s*$/, "");
-  t = t
-    .replace(/(\d+) ([a-zçãõáéíóú]+)\(s\)\/([a-zçãõáéíóú]+)\(s\)/gi, (_, n, a, b) => (Number(n) === 1 ? `${n} ${a} ou ${b}` : `${n} ${a}s ou ${b}s`))
-    .replace(/(\d+) ([a-zçãõáéíóú]+)\(s\)/gi, (_, n, a) => `${n} ${Number(n) === 1 ? a : `${a}s`}`)
-    .replace(/(\d),(\d)-(\d) s/g, "$1,$2 a $3 s")
-    .replace(/ATENÇÃO/g, "Atenção")
-    .replace(/>= /g, "de ");
-  return cap(t);
 }
-function duracaoCurta(seg) {
-  return seg < 60 ? `${Math.round(seg)} s` : `${Math.round(seg / 60)} min`;
+function gravarLocal(chave, valor) {
+  try {
+    window.localStorage.setItem(chave, valor);
+  } catch {
+    /* vale só nesta visita */
+  }
 }
+function trocarClasse(el, opcoes, nova) {
+  if (el.dataset.c === nova) return false;
+  el.classList.remove(...opcoes);
+  if (nova) el.classList.add(nova);
+  el.dataset.c = nova;
+  return true;
+}
+function setHTML(el, html) {
+  if (el.dataset.html === html) return;
+  el.innerHTML = html;
+  el.dataset.html = html;
+}
+const usar = (id, extra = "") => `<svg aria-hidden="true"${extra}><use href="#${id}"/></svg>`;
 
 // ---- navegação ----
 function telaDaViagem() {
@@ -1230,6 +1310,7 @@ function telaDaViagem() {
 function ir(nome, { historico = true } = {}) {
   const nova = $(`tela-${nome}`);
   if (!nova) return;
+  const anterior = UI.tela;
   if (nome !== UI.tela) {
     const atual = $(`tela-${UI.tela}`);
     if (historico) {
@@ -1241,9 +1322,20 @@ function ir(nome, { historico = true } = {}) {
     nova.scrollTop = 0;
     UI.tela = nome;
   }
+  const escura = TELAS_ESCURAS.has(nome);
+  document.documentElement.classList.toggle("fundo-escuro", escura);
+  document.body.classList.toggle("fundo-escuro", escura);
   const aba = nova.dataset.abas || "";
   document.body.classList.toggle("com-abas", !!aba);
   for (const b of document.querySelectorAll("#abas [data-aba]")) b.setAttribute("aria-current", b.dataset.aba === aba ? "page" : "false");
+  atualizarCorTema();
+  if (anterior === "poster" && nome !== "poster") Poster.sair();
+  if (nome === "poster" && anterior !== "poster") Poster.entrar();
+  if (nome === "como") Como.iniciar();
+  else if (anterior === "como") Como.parar();
+  if (nome === "inicio") Checagem.atualizar();
+  if (nome === "resumo" && anterior !== "resumo") renderResumo(carregarResumo());
+  if (nome === "primeiro" && anterior !== "primeiro") PrimeiroUso.passo(0);
   if (nome === "tecnico" && S.last) updateTech(S.last);
   placeCamera();
 }
@@ -1251,15 +1343,15 @@ function voltar() {
   let prev = UI.historico.pop();
   while (prev && prev === UI.tela) prev = UI.historico.pop();
   if ((prev === "calibracao" || prev === "viagem") && !S.running) prev = "inicio";
-  ir(prev || (S.running ? telaDaViagem() : "inicio"), { historico: false });
+  ir(prev || (S.running && S.modo === "viagem" ? telaDaViagem() : "inicio"), { historico: false });
 }
 function irAba(aba) {
-  if (aba === "dirigir") ir(S.running ? telaDaViagem() : "inicio");
+  if (aba === "inicio") ir(S.running && S.modo === "viagem" ? telaDaViagem() : "inicio");
   else if (aba === "viagens") ir("resumo");
-  else ir("ajustes");
+  else ir(aba);
 }
 
-// ---- câmera: o mesmo <video> fica sobre o encaixe da tela atual (cheio, cartão ou círculo) ----
+// ---- câmera: o mesmo <video> fica sobre o encaixe da tela atual (painel, círculo ou flutuante) ----
 function placeCamera() {
   const cam = $("camera");
   if (!S.stream) {
@@ -1290,40 +1382,59 @@ function agendarCamera() {
   });
 }
 
-// ---- tema (Ajustes > Aparência) ----
+// ---- tema (Ajustes > Aparência); a viagem, a calibração e o modo pôster são sempre escuros ----
 function temaEscuroAtivo() {
   const t = document.documentElement.dataset.tema;
   return t === "escuro" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches);
 }
 function atualizarCorTema() {
   const m = document.querySelector('meta[name="theme-color"]');
-  if (m) m.content = temaEscuroAtivo() ? "#000000" : "#F2F2F7";
+  if (m) m.content = TELAS_ESCURAS.has(UI.tela) || temaEscuroAtivo() ? "#000000" : "#F2F3F5";
 }
 function aplicarTema(t, salvar = true) {
   const valor = t === "claro" || t === "escuro" ? t : "auto";
   if (valor === "auto") delete document.documentElement.dataset.tema;
   else document.documentElement.dataset.tema = valor;
-  if (salvar) {
-    try {
-      window.localStorage.setItem(TEMA_KEY, valor);
-    } catch {
-      /* modo privado: vale só nesta visita */
-    }
-  }
+  if (salvar) gravarLocal(TEMA_KEY, valor);
   for (const b of document.querySelectorAll(".segmentado [data-tema]")) b.setAttribute("aria-checked", String(b.dataset.tema === valor));
   atualizarCorTema();
 }
 function initTema() {
-  let t = "auto";
-  try {
-    t = window.localStorage.getItem(TEMA_KEY) || "auto";
-  } catch {
-    /* modo privado */
-  }
-  aplicarTema(t, false);
+  aplicarTema(lerLocal(TEMA_KEY) || "auto", false);
 }
 
-// ---- diálogos ----
+// ---- modo pesquisador (7 toques em Versão, ou ?pesquisa=1): detalhes técnicos, benchmark e exportação ----
+function definirPesquisa(on, salvar = true) {
+  S.pesquisa = !!on;
+  document.body.classList.toggle("pesquisa", S.pesquisa);
+  $("btn-pesquisa").setAttribute("aria-checked", String(S.pesquisa));
+  if (salvar) gravarLocal(PESQUISA_KEY, S.pesquisa ? "1" : "0");
+}
+function tocarVersao() {
+  if (S.pesquisa) return mostrarToast("O modo pesquisador já está ligado. Para desligar, use a chave logo abaixo.");
+  UI.toquesVersao += 1;
+  const falta = 7 - UI.toquesVersao;
+  if (falta <= 0) {
+    UI.toquesVersao = 0;
+    definirPesquisa(true);
+    mostrarToast("Modo pesquisador ligado: Detalhes técnicos, benchmark e exportação aparecem em Ajustes e na viagem.");
+  } else if (falta <= 3) mostrarToast(`Mais ${plural(falta, "toque", "toques")} para o modo pesquisador.`);
+}
+function mostrarToast(texto) {
+  const t = $("toast");
+  t.textContent = texto;
+  t.hidden = false;
+  clearTimeout(UI.toastTimer);
+  UI.toastTimer = setTimeout(() => (t.hidden = true), 2600);
+}
+// vibração (só existe no Android): chave em Ajustes, ligada por padrão
+function definirVibrar(on, salvar = true) {
+  S.vibrarOn = !!on;
+  $("btn-vibrar").setAttribute("aria-checked", String(S.vibrarOn));
+  if (salvar) gravarLocal(VIBRAR_KEY, S.vibrarOn ? "1" : "0");
+}
+
+// ---- diálogos (folhas) ----
 function abrirDialogo(id) {
   const d = $(id);
   if (typeof d.showModal === "function") {
@@ -1336,24 +1447,208 @@ function fecharDialogo(d) {
     if (d.open) d.close();
   } else d.removeAttribute("open");
 }
+function fecharDialogos() {
+  for (const d of document.querySelectorAll("dialog")) fecharDialogo(d);
+}
 function abrirSom() {
   abrirDialogo("folha-som");
 }
+function abrirPorque() {
+  if (UI.alarmeVisivel || UI.microVisivel) return; // o alarme cobre a viagem: a folha não abre por cima dele
+  if (S.last) renderPorque(S.last);
+  abrirDialogo("folha-porque");
+}
 
-// ---- viagem: começa em "Iniciar viagem" e termina em "Encerrar" ----
+/** Botão "segure": a ação só acontece depois de 1,2 s com o dedo em cima (o preenchimento mostra o tempo); soltar ou
+ *  arrastar para fora antes cancela. Pelo teclado (Enter ou espaço), a ação é direta. */
+function segurar(btn, acao, ms = 1200) {
+  let timer = 0;
+  let caixa = null;
+  const pode = () => !btn.disabled && btn.getAttribute("aria-disabled") !== "true";
+  const soltar = () => {
+    clearTimeout(timer);
+    timer = 0;
+    btn.classList.remove("segurando");
+  };
+  btn.addEventListener("pointerdown", (ev) => {
+    if (!pode() || ev.button > 0) return;
+    caixa = btn.getBoundingClientRect();
+    btn.classList.add("segurando");
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      soltar();
+      acao();
+    }, ms);
+  });
+  btn.addEventListener("pointermove", (ev) => {
+    if (!timer || !caixa) return;
+    const fora = ev.clientX < caixa.left - 24 || ev.clientX > caixa.right + 24 || ev.clientY < caixa.top - 24 || ev.clientY > caixa.bottom + 24;
+    if (fora) soltar();
+  });
+  for (const tipo of ["pointerup", "pointercancel", "pointerleave"]) btn.addEventListener(tipo, soltar);
+  btn.addEventListener("contextmenu", (ev) => ev.preventDefault());
+  btn.addEventListener("click", (ev) => {
+    if (ev.detail === 0 && pode()) acao(); // clique vindo do teclado
+  });
+}
+
+// ---- arco do nível: um traço por família de sinais, na cor do estado ----
+function criarSegs(g, n) {
+  const segs = [];
+  for (let i = 0; i < n; i++) {
+    const p = document.createElementNS(SVGNS, "path");
+    p.setAttribute("d", ARCO);
+    p.setAttribute("pathLength", "100");
+    p.setAttribute("class", `dial-seg${i === n - 1 ? " cauda" : ""}`);
+    p.style.strokeDasharray = "0 200";
+    g.appendChild(p);
+    segs.push(p);
+  }
+  return segs;
+}
+function desenharSegs(segs, valores) {
+  let off = 0;
+  valores.forEach((v, i) => {
+    const len = v > 1.6 ? v - 0.8 : 0; // fresta entre as famílias
+    const da = `${len.toFixed(2)} 200`;
+    const doff = (-off).toFixed(2);
+    if (segs[i].dataset.da !== da) {
+      segs[i].style.strokeDasharray = da;
+      segs[i].dataset.da = da;
+    }
+    if (segs[i].dataset.off !== doff) {
+      segs[i].style.strokeDashoffset = doff;
+      segs[i].dataset.off = doff;
+    }
+    off += v;
+  });
+}
+/** Marca do limiar v (0-100) no arco de 270°. */
+function marcaDial(el, v) {
+  const p = (r) => {
+    const a = ((135 + (270 * v) / 100) * Math.PI) / 180;
+    return [160 + r * Math.cos(a), 160 + r * Math.sin(a)];
+  };
+  const [x1, y1] = p(146);
+  const [x2, y2] = p(158);
+  el.setAttribute("x1", x1.toFixed(2));
+  el.setAttribute("y1", y1.toFixed(2));
+  el.setAttribute("x2", x2.toFixed(2));
+  el.setAttribute("y2", y2.toFixed(2));
+}
+/** Pontos por família: olhos (fechamentos, PERCLOS, piscadas), boca, cabeça, outros (modelo, piso depois do
+ *  vermelho) e a "cauda": o que falta até o nível exibido, que desce no máximo 3 pontos por segundo. */
+function familias(sc) {
+  const f = [0, 0, 0, 0];
+  for (const c of sc.contributions) {
+    const i = c.key === "fechamentos" || c.key === "perclos" || c.key === "piscadas" ? 0 : c.key === "bocejos" ? 1 : c.key === "cabeca" ? 2 : 3;
+    f[i] += c.points;
+  }
+  const soma = f.reduce((a, b) => a + b, 0);
+  const k = soma > 100 ? 100 / soma : 1;
+  const raw = Math.min(100, soma);
+  return [...f.map((v) => v * k), Math.max(0, Math.min(100, sc.level) - raw)];
+}
+/** Inteiros que somam `total` (maiores restos), para "Por que N?" fechar com o número do mostrador. */
+function inteirosQueSomam(valores, total) {
+  const base = valores.map((v) => Math.floor(v));
+  let falta = total - base.reduce((a, b) => a + b, 0);
+  const ordem = valores.map((v, i) => ({ i, r: v - Math.floor(v) })).sort((a, b) => b.r - a.r);
+  for (const o of ordem) {
+    if (falta <= 0) break;
+    base[o.i] += 1;
+    falta -= 1;
+  }
+  for (const o of [...ordem].reverse()) {
+    if (falta >= 0) break;
+    if (base[o.i] > 0) {
+      base[o.i] -= 1;
+      falta += 1;
+    }
+  }
+  return base;
+}
+/** Quanto falta para um conjunto de eventos do motor (DecayingEvents) sumir de vez, em s. */
+function restaS(...grupos) {
+  const t = performance.now();
+  let fim = 0;
+  for (const g of grupos) for (const e of g.items) fim = Math.max(fim, e.t + g.decayMs - t);
+  return fim / 1000;
+}
+/** Linhas de "Por que N?": o que soma no nível agora, em linguagem simples, com o "some em" de cada sinal. */
+function partesPorque(r) {
+  const sc = r.score;
+  const M = S.monitor;
+  const P = E.CFG.score;
+  const t = performance.now();
+  const L = [];
+  for (const c of sc.contributions) {
+    if (c.key === "fechamentos") {
+      const nM = M.evMicro.count(t);
+      const nL = M.evLong.count(t);
+      const partes = [nM ? plural(nM, "microssono", "microssonos") : "", nL ? plural(nL, "fechamento longo", "fechamentos longos") : ""].filter(Boolean);
+      L.push({ icone: "i-olhos", rotulo: `Olhos: ${partes.join(" e ") || "fechamentos longos"}`, sub: `Some em ${mmss(restaS(M.evLong, M.evMicro))}`, v: c.points, teto: P.closuresCap });
+    } else if (c.key === "perclos") {
+      L.push({ icone: "i-olhos", rotulo: `Olhos fechados devagar: ${br(r.eyes.perclos * 100, 0)} % do último minuto`, sub: "PERCLOS, só com fechamentos de 0,5 s ou mais", v: c.points, teto: P.perclos.cap });
+    } else if (c.key === "piscadas") {
+      const extra = r.eyes.blinkRatio ? br((r.eyes.blinkRatio - 1) * 100, 0) : null;
+      L.push({ icone: "i-olho", rotulo: extra ? `Piscadas ${extra} % mais longas` : "Piscadas mais longas", sub: "Comparadas às da calibração", v: c.points, teto: P.blinkDur.cap });
+    } else if (c.key === "bocejos") {
+      L.push({ icone: "i-boca", rotulo: `Boca: ${plural(M.evYawn.count(t), "bocejo", "bocejos")}`, sub: `Some em ${mmss(restaS(M.evYawn))}`, v: c.points, teto: P.yawn.cap });
+    } else if (c.key === "cabeca") {
+      L.push({ icone: "i-cabeca", rotulo: `Cabeça: ${plural(M.evHead.count(t), "queda", "quedas")}`, sub: `Some em ${mmss(restaS(M.evHead))}`, v: c.points, teto: P.head.cap });
+    } else if (c.key === "modelo") {
+      L.push({ icone: "i-modelo", rotulo: "Modelo LSTM (experimental)", sub: "Só soma com os sinais visíveis já em Atenção", v: c.points, teto: P.ml.points });
+    } else if (c.key === "pos_evento") {
+      const kind = M.forcedEnd?.kind === "cabeça caída" ? "da cabeça caída" : "do microssono";
+      L.push({ icone: "i-relogio", rotulo: `Mínimo depois ${kind}`, sub: `Por mais ${mmss(sc.postForcedMs / 1000)}`, v: c.points, teto: P.postForced.floor, cinza: true });
+    }
+  }
+  const raw = Math.min(100, L.reduce((a, x) => a + x.v, 0));
+  const resto = Math.min(100, sc.level) - raw;
+  if (resto >= 0.5) {
+    if (sc.forced) L.push({ icone: "i-micro", rotulo: "Vermelho na hora", sub: cap(sc.forced), v: resto, teto: 100, forcada: true });
+    else L.push({ icone: "i-relogio", rotulo: "Nível ainda descendo", sub: `Cai no máximo ${P.maxFallPerS} pontos por segundo`, v: resto, teto: 100, cinza: true });
+  }
+  const pts = inteirosQueSomam(L.map((x) => x.v), Math.floor(sc.level));
+  return L.map((x, i) => ({ ...x, pts: pts[i] })).filter((x) => x.pts > 0 || x.forcada);
+}
+function renderPorque(r) {
+  const sc = r.score;
+  const lista = $("porque-lista");
+  if (!sc || r.phase !== "ativo") {
+    setText("porque-titulo", "Calibrando");
+    setHTML(lista, '<p class="porque-vazio">O nível começa depois da calibração.</p>');
+    return;
+  }
+  const n = Math.floor(sc.level);
+  setText("porque-titulo", `Por que ${n}?`);
+  const partes = partesPorque(r);
+  const cor = ["var(--verde)", "var(--ambar)", "var(--vermelho)"][sc.state];
+  const html = partes.length
+    ? partes
+        .map(
+          (p) =>
+            `<div class="parte${p.forcada ? " forcada" : ""}"><span class="ic-redondo">${usar(p.icone)}</span><span class="texto"><strong>${esc(p.rotulo)}</strong><span class="barra"><i style="width:${Math.min(100, (100 * p.v) / p.teto).toFixed(1)}%;--cor-parte:${p.cinza ? "var(--cinza)" : cor}"></i></span><small>${esc(p.sub)}</small></span><span class="pts num">+${p.pts}</span></div>`,
+        )
+        .join("")
+    : '<p class="porque-vazio">Nenhum sinal de cansaço agora.</p>';
+  setHTML(lista, html);
+}
+
+// ---- viagem: começa em "Iniciar viagem" e termina em "Segure: encerrar" ----
 function novaViagem() {
   return { inicio: new Date(), ultimoT: null, ativoMs: 0, tempo: [0, 0, 0], serie: [], prox: 0, nivelMax: 0, estado: 0, n: { alarme: 0, aviso: 0, bocejo: 0, fechamento: 0, microssono: 0, queda: 0, cabeceio: 0 }, momentos: [] };
 }
 function iniciarViagem() {
   if (S.running) {
-    ir(telaDaViagem());
+    ir(S.modo === "viagem" ? telaDaViagem() : "inicio");
     return Promise.resolve();
   }
   if (!S.viagem) S.viagem = novaViagem();
   resetCalibUI();
-  setCalibCarregando();
   ir("calibracao");
-  return startCamera();
+  return startCamera("viagem");
 }
 function pararCamera() {
   if (S.bench) finishBenchmark();
@@ -1362,18 +1657,18 @@ function pararCamera() {
   S.sirenWanted = false;
   Sound.stopSiren();
   document.body.classList.remove("flashing", "rodando");
-  $("alarme").classList.add("hidden");
+  for (const id of ["alarme", "alarme-micro"]) $(id).classList.add("hidden");
+  $("poster-alarme").hidden = true;
   UI.alarmeVisivel = false;
+  UI.microVisivel = false;
   clearTimeout(UI.autoAvanco);
   if (S.wakeLock) {
     S.wakeWanted = false;
     S.wakeLock.release().catch(() => {});
   }
+  S.modo = null;
   $("btn-start").disabled = false;
-  $("btn-start").textContent = "Iniciar viagem";
-  $("btn-calib").disabled = true;
   $("btn-bench").disabled = true;
-  $("previa-vazia").classList.remove("hidden");
   placeCamera();
 }
 function cancelarViagem() {
@@ -1385,16 +1680,15 @@ function cancelarViagem() {
   ir("inicio", { historico: false });
 }
 function encerrarViagem() {
-  fecharDialogo($("dlg-encerrar"));
+  fecharDialogos();
   const resumo = fecharResumo();
   S.viagem = null;
   pararCamera();
   addLog({ id: `f${Date.now()}`, type: "info", text: "viagem encerrada" });
   if (resumo) {
     salvarResumo(resumo);
-    renderResumo(resumo);
     renderUltima(resumo);
-  }
+  } else notice("Viagem curta demais para um resumo: ele começa 5 s depois da calibração.");
   UI.historico = [];
   ir("resumo", { historico: false });
 }
@@ -1427,10 +1721,11 @@ function registrarViagem(r, t) {
 function registrarMomento(v, sc) {
   const top = sc.contributions.slice(0, 2).map((c) => WHY_SHORT[c.key] || c.key).join(" e ");
   let texto;
-  if (sc.state === 2) texto = sc.forced ? `Alarme: ${sc.forced}` : `Alarme: ${top || "sinais somados"}`;
-  else if (sc.state === 1) texto = v.estado === 2 ? "Saiu do vermelho" : `Aviso: ${top || "sinais de cansaço"}`;
+  if (sc.state === 2) texto = sc.forced ? cap(sc.forced) : `Sinais somados: ${top || "vários"}`;
+  else if (sc.state === 1) texto = v.estado === 2 ? "O nível caiu, mas segue em Atenção" : `Sinais de cansaço: ${top || "vários"}`;
   else texto = "De volta ao verde";
-  v.momentos.push({ hora: horaCurta(new Date()), s: Math.round(v.ativoMs / 1000), estado: sc.state, nivel: Math.round(sc.level), texto });
+  const partes = sc.contributions.slice(0, 3).map((c) => ({ k: c.key, pts: Math.round(c.points) })).filter((p) => p.pts > 0);
+  v.momentos.push({ hora: horaCurta(new Date()), s: Math.round(v.ativoMs / 1000), estado: sc.state, de: v.estado, nivel: Math.round(sc.level), texto, partes, forced: sc.forced || null });
   if (v.momentos.length > 40) v.momentos.shift();
 }
 function fecharResumo() {
@@ -1444,356 +1739,453 @@ function fecharResumo() {
   return { v: 1, inicio: v.inicio.toISOString(), fim: new Date().toISOString(), ativoS: Math.round(v.ativoMs / 1000), tempoS: v.tempo.map((ms) => Math.round(ms / 1000)), serie, nivelMax: Math.round(v.nivelMax), n: { ...v.n }, momentos: v.momentos.slice(-20) };
 }
 function salvarResumo(res) {
-  try {
-    window.localStorage.setItem(RESUMO_KEY, JSON.stringify(res));
-  } catch {
-    /* sem armazenamento: o resumo fica só nesta visita */
-  }
+  gravarLocal(RESUMO_KEY, JSON.stringify(res));
 }
 function carregarResumo() {
   try {
-    const txt = window.localStorage.getItem(RESUMO_KEY);
+    const txt = lerLocal(RESUMO_KEY);
     const r = txt ? JSON.parse(txt) : null;
     return r && r.v === 1 && Array.isArray(r.serie) && Array.isArray(r.tempoS) ? r : null;
   } catch {
     return null;
   }
 }
+
+// ---- resumo da viagem (aba Viagens) ----
+const COR_ESTADO = ["var(--verde)", "var(--ambar)", "var(--vermelho)"];
+function tituloMomento(m) {
+  if (m.estado === 2) return "Alarme";
+  if (m.estado === 1) return m.de === 2 || /^Saiu do vermelho|segue em Atenção/.test(m.texto) ? "Saiu do vermelho" : "Atenção";
+  return "De volta ao verde";
+}
+function detalheMomento(m) {
+  const partes = (m.partes || []).map((p) => `${cap(WHY_SHORT[p.k] || p.k)} +${p.pts}`);
+  const t = [];
+  if (m.forced) t.push(`${cap(m.forced)}: alarme na hora, sem pausa possível.`);
+  if (partes.length) t.push(`${partes.join(", ")}.`);
+  t.push(`Nível ${m.nivel} às ${m.hora}.`);
+  return t.join(" ");
+}
 function renderResumo(res) {
   $("resumo-vazio").classList.toggle("hidden", !!res);
   $("resumo-conteudo").classList.toggle("hidden", !res);
-  if (!res) return;
+  if (!res) {
+    setText("res-titulo", "Viagens");
+    setText("res-quando", "");
+    return;
+  }
   const ini = new Date(res.inicio);
   const fim = new Date(res.fim);
-  setText("res-quando", `${diaRelativo(ini)}, ${horaCurta(ini)} a ${horaCurta(fim)}`);
-  setText("res-duracao", duracaoTexto((fim - ini) / 1000));
+  const dia = diaRelativo(ini);
+  setText("res-titulo", `Viagem de ${dia}`);
+  setText("res-quando", `${ini.toLocaleDateString("pt-BR", { day: "numeric", month: "long" })} · ${horaCurta(ini)} a ${horaCurta(fim)}`);
+  const n = res.n;
+  const minutos = Math.max(0, Math.round((fim - ini) / 60000));
+  setText("res-min", String(minutos));
+  setText("res-min-rot", minutos === 1 ? "minuto" : "minutos");
+  setText("res-avisos", String(n.aviso));
+  setText("res-alarmes", String(n.alarme));
+  setText("res-avisos-rot", n.aviso === 1 ? "aviso" : "avisos");
+  setText("res-alarmes-rot", n.alarme === 1 ? "alarme" : "alarmes");
+  $("res-avisos").classList.toggle("tem", n.aviso > 0);
+  $("res-alarmes").classList.toggle("tem", n.alarme > 0);
+  setText("res-pico", String(res.nivelMax));
+  setText("res-duracao", duracaoTexto(res.ativoS));
   const maxS = Math.max(1, res.ativoS, ...res.serie.map((p) => p[0]));
-  const X = (s) => ((s / maxS) * 322).toFixed(1);
-  const Y = (n) => (104 - Math.max(0, Math.min(100, n))).toFixed(1);
-  $("res-linha").setAttribute("points", res.serie.map(([s, n]) => `${X(s)},${Y(n)}`).join(" "));
+  const X = (s) => ((s / maxS) * 342).toFixed(1);
+  const Y = (v) => (165 - 1.5 * Math.max(0, Math.min(100, v))).toFixed(1);
+  const linha = $("res-linha");
+  linha.setAttribute("d", res.serie.map(([s, v], i) => `${i ? "L" : "M"}${X(s)} ${Y(v)}`).join(" "));
+  linha.style.animation = "none"; // refaz o desenho da linha a cada visita
+  void linha.getBoundingClientRect();
+  linha.style.animation = "";
   const g = $("res-pontos");
   g.textContent = "";
-  for (const m of res.momentos) {
-    if (m.estado === 0) continue;
-    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    c.setAttribute("cx", X(m.s));
-    c.setAttribute("cy", Y(m.nivel ?? 50));
-    c.setAttribute("r", "4.5");
-    c.style.fill = m.estado === 2 ? "var(--ver)" : "#ffb224";
-    g.appendChild(c);
-  }
+  res.momentos
+    .filter((m) => m.estado > 0 && !(m.estado === 1 && m.de === 2))
+    .forEach((m, i) => {
+      const c = document.createElementNS(SVGNS, "circle");
+      c.setAttribute("cx", X(m.s));
+      c.setAttribute("cy", Y(m.nivel ?? 50));
+      c.setAttribute("r", "6");
+      c.style.fill = COR_ESTADO[m.estado];
+      c.style.animationDelay = `${700 + i * 120}ms`;
+      g.appendChild(c);
+    });
   setText("res-ini", horaCurta(ini));
+  setText("res-meio", horaCurta(new Date((ini.getTime() + fim.getTime()) / 2)));
   setText("res-fim", horaCurta(fim));
-  const n = res.n;
-  setText("res-alarmes", String(n.alarme));
-  setText("res-avisos", String(n.aviso));
-  $("res-alarmes").classList.toggle("bola-r", n.alarme > 0); // cor só quando houve alarme ou aviso
-  $("res-avisos").classList.toggle("bola-a", n.aviso > 0);
-  setText("res-bocejos", String(n.bocejo));
-  setText("res-olhos", String(n.fechamento + n.microssono));
-  setText("res-cabeca", String(n.queda + n.cabeceio));
-  const total = res.tempoS.reduce((a, b) => a + b, 0) || 1;
-  res.tempoS.forEach((s, i) => {
-    const el = $(`res-b${i}`);
-    el.style.width = `${(100 * s) / total}%`;
-    el.style.display = s > 0 ? "" : "none";
-    setText(`res-t${i}`, duracaoCurta(s));
+  const box = $("res-momentos");
+  box.textContent = "";
+  const momentos = res.momentos.length ? res.momentos : [{ hora: horaCurta(ini), estado: 0, texto: "Sem avisos nem alarmes", nivel: res.nivelMax, partes: [] }];
+  momentos.forEach((m, i) => {
+    const d = document.createElement("div");
+    d.className = "momento";
+    d.style.animationDelay = `${300 + i * 60}ms`;
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-expanded", "false");
+    b.innerHTML = `<span class="cor" style="background:${COR_ESTADO[m.estado]}"></span><span class="texto"><strong>${esc(`${m.hora} · ${tituloMomento(m)}`)}</strong><small>${esc(m.texto)}</small></span>${usar("i-abrir", ' class="seta"')}`;
+    const det = document.createElement("div");
+    det.className = "detalhe";
+    det.hidden = true;
+    det.textContent = detalheMomento(m);
+    b.onclick = () => {
+      const abrir = det.hidden;
+      for (const o of box.querySelectorAll(".momento")) {
+        o.querySelector(".detalhe").hidden = true;
+        o.querySelector("button").setAttribute("aria-expanded", "false");
+      }
+      det.hidden = !abrir;
+      b.setAttribute("aria-expanded", String(abrir));
+    };
+    d.append(b, det);
+    box.appendChild(d);
   });
-  const ol = $("res-momentos");
-  ol.textContent = "";
-  const momentos = res.momentos.length ? res.momentos : [{ hora: horaCurta(ini), estado: 0, texto: "Sem avisos nem alarmes" }];
-  for (const m of momentos) {
-    const li = document.createElement("li");
-    li.className = "linha momento";
-    const h = document.createElement("span");
-    h.className = "hora";
-    h.textContent = m.hora;
-    const p = document.createElement("i");
-    p.className = `ponto-cor ${["p-v", "p-a", "p-r"][m.estado]}`;
-    const tx = document.createElement("span");
-    tx.className = "texto";
-    tx.textContent = m.texto;
-    li.append(h, p, tx);
-    ol.appendChild(li);
-  }
   setText("res-nota", n.alarme ? "Houve alarme nesta viagem. Com sono, não continue: descanse antes de voltar a dirigir." : n.aviso ? "Houve sinais de cansaço nesta viagem. Em viagens longas, faça pausas." : "Nenhum aviso nesta viagem.");
 }
 function renderUltima(res) {
-  $("ultima-bloco").classList.toggle("hidden", !res);
+  $("ultima").classList.toggle("hidden", !res);
   if (!res) return;
   const ini = new Date(res.inicio);
   const n = res.n;
-  const partes = [duracaoTexto((new Date(res.fim) - ini) / 1000), n.alarme ? `${n.alarme} ${n.alarme === 1 ? "alarme" : "alarmes"}` : "sem alarme"];
-  if (n.aviso) partes.push(`${n.aviso} ${n.aviso === 1 ? "aviso" : "avisos"}`);
-  setText("ultima-titulo", `${diaRelativo(ini)}, ${horaCurta(ini)}`);
+  const partes = [duracaoTexto((new Date(res.fim) - ini) / 1000), n.aviso ? plural(n.aviso, "aviso", "avisos") : "sem avisos", n.alarme ? plural(n.alarme, "alarme", "alarmes") : "sem alarme"];
+  setText("ultima-quando", `Última viagem · ${diaRelativo(ini)}, ${horaCurta(ini)}`);
   setText("ultima-detalhe", partes.join(" · "));
+  const maxS = Math.max(1, ...res.serie.map((p) => p[0]));
+  const pts = res.serie.map(([s, v]) => [(s / maxS) * 96, 30 - 0.28 * Math.max(0, Math.min(100, v))]);
+  $("ultima-linha").setAttribute("d", pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join(" "));
+  const pico = pts.reduce((m, p) => (p[1] < m[1] ? p : m), [-10, 99]);
+  const c = $("ultima-pico");
+  c.setAttribute("cx", n.alarme ? pico[0].toFixed(1) : "-10");
+  c.setAttribute("cy", n.alarme ? pico[1].toFixed(1) : "-10");
 }
 
-// ---- calibração (tela com a câmera em tela cheia) ----
+// ---- Início: checagens reais antes de sair ----
+const Checagem = {
+  itens: {},
+  definir(chave, estado, sub, tag = "") {
+    const el = $(`chk-${chave}`);
+    const chaveHtml = `${estado}|${tag}`;
+    this.itens[chave] = estado;
+    setText(`chk-${chave}-sub`, sub);
+    if (el.dataset.k === chaveHtml) return;
+    el.dataset.k = chaveHtml;
+    if (estado === "espera") el.innerHTML = '<span class="pontos-espera" aria-label="verificando"><i></i><i></i><i></i></span>';
+    else if (estado === "ok") el.innerHTML = '<svg class="chk-ok" viewBox="0 0 24 24" role="img" aria-label="ok"><circle cx="12" cy="12" r="12"/><path d="M7 12.5l3.2 3.2L17 9" pathLength="24"/></svg>';
+    else el.innerHTML = `<span class="chk-tag${estado === "aviso" ? " aviso" : ""}">${esc(tag)}</span>`;
+  },
+  async atualizar() {
+    // detector de rosto (MediaPipe): carrega ao abrir a página, de ./vendor/ ou da CDN
+    if (S.visionErro) this.definir("detector", "aviso", "Não carregou. Veja o aviso no topo.", "Erro");
+    else if (S.visionSrc === undefined) this.definir("detector", "espera", "Carregando");
+    else this.definir("detector", "ok", S.visionSrc === 0 ? "Pronto, funciona sem internet" : "Pronto, carregado da internet");
+    // câmera: permissão (quando o navegador informa)
+    if (!navigator.mediaDevices?.getUserMedia) this.definir("camera", "aviso", "Indisponível: abra o app por https", "Ver");
+    else {
+      let st = null;
+      try {
+        st = (await navigator.permissions.query({ name: "camera" })).state;
+      } catch {
+        st = null; // o navegador não informa
+      }
+      if (st === "granted") this.definir("camera", "ok", "Permitida");
+      else if (st === "denied") this.definir("camera", "aviso", "Bloqueada: libere nos ajustes do navegador", "Ver");
+      else this.definir("camera", "info", "O navegador pede permissão ao iniciar", "No início");
+    }
+    // som do alarme
+    if (S.volumePct === 0) this.definir("som", "aviso", "Volume do alarme em 0 %: o alarme não toca", "Sem som");
+    else if (S.somTestado) this.definir("som", "ok", `Volume em ${S.volumePct} %, testado`);
+    else this.definir("som", "info", `Volume em ${S.volumePct} %. Toque para testar`, "Testar");
+    // tela ligada (Wake Lock)
+    if ("wakeLock" in navigator) this.definir("tela", "ok", "O app pede para a tela não apagar");
+    else this.definir("tela", "aviso", "Desligue o bloqueio automático da tela nos ajustes do celular", "Ajustar");
+    // carregador (só onde o navegador informa a bateria)
+    let carregando = null;
+    try {
+      if (navigator.getBattery) carregando = (await navigator.getBattery()).charging;
+    } catch {
+      carregando = null;
+    }
+    if (carregando) this.definir("carregador", "ok", "Carregando");
+    else this.definir("carregador", "info", "Recomendado em viagens longas", "Opcional");
+    const v = Object.values(this.itens);
+    const avisos = v.filter((x) => x === "aviso").length;
+    const st = $("chk-status");
+    st.className = v.includes("espera") ? "" : avisos ? "aviso" : "ok";
+    st.textContent = v.includes("espera") ? "Verificando…" : avisos ? `${plural(avisos, "item", "itens")} para ver` : "Tudo pronto";
+  },
+};
+
+// ---- calibração guiada (painel com a câmera, guia e anel do tempo) ----
+function setDica(tipo, titulo, texto) {
+  const icone = { sem: "i-busca", centro: "i-seta", perto: "i-aproximar", longe: "i-aproximar", ok: "i-olho", feito: "i-check", aviso: "i-aviso", carregando: "i-busca" }[tipo];
+  const ic = $("calib-dica-icone");
+  trocarClasse(ic, ["ok", "cinza", "empurrar", "aproximar"], tipo === "ok" || tipo === "feito" ? "ok" : tipo === "carregando" ? "cinza" : tipo === "centro" ? "empurrar" : tipo === "perto" ? "aproximar" : "");
+  const uso = $("calib-dica-uso");
+  if (uso.getAttribute("href") !== `#${icone}`) uso.setAttribute("href", `#${icone}`);
+  setText("calib-title", titulo);
+  setText("calib-text", texto);
+}
+/** Onde está o rosto na imagem (como aparece na tela, espelhada): centro, tamanho e o que pedir. */
+function guiaRosto() {
+  const b = S.faceBox;
+  if (!S.faceDetected || !b) return { tipo: "sem" };
+  const dx = 1 - b.cx - 0.5;
+  const dy = b.cy - 0.5;
+  if (Math.abs(dx) > 0.14 || Math.abs(dy) > 0.16) return { tipo: "centro", dx, dy };
+  if (b.h < 0.28) return { tipo: "perto" };
+  if (b.h > 0.78) return { tipo: "longe" };
+  return { tipo: "ok" };
+}
+/** Anel do tempo de calibração (0 a 100 % do contorno do guia); escondido em zero, senão a ponta arredondada
+ *  aparece como um ponto no alto do guia. */
+function anelTempo(id, offset) {
+  const el = $(id);
+  el.style.strokeDashoffset = String(offset);
+  el.style.opacity = Number(offset) >= 99.9 ? "0" : "1";
+}
 function resetCalibUI() {
   clearTimeout(UI.autoAvanco);
-  document.querySelector(".anel").classList.remove("pronto");
-  $("calib-anel").setAttribute("stroke-dasharray", "0 100");
-  $("calib-fill").style.width = "0%";
-  setText("calib-passo", "Passo 1 de 2");
-  setText("calib-seg", "");
-  $("calib-progresso").classList.remove("hidden");
-  $("calib-nota").classList.remove("hidden");
-  $("calib-pronto").classList.add("hidden");
-}
-function setCalibCarregando() {
-  setText("calib-title", "Preparando a câmera");
-  setText("calib-text", "Baixando o detector de rosto. Na primeira vez, pode levar alguns segundos.");
+  UI.calibPronta = false;
+  S.calibPiscadas = 0;
+  $("calib-feito").hidden = true;
+  $("calib-pronto").hidden = true;
+  $("calib-pronto").classList.remove("com-aviso");
+  $("calib-nota").hidden = false;
+  anelTempo("guia-anel", "100");
+  $("guia-elipse").setAttribute("class", "guia-elipse");
+  trocarClasse($("calib-chip"), ["ok"], "");
+  setText("calib-chip-texto", "Procurando o rosto");
+  setText("calib-seg", `${E.CFG.calib.neutralMs / 1000} s`);
+  setText("calib-piscadas", "0");
+  if (S.running) setDica("sem", "Mostre o rosto", "Olhe para a câmera, com luz de frente.");
+  else setDica("carregando", "Preparando a câmera", "Carregando o detector de rosto. Na primeira vez, pode levar alguns segundos.");
 }
 function atualizarCalib(r) {
+  if (UI.calibPronta) return;
   const p = Math.max(0, Math.min(1, r.calib?.progress ?? 0));
   const total = E.CFG.calib.neutralMs / 1000;
-  $("calib-anel").setAttribute("stroke-dasharray", `${(p * 100).toFixed(1)} 100`);
-  $("calib-fill").style.width = `${Math.round(p * 100)}%`;
-  setText("calib-seg", `${Math.floor(p * total)} de ${total} s`);
-  if (S.faceDetected) {
-    setText("calib-title", "Olhe para a frente");
-    setText("calib-text", "Olhos abertos e boca fechada. Pode piscar normalmente.");
-  } else {
-    setText("calib-title", "Enquadre o rosto");
-    setText("calib-text", "Rosto não encontrado. Mostre o rosto inteiro, com luz de frente.");
-  }
+  anelTempo("guia-anel", (100 - p * 100).toFixed(1));
+  setText("calib-seg", `${Math.max(0, Math.ceil(total * (1 - p)))} s`);
+  setText("calib-piscadas", String(S.calibPiscadas));
+  const g = guiaRosto();
+  const alinhado = g.tipo === "ok";
+  $("guia-elipse").setAttribute("class", `guia-elipse${alinhado ? " alinhado" : ""}`);
+  trocarClasse($("calib-chip"), ["ok"], alinhado ? "ok" : "");
+  setText("calib-chip-texto", g.tipo === "sem" ? "Procurando o rosto" : alinhado ? "Rosto no guia" : "Rosto fora do guia");
+  if (g.tipo === "sem") setDica("sem", "Mostre o rosto", "Rosto não encontrado. Mostre o rosto inteiro, com luz de frente.");
+  else if (g.tipo === "centro") {
+    setDica("centro", "Coloque o rosto no centro", "Mova o celular até o rosto entrar no guia.");
+    // a seta aponta para onde o rosto precisa ir (na imagem espelhada da tela)
+    const ang = Math.abs(g.dx) >= Math.abs(g.dy) ? (g.dx > 0 ? 180 : 0) : g.dy > 0 ? -90 : 90;
+    $("calib-dica-icone").querySelector("svg").style.rotate = `${ang}deg`;
+  } else if (g.tipo === "perto") setDica("perto", "Aproxime o celular", "O rosto deve encher o guia.");
+  else if (g.tipo === "longe") setDica("longe", "Afaste um pouco o celular", "O rosto inteiro deve caber no guia.");
+  else setDica("ok", "Olhe para a frente", `Pisque normalmente por ${total} s.`);
+  if (g.tipo !== "centro") $("calib-dica-icone").querySelector("svg").style.rotate = "";
 }
-function mostrarCalibPronta(avisos) {
-  document.querySelector(".anel").classList.add("pronto");
-  $("calib-anel").setAttribute("stroke-dasharray", "100 100");
-  $("calib-fill").style.width = "100%";
-  $("calib-progresso").classList.add("hidden");
-  $("calib-nota").classList.add("hidden");
-  $("calib-pronto").classList.remove("hidden");
-  setText("calib-passo", "Passo 1 de 2 concluído");
+function mostrarCalibPronta(avisosMotor) {
+  const avisos = avisosMotor.map((a) => a.replace(/toque em Recalibrar e /i, ""));
+  const b = S.monitor.baseline;
+  // olhos meio fechados em repouso: a regra do olho usa o eyeBlink de repouso + 0,25, e a base sai "sonolenta"
+  if (b && Number.isFinite(b.blend0) && b.blend0 >= 0.4) avisos.push("Os olhos pareceram meio fechados na calibração: abra bem os olhos, com luz de frente, e refaça.");
+  UI.calibPronta = true;
+  anelTempo("guia-anel", "0");
+  $("calib-nota").hidden = true;
+  $("calib-pronto").hidden = false;
+  $("calib-pronto").classList.toggle("com-aviso", avisos.length > 0);
+  setText("calib-seg", "Feito");
   clearTimeout(UI.autoAvanco);
   if (avisos.length) {
-    setText("calib-title", "Calibração com aviso");
-    setText("calib-text", avisos.join(" "));
-    return; // com aviso, a pessoa decide: recalibrar ou seguir
+    $("calib-feito").hidden = true;
+    $("guia-elipse").setAttribute("class", "guia-elipse aviso");
+    setDica("aviso", "Calibração com aviso", avisos.join(" "));
+    setText("btn-comecar", "Seguir assim");
+    return; // com aviso, a pessoa decide: refazer ou seguir
   }
-  setText("calib-title", "Pronto");
-  setText("calib-text", `No passo 2, já dirigindo, o app aprende como você pisca nas primeiras ${E.CFG.calib.nBlinks} piscadas.`);
+  $("calib-feito").hidden = false;
+  trocarClasse($("calib-chip"), ["ok"], "ok");
+  setText("calib-chip-texto", "Calibrado");
+  setDica("feito", "Calibrado", "Abertura dos olhos e posição da cabeça medidas. A viagem começa em 3 s.");
+  setText("btn-comecar", "Começar viagem");
   UI.autoAvanco = setTimeout(() => {
     if (UI.tela === "calibracao" && S.running) ir("viagem");
-  }, 1500);
+  }, 3000);
 }
 
 // ---- em viagem ----
-function setStatus(estado, title, sub, level) {
-  const tela = $("tela-viagem");
-  const cls = estado === null ? "" : `e${estado}`;
-  if (tela.dataset.e !== cls) {
-    tela.classList.remove("e0", "e1", "e2");
-    if (cls) tela.classList.add(cls);
-    tela.dataset.e = cls;
-  }
-  setText("status-title", title);
-  setText("status-sub", sub);
-  // Arredonda para baixo: 69,6 aparece como 69 (Atenção), nunca como "70" numa tela amarela.
-  setText("level-num", level === null ? "--" : String(Math.floor(level)));
-  const lv = level === null ? 0 : Math.max(0, Math.min(100, level));
-  const dash = `${lv.toFixed(1)} 200`; // vão maior que o arco: o traço não se repete no fim
-  const arco = $("meter-fill");
-  if (arco.getAttribute("stroke-dasharray") !== dash) arco.setAttribute("stroke-dasharray", dash);
-  $("meter").setAttribute("aria-valuenow", String(Math.floor(lv)));
+function mostrarFicha(texto, icone) {
+  const f = $("ficha");
+  setText("ficha-texto", texto);
+  $("ficha-uso").setAttribute("href", `#${icone}`);
+  f.hidden = true;
+  void f.offsetWidth; // reinicia a animação
+  f.hidden = false;
+  clearTimeout(UI.fichaTimer);
+  UI.fichaTimer = setTimeout(() => (f.hidden = true), 1150);
 }
-function setSig(id, cls, state, detail) {
-  const el = $(id);
-  const want = `linha sinal ${cls}`.trim();
-  if (el.className !== want) el.className = want;
-  const a = el.querySelector(".sig-state");
-  const b = el.querySelector(".sig-detail");
-  if (a.textContent !== state) a.textContent = state;
-  if (b.textContent !== detail) b.textContent = detail;
+/** Eventos do motor que a tela mostra na hora (a ficha que sobe do mostrador e a faixa de Atenção). */
+function aoEvento(e) {
+  if (S.modo === "poster") return Poster.aoEvento(e);
+  if (e.type === "aviso") UI.faixaAte = performance.now() + 4500;
+  if (UI.tela !== "viagem") return;
+  const P = E.CFG.score;
+  const fichas = { fechamento: [`+${P.longClosure.points} Fechamento longo`, "i-olhos"], bocejo: [`+${P.yawn.points} Bocejo`, "i-boca"], queda: [`+${P.head.points} Cabeça caiu`, "i-cabeca"], cabeceio: [`+${P.head.points} Cabeceio`, "i-cabeca"] };
+  if (fichas[e.type]) mostrarFicha(...fichas[e.type]);
 }
-function renderPorque(sc) {
-  const mostra = !!sc.forced || sc.contributions.length > 0;
-  $("porque").classList.toggle("hidden", !mostra);
-  if (!mostra) return;
-  setText("porque-titulo", `Por que ${Math.floor(sc.level)}`);
-  const partes = [];
-  if (sc.forced) partes.push(`<li class="linha forcado"><span class="texto">${esc(cap(sc.forced))}</span><span class="pontos">vermelho na hora</span></li>`);
-  for (const c of sc.contributions) partes.push(`<li class="linha"><span class="texto">${esc(rotulo(c))}</span><span class="pontos">+${Math.round(c.points)}</span></li>`);
-  const html = partes.join("");
-  const ul = $("why-list");
-  if (ul.dataset.html !== html) {
-    ul.innerHTML = html;
-    ul.dataset.html = html;
-  }
+function trocarPlaca(id) {
+  if (UI.placa === id) return;
+  UI.placa = id;
+  const p = $("placa");
+  $("placa-uso").setAttribute("href", `#${id}`);
+  p.classList.toggle("verde", id === "p-verde");
+  p.classList.remove("pulso");
+  void p.getBoundingClientRect();
+  p.classList.add("pulso");
 }
-function atualizarGrafico10() {
-  const v = S.viagem;
-  const linha = $("grafico-linha");
-  if (!v || !v.serie.length) {
-    linha.setAttribute("points", "");
-    setText("grafico-nota", "O gráfico começa depois da calibração.");
+function faixa(tipo, texto, icone = "i-relogio") {
+  const f = $("faixa");
+  if (!tipo) {
+    f.hidden = true;
+    f.dataset.tipo = "";
     return;
   }
-  const fimS = v.ativoMs / 1000;
-  const iniS = Math.max(0, fimS - 600);
-  const pts = v.serie.filter(([s]) => s >= iniS - 5);
-  const X = (s) => Math.max(0, ((s - iniS) / 600) * 326).toFixed(1);
-  const Y = (n) => (52 - 0.48 * Math.max(0, Math.min(100, n))).toFixed(1);
-  linha.setAttribute("points", pts.map(([s, n]) => `${X(s)},${Y(n)}`).join(" "));
-  const pico = pts.reduce((m, p) => Math.max(m, p[1]), 0);
-  setText("grafico-nota", fimS < 60 ? "O gráfico enche conforme a viagem avança." : pico >= 1 ? `Pico de ${pico} nos últimos ${Math.min(10, Math.ceil(fimS / 60))} min.` : "Nível zero no período.");
+  if (f.dataset.tipo !== tipo) {
+    f.dataset.tipo = tipo;
+    f.className = `faixa ${tipo}`;
+    f.hidden = false;
+  }
+  $("faixa-uso").setAttribute("href", `#${icone}`);
+  setText("faixa-texto", texto);
+}
+function atualizarViagem(r) {
+  const agora = performance.now();
+  const sc = r.score;
+  const calibrando = r.phase !== "ativo" || !sc;
+  const semRostoMs = S.faceLostSince === null ? 0 : agora - S.faceLostSince;
+  const semLeitura = !calibrando && semRostoMs >= SEM_LEITURA_MS && !sc.forced;
+  const tela = $("tela-viagem");
+  trocarClasse(tela, ["e0", "e1", "e2", "sl"], calibrando || semLeitura ? "sl" : `e${sc.state}`);
+  // número, placa e nome do estado (o número é arredondado para baixo: 69,6 aparece como 69, em Atenção)
+  setText("level-num", calibrando || semLeitura ? "--" : String(Math.floor(sc.level)));
+  trocarPlaca(calibrando || semLeitura ? "p-cinza" : PLACAS[sc.state]);
+  const nome = calibrando ? "Calibrando" : semLeitura ? "Sem leitura" : STATE_TITLES[sc.state];
+  setText("status-title", nome);
+  $("mostrador").setAttribute("aria-label", calibrando ? "Calibrando" : semLeitura ? "Sem leitura. Toque para ver os sinais" : `Nível ${Math.floor(sc.level)}, ${nome}. Toque para ver por quê`);
+  desenharSegs(UI.segsViagem, calibrando ? [0, 0, 0, 0, 0] : familias(sc));
+  // frase (uma só)
+  const kind = S.monitor.forcedEnd?.kind === "cabeça caída" ? "cabeca" : "micro";
+  let frase;
+  if (calibrando) frase = "Olhe para a frente por alguns segundos.";
+  else if (semLeitura) frase = "Não vejo seus olhos. Ajuste o celular.";
+  else if (sc.state === 2) frase = r.alarm?.snoozed ? "Som pausado. Pare assim que puder." : "Pare assim que puder.";
+  else if (sc.state === 1 && sc.postForcedMs > 0) frase = kind === "cabeca" ? "Sua cabeça caiu. Atenção redobrada." : "Você fechou os olhos. Atenção redobrada.";
+  else if (sc.state === 1) frase = "Sinais de cansaço. Planeje uma pausa.";
+  else frase = sc.level < 15 ? "Tudo certo. Boa viagem." : "Sinais leves, ainda no verde.";
+  setText("frase", frase);
+  // faixa do topo: alarme pausado > procurando o rosto > entrada em Atenção > depois do microssono
+  if (!calibrando && sc.state === 2 && r.alarm?.snoozed) {
+    const resta = (S.monitor.alarm.snoozeUntil - agora) / 1000;
+    faixa("pausa", `Alarme pausado. Volta em ${mmss(resta)} se o nível seguir alto.`);
+    $("faixa-anel-arco").style.strokeDashoffset = (100 - (100 * Math.max(0, resta)) / (E.CFG.alarm.snoozeMs / 1000)).toFixed(1);
+  } else if (!calibrando && !S.faceDetected && semRostoMs > 1500 && !semLeitura) faixa("procurando", "Procurando o rosto…", "i-busca");
+  else if (!calibrando && !semLeitura && sc.state === 1 && UI.faixaAte > agora) faixa("atencao", "Sinais de cansaço. Planeje uma pausa.", "i-aviso");
+  else if (!calibrando && !semLeitura && sc.state < 2 && sc.postForcedMs > 0) faixa("pos", `Depois ${kind === "cabeca" ? "da cabeça caída" : "do microssono"}, atenção por ${mmss(sc.postForcedMs / 1000)}.`);
+  else faixa(null);
+  // sinais (fichas que abrem o "Por quê?")
+  let htmlSinais = "";
+  if (!calibrando && !semLeitura) {
+    const f = familias(sc);
+    const pts = inteirosQueSomam(f, Math.floor(sc.level));
+    const icones = ["i-olhos", "i-boca", "i-cabeca", "i-relogio"];
+    htmlSinais = pts.slice(0, 4).map((n, i) => (n > 0 ? `<button type="button">${usar(icones[i])}+${n}</button>` : "")).join("");
+  }
+  if (UI.htmlSinais !== htmlSinais) {
+    UI.htmlSinais = htmlSinais;
+    $("sinais").innerHTML = htmlSinais;
+  }
+  // segunda fase da calibração: as primeiras piscadas da viagem viram a referência de duração
+  const fase2 = !calibrando && !!r.calib;
+  $("blink-calib").classList.toggle("hidden", !fase2);
+  if (fase2) setText("blink-calib-text", `${r.calib.blinks} de ${r.calib.need}`);
+  // recalibrar fica bloqueado no vermelho (e enquanto calibra)
+  const bloq = calibrando || sc.state === 2;
+  const bc = $("btn-calib");
+  if (bc.getAttribute("aria-disabled") !== String(bloq)) {
+    bc.setAttribute("aria-disabled", String(bloq));
+    setText("btn-calib-rot", bloq && !calibrando ? "Bloqueado no vermelho" : "Segure: recalibrar");
+  }
+  // tempo de viagem e o "Por quê?" aberto
+  if (S.viagem) setText("viagem-tempo", horasMin(Date.now() - S.viagem.inicio));
+  if ($("folha-porque").open) renderPorque(r);
+}
+function atualizarSomChip() {
+  const chip = $("chip-som");
+  let txt;
+  if (S.volumePct === 0) txt = "Sem som";
+  else if (S.running && !Sound.ready) txt = "Toque: ligar som";
+  else txt = `Som ${S.volumePct} %`;
+  setText("chip-som-texto", txt);
+  chip.classList.toggle("aviso", S.volumePct === 0 || (S.running && !Sound.ready));
+}
+function mostrarCamada(id, mostrar, foco) {
+  const el = $(id);
+  if (el.classList.contains("hidden") !== mostrar) return false;
+  el.classList.toggle("hidden", !mostrar);
+  if (mostrar) {
+    fecharDialogos();
+    setTimeout(() => $(foco)?.focus({ preventScroll: true }), 0);
+  }
+  return true;
 }
 function atualizarAlarme(r) {
   const sc = r.score;
-  // Depois do "estou acordado", a tela volta para a viagem (ainda em vermelho, com o som silenciado); se o nível
-  // seguir alto quando os 30 s acabarem, o alarme volta. O vermelho forçado (microssono, cabeça caída) sempre mostra.
-  const on = S.running && r.phase === "ativo" && !!sc && sc.state === 2 && (!!sc.forced || !r.alarm?.snoozed);
-  if (on !== UI.alarmeVisivel) {
-    UI.alarmeVisivel = on;
-    $("alarme").classList.toggle("hidden", !on);
-    if (on) {
-      fecharDialogo($("folha-som"));
-      fecharDialogo($("dlg-encerrar"));
-      // foco no alarme (leitor de tela): no "deslize" quando dá para silenciar, senão no título
-      setTimeout(() => {
-        const alvo = $("deslizar").classList.contains("hidden") ? $("alarme-titulo") : $("btn-ack");
-        alvo.focus({ preventScroll: true });
-      }, 0);
-    }
+  const vermelho = S.running && S.modo === "viagem" && r.phase === "ativo" && !!sc && sc.state === 2;
+  const micro = vermelho && !!sc.forced;
+  // depois do "estou acordado", a tela volta para a viagem (ainda vermelha, com o som pausado); se o nível seguir
+  // alto quando os 30 s acabarem, o alarme volta. O vermelho forçado (microssono, cabeça caída) sempre mostra.
+  const nivel = vermelho && !sc.forced && !r.alarm?.snoozed;
+  mostrarCamada("alarme-micro", micro, "micro-titulo");
+  mostrarCamada("alarme", nivel, "btn-ack");
+  UI.microVisivel = micro;
+  UI.alarmeVisivel = nivel;
+  if (micro) {
+    const cabeca = /cabeça/.test(sc.forced);
+    setText("micro-motivo", cabeca ? cap(sc.forced.replace(/ há [\d,]+ s/, "")) : "Olhos fechados por mais de 1 s");
+    setText("micro-nota", cabeca ? "O som não pode ser pausado. Ele para quando a cabeça volta e os olhos abrem." : "O som não pode ser pausado. Ele para quando os olhos abrem.");
   }
-  if (!on) return;
-  setText("alarme-titulo", sc.forced ? "Acorde!" : "Pare e descanse");
-  setText("alarme-texto", sc.forced ? `${cap(sc.forced)}. Procure um lugar seguro para parar.` : `Sonolência alta: nível ${Math.floor(sc.level)} de 100. Procure um lugar seguro para parar.`);
-  const html = sc.forced ? "" : sc.contributions.slice(0, 3).map((c) => `<li><span>${esc(rotulo(c))}</span><b>+${Math.round(c.points)}</b></li>`).join("");
-  const ul = $("alarme-motivos");
-  if (ul.dataset.html !== html) {
-    ul.innerHTML = html;
-    ul.dataset.html = html;
+  if (nivel) {
+    const partes = partesPorque(r).filter((p) => !p.cinza).slice(0, 3);
+    setHTML($("alarme-motivos"), partes.map((p) => `<li>${usar(p.icone)}${esc(p.rotulo.replace(/^[^:]+: /, ""))}</li>`).join(""));
+    setText("alarme-som", S.volumePct === 0 ? "Sem som: volume do alarme em 0 %." : !Sound.ready ? "Toque na tela para ligar o som." : `Nível ${Math.floor(sc.level)} de 100. Procure um lugar seguro para parar.`);
   }
-  const silenciado = !!r.alarm?.snoozed;
-  setText("alarme-som", silenciado ? "som silenciado" : S.volumePct === 0 ? "sem som: volume em 0 %" : !Sound.ready ? "toque na tela para liberar o som" : "alarme tocando");
-  $("deslizar").classList.toggle("hidden", !!sc.forced || silenciado);
-  setText("alarme-nota", sc.forced ? "O alarme para quando os olhos abrirem e a cabeça voltar." : silenciado ? "Som silenciado por 30 s. O alarme volta se os sinais continuarem." : "Silencia o som por 30 s e volta para a viagem. Num microssono, o alarme volta na hora.");
 }
 function estouAcordado() {
   Sound.unlock();
   S.monitor.acknowledge(performance.now());
-  addLog({ id: `a${Date.now()}`, type: "info", text: "“Estou acordado”: som silenciado por 30 s" });
-}
-/** "Deslize: estou acordado": arrastar até o fim silencia; um toque sozinho não (evita silenciar sem querer).
- *  Pelo teclado (Enter ou espaço no botão), silencia direto. */
-function setupDeslizar() {
-  const trilho = $("deslizar");
-  const knob = $("btn-ack");
-  let x0 = null;
-  let dx = 0;
-  let max = 0;
-  const soltar = () => {
-    x0 = null;
-    knob.style.transition = "";
-    knob.style.transform = "";
-  };
-  knob.addEventListener("pointerdown", (ev) => {
-    x0 = ev.clientX;
-    dx = 0;
-    max = trilho.clientWidth - knob.offsetWidth - 12;
-    knob.style.transition = "none";
-    try {
-      knob.setPointerCapture(ev.pointerId);
-    } catch {
-      /* ignora */
-    }
-  });
-  knob.addEventListener("pointermove", (ev) => {
-    if (x0 === null) return;
-    dx = Math.max(0, Math.min(max, ev.clientX - x0));
-    knob.style.transform = `translateX(${dx}px)`;
-  });
-  knob.addEventListener("pointerup", () => {
-    if (x0 === null) return;
-    const chegou = max > 0 && dx >= max * 0.85;
-    soltar();
-    if (chegou) estouAcordado();
-  });
-  knob.addEventListener("pointercancel", soltar);
-  knob.addEventListener("click", (ev) => {
-    if (ev.detail === 0) estouAcordado(); // clique vindo do teclado
-  });
+  addLog({ id: `a${Date.now()}`, type: "info", text: "“Estou acordado”: som pausado por 30 s" });
 }
 
 function updateUI(r) {
   const face = S.faceDetected;
   setBadge(`${S.delegate} · ${S.fps} FPS`, S.fps >= 15 ? "ok" : "warn");
   setText("hud-face-tec", face ? "detectado" : "não detectado");
-  setText("hud-face-texto", face ? "Rosto encontrado" : "Rosto não encontrado");
-  $("hud-face").classList.toggle("achou", face);
-  $("camera").style.setProperty("--cor-rosto", face ? "var(--verde)" : "var(--amb)");
-  const noFaceMs = S.faceLostSince === null ? 0 : performance.now() - S.faceLostSince;
-  if (S.viagem) setText("viagem-tempo", `${Math.floor((Date.now() - S.viagem.inicio) / 60000)} min · ${horaCurta(new Date())}`);
-
-  // ---- estado e mostrador ----
-  if (r.phase === "calibrando") {
-    atualizarCalib(r);
-    setStatus(null, "Calibrando", "Olhe para a frente por alguns segundos.", null);
-    setText("status-why", "");
-    $("pausa").classList.add("hidden");
-    $("porque").classList.add("hidden");
-  } else if (r.score) {
-    const sc = r.score;
-    let sub;
-    if (sc.state === 2) sub = sc.forced ? `${cap(sc.forced)}. Acorde!` : "Sonolência alta: pare em local seguro e descanse.";
-    else if (sc.state === 1) sub = sc.postForcedMs > 0 ? `Olhos fechados ou cabeça caída há pouco: atenção por mais ${Math.ceil(sc.postForcedMs / 1000)} s.` : "Sinais de cansaço. Faça uma pausa assim que possível.";
-    else sub = sc.level >= 15 ? "Sinais leves registrados; seguem sendo acompanhados." : "Nenhum sinal relevante de sono.";
-    if (r.alarm?.snoozed) sub += " Som silenciado por 30 s.";
-    if (noFaceMs > 1500 && !sc.forced) sub = `Rosto não detectado há ${br(noFaceMs / 1000, 0)} s: enquadre o rosto.`;
-    setStatus(sc.state, STATE_TITLES[sc.state], sub, sc.level);
-    setText("status-why", sc.forced ? `Motivo: ${sc.forced}` : "");
-    $("pausa").classList.toggle("hidden", sc.state < 1);
-    renderPorque(sc);
+  // anel da câmera (círculo da viagem): cor do estado; tracejado e cinza sem rosto
+  const cam = $("camera");
+  cam.classList.toggle("sem-rosto", !face);
+  const st = r.score && r.phase === "ativo" ? r.score.state : null;
+  cam.style.setProperty("--cor-rosto", st === null ? "var(--cinza)" : ["var(--verde)", "var(--ambar)", "var(--vermelho)"][st]);
+  $("slot-viagem").setAttribute("aria-label", face ? "Câmera vendo o rosto" : "Câmera sem rosto");
+  atualizarSomChip();
+  if (S.modo === "poster") Poster.atualizar(r);
+  else {
+    if (r.phase === "calibrando") atualizarCalib(r);
+    atualizarViagem(r);
+    atualizarAlarme(r);
   }
 
-  // ---- passo 2 da calibração: piscadas de referência ----
-  if (r.phase === "ativo" && r.calib) {
-    $("blink-calib").classList.remove("hidden");
-    setText("blink-calib-text", `${r.calib.blinks} de ${r.calib.need}`);
-  }
-
-  // ---- três sinais ----
-  if (r.phase !== "ativo") {
-    const txt = r.phase === "calibrando" ? "Calibrando" : "--";
-    setSig("sig-eyes", "", txt, "PERCLOS --");
-    setSig("sig-yawn", "", txt, "0 em 5 min");
-    setSig("sig-head", "", txt, "0 quedas em 5 min");
-  } else if (r.eyes) {
-    const e = r.eyes;
-    let cls = "s-ok";
-    let st = "Abertos";
-    if (!face) { cls = ""; st = "Sem rosto"; }
-    else if (e.closedMs >= E.CFG.eyes.microsleepMs) { cls = "s-danger"; st = `Fechados ${br(e.closedMs / 1000, 1)} s`; }
-    else if (e.closed) { cls = e.closedMs >= E.CFG.eyes.longMs ? "s-warn" : "s-ok"; st = e.closedMs >= 200 ? `Fechados ${br(e.closedMs / 1000, 1)} s` : "Piscando"; }
-    else if (e.gated && e.byEar) st = "Olhar para baixo";
-    if (cls === "s-ok" && (e.perclos >= 0.15 || e.longPerMin >= 2)) cls = "s-warn";
-    setSig("sig-eyes", cls, st, `PERCLOS ${br(e.perclos * 100, 1)} %${e.microsleeps5min ? ` · ${plural(e.microsleeps5min, "microssono", "microssonos")}` : ""}`);
-    const y = r.yawn;
-    let ycls = y.count5min >= 2 ? "s-warn" : "s-ok";
-    let yst = y.count5min ? `${y.count5min} em 5 min` : "Nenhum";
-    if (!face) { ycls = ""; yst = "Sem rosto"; }
-    else if (y.open) { ycls = "s-warn"; yst = `Boca aberta ${br(y.openMs / 1000, 1)} s`; }
-    setSig("sig-yawn", ycls, yst, `boca aberta ${br(E.CFG.yawn.minMs / 1000, 1)} s ou mais`);
-    const hd = r.head;
-    let hcls = hd.count5min >= 2 ? "s-warn" : "s-ok";
-    if (hd.state === "baixando") hcls = "s-warn";
-    if (hd.state === "caida") hcls = "s-danger";
-    if (hd.state === "sem_rosto" || hd.state === "sem_base") hcls = "";
-    const hst = hd.state === "caida" ? `Caída ${br(hd.downMs / 1000, 1)} s` : HEAD_TXT[hd.state] || hd.state;
-    setSig("sig-head", hcls, hst, `${plural(hd.count5min, "queda", "quedas")} em 5 min`);
-  }
-
-  atualizarAlarme(r);
-  const agora = performance.now();
-  if (agora - UI.ultimoGrafico > 2000) {
-    UI.ultimoGrafico = agora;
-    atualizarGrafico10();
-  }
-
-  // ---- modelos experimentais ----
+  // ---- modelos experimentais (Detalhes técnicos) ----
   if (S.temporal) {
     const p = S.temporal.probs;
     const names = ["alerta", "pouca vigilância", "sonolento"];
@@ -1802,62 +2194,337 @@ function updateUI(r) {
   } else {
     $("ml-lstm").textContent = S.tmpModel ? `LSTM de piscadas: aguardando piscadas (${S.normalizer.ready ? `${S.blinkWindow.length}/${S.blinkWindow.size}` : `calibração ${S.normalizer.samples.length}/${S.normalizer.nCalib}`})` : "LSTM de piscadas: modelo ausente.";
   }
-  $("ml-cnn").textContent = S.eyeModel
-    ? `CNN dos olhos, p(aberto): E ${br(S.eyeProb.left, 2)} · D ${br(S.eyeProb.right, 2)}`
-    : "CNN dos olhos: modelo ausente.";
-
-  // ---- detalhes técnicos (só com a tela aberta) ----
+  $("ml-cnn").textContent = S.eyeModel ? `CNN dos olhos, p(aberto): E ${br(S.eyeProb.left, 2)} · D ${br(S.eyeProb.right, 2)}` : "CNN dos olhos: modelo ausente.";
   if (UI.tela === "tecnico") updateTech(r);
 }
 
-// ---- Como funciona: textos montados a partir de E.CFG (os mesmos números que o detector usa) ----
-function renderComoFunciona() {
+// ---- Como funciona: demonstração com as MESMAS classes e números do motor (E.DecayingEvents, E.LevelController,
+// E.CFG), com o relógio 10 vezes mais rápido ----
+const Como = {
+  timer: 0,
+  t: 0,
+  ev: null,
+  lv: null,
+  segs: null,
+  montar() {
+    const P = E.CFG.score;
+    const L = E.CFG.levels;
+    const min = (ms) => `${br(ms / 60000, 0)} min`;
+    this.segs = criarSegs($("como-segs"), 4);
+    const botoes = [
+      ["olhos", `Fechar os olhos ${br(0.7, 1)} s`, `+${P.longClosure.points}, some em ${min(P.longClosure.decayMs)}`],
+      ["boca", "Bocejar", `+${P.yawn.points}, some em ${min(P.yawn.decayMs)}`],
+      ["cabeca", "A cabeça cai", `+${P.head.points}, some em ${min(P.head.decayMs)}`],
+    ];
+    $("como-botoes").innerHTML = botoes.map(([k, a, b]) => `<button type="button" data-sinal="${k}"><strong>${a}</strong><small>${b}</small></button>`).join("");
+    $("como-botoes").onclick = (ev) => {
+      const b = ev.target.closest("[data-sinal]");
+      if (b) this.somar(b.dataset.sinal);
+    };
+    setText("como-faixa-0", `Alerta: abaixo de ${L.attention}`);
+    setText("como-faixa-1", `Atenção: de ${L.attention} a ${L.drowsy - 1}`);
+    setText("como-faixa-2", `Sonolento: ${L.drowsy} ou mais`);
+    setText("como-nota", `Olhos fechados por ${br(E.CFG.eyes.microsleepMs / 1000, 0)} s ou mais são um microssono: o alarme toca na hora, sem esperar a soma. Aqui o relógio anda 10 vezes mais rápido.`);
+    renderNumerosNivel();
+    this.zerar();
+  },
+  zerar() {
+    const P = E.CFG.score;
+    this.t = 0;
+    this.ev = {
+      olhos: new E.DecayingEvents({ points: P.longClosure.points, decayMs: P.longClosure.decayMs, cap: P.closuresCap }),
+      boca: new E.DecayingEvents({ points: P.yawn.points, decayMs: P.yawn.decayMs, cap: P.yawn.cap }),
+      cabeca: new E.DecayingEvents({ points: P.head.points, decayMs: P.head.decayMs, cap: P.head.cap }),
+    };
+    this.lv = new E.LevelController();
+    this.render();
+  },
+  somar(k) {
+    this.ev[k].add(this.t);
+    this.render();
+  },
+  passo() {
+    this.t += 1000; // 100 ms reais = 1 s de viagem
+    this.render();
+  },
+  render() {
+    const v = [this.ev.olhos.points(this.t), this.ev.boca.points(this.t), this.ev.cabeca.points(this.t)];
+    const raw = Math.min(100, v[0] + v[1] + v[2]);
+    const r = this.lv.update(this.t, raw);
+    trocarClasse($("tela-como"), ["e0", "e1", "e2"], `e${r.state}`);
+    desenharSegs(this.segs, [...v, Math.max(0, r.level - raw)]);
+    setText("como-nivel", String(Math.floor(r.level)));
+    setText("como-estado", STATE_TITLES[r.state]);
+    $("como-leitura").setAttribute("aria-label", `Nível ${Math.floor(r.level)}, ${STATE_TITLES[r.state]}`);
+  },
+  iniciar() {
+    if (!this.timer) this.timer = setInterval(() => this.passo(), 100);
+  },
+  parar() {
+    clearInterval(this.timer);
+    this.timer = 0;
+  },
+};
+/** "Os números do nível": montado a partir de E.CFG (os mesmos números que o detector usa). */
+function renderNumerosNivel() {
   const C = E.CFG;
   const L = C.levels;
   const P = C.score;
   const seg = (ms) => `${br(ms / 1000, ms % 1000 ? 1 : 0)} s`;
   const min = (ms) => `${br(ms / 60000, 0)} min`;
   const pct = (x) => `${br(x * 100, 0)} %`;
-  const linha = (titulo, texto, valor) => `<li class="linha"><span class="texto">${titulo}<small>${texto}</small></span><span class="valor">${valor}</span></li>`;
-  const vermelho = (icone, titulo, texto) => `<li class="linha"><span class="quadrado vermelho" aria-hidden="true"><svg><use href="#${icone}"/></svg></span><span class="texto">${titulo}<small>${texto}</small></span></li>`;
-  $("como-conteudo").innerHTML = `
-    <p class="intro sec">O nível vai de 0 a 100. Cada sinal de sono soma pontos, e os pontos somem sozinhos com o tempo.</p>
-    <h2 class="secao">Faixas</h2>
-    <ul class="lista">
-      <li class="linha"><i class="ponto-cor p-v"></i><span class="texto">Alerta</span><span class="sec num">0 a ${L.attention - 1}</span></li>
-      <li class="linha"><i class="ponto-cor p-a"></i><span class="texto">Atenção</span><span class="sec num">${L.attention} a ${L.drowsy - 1}</span></li>
-      <li class="linha"><i class="ponto-cor p-r"></i><span class="texto">Sonolento</span><span class="sec num">${L.drowsy} a 100</span></li>
+  const li = (a, b) => `<li><span>${a}</span><b>${b}</b></li>`;
+  $("como-numeros").innerHTML = `
+    <ul>
+      ${li(`Olhos fechados de ${seg(C.eyes.longMs)} a ${seg(C.eyes.microsleepMs)}, cada vez; some em ${min(P.longClosure.decayMs)}`, `+${P.longClosure.points}`)}
+      ${li(`PERCLOS: parte do último minuto com os olhos fechados, só em fechamentos de ${seg(C.perclos.minEpisodeMs)} ou mais (${P.perclos.points} pontos em ${pct(P.perclos.at)})`, `até ${P.perclos.cap}`)}
+      ${li(`Bocejo: boca bem aberta por ${seg(C.yawn.minMs)} ou mais; some em ${min(P.yawn.decayMs)}`, `+${P.yawn.points}`)}
+      ${li(`Cabeça caindo ou cabeceio, com os olhos fechados; some em ${min(P.head.decayMs)}`, `+${P.head.points}`)}
+      ${li(`Piscadas de ${br(P.blinkDur.from, 2)} a ${br(P.blinkDur.at, 0)} vezes mais longas que na calibração`, `até ${P.blinkDur.cap}`)}
+      ${li(`Modelo LSTM, experimental: só soma com o nível já em Atenção (${P.ml.minBase} ou mais)`, `+${P.ml.points}`)}
     </ul>
-    <p class="rodape">Para a cor não ficar trocando à toa, o amarelo só volta ao verde abaixo de ${L.attentionExit}, e o vermelho só sai abaixo de ${L.drowsyExit}.</p>
-    <h2 class="secao">O que soma pontos</h2>
-    <ul class="lista">
-      ${linha(`Olhos fechados de ${seg(C.eyes.longMs)} a ${seg(C.eyes.microsleepMs)}`, `Cada vez. Some em ${min(P.longClosure.decayMs)}.`, `+${P.longClosure.points}`)}
-      ${linha("PERCLOS", `Parte do último minuto com os olhos fechados, só contando fechamentos de ${seg(C.perclos.minEpisodeMs)} ou mais. ${P.perclos.points} pontos em ${pct(P.perclos.at)}.`, `até ${P.perclos.cap}`)}
-      ${linha("Bocejo", `Boca bem aberta por ${seg(C.yawn.minMs)} ou mais. Some em ${min(P.yawn.decayMs)}.`, `+${P.yawn.points}`)}
-      ${linha("Cabeça caindo ou cabeceio", `Com os olhos fechados. Some em ${min(P.head.decayMs)}.`, `+${P.head.points}`)}
-      ${linha("Piscadas mais lentas", `De ${br(P.blinkDur.from, 2)} a ${br(P.blinkDur.at, 0)} vezes a duração da calibração.`, `até ${P.blinkDur.cap}`)}
-      ${linha("Modelo LSTM, experimental", `Só soma se o nível já estiver em Atenção (${P.ml.minBase} ou mais).`, `+${P.ml.points}`)}
-    </ul>
-    <p class="rodape">Tetos: fechamentos ${P.closuresCap}, bocejos ${P.yawn.cap}, cabeça ${P.head.cap}. Nenhum sinal sozinho chega a ${L.drowsy}. Cabeça baixa de olhos abertos é distração e não soma.</p>
-    <h2 class="secao">Vermelho na hora</h2>
-    <ul class="lista">
-      ${vermelho("i-microssono", "Microssono", `Olhos fechados por ${seg(C.eyes.microsleepMs)} ou mais.`)}
-      ${vermelho("i-queda", "Cabeça caída", `Com os olhos fechados por ${seg(C.head.redEyesMs)}.`)}
-    </ul>
-    <p class="rodape">Depois, o app fica pelo menos ${min(P.postForced.holdMs)} em Atenção. "Estou acordado" silencia o som por ${seg(C.alarm.snoozeMs)}, mas nunca num microssono.</p>
-    <h2 class="secao">De onde vêm os números</h2>
-    <div class="cartao">
-      <p>Da literatura (PERCLOS e microssono de 1 s), de testes no DMD (limiar do olho e bocejo de 1,5 s) e de regras de projeto (pontos, tetos, 40 e 70).</p>
-      <p>Num teste com 300 combinações, cada peso multiplicado por 0,7 a 1,3 e os limiares mudados em até 10 pontos, o vermelho com motoristas acordados (direção real do DMD) ficou entre 1,7 % e 4,9 % do tempo em 90 % delas. Com os valores do app, 3,3 %.</p>
-    </div>
-    <ul class="lista espaco">
-      <li><button type="button" class="linha toque" data-ir="tecnico"><span class="texto">Detalhes técnicos</span><span class="sec">latência e benchmark</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
-    </ul>`;
+    <p>Tetos: fechamentos ${P.closuresCap}, bocejos ${P.yawn.cap}, cabeça ${P.head.cap}: nenhum sinal sozinho chega a ${L.drowsy}. Cabeça baixa de olhos abertos é distração e não soma. Microssono (olhos fechados por ${seg(C.eyes.microsleepMs)} ou mais) e cabeça caída de olhos fechados dão vermelho na hora; depois, o app fica pelo menos ${min(P.postForced.holdMs)} em Atenção.</p>
+    <p>O nível desce no máximo ${P.maxFallPerS} pontos por segundo. Para a cor não ficar trocando à toa, o amarelo só volta ao verde abaixo de ${L.attentionExit}, e o vermelho só sai abaixo de ${L.drowsyExit}. "Segure: estou acordado" pausa o som por ${seg(C.alarm.snoozeMs)}, nunca num microssono.</p>
+    <p>De onde vêm: da literatura (PERCLOS e microssono de 1 s), de testes no DMD (limiar do olho e bocejo de 1,5 s) e de regras de projeto (pontos, tetos, 40 e 70). Num teste com 300 combinações, cada peso multiplicado por 0,7 a 1,3 e os limiares mudados em até 10 pontos, o vermelho com motoristas acordados (direção real do DMD) ficou entre 1,7 % e 4,9 % do tempo em 90 % delas; com os valores do app, 3,3 %.</p>`;
 }
-window.__ui = { ir, abrirSom, encerrar: () => encerrarViagem(), estado: () => ({ tela: UI.tela, alarme: UI.alarmeVisivel, historico: [...UI.historico] }) }; // inspeção em testes automatizados
-function esc(s) {
-  return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-}
+
+// ---- Primeiro uso: 3 passos (o que o app vê, onde prender o celular, teste do alarme) ----
+const PrimeiroUso = {
+  n: 0,
+  tocou: false,
+  timers: [],
+  medidorRaf: 0,
+  montar() {
+    const segs = Array.from({ length: 12 }, (_, i) => `<span style="height:${(8 + i * 1.7).toFixed(1)}px"></span>`).join("");
+    $("pu-medidor").innerHTML = segs;
+    $("pu-continuar").onclick = () => this.passo(this.n + 1);
+    $("pu-voltar").onclick = () => this.passo(this.n - 1);
+    $("pu-testar").onclick = () => this.testar();
+    $("pu-concluir").onclick = () => this.concluir();
+    $("pu-pular").onclick = () => this.concluir();
+  },
+  concluir() {
+    gravarLocal(INTRO_KEY, "1");
+    this.parar();
+    UI.historico = [];
+    ir("inicio", { historico: false });
+  },
+  parar() {
+    this.timers.forEach((t) => clearTimeout(t));
+    this.timers = [];
+    cancelAnimationFrame(this.medidorRaf);
+  },
+  passo(n) {
+    this.n = Math.max(0, Math.min(2, n));
+    this.parar();
+    for (let i = 0; i < 3; i++) $(`pu-passo-${i}`).hidden = i !== this.n;
+    setText("pu-num", String(this.n + 1));
+    $("pu-progresso").setAttribute("aria-valuenow", String(this.n + 1));
+    $("pu-progresso").setAttribute("aria-label", `Passo ${this.n + 1} de 3`);
+    [...$("pu-progresso").children].forEach((s, i) => s.classList.toggle("feito", i <= this.n));
+    $("pu-continuar").hidden = this.n === 2;
+    $("pu-voltar").hidden = this.n === 0;
+    $("pu-testar").hidden = this.n !== 2;
+    $("pu-concluir").hidden = !(this.n === 2 && this.tocou);
+    $("tela-primeiro").setAttribute("aria-labelledby", `pu-titulo-${this.n}`);
+    if (this.n === 0) this.desenharRosto();
+  },
+  /** Rosto ilustrado: a silhueta some e os pontos (contorno, sobrancelhas, nariz, olhos e boca) aparecem; o contador
+   *  sobe até 478, o número de marcos do Face Landmarker. */
+  desenharRosto() {
+    const elipse = (cx, cy, rx, ry, n, a0, passo, cls = "pu-pt", r = 2.4) =>
+      Array.from({ length: n }, (_, i) => {
+        const a = (i / n) * Math.PI * 2;
+        return `<circle class="${cls}" cx="${(cx + rx * Math.cos(a)).toFixed(1)}" cy="${(cy + ry * Math.sin(a)).toFixed(1)}" r="${r}" style="animation-delay:${a0 + i * passo}ms"/>`;
+      }).join("");
+    const tracos = [[100, 120], [109, 116], [118, 114], [127, 115], [136, 118], [164, 118], [173, 115], [182, 114], [191, 116], [200, 120], [150, 146], [150, 160], [150, 174], [150, 188], [140, 194], [160, 194]]
+      .map(([x, y], i) => `<circle class="pu-pt" cx="${x}" cy="${y}" r="2.4" style="animation-delay:${500 + i * 18}ms"/>`)
+      .join("");
+    const svg = $("pu-rosto");
+    svg.innerHTML = `
+      <g class="pu-cantos"><path d="M44 36 V20 H60"/><path d="M240 20 H256 V36"/><path d="M44 300 V316 H60"/><path d="M240 316 H256 V300"/></g>
+      <g class="pu-silhueta" id="pu-silhueta">
+        <ellipse class="pu-face" cx="150" cy="165" rx="92" ry="118"/>
+        <path class="pu-sobrancelha" d="M100 120 Q118 112 136 118M164 118 Q182 112 200 120"/>
+        <path class="pu-olho-img" d="M101 141 Q118 131 135 141 Q118 151 101 141 Z M165 141 Q182 131 199 141 Q182 151 165 141 Z"/>
+        <path class="pu-boca-traco" d="M126 222 Q150 232 174 222"/>
+      </g>
+      <g id="pu-pontos-g" hidden>
+        ${elipse(150, 165, 92, 118, 32, 250, 14)}
+        ${tracos}
+        <g class="pu-piscar">${elipse(118, 141, 17, 8, 8, 650, 20, "pu-pt olho", 3)}</g>
+        <g class="pu-piscar">${elipse(182, 141, 17, 8, 8, 650, 20, "pu-pt olho", 3)}</g>
+        ${elipse(150, 224, 26, 9, 10, 800, 16, "pu-pt", 2.6)}
+        <path class="pu-ligacao" d="M8 96 H58 L100 136" pathLength="100" style="animation-delay:1000ms"/>
+        <path class="pu-ligacao" d="M292 250 H236 L178 224" pathLength="100" style="animation-delay:1150ms"/>
+        <path class="pu-ligacao" d="M292 60 H246 L222 78" pathLength="100" style="animation-delay:1300ms"/>
+        <text class="pu-etiqueta" x="8" y="90" style="animation-delay:1200ms">OLHOS</text>
+        <text class="pu-etiqueta" x="292" y="244" text-anchor="end" style="animation-delay:1350ms">BOCA</text>
+        <text class="pu-etiqueta" x="292" y="54" text-anchor="end" style="animation-delay:1500ms">CABEÇA</text>
+      </g>
+      <rect class="pu-varredura" id="pu-varredura" x="44" y="20" width="212" height="3" hidden/>`;
+    setText("pu-pontos", "0");
+    this.timers.push(
+      setTimeout(() => {
+        $("pu-silhueta").classList.add("some");
+        $("pu-pontos-g").removeAttribute("hidden"); // elementos SVG não têm a propriedade .hidden
+        $("pu-varredura").removeAttribute("hidden");
+      }, 700),
+      setTimeout(() => {
+        const t0 = performance.now();
+        const contar = () => {
+          const p = Math.min(1, (performance.now() - t0) / 900);
+          setText("pu-pontos", String(Math.round(478 * (1 - Math.pow(1 - p, 3)))));
+          if (p < 1) this.medidorRaf = requestAnimationFrame(contar);
+        };
+        contar();
+      }, 900),
+    );
+  },
+  /** Toca o alarme de teste (o mesmo do app, no volume escolhido) e mostra o nível real do som na saída. */
+  testar() {
+    testSound();
+    this.parar();
+    $("pu-sino").classList.add("tocando");
+    setText("pu-testar", "Tocando…");
+    const segs = [...$("pu-medidor").children];
+    const buf = new Float32Array(256);
+    const t0 = performance.now();
+    const medir = () => {
+      let n = 0;
+      const an = Sound.analyser;
+      if (an) {
+        an.getFloatTimeDomainData(buf);
+        let s = 0;
+        for (const x of buf) s += x * x;
+        const rms = Math.sqrt(s / buf.length);
+        n = rms > 0 ? Math.max(0, Math.min(12, Math.round((20 * Math.log10(rms) + 60) / 5))) : 0; // -60 dB a 0 dB em 12 passos
+      }
+      segs.forEach((el, i) => (el.className = i < n ? (i >= 10 ? "r" : i >= 7 ? "a" : "v") : ""));
+      $("pu-medidor").setAttribute("aria-valuenow", String(n));
+      if (performance.now() - t0 < 2700) this.medidorRaf = requestAnimationFrame(medir);
+      else {
+        segs.forEach((el) => (el.className = ""));
+        $("pu-sino").classList.remove("tocando");
+        this.tocou = true;
+        setText("pu-testar", "Tocar de novo");
+        $("pu-concluir").hidden = false;
+      }
+    };
+    medir();
+  },
+};
+
+// ---- Modo pôster: notebook ou tablet na sessão de pôsteres. Cada visitante senta, o app calibra em 10 s e mostra o
+// nível reagindo; quando a pessoa sai (8 s sem rosto), volta a esperar o próximo. Nada é registrado como viagem. ----
+const Poster = {
+  fase: "parado", // parado | carregando | esperando | calibrando | ativo
+  rostoDesde: null,
+  semRostoDesde: null,
+  eventos: [],
+  segs: null,
+  entrar() {
+    if (S.running && S.modo === "viagem") return;
+    this.eventos = [];
+    this.renderEventos();
+    this.fase = "carregando";
+    this.chip("Carregando o detector", false);
+    anelTempo("poster-anel", "100");
+    startCamera("poster");
+  },
+  sair() {
+    if (S.modo === "poster" || (S.running && S.modo !== "viagem")) pararCamera();
+    S.fichaInicio = (S.fichaInicio || 0) + 1; // um carregamento em andamento desiste
+    this.fase = "parado";
+  },
+  /** Volta a esperar um rosto: monitor novo (sem calibração) e caminho do LSTM zerado. */
+  esperar() {
+    S.monitor = new E.DrowsinessMonitor();
+    resetarCaminhoLSTM();
+    S.faceLostSince = null;
+    this.fase = "esperando";
+    this.rostoDesde = null;
+    this.semRostoDesde = null;
+    anelTempo("poster-anel", "100");
+  },
+  recomecar() {
+    this.eventos = [];
+    this.renderEventos();
+    if (S.running) this.esperar();
+    else this.entrar();
+  },
+  calibrado() {
+    this.fase = "ativo";
+    anelTempo("poster-anel", "100");
+    this.registrar("Calibrado: pode começar", "var(--verde)");
+  },
+  aoEvento(e) {
+    const P = E.CFG.score;
+    const txt = { fechamento: [`Fechamento longo: +${P.longClosure.points}`, "var(--ambar)"], bocejo: [`Bocejo: +${P.yawn.points}`, "var(--ambar)"], queda: [`Cabeça caiu: +${P.head.points}`, "var(--ambar)"], cabeceio: [`Cabeceio: +${P.head.points}`, "var(--ambar)"], microssono: ["Microssono: alarme na hora", "var(--vermelho)"], cabeca_baixa: ["Cabeça baixa de olhos abertos: 0", "var(--cinza)"] }[e.type];
+    if (txt) this.registrar(...txt);
+  },
+  registrar(texto, cor) {
+    this.eventos.unshift({ texto, cor, em: Date.now() });
+    this.eventos = this.eventos.slice(0, 7);
+    this.renderEventos();
+  },
+  renderEventos() {
+    const agora = Date.now();
+    $("poster-sem-eventos").hidden = this.eventos.length > 0;
+    setHTML($("poster-linha-tempo"), this.eventos.map((e) => `<li><i style="background:${e.cor}"></i><span>${esc(e.texto)}</span><small>há ${Math.max(0, Math.round((agora - e.em) / 1000))} s</small></li>`).join(""));
+  },
+  chip(texto, ok) {
+    setText("poster-chip-texto", texto);
+    trocarClasse($("poster-chip"), ["ok"], ok ? "ok" : "");
+  },
+  atualizar(r) {
+    const agora = performance.now();
+    const face = S.faceDetected;
+    if (this.fase === "esperando") {
+      if (face) {
+        this.rostoDesde ??= agora;
+        if (agora - this.rostoDesde > 1000) {
+          S.monitor.startCalibration(agora);
+          S.calibPiscadas = 0;
+          this.fase = "calibrando";
+        }
+      } else this.rostoDesde = null;
+    } else if (this.fase === "calibrando" || this.fase === "ativo") {
+      if (!face) {
+        this.semRostoDesde ??= agora;
+        if (agora - this.semRostoDesde > 8000) {
+          this.esperar();
+          this.registrar("A pessoa saiu: esperando o próximo", "var(--cinza)");
+        }
+      } else this.semRostoDesde = null;
+    }
+    const sc = r.score;
+    const ativo = this.fase === "ativo" && r.phase === "ativo" && !!sc;
+    if (this.fase === "carregando") this.chip("Carregando o detector", false);
+    else if (this.fase === "esperando") this.chip(face ? "Rosto encontrado: começando" : "Sente-se de frente para a câmera", face);
+    else if (this.fase === "calibrando") {
+      const p = Math.max(0, Math.min(1, r.calib?.progress ?? 0));
+      anelTempo("poster-anel", (100 - p * 100).toFixed(1));
+      this.chip(`Calibrando: olhe para a câmera (${Math.max(0, Math.ceil(10 * (1 - p)))} s)`, face);
+    } else this.chip(face ? "Rosto encontrado · 478 pontos" : "Procurando o rosto", face);
+    trocarClasse($("tela-poster"), ["e0", "e1", "e2"], ativo ? `e${sc.state}` : "");
+    setText("poster-nivel", ativo ? String(Math.floor(sc.level)) : "--");
+    setText("poster-estado", ativo ? STATE_TITLES[sc.state] : this.fase === "calibrando" ? "Calibrando" : "Aguardando");
+    $("poster-leitura").setAttribute("aria-label", ativo ? `Nível ${Math.floor(sc.level)}, ${STATE_TITLES[sc.state]}` : "Aguardando um rosto");
+    desenharSegs(this.segs, ativo ? familias(sc) : [0, 0, 0, 0, 0]);
+    $("poster-guia").classList.toggle("oculto", this.fase === "ativo" || this.fase === "carregando");
+    setText("poster-porque-titulo", ativo ? `Por que ${Math.floor(sc.level)}?` : "Por quê?");
+    const partes = ativo ? partesPorque(r) : [];
+    const vazio = ativo ? "Nenhum sinal de cansaço agora." : "O nível começa depois da calibração.";
+    setHTML($("poster-porque"), partes.length ? partes.map((p) => `<div class="linha-pt"><span>${esc(p.rotulo)}</span><b>+${p.pts}</b></div>`).join("") : `<p class="sec">${vazio}</p>`);
+    const vermelho = ativo && sc.state === 2;
+    $("poster-alarme").hidden = !vermelho;
+    if (vermelho) setText("poster-alarme-texto", sc.forced ? (/cabeça/.test(sc.forced) ? "ACORDE! A cabeça caiu" : "ACORDE! Olhos fechados por 1 s") : "PARE E DESCANSE");
+    if (this.eventos.length) this.renderEventos();
+  },
+};
+
+// ---- Detalhes técnicos ----
 function updateTech(r) {
   const b = S.blend || {};
   $("m-ear").textContent = `${fmt(S.ear.left)} / ${fmt(S.ear.right)}`;
@@ -1880,6 +2547,7 @@ function updateTech(r) {
     $(`l-${k}-p95`).textContent = st.n ? fmtMs(st.p95) : "--";
   }
 }
+window.__ui = { ir, abrirSom, abrirPorque, encerrar: () => encerrarViagem(), estado: () => ({ tela: UI.tela, alarme: UI.alarmeVisivel || UI.microVisivel, historico: [...UI.historico] }) }; // inspeção em testes automatizados
 
 // ---------------------------------------------------------------------------
 // Benchmark de 60 s (Exp. 4) — também registra o detector v2 quadro a quadro
@@ -2121,33 +2789,21 @@ async function toggleFullscreen() {
     notice(`Tela cheia indisponível: ${e.message}`);
   }
 }
-function setWakeButton(on) {
-  $("btn-wake").setAttribute("aria-checked", String(on));
-}
+/** Pede para a tela não apagar enquanto a câmera estiver ligada (o pedido cai quando a página some; volta ao
+ *  reaparecer, em "visibilitychange"). */
 async function requestWakeLock() {
   if (!("wakeLock" in navigator)) return false;
   try {
     S.wakeLock = await navigator.wakeLock.request("screen");
     S.wakeWanted = true;
-    setWakeButton(true);
     S.wakeLock.addEventListener("release", () => {
       S.wakeLock = null;
-      setWakeButton(false);
     });
     return true;
   } catch (e) {
     console.warn("Wake Lock", e.message);
     return false;
   }
-}
-async function toggleWakeLock() {
-  if (!("wakeLock" in navigator)) return notice("Wake Lock API indisponível neste navegador: ajuste o bloqueio automático da tela nos Ajustes.");
-  if (S.wakeLock) {
-    S.wakeWanted = false;
-    await S.wakeLock.release().catch(() => {});
-    S.wakeLock = null;
-    setWakeButton(false);
-  } else if (!(await requestWakeLock())) notice("Wake Lock falhou (a página precisa estar visível).");
 }
 
 // ---------------------------------------------------------------------------
@@ -2157,58 +2813,106 @@ function init() {
   // Dependências começam a carregar já; os erros aparecem no "Iniciar viagem" (MediaPipe) ou viram modo
   // degradado (TensorFlow.js), por isso as promessas não ficam sem tratamento aqui.
   S.visionReady = loadVision();
-  S.visionReady.catch(() => {});
+  S.visionReady
+    .then(
+      (i) => {
+        S.visionSrc = i; // 0 = ./vendor/ (funciona sem internet), 1 = CDN
+      },
+      () => {
+        S.visionErro = true;
+      },
+    )
+    .finally(() => {
+      if (UI.tela === "inicio") Checagem.atualizar();
+    });
   S.tfReady = loadTfjs();
   S.tfReady.catch(() => {});
   showDeviceInfo();
   initVolume(); // antes de qualquer som: ?volume= / valor salvo / padrão 20 %
   initTema();
-  renderComoFunciona();
+  const params = new URLSearchParams(location.search);
+  definirPesquisa(params.get("pesquisa") === "1" || lerLocal(PESQUISA_KEY) === "1", false);
+  definirVibrar(lerLocal(VIBRAR_KEY) !== "0", false);
+  $("linha-vibrar").hidden = !("vibrate" in navigator);
+  for (const n of TELAS_COM_CAMERA) $(`tela-${n}`).classList.add("com-camera");
+  UI.segsViagem = criarSegs($("dial-segs"), 5);
+  marcaDial($("marca-40"), E.CFG.levels.attention);
+  marcaDial($("marca-70"), E.CFG.levels.drowsy);
+  Poster.segs = criarSegs($("poster-segs"), 5);
+  Como.montar();
+  PrimeiroUso.montar();
   setText("versao-app", APP_VERSION);
-  const ultima = carregarResumo();
-  renderResumo(ultima);
-  renderUltima(ultima);
-  ir("inicio", { historico: false });
+  renderUltima(carregarResumo());
+  // Primeiro uso só na primeira visita (ou com ?intro=1); os testes automáticos (?autostart=1) pulam
+  const intro = params.get("intro") === "1" || (lerLocal(INTRO_KEY) !== "1" && params.get("autostart") !== "1");
+  ir(intro ? "primeiro" : "inicio", { historico: false });
+
   // O desbloqueio do áudio precisa acontecer DENTRO do toque, antes de qualquer await.
   $("btn-start").onclick = () => {
     Sound.unlock();
     iniciarViagem();
   };
-  for (const id of ["btn-sound", "btn-testar-inicio", "btn-testar-ajustes"]) $(id).onclick = testSound;
+  for (const id of ["btn-sound", "btn-testar-ajustes", "chk-som-btn"]) $(id).onclick = testSound;
   const recalibrar = () => {
     Sound.unlock();
     startCalibration();
   };
-  $("btn-calib").onclick = recalibrar;
+  segurar($("btn-calib"), recalibrar);
   $("btn-refazer").onclick = recalibrar;
-  $("btn-comecar").onclick = () => ir("viagem");
+  $("btn-comecar").onclick = () => {
+    clearTimeout(UI.autoAvanco);
+    ir("viagem");
+  };
   $("btn-cancelar").onclick = cancelarViagem;
   $("btn-som").onclick = abrirSom;
-  $("btn-volume").onclick = abrirSom;
-  $("btn-encerrar").onclick = () => abrirDialogo("dlg-encerrar");
-  $("btn-confirmar-encerrar").onclick = encerrarViagem;
+  $("chip-som").onclick = () => {
+    Sound.unlock();
+    abrirSom();
+  };
+  $("mostrador").onclick = abrirPorque;
+  $("sinais").onclick = (ev) => {
+    if (ev.target.closest("button")) abrirPorque();
+  };
+  segurar($("btn-encerrar"), encerrarViagem);
+  segurar($("btn-ack"), estouAcordado);
   $("btn-encerrar-alarme").onclick = encerrarViagem;
+  $("btn-nova").onclick = () => ir("inicio");
   $("btn-exportar-resumo").onclick = () => {
     if (S.eventLog.length) exportSession();
     else notice("Nada para exportar ainda: a sessão começa no Iniciar viagem.");
   };
-  setupDeslizar();
   $("btn-bench").onclick = startBenchmark;
   $("btn-export").onclick = exportSession;
   $("btn-full").onclick = toggleFullscreen;
-  $("btn-wake").onclick = toggleWakeLock;
+  $("btn-poster").onclick = () => {
+    Sound.unlock();
+    ir("poster");
+  };
+  $("poster-sair").onclick = () => ir("ajustes", { historico: false });
+  $("poster-recomecar").onclick = () => {
+    Sound.unlock();
+    Poster.recomecar();
+  };
+  $("btn-versao").onclick = tocarVersao;
+  $("btn-intro").onclick = () => ir("primeiro");
+  $("btn-pesquisa").onclick = () => definirPesquisa(!S.pesquisa);
+  $("btn-vibrar").onclick = () => definirVibrar(!S.vibrarOn);
+  $("como-zerar").onclick = () => Como.zerar();
   $("notice").onclick = () => notice("");
   for (const b of document.querySelectorAll("#abas [data-aba]")) b.onclick = () => irAba(b.dataset.aba);
   for (const b of document.querySelectorAll(".segmentado [data-tema]")) b.onclick = () => aplicarTema(b.dataset.tema);
-  // Botões com data-ir (abre outra tela), data-voltar e data-fechar (fecha a folha ou o diálogo)
+  // Botões com data-ir (abre outra tela), data-voltar e data-fechar (fecha a folha)
   document.addEventListener("click", (ev) => {
     const alvo = ev.target.closest("[data-ir], [data-voltar], [data-fechar]");
     if (!alvo) return;
     if (alvo.hasAttribute("data-fechar")) fecharDialogo(alvo.closest("dialog"));
     else if (alvo.hasAttribute("data-voltar")) voltar();
-    else ir(alvo.dataset.ir);
+    else {
+      fecharDialogo(alvo.closest("dialog"));
+      ir(alvo.dataset.ir);
+    }
   });
-  // Toque fora da folha ou do diálogo fecha
+  // Toque fora da folha fecha
   for (const d of document.querySelectorAll("dialog")) {
     d.addEventListener("click", (ev) => {
       if (ev.target !== d) return;
@@ -2245,7 +2949,8 @@ function init() {
 }
 init();
 // Parâmetros de URL para testes automatizados: ?autostart=1 inicia a viagem (liga a câmera e calibra, sem
-// liberar o som: não é gesto do usuário); &bench=1 inicia o benchmark ao ligar.
+// liberar o som: não é gesto do usuário); &bench=1 inicia o benchmark ao ligar; ?pesquisa=1 liga o modo
+// pesquisador nesta visita; ?intro=1 mostra o Primeiro uso.
 const params = new URLSearchParams(location.search);
 if (params.get("autostart") === "1") {
   iniciarViagem().then(() => {

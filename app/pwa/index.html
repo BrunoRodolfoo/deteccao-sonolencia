@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#F2F2F7" />
+  <meta name="theme-color" content="#000000" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Sonolência" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="description" content="Detecção de sonolência no navegador (MediaPipe + TFLite). PUCPR, Projeto Transformador II, Equipe 14." />
   <title>Sonolência Móvel</title>
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="preload" href="./fonts/barlow-semi-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="./styles.css" />
   <script>
     // Tema escolhido em Ajustes, aplicado antes de desenhar a página (sem piscar): "claro", "escuro" ou automático.
@@ -26,29 +27,45 @@
   <!-- MediaPipe e TensorFlow.js: o app.js carrega de ./vendor/ (tools/baixar_dependencias_app.sh) ou, se faltar, da CDN -->
 </head>
 <body>
-  <!-- Ícones (SVG em traço, no estilo do sistema) -->
+  <!-- Ícones (traço de 24 px) e as placas dos estados (forma + cor + palavra: funciona para daltônicos e de longe) -->
   <svg class="sprite" aria-hidden="true" focusable="false">
-    <symbol id="i-logo" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="230" fill="#14213D"/><path d="M302.9 719.1A296 296 0 1 1 721.1 719.1" fill="none" stroke="#fff" stroke-width="72" stroke-linecap="round"/><circle cx="721.1" cy="719.1" r="64" fill="#FFB224"/><path d="M360 498Q512 640 664 498" fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round"/><g stroke="#fff" stroke-width="46" stroke-linecap="round"><path d="M512 630v64M420 606l-30 54M604 606l30 54"/></g></symbol>
-    <symbol id="i-olho" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
-    <symbol id="i-boca" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 9.5h1.5M14 9.5h1.5"/><ellipse cx="12" cy="15.4" rx="2.3" ry="2.7"/></symbol>
-    <symbol id="i-cabeca" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c.8-3.9 3.6-6.3 7-6.3s6.2 2.4 7 6.3"/></symbol>
-    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v5.2"/><path d="M12 7.6v.1" stroke-width="2.4"/></symbol>
-    <symbol id="i-som" viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></symbol>
-    <symbol id="i-calibrar" viewBox="0 0 24 24"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M9 10h.01M15 10h.01" stroke-width="2.4"/><path d="M9.5 15c1.4 1 3.6 1 5 0"/></symbol>
-    <symbol id="i-parar" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5"/></symbol>
-    <symbol id="i-carro" viewBox="0 0 24 24"><path d="M5.5 10.5l1.6-4.2A2 2 0 0 1 9 5h6a2 2 0 0 1 1.9 1.3l1.6 4.2A2 2 0 0 1 20 12.4V17a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4.6a2 2 0 0 1 1.5-1.9zM7.6 10h8.8l-1.1-3H8.7l-1.1 3z" fill="currentColor" stroke="none"/><circle cx="7.5" cy="13" r="1.2" fill="#fff" stroke="none" class="farol"/><circle cx="16.5" cy="13" r="1.2" fill="#fff" stroke="none" class="farol"/></symbol>
-    <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
-    <symbol id="i-ajustes" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
-    <symbol id="i-celular" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
-    <symbol id="i-cafe" viewBox="0 0 24 24"><path d="M4 10h12v4.5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V10z"/><path d="M16 11.5h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c-.6.8-.6 1.7 0 2.5M12 3.5c-.6.8-.6 1.7 0 2.5"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-voltar" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8"/></symbol>
-    <symbol id="i-seguir" viewBox="0 0 9 15"><path d="M1.5 1.5l6 6-6 6"/></symbol>
-    <symbol id="i-exportar" viewBox="0 0 24 24"><path d="M12 3.5v11M8 7.5l4-4 4 4"/><path d="M7 10.5H6a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 6 20.5h12a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-1"/></symbol>
+    <symbol id="i-logo" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="230" fill="#14213D"/><path d="M302.9 719.1A296 296 0 1 1 721.1 719.1" fill="none" stroke="#fff" stroke-width="72" stroke-linecap="round"/><circle cx="721.1" cy="719.1" r="64" fill="#FFB224"/><path d="M360 498Q512 640 664 498" fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round"/><path d="M512 630v64M420 606l-30 54M604 606l30 54" fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round"/></symbol>
+    <symbol id="i-olhos" viewBox="0 0 24 24"><path d="M2 10c3 4 6 5 10 5s7-1 10-5"/></symbol>
+    <symbol id="i-olho" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-boca" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM9 9h.01M15 9h.01M12 12.5a2.5 3 0 1 0 0 6a2.5 3 0 1 0 0-6z"/></symbol>
+    <symbol id="i-cabeca" viewBox="0 0 24 24"><path d="M12 9a4 4 0 1 0 0 8a4 4 0 1 0 0-8zM5 21h14M12 2v4M9.5 4.5L12 7l2.5-2.5"/></symbol>
+    <symbol id="i-micro" viewBox="0 0 24 24"><path d="M2 10c3 4 6 5 10 5s7-1 10-5M5 14l-2 3M9.5 15.5l-1 3.5M14.5 15.5l1 3.5M19 14l2 3"/></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM12 7v5l3 2"/></symbol>
+    <symbol id="i-modelo" viewBox="0 0 24 24"><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></symbol>
+    <symbol id="i-rosto" viewBox="0 0 24 24"><path d="M12 4a5 6 0 1 0 0 12a5 6 0 1 0 0-12zM9.5 9.5h.01M14.5 9.5h.01M5 21a7 7 0 0 1 14 0"/></symbol>
+    <symbol id="i-sem-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4zM3 3l18 18"/></symbol>
+    <symbol id="i-som" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6L8 10zM16 9a4 4 0 0 1 0 6"/></symbol>
+    <symbol id="i-som-alto" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6L8 10zM16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></symbol>
+    <symbol id="i-sino" viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 0 1 12 0v6M4 17h16M10 20a2 2 0 0 0 4 0M12 2v2M3.5 6.5l1.5 1M20.5 6.5l-1.5 1"/></symbol>
+    <symbol id="i-detector" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M9 10h.01M15 10h.01M9.5 15a3.5 3.5 0 0 0 5 0"/></symbol>
     <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2l1.5-2h6l1.5 2h2A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5v-9z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="i-celular" viewBox="0 0 24 24"><path d="M8 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM11 18h2"/></symbol>
+    <symbol id="i-carregador" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M7 8h10v3a5 5 0 0 1-10 0zM12 16v5"/></symbol>
+    <symbol id="i-calibrar" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><path d="M9 10.5h.01M15 10.5h.01" stroke-width="2.6"/><path d="M9.5 15c1.4 1 3.6 1 5 0"/></symbol>
+    <symbol id="i-aproximar" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+    <symbol id="i-parar" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+    <symbol id="i-casa" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-grafico" viewBox="0 0 24 24"><path d="M4 19h16M6 15l4-5 4 3 5-7"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM12 11v6M12 7.5v.5"/></symbol>
+    <symbol id="i-ajustes" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
     <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-microssono" viewBox="0 0 24 24"><path d="M3 10c2.5 3.5 5.5 5 9 5s6.5-1.5 9-5"/><path d="M6.5 13.5L5 16M12 15v3M17.5 13.5L19 16"/></symbol>
-    <symbol id="i-queda" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M12 13.5v7M8.5 17.5l3.5 3.5 3.5-3.5"/></symbol>
+    <symbol id="i-voltar" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-seguir" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-abrir" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M6 12.5l4 4L18 8"/></symbol>
+    <symbol id="i-busca" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM16 16l5 5"/></symbol>
+    <symbol id="i-aviso" viewBox="0 0 24 24"><path d="M12 4l9 16H3zM12 10v4M12 17v.5"/></symbol>
+    <symbol id="i-exportar" viewBox="0 0 24 24"><path d="M12 3.5v11M8 7.5l4-4 4 4"/><path d="M7 10.5H6a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 6 20.5h12a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-1"/></symbol>
+    <symbol id="i-poster" viewBox="0 0 24 24"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/></symbol>
+    <symbol id="p-verde" viewBox="0 0 44 30"><rect x="1" y="1" width="42" height="28" rx="6" fill="#30D158" stroke="none"/><rect x="5" y="5" width="34" height="20" rx="3" fill="none" stroke="#000" stroke-width="2"/></symbol>
+    <symbol id="p-ambar" viewBox="0 0 40 40"><polygon points="20,1 39,20 20,39 1,20" fill="#FFB224" stroke="none"/><polygon points="20,6 34,20 20,34 6,20" fill="none" stroke="#000" stroke-width="2.4"/></symbol>
+    <symbol id="p-vermelha" viewBox="0 0 40 40"><polygon points="12,1 28,1 39,12 39,28 28,39 12,39 1,28 1,12" fill="#FF453A" stroke="none"/><polygon points="13.5,5 26.5,5 35,13.5 35,26.5 26.5,35 13.5,35 5,26.5 5,13.5" fill="none" stroke="#fff" stroke-width="2.4"/></symbol>
+    <symbol id="p-cinza" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="none" stroke="#8E8E93" stroke-width="3" stroke-dasharray="6 5"/></symbol>
   </svg>
 
   <div id="notice" class="aviso hidden" role="status" aria-live="polite"></div>
@@ -61,176 +78,297 @@
   </div>
 
   <main id="app">
-    <!-- ============================== INÍCIO (aba Dirigir) ============================== -->
-    <section class="tela" id="tela-inicio" data-tela="inicio" data-abas="dirigir" aria-labelledby="inicio-titulo">
+    <!-- ============================== PRIMEIRO USO (3 passos) ============================== -->
+    <section class="tela clara" id="tela-primeiro" data-tela="primeiro" aria-labelledby="pu-titulo-0" hidden>
+      <div class="pu">
+        <div class="pu-topo">
+          <span class="pu-num"><span id="pu-num">1</span>/3</span>
+          <div class="pu-barras" role="progressbar" id="pu-progresso" aria-label="Passo 1 de 3" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1">
+            <span></span><span></span><span></span>
+          </div>
+          <button type="button" class="link-sec" id="pu-pular">Pular</button>
+        </div>
+
+        <div class="pu-passo" id="pu-passo-0">
+          <div class="pu-figura pu-rosto">
+            <svg id="pu-rosto" viewBox="0 0 300 330" role="img" aria-label="Rosto marcado com pontos nos olhos, na boca e no contorno"></svg>
+            <div class="pu-contador"><span id="pu-pontos" class="num">0</span><span>pontos no rosto</span></div>
+          </div>
+          <h1 id="pu-titulo-0">Olhos, boca e cabeça</h1>
+          <p>Enquanto você dirige, o app acompanha as piscadas, os bocejos e a posição da cabeça.</p>
+        </div>
+
+        <div class="pu-passo" id="pu-passo-1" hidden>
+          <div class="pu-figura">
+            <svg class="pu-lateral" viewBox="0 0 340 300" role="img" aria-label="Vista lateral: o celular sobe até a altura dos olhos, a 40 a 60 centímetros">
+              <path class="pu-estrutura" d="M0 52 Q120 30 210 20"/>
+              <path class="pu-estrutura" d="M0 214 H150 Q178 214 186 240 L196 300"/>
+              <ellipse class="pu-estrutura grossa" cx="206" cy="182" rx="9" ry="46" transform="rotate(-18 206 182)"/>
+              <circle class="pu-pessoa" cx="286" cy="118" r="30"/>
+              <path class="pu-pessoa" d="M262 150 Q286 140 312 152 L326 300 H246 Z"/>
+              <circle class="pu-olho-pessoa" cx="266" cy="114" r="4"/>
+              <line class="pu-guia" x1="140" y1="118" x2="340" y2="118"/>
+              <text class="pu-rotulo" x="338" y="108" text-anchor="end">altura dos olhos</text>
+              <path class="pu-estrutura grossa pu-haste" d="M118 214 V160"/>
+              <g class="pu-celular">
+                <rect x="110" y="84" width="20" height="76" rx="5" class="pu-aparelho"/>
+                <circle cx="131" cy="118" r="4" class="pu-acento-cheio"/>
+                <g class="pu-visada"><line x1="138" y1="118" x2="262" y2="118" class="pu-acento-traco"/></g>
+              </g>
+              <g class="pu-distancia">
+                <rect x="148" y="132" width="94" height="28" rx="14" class="pu-acento-cheio"/>
+                <text x="195" y="151" text-anchor="middle">40 a 60 cm</text>
+              </g>
+            </svg>
+          </div>
+          <div class="pu-cartoes">
+            <div class="pu-cartao certo"><strong>Certo</strong><span>Câmera na altura dos olhos, de frente.</span></div>
+            <div class="pu-cartao evite"><strong>Evite</strong><span>Câmera baixa: o olhar para o painel parece olho fechado.</span></div>
+          </div>
+          <h1 id="pu-titulo-1">Na altura dos olhos</h1>
+          <p>Prenda o celular de frente para você, a 40 a 60 cm, em pé ou deitado. Evite luz forte atrás de você.</p>
+        </div>
+
+        <div class="pu-passo" id="pu-passo-2" hidden>
+          <div class="pu-figura pu-som">
+            <div class="pu-sino" id="pu-sino">
+              <span class="onda"></span><span class="onda"></span><span class="onda"></span>
+              <span class="pu-sino-centro"><svg aria-hidden="true"><use href="#i-sino"/></svg></span>
+            </div>
+            <div class="medidor-som" id="pu-medidor" role="meter" aria-label="Nível do som do teste" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"></div>
+            <label class="pu-volume">Volume do alarme <output id="pu-vol-out" class="num">20 %</output>
+              <input class="vol-slider" type="range" min="0" max="100" step="5" value="20" aria-label="Volume do alarme" />
+            </label>
+          </div>
+          <h1 id="pu-titulo-2">Teste o alarme agora</h1>
+          <p>Toque para ouvir o alarme no volume escolhido. Suba o volume do celular até ouvir bem com o motor ligado.</p>
+        </div>
+
+        <div class="pu-acoes">
+          <button type="button" class="botao primario" id="pu-continuar">Continuar</button>
+          <button type="button" class="botao contorno" id="pu-testar" hidden>Tocar alarme de teste</button>
+          <button type="button" class="botao primario" id="pu-concluir" hidden>Ouvi o alarme</button>
+          <button type="button" class="botao texto" id="pu-voltar" hidden>Voltar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== INÍCIO ============================== -->
+    <section class="tela clara" id="tela-inicio" data-tela="inicio" data-abas="inicio" aria-labelledby="inicio-titulo">
       <header class="topo-marca">
         <svg class="logo" aria-hidden="true"><use href="#i-logo"/></svg>
-        <span class="marca-nome">Sonolência <span>Móvel</span></span>
+        <span class="marca-nome">Sonolência</span>
       </header>
       <div class="conteudo">
-        <h1 class="titulo-grande" id="inicio-titulo">Nova viagem</h1>
-        <div class="previa">
-          <div class="encaixe-camera" data-camera="cartao" id="slot-inicio"></div>
-          <div class="previa-vazia" id="previa-vazia">
-            <svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg>
-            <span>A câmera frontal liga quando a viagem começa. Nada é gravado.</span>
+        <div class="inicio-heroi">
+          <svg class="logo-grande" viewBox="0 0 1024 1024" role="img" aria-label="Logo: olho fechando dentro do arco do nível">
+            <rect width="1024" height="1024" rx="230" fill="#14213D"/>
+            <path class="lg-arco" d="M302.9 719.1A296 296 0 1 1 721.1 719.1" pathLength="100" fill="none" stroke="#fff" stroke-width="72" stroke-linecap="round"/>
+            <circle class="lg-ponto" cx="721.1" cy="719.1" r="64" fill="#FFB224"/>
+            <path class="lg-olho" d="M360 498Q512 640 664 498" fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round"/>
+            <path class="lg-cilios" d="M512 630v64M420 606l-30 54M604 606l30 54" fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round"/>
+          </svg>
+          <h1 id="inicio-titulo">Pronto para dirigir?</h1>
+          <p>Confira os itens antes de sair. Durante a viagem, o app avisa se algo mudar.</p>
+        </div>
+
+        <section class="cartao checagem" aria-labelledby="chk-titulo">
+          <div class="cartao-topo">
+            <h2 id="chk-titulo">Antes de sair</h2>
+            <span id="chk-status" aria-live="polite">Verificando…</span>
+          </div>
+          <ul class="lista-chk" id="checklist">
+            <li data-chk="detector"><span class="ic-redondo"><svg aria-hidden="true"><use href="#i-detector"/></svg></span><span class="texto"><strong>Detector de rosto</strong><small id="chk-detector-sub">Carregando</small></span><span class="chk-estado" id="chk-detector"></span></li>
+            <li data-chk="camera"><span class="ic-redondo"><svg aria-hidden="true"><use href="#i-camera"/></svg></span><span class="texto"><strong>Câmera frontal</strong><small id="chk-camera-sub">Verificando</small></span><span class="chk-estado" id="chk-camera"></span></li>
+            <li data-chk="som"><button type="button" class="chk-toque" id="chk-som-btn"><span class="ic-redondo"><svg aria-hidden="true"><use href="#i-som-alto"/></svg></span><span class="texto"><strong>Som do alarme</strong><small id="chk-som-sub">Toque para testar</small></span><span class="chk-estado" id="chk-som"></span></button></li>
+            <li data-chk="tela"><span class="ic-redondo"><svg aria-hidden="true"><use href="#i-celular"/></svg></span><span class="texto"><strong>Tela sempre ligada</strong><small id="chk-tela-sub">Verificando</small></span><span class="chk-estado" id="chk-tela"></span></li>
+            <li data-chk="carregador"><span class="ic-redondo"><svg aria-hidden="true"><use href="#i-carregador"/></svg></span><span class="texto"><strong>Carregador</strong><small id="chk-carregador-sub">Recomendado em viagens longas</small></span><span class="chk-estado" id="chk-carregador"></span></li>
+          </ul>
+        </section>
+
+        <button type="button" class="botao primario grande largo" id="btn-start">Iniciar viagem<svg aria-hidden="true"><use href="#i-seta"/></svg></button>
+
+        <button type="button" class="cartao ultima hidden" id="ultima" data-ir="resumo">
+          <span class="texto"><small id="ultima-quando">Última viagem</small><strong id="ultima-detalhe">--</strong></span>
+          <svg class="ultima-linha" viewBox="0 0 96 32" aria-hidden="true"><path id="ultima-linha" d=""/><circle id="ultima-pico" r="3" cx="-10" cy="-10"/></svg>
+          <svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================== CALIBRAÇÃO GUIADA ============================== -->
+    <section class="tela escura" id="tela-calibracao" data-tela="calibracao" aria-labelledby="calib-title" hidden>
+      <div class="calib">
+        <div class="barra-simples">
+          <button type="button" class="link-sec voltar" id="btn-cancelar"><svg aria-hidden="true"><use href="#i-voltar"/></svg>Cancelar</button>
+          <span class="rotulo-caixa">Calibração</span>
+        </div>
+        <div class="painel-camera" id="calib-painel">
+          <div class="encaixe-camera" data-camera="cheio" id="slot-calibracao"></div>
+          <svg class="guia" viewBox="0 0 342 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <ellipse id="guia-elipse" class="guia-elipse" cx="171" cy="196" rx="94" ry="120"/>
+            <path id="guia-anel" class="guia-anel" d="M171 76 A94 120 0 0 1 171 316 A94 120 0 0 1 171 76" pathLength="100"/>
+          </svg>
+          <div class="chip-camera" id="calib-chip"><span class="ponto"></span><span id="calib-chip-texto">Procurando o rosto</span></div>
+          <div class="calib-feito" id="calib-feito" hidden><svg viewBox="0 0 24 24" role="img" aria-label="Calibrado"><circle cx="12" cy="12" r="12" fill="#30D158" stroke="none"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#000" stroke-width="2.2"/></svg></div>
+        </div>
+        <div class="calib-dica" aria-live="polite">
+          <span class="dica-icone" id="calib-dica-icone"><svg aria-hidden="true"><use id="calib-dica-uso" href="#i-busca"/></svg></span>
+          <span class="texto"><strong id="calib-title">Preparando a câmera</strong><span id="calib-text">Carregando o detector de rosto. Na primeira vez, pode levar alguns segundos.</span></span>
+        </div>
+        <div class="calib-numeros">
+          <div><small>Tempo</small><strong id="calib-seg" class="num">10 s</strong></div>
+          <div><small>Piscadas vistas</small><strong id="calib-piscadas" class="num">0</strong></div>
+        </div>
+        <span class="flex"></span>
+        <p class="nota centro" id="calib-nota">Os olhos devem ficar abertos e a boca fechada. Se o app vir olhos fechados demais, ele pede para refazer.</p>
+        <div class="acoes-col" id="calib-pronto" hidden>
+          <button type="button" class="botao primario grande" id="btn-comecar">Começar viagem</button>
+          <button type="button" class="botao texto" id="btn-refazer">Refazer a calibração</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== EM VIAGEM (sempre escura) ============================== -->
+    <section class="tela escura" id="tela-viagem" data-tela="viagem" aria-labelledby="status-title" hidden>
+      <div class="viagem">
+        <div class="viagem-topo">
+          <span class="encaixe-camera redondo" data-camera="redondo" id="slot-viagem" role="img" aria-label="Câmera vendo o rosto"></span>
+          <span class="viagem-tempo"><small>Viagem</small><strong id="viagem-tempo" class="num">0:00</strong></span>
+          <span class="flex"></span>
+          <button type="button" class="icone-redondo so-pesquisa" data-ir="tecnico" aria-label="Detalhes técnicos"><svg aria-hidden="true"><use href="#i-info"/></svg></button>
+          <button type="button" class="chip-som" id="chip-som"><svg aria-hidden="true"><use href="#i-som"/></svg><span id="chip-som-texto">Som 20 %</span></button>
+        </div>
+
+        <div class="faixas">
+          <div class="faixa" id="faixa" role="status" hidden>
+            <svg class="faixa-anel" id="faixa-anel" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15"/><circle id="faixa-anel-arco" cx="18" cy="18" r="15" pathLength="100"/></svg>
+            <svg class="faixa-icone" aria-hidden="true"><use id="faixa-uso" href="#i-relogio"/></svg>
+            <span id="faixa-texto"></span>
           </div>
         </div>
-        <h2 class="secao">Antes de sair</h2>
-        <ul class="lista">
-          <li class="linha"><span class="quadrado" aria-hidden="true"><svg><use href="#i-celular"/></svg></span><span class="texto">Celular firme no painel, câmera para o rosto</span></li>
-          <li class="linha"><span class="quadrado" aria-hidden="true"><svg><use href="#i-som"/></svg></span><span class="texto">Som do alarme</span><span class="sec num" id="som-pct-inicio">20 %</span><button type="button" class="link" id="btn-testar-inicio">Testar</button></li>
-        </ul>
-        <button type="button" class="botao primario largo" id="btn-start">Iniciar viagem</button>
-        <div id="ultima-bloco" class="hidden">
-          <h2 class="secao">Última viagem</h2>
-          <ul class="lista">
-            <li><button type="button" class="linha toque" data-ir="resumo" id="ultima-viagem"><span class="texto"><span id="ultima-titulo">--</span><small id="ultima-detalhe"></small></span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============================== CALIBRAÇÃO ============================== -->
-    <section class="tela tela-camera" id="tela-calibracao" data-tela="calibracao" aria-labelledby="calib-title" hidden>
-      <div class="encaixe-camera" data-camera="cheio" id="slot-calibracao"></div>
-      <div class="mascara" aria-hidden="true"></div>
-      <svg class="anel" viewBox="0 0 100 100" aria-hidden="true"><circle class="anel-trilho" cx="50" cy="50" r="47"/><circle class="anel-progresso" id="calib-anel" cx="50" cy="50" r="47" pathLength="100" stroke-dasharray="0 100"/></svg>
-      <header class="barra barra-camera">
-        <button type="button" class="link claro" id="btn-cancelar">Cancelar</button>
-        <strong>Calibração</strong>
-        <span></span>
-      </header>
-      <div class="chip-rosto" id="hud-face"><span class="ponto"></span><span id="hud-face-texto">Procurando o rosto</span></div>
-      <div class="folha-fixa" id="calib-panel">
-        <p class="passo" id="calib-passo">Passo 1 de 2</p>
-        <h1 id="calib-title">Preparando a câmera</h1>
-        <p class="sec" id="calib-text">Baixando o detector de rosto. Na primeira vez, pode levar alguns segundos.</p>
-        <div class="progresso" id="calib-progresso">
-          <div class="progresso-trilho"><div class="progresso-barra" id="calib-fill"></div></div>
-          <span class="sec num" id="calib-seg"></span>
+        <div class="mostrador">
+          <svg class="dial" viewBox="0 0 320 300" aria-hidden="true">
+            <path class="dial-trilho" d="M68.08 251.92 A130 130 0 1 1 251.92 251.92" pathLength="100"/>
+            <g id="dial-segs"></g>
+            <line class="marca-40" id="marca-40"/>
+            <line class="marca-70" id="marca-70"/>
+          </svg>
+          <button type="button" class="dial-botao" id="mostrador" aria-label="Calibrando">
+            <span id="level-num" class="nivel num">--</span>
+            <span class="estado-linha">
+              <svg class="placa" id="placa" aria-hidden="true"><use id="placa-uso" href="#p-cinza"/></svg>
+              <span id="status-title" class="estado-nome">Calibrando</span>
+            </span>
+          </button>
+          <span class="ficha" id="ficha" aria-hidden="true" hidden><svg><use id="ficha-uso" href="#i-olhos"/></svg><span id="ficha-texto"></span></span>
         </div>
-        <p class="nota" id="calib-nota">Se os olhos ficarem fechados em mais de 10 % do tempo, o app pede para refazer.</p>
-        <div class="acoes-col hidden" id="calib-pronto">
-          <button type="button" class="botao primario largo" id="btn-comecar">Começar a monitorar</button>
-          <button type="button" class="botao texto" id="btn-refazer">Recalibrar</button>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============================== EM VIAGEM ============================== -->
-    <section class="tela" id="tela-viagem" data-tela="viagem" aria-labelledby="status-title" hidden>
-      <header class="barra">
-        <span class="encaixe-camera redondo" data-camera="redondo" id="slot-viagem"></span>
-        <div class="titulo-barra"><strong>Em viagem</strong><small id="viagem-tempo">0 min</small></div>
-        <button type="button" class="icone" data-ir="como" aria-label="Como o nível funciona"><svg aria-hidden="true"><use href="#i-info"/></svg></button>
-      </header>
-      <div class="conteudo">
-        <div class="mostrador" id="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="nível de sono de 0 a 100">
-          <svg viewBox="0 0 260 236" aria-hidden="true">
-            <g fill="none" stroke-width="18">
-              <path class="zona zona-v" d="M56.46 203.54A104 104 0 1 1 203.54 203.54" pathLength="100" stroke-dasharray="40 100"/>
-              <path class="zona zona-a" d="M56.46 203.54A104 104 0 1 1 203.54 203.54" pathLength="100" stroke-dasharray="0 40 30 100"/>
-              <path class="zona zona-r" d="M56.46 203.54A104 104 0 1 1 203.54 203.54" pathLength="100" stroke-dasharray="0 70 30 100"/>
-              <path class="arco" id="meter-fill" d="M56.46 203.54A104 104 0 1 1 203.54 203.54" pathLength="100" stroke-dasharray="0 200"/>
-            </g>
-            <g class="marcas" stroke-width="3"><path d="M88.23 48.03L77.34 26.64M204.43 75.92L223.84 61.82"/></g>
-          </svg>
-          <div class="numero"><span id="level-num">--</span><small>de 100</small></div>
-        </div>
-        <div class="estado">
-          <h1 id="status-title">Calibrando</h1>
-          <p class="sec" id="status-sub"></p>
-          <p class="motivo" id="status-why"></p>
-          <p class="nota hidden" id="blink-calib">Aprendendo suas piscadas: <span id="blink-calib-text">0 de 20</span></p>
-        </div>
-        <div class="cartao pausa hidden" id="pausa">
-          <span class="pausa-icone" aria-hidden="true"><svg><use href="#i-cafe"/></svg></span>
-          <span class="texto"><strong>Hora de uma pausa</strong><span class="sec">Procure um lugar seguro para parar.</span></span>
-        </div>
-        <h2 class="secao">Sinais</h2>
-        <ul class="lista">
-          <li class="linha sinal" id="sig-eyes"><span class="quadrado" aria-hidden="true"><svg><use href="#i-olho"/></svg></span><span class="texto">Olhos<small class="sig-detail">--</small></span><span class="sig-state">--</span><span class="ponto" aria-hidden="true"></span></li>
-          <li class="linha sinal" id="sig-yawn"><span class="quadrado" aria-hidden="true"><svg><use href="#i-boca"/></svg></span><span class="texto">Bocejos<small class="sig-detail">--</small></span><span class="sig-state">--</span><span class="ponto" aria-hidden="true"></span></li>
-          <li class="linha sinal" id="sig-head"><span class="quadrado" aria-hidden="true"><svg><use href="#i-cabeca"/></svg></span><span class="texto">Cabeça<small class="sig-detail">--</small></span><span class="sig-state">--</span><span class="ponto" aria-hidden="true"></span></li>
-        </ul>
-        <div id="porque" class="hidden">
-          <h2 class="secao" id="porque-titulo">Por que 0</h2>
-          <ul class="lista" id="why-list"></ul>
-          <p class="rodape">Os pontos somem sozinhos com o tempo.</p>
-        </div>
-        <h2 class="secao">Últimos 10 minutos</h2>
-        <div class="cartao grafico">
-          <svg id="grafico-10min" viewBox="0 0 326 56" preserveAspectRatio="none" role="img" aria-label="Nível nos últimos 10 minutos">
-            <path class="limiar limiar-r" d="M0 18.4H326"/><path class="limiar limiar-a" d="M0 32.8H326"/><path class="base" d="M0 52H326"/>
-            <polyline id="grafico-linha" points="" />
-          </svg>
-          <p class="nota" id="grafico-nota">O gráfico começa depois da calibração.</p>
-        </div>
-        <ul class="lista">
-          <li><button type="button" class="linha toque" data-ir="tecnico"><span class="texto">Detalhes técnicos</span><span class="sec">latência e benchmark</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
-        </ul>
+        <p class="frase" id="frase" aria-live="polite">Olhe para a frente por alguns segundos.</p>
+        <p class="nota centro hidden" id="blink-calib">Aprendendo suas piscadas: <span id="blink-calib-text">0 de 20</span></p>
+        <div class="sinais" id="sinais"></div>
+
+        <span class="flex"></span>
+        <nav class="barra-viagem" aria-label="Ações da viagem">
+          <button type="button" class="segurar" id="btn-calib" aria-label="Segure para recalibrar"><span class="encher"></span><svg aria-hidden="true"><use href="#i-calibrar"/></svg><span class="rot" id="btn-calib-rot">Segure: recalibrar</span></button>
+          <button type="button" id="btn-som"><svg aria-hidden="true"><use href="#i-som-alto"/></svg><span class="rot">Som</span></button>
+          <button type="button" class="segurar perigo" id="btn-encerrar" aria-label="Segure para encerrar a viagem"><span class="encher"></span><svg aria-hidden="true"><use href="#i-parar"/></svg><span class="rot">Segure: encerrar</span></button>
+        </nav>
       </div>
-      <nav class="barra-ferramentas" aria-label="Ações da viagem">
-        <button type="button" id="btn-som"><svg aria-hidden="true"><use href="#i-som"/></svg><span>Som <span id="som-pct">20 %</span></span></button>
-        <button type="button" id="btn-calib"><svg aria-hidden="true"><use href="#i-calibrar"/></svg><span>Recalibrar</span></button>
-        <button type="button" id="btn-encerrar" class="perigo"><svg aria-hidden="true"><use href="#i-parar"/></svg><span>Encerrar</span></button>
-      </nav>
     </section>
 
     <!-- ============================== RESUMO (aba Viagens) ============================== -->
-    <section class="tela" id="tela-resumo" data-tela="resumo" data-abas="viagens" aria-labelledby="resumo-titulo" hidden>
-      <header class="topo-grande">
-        <h1 class="titulo-grande" id="resumo-titulo">Viagens</h1>
-        <span class="encaixe-camera redondo mini" data-camera="redondo"></span>
-        <button type="button" class="icone" id="btn-exportar-resumo" aria-label="Exportar a sessão (JSON e CSV)"><svg aria-hidden="true"><use href="#i-exportar"/></svg></button>
-      </header>
+    <section class="tela clara" id="tela-resumo" data-tela="resumo" data-abas="viagens" aria-labelledby="res-titulo" hidden>
       <div class="conteudo">
+        <div class="topo-grande">
+          <h1 class="titulo-grande" id="res-titulo">Viagens</h1>
+          <span class="encaixe-camera redondo mini" data-camera="redondo"></span>
+          <button type="button" class="icone-redondo so-pesquisa" id="btn-exportar-resumo" aria-label="Exportar a sessão (JSON e CSV)"><svg aria-hidden="true"><use href="#i-exportar"/></svg></button>
+        </div>
+        <p class="subtitulo" id="res-quando"></p>
         <div class="vazio" id="resumo-vazio">
-          <svg class="ic" aria-hidden="true"><use href="#i-relogio"/></svg>
+          <svg class="ic" aria-hidden="true"><use href="#i-grafico"/></svg>
           <strong>Nenhuma viagem ainda</strong>
-          <span class="sec">O resumo aparece aqui quando você encerra uma viagem.</span>
+          <span>O resumo aparece aqui quando você encerra uma viagem.</span>
         </div>
         <div id="resumo-conteudo" class="hidden">
-          <div class="cartao">
-            <div class="linha-titulo"><strong id="res-quando">--</strong><span class="sec" id="res-duracao"></span></div>
-            <svg class="grafico-viagem" id="res-grafico" viewBox="0 0 322 112" preserveAspectRatio="none" role="img" aria-label="Nível durante a viagem">
-              <rect class="faixa faixa-r" x="0" y="4" width="322" height="30"/><rect class="faixa faixa-a" x="0" y="34" width="322" height="30"/><rect class="faixa faixa-v" x="0" y="64" width="322" height="40"/>
-              <polyline id="res-linha" points=""/>
+          <div class="numeros-4">
+            <div><strong id="res-min" class="num">0</strong><small id="res-min-rot">minutos</small></div>
+            <div><strong id="res-avisos" class="num">0</strong><small id="res-avisos-rot">avisos</small></div>
+            <div><strong id="res-alarmes" class="num">0</strong><small id="res-alarmes-rot">alarmes</small></div>
+            <div><strong id="res-pico" class="num">0</strong><small>nível máximo</small></div>
+          </div>
+          <section class="cartao grafico-viagem" aria-labelledby="res-grafico-titulo">
+            <div class="cartao-topo"><h2 id="res-grafico-titulo">Nível ao longo da viagem</h2><span id="res-duracao"></span></div>
+            <svg id="res-grafico" viewBox="0 0 342 184" role="img" aria-label="Nível durante a viagem">
+              <rect class="faixa-r" x="0" y="15" width="342" height="45"/>
+              <rect class="faixa-a" x="0" y="60" width="342" height="45"/>
+              <rect class="faixa-v" x="0" y="105" width="342" height="60"/>
+              <line class="limiar-r" x1="0" y1="60" x2="342" y2="60"/>
+              <line class="limiar-a" x1="0" y1="105" x2="342" y2="105"/>
+              <text class="eixo-txt" x="338" y="56" text-anchor="end">70</text>
+              <text class="eixo-txt" x="338" y="101" text-anchor="end">40</text>
+              <path id="res-linha" pathLength="100" d=""/>
               <g id="res-pontos"></g>
+              <text class="eixo-txt" id="res-ini" x="0" y="181"></text>
+              <text class="eixo-txt" id="res-meio" x="171" y="181" text-anchor="middle"></text>
+              <text class="eixo-txt" id="res-fim" x="342" y="181" text-anchor="end"></text>
             </svg>
-            <div class="eixo sec num"><span id="res-ini"></span><span id="res-fim"></span></div>
-          </div>
-          <div class="contagens" aria-label="Eventos da viagem">
-            <div><span class="bola" id="res-alarmes">0</span><small>alarmes</small></div>
-            <div><span class="bola" id="res-avisos">0</span><small>avisos</small></div>
-            <div><span class="bola" id="res-bocejos">0</span><small>bocejos</small></div>
-            <div><span class="bola" id="res-olhos">0</span><small>olhos fechados</small></div>
-            <div><span class="bola" id="res-cabeca">0</span><small>cabeça</small></div>
-          </div>
-          <h2 class="secao">Tempo em cada estado</h2>
-          <div class="cartao">
-            <div class="barra-estados" aria-hidden="true"><span class="b-v" id="res-b0"></span><span class="b-a" id="res-b1"></span><span class="b-r" id="res-b2"></span></div>
-            <div class="legenda sec">
-              <span><i class="p-v"></i>Alerta <b id="res-t0">0 min</b></span>
-              <span><i class="p-a"></i>Atenção <b id="res-t1">0 min</b></span>
-              <span><i class="p-r"></i>Sonolento <b id="res-t2">0 min</b></span>
+          </section>
+          <h2 class="secao">Momentos</h2>
+          <div class="momentos" id="res-momentos"></div>
+          <p class="nota" id="res-nota"></p>
+          <button type="button" class="botao primario grande largo" id="btn-nova">Nova viagem</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== COMO FUNCIONA (interativo) ============================== -->
+    <section class="tela clara" id="tela-como" data-tela="como" data-abas="como" aria-labelledby="como-titulo" hidden>
+      <div class="conteudo">
+        <h1 class="titulo-grande" id="como-titulo">Como o nível sobe e desce</h1>
+        <p class="subtitulo">Cada sinal de cansaço soma pontos, que somem sozinhos com o tempo. Experimente.</p>
+        <div class="como-demo">
+          <div class="como-dial">
+            <svg class="dial" viewBox="0 0 320 300" aria-hidden="true">
+              <path class="dial-trilho" d="M68.08 251.92 A130 130 0 1 1 251.92 251.92" pathLength="100"/>
+              <g id="como-segs"></g>
+            </svg>
+            <div class="como-leitura" role="status" id="como-leitura" aria-label="Nível 0, Alerta">
+              <span class="nivel num" id="como-nivel">0</span>
+              <span class="estado-nome" id="como-estado">Alerta</span>
             </div>
           </div>
-          <h2 class="secao">Momentos</h2>
-          <ol class="lista" id="res-momentos"></ol>
-          <p class="rodape" id="res-nota"></p>
+          <div class="como-botoes" id="como-botoes"></div>
         </div>
+        <p class="nota" id="como-nota">Olhos fechados por 1 s ou mais são um microssono: o alarme toca na hora, sem esperar a soma. Aqui o relógio anda 10 vezes mais rápido.</p>
+        <section class="cartao estados" aria-label="Os três estados">
+          <div><svg class="placa verde" aria-hidden="true"><use href="#p-verde"/></svg><span class="texto"><strong id="como-faixa-0">Alerta: abaixo de 40</strong><small>Tudo certo.</small></span></div>
+          <div><svg class="placa" aria-hidden="true"><use href="#p-ambar"/></svg><span class="texto"><strong id="como-faixa-1">Atenção: de 40 a 69</strong><small>Sino e aviso: planeje uma pausa.</small></span></div>
+          <div><svg class="placa" aria-hidden="true"><use href="#p-vermelha"/></svg><span class="texto"><strong id="como-faixa-2">Sonolento: 70 ou mais</strong><small>Alarme: pare e descanse.</small></span></div>
+        </section>
+        <h2 class="secao">O que ele não faz</h2>
+        <ul class="nao-faz">
+          <li>Não percebe o sono de quem não fecha os olhos, não boceja nem baixa a cabeça.</li>
+          <li>Não foi testado com óculos escuros: com eles, pode não ver os olhos fecharem.</li>
+          <li>Não substitui o descanso. É um protótipo de pesquisa.</li>
+        </ul>
+        <details class="cartao numeros-nivel">
+          <summary>Os números do nível</summary>
+          <div id="como-numeros"></div>
+        </details>
+        <button type="button" class="botao contorno largo" id="como-zerar">Zerar a demonstração</button>
       </div>
     </section>
 
     <!-- ============================== AJUSTES ============================== -->
-    <section class="tela" id="tela-ajustes" data-tela="ajustes" data-abas="ajustes" aria-labelledby="ajustes-titulo" hidden>
-      <header class="topo-grande">
-        <h1 class="titulo-grande" id="ajustes-titulo">Ajustes</h1>
-        <span class="encaixe-camera redondo mini" data-camera="redondo"></span>
-      </header>
+    <section class="tela clara" id="tela-ajustes" data-tela="ajustes" data-abas="ajustes" aria-labelledby="ajustes-titulo" hidden>
       <div class="conteudo">
+        <div class="topo-grande">
+          <h1 class="titulo-grande" id="ajustes-titulo">Ajustes</h1>
+          <span class="encaixe-camera redondo mini" data-camera="redondo"></span>
+        </div>
         <h2 class="secao">Aparência</h2>
         <div class="cartao">
           <div class="segmentado" role="radiogroup" aria-label="Aparência">
@@ -238,50 +376,51 @@
             <button type="button" role="radio" data-tema="claro" aria-checked="false">Claro</button>
             <button type="button" role="radio" data-tema="escuro" aria-checked="false">Escuro</button>
           </div>
+          <p class="nota">A tela da viagem é sempre escura, para não ofuscar quem dirige à noite.</p>
         </div>
-        <p class="rodape">Automático segue o modo do aparelho. O alarme é sempre vermelho.</p>
+
         <h2 class="secao">Alarme</h2>
-        <ul class="lista">
-          <li><button type="button" class="linha toque" id="btn-volume"><span class="texto">Volume do alarme</span><span class="sec num" id="vol-out2">20 %</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
-          <li><button type="button" class="linha toque link-linha" id="btn-testar-ajustes">Testar som</button></li>
-        </ul>
-        <h2 class="secao">Viagem</h2>
-        <ul class="lista">
-          <li class="linha"><span class="texto" id="rot-wake">Manter tela ligada</span><button type="button" class="interruptor" id="btn-wake" role="switch" aria-checked="false" aria-labelledby="rot-wake"><span></span></button></li>
-        </ul>
-        <p class="rodape">Pede ao aparelho para não apagar a tela durante a viagem.</p>
-        <h2 class="secao">Privacidade</h2>
-        <ul class="lista">
-          <li class="linha"><span class="texto">Processamento no aparelho</span><svg class="ok" role="img" aria-label="ativo"><use href="#i-check"/></svg></li>
-        </ul>
-        <p class="rodape">A câmera é analisada no próprio celular. Nenhum vídeo é gravado ou enviado.</p>
-        <ul class="lista espaco">
-          <li><button type="button" class="linha toque" data-ir="como"><span class="texto">Como o nível funciona</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
-          <li><button type="button" class="linha toque" data-ir="tecnico"><span class="texto">Detalhes técnicos</span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button></li>
-        </ul>
-        <p class="sobre">Sonolência Móvel <span id="versao-app">2.1</span> · Projeto Transformador II<br />PUCPR · Equipe 14. Protótipo de pesquisa: não substitui o descanso. Com sono, pare o carro.</p>
+        <div class="cartao">
+          <label class="linha-volume">
+            <span>Volume</span>
+            <input class="vol-slider" type="range" min="0" max="100" step="5" value="20" aria-label="Volume do alarme" />
+            <output id="vol-out2" class="num">20 %</output>
+          </label>
+          <button type="button" class="botao contorno largo" id="btn-testar-ajustes">Testar o alarme</button>
+          <p class="nota" id="vol-nota">Padrão de 20 %, para testar perto de outras pessoas. Na estrada, suba o volume.</p>
+          <div class="linha-switch" id="linha-vibrar" hidden>
+            <span class="texto"><strong id="rot-vibrar">Vibrar junto com o som</strong><small>No Android. O iPhone não vibra pelo navegador.</small></span>
+            <button type="button" class="interruptor" id="btn-vibrar" role="switch" aria-checked="true" aria-labelledby="rot-vibrar"><span></span></button>
+          </div>
+        </div>
+
+        <h2 class="secao">Sessão de pôster</h2>
+        <div class="cartao lista">
+          <button type="button" class="linha" id="btn-poster"><span class="ic-redondo"><svg aria-hidden="true"><use href="#i-poster"/></svg></span><span class="texto"><strong>Modo pôster</strong><small>Para notebook ou tablet: cada visitante calibra e vê o nível reagir.</small></span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button>
+        </div>
+
+        <h2 class="secao">Sobre</h2>
+        <div class="cartao lista">
+          <button type="button" class="linha" id="btn-versao"><span class="texto"><strong>Versão</strong></span><span class="valor-sec"><span id="versao-app">2.1</span> · PUCPR, Equipe 14</span></button>
+          <button type="button" class="linha" id="btn-intro"><span class="texto"><strong>Rever a introdução</strong></span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button>
+          <button type="button" class="linha so-pesquisa" data-ir="tecnico"><span class="texto"><strong>Detalhes técnicos</strong><small>Latência, modelos e benchmark</small></span><svg class="seguir" aria-hidden="true"><use href="#i-seguir"/></svg></button>
+          <div class="linha-switch linha so-pesquisa">
+            <span class="texto"><strong id="rot-pesquisa">Modo pesquisador</strong><small>Mostra os detalhes técnicos, o benchmark e a exportação.</small></span>
+            <button type="button" class="interruptor" id="btn-pesquisa" role="switch" aria-checked="false" aria-labelledby="rot-pesquisa"><span></span></button>
+          </div>
+        </div>
+        <p class="sobre">Projeto Transformador II, PUCPR. Protótipo de pesquisa: não substitui o descanso. Com sono, pare o carro.</p>
       </div>
+      <div class="toast" id="toast" role="status" hidden></div>
     </section>
 
-    <!-- ============================== COMO FUNCIONA ============================== -->
-    <section class="tela" id="tela-como" data-tela="como" aria-labelledby="como-titulo" hidden>
-      <header class="barra">
-        <button type="button" class="link voltar" data-voltar><svg aria-hidden="true"><use href="#i-voltar"/></svg>Voltar</button>
-        <div class="titulo-barra"><strong id="como-titulo">Como funciona</strong></div>
-        <span class="encaixe-camera redondo direita" data-camera="redondo"></span>
-      </header>
-      <div class="conteudo" id="como-conteudo">
-        <!-- preenchido pelo app.js a partir de E.CFG (os números vêm do mesmo lugar que o detector usa) -->
+    <!-- ============================== DETALHES TÉCNICOS (modo pesquisador) ============================== -->
+    <section class="tela clara" id="tela-tecnico" data-tela="tecnico" aria-labelledby="tecnico-titulo" hidden>
+      <div class="barra-simples barra-fixa">
+        <button type="button" class="link-sec voltar" data-voltar><svg aria-hidden="true"><use href="#i-voltar"/></svg>Voltar</button>
+        <strong class="barra-titulo" id="tecnico-titulo">Detalhes técnicos</strong>
+        <span class="encaixe-camera redondo" data-camera="redondo"></span>
       </div>
-    </section>
-
-    <!-- ============================== DETALHES TÉCNICOS ============================== -->
-    <section class="tela" id="tela-tecnico" data-tela="tecnico" aria-labelledby="tecnico-titulo" hidden>
-      <header class="barra">
-        <button type="button" class="link voltar" data-voltar><svg aria-hidden="true"><use href="#i-voltar"/></svg>Voltar</button>
-        <div class="titulo-barra"><strong id="tecnico-titulo">Detalhes técnicos</strong></div>
-        <span class="encaixe-camera redondo direita" data-camera="redondo"></span>
-      </header>
       <div class="conteudo tecnico" id="tech">
         <h2 class="secao">Desempenho</h2>
         <ul class="lista">
@@ -335,7 +474,7 @@
         <div class="cartao">
           <p id="ml-lstm">LSTM de piscadas: aguardando a calibração.</p>
           <p id="ml-cnn">CNN dos olhos: --</p>
-          <p class="nota">Só informam. O LSTM (Exp. 1) soma no máximo 10 pontos, e só com "sonolento" em 5 predições seguidas (p ≥ 0,6) <b>e</b> com os sinais visíveis já em Atenção (≥ 40): ele nunca tira ninguém do verde sozinho. A CNN não entra no nível. Motivo: a generalização desses modelos para uma pessoa nova é limitada (Exp. 5b).</p>
+          <p class="nota">Só informam. O LSTM (Exp. 1) soma no máximo 10 pontos, e só com "sonolento" em 5 predições seguidas (p ≥ 0,6) <b>e</b> com os sinais visíveis já em Atenção (≥ 40): ele nunca tira ninguém do verde sozinho. A CNN não entra no nível e roda só com esta tela aberta ou no benchmark. Motivo: a generalização desses modelos para uma pessoa nova é limitada (Exp. 5b).</p>
         </div>
 
         <h2 class="secao">Latência por estágio (ms), últimas 300 medições</h2>
@@ -359,58 +498,125 @@
         <pre class="cartao" id="device-info"></pre>
       </div>
     </section>
+
+    <!-- ============================== MODO PÔSTER (notebook ou tablet) ============================== -->
+    <section class="tela escura larga" id="tela-poster" data-tela="poster" aria-labelledby="poster-titulo" hidden>
+      <div class="poster">
+        <header class="poster-topo">
+          <svg class="logo" aria-hidden="true"><use href="#i-logo"/></svg>
+          <div class="texto"><h1 id="poster-titulo">Pisque, boceje, feche os olhos</h1><p>e veja cada ponto do nível nascer e sumir.</p></div>
+          <span class="flex"></span>
+          <button type="button" class="botao contorno" id="poster-recomecar">Recomeçar</button>
+          <button type="button" class="botao texto" id="poster-sair">Sair</button>
+        </header>
+        <div class="poster-grade">
+          <section class="poster-camera" aria-label="Câmera">
+            <div class="painel-camera" id="poster-painel">
+              <div class="encaixe-camera" data-camera="cheio" id="slot-poster"></div>
+              <svg class="guia" id="poster-guia" viewBox="0 0 342 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <ellipse class="guia-elipse" cx="171" cy="196" rx="94" ry="120"/>
+                <path id="poster-anel" class="guia-anel" d="M171 76 A94 120 0 0 1 171 316 A94 120 0 0 1 171 76" pathLength="100"/>
+              </svg>
+              <div class="chip-camera" id="poster-chip"><span class="ponto"></span><span id="poster-chip-texto">Carregando o detector</span></div>
+            </div>
+            <div class="poster-dicas">
+              <div><svg aria-hidden="true"><use href="#i-olhos"/></svg><strong>Feche os olhos 0,7&nbsp;s</strong><small>fechamento longo: +25</small></div>
+              <div><svg aria-hidden="true"><use href="#i-boca"/></svg><strong>Boceje</strong><small>boca aberta 1,5 s: +25</small></div>
+              <div class="perigo"><svg aria-hidden="true"><use href="#i-micro"/></svg><strong>Feche por 1 s</strong><small>microssono: alarme</small></div>
+            </div>
+          </section>
+          <section class="poster-nivel" aria-label="Nível">
+            <div class="poster-dial">
+              <svg class="dial" viewBox="0 0 320 300" aria-hidden="true">
+                <path class="dial-trilho" d="M68.08 251.92 A130 130 0 1 1 251.92 251.92" pathLength="100"/>
+                <g id="poster-segs"></g>
+              </svg>
+              <div class="poster-leitura" role="status" id="poster-leitura" aria-label="Aguardando um rosto">
+                <span class="nivel num" id="poster-nivel">--</span>
+                <span class="estado-nome" id="poster-estado">Aguardando</span>
+              </div>
+            </div>
+            <div class="cartao-escuro">
+              <h2 id="poster-porque-titulo">Por que 0?</h2>
+              <div id="poster-porque"><p class="sec">Nenhum sinal de cansaço agora.</p></div>
+            </div>
+          </section>
+          <section class="poster-lado" aria-label="O que o app viu">
+            <div class="cartao-escuro poster-eventos">
+              <h2>O que o app viu</h2>
+              <p class="sec" id="poster-sem-eventos">Sente-se de frente para a câmera. O app calibra em 10 s e depois mostra cada sinal aqui.</p>
+              <ol id="poster-linha-tempo"></ol>
+            </div>
+            <div class="cartao-escuro poster-qr">
+              <img src="./qr_repositorio.png" width="96" height="96" alt="QR code do repositório" />
+              <p>Código, testes e o artigo: github.com/BrunoRodolfoo/deteccao-sonolencia</p>
+            </div>
+          </section>
+        </div>
+        <div class="poster-alarme" id="poster-alarme" hidden><span id="poster-alarme-texto">ACORDE! Olhos fechados por 1 s</span></div>
+      </div>
+    </section>
   </main>
 
-  <!-- Abas (Dirigir, Viagens, Ajustes): somem durante a calibração e a viagem -->
+  <!-- Abas: somem na calibração, na viagem, no modo pôster e no primeiro uso -->
   <nav class="abas" id="abas" aria-label="Abas">
-    <button type="button" data-aba="dirigir"><svg aria-hidden="true"><use href="#i-carro"/></svg><span>Dirigir</span></button>
-    <button type="button" data-aba="viagens"><svg aria-hidden="true"><use href="#i-relogio"/></svg><span>Viagens</span></button>
+    <button type="button" data-aba="inicio"><svg aria-hidden="true"><use href="#i-casa"/></svg><span>Início</span></button>
+    <button type="button" data-aba="viagens"><svg aria-hidden="true"><use href="#i-grafico"/></svg><span>Viagens</span></button>
+    <button type="button" data-aba="como"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Como funciona</span></button>
     <button type="button" data-aba="ajustes"><svg aria-hidden="true"><use href="#i-ajustes"/></svg><span>Ajustes</span></button>
   </nav>
 
-  <!-- Alarme (vermelho): cobre a tela inteira, igual nos dois temas -->
-  <div class="alarme hidden" id="alarme" role="alertdialog" aria-modal="true" aria-labelledby="alarme-titulo" aria-describedby="alarme-texto">
-    <div class="alarme-topo">
-      <svg class="logo-alarme" viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="230" fill="#fff"/><path d="M302.9 719.1A296 296 0 1 1 721.1 719.1" fill="none" stroke="#D70015" stroke-width="72" stroke-linecap="round"/><circle cx="721.1" cy="719.1" r="64" fill="#D70015"/><path d="M360 498Q512 640 664 498" fill="none" stroke="#D70015" stroke-width="58" stroke-linecap="round"/><g stroke="#D70015" stroke-width="46" stroke-linecap="round"><path d="M512 630v64M420 606l-30 54M604 606l30 54"/></g></svg>
-      <span class="alarme-som" id="alarme-som">alarme tocando</span>
+  <!-- Por quê? O que soma no nível agora -->
+  <dialog class="folha escura" id="folha-porque" aria-labelledby="porque-titulo">
+    <div class="alca" aria-hidden="true"></div>
+    <div class="folha-topo">
+      <h2 id="porque-titulo">Por que 0?</h2>
+      <button type="button" class="link-acento" data-fechar>Fechar</button>
     </div>
-    <span class="alarme-icone" aria-hidden="true"><svg><use href="#i-cafe"/></svg></span>
+    <p class="sec">Cada sinal soma pontos que somem sozinhos com o tempo.</p>
+    <div id="porque-lista"></div>
+    <button type="button" class="linha-link so-pesquisa" data-ir="tecnico">Detalhes técnicos<svg aria-hidden="true"><use href="#i-seguir"/></svg></button>
+  </dialog>
+
+  <!-- Som do alarme (volume e teste) -->
+  <dialog class="folha escura" id="folha-som" aria-labelledby="folha-som-titulo">
+    <div class="alca" aria-hidden="true"></div>
+    <div class="folha-topo">
+      <h2 id="folha-som-titulo">Som do alarme</h2>
+      <button type="button" class="link-acento" data-fechar>OK</button>
+    </div>
+    <label class="linha-volume">
+      <span>Volume</span>
+      <input id="vol" class="vol-slider" type="range" min="0" max="100" step="5" value="20" aria-describedby="sound-hint" aria-label="Volume do alarme" />
+      <output id="vol-out" class="num" for="vol">20 %</output>
+    </label>
+    <p id="sound-hint" class="nota">Toque em "Testar som" uma vez para liberar o som (o iPhone exige um toque).</p>
+    <button type="button" class="botao contorno largo" id="btn-sound">Testar som</button>
+  </dialog>
+
+  <!-- Alarme pelo nível (70 ou mais): pare e descanse; "segure" silencia por 30 s -->
+  <div class="alarme hidden" id="alarme" role="alertdialog" aria-modal="true" aria-labelledby="alarme-titulo">
+    <div class="alarme-borda" aria-hidden="true"></div>
+    <svg class="pare" viewBox="0 0 200 200" role="img" aria-label="Placa de pare">
+      <polygon points="58,4 142,4 196,58 196,142 142,196 58,196 4,142 4,58" fill="#FF453A" stroke="none"/>
+      <polygon points="63,14 137,14 186,63 186,137 137,186 63,186 14,137 14,63" fill="none" stroke="#fff" stroke-width="6"/>
+      <text x="100" y="118" text-anchor="middle">PARE</text>
+    </svg>
     <h1 id="alarme-titulo" tabindex="-1">Pare e descanse</h1>
-    <p id="alarme-texto">Sonolência alta. Procure um lugar seguro para parar.</p>
     <ul class="alarme-motivos" id="alarme-motivos"></ul>
-    <div class="alarme-base">
-      <div class="deslizar" id="deslizar">
-        <span class="deslizar-texto" aria-hidden="true">deslize: estou acordado</span>
-        <button type="button" class="deslizar-botao" id="btn-ack" aria-label="Estou acordado: silenciar o som por 30 segundos"><svg aria-hidden="true"><use href="#i-seta"/></svg></button>
-      </div>
-      <p class="alarme-nota" id="alarme-nota">Silencia o som por 30 s e volta para a viagem. Num microssono, o alarme volta na hora.</p>
-      <button type="button" class="alarme-link" id="btn-encerrar-alarme">Parei o carro: encerrar viagem</button>
-    </div>
+    <p class="alarme-som" id="alarme-som">alarme tocando</p>
+    <span class="flex"></span>
+    <button type="button" class="segurar acordado" id="btn-ack" aria-label="Segure para dizer que está acordado: silencia o som por 30 segundos"><span class="encher"></span><span class="rot">Segure: estou acordado</span></button>
+    <button type="button" class="botao branco" id="btn-encerrar-alarme">Parei o carro: encerrar a viagem</button>
   </div>
 
-  <!-- Folha do som (volume do alarme e teste) -->
-  <dialog class="folha" id="folha-som" aria-labelledby="folha-som-titulo">
-    <h2 id="folha-som-titulo">Som do alarme</h2>
-    <div class="vol">
-      <label for="vol">Volume do alarme <output id="vol-out" for="vol">20 %</output></label>
-      <input id="vol" type="range" min="0" max="100" step="1" value="20" aria-describedby="sound-hint" />
-    </div>
-    <p id="sound-hint" class="nota">Toque em "Testar som" uma vez para liberar o som (o iPhone exige um toque).</p>
-    <div class="acoes-linha fim">
-      <button type="button" class="botao secundario" id="btn-sound">Testar som</button>
-      <button type="button" class="botao primario" data-fechar>OK</button>
-    </div>
-  </dialog>
-
-  <!-- Confirmação de encerrar -->
-  <dialog class="dialogo" id="dlg-encerrar" aria-labelledby="dlg-encerrar-titulo">
-    <h2 id="dlg-encerrar-titulo">Encerrar a viagem?</h2>
-    <p class="sec">A câmera desliga e o resumo da viagem aparece.</p>
-    <div class="acoes-linha fim">
-      <button type="button" class="botao secundario" data-fechar>Continuar</button>
-      <button type="button" class="botao perigo" id="btn-confirmar-encerrar">Encerrar</button>
-    </div>
-  </dialog>
+  <!-- Vermelho forçado (microssono ou cabeça caída): não dá para silenciar -->
+  <div class="acorde hidden" id="alarme-micro" role="alertdialog" aria-modal="true" aria-labelledby="micro-titulo">
+    <svg class="acorde-icone" aria-hidden="true"><use href="#i-micro"/></svg>
+    <h1 id="micro-titulo" tabindex="-1">ACORDE!</h1>
+    <p class="acorde-motivo" id="micro-motivo">Olhos fechados por mais de 1 s</p>
+    <p id="micro-nota">O som não pode ser pausado. Ele para quando os olhos abrem.</p>
+  </div>
 
   <script type="module" src="./app.js"></script>
 </body>

@@ -15,11 +15,12 @@
  * CONFIÁVEIS (Input.dispatchMouseEvent do DevTools, isTrusted = true), não element.click(). --autoplay-livre
  * devolve a flag antiga (esconde a exigência de gesto; só para comparação).
  *
- * Interface nova (27/10/2026): --click-sound abre a folha "Som do alarme" antes de tocar em "Testar som";
- * --click-at N:btn-ack ARRASTA o botão "deslize: estou acordado" (um toque sozinho não silencia); --ir N:tela
- * abre uma tela no segundo N (inicio, calibracao, viagem, resumo, ajustes, como, tecnico); --escuro emula o
- * modo escuro do aparelho (prefers-color-scheme: dark), que o app segue no "Automático" (--claro força o claro); --encerrar N encerra a
- * viagem no segundo N (abre o resumo).
+ * Interface "Painel de estrada" (07/11/2026): --click-sound abre a folha "Som do alarme" antes de tocar em
+ * "Testar som"; --click-at N:btn-ack SEGURA o botão "Segure: estou acordado" por 1,5 s (um toque sozinho não
+ * silencia; o mesmo vale para btn-encerrar e btn-calib); --ir N:tela abre uma tela no segundo N (primeiro, inicio,
+ * calibracao, viagem, resumo, ajustes, como, tecnico, poster); --escuro emula o modo escuro do aparelho
+ * (prefers-color-scheme: dark), que o app segue no "Automático" (--claro força o claro); --encerrar N encerra a
+ * viagem no segundo N (abre o resumo); --porque N abre a folha "Por quê?" da viagem no segundo N.
  *
  * --video: arquivo .y4m ou .mjpeg para a câmera falsa (sem ele o Chrome gera um padrão sintético,
  * sem rosto). Os vídeos das bases ficam só na máquina local (nunca versionar nem publicar capturas).
@@ -129,15 +130,16 @@ async function trustedClick(elId) {
   for (const type of ["mousePressed", "mouseReleased"]) await send("Input.dispatchMouseEvent", { type, x: box.x, y: box.y, button: "left", clickCount: 1 });
   return true;
 }
-/** Arrasto confiável (dedo no botão até o fim do trilho), para o "deslize: estou acordado". */
-async function trustedDrag(elId, dx = 320) {
+/** Toque confiável e segurado (dedo parado no botão por `ms`), para os botões "Segure: ..." (1,2 s no app). */
+async function trustedHold(elId, ms = 1500) {
   const box = await evaluate(`(() => { const e = document.getElementById(${JSON.stringify(elId)}); if (!e) return null; const r = e.getBoundingClientRect(); return r.width ? { x: r.left + r.width / 2, y: r.top + r.height / 2 } : null; })()`);
   if (!box || box.erro) return false;
   await send("Input.dispatchMouseEvent", { type: "mousePressed", x: box.x, y: box.y, button: "left", clickCount: 1 });
-  for (let i = 1; i <= 8; i++) await send("Input.dispatchMouseEvent", { type: "mouseMoved", x: box.x + (dx * i) / 8, y: box.y, button: "left", buttons: 1 });
-  await send("Input.dispatchMouseEvent", { type: "mouseReleased", x: box.x + dx, y: box.y, button: "left", clickCount: 1 });
+  await sleep(ms);
+  await send("Input.dispatchMouseEvent", { type: "mouseReleased", x: box.x, y: box.y, button: "left", clickCount: 1 });
   return true;
 }
+const SEGURAR = new Set(["btn-ack", "btn-encerrar", "btn-calib"]);
 async function shot(name) {
   const r = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
   fs.writeFileSync(path.join(OUT, name), Buffer.from(r.result.data, "base64"));
@@ -178,9 +180,10 @@ for (let s = 1; s <= SECONDS; s++) {
     await assertSilent("após Testar som");
     samples.push({ s, som: await evaluate("({ctx: window.__sound?.ctx?.state ?? null, sirene: !!window.__sound?.siren, ganhoFinal: window.__sound?.out ? window.__sound.out.gain.value : null, erro: window.__sound?.error ?? null})") });
   }
-  for (const [when, el] of clicks) if (Number(when) === s) await (el === "btn-ack" ? trustedDrag(el) : trustedClick(el));
+  for (const [when, el] of clicks) if (Number(when) === s) await (SEGURAR.has(el) ? trustedHold(el) : trustedClick(el));
   for (const [when, tela] of navs) if (Number(when) === s) await evaluate(`window.__ui && window.__ui.ir(${JSON.stringify(tela)})`);
   if (args["open-tech"] && s === 2) await evaluate("window.__ui && window.__ui.ir('tecnico')");
+  if (Number(args.porque) === s) await evaluate("window.__ui && window.__ui.abrirPorque()");
   if (Number(args.encerrar) === s) await evaluate("window.__ui && window.__ui.encerrar()");
   if (s % 5 === 0) {
     const st = await evaluate(`(() => { const a = window.__app; const r = a && a.last; return r ? { fase: r.phase, estado: r.score?.state, nivel: Math.round(r.score?.level ?? 0), forcado: r.score?.forced ?? null, fps: a.fps, rosto: a.faceDetected, titulo: document.getElementById('status-title').textContent, tela: window.__ui?.estado().tela, alarme_na_tela: !!window.__ui?.estado().alarme, sirene_pedida: !!a.sirenWanted, sirene_nos_audio: !!window.__sound?.siren, flash: document.body.classList.contains('flashing') } : { titulo: document.getElementById('status-title')?.textContent }; })()`);

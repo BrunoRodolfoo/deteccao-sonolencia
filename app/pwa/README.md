@@ -29,28 +29,55 @@ na seção 9. Resumo: o PERCLOS deixou de contar piscadas normais, o LSTM só so
 já em ATENÇÃO, o rosto que some só vira "cabeça caindo" com os olhos fechados antes, e, ao reabrir os
 olhos depois de um microssono, o app volta ao amarelo em ~2 s (antes ficava ~1,5 min no vermelho).
 
-**Interface nova (27/10/2026), mesmo detector 2.1.** Telas no estilo do iPhone (fonte do sistema, listas
-agrupadas, abas Dirigir, Viagens e Ajustes), com **tema claro e escuro**: Ajustes > Aparência tem
-Automático (segue o aparelho), Claro e Escuro. O caminho de uma viagem:
+**Interface "Painel de estrada" (07/11/2026), mesmo detector 2.1.** Uma tela que se lê de relance, a 60 cm, à
+noite: os estados têm a forma das placas de trânsito (retângulo verde, losango âmbar, octógono vermelho e círculo
+tracejado cinza para "Sem leitura"), um número grande e uma frase só; o detalhe fica no "Por quê?". Forma, cor e palavra
+juntas funcionam para daltônicos e de longe. A viagem, a calibração, o alarme e o modo pôster são sempre escuros;
+Início, Viagens, Como funciona, Ajustes e Detalhes técnicos seguem Ajustes > Aparência (Automático, Claro, Escuro).
+Fonte do sistema no texto e Barlow Semi Condensed (licença OFL, em `fonts/`) nos números e nos estados.
 
-- **Início** ("Nova viagem"): lembretes antes de sair, "Testar som" e **Iniciar viagem** (o toque que
-  libera o som no iPhone). A câmera só liga quando a viagem começa.
-- **Calibração**: a câmera em tela cheia com o círculo de enquadramento e o anel de progresso dos 10 s; com
-  aviso de calibração, o app para e oferece **Recalibrar**; sem aviso, segue sozinho para a viagem.
-- **Em viagem**: o mostrador do nível (0 a 100, faixas 40 e 70 marcadas no arco), o estado em palavras, o
-  cartão "Hora de uma pausa" no amarelo, os três sinais (olhos, bocejos, cabeça), a lista **"Por que N"**
-  (os pontos que somam o nível, em linguagem simples), o gráfico dos últimos 10 min e, no fim da página,
-  **Detalhes técnicos** (EAR, latência, **Benchmark 60 s**, exportar sessão, modelos, registro de eventos).
-  Barra de baixo: Som (volume e "Testar som"), Recalibrar e Encerrar.
-- **Alarme**: no vermelho, a tela inteira fica vermelha (igual nos dois temas) com o motivo; o
-  **"deslize: estou acordado"** precisa ser arrastado até o fim (um toque não silencia; pelo teclado,
-  Enter ou espaço) e silencia só o vermelho por nível, por 30 s: a tela volta para a viagem (em vermelho, com
-  "Som silenciado por 30 s") e, se o nível seguir alto quando os 30 s acabarem, o alarme volta com som. Num
-  microssono ele nem aparece.
-- **Encerrar** desliga a câmera e abre o **resumo da viagem** (aba Viagens): gráfico do nível, alarmes,
-  avisos, bocejos, olhos fechados e cabeça, tempo em cada estado e os momentos. O último resumo fica salvo
-  no aparelho (localStorage) e aparece no Início.
-- **Como funciona**: faixas, pontos, tetos e o vermelho na hora, com os números lidos do próprio `E.CFG`.
+- **Primeiro uso** (só na primeira visita; Ajustes > Rever a introdução): 3 passos. O que o app vê (olhos, boca e
+  cabeça, com os 478 pontos do Face Landmarker), onde prender o celular (na altura dos olhos, a 40 a 60 cm) e o teste
+  do alarme, com o controle de volume e um medidor do som que sai de fato (lido depois do volume do alarme).
+- **Início**: checagens reais antes de sair: detector de rosto carregado (e se veio de `vendor/`, sem internet),
+  permissão da câmera (quando o navegador informa), som do alarme (volume e se já foi testado; tocar na linha testa),
+  tela sempre ligada (Wake Lock) e carregador (onde o navegador informa a bateria). **Iniciar viagem** é o toque que
+  libera o som no iPhone; a câmera só liga aí. Abaixo, a última viagem com uma linha do nível.
+- **Calibração guiada**: a câmera num painel com o guia oval e o anel dos 10 s. O app diz o que fazer pela posição
+  do rosto na imagem (centralizar, aproximar ou afastar o celular, "olhe para a frente") e mostra o tempo e as piscadas
+  vistas. Com aviso de calibração (olhos fechados demais, olhos meio fechados em repouso, rosto de lado), o app para e
+  oferece **Refazer a calibração**; sem aviso, mostra "Calibrado" e segue sozinho para a viagem em 3 s.
+- **Em viagem**: o mostrador (o arco é dividido por sinal: olhos, boca, cabeça, outros; a parte translúcida é o nível
+  ainda descendo, no máximo 3 pontos por segundo), a placa e o nome do estado, uma frase e as fichas de cada sinal
+  ("+25"). Cada evento sobe do mostrador como uma ficha ("+25 Bocejo"). Faixa no topo: "Sinais de cansaço. Planeje uma
+  pausa." ao entrar em Atenção, "Depois do microssono, atenção por 0:54", "Procurando o rosto…" e "Alarme pausado".
+  Sem rosto por 10 s, o estado vira **Sem leitura** (cinza, "--"): nunca parece verde sem leitura. Tocar no número abre
+  o **"Por que N?"**: cada sinal com os pontos (inteiros que somam o número do mostrador), uma barra até o teto e
+  quanto falta para sumir ("Some em 1:59", lido dos eventos que o motor guarda). Barra de baixo: **Segure: recalibrar**
+  (bloqueado no vermelho), **Som** (volume e "Testar som") e **Segure: encerrar**. Os botões "Segure" pedem 1,2 s com
+  o dedo em cima (o preenchimento mostra o tempo; soltar antes cancela; pelo teclado, Enter ou espaço).
+- **Alarme pelo nível** (70 ou mais): fundo vinho com a borda vermelha piscando a 1 Hz, a placa PARE, "Pare e
+  descanse" e os motivos. **Segure: estou acordado** silencia só o vermelho por nível, por 30 s: a tela volta para a
+  viagem com a faixa "Alarme pausado. Volta em 0:27 se o nível seguir alto." **Parei o carro: encerrar a viagem**
+  encerra. **Microssono ou cabeça caída** (vermelho na hora): a tela inteira fica vermelha, sem animação, com
+  "ACORDE!" e o motivo; não dá para silenciar, e o som para quando os olhos abrem.
+- **Viagens** (resumo): minutos, avisos, alarmes e nível máximo, o gráfico do nível com as faixas e os momentos de
+  aviso e alarme, e a lista de momentos, que abre o detalhe de cada um (os sinais que somavam e o nível). O último
+  resumo fica salvo no aparelho (localStorage) e aparece no Início.
+- **Como funciona** (interativo): um mostrador que sobe com "Fechar os olhos 0,7 s", "Bocejar" e "A cabeça cai" e
+  desce sozinho, com o relógio 10 vezes mais rápido. Usa as MESMAS classes e números do motor (`E.DecayingEvents`,
+  `E.LevelController`, `E.CFG`). Também: os três estados, o que o app não faz e "Os números do nível".
+- **Ajustes**: aparência, volume e teste do alarme, vibração (só no Android), **Modo pôster** e Sobre. Sete toques em
+  Versão ligam o **modo pesquisador** (ou `?pesquisa=1` na URL, só naquela visita): ele mostra **Detalhes técnicos**
+  (EAR, latência, **Benchmark 60 s**, exportar sessão, modelos, registro de eventos), o botão (i) no topo da viagem e
+  a exportação no resumo.
+- **Modo pôster** (notebook ou tablet na sessão de pôsteres): a câmera ao vivo com os contornos dos olhos e da boca, o
+  mostrador, o "Por que N?", a linha do tempo "O que o app viu" e o QR do repositório. Cada visitante senta e o app
+  calibra sozinho em 10 s; quando a pessoa sai (8 s sem rosto), volta a esperar o próximo. "Recomeçar" zera. Nada é
+  registrado como viagem.
+
+A CNN dos olhos agora roda só com a tela Detalhes técnicos aberta e no benchmark, onde segue a cada quadro, como nas
+medições do Exp. 4: no uso normal ela não entra no nível e não precisa gastar bateria.
 
 O detector, os parâmetros e o benchmark são os mesmos da 2.1 (o número da versão não mudou): a tela só lê
 o resultado do monitor, e o registro da viagem e a atualização da tela ficam fora do tempo medido por quadro.
@@ -152,30 +179,31 @@ essas parcelas.
   2 bocejos -> ATENÇÃO (nível 48). 2 bocejos + 1 cabeceio -> SONOLENTO pelo nível. **O roteiro da banca**
   (2 bocejos, cabeça baixa, olhos fechados 2 s): vermelho com sirene no microssono e, ao reabrir, amarelo
   em 1,7 s (teste [23]); na v2.0 o mesmo roteiro ficava ~1,5 min no vermelho com a sirene tocando.
-- **"Estou acordado"** (deslize na tela do alarme) corta a sirene na hora e silencia o vermelho **por nível** por
+- **"Segure: estou acordado"** (1,2 s na tela do alarme) corta a sirene na hora e silencia o vermelho **por nível** por
   30 s (se o nível continuar alto, ela volta); o vermelho forçado (microssono, cabeça caída) nunca é
   silenciado.
 
 ## 3. Som e volume do alarme
 
 - **Vermelho:** sirene hi-lo 880/1250 Hz (troca a cada 0,35 s, onda quadrada), repetida enquanto a
-  condição durar, no mínimo 2 s. **Amarelo:** "ding-dong" curto. Tela inteira piscando no vermelho
-  (<= 1,25 Hz, abaixo do limite de 3 flashes/s; com "reduzir movimento" vira um véu fixo).
+  condição durar, no mínimo 2 s. **Amarelo:** "ding-dong" curto. No alarme pelo nível, a borda vermelha pisca a
+  1 Hz (abaixo do limite de 3 flashes/s; com "reduzir movimento" fica fixa); no microssono, a tela inteira fica
+  vermelha, sem animação.
 - **iPhone:** o som só é liberado por um **toque** (regra do WebKit). O app libera no toque em
-  "Iniciar viagem", "Testar som" ou "Recalibrar" (cria/retoma o AudioContext dentro do toque e toca um
+  "Iniciar viagem", "Testar som", "Testar o alarme", "Recalibrar", no chip do som e no Modo pôster (cria/retoma o AudioContext dentro do toque e toca um
   buffer silencioso) e define `navigator.audioSession.type = "playback"` antes de criar o AudioContext,
   o que faz o alarme tocar **mesmo com a chave de silencioso ligada** (Audio Session API do WebKit,
   iOS 16.4+, exposta também ao WKWebView que o Chrome do iOS usa; falta confirmar no aparelho, e "Detalhes
   técnicos > Modelos > Áudio" mostra se a API existe e o estado do som). Sem essa API (iOS antigo), um
   `<audio>` silencioso em loop faz o mesmo papel. Se o sistema pausar o áudio (ligação, app em segundo
   plano), qualquer toque na tela reativa.
-- **Controle "Volume do alarme" (0-100 %), na folha "Som do alarme"** (botão "Som" da viagem ou Ajustes >
-  Volume do alarme), **junto do "Testar som".** **Padrão: 20 %**, baixo de
+- **Controle "Volume do alarme" (0-100 %)** na folha "Som do alarme" (botão "Som" da viagem), em Ajustes > Alarme e
+  no 3º passo do Primeiro uso, **junto do teste do alarme.** **Padrão: 20 %**, baixo de
   propósito, para testar perto de outras pessoas sem susto. O valor escolhido fica salvo no aparelho
   (`localStorage`, chave `sonolencia.volumeAlarme`, com try/catch: em modo privado vale o padrão). Ganho =
   (volume/100)² (curva quadrática, porque a percepção de volume é aproximadamente logarítmica):
-  20 % = -28 dB em relação a 100 %; 50 % = -12 dB. Em 0 % o alarme **não toca** (a tela ainda pisca) e o
-  app avisa.
+  20 % = -28 dB em relação a 100 %; 50 % = -12 dB. Em 0 % o alarme **não toca** (a tela de alarme aparece) e o
+  app avisa ("Sem som" no chip da viagem e na checagem do Início).
 - **Na demonstração para a banca: suba o controle para 100 % e o volume de mídia do aparelho para o
   máximo** e toque em "Testar som" antes de começar (seção 6). Depois da banca, se quiser, volte a 20 %.
 - `?volume=0..100` na URL sobrepõe o valor salvo **sem gravar**. Os testes automáticos usam
@@ -223,20 +251,22 @@ essas parcelas.
 - Abra o app e toque em **Iniciar viagem** (esse toque libera o som no iPhone).
 - **Volume:** o app começa com o "Volume do alarme" em **20 %** (padrão, para testes sem susto). Para a
   banca, **suba o controle para 100 %**, deixe o volume de mídia do celular no máximo e toque em
-  **Testar som** (ding + 1,6 s de sirene). Ative "Manter tela ligada" (se o aparelho permitir) ou
-  desligue o bloqueio automático da tela.
-- Toque em **Recalibrar** logo antes de começar (10 s olhando para a frente): nível 0 e registro limpo.
+  **Testar som** (ding + 1,6 s de sirene). O app pede para a tela não apagar durante a viagem (checagem "Tela
+  sempre ligada" no Início); sem esse recurso, desligue o bloqueio automático da tela.
+- **Segure Recalibrar** logo antes de começar (10 s olhando para a frente): nível 0 e registro limpo.
+- Na sessão de pôsteres, com um notebook ou tablet, use **Ajustes > Modo pôster**: cada visitante calibra sozinho
+  em 10 s e vê o nível reagir, com a linha do tempo do que o app viu.
 
 **Na frente da banca (a ordem importa: os sinais acumulam no nível):**
 
 | Tempo | Faça | O app mostra |
 |---|---|---|
-| 0:00-0:15 | **Pisque normalmente**, olhando para a frente. | **Verde** (Alerta), nível 0. Os três sinais (Olhos, Bocejos, Cabeça) ao vivo; sem lista "Por que": piscadas normais não sobem o nível (o PERCLOS só conta fechamentos de 0,5 s ou mais). |
-| 0:15-0:45 | **Boceje duas vezes**, boca bem aberta por ~2 s, **de olhos abertos**, com ~15 s entre os bocejos. | Linha Bocejos: "1 em 5 min" (continua verde, nível ~23); no 2º, **"2 em 5 min" e Atenção (amarelo) com "ding"** e o cartão "Hora de uma pausa" (nível ~48). |
+| 0:00-0:15 | **Pisque normalmente**, olhando para a frente. | **Verde** (Alerta, placa retangular), nível 0, sem fichas de sinal: piscadas normais não sobem o nível (o PERCLOS só conta fechamentos de 0,5 s ou mais). |
+| 0:15-0:45 | **Boceje duas vezes**, boca bem aberta por ~2 s, **de olhos abertos**, com ~15 s entre os bocejos. | A ficha **"+25 Bocejo"** sobe do mostrador (continua verde, nível ~23); no 2º, **Atenção (losango âmbar) com "ding"** e a faixa "Sinais de cansaço. Planeje uma pausa." (nível ~48). |
 | 0:45-1:00 | **Baixe a cabeça ~30°** por 3-4 s, **mantendo os olhos abertos** (olhe para a banca), e volte. | Registro: **"cabeça baixa com os olhos abertos (… para baixo): distração, 0 ponto"**. Sem alarme. Explique: com os olhos fechados seria "cabeça caindo" e vermelho na hora. |
-| 1:00-1:05 | **Feche os olhos por 2 s.** | Com 1 s: **tela de alarme vermelha + sirene**, "Acorde!" e "Olhos fechados há 1,x s (microssono)". |
-| 1:05-1:15 | **Reabra os olhos.** | A sirene para e a tela **volta ao amarelo em ~2 s** (1,7 s no teste [23]); o registro atualiza "microssono 2,x s". O app fica pelo menos 1 min em ATENÇÃO: quem acabou de cochilar não volta direto ao verde. |
-| 1:15-2:00 | Mostre a lista **"Por que N"** e o **registro de eventos** (em "Detalhes técnicos"). | "2 bocejos nos últimos 5 min" (cerca de +40) e "1 microssono em 2 min" (cerca de +20; teste [23]): cada ponto do nível tem origem. Registro com horário: bocejo, bocejo, aviso, cabeça baixa, microssono, alarme. Se sobrar tempo: "Detalhes técnicos" (EAR, eyeBlink, jawOpen, pitch/yaw/roll, latência por estágio) e o LSTM como estimativa experimental. |
+| 1:00-1:05 | **Feche os olhos por 2 s.** | Com 1 s: **tela inteira vermelha + sirene**, "ACORDE!" e "Olhos fechados por mais de 1 s". |
+| 1:05-1:15 | **Reabra os olhos.** | A sirene para e a tela **volta ao amarelo em ~2 s** (1,7 s no teste [23]), com a faixa "Depois do microssono, atenção por 0:59". O app fica pelo menos 1 min em ATENÇÃO: quem acabou de cochilar não volta direto ao verde. |
+| 1:15-2:00 | Toque no número: abre o **"Por que N?"**. | "Boca: 2 bocejos" (cerca de +40) e "Olhos: 1 microssono" (cerca de +20; teste [23]), cada um com "Some em": cada ponto do nível tem origem e prazo. Se sobrar tempo, no modo pesquisador: "Detalhes técnicos" (EAR, eyeBlink, jawOpen, pitch/yaw/roll, latência por estágio, registro de eventos) e o LSTM como estimativa experimental. |
 
 Cuidados:
 - **Olhos abertos ao bocejar e ao baixar a cabeça.** Bocejar de olhos fechados por 1 s ou mais é
@@ -244,11 +274,12 @@ Cuidados:
 - Deixe o passo da cabeça **entre** o 2º bocejo e o fechamento dos olhos: com o 2º bocejo só 3 s antes
   de fechar os olhos (e os bocejos a 5 s um do outro), o nível passa de 70 e o vermelho dura 8,1 s depois
   de reabrir (pior caso do teste [25]); com 15 s ou mais entre eles, ~2 s.
-- Para repetir do zero (nível 0, sem eventos), toque em **Recalibrar** (10 s).
+- Para repetir do zero (nível 0, sem eventos), **segure Recalibrar** (10 s); no vermelho ele fica bloqueado.
 - Planos B: sem som -> toque em "Testar som" de novo (o iOS pode ter pausado o áudio) e confira o volume
   do alarme e o de mídia; rosto não detectado -> afaste-se da janela/luz de fundo; sem rede ->
   "Acesso Pessoal" do iPhone. O celular não precisa de internet se `app/pwa/vendor/` estiver completa
-  (seção 7); confira em "Detalhes técnicos > Modelos > Bibliotecas": "local (./vendor/)".
+  (seção 7); confira na checagem do Início ("Pronto, funciona sem internet") ou em "Detalhes técnicos > Modelos >
+  Bibliotecas": "local (./vendor/)".
 
 Perguntas prováveis da banca (respostas curtas e honestas, seção 8 e 10): bocejo com a mão na frente
 quase não é detectado; óculos e noite prejudicam os olhos; 1 motorista acordado em 17 do DMD teve alarme
@@ -273,10 +304,12 @@ LSTM não decide nada sozinho porque não generaliza bem para uma pessoa nova (E
 5. Alternativa com HTTPS válido: GitHub Pages (copie `app/pwa/` com `models/` para `docs/` e ative
    Pages em `/docs`; sem `vendor/`, as dependências vêm da CDN).
 
-Parâmetros de URL: `?autostart=1` liga a câmera ao abrir; `&bench=1` inicia o benchmark de 60 s ao
-ligar; `&volume=0..100` define o volume do alarme só nesta visita (não grava).
+Parâmetros de URL: `?autostart=1` liga a câmera ao abrir (e pula o Primeiro uso); `&bench=1` inicia o benchmark de
+60 s ao ligar; `&volume=0..100` define o volume do alarme só nesta visita (não grava); `?pesquisa=1` liga o modo
+pesquisador nesta visita; `?intro=1` mostra o Primeiro uso.
 
-**Benchmark 60 s** (em "Detalhes técnicos"): grava por quadro as latências, os sinais (EAR, eyeBlink,
+**Benchmark 60 s** (em "Detalhes técnicos", no modo pesquisador: 7 toques em Ajustes > Versão ou `?pesquisa=1`; na
+viagem, o botão (i) do topo abre a tela): roda a CNN dos olhos a cada quadro, como nas medições do Exp. 4, e grava por quadro as latências, os sinais (EAR, eyeBlink,
 jawOpen, pose), o PERCLOS (e o PERCLOS com as piscadas, informativo), o nível, o estado, o estado de
 cada sinal, se o LSTM somou, o piso após microssono e os eventos; o resumo traz a contagem de cada tipo
 de evento, o tempo em cada nível, o número de alarmes/avisos e o volume usado. O resultado vai
@@ -387,8 +420,8 @@ barata, porque nos quadros anotados do DMD o olho **fechado** também tem eyeLoo
 
 **iPhone 17 Pro (iOS 26.6.1, Chrome 154/WebKit), app 1.0, 27/09/2026** (`results/phone/`, `results/exp4_phone_latency.md`):
 2 execuções de 60 s, com tempo total por quadro (p50) de 11 e 23 ms, mediana de 17 ms, quase todo no Face Landmarker.
-O app 2.1 ainda **não** foi medido no iPhone nem no Galaxy S23 Ultra (pendência até 09/11: rodar "Benchmark 60 s" com a
-versão nova nos dois aparelhos).
+O app 2.1 foi medido depois nos dois aparelhos, com 3 execuções de 60 s em cada: no Galaxy S23 Ultra em 05/11 (39 a
+40 ms por quadro, p50) e no iPhone 17 Pro em 06/11 (11 a 12 ms), em `results/exp4_phone_latency.md`.
 
 ### 8.1 Teste independente em sono real (UTA-RLDD, 26/10/2026)
 
@@ -419,8 +452,8 @@ os olhos ficaram fechados em mais de 10% da calibração, e em 8 houve algum avi
 
 Nas mesmas 24 pessoas, a AUC por vídeo dos modelos do Exp. 5b e da regra do rótulo (`results/app_comparacao_uta.md`,
 `src/experiments/comparar_app_uta.py`): RF treinado no DMD, 0,811; regra do rótulo do DMD, 0,853; RF treinado na própria
-UTA-RLDD, 0,953 com a centragem pelo vídeo acordado e 0,806 sem ela. O app (0,812), sem treino nessa base, fica no nível
-deles; o RF da UTA-RLDD só passa à frente com o atalho da centragem discutido no Exp. 5b.
+UTA-RLDD, 0,953 com a centragem pelo vídeo acordado e 0,806 sem ela. O app (0,812), sem treino nessa base, não se
+distingue deles; o RF da UTA-RLDD só passa à frente com o atalho da centragem discutido no Exp. 5b.
 
 Ressalva: essas pessoas estavam sentadas diante da câmera, sem dirigir. Na direção há movimento, luz que muda e
 olhares para os espelhos, e o falso alarme em movimento continua medido só pela direção real do DMD (acima). O teste
@@ -487,13 +520,15 @@ os mesmos clipes da validação anterior rodaram de novo no navegador (seção 8
 
 | Arquivo | Função |
 |---|---|
-| `index.html`, `styles.css` | interface: telas Início, Calibração, Em viagem, alarme, Viagens (resumo), Ajustes, Como funciona e Detalhes técnicos; tema claro e escuro |
+| `index.html`, `styles.css` | interface "Painel de estrada": Primeiro uso, Início, Calibração guiada, Em viagem, alarmes, Viagens (resumo), Como funciona, Ajustes, Detalhes técnicos e Modo pôster; tema claro e escuro |
+| `fonts/` | Barlow Semi Condensed 600 e 700 (latin, woff2), dos números e dos estados; licença SIL OFL 1.1 em `fonts/OFL.txt` |
+| `qr_repositorio.png` | QR do repositório no Modo pôster (o mesmo de `poster/assets/`) |
 | `icon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | ícone do app (o PNG de 180 px é o da tela de início do iPhone) |
 | `app.js` | câmera, Face Landmarker, som (Web Audio, volume), interface, calibração, benchmark, exportação |
 | `engine.js` | motor puro testável em Node: EAR/MAR, pose, fusão dos olhos, fechamentos, PERCLOS, bocejo, cabeça, nível, alarme, volume (e as classes da v1) |
 | `tflite_io.js` | entrada/saída dos modelos TFLite (dtype, quantização) |
 | `test_engine.mjs` | testes do motor: `node app/pwa/test_engine.mjs` |
-| `sw.js`, `manifest.webmanifest`, `icon.svg` | PWA (rede primeiro, cache como reserva; cache `sonolencia-pwa-v5`, que guarda também `vendor/` e as respostas da CDN) |
+| `sw.js`, `manifest.webmanifest`, `icon.svg` | PWA (rede primeiro, cache como reserva; cache `sonolencia-pwa-v7`, que guarda também `vendor/` e as respostas da CDN) |
 | `serve_https.py` | servidor HTTPS local (8443) que recebe o benchmark e confere `vendor/` ao subir |
 | `check_tflite_web.py` | verifica se um `.tflite` carrega no runtime da PWA |
 | `models/` | cópias dos `.tflite`/`.json` (ver `models/README.md`) |
