@@ -653,6 +653,18 @@ def exp6():
         {"tipo": "csv", "arquivo": f, "coluna": "n_agrupamentos",
          "filtros": dict(secao="b", metrica="dif_pareada_snr_rapido_dmd_mov|safe_menos_dmd_par|safe")},
         casas=0, evidencia=md, descricao="Exp. 6 sujeitos na comparação pareada movimento × parado")
+    # Por vídeo inteiro, com o mesmo detector (Seção VI-A): nas janelas do Exp. 5b, a sonolência do DMD vem de
+    # janelas escolhidas por conter um fechamento anotado; por vídeo, a comparação não depende dessa escolha.
+    fv = "results/exp6_noite_videos.csv"
+    for filtros, n, gt, rot in [(dict(dataset="dmd", grupo="s5", recorte="inteiro"), 16, "SCinco", "sessões s5 do DMD"),
+                                (dict(dataset="uta", grupo="KSS 10", recorte="inteiro"), 60, "UTASono",
+                                 "vídeos KSS 8 e 9 da UTA-RLDD")]:
+        add(f"ExpSeisFechMin{gt}", {"tipo": "csv", "arquivo": fv, "filtros": filtros, "n_linhas": n,
+                                    "coluna": "fech_05s_por_min", "agg": "median"},
+            casas=1, descricao=f"Exp. 6 por vídeo: fechamentos de 0,5 s ou mais por minuto (mediana), {rot}")
+        add(f"ExpSeisFechMax{gt}", {"tipo": "csv", "arquivo": fv, "filtros": filtros, "n_linhas": n,
+                                    "coluna": "dur_max_fech_s", "agg": "median"},
+            casas=1, unidade="s", descricao=f"Exp. 6 por vídeo: maior fechamento (mediana), {rot}")
     modelos = [("Modelo do DMD", "sem_normalizacao", "ModeloDMD"), ("Modelo da UTA-RLDD (B3)", "sem_normalizacao", "ModeloUTA"),
                ("regra_dmd", "", "Regra")]
     grupos = [("Microsleep", "Microssono"), ("Yawning", "Bocejo"), ("KSS 0", "UTAAlerta"), ("KSS 5", "UTAIntermediario"),

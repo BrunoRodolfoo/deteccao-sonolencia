@@ -270,9 +270,12 @@ def fig_exp5b():
     assert h_ax >= 2.6, f"figura do PP1 baixa demais ({h_ax:.2f} cm para o gráfico de cima)"
     ax_x0 = 1.1
     ax = fig.add_axes([ax_x0 / W, (H - topo - h_ax) / H, (W - ax_x0 - 0.15) / W, h_ax / H])
+    # as outras três ficam agrupadas por normalização (1, 2, 3), cada uma com o RF e a RL lado a lado; a
+    # coluna 3 do pôster diz o que é cada número
     pos = {("RF", "principal"): -0.24, ("RL", "principal"): 0.24,
-           ("RF", "outra referência"): 0.78, ("RF", "sem centragem"): 0.92, ("RF", "referência do DMD"): 1.06,
-           ("RL", "outra referência"): 1.26, ("RL", "sem centragem"): 1.4, ("RL", "referência do DMD"): 1.54}
+           ("RF", "outra referência"): 0.70, ("RL", "outra referência"): 0.86,
+           ("RF", "sem centragem"): 1.10, ("RL", "sem centragem"): 1.26,
+           ("RF", "referência do DMD"): 1.50, ("RL", "referência do DMD"): 1.66}
     estilo = {"RF": ("o", PRETO), "RL": ("s", CINZA)}
     for (modelo, norm), nome in QUEDAS.items():
         v, (lo, hi) = val(nome), ic(nome)
@@ -282,9 +285,9 @@ def fig_exp5b():
     ax.axhline(0, color=CINZA_ESC, lw=1.4, zorder=2)
     ax.set_ylim(-3, 17.5)
     ax.set_yticks([0, 10])
-    ax.set_xlim(-0.8, 1.75)
-    ax.set_xticks([0, 1.16])
-    ax.set_xticklabels(["a principal", "as outras três"])
+    ax.set_xlim(-0.8, 1.88)
+    ax.set_xticks([0, 0.78, 1.18, 1.58])
+    ax.set_xticklabels(["principal", "1", "2", "3"])
     ax.set_xlabel("normalização por pessoa", fontsize=FS, labelpad=7)
     ax.tick_params(axis="x", length=0, pad=6)
     ax.grid(True, axis="y", color=GRADE, linewidth=1.0)

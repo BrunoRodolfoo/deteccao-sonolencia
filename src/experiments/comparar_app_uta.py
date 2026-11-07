@@ -102,10 +102,10 @@ def main() -> int:
          "| Detector | Medida | AUC por vídeo [IC 95%] |", "|---|---|---|"]
     for r in df.itertuples():
         L.append(f"| {nomes[r.detector]} | {medidas[r.medida]} | {v3(r.auc)} [{v3(r.ic95_inf)}; {v3(r.ic95_sup)}] |")
-    L += ["", "Leitura: o app, sem treino nem ajuste nesta base, fica no nível do RF treinado no DMD e perto da regra "
+    L += ["", "Leitura: o app, sem treino nem ajuste nesta base, não se distingue do RF treinado no DMD nem da regra "
           "do rótulo, que é a base dos seus sinais de olho. O RF treinado na própria UTA-RLDD só fica bem acima com a "
           "centragem pelo trecho final do vídeo alerta, o atalho discutido em `results/exp5b_robustez.md`; sem "
-          "centragem, ele fica no mesmo nível do app."]
+          "centragem, ele fica perto do app."]
     MD_OUT.write_text("\n".join(L) + "\n", encoding="utf-8")
     print(df.to_string(index=False))
     print(f"-> {CSV_OUT.relative_to(ROOT)}, {MD_OUT.relative_to(ROOT)}")

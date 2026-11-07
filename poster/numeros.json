@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-06T22:59:04",
+ "gerado_em": "2026-11-07T00:39:03",
  "gerado_por": "src/experiments/make_paper_numbers.py",
  "convencoes": "percentuais sem %; diferenças em pp; IC 95% entre colchetes; texto com vírgula decimal",
  "samsung_medido": true,
@@ -994,6 +994,10 @@
   "ExpSeisDifRuidoMovimentoParadoIC": "[0,0030; 0,0054]",
   "ExpSeisDifRuidoMovimentoParadoComIC": "0,0043 [0,0030; 0,0054]",
   "ExpSeisSujeitosPareadosMovimento": "11",
+  "ExpSeisFechMinSCinco": "5,1",
+  "ExpSeisFechMaxSCinco": "2,5",
+  "ExpSeisFechMinUTASono": "1,0",
+  "ExpSeisFechMaxUTASono": "2,1",
   "ExpSeisDisparoModeloDMDMicrossono": "44,7",
   "ExpSeisDisparoModeloDMDMicrossonoIC": "[32,7; 57,4]",
   "ExpSeisDisparoModeloDMDMicrossonoComIC": "44,7 [32,7; 57,4]",
@@ -17231,6 +17235,118 @@
      "secao": "b",
      "metrica": "dif_pareada_snr_rapido_dmd_mov|safe_menos_dmd_par|safe"
     }
+   }
+  },
+  {
+   "nome": "ExpSeisFechMinSCinco",
+   "valor": "5,1",
+   "macros": {
+    "ExpSeisFechMinSCinco": "5,1"
+   },
+   "bruto": 5.112079793128924,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 6 por vídeo: fechamentos de 0,5 s ou mais por minuto (mediana), sessões s5 do DMD",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp6_noite_videos.csv",
+    "filtros": {
+     "dataset": "dmd",
+     "grupo": "s5",
+     "recorte": "inteiro"
+    },
+    "n_linhas": 16,
+    "coluna": "fech_05s_por_min",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "ExpSeisFechMaxSCinco",
+   "valor": "2,5",
+   "macros": {
+    "ExpSeisFechMaxSCinco": "2,5"
+   },
+   "bruto": 2.4865591397849443,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "s",
+   "texto": false,
+   "descricao": "Exp. 6 por vídeo: maior fechamento (mediana), sessões s5 do DMD",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp6_noite_videos.csv",
+    "filtros": {
+     "dataset": "dmd",
+     "grupo": "s5",
+     "recorte": "inteiro"
+    },
+    "n_linhas": 16,
+    "coluna": "dur_max_fech_s",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "ExpSeisFechMinUTASono",
+   "valor": "1,0",
+   "macros": {
+    "ExpSeisFechMinUTASono": "1,0"
+   },
+   "bruto": 1.0471656887643053,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 6 por vídeo: fechamentos de 0,5 s ou mais por minuto (mediana), vídeos KSS 8 e 9 da UTA-RLDD",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp6_noite_videos.csv",
+    "filtros": {
+     "dataset": "uta",
+     "grupo": "KSS 10",
+     "recorte": "inteiro"
+    },
+    "n_linhas": 60,
+    "coluna": "fech_05s_por_min",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "ExpSeisFechMaxUTASono",
+   "valor": "2,1",
+   "macros": {
+    "ExpSeisFechMaxUTASono": "2,1"
+   },
+   "bruto": 2.1484222222222797,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "s",
+   "texto": false,
+   "descricao": "Exp. 6 por vídeo: maior fechamento (mediana), vídeos KSS 8 e 9 da UTA-RLDD",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp6_noite_videos.csv",
+    "filtros": {
+     "dataset": "uta",
+     "grupo": "KSS 10",
+     "recorte": "inteiro"
+    },
+    "n_linhas": 60,
+    "coluna": "dur_max_fech_s",
+    "agg": "median"
    }
   },
   {

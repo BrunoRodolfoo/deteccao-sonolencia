@@ -4,9 +4,10 @@ Artigo de resultados do TCC **"Detecção de Sonolência em Dispositivos Móveis
 Generalização entre Sonolência Atuada e Real"** (PUCPR, Experiência Criativa: Projeto Transformador II,
 Turma 8ºA, Equipe 14). Formato IEEE *conference* (`IEEEtran`, duas colunas, de 6 a 8 páginas, português).
 
-**Estado (27/10/2026): versão final revisada.** Depois de uma banca simulada, o texto foi reescrito com a
+**Estado (07/11/2026): versão final revisada.** Depois de uma banca simulada, o texto foi reescrito com a
 leitura nova da PP1 (controles do Exp. 5b em `results/exp5b_robustez.md`), do vazamento e da comparação entre a
-regra e os modelos. São 8 páginas, 31 referências (nenhuma marcada `UNVERIFIED`), as Tabelas I a V e 3 figuras.
+regra e os modelos; uma segunda banca simulada, em 07/11, corrigiu o mecanismo do PP1 e a comparação do app.
+São 8 páginas, 34 referências (nenhuma marcada `UNVERIFIED`), as Tabelas I a V e 3 figuras.
 O texto não usa travessões. Nenhum número de resultado é digitado no `.tex`: todos vêm de `numeros.tex` (seção
 "Como os números são gerados").
 
@@ -17,7 +18,7 @@ O texto não usa travessões. Nenhum número de resultado é digitado no `.tex`:
 | `artigo.tex` | fonte do artigo (UTF-8, `babel` brazil, `IEEEtran` conference); faz `\input{numeros}` |
 | `artigo.pdf` | PDF compilado; é refeito por `bash tools/atualizar_celular.sh` (ou pelo `tectonic`, abaixo) |
 | `numeros.tex` | gerado por `src/experiments/make_paper_numbers.py`; não edite à mão |
-| `refs.bib` | referências verificadas; o artigo cita 31 chaves. As duas marcadas `UNVERIFIED` (`xu2025` e `fl3d`) não são citadas |
+| `refs.bib` | referências verificadas; o artigo cita 34 chaves. As duas marcadas `UNVERIFIED` (`xu2025` e `fl3d`) não são citadas |
 | `figures/` | figuras do artigo e o diagrama TikZ da Fig. 1 (ver `figures/README.md`) |
 | `related_work_notes.md`, `dataset_facts.md`, `fontes_brasil.md` | notas de verificação bibliográfica usadas na redação (não entram na compilação) |
 | `REVISAO_SIMULADA.md` | revisão por pares simulada da versão de 28/09: notas por critério, fraquezas com localização e correções |
@@ -94,7 +95,7 @@ Diagrama TikZ: `cd figures && tectonic fig_pipeline.tex` (detalhes em `figures/R
   tabela macro → valor → arquivo → coluna e filtro vai para `results/numeros_resumo.md`.
 - `src/experiments/conferir_numeros.py` recalcula cada número com uma implementação independente,
   confere `numeros.tex` × `numeros.json`, procura o valor no `.md` de resultados e compila um documento
-  com todos os macros. Estado em 06/11/2026: 709 números (1.349 macros), 0 divergências.
+  com todos os macros. Estado em 07/11/2026: 713 números (1.353 macros), 0 divergências.
 - Convenções: percentuais **sem** o símbolo `%` (escreva `\ExpCincoBCSensJanela\%`); diferenças em pontos
   percentuais; `\NomeIC` = "[inf; sup]", `\NomeComIC` = "valor [inf; sup]", `\NomeMDP` = "média ± dp";
   negativos com o sinal de menos tipográfico. Depois de um macro seguido de palavra, use `{}`
@@ -193,3 +194,9 @@ Em 26/10/2026, depois da banca simulada:
 - 26/10/2026: banca simulada e reescrita. Entraram os controles do Exp. 5b (Tabela II nova, `results/exp5b_robustez.md`),
   a leitura nova da PP1, do vazamento e da regra × modelos e três referências; o artigo passou a ter 8 páginas,
   31 referências, Tabelas I a V e 3 figuras. Os diagramas de reserva saíram de `figures/`.
+- 07/11/2026: segunda banca simulada. O mecanismo do PP1 passou a ser descrito pela frequência dos fechamentos
+  longos por vídeo (macros `ExpSeisFech...`, de `results/exp6_noite_videos.csv`), e não pela duração; o app foi
+  comparado com Magán et al. (2022) na UTA-RLDD; "no nível" virou "não se distingue"; a partição por sujeito do
+  Exp. 2 foi descrita como nos folds oficiais. Entraram quatro referências (Magán et al., Tamanani et al., o
+  protocolo do Euro NCAP e o regulamento europeu de alerta de sonolência), e a página do Kaggle do NITYMED deixou
+  de ser citada. Resumo com 247 palavras; 8 páginas e 34 referências.

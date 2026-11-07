@@ -24,7 +24,7 @@ files (3)/
 |---|---:|---|---|
 | `src/` | 1,5 MB | sim | código dos experimentos (detalhe abaixo) |
 | `tools/` | 0,3 MB | sim | obtenção das bases, dependências do app, importação do benchmark do celular, PDF do relatório, validação do app |
-| `app/pwa/` | 0,9 MB | sim | app de demonstração (PWA 2.1), a versão usada na banca; ver `app/pwa/README.md` |
+| `app/pwa/` | 1,0 MB | sim | app de demonstração (PWA 2.1), a versão usada na banca, com a interface de 07/11 e as fontes em `fonts/`; ver `app/pwa/README.md` |
 | `app/pwa/vendor/` | cerca de 36 MB | não | dependências locais do app (MediaPipe com WASM, `face_landmarker.task`, TensorFlow.js e tfjs-tflite; 13 arquivos). Com ela, o app funciona sem internet. Baixada e conferida por `bash tools/baixar_dependencias_app.sh` |
 | `app/android/` | 4,3 MB | parcial | app Android nativo: mantém a lógica 1.0 e nunca foi compilado. Ignorados: `*.tflite` e `face_landmarker.task` em `assets/` (baixados por `app/android/tools/fetch_assets.sh`) e as pastas de build. `app/android/tools/import_phone_benchmark.py` continua, porque o importador de `tools/` o usa |
 | `app/.pwa-cert/` | 8 KB | não | certificado autoassinado e chave privada da PWA (gerados por `serve_https.py`); mantidos para o iPhone não precisar confiar num certificado novo |
@@ -159,9 +159,10 @@ Todo o trabalho até a noite de 26/10/2026 foi enviado ao GitHub nesse dia, em c
 resultados e logs dos experimentos, os testes do app (sensibilidade dos pesos e teste independente na UTA-RLDD),
 o artigo, o pôster e estes documentos. Em 27/10 entraram a comparação do app com os modelos nas mesmas pessoas, os
 ajustes do artigo, do pôster e destes documentos e a interface nova do app; em 05/11 e 06/11, a medição do app 2.1
-no Galaxy S23 Ultra e no iPhone 17 Pro.
+no Galaxy S23 Ultra e no iPhone 17 Pro; em 07/11, as correções da segunda banca simulada no artigo e no pôster e a
+interface "Painel de estrada" do app (com 3 arquivos de fonte e o QR do modo pôster).
 
-A árvore versionada tem cerca de 109 MB em 418 arquivos. O maior arquivo é
+A árvore versionada tem cerca de 109 MB em 422 arquivos. O maior arquivo é
 `results/exp5b_predicoes.csv` (32 MB), abaixo do aviso de 50 MB do GitHub. A lista não inclui `data/`
 (só `data/README.md`), `.venv*`, caches, certificados, chaves, `app/pwa/vendor/`, `models/exp1/` nem `models/exp6/`.
 Esses números mudam a cada arquivo novo; refaça a conta antes do commit (comando abaixo).

@@ -1,10 +1,11 @@
 # Pôster (sessão de 16/11/2026)
 
 Pôster final no template do professor (`material_disciplina/TemplatePoster.pptx`: 3 colunas, cabeçalho com os
-logos, título em vermelho, nomes à direita). Versão de 27/10/2026: mensagem do PP1 igual à do artigo
-reescrito (a perda depende do modelo e da normalização; o achado firme é que o modelo do DMD deixa passar boa
-parte do sono real, em que os olhos fecham por menos tempo),
-vazamento medido nas duas unidades (sequências de piscadas e janelas de 10 s), app v2.1 e iPhone 17 Pro.
+logos, título em vermelho, nomes à direita). Versão de 07/11/2026: mensagem do PP1 igual à do artigo (a perda
+depende do modelo e da normalização; o achado firme é que o modelo do DMD deixa passar boa parte do sono real, em
+que fechamentos longos de olho são bem mais raros), figura do PP1 com as normalizações numeradas (1, 2 e 3,
+explicadas no PP1 da coluna 3), vazamento medido nas duas unidades (sequências de piscadas e janelas de 10 s),
+app v2.1 testado em sono real e tempo por quadro no iPhone 17 Pro e no Galaxy S23 Ultra.
 
 ![prévia](poster_final_preview.png)
 
@@ -13,7 +14,7 @@ vazamento medido nas duas unidades (sequências de piscadas e janelas de 10 s), 
 | Arquivo | O que é |
 |---|---|
 | `layout.py` | geometria fixa (cm): colunas, caixas brancas, figuras, tabela e cabeçalho; usada pelos dois scripts abaixo |
-| `make_assets.py` | gera as figuras em `assets/` já no tamanho físico, com texto de 20 pt: `fig_poster_metodo.png` (diagrama: câmera e MediaPipe, sinais de olhos, bocejo e cabeça, experimentos com Face Mesh de 468 pontos e app v2.1 com Face Landmarker de 478 pontos), `fig_poster_exp5b.png` (PP1: perda de AUC ao treinar com sono encenado, no RF e na RL, na normalização principal e nas outras três, e quanto o modelo do DMD reconhece) e `qr_repositorio.png` (QR de `https://github.com/BrunoRodolfoo/deteccao-sonolencia`) |
+| `make_assets.py` | gera as figuras em `assets/` já no tamanho físico, com texto de 20 pt: `fig_poster_metodo.png` (diagrama: câmera e MediaPipe, sinais de olhos, bocejo e cabeça, experimentos com Face Mesh de 468 pontos e app v2.1 com Face Landmarker de 478 pontos), `fig_poster_exp5b.png` (PP1: perda de AUC ao treinar com sono encenado, no RF e na RL, na normalização principal e nas outras três, numeradas 1, 2 e 3, e quanto o modelo do DMD reconhece) e `qr_repositorio.png` (QR de `https://github.com/BrunoRodolfoo/deteccao-sonolencia`) |
 | `build_poster.py` | gera `poster_final.pptx` (a partir do template, caminho em `POSTER_TEMPLATE`) e `poster_final.html` com o mesmo conteúdo e a mesma geometria; com `--pdf`, imprime o PDF, grava título e autores nos metadados, refaz a prévia e confere tudo |
 | `numeros.json` | todos os números de resultado (gerado por `src/experiments/make_paper_numbers.py`; ver o fim deste arquivo) |
 | `poster_final.pptx` / `.html` / `.pdf` / `_preview.png` | saídas; o PDF (1 página, 50,8 × 28,575 cm) é impresso do HTML pelo Chrome headless |
@@ -58,8 +59,8 @@ também chama `build_poster.py --pdf`, então o PDF sai com título e autores no
 - **Texto:** frases curtas, sem travessão nem meia-risca, vírgula decimal.
 - **Imagens:** nenhum rosto. Nada do DMD (CC BY-NC-ND e rostos), da UTA-RLDD (autorização de imagem restrita)
   nem do NITYMED; nenhum quadro do NTHU-DDD. As figuras são só gráficos e diagramas.
-- **Conferência feita em 27/10/2026:** PDF com 1 página de 50,80 × 28,57 cm; menor fonte 20 pt em tudo e
-  16 pt só nas referências, no PDF e no `.pptx`; as 81 linhas de texto do PDF iguais às do
+- **Conferência feita em 07/11/2026:** PDF com 1 página de 50,80 × 28,57 cm; menor fonte 20 pt em tudo e
+  16 pt só nas referências, no PDF e no `.pptx`; as 83 linhas de texto do PDF iguais às do
   `.pptx`; nenhum travessão; metadados com título e autores nos dois arquivos; `.pptx` aberto no Quick Look
   (`qlmanage -t -s 2000`) e comparado com o PDF. **Imprima o PDF.**
 
@@ -68,9 +69,9 @@ também chama `build_poster.py --pdf`, então o PDF sai com título e autores no
 | Coluna | Conteúdo | Fonte |
 |---|---|---|
 | Cabeçalho | título, endereço do repositório, autores, orientador e QR | |
-| 1. Contexto e Pergunta | ABRAMET/PRF 27,8 % (condições de saúde do condutor, sono incluído); encenado acima de 90 % e real 65,2 % (modelo dos autores da base), humanos 57,8 %; pergunta central; PP1 a PP3 | `paper/fontes_brasil.md`, `results/exp1_intra.md` |
-| 2. Método e Resultados | diagrama do método com a validação dos sinais do app (olhos κ 0,938 e revocação 0,929 dos fechamentos de 0,5 s ou mais; bocejo 0,638 sem a mão; cabeça sem revocação medida) e o semáforo (40 e 70); tabela das bases; figura do PP1 com os rótulos no próprio gráfico (perda ao treinar com sono encenado, por normalização: RL de 5,4 a 9,8 em todas, RF 10,9 só com a referência principal na UTA; o modelo do DMD reconhece 82,0 % das janelas alertas e 48,4 % das de sono real); vazamento (45,3 pp nas sequências; 12,6 pp no RF e 1,2 pp na RL nas janelas de 10 s); app v2.1 em sono real (24 pessoas da UTA-RLDD, sentadas e fora do ajuste: AUC 0,812 entre sonolento e acordado; alarme em 15 sonolentos e 2 acordados) | `results/app_validacao*.md`, `results/exp5b_transferencia.md`, `results/exp2_leakage.md` |
-| 3. Conclusões | frase-síntese (treinado com sono encenado, o modelo só reconhece 48,4 % das janelas de sono real, com fechamentos mais curtos); PP1; PP2 (por quadro, 11 a 12 ms no iPhone 17 Pro e 39 a 40 ms no Galaxy S23 Ultra, app 2.1); PP3 (SNR do EAR 7,2 à noite, 8,7 com o carro andando e 13,6 parado, de dia; óculos, AUC do olho de 93,4 para 65,1); limitações (um só par de bases); referências | `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
+| 1. Contexto e Pergunta | ABRAMET/PRF 27,8 % (condições de saúde do condutor, sono incluído); encenado acima de 90 % em duas classes e real 65,2 % em três classes (modelo dos autores da base), pessoas 57,8 %; pergunta central; PP1 a PP3; siglas RF e RL | `paper/fontes_brasil.md`, `results/exp1_intra.md` |
+| 2. Método e Resultados | diagrama do método com a validação dos sinais do app (olhos κ 0,938 e revocação 0,929 dos fechamentos de 0,5 s ou mais; bocejo 0,638 sem a mão; cabeça sem revocação medida) e o semáforo (40 e 70); tabela das bases; figura do PP1 com os rótulos no próprio gráfico (perda ao treinar com sono encenado na normalização principal e em outras três, numeradas: 1, outra referência na UTA; 2, sem centragem; 3, outra referência no DMD. RL de 5,4 a 9,8 em todas; RF 10,9 na principal, 9,0 na 3 e de 2,1 a 2,3 na 1 e na 2; o modelo do DMD reconhece 82,0 % das janelas alertas e 48,4 % das de sono real); vazamento (45,3 pp nas sequências; 12,6 pp no RF e 1,2 pp na RL nas janelas de 10 s); app v2.1 em sono real (24 pessoas da UTA-RLDD, sentadas e fora do ajuste: AUC 0,812 entre sonolento e acordado; alarme em 15 de 24 sonolentos e 2 de 24 acordados) | `results/app_validacao*.md`, `results/exp5b_transferencia.md`, `results/exp2_leakage.md` |
+| 3. Conclusões | frase-síntese (treinado com sono encenado, o modelo só reconhece 48,4 % do sono real, em que fechamentos longos são bem mais raros: 5,1 contra 1,0 por minuto, mediana por vídeo, no artigo); PP1, com a legenda 1, 2 e 3 da figura; PP2 (por quadro, 11 a 12 ms no iPhone 17 Pro e 39 a 40 ms no Galaxy S23 Ultra, app 2.1); PP3 (SNR da abertura do olho 7,2 à noite, 8,7 de dia com o carro andando e 13,6 parado; óculos, AUC do olho de 93,4 para 65,1); limitações (um só par de bases); referências | `results/exp6_noite_videos.csv`, `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
 
 ## Roteiro da apresentação (10 min, 4 falas de 2,5 min)
 
@@ -104,13 +105,15 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
   noite; MRL e CEW são recortes de olho.
 - **PP1 (1 min 10 s, figura):** "O gráfico de cima compara o modelo treinado na UTA com o treinado no DMD,
   os dois testados na UTA: é o quanto se perde treinando com sono encenado. Na regressão logística, a perda fica
-  entre 5,4 e 9,8 pontos de AUC em todas as formas de normalizar os dados de cada pessoa. No Random Forest, os
-  10,9 pontos só aparecem com a referência principal na UTA: com outra referência na UTA ou sem centragem, a
-  diferença fica em uns 2 pontos e não dá para separar de zero. Isso acontece porque, na UTA, as janelas alertas
-  saem do mesmo vídeo usado como referência, e o Random Forest treinado lá aproveita isso. O resultado mais firme
-  está embaixo: o modelo do DMD reconhece 82,0 % das janelas alertas, mas só 48,4 % das de sono real. Nas janelas
-  sonolentas, o maior fechamento de olho tem mediana de 0,97 s no DMD e de 0,17 s na UTA. Os erros combinam com um
-  sono encenado mais intenso, em parte pela regra de rótulo do DMD."
+  entre 5,4 e 9,8 pontos de AUC em todas as formas de normalizar os dados de cada pessoa. No Random Forest, a
+  perda é de 10,9 pontos na principal e continua na 3, em que só muda a referência do DMD; com outra referência
+  na UTA (1) ou sem centragem (2), a diferença fica em uns 2 pontos e não dá para separar de zero. Isso acontece
+  porque, na UTA, as janelas alertas saem do mesmo vídeo usado como referência, e o Random Forest treinado lá
+  aproveita isso. O resultado mais firme está embaixo: o modelo do DMD reconhece 82,0 % das janelas alertas, mas
+  só 48,4 % das de sono real. Por quê? No vídeo inteiro, o maior fechamento de olho é parecido nas duas bases; o
+  que muda é quantas vezes ele acontece. Fechamentos de meio segundo ou mais aparecem 5,1 vezes por minuto no
+  sono encenado e 1,0 no real. O modelo do DMD aprendeu com fechamentos longos e frequentes, que no sono real
+  são raros."
 - **Vazamento (30 s, texto à direita da figura):** "Também medimos o vazamento. Nas sequências de 30 piscadas,
   que se sobrepõem, dividir por janela leva a acurácia de 54,2 % para 99,5 %, 45,3 pontos a mais. O que infla
   é ter pedaços do mesmo vídeo nos dois lados: dividindo por vídeo, o resultado fica até abaixo da divisão por
@@ -137,19 +140,19 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
 
 - **App v2.1 (50 s, diagrama e celular na mão):** "O app soma olhos, bocejo e cabeça num nível de 0 a 100:
   amarelo a partir de 40, vermelho a partir de 70, com alarme. Olho fechado por 1 s ou mais vai direto para o
-  vermelho. O botão 'Por quê?' mostra de onde veio cada ponto. Tudo roda no aparelho, sem mandar vídeo para
+  vermelho. Tocar no número abre o 'Por que N?', com a origem e o prazo de cada ponto. Tudo roda no aparelho, sem mandar vídeo para
   fora."
 - **Demonstração (40 s, se não houver fila):** piscar normal fica verde; fechar os olhos por 2 s vai ao vermelho
-  com sirene; abrir os olhos volta ao amarelo. Antes, subir o volume para 100 % (o padrão é 20 %).
+  com sirene ("ACORDE!"); abrir os olhos volta ao amarelo. Com um notebook na mesa, use Ajustes > Modo pôster: o
+  próprio visitante calibra em 10 s e vê o nível reagir. Antes, subir o volume para 100 % (o padrão é 20 %).
 - **PP2 (30 s):** "Por quadro, a versão 2.1 do app levou de 11 a 12 ms no iPhone 17 Pro e de 39 a 40 ms no Galaxy
   S23 Ultra, em três execuções de 60 s em cada." Se o pôster mudar, ler os números dele.
 - **Validação e limitações (30 s):** "Testamos o app em 24 pessoas da UTA-RLDD com sono real, sentadas e fora do
-  ajuste das regras: ele separou sonolento de acordado com AUC 0,812, no nível do Random Forest treinado no DMD
-  (0,811), e deu alarme em 15 de 24 sonolentos e em 2 de 24 acordados. Na direção real do DMD, ficou 3,3 % do tempo em vermelho, mas são os mesmos vídeos do ajuste. As limitações: é um
+  ajuste das regras: ele separou sonolento de acordado com AUC 0,812, sem diferença detectável do Random Forest
+  treinado no DMD (0,811), e deu alarme em 15 de 24 sonolentos e em 2 de 24 acordados. Na direção real do DMD, ficou 3,3 % do tempo em vermelho, mas são os mesmos vídeos do ajuste. As limitações: é um
   só par de bases, o DMD tem só 13 pessoas, e à noite não temos vídeos de gente alerta."
-- **Fechamento:** "Resumindo: treinar com sono encenado não basta para reconhecer sono real. Os erros combinam com
-  um sono encenado mais intenso, em parte pela regra de rótulo do DMD. E o teste tem que ser sempre em pessoas
-  novas." Mostrar o QR.
+- **Fechamento:** "Resumindo: treinar com sono encenado não basta para reconhecer sono real, em que fechamentos
+  longos de olho são bem mais raros. E o teste tem que ser sempre em pessoas novas." Mostrar o QR.
 
 ## Perguntas prováveis (respostas curtas, com os números do pôster e do artigo)
 
@@ -161,9 +164,10 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
    treinado com só 13 pessoas, como o DMD, a perda continua (9,3 pontos no RF e 7,0 na RL). O que aparece em todos os controles
    é o modelo do DMD deixar passar a maior parte das janelas sonolentas reais.
 3. **Por que o RF perde 10,9 e depois quase nada?** Na UTA-RLDD, as janelas alertas saem do mesmo vídeo usado
-   como referência na normalização, e o RF treinado lá aproveita isso. Com a referência no vídeo de pouca vigilância ou sem
-   centragem, a AUC do RF treinado na UTA cai de 80,1 para 68,4 e 69,4, e a perda vira 2,3 [−2,5; 6,8] e
-   2,1 [−1,2; 5,8], que incluem zero. Na RL, a queda por janela fica entre 5,4 e 9,8, sempre com IC acima de zero.
+   como referência na normalização, e o RF treinado lá aproveita isso. Com a referência no vídeo de pouca vigilância (1 na
+   figura) ou sem centragem (2), a AUC do RF treinado na UTA cai de 80,1 para 68,4 e 69,4, e a perda vira 2,3 [−2,5; 6,8] e
+   2,1 [−1,2; 5,8], que incluem zero. Trocando só a referência do DMD (3), a perda continua: 9,0. Na RL, a queda por janela fica
+   entre 5,4 e 9,8, sempre com IC acima de zero.
 4. **O resultado não depende do limiar 0,5?** A AUC não depende de limiar. Com o limiar calibrado só no DMD
    (0,662), o modelo reconhece ainda menos janelas sonolentas: 37,0 %.
 5. **Trocar o extrator oficial (dlib) pelo MediaPipe não piorou tudo?** Não: com o mesmo modelo, a diferença
@@ -192,7 +196,7 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
     lido como olho fechado (55,8 % do tempo em vermelho).
 11. **E a revocação? O app pega quem está com sono?** No teste independente em sono real (24 pessoas da
     UTA-RLDD, sentadas e fora do ajuste), 15 de 24 vídeos sonolentos chegaram ao vermelho, e a AUC entre sonolento
-    e acordado foi 0,812, no nível do Random Forest treinado no DMD (0,811). Por sinal, no DMD: olho fechado por
+    e acordado foi 0,812, sem diferença detectável do Random Forest treinado no DMD (0,811). Por sinal, no DMD: olho fechado por
     quadro, κ = 0,938 offline (0,902 no navegador); fechamentos de 0,5 s ou mais, revocação 0,929 (0,920 nos de
     1 s ou mais); bocejo, 0,638 sem a mão na boca e quase nulo com a mão (0,026); cabeça caindo, sem revocação
     medida, porque o DMD não anota isso.
@@ -212,7 +216,14 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
 15. **E os óculos escuros?** Não medimos óculos escuros. Com óculos comuns, a CNN do olho treinada no CEW e
     testada no MRL cai de AUC 93,4 para 65,1; no DMD, o detector de piscadas falhou num dos três motoristas de
     óculos.
-16. **Dá para reproduzir?** Sim: código, figuras e o app estão no repositório do QR; os números do pôster e do
+16. **Como o app se compara com outros trabalhos na UTA-RLDD?** Magán et al. (2022), com o alarme decidindo o
+    vídeo, acertam 93 % dos vídeos acordados e 35 % dos sonolentos, em outra divisão das pessoas. O app deu alarme
+    em 2 de 24 acordados e levou 15 de 24 sonolentos ao vermelho. Com 24 pessoas e divisões diferentes, não dá
+    para dizer quem é melhor; nas mesmas pessoas, o app não se distingue dos detectores que testamos.
+17. **Por que KSS 8 e 9 como sonolento, e 1 s para o microssono?** KSS 8 é o nível a partir do qual o
+    regulamento europeu de alerta de sonolência (UE 2021/1341) exige aviso. O microssono dura de 1 a 15 s, e o
+    protocolo do Euro NCAP trata 1 a 2 s de olhos fechados como microssono.
+18. **Dá para reproduzir?** Sim: código, figuras e o app estão no repositório do QR; os números do pôster e do
     artigo saem de `results/` por um script e são conferidos automaticamente.
 
 ## Números gerados

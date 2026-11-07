@@ -16,4 +16,4 @@ Gerado por `src/experiments/comparar_app_uta.py`. 24 sujeitos (os do teste do ap
 | RL treinada na UTA-RLDD (B) | escore médio, sem centragem | 0,797 [0,691; 0,915] |
 | regra do rótulo do DMD (sem treino) | fração de janelas marcadas | 0,853 [0,754; 0,944] |
 
-Leitura: o app, sem treino nem ajuste nesta base, fica no nível do RF treinado no DMD e perto da regra do rótulo, que é a base dos seus sinais de olho. O RF treinado na própria UTA-RLDD só fica bem acima com a centragem pelo trecho final do vídeo alerta, o atalho discutido em `results/exp5b_robustez.md`; sem centragem, ele fica no mesmo nível do app.
+Leitura: o app, sem treino nem ajuste nesta base, não se distingue do RF treinado no DMD nem da regra do rótulo, que é a base dos seus sinais de olho. O RF treinado na própria UTA-RLDD só fica bem acima com a centragem pelo trecho final do vídeo alerta, o atalho discutido em `results/exp5b_robustez.md`; sem centragem, ele fica perto do app.

@@ -1,6 +1,6 @@
 # Guia da equipe: do celular à sessão de pôsteres
 
-Passo a passo para os quatro integrantes. Versão de 06/11/2026.
+Passo a passo para os quatro integrantes. Versão de 07/11/2026.
 
 **Datas:**
 - Entrega 02 (código, metodologia implementada e resultados): 09/11 (segunda), adiada de 31/10.
@@ -55,10 +55,10 @@ um comando que atualiza a tabela e a figura do Exp. 4, os números, o artigo e o
    Ao subir, ele confere `app/pwa/vendor/`; se faltar algo, avisa e oferece baixar. O certificado autoassinado fica
    em `app/.pwa-cert/`. Ele contém a chave privada: fica fora do Git e não deve ser compartilhado.
 4. **No celular** (Chrome no Samsung; Safari ou Chrome no iPhone):
-   - abra `https://<IP-do-Mac>:8443/`;
+   - abra `https://<IP-do-Mac>:8443/?pesquisa=1` (o `?pesquisa=1` liga o modo pesquisador, que mostra o benchmark; também dá para ligar com 7 toques em Ajustes > Versão);
    - em "Sua conexão não é particular", toque em "Avançado → Ir para <IP> (não seguro)";
    - permita a câmera;
-   - em "Detalhes técnicos > Modelos > Bibliotecas", confira "local (./vendor/)".
+   - no Início, confira "Detector de rosto: Pronto, funciona sem internet" (ou, em "Detalhes técnicos > Modelos > Bibliotecas", "local (./vendor/)").
 
    Se a câmera não abrir no Samsung: `chrome://flags` → *Insecure origins treated as secure* → `https://<IP-do-Mac>:8443` → *Relaunch*.
 5. **Ambiente:**
@@ -67,8 +67,8 @@ um comando que atualiza a tabela e a figura do Exp. 4, os números, o artigo e o
    - bateria acima de 50%;
    - sem óculos;
    - feche os outros apps.
-6. **Iniciar viagem → calibração.** São 10 s olhando para a frente, com os olhos abertos e a boca fechada. Piscar normalmente é permitido. Se aparecer um aviso, toque em "Recalibrar".
-7. **"Detalhes técnicos" → Benchmark 60 s** (na tela "Em viagem", no fim da página). Fique parado, olhando para a tela e piscando normalmente. Não boceje e não feche os olhos: é uma medida de custo.
+6. **Iniciar viagem → calibração.** São 10 s olhando para a frente, com os olhos abertos e a boca fechada. Piscar normalmente é permitido. Se aparecer um aviso, toque em "Refazer a calibração".
+7. **(i) no topo da viagem → "Detalhes técnicos" → Benchmark 60 s** (o (i) só aparece no modo pesquisador). Fique parado, olhando para a tela e piscando normalmente. Não boceje e não feche os olhos: é uma medida de custo.
 
    Ao terminar, a tela deve dizer "enviado para o computador: results/phone/benchmark_pwa_<data>.json, ..._frames.csv". Se o envio falhar, use os botões de download e copie os dois arquivos para `results/phone/` (cabo ou Drive).
 8. **Repita até ter 3 execuções.** Espere cerca de 1 min entre elas, com a tela ligada. Anote em `results/phone/NOTAS.md`:
@@ -107,7 +107,7 @@ PWA e cita o app nativo como limitação. Só tente se sobrar tempo e houver And
 ### 2.1 Véspera
 
 - `bash tools/baixar_dependencias_app.sh --conferir` deve dizer "vendor/ completa". Se faltar algo, rode sem `--conferir`, em casa, com internet.
-- Teste o caminho todo uma vez: `python3 app/pwa/serve_https.py`, celular na mesma rede, "Iniciar viagem", "local (./vendor/)" em "Detalhes técnicos > Modelos > Bibliotecas".
+- Teste o caminho todo uma vez: `python3 app/pwa/serve_https.py`, celular na mesma rede, "Detector de rosto: Pronto, funciona sem internet" no Início, "Iniciar viagem".
 - Ensaie o roteiro da seção 2.2 duas vezes antes de 16/11, com o volume do alarme em 20%.
 - Grave um vídeo da tela do app fazendo o roteiro inteiro. É o plano B se a câmera ou a rede falharem.
 - Leve: o Mac com o repositório, o carregador, o suporte do celular, óculos escuros e uma forma de reduzir a luz (para o caso de falha deliberado).
@@ -118,8 +118,8 @@ PWA e cita o app nativo como limitação. Só tente se sobrar tempo e houver And
 1. Celular no suporte, na altura do painel, luz de frente, sem contraluz.
 2. Mac e celular na mesma rede (na PUC, o Acesso Pessoal do iPhone). A rede não precisa ter internet.
 3. `python3 app/pwa/serve_https.py` no Mac; no celular, abra o app e toque em "Iniciar viagem" (esse toque também libera o som no iPhone).
-4. Confira "local (./vendor/)" em "Detalhes técnicos > Modelos > Bibliotecas".
-5. Toque em "Recalibrar" (10 s olhando para a frente): nível 0 e registro limpo.
+4. Confira no Início: "Detector de rosto: Pronto, funciona sem internet".
+5. Segure "Recalibrar" (barra de baixo da viagem; 10 s olhando para a frente): nível 0 e registro limpo.
 
 **Volume: só na hora.** O "Volume do alarme" começa em 20%, de propósito. Suba para 100%, ponha o volume de mídia do
 celular no máximo e toque em "Testar som" só quando a pessoa já estiver na frente do pôster, logo antes do passo 4 abaixo.
@@ -130,16 +130,23 @@ Terminou a demonstração, volte o controle para 20%.
 | Tempo | Faça | O app mostra |
 |---|---|---|
 | 0:00 a 0:15 | Pisque normalmente, olhando para a frente | Verde, nível 0. Piscadas normais não sobem o nível |
-| 0:15 a 0:45 | Boceje duas vezes, boca bem aberta por uns 2 s, de olhos abertos, com uns 15 s entre os bocejos | "1 bocejo", ainda verde; no segundo, "2 bocejos" e amarelo com um "ding" |
-| 0:45 a 1:00 | Baixe a cabeça uns 30° por 3 ou 4 s, mantendo os olhos abertos, e volte | "cabeça baixa com os olhos abertos: distração, 0 ponto". Sem alarme |
-| 1:00 a 1:05 | Feche os olhos por 2 s | Com 1 s: tela de alarme vermelha e sirene (microssono) |
+| 0:15 a 0:45 | Boceje duas vezes, boca bem aberta por uns 2 s, de olhos abertos, com uns 15 s entre os bocejos | A ficha "+25 Bocejo" sobe do mostrador, ainda verde; no segundo, amarelo (losango) com um "ding" e a faixa "Sinais de cansaço" |
+| 0:45 a 1:00 | Baixe a cabeça uns 30° por 3 ou 4 s, mantendo os olhos abertos, e volte | Nada soma: cabeça baixa de olhos abertos é distração. Sem alarme |
+| 1:00 a 1:05 | Feche os olhos por 2 s | Com 1 s: a tela inteira fica vermelha, "ACORDE!", e a sirene toca (microssono) |
 | 1:05 a 1:15 | Reabra os olhos | A sirene para e o app volta ao amarelo em uns 2 s; fica pelo menos 1 min em atenção |
-| 1:15 a 2:00 | Mostre a lista "Por que" (tela "Em viagem") e o registro de eventos (em "Detalhes técnicos") | Cada ponto do nível tem origem: bocejos, microssono, horário de cada evento |
+| 1:15 a 2:00 | Toque no número da viagem: abre o "Por que N?" | Cada ponto do nível tem origem e prazo: "Boca: 2 bocejos, some em 4:30", "Olhos: 1 microssono, some em 1:50" |
 
 Cuidados:
 - Olhos abertos ao bocejar e ao baixar a cabeça. Olho fechado por 1 s ou mais é microssono para o app, e isso antecipa o vermelho.
-- Para recomeçar do zero, toque em "Recalibrar".
+- Para recomeçar do zero, segure "Recalibrar" (no vermelho ele fica bloqueado: espere voltar ao amarelo).
+- Os botões "Segure" (recalibrar, encerrar, "estou acordado") pedem 1,2 s com o dedo em cima: um toque não basta, de propósito.
 - Sem som: toque em "Testar som" de novo e confira o volume do alarme e o de mídia. Rosto não detectado: afaste-se da janela ou da luz de fundo.
+
+**Modo pôster (notebook ou tablet na mesa do pôster):** no notebook, rode `python3 app/pwa/serve_https.py`, abra
+`https://localhost:8443/` no Chrome (aceite o aviso do certificado) e vá em Ajustes > Modo pôster. Cada visitante senta
+de frente para a câmera; o app calibra sozinho em 10 s e mostra o nível subindo com cada sinal, o "Por que N?" e a
+linha do tempo do que viu. Quando a pessoa sai (8 s sem rosto), ele espera o próximo; "Recomeçar" zera. O mesmo
+cuidado com o volume: suba só na hora.
 
 **Demo de webcam (opcional, no notebook):** `.venv-mp/bin/python src/realtime/demo_webcam.py` (`q` sai; `--camera 1` se houver
 duas câmeras). Ela calibra o EAR nos primeiros segundos, com os olhos abertos, e o alerta é o bipe do terminal: deixe o volume do Mac moderado.
@@ -171,7 +178,7 @@ Para falar, não para ler. Cada um treina com as próprias palavras; o important
 >
 > Para responder, a gente treinou numa base de sono encenado, o DMD, e testou na UTA-RLDD, em que as pessoas gravaram vídeos com sono real. O extrator de sinais é o mesmo nas duas, e ninguém do teste aparece no treino.
 >
-> Resultado: piora. O modelo treinado com sono fingido reconhece só 48,4% dos trechos de sono real. Faz sentido: no sono fingido, o fechamento de olho mais longo de cada trecho dura quase um segundo (0,97 s, em mediana); no real, 0,17 s.
+> Resultado: piora. O modelo treinado com sono fingido reconhece só 48,4% dos trechos de sono real. Faz sentido: no sono fingido, a pessoa fecha o olho por meio segundo ou mais 5,1 vezes por minuto (mediana por vídeo); no real, 1,0.
 >
 > A gente também mediu um erro de protocolo fácil de cometer: se trechos do mesmo vídeo caem no treino e no teste, a acurácia pula de 54,2% para 99,5%.
 >
@@ -407,7 +414,7 @@ O alarme precisa tocar no dia. Faça estes testes uma vez, em casa, com o volume
 1. **Som com o modo silencioso ligado.** O iPhone 17 Pro não tem chave lateral: o silencioso liga pelo botão de Ação ou pela Central de Controle. Com o silencioso ligado:
    1. toque em "Iniciar viagem", depois em "Som" (barra de baixo) e em "Testar som";
    2. o ding e a sirene devem tocar, porque o app usa `navigator.audioSession.type = "playback"`;
-   3. confira o estado em "Detalhes técnicos → Modelos → Áudio";
+   3. confira o estado em "Detalhes técnicos → Modelos → Áudio" (modo pesquisador);
    4. repita com o silencioso desligado;
    5. anote o resultado em `results/phone/NOTAS.md`.
 2. **Volta do som depois de sair do app:**

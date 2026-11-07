@@ -1,10 +1,10 @@
 # Números do artigo e do pôster (gerados de results/)
 
-Gerado em 06/11/2026 22:59 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
+Gerado em 07/11/2026 00:39 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
 
 Galaxy S23 Ultra: medido (macros `\CelularSamsung...`; `\ifSamsungMedido` verdadeiro).
 
-Total: 709 números (1349 macros).
+Total: 713 números (1353 macros).
 
 | Macro | Valor | Unidade | O que é | Arquivo de origem | Coluna / filtro |
 |---|---|---|---|---|---|
@@ -504,6 +504,10 @@ Total: 709 números (1349 macros).
 | `\ExpSeisDifSNRMovimentoParado` | −5,4 [−6,6; −3,5] |  | Exp. 6 DMD mesmos motoristas: SNR rápida em movimento − parado (mediana pareada) | `results/exp6_noite.csv` | `valor` onde secao=b, metrica=dif_pareada_snr_rapido_dmd_mov&#124;safe_menos_dmd_par&#124;safe; IC `ic95_inf`/`ic95_sup` |
 | `\ExpSeisDifRuidoMovimentoParado` | 0,0043 [0,0030; 0,0054] |  | Exp. 6 DMD mesmos motoristas: ruído rápido em movimento − parado | `results/exp6_noite.csv` | `valor` onde secao=b, metrica=dif_pareada_ruido_rapido_dmd_mov&#124;safe_menos_dmd_par&#124;safe; IC `ic95_inf`/`ic95_sup` |
 | `\ExpSeisSujeitosPareadosMovimento` | 11 |  | Exp. 6 sujeitos na comparação pareada movimento × parado | `results/exp6_noite.csv` | `n_agrupamentos` onde secao=b, metrica=dif_pareada_snr_rapido_dmd_mov&#124;safe_menos_dmd_par&#124;safe |
+| `\ExpSeisFechMinSCinco` | 5,1 |  | Exp. 6 por vídeo: fechamentos de 0,5 s ou mais por minuto (mediana), sessões s5 do DMD | `results/exp6_noite_videos.csv` | `fech_05s_por_min` [median] onde dataset=dmd, grupo=s5, recorte=inteiro |
+| `\ExpSeisFechMaxSCinco` | 2,5 | s | Exp. 6 por vídeo: maior fechamento (mediana), sessões s5 do DMD | `results/exp6_noite_videos.csv` | `dur_max_fech_s` [median] onde dataset=dmd, grupo=s5, recorte=inteiro |
+| `\ExpSeisFechMinUTASono` | 1,0 |  | Exp. 6 por vídeo: fechamentos de 0,5 s ou mais por minuto (mediana), vídeos KSS 8 e 9 da UTA-RLDD | `results/exp6_noite_videos.csv` | `fech_05s_por_min` [median] onde dataset=uta, grupo=KSS 10, recorte=inteiro |
+| `\ExpSeisFechMaxUTASono` | 2,1 | s | Exp. 6 por vídeo: maior fechamento (mediana), vídeos KSS 8 e 9 da UTA-RLDD | `results/exp6_noite_videos.csv` | `dur_max_fech_s` [median] onde dataset=uta, grupo=KSS 10, recorte=inteiro |
 | `\ExpSeisDisparoModeloDMDMicrossono` | 44,7 [32,7; 57,4] | % (×100) | Exp. 6 taxa de disparo (janelas de 10 s marcadas sonolento), Modelo do DMD, Microsleep | `results/exp6_noite.csv` | `valor` onde secao=c, grupo=Microsleep, modelo=Modelo do DMD, variante=sem_normalizacao, metrica=taxa_disparo_janela; IC `ic95_inf`/`ic95_sup` |
 | `\ExpSeisDisparoModeloDMDBocejo` | 73,0 [65,4; 80,6] | % (×100) | Exp. 6 taxa de disparo (janelas de 10 s marcadas sonolento), Modelo do DMD, Yawning | `results/exp6_noite.csv` | `valor` onde secao=c, grupo=Yawning, modelo=Modelo do DMD, variante=sem_normalizacao, metrica=taxa_disparo_janela; IC `ic95_inf`/`ic95_sup` |
 | `\ExpSeisDisparoModeloDMDUTAAlerta` | 26,0 [21,1; 31,1] | % (×100) | Exp. 6 taxa de disparo (janelas de 10 s marcadas sonolento), Modelo do DMD, KSS 0 | `results/exp6_noite.csv` | `valor` onde secao=c, grupo=KSS 0, modelo=Modelo do DMD, variante=sem_normalizacao, metrica=taxa_disparo_janela; IC `ic95_inf`/`ic95_sup` |
@@ -720,10 +724,10 @@ Total: 709 números (1349 macros).
 
 ## Conferência automática
 
-Executada em 06/11/2026 22:59 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
+Executada em 07/11/2026 01:06 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
 
-- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 709 de 709** números (1349 macros em `paper/numeros.tex`, 1349 no JSON; sobrando só no TeX: 0; só no JSON: 0).
-- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 569; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 123.
+- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 713 de 713** números (1353 macros em `paper/numeros.tex`, 1353 no JSON; sobrando só no TeX: 0; só no JSON: 0).
+- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 569; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 127.
 - Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — tectonic rc=0; 0 'Undefined control sequence'.
 - Divergências: 0.
 
@@ -1227,6 +1231,10 @@ Executada em 06/11/2026 22:59 por `src/experiments/conferir_numeros.py` (leitura
 | `\ExpSeisDifSNRMovimentoParado` | −5,4 | ok | sim |
 | `\ExpSeisDifRuidoMovimentoParado` | 0,0043 | ok | sim |
 | `\ExpSeisSujeitosPareadosMovimento` | 11 | ok | sim |
+| `\ExpSeisFechMinSCinco` | 5,1 | ok | — |
+| `\ExpSeisFechMaxSCinco` | 2,5 | ok | — |
+| `\ExpSeisFechMinUTASono` | 1,0 | ok | — |
+| `\ExpSeisFechMaxUTASono` | 2,1 | ok | — |
 | `\ExpSeisDisparoModeloDMDMicrossono` | 44,7 | ok | sim |
 | `\ExpSeisDisparoModeloDMDBocejo` | 73,0 | ok | sim |
 | `\ExpSeisDisparoModeloDMDUTAAlerta` | 26,0 | ok | sim |

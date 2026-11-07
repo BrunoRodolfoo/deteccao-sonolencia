@@ -243,15 +243,16 @@ COL1_TITLE = "Contexto e Pergunta"
 COL1 = [
     P("Condições de saúde do condutor, sono incluído, pesam em ", B("27,8%"), " das ocorrências nas rodovias "
       "federais [7]."),
-    P("Com sono encenado (atuado), os detectores passam de 90% de acurácia [6]. Com sono real (UTA-RLDD), "
-      f"o modelo dos autores da base acerta {N('ExpUmHMLSTMVA')}% dos vídeos, e pessoas, {N('ExpUmHumanosVA')}% [1].",
-      sb=14),
+    P("Com sono encenado, os melhores detectores passam de 90% em duas classes [6]. Com sono real (UTA-RLDD), em "
+      f"três classes, o modelo dos autores acerta {N('ExpUmHMLSTMVA')}% dos vídeos, e pessoas, "
+      f"{N('ExpUmHumanosVA')}% [1].", sb=14),
     P(B("Pergunta central", RED), sb=30),
     P("Um detector treinado com sono encenado reconhece sono real de pessoas nunca vistas, no celular?", sb=4),
     P(B("Perguntas de pesquisa", RED), sb=30),
     P(B("PP1."), " Quanto se perde do sono encenado para o real?", sb=4),
     P(B("PP2."), " Qual o custo no celular?", sb=10),
     P(B("PP3."), " Resiste à noite, ao movimento e aos óculos?", sb=10),
+    P(C("RF: Random Forest. RL: regressão logística.", GRAY), sb=12),   # siglas da figura do PP1 e da coluna 3
 ]
 
 # ---- Coluna 2: Método e Resultados ----------------------------------------------------------
@@ -276,16 +277,18 @@ LEAK = [
 # Substitui a frase da direção real do DMD (3,3 % em vermelho), que usava os mesmos vídeos do ajuste.
 APP = [
     P(B(f"App v{N('AppVersao')}")),
-    P(f"Em {N('AppUTASujeitos')} pessoas com sono real, sentadas e fora do ajuste, separou sonolento de acordado "
-      f"(AUC{NB}{N('AppUTAAUCForaVerde')}); alarmou {N('AppUTASonolentosVermelho')} sonolentos e "
-      f"{N('AppUTAAcordadosAlarme')} acordados."),
+    P(f"Sono real, {N('AppUTASujeitos')} pessoas sentadas e fora do ajuste: AUC{NB}{N('AppUTAAUCForaVerde')}; "
+      f"alarme em {N('AppUTASonolentosVermelho')} de {N('AppUTASujeitos')} sonolentos e "
+      f"{N('AppUTAAcordadosAlarme')} de {N('AppUTASujeitos')} acordados."),
 ]
 APP_RESERVA_LINHAS = 0   # linhas guardadas na caixa do app para um resultado futuro
 
 # ---- Coluna 3: Conclusões -------------------------------------------------------------------
 COL3_TITLE = "Conclusões"
-SINTESE = [P(f"Treinado com sono encenado, o modelo só reconhece {N('ExpCincoBCSensJanela')}% das janelas de "
-             "sono real, com fechamentos mais curtos.", size=24)]
+# "bem mais raros": fechamentos de 0,5 s ou mais por minuto, mediana por vídeo (ExpSeisFechMinUTASono contra
+# ExpSeisFechMinSCinco no artigo); o maior fechamento é parecido nas duas bases, por isso não "mais curtos"
+SINTESE = [P("Treinado com sono encenado, o modelo só reconhece ", B(f"{N('ExpCincoBCSensJanela')}%", RED),
+             " do sono real, em que fechamentos longos são bem mais raros.", size=24)]
 
 
 def _faixa_ms(pre):
@@ -311,13 +314,13 @@ def _aparelhos():
 
 
 COL3 = [
-    P(B("PP1."), f" A RL do DMD perde de {N('ExpCincoBLRQuedaNormMin')} a {N('ExpCincoBLRQuedaNormMax')} pontos "
-      f"de AUC em todas as normalizações testadas; o RF perde {N('ExpCincoBQuedaAUCJanela')} só com a referência "
-      "principal na UTA."),
+    # 1, 2 e 3 são os rótulos da figura do PP1; "pouco": no RF, a perda nas normalizações 1 e 2 tem IC com o zero
+    P(B("PP1."), f" Em pontos de AUC, a RL perde de {N('ExpCincoBLRQuedaNormMin')} a {N('ExpCincoBLRQuedaNormMax')} em "
+      f"todas as normalizações; o RF perde {N('ExpCincoBQuedaAUCJanela')} na principal e na 3 (outra referência no "
+      "DMD), mas pouco na 1 (outra na UTA) e na 2 (sem centrar)."),
     P(B("PP2."), " " + _aparelhos(), sb=6),
-    P(B("PP3."), f" A SNR do EAR (abertura do olho) é {N('ExpSeisSNRNoite')} à noite, "
-      f"{N('ExpSeisSNRDMDMovimento')} com o carro andando e {N('ExpSeisSNRDMDParado')} parado, de dia. Óculos: "
-      "AUC do olho de "
+    P(B("PP3."), f" A SNR da abertura do olho é {N('ExpSeisSNRNoite')} à noite, {N('ExpSeisSNRDMDMovimento')} de dia "
+      f"com o carro andando e {N('ExpSeisSNRDMDParado')} parado. Óculos: AUC do olho de "
       f"{N('ExpTresCEWPatchMRLSemOculosAUC')}{NB}para{NB}{N('ExpTresCEWPatchMRLComOculosAUC')}.", sb=6),
     P(B("Limitações."), " Um só par de bases.", sb=6),
 ]
