@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-05T19:35:51",
+ "gerado_em": "2026-11-06T22:59:04",
  "gerado_por": "src/experiments/make_paper_numbers.py",
  "convencoes": "percentuais sem %; diferenças em pp; IC 95% entre colchetes; texto com vírgula decimal",
  "samsung_medido": true,
@@ -523,43 +523,49 @@
   "MacPWATotalPnoventaecinco": "14,8",
   "MacPWAFPS": "29,9",
   "CelularIPhoneNome": "iPhone 17 Pro (512 GB)",
-  "CelularIPhoneExecucoes": "2",
-  "CelularIPhoneVersaoApp": "1.0",
+  "CelularIPhoneExecucoes": "3",
+  "CelularIPhoneVersaoApp": "2.1",
   "CelularIPhoneSistema": "iOS 26.6.1",
-  "CelularIPhoneNavegador": "Chrome 154 (iOS, motor WebKit)",
+  "CelularIPhoneNavegador": "Chrome 156 (iOS, motor WebKit)",
   "CelularIPhoneDelegate": "GPU",
-  "CelularIPhoneTotalPcinquenta": "17,0",
+  "CelularIPhoneTotalPcinquenta": "11,0",
   "CelularIPhoneTotalPcinquentaMin": "11,0",
-  "CelularIPhoneTotalPcinquentaMax": "23,0",
-  "CelularIPhoneTotalPnoventaecinco": "22,0",
-  "CelularIPhoneTotalPnoventaecincoMin": "14,0",
-  "CelularIPhoneTotalPnoventaecincoMax": "30,0",
-  "CelularIPhoneLandmarkerPcinquenta": "14,0",
+  "CelularIPhoneTotalPcinquentaMax": "12,0",
+  "CelularIPhoneTotalPnoventaecinco": "14,0",
+  "CelularIPhoneTotalPnoventaecincoMin": "13,0",
+  "CelularIPhoneTotalPnoventaecincoMax": "14,0",
+  "CelularIPhoneLandmarkerPcinquenta": "9,0",
   "CelularIPhoneLandmarkerPcinquentaMin": "9,0",
-  "CelularIPhoneLandmarkerPcinquentaMax": "19,0",
-  "CelularIPhoneLandmarkerPnoventaecinco": "18,5",
+  "CelularIPhoneLandmarkerPcinquentaMax": "10,0",
+  "CelularIPhoneLandmarkerPnoventaecinco": "11,0",
   "CelularIPhoneLandmarkerPnoventaecincoMin": "11,0",
-  "CelularIPhoneLandmarkerPnoventaecincoMax": "26,0",
-  "CelularIPhoneCNNPcinquenta": "2,5",
+  "CelularIPhoneLandmarkerPnoventaecincoMax": "11,0",
+  "CelularIPhoneCNNPcinquenta": "2,0",
   "CelularIPhoneCNNPcinquentaMin": "2,0",
-  "CelularIPhoneCNNPcinquentaMax": "3,0",
-  "CelularIPhoneCNNPnoventaecinco": "4,5",
+  "CelularIPhoneCNNPcinquentaMax": "2,0",
+  "CelularIPhoneCNNPnoventaecinco": "3,0",
   "CelularIPhoneCNNPnoventaecincoMin": "3,0",
-  "CelularIPhoneCNNPnoventaecincoMax": "6,0",
+  "CelularIPhoneCNNPnoventaecincoMax": "3,0",
   "CelularIPhoneLSTMPcinquenta": "1,0",
   "CelularIPhoneLSTMPcinquentaMin": "1,0",
   "CelularIPhoneLSTMPcinquentaMax": "1,0",
   "CelularIPhoneLSTMPnoventaecinco": "1,0",
   "CelularIPhoneLSTMPnoventaecincoMin": "1,0",
   "CelularIPhoneLSTMPnoventaecincoMax": "1,0",
-  "CelularIPhoneFPS": "50,2",
-  "CelularIPhoneFPSMin": "40,5",
-  "CelularIPhoneFPSMax": "60,0",
-  "CelularIPhoneTotalPcinquentaInteiro": "17",
+  "CelularIPhoneMotorPcinquenta": "0,0",
+  "CelularIPhoneMotorPcinquentaMin": "0,0",
+  "CelularIPhoneMotorPcinquentaMax": "0,0",
+  "CelularIPhoneMotorPnoventaecinco": "0,0",
+  "CelularIPhoneMotorPnoventaecincoMin": "0,0",
+  "CelularIPhoneMotorPnoventaecincoMax": "0,0",
+  "CelularIPhoneFPS": "60,0",
+  "CelularIPhoneFPSMin": "60,0",
+  "CelularIPhoneFPSMax": "60,3",
+  "CelularIPhoneTotalPcinquentaInteiro": "11",
   "CelularIPhoneTotalPcinquentaMinInteiro": "11",
-  "CelularIPhoneTotalPcinquentaMaxInteiro": "23",
-  "CelularIPhoneQuadros": "6.031",
-  "CelularIPhoneQuadrosComRosto": "6.031",
+  "CelularIPhoneTotalPcinquentaMaxInteiro": "12",
+  "CelularIPhoneQuadros": "10.818",
+  "CelularIPhoneQuadrosComRosto": "10.818",
   "CelularIPhoneTaxaRosto": "100,0",
   "CelularSamsungNome": "Samsung Galaxy S23 Ultra",
   "CelularSamsungExecucoes": "3",
@@ -9360,18 +9366,18 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "aparelho"
    }
   },
   {
    "nome": "CelularIPhoneExecucoes",
-   "valor": "2",
+   "valor": "3",
    "macros": {
-    "CelularIPhoneExecucoes": "2"
+    "CelularIPhoneExecucoes": "3"
    },
-   "bruto": 2.0,
+   "bruto": 3.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 0,
@@ -9385,18 +9391,18 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "agg": "count"
    }
   },
   {
    "nome": "CelularIPhoneVersaoApp",
-   "valor": "1.0",
+   "valor": "2.1",
    "macros": {
-    "CelularIPhoneVersaoApp": "1.0"
+    "CelularIPhoneVersaoApp": "2.1"
    },
-   "bruto": "1.0",
+   "bruto": "2.1",
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9410,7 +9416,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "versao_app"
    }
@@ -9435,18 +9441,18 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "sistema"
    }
   },
   {
    "nome": "CelularIPhoneNavegador",
-   "valor": "Chrome 154 (iOS, motor WebKit)",
+   "valor": "Chrome 156 (iOS, motor WebKit)",
    "macros": {
-    "CelularIPhoneNavegador": "Chrome 154 (iOS, motor WebKit)"
+    "CelularIPhoneNavegador": "Chrome 156 (iOS, motor WebKit)"
    },
-   "bruto": "Chrome 154 (iOS, motor WebKit)",
+   "bruto": "Chrome 156 (iOS, motor WebKit)",
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9460,7 +9466,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "navegador"
    }
@@ -9485,18 +9491,18 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "delegate_landmarker"
    }
   },
   {
    "nome": "CelularIPhoneTotalPcinquenta",
-   "valor": "17,0",
+   "valor": "11,0",
    "macros": {
-    "CelularIPhoneTotalPcinquenta": "17,0"
+    "CelularIPhoneTotalPcinquenta": "11,0"
    },
-   "bruto": 17.0,
+   "bruto": 11.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9510,7 +9516,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "total_ms_p50",
     "agg": "median"
@@ -9536,7 +9542,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "total_ms_p50",
     "agg": "min"
@@ -9544,11 +9550,11 @@
   },
   {
    "nome": "CelularIPhoneTotalPcinquentaMax",
-   "valor": "23,0",
+   "valor": "12,0",
    "macros": {
-    "CelularIPhoneTotalPcinquentaMax": "23,0"
+    "CelularIPhoneTotalPcinquentaMax": "12,0"
    },
-   "bruto": 23.0,
+   "bruto": 12.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9562,7 +9568,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "total_ms_p50",
     "agg": "max"
@@ -9570,11 +9576,11 @@
   },
   {
    "nome": "CelularIPhoneTotalPnoventaecinco",
-   "valor": "22,0",
+   "valor": "14,0",
    "macros": {
-    "CelularIPhoneTotalPnoventaecinco": "22,0"
+    "CelularIPhoneTotalPnoventaecinco": "14,0"
    },
-   "bruto": 22.0,
+   "bruto": 14.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9588,7 +9594,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "total_ms_p95",
     "agg": "median"
@@ -9596,11 +9602,11 @@
   },
   {
    "nome": "CelularIPhoneTotalPnoventaecincoMin",
-   "valor": "14,0",
+   "valor": "13,0",
    "macros": {
-    "CelularIPhoneTotalPnoventaecincoMin": "14,0"
+    "CelularIPhoneTotalPnoventaecincoMin": "13,0"
    },
-   "bruto": 14.0,
+   "bruto": 13.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9614,7 +9620,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "total_ms_p95",
     "agg": "min"
@@ -9622,11 +9628,11 @@
   },
   {
    "nome": "CelularIPhoneTotalPnoventaecincoMax",
-   "valor": "30,0",
+   "valor": "14,0",
    "macros": {
-    "CelularIPhoneTotalPnoventaecincoMax": "30,0"
+    "CelularIPhoneTotalPnoventaecincoMax": "14,0"
    },
-   "bruto": 30.0,
+   "bruto": 14.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9640,7 +9646,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "total_ms_p95",
     "agg": "max"
@@ -9648,11 +9654,11 @@
   },
   {
    "nome": "CelularIPhoneLandmarkerPcinquenta",
-   "valor": "14,0",
+   "valor": "9,0",
    "macros": {
-    "CelularIPhoneLandmarkerPcinquenta": "14,0"
+    "CelularIPhoneLandmarkerPcinquenta": "9,0"
    },
-   "bruto": 14.0,
+   "bruto": 9.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9666,7 +9672,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "landmarker_ms_p50",
     "agg": "median"
@@ -9692,7 +9698,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "landmarker_ms_p50",
     "agg": "min"
@@ -9700,11 +9706,11 @@
   },
   {
    "nome": "CelularIPhoneLandmarkerPcinquentaMax",
-   "valor": "19,0",
+   "valor": "10,0",
    "macros": {
-    "CelularIPhoneLandmarkerPcinquentaMax": "19,0"
+    "CelularIPhoneLandmarkerPcinquentaMax": "10,0"
    },
-   "bruto": 19.0,
+   "bruto": 10.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9718,7 +9724,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "landmarker_ms_p50",
     "agg": "max"
@@ -9726,11 +9732,11 @@
   },
   {
    "nome": "CelularIPhoneLandmarkerPnoventaecinco",
-   "valor": "18,5",
+   "valor": "11,0",
    "macros": {
-    "CelularIPhoneLandmarkerPnoventaecinco": "18,5"
+    "CelularIPhoneLandmarkerPnoventaecinco": "11,0"
    },
-   "bruto": 18.5,
+   "bruto": 11.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9744,7 +9750,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "landmarker_ms_p95",
     "agg": "median"
@@ -9770,7 +9776,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "landmarker_ms_p95",
     "agg": "min"
@@ -9778,11 +9784,11 @@
   },
   {
    "nome": "CelularIPhoneLandmarkerPnoventaecincoMax",
-   "valor": "26,0",
+   "valor": "11,0",
    "macros": {
-    "CelularIPhoneLandmarkerPnoventaecincoMax": "26,0"
+    "CelularIPhoneLandmarkerPnoventaecincoMax": "11,0"
    },
-   "bruto": 26.0,
+   "bruto": 11.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9796,7 +9802,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "landmarker_ms_p95",
     "agg": "max"
@@ -9804,11 +9810,11 @@
   },
   {
    "nome": "CelularIPhoneCNNPcinquenta",
-   "valor": "2,5",
+   "valor": "2,0",
    "macros": {
-    "CelularIPhoneCNNPcinquenta": "2,5"
+    "CelularIPhoneCNNPcinquenta": "2,0"
    },
-   "bruto": 2.5,
+   "bruto": 2.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9822,7 +9828,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "cnn_ms_p50",
     "agg": "median"
@@ -9848,7 +9854,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "cnn_ms_p50",
     "agg": "min"
@@ -9856,11 +9862,11 @@
   },
   {
    "nome": "CelularIPhoneCNNPcinquentaMax",
-   "valor": "3,0",
+   "valor": "2,0",
    "macros": {
-    "CelularIPhoneCNNPcinquentaMax": "3,0"
+    "CelularIPhoneCNNPcinquentaMax": "2,0"
    },
-   "bruto": 3.0,
+   "bruto": 2.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9874,7 +9880,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "cnn_ms_p50",
     "agg": "max"
@@ -9882,11 +9888,11 @@
   },
   {
    "nome": "CelularIPhoneCNNPnoventaecinco",
-   "valor": "4,5",
+   "valor": "3,0",
    "macros": {
-    "CelularIPhoneCNNPnoventaecinco": "4,5"
+    "CelularIPhoneCNNPnoventaecinco": "3,0"
    },
-   "bruto": 4.5,
+   "bruto": 3.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9900,7 +9906,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "cnn_ms_p95",
     "agg": "median"
@@ -9926,7 +9932,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "cnn_ms_p95",
     "agg": "min"
@@ -9934,11 +9940,11 @@
   },
   {
    "nome": "CelularIPhoneCNNPnoventaecincoMax",
-   "valor": "6,0",
+   "valor": "3,0",
    "macros": {
-    "CelularIPhoneCNNPnoventaecincoMax": "6,0"
+    "CelularIPhoneCNNPnoventaecincoMax": "3,0"
    },
-   "bruto": 6.0,
+   "bruto": 3.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -9952,7 +9958,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "cnn_ms_p95",
     "agg": "max"
@@ -9978,7 +9984,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "engine_ms_p50",
     "agg": "median"
@@ -10004,7 +10010,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "engine_ms_p50",
     "agg": "min"
@@ -10030,7 +10036,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "engine_ms_p50",
     "agg": "max"
@@ -10056,7 +10062,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "engine_ms_p95",
     "agg": "median"
@@ -10082,7 +10088,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "engine_ms_p95",
     "agg": "min"
@@ -10108,19 +10114,175 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "engine_ms_p95",
     "agg": "max"
    }
   },
   {
-   "nome": "CelularIPhoneFPS",
-   "valor": "50,2",
+   "nome": "CelularIPhoneMotorPcinquenta",
+   "valor": "0,0",
    "macros": {
-    "CelularIPhoneFPS": "50,2"
+    "CelularIPhoneMotorPcinquenta": "0,0"
    },
-   "bruto": 50.25,
+   "bruto": 0.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): motor_ms p50 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "iPhone 17 Pro (512 GB)",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p50",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularIPhoneMotorPcinquentaMin",
+   "valor": "0,0",
+   "macros": {
+    "CelularIPhoneMotorPcinquentaMin": "0,0"
+   },
+   "bruto": 0.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): motor_ms p50 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "iPhone 17 Pro (512 GB)",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p50",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularIPhoneMotorPcinquentaMax",
+   "valor": "0,0",
+   "macros": {
+    "CelularIPhoneMotorPcinquentaMax": "0,0"
+   },
+   "bruto": 0.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): motor_ms p50 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "iPhone 17 Pro (512 GB)",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p50",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularIPhoneMotorPnoventaecinco",
+   "valor": "0,0",
+   "macros": {
+    "CelularIPhoneMotorPnoventaecinco": "0,0"
+   },
+   "bruto": 0.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): motor_ms p95 por quadro — mediana entre as execuções",
+   "evidencia": null,
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "iPhone 17 Pro (512 GB)",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p95",
+    "agg": "median"
+   }
+  },
+  {
+   "nome": "CelularIPhoneMotorPnoventaecincoMin",
+   "valor": "0,0",
+   "macros": {
+    "CelularIPhoneMotorPnoventaecincoMin": "0,0"
+   },
+   "bruto": 0.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): motor_ms p95 por quadro — menor execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "iPhone 17 Pro (512 GB)",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p95",
+    "agg": "min"
+   }
+  },
+  {
+   "nome": "CelularIPhoneMotorPnoventaecincoMax",
+   "valor": "0,0",
+   "macros": {
+    "CelularIPhoneMotorPnoventaecincoMax": "0,0"
+   },
+   "bruto": 0.0,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "ms",
+   "texto": false,
+   "descricao": "Exp. 4 iPhone 17 Pro (512 GB): motor_ms p95 por quadro — maior execução",
+   "evidencia": "results/exp4_phone_latency.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp4_phone_latency.csv",
+    "filtros": {
+     "aparelho": "iPhone 17 Pro (512 GB)",
+     "versao_app": "2.1"
+    },
+    "coluna": "motor_ms_p95",
+    "agg": "max"
+   }
+  },
+  {
+   "nome": "CelularIPhoneFPS",
+   "valor": "60,0",
+   "macros": {
+    "CelularIPhoneFPS": "60,0"
+   },
+   "bruto": 60.01,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -10134,7 +10296,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "fps_medio",
     "agg": "median"
@@ -10142,11 +10304,11 @@
   },
   {
    "nome": "CelularIPhoneFPSMin",
-   "valor": "40,5",
+   "valor": "60,0",
    "macros": {
-    "CelularIPhoneFPSMin": "40,5"
+    "CelularIPhoneFPSMin": "60,0"
    },
-   "bruto": 40.51,
+   "bruto": 60.01,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -10160,7 +10322,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "fps_medio",
     "agg": "min"
@@ -10168,11 +10330,11 @@
   },
   {
    "nome": "CelularIPhoneFPSMax",
-   "valor": "60,0",
+   "valor": "60,3",
    "macros": {
-    "CelularIPhoneFPSMax": "60,0"
+    "CelularIPhoneFPSMax": "60,3"
    },
-   "bruto": 59.99,
+   "bruto": 60.26,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 1,
@@ -10186,7 +10348,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "fps_medio",
     "agg": "max"
@@ -10194,11 +10356,11 @@
   },
   {
    "nome": "CelularIPhoneTotalPcinquentaInteiro",
-   "valor": "17",
+   "valor": "11",
    "macros": {
-    "CelularIPhoneTotalPcinquentaInteiro": "17"
+    "CelularIPhoneTotalPcinquentaInteiro": "11"
    },
-   "bruto": 17.0,
+   "bruto": 11.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 0,
@@ -10240,11 +10402,11 @@
   },
   {
    "nome": "CelularIPhoneTotalPcinquentaMaxInteiro",
-   "valor": "23",
+   "valor": "12",
    "macros": {
-    "CelularIPhoneTotalPcinquentaMaxInteiro": "23"
+    "CelularIPhoneTotalPcinquentaMaxInteiro": "12"
    },
-   "bruto": 23.0,
+   "bruto": 12.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 0,
@@ -10263,11 +10425,11 @@
   },
   {
    "nome": "CelularIPhoneQuadros",
-   "valor": "6.031",
+   "valor": "10.818",
    "macros": {
-    "CelularIPhoneQuadros": "6.031"
+    "CelularIPhoneQuadros": "10.818"
    },
-   "bruto": 6031.0,
+   "bruto": 10818.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 0,
@@ -10281,7 +10443,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "quadros",
     "agg": "sum"
@@ -10289,11 +10451,11 @@
   },
   {
    "nome": "CelularIPhoneQuadrosComRosto",
-   "valor": "6.031",
+   "valor": "10.818",
    "macros": {
-    "CelularIPhoneQuadrosComRosto": "6.031"
+    "CelularIPhoneQuadrosComRosto": "10.818"
    },
-   "bruto": 6031.0,
+   "bruto": 10818.0,
    "ic_bruto": null,
    "dp_bruto": null,
    "casas": 0,
@@ -10307,7 +10469,7 @@
     "arquivo": "results/exp4_phone_latency.csv",
     "filtros": {
      "aparelho": "iPhone 17 Pro (512 GB)",
-     "versao_app": "1.0"
+     "versao_app": "2.1"
     },
     "coluna": "quadros_com_rosto",
     "agg": "sum"

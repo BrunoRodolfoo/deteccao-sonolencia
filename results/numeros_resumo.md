@@ -1,10 +1,10 @@
 # Números do artigo e do pôster (gerados de results/)
 
-Gerado em 05/11/2026 19:35 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
+Gerado em 06/11/2026 22:59 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
 
 Galaxy S23 Ultra: medido (macros `\CelularSamsung...`; `\ifSamsungMedido` verdadeiro).
 
-Total: 703 números (1343 macros).
+Total: 709 números (1349 macros).
 
 | Macro | Valor | Unidade | O que é | Arquivo de origem | Coluna / filtro |
 |---|---|---|---|---|---|
@@ -256,44 +256,50 @@ Total: 703 números (1343 macros).
 | `\MacPWATotalPcinquenta` | 12,7 | ms | PWA v1.0 no Chrome headless do Mac (20/09, vídeo 320x240): total por quadro p50 | `results/pwa_headless_mac_bench_20260920-190012.json` | chave `latencia_ms.total_por_quadro.p50` |
 | `\MacPWATotalPnoventaecinco` | 14,8 | ms | PWA v1.0 no Chrome headless do Mac (20/09, vídeo 320x240): total por quadro p95 | `results/pwa_headless_mac_bench_20260920-190012.json` | chave `latencia_ms.total_por_quadro.p95` |
 | `\MacPWAFPS` | 29,9 |  | PWA v1.0 no Chrome headless do Mac (20/09, vídeo 320x240): FPS médio | `results/pwa_headless_mac_bench_20260920-190012.json` | chave `fps_medio` |
-| `\CelularIPhoneNome` | iPhone 17 Pro (512 GB) |  | Exp. 4 nome do aparelho (iPhone 17 Pro (512 GB)) | `results/exp4_phone_latency.csv` | `aparelho` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneExecucoes` | 2 |  | Exp. 4 iPhone 17 Pro (512 GB): número de execuções de 60 s | `results/exp4_phone_latency.csv` | `(linhas)` [count] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneVersaoApp` | 1.0 |  | Exp. 4 iPhone 17 Pro (512 GB): versao_app (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `versao_app` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneSistema` | iOS 26.6.1 |  | Exp. 4 iPhone 17 Pro (512 GB): sistema (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `sistema` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneNavegador` | Chrome 154 (iOS, motor WebKit) |  | Exp. 4 iPhone 17 Pro (512 GB): navegador (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `navegador` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneDelegate` | GPU |  | Exp. 4 iPhone 17 Pro (512 GB): delegate_landmarker (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `delegate_landmarker` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneTotalPcinquenta` | 17,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `total_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneTotalPcinquentaMin` | 11,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `total_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneTotalPcinquentaMax` | 23,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `total_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneTotalPnoventaecinco` | 22,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `total_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneTotalPnoventaecincoMin` | 14,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `total_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneTotalPnoventaecincoMax` | 30,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `total_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLandmarkerPcinquenta` | 14,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLandmarkerPcinquentaMin` | 9,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLandmarkerPcinquentaMax` | 19,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLandmarkerPnoventaecinco` | 18,5 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLandmarkerPnoventaecincoMin` | 11,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLandmarkerPnoventaecincoMax` | 26,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneCNNPcinquenta` | 2,5 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneCNNPcinquentaMin` | 2,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneCNNPcinquentaMax` | 3,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneCNNPnoventaecinco` | 4,5 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneCNNPnoventaecincoMin` | 3,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneCNNPnoventaecincoMax` | 6,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLSTMPcinquenta` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `engine_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLSTMPcinquentaMin` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `engine_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLSTMPcinquentaMax` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `engine_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLSTMPnoventaecinco` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `engine_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLSTMPnoventaecincoMin` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `engine_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneLSTMPnoventaecincoMax` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `engine_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneFPS` | 50,2 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (median entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneFPSMin` | 40,5 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (min entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneFPSMax` | 60,0 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (max entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneTotalPcinquentaInteiro` | 17 | ms | Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro, em ms inteiros | `(derivado)` | `CelularIPhoneTotalPcinquenta` com CelularIPhoneTotalPcinquenta |
+| `\CelularIPhoneNome` | iPhone 17 Pro (512 GB) |  | Exp. 4 nome do aparelho (iPhone 17 Pro (512 GB)) | `results/exp4_phone_latency.csv` | `aparelho` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneExecucoes` | 3 |  | Exp. 4 iPhone 17 Pro (512 GB): número de execuções de 60 s | `results/exp4_phone_latency.csv` | `(linhas)` [count] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneVersaoApp` | 2.1 |  | Exp. 4 iPhone 17 Pro (512 GB): versao_app (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `versao_app` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneSistema` | iOS 26.6.1 |  | Exp. 4 iPhone 17 Pro (512 GB): sistema (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `sistema` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneNavegador` | Chrome 156 (iOS, motor WebKit) |  | Exp. 4 iPhone 17 Pro (512 GB): navegador (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `navegador` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneDelegate` | GPU |  | Exp. 4 iPhone 17 Pro (512 GB): delegate_landmarker (valores distintos entre as execuções, em ordem) | `results/exp4_phone_latency.csv` | `delegate_landmarker` (valores distintos) onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneTotalPcinquenta` | 11,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `total_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneTotalPcinquentaMin` | 11,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `total_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneTotalPcinquentaMax` | 12,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `total_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneTotalPnoventaecinco` | 14,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `total_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneTotalPnoventaecincoMin` | 13,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `total_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneTotalPnoventaecincoMax` | 14,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): total_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `total_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLandmarkerPcinquenta` | 9,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLandmarkerPcinquentaMin` | 9,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLandmarkerPcinquentaMax` | 10,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLandmarkerPnoventaecinco` | 11,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLandmarkerPnoventaecincoMin` | 11,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLandmarkerPnoventaecincoMax` | 11,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): landmarker_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `landmarker_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneCNNPcinquenta` | 2,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneCNNPcinquentaMin` | 2,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneCNNPcinquentaMax` | 2,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `cnn_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneCNNPnoventaecinco` | 3,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneCNNPnoventaecincoMin` | 3,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneCNNPnoventaecincoMax` | 3,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): cnn_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `cnn_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLSTMPcinquenta` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `engine_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLSTMPcinquentaMin` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `engine_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLSTMPcinquentaMax` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `engine_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLSTMPnoventaecinco` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `engine_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLSTMPnoventaecincoMin` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `engine_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneLSTMPnoventaecincoMax` | 1,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): engine_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `engine_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneMotorPcinquenta` | 0,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): motor_ms p50 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `motor_ms_p50` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneMotorPcinquentaMin` | 0,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): motor_ms p50 por quadro — menor execução | `results/exp4_phone_latency.csv` | `motor_ms_p50` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneMotorPcinquentaMax` | 0,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): motor_ms p50 por quadro — maior execução | `results/exp4_phone_latency.csv` | `motor_ms_p50` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneMotorPnoventaecinco` | 0,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): motor_ms p95 por quadro — mediana entre as execuções | `results/exp4_phone_latency.csv` | `motor_ms_p95` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneMotorPnoventaecincoMin` | 0,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): motor_ms p95 por quadro — menor execução | `results/exp4_phone_latency.csv` | `motor_ms_p95` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneMotorPnoventaecincoMax` | 0,0 | ms | Exp. 4 iPhone 17 Pro (512 GB): motor_ms p95 por quadro — maior execução | `results/exp4_phone_latency.csv` | `motor_ms_p95` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneFPS` | 60,0 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (median entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [median] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneFPSMin` | 60,0 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (min entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [min] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneFPSMax` | 60,3 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros por segundo (max entre execuções) | `results/exp4_phone_latency.csv` | `fps_medio` [max] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneTotalPcinquentaInteiro` | 11 | ms | Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro, em ms inteiros | `(derivado)` | `CelularIPhoneTotalPcinquenta` com CelularIPhoneTotalPcinquenta |
 | `\CelularIPhoneTotalPcinquentaMinInteiro` | 11 | ms | Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro (min), em ms inteiros | `(derivado)` | `CelularIPhoneTotalPcinquentaMin` com CelularIPhoneTotalPcinquentaMin |
-| `\CelularIPhoneTotalPcinquentaMaxInteiro` | 23 | ms | Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro (max), em ms inteiros | `(derivado)` | `CelularIPhoneTotalPcinquentaMax` com CelularIPhoneTotalPcinquentaMax |
-| `\CelularIPhoneQuadros` | 6.031 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros somados das execuções | `results/exp4_phone_latency.csv` | `quadros` [sum] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
-| `\CelularIPhoneQuadrosComRosto` | 6.031 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros com rosto | `results/exp4_phone_latency.csv` | `quadros_com_rosto` [sum] onde aparelho=iPhone 17 Pro (512 GB), versao_app=1.0 |
+| `\CelularIPhoneTotalPcinquentaMaxInteiro` | 12 | ms | Exp. 4 iPhone 17 Pro (512 GB): total p50 por quadro (max), em ms inteiros | `(derivado)` | `CelularIPhoneTotalPcinquentaMax` com CelularIPhoneTotalPcinquentaMax |
+| `\CelularIPhoneQuadros` | 10.818 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros somados das execuções | `results/exp4_phone_latency.csv` | `quadros` [sum] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
+| `\CelularIPhoneQuadrosComRosto` | 10.818 |  | Exp. 4 iPhone 17 Pro (512 GB): quadros com rosto | `results/exp4_phone_latency.csv` | `quadros_com_rosto` [sum] onde aparelho=iPhone 17 Pro (512 GB), versao_app=2.1 |
 | `\CelularIPhoneTaxaRosto` | 100,0 | % | Exp. 4 iPhone 17 Pro (512 GB): fração de quadros com rosto detectado | `(derivado)` | `CelularIPhoneQuadrosComRosto / CelularIPhoneQuadros * 100` com CelularIPhoneQuadrosComRosto, CelularIPhoneQuadros |
 | `\CelularSamsungNome` | Samsung Galaxy S23 Ultra |  | Exp. 4 nome do aparelho (Samsung Galaxy S23 Ultra) | `results/exp4_phone_latency.csv` | `aparelho` (valores distintos) onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
 | `\CelularSamsungExecucoes` | 3 |  | Exp. 4 Samsung Galaxy S23 Ultra: número de execuções de 60 s | `results/exp4_phone_latency.csv` | `(linhas)` [count] onde aparelho=Samsung Galaxy S23 Ultra, versao_app=2.1 |
@@ -714,10 +720,10 @@ Total: 703 números (1343 macros).
 
 ## Conferência automática
 
-Executada em 05/11/2026 20:01 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
+Executada em 06/11/2026 22:59 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
 
-- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 703 de 703** números (1343 macros em `paper/numeros.tex`, 1343 no JSON; sobrando só no TeX: 0; só no JSON: 0).
-- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 565; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 121.
+- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 709 de 709** números (1349 macros em `paper/numeros.tex`, 1349 no JSON; sobrando só no TeX: 0; só no JSON: 0).
+- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 569; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 123.
 - Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — tectonic rc=0; 0 'Undefined control sequence'.
 - Divergências: 0.
 
@@ -974,43 +980,49 @@ Executada em 05/11/2026 20:01 por `src/experiments/conferir_numeros.py` (leitura
 | `\MacPWATotalPnoventaecinco` | 14,8 | ok | — |
 | `\MacPWAFPS` | 29,9 | ok | — |
 | `\CelularIPhoneNome` | iPhone 17 Pro (512 GB) | ok | sim |
-| `\CelularIPhoneExecucoes` | 2 | ok | — |
-| `\CelularIPhoneVersaoApp` | 1.0 | ok | sim |
+| `\CelularIPhoneExecucoes` | 3 | ok | — |
+| `\CelularIPhoneVersaoApp` | 2.1 | ok | sim |
 | `\CelularIPhoneSistema` | iOS 26.6.1 | ok | sim |
-| `\CelularIPhoneNavegador` | Chrome 154 (iOS, motor WebKit) | ok | sim |
+| `\CelularIPhoneNavegador` | Chrome 156 (iOS, motor WebKit) | ok | sim |
 | `\CelularIPhoneDelegate` | GPU | ok | sim |
-| `\CelularIPhoneTotalPcinquenta` | 17,0 | ok | — |
+| `\CelularIPhoneTotalPcinquenta` | 11,0 | ok | — |
 | `\CelularIPhoneTotalPcinquentaMin` | 11,0 | ok | sim |
-| `\CelularIPhoneTotalPcinquentaMax` | 23,0 | ok | sim |
-| `\CelularIPhoneTotalPnoventaecinco` | 22,0 | ok | — |
-| `\CelularIPhoneTotalPnoventaecincoMin` | 14,0 | ok | sim |
-| `\CelularIPhoneTotalPnoventaecincoMax` | 30,0 | ok | sim |
-| `\CelularIPhoneLandmarkerPcinquenta` | 14,0 | ok | — |
+| `\CelularIPhoneTotalPcinquentaMax` | 12,0 | ok | sim |
+| `\CelularIPhoneTotalPnoventaecinco` | 14,0 | ok | — |
+| `\CelularIPhoneTotalPnoventaecincoMin` | 13,0 | ok | sim |
+| `\CelularIPhoneTotalPnoventaecincoMax` | 14,0 | ok | sim |
+| `\CelularIPhoneLandmarkerPcinquenta` | 9,0 | ok | — |
 | `\CelularIPhoneLandmarkerPcinquentaMin` | 9,0 | ok | sim |
-| `\CelularIPhoneLandmarkerPcinquentaMax` | 19,0 | ok | sim |
-| `\CelularIPhoneLandmarkerPnoventaecinco` | 18,5 | ok | — |
+| `\CelularIPhoneLandmarkerPcinquentaMax` | 10,0 | ok | sim |
+| `\CelularIPhoneLandmarkerPnoventaecinco` | 11,0 | ok | — |
 | `\CelularIPhoneLandmarkerPnoventaecincoMin` | 11,0 | ok | sim |
-| `\CelularIPhoneLandmarkerPnoventaecincoMax` | 26,0 | ok | sim |
-| `\CelularIPhoneCNNPcinquenta` | 2,5 | ok | — |
+| `\CelularIPhoneLandmarkerPnoventaecincoMax` | 11,0 | ok | sim |
+| `\CelularIPhoneCNNPcinquenta` | 2,0 | ok | — |
 | `\CelularIPhoneCNNPcinquentaMin` | 2,0 | ok | sim |
-| `\CelularIPhoneCNNPcinquentaMax` | 3,0 | ok | sim |
-| `\CelularIPhoneCNNPnoventaecinco` | 4,5 | ok | — |
+| `\CelularIPhoneCNNPcinquentaMax` | 2,0 | ok | sim |
+| `\CelularIPhoneCNNPnoventaecinco` | 3,0 | ok | — |
 | `\CelularIPhoneCNNPnoventaecincoMin` | 3,0 | ok | sim |
-| `\CelularIPhoneCNNPnoventaecincoMax` | 6,0 | ok | sim |
+| `\CelularIPhoneCNNPnoventaecincoMax` | 3,0 | ok | sim |
 | `\CelularIPhoneLSTMPcinquenta` | 1,0 | ok | — |
 | `\CelularIPhoneLSTMPcinquentaMin` | 1,0 | ok | sim |
 | `\CelularIPhoneLSTMPcinquentaMax` | 1,0 | ok | sim |
 | `\CelularIPhoneLSTMPnoventaecinco` | 1,0 | ok | — |
 | `\CelularIPhoneLSTMPnoventaecincoMin` | 1,0 | ok | sim |
 | `\CelularIPhoneLSTMPnoventaecincoMax` | 1,0 | ok | sim |
-| `\CelularIPhoneFPS` | 50,2 | ok | — |
-| `\CelularIPhoneFPSMin` | 40,5 | ok | sim |
-| `\CelularIPhoneFPSMax` | 60,0 | ok | sim |
-| `\CelularIPhoneTotalPcinquentaInteiro` | 17 | ok | — |
+| `\CelularIPhoneMotorPcinquenta` | 0,0 | ok | — |
+| `\CelularIPhoneMotorPcinquentaMin` | 0,0 | ok | sim |
+| `\CelularIPhoneMotorPcinquentaMax` | 0,0 | ok | sim |
+| `\CelularIPhoneMotorPnoventaecinco` | 0,0 | ok | — |
+| `\CelularIPhoneMotorPnoventaecincoMin` | 0,0 | ok | sim |
+| `\CelularIPhoneMotorPnoventaecincoMax` | 0,0 | ok | sim |
+| `\CelularIPhoneFPS` | 60,0 | ok | — |
+| `\CelularIPhoneFPSMin` | 60,0 | ok | sim |
+| `\CelularIPhoneFPSMax` | 60,3 | ok | sim |
+| `\CelularIPhoneTotalPcinquentaInteiro` | 11 | ok | — |
 | `\CelularIPhoneTotalPcinquentaMinInteiro` | 11 | ok | — |
-| `\CelularIPhoneTotalPcinquentaMaxInteiro` | 23 | ok | — |
-| `\CelularIPhoneQuadros` | 6.031 | ok | — |
-| `\CelularIPhoneQuadrosComRosto` | 6.031 | ok | — |
+| `\CelularIPhoneTotalPcinquentaMaxInteiro` | 12 | ok | — |
+| `\CelularIPhoneQuadros` | 10.818 | ok | — |
+| `\CelularIPhoneQuadrosComRosto` | 10.818 | ok | — |
 | `\CelularIPhoneTaxaRosto` | 100,0 | ok | — |
 | `\CelularSamsungNome` | Samsung Galaxy S23 Ultra | ok | sim |
 | `\CelularSamsungExecucoes` | 3 | ok | — |

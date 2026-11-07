@@ -1,0 +1,115 @@
+{
+  "tipo": "benchmark_pwa",
+  "versao_app": "2.1",
+  "detector": "v2.1: olhos (EAR+blendshape) + bocejo (jawOpen) + cabeça (matriz de pose) -> nível 0-100 (PERCLOS só com fechamentos >= 0,5 s; LSTM só soma com os sinais visíveis >= 40)",
+  "data": "2026-11-07T01:57:52.220Z",
+  "aparelho": {
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/156.0.8078.54 Mobile/15E148 Safari/604.1",
+    "hardwareConcurrency": 4,
+    "deviceMemoryGB": null,
+    "platform": "iPhone",
+    "screen": "402x874@3",
+    "secureContext": true,
+    "crossOriginIsolated": false,
+    "wasmSimd": true,
+    "webgl2": true,
+    "audioSession": true,
+    "vibrate": false,
+    "wakeLock": true,
+    "language": "pt-BR",
+    "date": "2026-11-07T01:57:52.221Z",
+    "delegate": "GPU",
+    "video": "480x640",
+    "modelo_ua_ch": "",
+    "versao_plataforma": ""
+  },
+  "delegate_landmarker": "GPU",
+  "modelos": {
+    "landmarker": "face_landmarker float16 v1 (blendshapes + matriz)",
+    "eye_state": "eye_state_int8.tflite",
+    "blink_temporal": "blink_temporal.tflite"
+  },
+  "duracao_s": 60.008,
+  "quadros": 3616,
+  "quadros_com_rosto": 3616,
+  "fps_medio": 60.25863218237568,
+  "latencia_ms": {
+    "landmarker": {
+      "n": 3616,
+      "mean": 9.602323008849252,
+      "p50": 10,
+      "p95": 11,
+      "max": 17
+    },
+    "cnn_olhos_2olhos": {
+      "n": 3616,
+      "mean": 2.2549778761059693,
+      "p50": 2,
+      "p95": 3.0000000000582077,
+      "max": 32
+    },
+    "temporal": {
+      "n": 434,
+      "mean": 1.0000000000004023,
+      "p50": 1,
+      "p95": 1.0000000000582077,
+      "max": 1.0000000000582077
+    },
+    "motor_v2": {
+      "n": 3616,
+      "mean": 0.040929203540016175,
+      "p50": 0,
+      "p95": 0,
+      "max": 1.0000000000582077
+    },
+    "total_por_quadro": {
+      "n": 3616,
+      "mean": 12.055862831857956,
+      "p50": 12,
+      "p95": 14.000000000058208,
+      "max": 44
+    }
+  },
+  "calibracao": {
+    "earMedian": 0.27033031902373605,
+    "earThr": 0.20274773926780204,
+    "blend0": 0.22414052858948708,
+    "jaw0": 0.022688494063913822,
+    "mar0": 0.005617246852348724,
+    "pitch0": 0.607090085853022,
+    "yaw0": -2.316415383297117,
+    "roll0": -2.5155277442451576,
+    "frames": 600,
+    "closedFrac": 0.01,
+    "warnings": []
+  },
+  "som": {
+    "volume_alarme_pct": 20,
+    "volume_fonte": "padrão",
+    "ganho": 0.04000000000000001,
+    "audio": "running",
+    "audio_session": "playback"
+  },
+  "eventos": {
+    "bocejo": 0,
+    "queda": 0,
+    "cabeceio": 0,
+    "fechamento": 0,
+    "microssono": 1,
+    "cabeca_baixa": 0
+  },
+  "alarmes": 1,
+  "avisos": 0,
+  "dings": 0,
+  "tempo_por_estado_s": {
+    "ALERTA": 5.999000000000018,
+    "ATENÇÃO": 52.27600000000071,
+    "SONOLENTO": 1.732999999999998
+  },
+  "nivel_max": 75,
+  "nivel_medio": 40.419302313234354,
+  "perclos_final": 0.01793094254099452,
+  "piscadas_no_periodo": 21,
+  "quadros_em_alerta": 120,
+  "ear_medio": 0.21241270966230213
+}
