@@ -133,8 +133,24 @@ Para essas quatro, os metadados vêm do Crossref (comentário no `refs.bib`) e a
 
 **perkins2023**: Perkins, Sitaula, Burke e Marzbanrad, IEEE Transactions on Intelligent Vehicles 8(2):1319-1338, 2023, DOI 10.1109/TIV.2022.3224690 (arXiv:2109.08355).
 - Revisão do que falta para levar a previsão de sonolência do motorista ao uso real.
-- O que o artigo usa (Seções I e II): só 15 dos 126 estudos revisados usam dados de estrada; muitos estudos põem trechos da mesma pessoa no treino e no teste; os estudos comportamentais costumam pedir aos voluntários que encenem a sonolência.
+- O que o artigo usa (Seções I e II): só 15 dos 126 estudos revisados têm dados de estrada ("only 15 out of 126 had on-road data", seção VI-J); os 126 são de todas as modalidades (43 fisiológicos, 40 comportamentais, 15 do veículo e 28 híbridos); muitos estudos põem trechos da mesma pessoa no treino e no teste ("often used portions of each subject's data in both test and training sets", VI-G); em estrada, estudos comportamentais com frequência pediram sonolência encenada ("behavioural studies often asked subjects to 'act' drowsy", VI-J).
+- Não diz que "a maior parte dos detectores por vídeo" usa sonolência encenada: para bases atuadas, o artigo cita ghoddoosian2019 ("datasets that were either private or acted").
+- Conferido em 08/11/2026 no texto do preprint (arXiv:2109.08355 v1, 2021). A versão da revista é maior (193 referências contra 153) e não estava acessível; por isso a referência traz a nota do preprint.
 - É a referência que apoia a lacuna de método da Introdução (pouca sonolência real e partições que misturam a mesma pessoa).
+
+**tamanani2021**: Tamanani, Muresan e Al-Dweik, IEEE Sensors Letters 5(5), 2021. Acrescentada em 07/11/2026; conferida em 08/11/2026.
+- CNN que classifica quadros da UTA-RLDD, com validação cruzada estratificada de 5 partes formadas sobre imagens, sem menção a separar pessoas ou vídeos.
+- O resumo informa 96,8%; no corpo do texto (preprint TechRxiv, DOI 10.36227/techrxiv.12195993), a média das partes é 91,8%, valor que Magán et al. também citam. O artigo diz só que "passa de 90%".
+
+**magan2022**: Magán, Sesmero, Alonso-Weber e Sanchis, Applied Sciences 12(3):1145, 2022. Acrescentada em 07/11/2026; conferida em 08/11/2026.
+- Na UTA-RLDD, com validação cruzada nos 5 folds oficiais (que separam pessoas); o vídeo é "sonolento" se o sistema der ao menos um alarme.
+- Alternativa II (aprendizado profundo com lógica fuzzy), Tabela 11: 93% dos vídeos acordados e 35% dos sonolentos (acurácia geral de 0,63).
+
+**euroncap2026**: Euro NCAP, protocolo "Safe Driving: Driver Engagement", versão 1.2 (julho de 2026). Acrescentada em 07/11/2026; conferida em 08/11/2026.
+- Item 1.3.3: microssono é um fechamento curto dos olhos, de 1 a 2 s; item 1.3.4: dormindo, olhos fechados por 3 s ou mais.
+
+**ue2021ddaw**: Regulamento Delegado (UE) 2021/1341 (aviso de sonolência e atenção do condutor). Acrescentada em 07/11/2026; conferida em 08/11/2026.
+- Anexo I, ponto 3.3.1: o sistema deve avisar no nível equivalente a KSS 8 ou mais e pode avisar em KSS 7. Os sistemas podem usar meios indiretos, como o padrão de direção; o regulamento não trata de câmeras.
 
 **sikander2019**: IEEE T-ITS 20(6):2339-2352. Revisão de sistemas de detecção de fadiga; nota que resultados promissores são obtidos "em ambientes restritos" e que muito progresso ainda é necessário.
 

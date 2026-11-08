@@ -4,9 +4,10 @@ Artigo de resultados do TCC **"Detecção de Sonolência em Dispositivos Móveis
 Generalização entre Sonolência Atuada e Real"** (PUCPR, Experiência Criativa: Projeto Transformador II,
 Turma 8ºA, Equipe 14). Formato IEEE *conference* (`IEEEtran`, duas colunas, de 6 a 8 páginas, português).
 
-**Estado (07/11/2026): versão final revisada.** Depois de uma banca simulada, o texto foi reescrito com a
+**Estado (08/11/2026): versão final revisada.** Depois de uma banca simulada, o texto foi reescrito com a
 leitura nova da PP1 (controles do Exp. 5b em `results/exp5b_robustez.md`), do vazamento e da comparação entre a
-regra e os modelos; uma segunda banca simulada, em 07/11, corrigiu o mecanismo do PP1 e a comparação do app.
+regra e os modelos; uma segunda banca simulada, em 07/11, corrigiu o mecanismo do PP1 e a comparação do app, e
+uma revisão em 08/11 corrigiu frases que diziam mais que os dados ou as fontes (ver "Histórico").
 São 8 páginas, 34 referências (nenhuma marcada `UNVERIFIED`), as Tabelas I a V e 3 figuras.
 O texto não usa travessões. Nenhum número de resultado é digitado no `.tex`: todos vêm de `numeros.tex` (seção
 "Como os números são gerados").
@@ -32,7 +33,7 @@ Figuras usadas pelo artigo (todas em `figures/`):
 | Fig. 3, Exp. 6 (PP3): SNR do EAR e taxa de disparo | `fig_exp6_noite.pdf` | idem |
 
 Tabelas: I, bases; II, controles da queda B − C do Exp. 5b (normalização, IC com os motoristas do DMD
-reamostrados, vídeos fora da referência, B com 13 sujeitos); III, Exp. 1 e 2; IV, Exp. 4 (a coluna do Galaxy
+reamostrados, vídeos fora da referência, B com 13 sujeitos e 510 janelas); III, Exp. 1 e 2; IV, Exp. 4 (a coluna do Galaxy
 S23 Ultra só aparece com `\ifSamsungMedido` verdadeiro); V, validação do protótipo. Nenhuma figura ou tabela
 mostra rosto (DMD, UTA-RLDD e NITYMED têm restrições de imagem; ver `data/README.md`).
 
@@ -50,7 +51,7 @@ sinal de uma piscada, protocolos de partição) e as cópias PNG sem uso foram p
 | III | bases (Tabela I), troca do NTHU-DDD, DMD (alerta = direção segura da s2), NITYMED (autenticidade não documentada), KSS da UTA-RLDD | `results/exp5_caracteristicas.md`, `results/exp6_nitymed_ficha.md` |
 | IV | extração (MediaPipe 0.10.21), detector validado contra a anotação do DMD, janelas de 10 s, rótulos, centragem com referência separada, modelos, protótipo PWA 2.1 (Fig. 1) | `results/exp5_caracteristicas.md`, `app/pwa/README.md` |
 | V | protocolo, métricas, IC por *bootstrap* de sujeitos, reprodutibilidade | `results/exp5b_transferencia.md`, `results/exp6_noite.md` |
-| VI-A | Exp. 5b (PP1, Fig. 2) e controles da queda (Tabela II): referência no vídeo KSS 5, sem centragem, vídeos fora da referência, B com 13 sujeitos, alerta da s1 | `results/exp5b_transferencia.md`, `results/exp5b_robustez.md` |
+| VI-A | Exp. 5b (PP1, Fig. 2) e controles da queda (Tabela II): referência no vídeo KSS 5, sem centragem, vídeos fora da referência, B com 13 sujeitos e 510 janelas, alerta da s1 | `results/exp5b_transferencia.md`, `results/exp5b_robustez.md` |
 | VI-B | Exp. 1, 2 e 5a (Tabela III) e o vazamento no cenário do Exp. 5b | `results/exp1_intra.md`, `results/exp2_leakage.md`, `results/exp5a_validacao.md`, `results/exp5b_robustez.md` |
 | VI-C | Exp. 4 (PP2, Tabela IV): quantização e tempo por quadro no celular | `results/exp4_*.csv`, `results/exp4_phone_latency.md` |
 | VI-D | Exp. 3 por condição; Exp. 6 (noite × movimento, disparo; Fig. 3); óculos no DMD | `results/exp3_eye_state.md`, `results/exp6_noite.md`, `results/exp5b_transferencia.md` (seção 11) |
@@ -95,7 +96,7 @@ Diagrama TikZ: `cd figures && tectonic fig_pipeline.tex` (detalhes em `figures/R
   tabela macro → valor → arquivo → coluna e filtro vai para `results/numeros_resumo.md`.
 - `src/experiments/conferir_numeros.py` recalcula cada número com uma implementação independente,
   confere `numeros.tex` × `numeros.json`, procura o valor no `.md` de resultados e compila um documento
-  com todos os macros. Estado em 07/11/2026: 713 números (1.353 macros), 0 divergências.
+  com todos os macros. Estado em 08/11/2026: 716 números (1.358 macros), 0 divergências.
 - Convenções: percentuais **sem** o símbolo `%` (escreva `\ExpCincoBCSensJanela\%`); diferenças em pontos
   percentuais; `\NomeIC` = "[inf; sup]", `\NomeComIC` = "valor [inf; sup]", `\NomeMDP` = "média ± dp";
   negativos com o sinal de menos tipográfico. Depois de um macro seguido de palavra, use `{}`
@@ -200,3 +201,13 @@ Em 26/10/2026, depois da banca simulada:
   Exp. 2 foi descrita como nos folds oficiais. Entraram quatro referências (Magán et al., Tamanani et al., o
   protocolo do Euro NCAP e o regulamento europeu de alerta de sonolência), e a página do Kaggle do NITYMED deixou
   de ser citada. Resumo com 247 palavras; 8 páginas e 34 referências.
+- 08/11/2026: revisão das afirmações contra os dados e as fontes. Nas mesmas 24 pessoas, a comparação do app com
+  os detectores passou a usar a diferença pareada (`src/experiments/comparar_app_uta.py`, macro `AppCompBRFDif`):
+  só o RF treinado na UTA-RLDD com centragem fica acima do app. O controle de volume do treino passou a ser o de 13
+  sujeitos e 510 janelas (macros `ExpCincoB...TrezeQuinhentasQuedaAUCJanela`), que explica pouco no RF e cerca de
+  um terço na RL. Perkins et al. (os 126 estudos são de todas as modalidades; "often", em estudos em estrada, e
+  números conferidos no preprint arXiv:2109.08355), Tamanani et al. (96,8% só no resumo; o corpo dá 91,8%) e Magán
+  et al. (mesmos folds oficiais) passaram a ser citados como as fontes dizem; o resumo diz que a perda do RF some
+  com outra referência na UTA-RLDD (com a s2 do DMD ela continua); a pose saiu da Fig. 1 e da Seção IV-A, porque
+  não entra nas 11 características; a Tabela IV ganhou nota sobre a CNN e a LSTM nas medições; a ética cita a
+  telemetria do MediaPipe. Resumo com 247 palavras; 8 páginas e 34 referências.

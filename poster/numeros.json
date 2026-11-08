@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-07T00:39:03",
+ "gerado_em": "2026-11-08T20:20:28",
  "gerado_por": "src/experiments/make_paper_numbers.py",
  "convencoes": "percentuais sem %; diferenças em pp; IC 95% entre colchetes; texto com vírgula decimal",
  "samsung_medido": true,
@@ -1257,6 +1257,7 @@
   "ExpCincoBOpRegraSensCCentrada": "16,4",
   "ExpCincoBOpRegraSensBCentrada": "24,2",
   "ExpCincoBTrezeQuedaAUCJanela": "9,3",
+  "ExpCincoBTrezeQuinhentasQuedaAUCJanela": "9,5",
   "ExpCincoBLRRefAltAUCJanelaB": "73,7",
   "ExpCincoBLRRefAltAUCJanelaBIC": "[69,3; 78,0]",
   "ExpCincoBLRRefAltAUCJanelaBComIC": "73,7 [69,3; 78,0]",
@@ -1288,6 +1289,7 @@
   "ExpCincoBLROpRegraSensCCentrada": "24,7",
   "ExpCincoBLROpRegraSensBCentrada": "27,3",
   "ExpCincoBLRTrezeQuedaAUCJanela": "7,0",
+  "ExpCincoBLRTrezeQuinhentasQuedaAUCJanela": "6,7",
   "ExpCincoBJanelaCincoQuedaAUCJanela": "11,8",
   "ExpCincoBJanelaCincoQuedaAUCJanelaIC": "[8,4; 15,7]",
   "ExpCincoBJanelaCincoQuedaAUCJanelaComIC": "11,8 [8,4; 15,7]",
@@ -1356,7 +1358,10 @@
   "AppCompBRFSemNormComIC": "0,806 [0,686; 0,927]",
   "AppCompRegra": "0,853",
   "AppCompRegraIC": "[0,754; 0,944]",
-  "AppCompRegraComIC": "0,853 [0,754; 0,944]"
+  "AppCompRegraComIC": "0,853 [0,754; 0,944]",
+  "AppCompBRFDif": "0,141",
+  "AppCompBRFDifIC": "[0,042; 0,248]",
+  "AppCompBRFDifComIC": "0,141 [0,042; 0,248]"
  },
  "entradas": [
   {
@@ -21848,6 +21853,30 @@
    }
   },
   {
+   "nome": "ExpCincoBTrezeQuinhentasQuedaAUCJanela",
+   "valor": "9,5",
+   "macros": {
+    "ExpCincoBTrezeQuinhentasQuedaAUCJanela": "9,5"
+   },
+   "bruto": 9.515222416760253,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "pp",
+   "texto": false,
+   "descricao": "Exp. 5b RF: queda B − C com B treinado em 13 sujeitos e 510 janelas, o tamanho do treino de C (mediana dos sorteios − C), pp de AUC",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "ExpCincoBTrezeQuinhentasAUCJanelaB",
+     "ExpCincoBAUCJanelaC"
+    ],
+    "expr": "ExpCincoBTrezeQuinhentasAUCJanelaB - 100*ExpCincoBAUCJanelaC"
+   }
+  },
+  {
    "nome": "ExpCincoBLRRefAltAUCJanelaB",
    "valor": "73,7",
    "macros": {
@@ -22380,6 +22409,30 @@
      "ExpCincoBLRAUCJanelaC"
     ],
     "expr": "ExpCincoBLRTrezeAUCJanelaB - 100*ExpCincoBLRAUCJanelaC"
+   }
+  },
+  {
+   "nome": "ExpCincoBLRTrezeQuinhentasQuedaAUCJanela",
+   "valor": "6,7",
+   "macros": {
+    "ExpCincoBLRTrezeQuinhentasQuedaAUCJanela": "6,7"
+   },
+   "bruto": 6.65703862075425,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "pp",
+   "texto": false,
+   "descricao": "Exp. 5b RL: queda B − C com B treinado em 13 sujeitos e 510 janelas, o tamanho do treino de C (mediana dos sorteios − C), pp de AUC",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "ExpCincoBLRTrezeQuinhentasAUCJanelaB",
+     "ExpCincoBLRAUCJanelaC"
+    ],
+    "expr": "ExpCincoBLRTrezeQuinhentasAUCJanelaB - 100*ExpCincoBLRAUCJanelaC"
    }
   },
   {
@@ -23600,6 +23653,40 @@
     "filtros": {
      "detector": "regra_rotulo_DMD",
      "medida": "fracao_janelas"
+    }
+   }
+  },
+  {
+   "nome": "AppCompBRFDif",
+   "valor": "0,141",
+   "macros": {
+    "AppCompBRFDif": "0,141",
+    "AppCompBRFDifIC": "[0,042; 0,248]",
+    "AppCompBRFDifComIC": "0,141 [0,042; 0,248]"
+   },
+   "bruto": 0.1414930555555555,
+   "ic_bruto": [
+    0.0416666666666666,
+    0.2482855902777777
+   ],
+   "dp_bruto": null,
+   "casas": 3,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "AUC por vídeo do RF treinado na UTA-RLDD, com centragem, menos a do app (bootstrap pareado de sujeitos)",
+   "evidencia": "results/app_comparacao_uta.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/app_comparacao_uta.csv",
+    "coluna": "dif_app",
+    "ic": [
+     "dif_app_ic95_inf",
+     "dif_app_ic95_sup"
+    ],
+    "filtros": {
+     "detector": "B_treino_UTA_RF",
+     "medida": "principal"
     }
    }
   }

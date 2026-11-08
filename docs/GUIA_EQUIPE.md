@@ -322,7 +322,7 @@ como "melhorar a escrita". Elogio também precisa dizer onde.
 Quase tudo já tem resposta no texto:
 - Rótulos de natureza diferente (evento encenado no DMD, KSS autorrelatado na UTA-RLDD): limitação (1) do artigo.
 - A queda do RF depende da normalização: Tabela II. A RL perde de 5,4 a 9,8 pontos por janela em todas as formas de normalizar, e o achado mais firme é a intensidade (48,4% das janelas sonolentas reais).
-- Volume do treino (o DMD tem 510 janelas de 13 motoristas): com B treinado em 13 sujeitos, a queda continua (9,3 no RF e 7,0 na RL).
+- Volume do treino (o DMD tem 510 janelas de 13 motoristas): com B treinado em 13 sujeitos e 510 janelas, a queda continua (9,5 no RF e 6,7 na RL). O volume explica pouco no RF e cerca de um terço na RL.
 - Vazamento e literatura: a inflação vem de janelas do mesmo vídeo nos dois lados; os 90% do NTHU-DDD foram medidos com outras pessoas no teste.
 - Regra × modelos: no mesmo falso alarme, a RL do DMD acha tantas janelas sonolentas quanto a regra.
 - NITYMED sem classe alerta: ele só entra como condição noite, sem acurácia.

@@ -997,6 +997,11 @@ def robustez():
             {"tipo": "derivado", "deps": [f"ExpCincoB{mt}TrezeAUCJanelaB", f"ExpCincoB{mt}AUCJanelaC"],
              "expr": f"ExpCincoB{mt}TrezeAUCJanelaB - 100*ExpCincoB{mt}AUCJanelaC"}, casas=1, unidade="pp",
             descricao=f"Exp. 5b {mn}: queda B − C com B treinado em 13 sujeitos (mediana dos sorteios − C), pp de AUC")
+        add(f"ExpCincoB{mt}TrezeQuinhentasQuedaAUCJanela",
+            {"tipo": "derivado", "deps": [f"ExpCincoB{mt}TrezeQuinhentasAUCJanelaB", f"ExpCincoB{mt}AUCJanelaC"],
+             "expr": f"ExpCincoB{mt}TrezeQuinhentasAUCJanelaB - 100*ExpCincoB{mt}AUCJanelaC"}, casas=1, unidade="pp",
+            descricao=f"Exp. 5b {mn}: queda B − C com B treinado em 13 sujeitos e 510 janelas, o tamanho do treino de C "
+                      "(mediana dos sorteios − C), pp de AUC")
     # janela de 5 s (sensibilidade), nos dois modelos
     for mod, mt in [("RF", ""), ("LR", "LR")]:
         add(f"ExpCincoB{mt}JanelaCincoQuedaAUCJanela",
@@ -1057,6 +1062,9 @@ def app_comparacao():
         add(nome, {"tipo": "csv", "arquivo": f, "coluna": "auc", "ic": ["ic95_inf", "ic95_sup"],
                    "filtros": dict(detector=det, medida=med)}, casas=3, evidencia=md,
             descricao=f"AUC por vídeo nas 24 pessoas do teste do app: {d}")
+    add("AppCompBRFDif", {"tipo": "csv", "arquivo": f, "coluna": "dif_app", "ic": ["dif_app_ic95_inf", "dif_app_ic95_sup"],
+                          "filtros": dict(detector="B_treino_UTA_RF", medida="principal")}, casas=3, evidencia=md,
+        descricao="AUC por vídeo do RF treinado na UTA-RLDD, com centragem, menos a do app (bootstrap pareado de sujeitos)")
 
 
 def app_uta():

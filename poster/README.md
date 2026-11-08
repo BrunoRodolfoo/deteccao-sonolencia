@@ -160,9 +160,10 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
    institucional e não tinha prazo de resposta. O DMD cumpre o mesmo papel (sono encenado, rótulo por quadro) e
    tem licença para pesquisa. A troca está registrada como alteração do planejamento.
 2. **A queda do PP1 não pode ser só câmera e ambiente?** Pode ter parte disso: com um só par de bases, a troca
-   muda câmera, cenário e tipo de rótulo ao mesmo tempo. O volume do treino explica pouco: com o modelo da UTA
-   treinado com só 13 pessoas, como o DMD, a perda continua (9,3 pontos no RF e 7,0 na RL). O que aparece em todos os controles
-   é o modelo do DMD deixar passar a maior parte das janelas sonolentas reais.
+   muda câmera, cenário e tipo de rótulo ao mesmo tempo. Com o modelo da UTA treinado com só 13 pessoas e 510
+   janelas, como o DMD, a perda continua (9,5 pontos no RF e 6,7 na RL): o volume do treino explica pouco no RF e
+   cerca de um terço na RL. O que aparece em todos os controles é o modelo do DMD deixar passar a maior parte das
+   janelas sonolentas reais.
 3. **Por que o RF perde 10,9 e depois quase nada?** Na UTA-RLDD, as janelas alertas saem do mesmo vídeo usado
    como referência na normalização, e o RF treinado lá aproveita isso. Com a referência no vídeo de pouca vigilância (1 na
    figura) ou sem centragem (2), a AUC do RF treinado na UTA cai de 80,1 para 68,4 e 69,4, e a perda vira 2,3 [−2,5; 6,8] e
@@ -217,9 +218,11 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
     testada no MRL cai de AUC 93,4 para 65,1; no DMD, o detector de piscadas falhou num dos três motoristas de
     óculos.
 16. **Como o app se compara com outros trabalhos na UTA-RLDD?** Magán et al. (2022), com o alarme decidindo o
-    vídeo, acertam 93 % dos vídeos acordados e 35 % dos sonolentos, em outra divisão das pessoas. O app deu alarme
-    em 2 de 24 acordados e levou 15 de 24 sonolentos ao vermelho. Com 24 pessoas e divisões diferentes, não dá
-    para dizer quem é melhor; nas mesmas pessoas, o app não se distingue dos detectores que testamos.
+    vídeo e treino nos outros folds oficiais, acertam 93 % dos vídeos acordados e 35 % dos sonolentos, nas 60
+    pessoas. O app, sem treino, deu alarme em 2 de 24 acordados e levou 15 de 24 sonolentos ao vermelho. Com
+    amostras e condições diferentes, não dá para dizer quem é melhor. Nas mesmas 24 pessoas, a única diferença
+    detectável para o app é a do RF treinado na própria UTA-RLDD com centragem, que fica acima (0,141 [0,042; 0,248]
+    de AUC, no bootstrap pareado).
 17. **Por que KSS 8 e 9 como sonolento, e 1 s para o microssono?** KSS 8 é o nível a partir do qual o
     regulamento europeu de alerta de sonolência (UE 2021/1341) exige aviso. O microssono dura de 1 a 15 s, e o
     protocolo do Euro NCAP trata 1 a 2 s de olhos fechados como microssono.

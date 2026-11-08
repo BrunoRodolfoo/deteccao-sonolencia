@@ -14,6 +14,8 @@ com os dois vídeos). Detectores:
     escore médio das janelas do vídeo (results/exp5b_predicoes_video.csv, esquema B3);
   - regra do rótulo do DMD aplicada aos nossos sinais (fechamento de 0,5 s ou mais ou bocejo): fração de janelas
     marcadas no vídeo (results/exp6_noite_janelas.csv).
+Para cada detector, também a diferença de AUC para o app (% do tempo fora do verde), com IC 95% pelo bootstrap
+pareado: os mesmos sorteios de pessoas nos dois detectores.
 O app não foi treinado nem ajustado nessas pessoas; B foi treinado na UTA-RLDD (nos outros folds), e a sua versão
 centrada usa a referência tirada do próprio vídeo alerta (ver results/exp5b_robustez.md).
 
@@ -34,10 +36,15 @@ CSV_OUT = RES / "app_comparacao_uta.csv"
 MD_OUT = RES / "app_comparacao_uta.md"
 SEED = 42
 N_BOOT = 1000
+REF_APP = ("app_2.1", "tempo_fora_do_verde")  # medida do app citada no artigo; as diferenças são contra ela
 
 
 def v3(x: float) -> str:
     return f"{x:.3f}".replace(".", ",")
+
+
+def vs3(x: float) -> str:
+    return ("−" if x < 0 else "") + v3(abs(x))
 
 
 def _bool(s: pd.Series) -> pd.Series:
@@ -72,7 +79,7 @@ def main() -> int:
 
     rng = np.random.default_rng(SEED)
     sorteios = [rng.choice(sujeitos, len(sujeitos), replace=True) for _ in range(N_BOOT)]
-    linhas = []
+    linhas, boots = [], {}
     for (det, medida), d in detectores.items():
         assert len(d) == 2 * len(sujeitos) and set(d["sujeito"]) == set(sujeitos), (det, medida, len(d))
         auc = roc_auc_score(d["y"], d["escore"])
@@ -81,9 +88,18 @@ def main() -> int:
         for sorteio in sorteios:
             g = pd.concat([por_suj[s] for s in sorteio])
             boot.append(roc_auc_score(g["y"], g["escore"]))
+        boots[(det, medida)] = np.array(boot)
         lo, hi = np.percentile(boot, [2.5, 97.5])
         linhas.append(dict(detector=det, medida=medida, auc=auc, ic95_inf=lo, ic95_sup=hi,
                            n_videos=len(d), n_sujeitos=len(sujeitos)))
+    # Diferença pareada para o app: em cada sorteio, as mesmas pessoas entram nos dois detectores
+    auc_ref = next(r["auc"] for r in linhas if (r["detector"], r["medida"]) == REF_APP)
+    for r in linhas:
+        if (r["detector"], r["medida"]) == REF_APP:
+            r.update(dif_app=np.nan, dif_app_ic95_inf=np.nan, dif_app_ic95_sup=np.nan)
+            continue
+        lo, hi = np.percentile(boots[(r["detector"], r["medida"])] - boots[REF_APP], [2.5, 97.5])
+        r.update(dif_app=r["auc"] - auc_ref, dif_app_ic95_inf=lo, dif_app_ic95_sup=hi)
     df = pd.DataFrame(linhas)
     df.to_csv(CSV_OUT, index=False)
 
@@ -98,14 +114,22 @@ def main() -> int:
          "`results/app_validacao_uta.md`), um vídeo acordado e um sonolento de cada. AUC por vídeo (sonolento × "
          "acordado); IC 95% por bootstrap de sujeitos (1.000 reamostragens, semente 42). Os IC daqui servem para "
          "comparar os detectores entre si; para o app, o IC citado no artigo é o de `results/app_validacao_uta.md`, "
-         "que usa outra sequência de sorteios (a AUC é a mesma, e os limites mudam só no último dígito).", "",
-         "| Detector | Medida | AUC por vídeo [IC 95%] |", "|---|---|---|"]
+         "que usa outra sequência de sorteios (a AUC é a mesma, e os limites mudam só no último dígito). A diferença "
+         "para o app (detector menos app, % do tempo fora do verde) usa os mesmos sorteios nos dois detectores "
+         "(bootstrap pareado).", "",
+         "| Detector | Medida | AUC por vídeo [IC 95%] | Diferença para o app [IC 95%] |", "|---|---|---|---|"]
     for r in df.itertuples():
-        L.append(f"| {nomes[r.detector]} | {medidas[r.medida]} | {v3(r.auc)} [{v3(r.ic95_inf)}; {v3(r.ic95_sup)}] |")
-    L += ["", "Leitura: o app, sem treino nem ajuste nesta base, não se distingue do RF treinado no DMD nem da regra "
-          "do rótulo, que é a base dos seus sinais de olho. O RF treinado na própria UTA-RLDD só fica bem acima com a "
-          "centragem pelo trecho final do vídeo alerta, o atalho discutido em `results/exp5b_robustez.md`; sem "
-          "centragem, ele fica perto do app."]
+        dif = ("referência" if (r.detector, r.medida) == REF_APP
+               else f"{vs3(r.dif_app)} [{vs3(r.dif_app_ic95_inf)}; {vs3(r.dif_app_ic95_sup)}]")
+        L.append(f"| {nomes[r.detector]} | {medidas[r.medida]} | {v3(r.auc)} [{v3(r.ic95_inf)}; {v3(r.ic95_sup)}] "
+                 f"| {dif} |")
+    fora = [f"{nomes[r.detector]}, {medidas[r.medida]} ({vs3(r.dif_app)})" for r in df.itertuples()
+            if r.dif_app_ic95_inf > 0 or r.dif_app_ic95_sup < 0]
+    L += ["", "Leitura: no bootstrap pareado, a diferença para o app só é detectável em "
+          + ("; ".join(fora) if fora else "nenhum detector") + ". O app, sem treino nem ajuste nesta base, não se "
+          "distingue do RF treinado no DMD nem da regra do rótulo, que é a base dos seus sinais de olho. O RF treinado "
+          "na própria UTA-RLDD só fica acima com a centragem pelo trecho final do vídeo alerta, o atalho discutido em "
+          "`results/exp5b_robustez.md`; sem centragem, ele fica perto do app."]
     MD_OUT.write_text("\n".join(L) + "\n", encoding="utf-8")
     print(df.to_string(index=False))
     print(f"-> {CSV_OUT.relative_to(ROOT)}, {MD_OUT.relative_to(ROOT)}")

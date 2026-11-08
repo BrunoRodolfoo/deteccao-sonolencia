@@ -166,7 +166,7 @@ Cada etapa, isolada. Os tempos são de um Mac M5 com no máximo 6 processos. Os 
 | Figuras | .venv | `src/pipeline_b/make_figures.py` (amostras do MRL Eye); `src/experiments/make_figures.py` | 1 min | `results/figures/*.{pdf,png}` (inclui `amostras_mrl`) |
 | Números, artigo, pôster | .venv | `bash tools/atualizar_celular.sh` (importa o celular, refaz a figura do Exp. 4, `paper/numeros.tex` + `poster/numeros.json` **conferidos contra a origem**, compila o artigo, gera o pôster) | 1 min | `results/numeros_resumo.md`, `paper/artigo.pdf`, `poster/poster_final.pdf` |
 
-Nenhum número do artigo ou do pôster é digitado à mão. `src/experiments/make_paper_numbers.py` gera cada valor a partir do arquivo e da coluna indicados em `results/numeros_resumo.md`, e `src/experiments/conferir_numeros.py` recalcula todos eles (713 números, 0 divergências em 07/11/2026).
+Nenhum número do artigo ou do pôster é digitado à mão. `src/experiments/make_paper_numbers.py` gera cada valor a partir do arquivo e da coluna indicados em `results/numeros_resumo.md`, e `src/experiments/conferir_numeros.py` recalcula todos eles (716 números, 0 divergências em 08/11/2026).
 
 ## 7. Resultados (estado de 27/10/2026)
 
