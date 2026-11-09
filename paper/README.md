@@ -96,7 +96,7 @@ Diagrama TikZ: `cd figures && tectonic fig_pipeline.tex` (detalhes em `figures/R
   tabela macro → valor → arquivo → coluna e filtro vai para `results/numeros_resumo.md`.
 - `src/experiments/conferir_numeros.py` recalcula cada número com uma implementação independente,
   confere `numeros.tex` × `numeros.json`, procura o valor no `.md` de resultados e compila um documento
-  com todos os macros. Estado em 08/11/2026: 716 números (1.358 macros), 0 divergências.
+  com todos os macros. Estado em 08/11/2026: 720 números (1.366 macros), 0 divergências.
 - Convenções: percentuais **sem** o símbolo `%` (escreva `\ExpCincoBCSensJanela\%`); diferenças em pontos
   percentuais; `\NomeIC` = "[inf; sup]", `\NomeComIC` = "valor [inf; sup]", `\NomeMDP` = "média ± dp";
   negativos com o sinal de menos tipográfico. Depois de um macro seguido de palavra, use `{}`
@@ -211,3 +211,14 @@ Em 26/10/2026, depois da banca simulada:
   com outra referência na UTA-RLDD (com a s2 do DMD ela continua); a pose saiu da Fig. 1 e da Seção IV-A, porque
   não entra nas 11 características; a Tabela IV ganhou nota sobre a CNN e a LSTM nas medições; a ética cita a
   telemetria do MediaPipe. Resumo com 247 palavras; 8 páginas e 34 referências.
+- 08/11/2026 (noite): esclarecimentos de uma segunda leitura. O teste do app diz por que só os folds 2 e 4 (os
+  únicos sem as 3 pessoas acompanhadas no navegador durante o ajuste; as outras 33 não foram testadas) e que a AUC
+  é agrupada nos 48 vídeos; o PERCLOS das características é definido; o resumo, a conclusão e a PP2 falam em tempo
+  mediano por quadro, e o resumo traz o ponto de operação do app; a Tabela III dá 58 sujeitos e 174 vídeos e o Exp.
+  5a, os 47 de mapeamento confirmado; o treino da EyeNet e da LSTM está descrito; o terço de referência segue o
+  código original (o texto da UTA-RLDD descreve o primeiro); a frase sobre bases atuadas é atribuída aos autores da
+  UTA-RLDD, que reconhecem o DROZY como real; e o controle de volume ganhou a variante na proporção de classes do
+  DMD (`exp5b_robustez.py`, macros `ExpCincoB...TrezeProporcaoQuedaAUCJanela`: 9,2 no RF e 7,3 na RL), de modo que
+  o volume explica pouco no RF e de um quarto a um terço na RL. A telemetria foi conferida num envio capturado (189
+  bytes, sem imagem nem pontos do rosto). Para caber em 8 páginas, saíram repetições (legendas que repetiam o texto,
+  frases duplicadas na Discussão e nas limitações). Resumo com 248 palavras; 8 páginas e 34 referências.

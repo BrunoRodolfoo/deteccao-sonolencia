@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-08T20:20:28",
+ "gerado_em": "2026-11-08T21:31:32",
  "gerado_por": "src/experiments/make_paper_numbers.py",
  "convencoes": "percentuais sem %; diferenças em pp; IC 95% entre colchetes; texto com vírgula decimal",
  "samsung_medido": true,
@@ -1247,6 +1247,9 @@
   "ExpCincoBTrezeQuinhentasAUCJanelaB": "78,8",
   "ExpCincoBTrezeQuinhentasAUCJanelaBIC": "[76,6; 80,5]",
   "ExpCincoBTrezeQuinhentasAUCJanelaBComIC": "78,8 [76,6; 80,5]",
+  "ExpCincoBTrezeProporcaoAUCJanelaB": "78,4",
+  "ExpCincoBTrezeProporcaoAUCJanelaBIC": "[76,2; 79,5]",
+  "ExpCincoBTrezeProporcaoAUCJanelaBComIC": "78,4 [76,2; 79,5]",
   "ExpCincoBVazamentoAcBal": "12,6",
   "ExpCincoBVazamentoAcBalSujeito": "74,2",
   "ExpCincoBVazamentoAcBalAleatoria": "86,8",
@@ -1258,6 +1261,7 @@
   "ExpCincoBOpRegraSensBCentrada": "24,2",
   "ExpCincoBTrezeQuedaAUCJanela": "9,3",
   "ExpCincoBTrezeQuinhentasQuedaAUCJanela": "9,5",
+  "ExpCincoBTrezeProporcaoQuedaAUCJanela": "9,2",
   "ExpCincoBLRRefAltAUCJanelaB": "73,7",
   "ExpCincoBLRRefAltAUCJanelaBIC": "[69,3; 78,0]",
   "ExpCincoBLRRefAltAUCJanelaBComIC": "73,7 [69,3; 78,0]",
@@ -1279,6 +1283,9 @@
   "ExpCincoBLRTrezeQuinhentasAUCJanelaB": "71,2",
   "ExpCincoBLRTrezeQuinhentasAUCJanelaBIC": "[67,8; 73,6]",
   "ExpCincoBLRTrezeQuinhentasAUCJanelaBComIC": "71,2 [67,8; 73,6]",
+  "ExpCincoBLRTrezeProporcaoAUCJanelaB": "71,9",
+  "ExpCincoBLRTrezeProporcaoAUCJanelaBIC": "[68,5; 74,5]",
+  "ExpCincoBLRTrezeProporcaoAUCJanelaBComIC": "71,9 [68,5; 74,5]",
   "ExpCincoBLRVazamentoAcBal": "1,2",
   "ExpCincoBLRVazamentoAcBalSujeito": "72,0",
   "ExpCincoBLRVazamentoAcBalAleatoria": "73,1",
@@ -1290,6 +1297,7 @@
   "ExpCincoBLROpRegraSensBCentrada": "27,3",
   "ExpCincoBLRTrezeQuedaAUCJanela": "7,0",
   "ExpCincoBLRTrezeQuinhentasQuedaAUCJanela": "6,7",
+  "ExpCincoBLRTrezeProporcaoQuedaAUCJanela": "7,3",
   "ExpCincoBJanelaCincoQuedaAUCJanela": "11,8",
   "ExpCincoBJanelaCincoQuedaAUCJanelaIC": "[8,4; 15,7]",
   "ExpCincoBJanelaCincoQuedaAUCJanelaComIC": "11,8 [8,4; 15,7]",
@@ -21577,6 +21585,43 @@
    }
   },
   {
+   "nome": "ExpCincoBTrezeProporcaoAUCJanelaB",
+   "valor": "78,4",
+   "macros": {
+    "ExpCincoBTrezeProporcaoAUCJanelaB": "78,4",
+    "ExpCincoBTrezeProporcaoAUCJanelaBIC": "[76,2; 79,5]",
+    "ExpCincoBTrezeProporcaoAUCJanelaBComIC": "78,4 [76,2; 79,5]"
+   },
+   "bruto": 78.41422435226393,
+   "ic_bruto": [
+    76.23981407780614,
+    79.47299223421696
+   ],
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 5b robustez: RF, B treinado com 13 sujeitos e 510 janelas por fold, na proporção de classes de C (mediana dos sorteios)",
+   "evidencia": "results/exp5b_robustez.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp5b_robustez.csv",
+    "coluna": "valor",
+    "filtros": {
+     "analise": "volume_treino",
+     "variante": "13_sujeitos_510_janelas_proporcao_C",
+     "modelo": "RF",
+     "nivel": "janela",
+     "metrica": "auc_B"
+    },
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ]
+   }
+  },
+  {
    "nome": "ExpCincoBVazamentoAcBal",
    "valor": "12,6",
    "macros": {
@@ -21877,6 +21922,30 @@
    }
   },
   {
+   "nome": "ExpCincoBTrezeProporcaoQuedaAUCJanela",
+   "valor": "9,2",
+   "macros": {
+    "ExpCincoBTrezeProporcaoQuedaAUCJanela": "9,2"
+   },
+   "bruto": 9.17085152858975,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "pp",
+   "texto": false,
+   "descricao": "Exp. 5b RF: queda B − C com B treinado em 13 sujeitos e 510 janelas na proporção de classes de C, 87 alertas (mediana dos sorteios − C), pp de AUC",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "ExpCincoBTrezeProporcaoAUCJanelaB",
+     "ExpCincoBAUCJanelaC"
+    ],
+    "expr": "ExpCincoBTrezeProporcaoAUCJanelaB - 100*ExpCincoBAUCJanelaC"
+   }
+  },
+  {
    "nome": "ExpCincoBLRRefAltAUCJanelaB",
    "valor": "73,7",
    "macros": {
@@ -22125,6 +22194,43 @@
     "filtros": {
      "analise": "volume_treino",
      "variante": "13_sujeitos_510_janelas",
+     "modelo": "LR",
+     "nivel": "janela",
+     "metrica": "auc_B"
+    },
+    "ic": [
+     "ic95_inf",
+     "ic95_sup"
+    ]
+   }
+  },
+  {
+   "nome": "ExpCincoBLRTrezeProporcaoAUCJanelaB",
+   "valor": "71,9",
+   "macros": {
+    "ExpCincoBLRTrezeProporcaoAUCJanelaB": "71,9",
+    "ExpCincoBLRTrezeProporcaoAUCJanelaBIC": "[68,5; 74,5]",
+    "ExpCincoBLRTrezeProporcaoAUCJanelaBComIC": "71,9 [68,5; 74,5]"
+   },
+   "bruto": 71.85067395245898,
+   "ic_bruto": [
+    68.4561641191829,
+    74.54513149546254
+   ],
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "",
+   "texto": false,
+   "descricao": "Exp. 5b robustez: RL, B treinado com 13 sujeitos e 510 janelas por fold, na proporção de classes de C (mediana dos sorteios)",
+   "evidencia": "results/exp5b_robustez.md",
+   "spec": {
+    "tipo": "csv",
+    "arquivo": "results/exp5b_robustez.csv",
+    "coluna": "valor",
+    "filtros": {
+     "analise": "volume_treino",
+     "variante": "13_sujeitos_510_janelas_proporcao_C",
      "modelo": "LR",
      "nivel": "janela",
      "metrica": "auc_B"
@@ -22433,6 +22539,30 @@
      "ExpCincoBLRAUCJanelaC"
     ],
     "expr": "ExpCincoBLRTrezeQuinhentasAUCJanelaB - 100*ExpCincoBLRAUCJanelaC"
+   }
+  },
+  {
+   "nome": "ExpCincoBLRTrezeProporcaoQuedaAUCJanela",
+   "valor": "7,3",
+   "macros": {
+    "ExpCincoBLRTrezeProporcaoQuedaAUCJanela": "7,3"
+   },
+   "bruto": 7.30129817430911,
+   "ic_bruto": null,
+   "dp_bruto": null,
+   "casas": 1,
+   "escala": 1.0,
+   "unidade": "pp",
+   "texto": false,
+   "descricao": "Exp. 5b RL: queda B − C com B treinado em 13 sujeitos e 510 janelas na proporção de classes de C, 87 alertas (mediana dos sorteios − C), pp de AUC",
+   "evidencia": null,
+   "spec": {
+    "tipo": "derivado",
+    "deps": [
+     "ExpCincoBLRTrezeProporcaoAUCJanelaB",
+     "ExpCincoBLRAUCJanelaC"
+    ],
+    "expr": "ExpCincoBLRTrezeProporcaoAUCJanelaB - 100*ExpCincoBLRAUCJanelaC"
    }
   },
   {

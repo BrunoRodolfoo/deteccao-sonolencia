@@ -1,6 +1,6 @@
 # Exp. 5b: robustez da queda B − C
 
-Execução: 2026-10-26 20:51. Gerado por `src/experiments/exp5b_robustez.py` (mesmos dados, receita de modelos, modelos finais de C e reamostragem de sujeitos do Exp. 5b). Esquema B3 (alerta × sonolento), janelas de 10 s. AUC × 100; quedas em pontos de AUC; IC 95% por bootstrap percentil de sujeitos (1.000 reamostragens).
+Execução: 2026-11-08 21:26. Gerado por `src/experiments/exp5b_robustez.py` (mesmos dados, receita de modelos, modelos finais de C e reamostragem de sujeitos do Exp. 5b). Esquema B3 (alerta × sonolento), janelas de 10 s. AUC × 100; quedas em pontos de AUC; IC 95% por bootstrap percentil de sujeitos (1.000 reamostragens).
 
 ## 1. Referência alternativa na UTA-RLDD (vídeo de pouca vigilância)
 
@@ -26,12 +26,12 @@ Em cada reamostragem, os 13 sujeitos do DMD são sorteados com reposição e C �
 
 ## 3. Volume do treino de B
 
-B treinado com só 13 sujeitos da UTA-RLDD por fold (sorteados), com todas as janelas deles ou com 510 janelas (o tamanho do treino de C), em 20 sorteios. Valor = mediana dos sorteios; entre colchetes, os percentis 2,5 e 97,5 dos sorteios (variação do sorteio, não IC).
+B treinado com só 13 sujeitos da UTA-RLDD por fold (sorteados), com todas as janelas deles, com 510 janelas sorteadas (o tamanho do treino de C, com a proporção de classes da UTA-RLDD, cerca de 40% de alertas) ou com 510 janelas na proporção de classes de C (87 alertas e 423 sonolentas), em 20 sorteios. Valor = mediana dos sorteios; entre colchetes, os percentis 2,5 e 97,5 dos sorteios (variação do sorteio, não IC).
 
-| Modelo | B completo | B com 13 sujeitos | B com 13 sujeitos e 510 janelas | C |
-|---|---|---|---|---|
-| RF | 80,1 | 78,6 [77,0; 80,3] | 78,8 [76,6; 80,5] | 69,2 |
-| RL | 74,4 | 71,5 [68,1; 73,2] | 71,2 [67,8; 73,6] | 64,5 |
+| Modelo | B completo | B com 13 sujeitos | B com 13 sujeitos e 510 janelas | O mesmo, na proporção de C | C |
+|---|---|---|---|---|---|
+| RF | 80,1 | 78,6 [77,0; 80,3] | 78,8 [76,6; 80,5] | 78,4 [76,2; 79,5] | 69,2 |
+| RL | 74,4 | 71,5 [68,1; 73,2] | 71,2 [67,8; 73,6] | 71,9 [68,5; 74,5] | 64,5 |
 
 ## 4. Vazamento no mesmo cenário
 

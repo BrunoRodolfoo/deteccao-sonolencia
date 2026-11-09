@@ -1,10 +1,10 @@
 # Números do artigo e do pôster (gerados de results/)
 
-Gerado em 08/11/2026 20:20 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
+Gerado em 08/11/2026 21:31 por `src/experiments/make_paper_numbers.py`. Cada linha é um macro de `paper/numeros.tex` (o mesmo valor está em `poster/numeros.json`). Nenhum número foi digitado: todos saem do arquivo e da coluna/filtro indicados. Macros derivados (`IC`, `ComIC`, `DP`, `MDP`) saem da mesma linha. Percentuais sem o símbolo %; diferenças em pontos percentuais (pp).
 
 Galaxy S23 Ultra: medido (macros `\CelularSamsung...`; `\ifSamsungMedido` verdadeiro).
 
-Total: 716 números (1358 macros).
+Total: 720 números (1366 macros).
 
 | Macro | Valor | Unidade | O que é | Arquivo de origem | Coluna / filtro |
 |---|---|---|---|---|---|
@@ -649,6 +649,7 @@ Total: 716 números (1358 macros).
 | `\ExpCincoBBootDuploQuedaAUCJanela` | 10,9 [5,7; 19,5] | pp | Exp. 5b robustez: RF, queda B − C por janela com IC em dois níveis (retreino de C) | `results/exp5b_robustez.csv` | `valor` onde analise=bootstrap_dois_niveis, variante=ref_video_alerta, modelo=RF, nivel=janela, metrica=queda_auc; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBTrezeAUCJanelaB` | 78,6 [77,0; 80,3] |  | Exp. 5b robustez: RF, B treinado com 13 sujeitos por fold (mediana dos sorteios; faixa = percentis 2,5 e 97,5) | `results/exp5b_robustez.csv` | `valor` onde analise=volume_treino, variante=13_sujeitos, modelo=RF, nivel=janela, metrica=auc_B; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBTrezeQuinhentasAUCJanelaB` | 78,8 [76,6; 80,5] |  | Exp. 5b robustez: RF, B treinado com 13 sujeitos e 510 janelas por fold (mediana dos sorteios) | `results/exp5b_robustez.csv` | `valor` onde analise=volume_treino, variante=13_sujeitos_510_janelas, modelo=RF, nivel=janela, metrica=auc_B; IC `ic95_inf`/`ic95_sup` |
+| `\ExpCincoBTrezeProporcaoAUCJanelaB` | 78,4 [76,2; 79,5] |  | Exp. 5b robustez: RF, B treinado com 13 sujeitos e 510 janelas por fold, na proporção de classes de C (mediana dos sorteios) | `results/exp5b_robustez.csv` | `valor` onde analise=volume_treino, variante=13_sujeitos_510_janelas_proporcao_C, modelo=RF, nivel=janela, metrica=auc_B; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBVazamentoAcBal` | 12,6 | pp | Exp. 5b robustez: RF, inflação pela partição aleatória de janelas no cenário do Exp. 5b (acuracia_balanceada, pp) | `results/exp5b_robustez.csv` | `valor` onde analise=vazamento_mesmo_cenario, variante=centrada, modelo=RF, nivel=janela, metrica=acuracia_balanceada_inflacao |
 | `\ExpCincoBVazamentoAcBalSujeito` | 74,2 | % | Exp. 5b robustez: RF, acuracia_balanceada com os folds oficiais por sujeito (cenário do Exp. 5b) | `results/exp5b_robustez.csv` | `valor` onde analise=vazamento_mesmo_cenario, variante=centrada, modelo=RF, nivel=janela, metrica=acuracia_balanceada_por_sujeito |
 | `\ExpCincoBVazamentoAcBalAleatoria` | 86,8 | % | Exp. 5b robustez: RF, acuracia_balanceada com a partição aleatória de janelas (média de 3 sementes) | `results/exp5b_robustez.csv` | `valor` onde analise=vazamento_mesmo_cenario, variante=centrada, modelo=RF, nivel=janela, metrica=acuracia_balanceada_aleatoria |
@@ -660,6 +661,7 @@ Total: 716 números (1358 macros).
 | `\ExpCincoBOpRegraSensBCentrada` | 24,2 | % | Exp. 5b robustez: RF, B_centrada: sensibilidade no falso alarme da regra nas janelas KSS 0 (diagnóstico) | `results/exp5b_robustez.csv` | `valor` onde analise=ponto_operacao_regra, variante=B_centrada, modelo=RF, nivel=janela, metrica=sensibilidade_no_fa_da_regra |
 | `\ExpCincoBTrezeQuedaAUCJanela` | 9,3 | pp | Exp. 5b RF: queda B − C com B treinado em 13 sujeitos (mediana dos sorteios − C), pp de AUC | `(derivado)` | `ExpCincoBTrezeAUCJanelaB - 100*ExpCincoBAUCJanelaC` com ExpCincoBTrezeAUCJanelaB, ExpCincoBAUCJanelaC |
 | `\ExpCincoBTrezeQuinhentasQuedaAUCJanela` | 9,5 | pp | Exp. 5b RF: queda B − C com B treinado em 13 sujeitos e 510 janelas, o tamanho do treino de C (mediana dos sorteios − C), pp de AUC | `(derivado)` | `ExpCincoBTrezeQuinhentasAUCJanelaB - 100*ExpCincoBAUCJanelaC` com ExpCincoBTrezeQuinhentasAUCJanelaB, ExpCincoBAUCJanelaC |
+| `\ExpCincoBTrezeProporcaoQuedaAUCJanela` | 9,2 | pp | Exp. 5b RF: queda B − C com B treinado em 13 sujeitos e 510 janelas na proporção de classes de C, 87 alertas (mediana dos sorteios − C), pp de AUC | `(derivado)` | `ExpCincoBTrezeProporcaoAUCJanelaB - 100*ExpCincoBAUCJanelaC` com ExpCincoBTrezeProporcaoAUCJanelaB, ExpCincoBAUCJanelaC |
 | `\ExpCincoBLRRefAltAUCJanelaB` | 73,7 [69,3; 78,0] |  | Exp. 5b robustez: RL, (B) UTA→UTA com a centragem pelo vídeo KSS 5, AUC por janela | `results/exp5b_robustez.csv` | `valor` onde analise=referencia_kss5, variante=ref_video_kss5, modelo=LR, nivel=janela, metrica=auc_B; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBLRRefAltAUCJanelaC` | 66,2 [60,3; 71,7] |  | Exp. 5b robustez: RL, (C) DMD→UTA com a centragem pelo vídeo KSS 5, AUC por janela | `results/exp5b_robustez.csv` | `valor` onde analise=referencia_kss5, variante=ref_video_kss5, modelo=LR, nivel=janela, metrica=auc_C; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBLRRefAltQuedaAUCJanela` | 7,6 [3,0; 12,5] | pp | Exp. 5b robustez: RL, queda B − C com a centragem pelo vídeo KSS 5, AUC por janela (pp) | `results/exp5b_robustez.csv` | `valor` onde analise=referencia_kss5, variante=ref_video_kss5, modelo=LR, nivel=janela, metrica=queda_auc; IC `ic95_inf`/`ic95_sup` |
@@ -667,6 +669,7 @@ Total: 716 números (1358 macros).
 | `\ExpCincoBLRBootDuploQuedaAUCJanela` | 9,8 [1,9; 18,1] | pp | Exp. 5b robustez: RL, queda B − C por janela com IC em dois níveis (retreino de C) | `results/exp5b_robustez.csv` | `valor` onde analise=bootstrap_dois_niveis, variante=ref_video_alerta, modelo=LR, nivel=janela, metrica=queda_auc; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBLRTrezeAUCJanelaB` | 71,5 [68,1; 73,2] |  | Exp. 5b robustez: RL, B treinado com 13 sujeitos por fold (mediana dos sorteios; faixa = percentis 2,5 e 97,5) | `results/exp5b_robustez.csv` | `valor` onde analise=volume_treino, variante=13_sujeitos, modelo=LR, nivel=janela, metrica=auc_B; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBLRTrezeQuinhentasAUCJanelaB` | 71,2 [67,8; 73,6] |  | Exp. 5b robustez: RL, B treinado com 13 sujeitos e 510 janelas por fold (mediana dos sorteios) | `results/exp5b_robustez.csv` | `valor` onde analise=volume_treino, variante=13_sujeitos_510_janelas, modelo=LR, nivel=janela, metrica=auc_B; IC `ic95_inf`/`ic95_sup` |
+| `\ExpCincoBLRTrezeProporcaoAUCJanelaB` | 71,9 [68,5; 74,5] |  | Exp. 5b robustez: RL, B treinado com 13 sujeitos e 510 janelas por fold, na proporção de classes de C (mediana dos sorteios) | `results/exp5b_robustez.csv` | `valor` onde analise=volume_treino, variante=13_sujeitos_510_janelas_proporcao_C, modelo=LR, nivel=janela, metrica=auc_B; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBLRVazamentoAcBal` | 1,2 | pp | Exp. 5b robustez: RL, inflação pela partição aleatória de janelas no cenário do Exp. 5b (acuracia_balanceada, pp) | `results/exp5b_robustez.csv` | `valor` onde analise=vazamento_mesmo_cenario, variante=centrada, modelo=LR, nivel=janela, metrica=acuracia_balanceada_inflacao |
 | `\ExpCincoBLRVazamentoAcBalSujeito` | 72,0 | % | Exp. 5b robustez: RL, acuracia_balanceada com os folds oficiais por sujeito (cenário do Exp. 5b) | `results/exp5b_robustez.csv` | `valor` onde analise=vazamento_mesmo_cenario, variante=centrada, modelo=LR, nivel=janela, metrica=acuracia_balanceada_por_sujeito |
 | `\ExpCincoBLRVazamentoAcBalAleatoria` | 73,1 | % | Exp. 5b robustez: RL, acuracia_balanceada com a partição aleatória de janelas (média de 3 sementes) | `results/exp5b_robustez.csv` | `valor` onde analise=vazamento_mesmo_cenario, variante=centrada, modelo=LR, nivel=janela, metrica=acuracia_balanceada_aleatoria |
@@ -678,6 +681,7 @@ Total: 716 números (1358 macros).
 | `\ExpCincoBLROpRegraSensBCentrada` | 27,3 | % | Exp. 5b robustez: RL, B_centrada: sensibilidade no falso alarme da regra nas janelas KSS 0 (diagnóstico) | `results/exp5b_robustez.csv` | `valor` onde analise=ponto_operacao_regra, variante=B_centrada, modelo=LR, nivel=janela, metrica=sensibilidade_no_fa_da_regra |
 | `\ExpCincoBLRTrezeQuedaAUCJanela` | 7,0 | pp | Exp. 5b RL: queda B − C com B treinado em 13 sujeitos (mediana dos sorteios − C), pp de AUC | `(derivado)` | `ExpCincoBLRTrezeAUCJanelaB - 100*ExpCincoBLRAUCJanelaC` com ExpCincoBLRTrezeAUCJanelaB, ExpCincoBLRAUCJanelaC |
 | `\ExpCincoBLRTrezeQuinhentasQuedaAUCJanela` | 6,7 | pp | Exp. 5b RL: queda B − C com B treinado em 13 sujeitos e 510 janelas, o tamanho do treino de C (mediana dos sorteios − C), pp de AUC | `(derivado)` | `ExpCincoBLRTrezeQuinhentasAUCJanelaB - 100*ExpCincoBLRAUCJanelaC` com ExpCincoBLRTrezeQuinhentasAUCJanelaB, ExpCincoBLRAUCJanelaC |
+| `\ExpCincoBLRTrezeProporcaoQuedaAUCJanela` | 7,3 | pp | Exp. 5b RL: queda B − C com B treinado em 13 sujeitos e 510 janelas na proporção de classes de C, 87 alertas (mediana dos sorteios − C), pp de AUC | `(derivado)` | `ExpCincoBLRTrezeProporcaoAUCJanelaB - 100*ExpCincoBLRAUCJanelaC` com ExpCincoBLRTrezeProporcaoAUCJanelaB, ExpCincoBLRAUCJanelaC |
 | `\ExpCincoBJanelaCincoQuedaAUCJanela` | 11,8 [8,4; 15,7] | pp | Exp. 5b RF: queda B − C de AUC por janela com janelas de 5 s (pp) | `results/exp5b_transferencia.csv` | `valor` onde experimento=queda_B_menos_C, variante=janela_5s, modelo=RF, esquema=B3, nivel=janela, estrato=todos, limiar_tipo=fixo_0.5, metrica=auc; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBLRJanelaCincoQuedaAUCJanela` | 5,4 [−0,1; 10,8] | pp | Exp. 5b LR: queda B − C de AUC por janela com janelas de 5 s (pp) | `results/exp5b_transferencia.csv` | `valor` onde experimento=queda_B_menos_C, variante=janela_5s, modelo=LR, esquema=B3, nivel=janela, estrato=todos, limiar_tipo=fixo_0.5, metrica=auc; IC `ic95_inf`/`ic95_sup` |
 | `\ExpCincoBLRControleQuedaCincoDez` | 4,6 [−0,2; 9,7] | pp | Exp. 5b RL: queda B − C no contraste KSS 10 × 5 (pp de AUC) | `results/exp5b_transferencia.csv` | `valor` onde experimento=queda_B_menos_C, variante=principal, modelo=LR, esquema=K10v5, nivel=janela, estrato=todos, limiar_tipo=fixo_0.5, metrica=auc; IC `ic95_inf`/`ic95_sup` |
@@ -727,10 +731,10 @@ Total: 716 números (1358 macros).
 
 ## Conferência automática
 
-Executada em 08/11/2026 20:28 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
+Executada em 08/11/2026 21:37 por `src/experiments/conferir_numeros.py` (leitura e formatação independentes das do gerador).
 
-- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 716 de 716** números (1358 macros em `paper/numeros.tex`, 1358 no JSON; sobrando só no TeX: 0; só no JSON: 0).
-- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 570; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 129.
+- **Recalculados a partir do arquivo de origem e idênticos no JSON e no TeX: 720 de 720** números (1366 macros em `paper/numeros.tex`, 1366 no JSON; sobrando só no TeX: 0; só no JSON: 0).
+- Encontrados no `.md` de resultados correspondente (valor e IC com a mesma precisão): 572; parcialmente (valor ou só parte do IC): 17; não encontrados: 0; sem `.md` de referência (derivados, agregados entre execuções do celular, regex no próprio .md): 131.
 - Compilação de teste (IEEEtran + babel brazil, todos os macros impressos): ok — tectonic rc=0; 0 'Undefined control sequence'.
 - Divergências: 0.
 
@@ -1379,6 +1383,7 @@ Executada em 08/11/2026 20:28 por `src/experiments/conferir_numeros.py` (leitura
 | `\ExpCincoBBootDuploQuedaAUCJanela` | 10,9 | ok | sim |
 | `\ExpCincoBTrezeAUCJanelaB` | 78,6 | ok | sim |
 | `\ExpCincoBTrezeQuinhentasAUCJanelaB` | 78,8 | ok | sim |
+| `\ExpCincoBTrezeProporcaoAUCJanelaB` | 78,4 | ok | sim |
 | `\ExpCincoBVazamentoAcBal` | 12,6 | ok | sim |
 | `\ExpCincoBVazamentoAcBalSujeito` | 74,2 | ok | sim |
 | `\ExpCincoBVazamentoAcBalAleatoria` | 86,8 | ok | sim |
@@ -1390,6 +1395,7 @@ Executada em 08/11/2026 20:28 por `src/experiments/conferir_numeros.py` (leitura
 | `\ExpCincoBOpRegraSensBCentrada` | 24,2 | ok | sim |
 | `\ExpCincoBTrezeQuedaAUCJanela` | 9,3 | ok | — |
 | `\ExpCincoBTrezeQuinhentasQuedaAUCJanela` | 9,5 | ok | — |
+| `\ExpCincoBTrezeProporcaoQuedaAUCJanela` | 9,2 | ok | — |
 | `\ExpCincoBLRRefAltAUCJanelaB` | 73,7 | ok | parcial |
 | `\ExpCincoBLRRefAltAUCJanelaC` | 66,2 | ok | parcial |
 | `\ExpCincoBLRRefAltQuedaAUCJanela` | 7,6 | ok | sim |
@@ -1397,6 +1403,7 @@ Executada em 08/11/2026 20:28 por `src/experiments/conferir_numeros.py` (leitura
 | `\ExpCincoBLRBootDuploQuedaAUCJanela` | 9,8 | ok | sim |
 | `\ExpCincoBLRTrezeAUCJanelaB` | 71,5 | ok | sim |
 | `\ExpCincoBLRTrezeQuinhentasAUCJanelaB` | 71,2 | ok | sim |
+| `\ExpCincoBLRTrezeProporcaoAUCJanelaB` | 71,9 | ok | sim |
 | `\ExpCincoBLRVazamentoAcBal` | 1,2 | ok | sim |
 | `\ExpCincoBLRVazamentoAcBalSujeito` | 72,0 | ok | sim |
 | `\ExpCincoBLRVazamentoAcBalAleatoria` | 73,1 | ok | sim |
@@ -1408,6 +1415,7 @@ Executada em 08/11/2026 20:28 por `src/experiments/conferir_numeros.py` (leitura
 | `\ExpCincoBLROpRegraSensBCentrada` | 27,3 | ok | sim |
 | `\ExpCincoBLRTrezeQuedaAUCJanela` | 7,0 | ok | — |
 | `\ExpCincoBLRTrezeQuinhentasQuedaAUCJanela` | 6,7 | ok | — |
+| `\ExpCincoBLRTrezeProporcaoQuedaAUCJanela` | 7,3 | ok | — |
 | `\ExpCincoBJanelaCincoQuedaAUCJanela` | 11,8 | ok | sim |
 | `\ExpCincoBLRJanelaCincoQuedaAUCJanela` | 5,4 | ok | sim |
 | `\ExpCincoBLRControleQuedaCincoDez` | 4,6 | ok | sim |

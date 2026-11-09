@@ -161,8 +161,8 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
    tem licença para pesquisa. A troca está registrada como alteração do planejamento.
 2. **A queda do PP1 não pode ser só câmera e ambiente?** Pode ter parte disso: com um só par de bases, a troca
    muda câmera, cenário e tipo de rótulo ao mesmo tempo. Com o modelo da UTA treinado com só 13 pessoas e 510
-   janelas, como o DMD, a perda continua (9,5 pontos no RF e 6,7 na RL): o volume do treino explica pouco no RF e
-   cerca de um terço na RL. O que aparece em todos os controles é o modelo do DMD deixar passar a maior parte das
+   janelas, como o DMD, a perda continua (9,5 pontos no RF e 6,7 na RL; 9,2 e 7,3 com a proporção de classes do
+   DMD): o volume do treino explica pouco no RF e de um quarto a um terço na RL. O que aparece em todos os controles é o modelo do DMD deixar passar a maior parte das
    janelas sonolentas reais.
 3. **Por que o RF perde 10,9 e depois quase nada?** Na UTA-RLDD, as janelas alertas saem do mesmo vídeo usado
    como referência na normalização, e o RF treinado lá aproveita isso. Com a referência no vídeo de pouca vigilância (1 na

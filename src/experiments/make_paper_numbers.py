@@ -982,6 +982,9 @@ def robustez():
             f"{mn}, B treinado com 13 sujeitos por fold (mediana dos sorteios; faixa = percentis 2,5 e 97,5)")
         rob(f"ExpCincoB{mt}TrezeQuinhentasAUCJanelaB", "volume_treino", "13_sujeitos_510_janelas", mod, "janela",
             "auc_B", f"{mn}, B treinado com 13 sujeitos e 510 janelas por fold (mediana dos sorteios)")
+        rob(f"ExpCincoB{mt}TrezeProporcaoAUCJanelaB", "volume_treino", "13_sujeitos_510_janelas_proporcao_C", mod,
+            "janela", "auc_B", f"{mn}, B treinado com 13 sujeitos e 510 janelas por fold, na proporção de classes de C "
+            "(mediana dos sorteios)")
         for met, mtt in [("acuracia_balanceada", "AcBal"), ("auc", "AUC")]:
             rob(f"ExpCincoB{mt}Vazamento{mtt}", "vazamento_mesmo_cenario", "centrada", mod, "janela", f"{met}_inflacao",
                 f"{mn}, inflação pela partição aleatória de janelas no cenário do Exp. 5b ({met}, pp)", "pp", False)
@@ -1002,6 +1005,11 @@ def robustez():
              "expr": f"ExpCincoB{mt}TrezeQuinhentasAUCJanelaB - 100*ExpCincoB{mt}AUCJanelaC"}, casas=1, unidade="pp",
             descricao=f"Exp. 5b {mn}: queda B − C com B treinado em 13 sujeitos e 510 janelas, o tamanho do treino de C "
                       "(mediana dos sorteios − C), pp de AUC")
+        add(f"ExpCincoB{mt}TrezeProporcaoQuedaAUCJanela",
+            {"tipo": "derivado", "deps": [f"ExpCincoB{mt}TrezeProporcaoAUCJanelaB", f"ExpCincoB{mt}AUCJanelaC"],
+             "expr": f"ExpCincoB{mt}TrezeProporcaoAUCJanelaB - 100*ExpCincoB{mt}AUCJanelaC"}, casas=1, unidade="pp",
+            descricao=f"Exp. 5b {mn}: queda B − C com B treinado em 13 sujeitos e 510 janelas na proporção de classes "
+                      "de C, 87 alertas (mediana dos sorteios − C), pp de AUC")
     # janela de 5 s (sensibilidade), nos dois modelos
     for mod, mt in [("RF", ""), ("LR", "LR")]:
         add(f"ExpCincoB{mt}JanelaCincoQuedaAUCJanela",

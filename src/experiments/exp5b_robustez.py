@@ -21,7 +21,8 @@ Análises (todas no esquema principal B3, alerta × sonolento, janelas de 10 s):
       treinado de novo; os sujeitos da UTA-RLDD seguem a mesma reamostragem pareada do Exp. 5b. O IC passa a incluir
       a variância do treino de C.
   (3) volume do treino: B treinado com só 13 sujeitos da UTA-RLDD por fold (o número de motoristas do DMD), com todas
-      as janelas deles ou com 510 janelas (o tamanho do treino de C), em sorteios repetidos.
+      as janelas deles, com 510 janelas (o tamanho do treino de C) sorteadas ou com 510 janelas na proporção de
+      classes do treino de C (87 alertas e 423 sonolentas), em sorteios repetidos.
   (4) vazamento no mesmo cenário: folds oficiais por sujeito × partição aleatória das janelas em 5 partes (sementes 42,
       43 e 44, como no Exp. 2), com e sem centragem.
   (5) ponto de operação da regra do rótulo do DMD (fechamento >= 0,5 s ou bocejo): sensibilidade de cada modelo no
@@ -192,17 +193,23 @@ def main() -> int:
             "queda B − C de AUC por janela; IC com sujeitos do DMD (retreino de C) e da UTA-RLDD reamostrados")
         print(f"(2) {nome}: queda {v1(r0['queda'])}, IC em dois níveis {ic_txt(lo, hi)} ({nb} reamostragens)", flush=True)
 
-        # (3) volume do treino: B com 13 sujeitos (e com 510 janelas)
+        # (3) volume do treino: B com 13 sujeitos (e com 510 janelas, sorteadas ou na proporção de classes de C).
+        # A variante na proporção vem por último, para não mudar os sorteios das duas primeiras.
         rng13 = np.random.default_rng(E.SEED)
         Xc = u[cols_c].to_numpy(float)
-        for rotulo, n_jan in (("13_sujeitos", None), ("13_sujeitos_510_janelas", len(d))):
+        n_alerta_c = int((d["y"] == 0).sum())
+        for rotulo, n_jan in (("13_sujeitos", None), ("13_sujeitos_510_janelas", len(d)),
+                              ("13_sujeitos_510_janelas_proporcao_C", len(d))):
             aucs = []
             for _ in range(n_treze):
                 s = np.full(len(y), np.nan)
                 for k in np.unique(folds):
                     tr_suj = rng13.choice(np.unique(suj[folds != k]), N_SUJ_DMD, replace=False)
                     tr = np.flatnonzero(np.isin(suj, tr_suj))
-                    if n_jan:
+                    if rotulo.endswith("proporcao_C"):
+                        tr = np.concatenate([rng13.choice(tr[y[tr] == 0], n_alerta_c, replace=False),
+                                             rng13.choice(tr[y[tr] == 1], n_jan - n_alerta_c, replace=False)])
+                    elif n_jan:
                         tr = rng13.choice(tr, n_jan, replace=False)
                     te = folds == k
                     s[te] = E.novo_modelo(nome).fit(Xc[tr], y[tr]).predict_proba(Xc[te])[:, 1]
@@ -211,6 +218,7 @@ def main() -> int:
             faixa = tuple(np.percentile(aucs, [2.5, 97.5]))
             reg("volume_treino", rotulo, nome, "janela", "auc_B", float(np.median(aucs)), faixa, n_treze, "AUC x 100",
                 f"B treinado com {N_SUJ_DMD} sujeitos sorteados por fold" + (f" e {n_jan} janelas" if n_jan else "") +
+                (f" na proporção de classes de C ({n_alerta_c} alertas)" if rotulo.endswith("proporcao_C") else "") +
                 "; valor = mediana dos sorteios, faixa = percentis 2,5 e 97,5 dos sorteios (não é IC)")
             print(f"(3) {nome} {rotulo}: AUC B mediana {v1(np.median(aucs))} {ic_txt(*faixa)}", flush=True)
 
@@ -321,15 +329,18 @@ def escrever_md(df: pd.DataFrame, execucao: str) -> None:
         b2 = g("bootstrap_dois_niveis", "ref_video_alerta", nome, "janela", "queda_auc")
         L.append(f"| {nomes[nome]} | {v1(qj.valor)} | {ic_txt(qj.ic95_inf, qj.ic95_sup)} | {ic_txt(b2.ic95_inf, b2.ic95_sup)} |")
     L += ["", "## 3. Volume do treino de B", "",
-          f"B treinado com só {N_SUJ_DMD} sujeitos da UTA-RLDD por fold (sorteados), com todas as janelas deles ou com "
-          "510 janelas (o tamanho do treino de C), em "
+          f"B treinado com só {N_SUJ_DMD} sujeitos da UTA-RLDD por fold (sorteados), com todas as janelas deles, com "
+          "510 janelas sorteadas (o tamanho do treino de C, com a proporção de classes da UTA-RLDD, cerca de 40% de "
+          "alertas) ou com 510 janelas na proporção de classes de C (87 alertas e 423 sonolentas), em "
           f"{int(g('volume_treino', '13_sujeitos', 'RF', 'janela', 'auc_B').n_rep)} sorteios. Valor = mediana dos sorteios; "
           "entre colchetes, os percentis 2,5 e 97,5 dos sorteios (variação do sorteio, não IC).", "",
-          "| Modelo | B completo | B com 13 sujeitos | B com 13 sujeitos e 510 janelas | C |", "|---|---|---|---|---|"]
+          "| Modelo | B completo | B com 13 sujeitos | B com 13 sujeitos e 510 janelas | O mesmo, na proporção de C | C |",
+          "|---|---|---|---|---|---|"]
     for nome in E.MODELOS:
         L.append(f"| {nomes[nome]} | {v1(100 * principal(nome, 'B_uta_intra', 'janela').valor)} | "
                  f"{com_ic(g('volume_treino', '13_sujeitos', nome, 'janela', 'auc_B'))} | "
                  f"{com_ic(g('volume_treino', '13_sujeitos_510_janelas', nome, 'janela', 'auc_B'))} | "
+                 f"{com_ic(g('volume_treino', '13_sujeitos_510_janelas_proporcao_C', nome, 'janela', 'auc_B'))} | "
                  f"{v1(100 * principal(nome, 'C_dmd_para_uta', 'janela').valor)} |")
     L += ["", "## 4. Vazamento no mesmo cenário", "",
           "Folds oficiais por sujeito contra partição aleatória das janelas em 5 partes (média das sementes 42, 43 e 44). "
