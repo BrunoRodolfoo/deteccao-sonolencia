@@ -1,7 +1,8 @@
 # Pôster (sessão de 16/11/2026)
 
 Pôster final no template do professor (`material_disciplina/TemplatePoster.pptx`: 3 colunas, cabeçalho com os
-logos, título em vermelho, nomes à direita). Versão de 07/11/2026: mensagem do PP1 igual à do artigo (a perda
+logos, título em vermelho, nomes à direita). Versão de 08/11/2026 (o PP1 dá a perda do RF na normalização 3, 9,0,
+e o PP2 diz "mediana por quadro"; o resto é de 07/11): mensagem do PP1 igual à do artigo (a perda
 depende do modelo e da normalização; o achado firme é que o modelo do DMD deixa passar boa parte do sono real, em
 que fechamentos longos de olho são bem mais raros), figura do PP1 com as normalizações numeradas (1, 2 e 3,
 explicadas no PP1 da coluna 3), vazamento medido nas duas unidades (sequências de piscadas e janelas de 10 s),
@@ -59,7 +60,7 @@ também chama `build_poster.py --pdf`, então o PDF sai com título e autores no
 - **Texto:** frases curtas, sem travessão nem meia-risca, vírgula decimal.
 - **Imagens:** nenhum rosto. Nada do DMD (CC BY-NC-ND e rostos), da UTA-RLDD (autorização de imagem restrita)
   nem do NITYMED; nenhum quadro do NTHU-DDD. As figuras são só gráficos e diagramas.
-- **Conferência feita em 07/11/2026:** PDF com 1 página de 50,80 × 28,57 cm; menor fonte 20 pt em tudo e
+- **Conferência feita em 08/11/2026:** PDF com 1 página de 50,80 × 28,57 cm; menor fonte 20 pt em tudo e
   16 pt só nas referências, no PDF e no `.pptx`; as 83 linhas de texto do PDF iguais às do
   `.pptx`; nenhum travessão; metadados com título e autores nos dois arquivos; `.pptx` aberto no Quick Look
   (`qlmanage -t -s 2000`) e comparado com o PDF. **Imprima o PDF.**
@@ -145,8 +146,8 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
 - **Demonstração (40 s, se não houver fila):** piscar normal fica verde; fechar os olhos por 2 s vai ao vermelho
   com sirene ("ACORDE!"); abrir os olhos volta ao amarelo. Com um notebook na mesa, use Ajustes > Modo pôster: o
   próprio visitante calibra em 10 s e vê o nível reagir. Antes, subir o volume para 100 % (o padrão é 20 %).
-- **PP2 (30 s):** "Por quadro, a versão 2.1 do app levou de 11 a 12 ms no iPhone 17 Pro e de 39 a 40 ms no Galaxy
-  S23 Ultra, em três execuções de 60 s em cada." Se o pôster mudar, ler os números dele.
+- **PP2 (30 s):** "A mediana por quadro da versão 2.1 do app foi de 11 a 12 ms no iPhone 17 Pro e de 39 a 40 ms no
+  Galaxy S23 Ultra, em três execuções de 60 s em cada." Se o pôster mudar, ler os números dele.
 - **Validação e limitações (30 s):** "Testamos o app em 24 pessoas da UTA-RLDD com sono real, sentadas e fora do
   ajuste das regras: ele separou sonolento de acordado com AUC 0,812, sem diferença detectável do Random Forest
   treinado no DMD (0,811), e deu alarme em 15 de 24 sonolentos e em 2 de 24 acordados. Na direção real do DMD, ficou 3,3 % do tempo em vermelho, mas são os mesmos vídeos do ajuste. As limitações: é um

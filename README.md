@@ -6,9 +6,11 @@ Projeto Transformador II (Experiência Criativa), Bacharelado em Ciência da Com
 André Luís Oliveira Ferreira da Silva · Bruno Rodolfo da Silveira · Bruno Sandoval Ribeiro · Paulo Henrique Perin.
 Orientador: Prof. Júlio César Nievola.
 
-> **Estado em 27/10/2026.** Os seis experimentos terminaram e foram conferidos. Em outubro entraram os controles
-> da queda do Exp. 5b (`src/experiments/exp5b_robustez.py`), e o artigo foi reescrito depois de uma banca simulada
-> (8 páginas). O app de demonstração (PWA 2.1) foi validado com vídeos reais e agora funciona sem internet.
+> **Estado em 08/11/2026.** Os seis experimentos terminaram e foram conferidos (720 números do artigo e do pôster,
+> 0 divergências). Em outubro entraram os controles da queda do Exp. 5b (`src/experiments/exp5b_robustez.py`); o
+> artigo tem 8 páginas e foi revisado em 26/10, 07/11 e 08/11. O app de demonstração (PWA 2.1) foi validado com
+> vídeos reais, medido no iPhone 17 Pro e no Galaxy S23 Ultra, ganhou a interface "Painel de estrada" em 07/11 e
+> funciona sem internet.
 > - Relatório da Entrega 02: [`docs/ENTREGA02_relatorio.md`](docs/ENTREGA02_relatorio.md) (PDF para o Canvas: `docs/ENTREGA02_relatorio.pdf`).
 > - Troca de bases (aprovada pelo orientador): [`docs/TROCA_DATASETS.md`](docs/TROCA_DATASETS.md).
 > - Passo a passo da equipe (celular, demonstração, pôster, revisão por pares, GitHub): [`docs/GUIA_EQUIPE.md`](docs/GUIA_EQUIPE.md).

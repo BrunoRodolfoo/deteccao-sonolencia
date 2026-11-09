@@ -304,20 +304,21 @@ def _aparelhos():
         aps.append(("Galaxy S23 Ultra", "Galaxy", "CelularSamsung"))
     vers = [N(pre + "VersaoApp") for _, _, pre in aps]
     if len(aps) == 1:
-        return f"No {aps[0][0]}, {_faixa_ms(aps[0][2])} por quadro (app {vers[0]})."
+        return f"No {aps[0][0]}, mediana de {_faixa_ms(aps[0][2])} por quadro (app {vers[0]})."
     if len(set(vers)) == 1:
         partes = " e ".join(f"{_faixa_ms(pre)} no {nome}" for nome, _, pre in aps)
-        return f"Por quadro, {partes} (app {vers[0]})."
+        return f"Mediana por quadro: {partes}."   # a versão do app já está na caixa "App v2.1" da coluna 2
     # versões diferentes: cada aparelho com a sua, como "v1.0" (cabe em 3 linhas na coluna 3)
     partes = " e ".join(f"{_faixa_ms(pre)} no {nome} (v{v})" for (nome, _, pre), v in zip(aps, vers))
-    return f"Por quadro, {partes}."
+    return f"Mediana por quadro: {partes}."
 
 
 COL3 = [
     # 1, 2 e 3 são os rótulos da figura do PP1; "pouco": no RF, a perda nas normalizações 1 e 2 tem IC com o zero
     P(B("PP1."), f" Em pontos de AUC, a RL perde de {N('ExpCincoBLRQuedaNormMin')} a {N('ExpCincoBLRQuedaNormMax')} em "
-      f"todas as normalizações; o RF perde {N('ExpCincoBQuedaAUCJanela')} na principal e na 3 (outra referência no "
-      "DMD), mas pouco na 1 (outra na UTA) e na 2 (sem centrar)."),
+      f"todas as normalizações; o RF perde {N('ExpCincoBQuedaAUCJanela')} na principal e "
+      f"{N('ExpCincoBRefSDoisQuedaAUCJanela')} na 3 (outra no DMD), mas pouco na 1 (outra na UTA) e na 2 "
+      "(sem centrar)."),
     P(B("PP2."), " " + _aparelhos(), sb=6),
     P(B("PP3."), f" A SNR da abertura do olho é {N('ExpSeisSNRNoite')} à noite, {N('ExpSeisSNRDMDMovimento')} de dia "
       f"com o carro andando e {N('ExpSeisSNRDMDParado')} parado. Óculos: AUC do olho de "
