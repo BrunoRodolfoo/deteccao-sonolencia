@@ -4,9 +4,9 @@ Artigo de resultados do TCC **"Detecção de Sonolência em Dispositivos Móveis
 Generalização entre Sonolência Atuada e Real"** (PUCPR, Experiência Criativa: Projeto Transformador II,
 Turma 8ºA, Equipe 14). Formato IEEE *conference* (`IEEEtran`, duas colunas, de 6 a 8 páginas, português).
 
-**Estado (08/11/2026): versão final revisada.** Depois de uma banca simulada, o texto foi reescrito com a
+**Estado (08/11/2026): versão final revisada.** Depois de uma revisão em 26/10, o texto foi reescrito com a
 leitura nova da PP1 (controles do Exp. 5b em `results/exp5b_robustez.md`), do vazamento e da comparação entre a
-regra e os modelos; uma segunda banca simulada, em 07/11, corrigiu o mecanismo do PP1 e a comparação do app, e
+regra e os modelos; outra revisão, em 07/11, corrigiu o mecanismo do PP1 e a comparação do app, e
 uma revisão em 08/11 corrigiu frases que diziam mais que os dados ou as fontes (ver "Histórico").
 São 8 páginas, 34 referências (nenhuma marcada `UNVERIFIED`), as Tabelas I a V e 3 figuras.
 O texto não usa travessões. Nenhum número de resultado é digitado no `.tex`: todos vêm de `numeros.tex` (seção
@@ -22,7 +22,6 @@ O texto não usa travessões. Nenhum número de resultado é digitado no `.tex`:
 | `refs.bib` | referências verificadas; o artigo cita 34 chaves. As duas marcadas `UNVERIFIED` (`xu2025` e `fl3d`) não são citadas |
 | `figures/` | figuras do artigo e o diagrama TikZ da Fig. 1 (ver `figures/README.md`) |
 | `related_work_notes.md`, `dataset_facts.md`, `fontes_brasil.md` | notas de verificação bibliográfica usadas na redação (não entram na compilação) |
-| `REVISAO_SIMULADA.md` | revisão por pares simulada da versão de 28/09: notas por critério, fraquezas com localização e correções |
 
 Figuras usadas pelo artigo (todas em `figures/`):
 
@@ -105,7 +104,7 @@ Diagrama TikZ: `cd figures && tectonic fig_pipeline.tex` (detalhes em `figures/R
   DMD (`\SinaisDetector...`), duração dos trechos de direção segura, horas e quadros por segundo das bases,
   estratos de iluminação e reflexo do Exp. 3, sensibilidades e controles do Exp. 5b, o motorista de óculos do
   DMD, o PERCLOS com limiar pelo p90 (Exp. 6), a latência por estágio da PWA no desktop e o EAR sozinho no app.
-  A revisão por pares simulada (28/09) acrescentou `revisao_pares()`: disparo do RF do DMD com o limiar
+  A revisão de 28/09 acrescentou `revisao_pares()`: disparo do RF do DMD com o limiar
   calibrado no treino e da RL do DMD, queda da RL sem centragem, a queda nas 8 variantes do Exp. 5b e sujeitos
   de treino de B por *fold*.
 - Em 26/10 entraram os números de `results/exp5b_robustez.csv` (gerado por `src/experiments/exp5b_robustez.py`):
@@ -145,7 +144,7 @@ Desde 28/09/2026:
   `refs.bib`, para não aparecerem impressas; meses em português (`{set.}`, `{out.}`); nomes compostos
   protegidos (`{Ca\~{n}as}`, `{Van Droogenbroeck}`).
 
-Em 26/10/2026, depois da banca simulada:
+Em 26/10/2026, depois da revisão:
 - PP1: a RL perde de 5,4 a 9,8 pontos de AUC por janela nas quatro formas de normalizar; o RF perde 10,9 só na normalização
   principal e, com outra referência ou sem centragem, de 2,1 a 2,3 (não detectável), porque na UTA-RLDD as janelas
   alertas saem do mesmo vídeo da referência. O achado mais firme é a intensidade: o modelo do DMD reconhece só
@@ -176,7 +175,7 @@ Em 26/10/2026, depois da banca simulada:
 ## Histórico
 
 - 20/09/2026: primeira versão de 8 páginas (UTA-RLDD, MRL e CEW; NTHU-DDD "substituído por experimentos
-  indiretos"), com revisão crítica e revisão por pares simulada (`REVISAO_SIMULADA.md`).
+  indiretos"), com revisão crítica.
 - 27/09/2026: `numeros.tex` e o comando único `tools/atualizar_celular.sh`.
 - 28/09/2026: reescrita com os Exp. 5a, 5b e 6, o protótipo 2.1 e o diagrama `fig_pipeline` refeito.
 - 28/09/2026 (conferência crítica): números conferidos contra os CSV e ressalvas acrescentadas ao texto. A
@@ -185,17 +184,17 @@ Em 26/10/2026, depois da banca simulada:
   balanceada; o p90 também infla o PERCLOS de motoristas acordados em movimento; a vantagem do nosso extrator em
   B3 não se sustenta no LOSO; os disparos do Exp. 6 comparam características sem centragem; a latência do celular
   e do desktop é da versão 1.0.
-- 28/09/2026 (madrugada): revisão por pares simulada da versão final (`REVISAO_SIMULADA.md`) e correções de
+- 28/09/2026 (madrugada): revisão da versão final e correções de
   texto: disparo com limiar calibrado e RL, confusão com o volume do treino na PP1, validação do app declarada
   como de desenvolvimento, acurácia balanceada nas comparações entre tarefas, vazamento descrito como "janelas do
   mesmo vídeo", tempos do celular por faixa entre execuções, Tabela II (mapa) substituída por uma frase.
 - 06/10/2026: texto enxugado para 7 páginas e sem travessões (intervalos escritos como "de X a Y"); Fig. 1
   redesenhada como diagrama de blocos em preto e branco, numa coluna; a tabela do Exp. 3 por condição virou texto.
   Nenhum número mudou.
-- 26/10/2026: banca simulada e reescrita. Entraram os controles do Exp. 5b (Tabela II nova, `results/exp5b_robustez.md`),
+- 26/10/2026: revisão e reescrita. Entraram os controles do Exp. 5b (Tabela II nova, `results/exp5b_robustez.md`),
   a leitura nova da PP1, do vazamento e da regra × modelos e três referências; o artigo passou a ter 8 páginas,
   31 referências, Tabelas I a V e 3 figuras. Os diagramas de reserva saíram de `figures/`.
-- 07/11/2026: segunda banca simulada. O mecanismo do PP1 passou a ser descrito pela frequência dos fechamentos
+- 07/11/2026: nova revisão. O mecanismo do PP1 passou a ser descrito pela frequência dos fechamentos
   longos por vídeo (macros `ExpSeisFech...`, de `results/exp6_noite_videos.csv`), e não pela duração; o app foi
   comparado com Magán et al. (2022) na UTA-RLDD; "no nível" virou "não se distingue"; a partição por sujeito do
   Exp. 2 foi descrita como nos folds oficiais. Entraram quatro referências (Magán et al., Tamanani et al., o

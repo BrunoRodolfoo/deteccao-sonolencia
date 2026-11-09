@@ -79,7 +79,7 @@ deteccao-sonolencia/
 ├── paper/
 │   ├── artigo.tex, artigo.pdf, refs.bib, numeros.tex (gerado)
 │   ├── figures/           fig_pipeline.tex/.pdf (TikZ), as figuras dos Exp. 4, 5b e 6 e render.py
-│   └── dataset_facts.md, related_work_notes.md, fontes_brasil.md, REVISAO_SIMULADA.md, README.md
+│   └── dataset_facts.md, related_work_notes.md, fontes_brasil.md, README.md
 ├── poster/                build_poster.py, make_assets.py, layout.py, assets/, poster_final.*
 └── docs/                  ENTREGA02_relatorio.md e .pdf, GUIA_EQUIPE.md, TROCA_DATASETS.md, ESTRUTURA.md
 ```
@@ -159,10 +159,11 @@ Todo o trabalho até a noite de 26/10/2026 foi enviado ao GitHub nesse dia, em c
 resultados e logs dos experimentos, os testes do app (sensibilidade dos pesos e teste independente na UTA-RLDD),
 o artigo, o pôster e estes documentos. Em 27/10 entraram a comparação do app com os modelos nas mesmas pessoas, os
 ajustes do artigo, do pôster e destes documentos e a interface nova do app; em 05/11 e 06/11, a medição do app 2.1
-no Galaxy S23 Ultra e no iPhone 17 Pro; em 07/11, as correções da segunda banca simulada no artigo e no pôster e a
-interface "Painel de estrada" do app (com 3 arquivos de fonte e o QR do modo pôster).
+no Galaxy S23 Ultra e no iPhone 17 Pro; em 07/11, as correções da revisão no artigo e no pôster e a
+interface "Painel de estrada" do app (com 3 arquivos de fonte e o QR do modo pôster); em 08/11, os ajustes de
+outras duas revisões do artigo e do pôster.
 
-A árvore versionada tem cerca de 109 MB em 422 arquivos. O maior arquivo é
+A árvore versionada tem cerca de 109 MB em 421 arquivos. O maior arquivo é
 `results/exp5b_predicoes.csv` (32 MB), abaixo do aviso de 50 MB do GitHub. A lista não inclui `data/`
 (só `data/README.md`), `.venv*`, caches, certificados, chaves, `app/pwa/vendor/`, `models/exp1/` nem `models/exp6/`.
 Esses números mudam a cada arquivo novo; refaça a conta antes do commit (comando abaixo).

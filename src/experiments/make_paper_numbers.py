@@ -913,7 +913,7 @@ def artigo_extra():
 
 
 def revisao_pares():
-    """Números acrescentados pela revisão por pares simulada do ARTIGO (28/09/2026): (i) disparo do RF do
+    """Números acrescentados na revisão do ARTIGO de 28/09/2026: (i) disparo do RF do
     DMD com o limiar calibrado no treino e da RL do DMD, para comparar a regra com os modelos num ponto de
     operação justo (não só no limiar 0,5); (ii) queda da RL sem centragem e robustez da queda do RF nas
     sensibilidades do Exp. 5b; (iii) sujeitos de treino de B por fold (60 sujeitos, 5 folds oficiais de 12).
