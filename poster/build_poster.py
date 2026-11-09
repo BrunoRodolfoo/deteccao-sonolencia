@@ -241,13 +241,14 @@ AUTHORS = [
 # > 90 % = LMDF 90,05 % no NTHU-DDD (lyu2018; paper/related_work_notes.md).
 COL1_TITLE = "Contexto e Pergunta"
 COL1 = [
-    P("Condições de saúde do condutor, sono incluído, pesam em ", B("27,8%"), " das ocorrências nas rodovias "
+    P("Condições de saúde do condutor (sono, mas não só) pesam em ", B("27,8%"), " das ocorrências nas rodovias "
       "federais [7]."),
     P("Com sono encenado, os melhores detectores passam de 90% em duas classes [6]. Com sono real (UTA-RLDD), em "
       f"três classes, o modelo dos autores acerta {N('ExpUmHMLSTMVA')}% dos vídeos, e pessoas, "
       f"{N('ExpUmHumanosVA')}% [1].", sb=14),
     P(B("Pergunta central", RED), sb=30),
-    P("Um detector treinado com sono encenado reconhece sono real de pessoas nunca vistas, no celular?", sb=4),
+    # o celular entra na PP2: o modelo treinado no DMD não roda no celular, o app é que foi medido nele
+    P("Um detector treinado com sono encenado reconhece sono real de pessoas nunca vistas?", sb=4),
     P(B("Perguntas de pesquisa", RED), sb=30),
     P(B("PP1."), " Quanto se perde do sono encenado para o real?", sb=4),
     P(B("PP2."), " Qual o custo no celular?", sb=10),
@@ -269,7 +270,7 @@ TABLE = [
 # medidos com outras pessoas no teste
 LEAK = [
     P(B("Vazamento")),
-    P("Nas sequências de piscadas, que se sobrepõem, partir por janela infla a acurácia em "
+    P("Nas sequências de piscadas, que se sobrepõem, partir ao acaso infla a acurácia do RF em "
       f"{N('ExpDoisRFInflacaoJanelaBSA')}{NB}pp; nas janelas de 10 s, {N('ExpCincoBVazamentoAcBal')}{NB}pp "
       f"no RF e {N('ExpCincoBLRVazamentoAcBal')}{NB}pp na RL."),
 ]
@@ -277,7 +278,8 @@ LEAK = [
 # Substitui a frase da direção real do DMD (3,3 % em vermelho), que usava os mesmos vídeos do ajuste.
 APP = [
     P(B(f"App v{N('AppVersao')}")),
-    P(f"Sono real, {N('AppUTASujeitos')} pessoas sentadas e fora do ajuste: AUC{NB}{N('AppUTAAUCForaVerde')}; "
+    P(f"Teste offline, em vídeos e sem a LSTM: sono real, {N('AppUTASujeitos')} pessoas sentadas e fora do ajuste; "
+      f"AUC{NB}{N('AppUTAAUCForaVerde')}; "
       f"alarme em {N('AppUTASonolentosVermelho')} de {N('AppUTASujeitos')} sonolentos e "
       f"{N('AppUTAAcordadosAlarme')} de {N('AppUTASujeitos')} acordados."),
 ]
@@ -288,7 +290,7 @@ COL3_TITLE = "Conclusões"
 # "bem mais raros": fechamentos de 0,5 s ou mais por minuto, mediana por vídeo (ExpSeisFechMinUTASono contra
 # ExpSeisFechMinSCinco no artigo); o maior fechamento é parecido nas duas bases, por isso não "mais curtos"
 SINTESE = [P("Treinado com sono encenado, o modelo só reconhece ", B(f"{N('ExpCincoBCSensJanela')}%", RED),
-             " do sono real, em que fechamentos longos são bem mais raros.", size=24)]
+             " das janelas com sono real, em que fechamentos longos são bem mais raros.", size=21)]
 
 
 def _faixa_ms(pre):
@@ -314,16 +316,17 @@ def _aparelhos():
 
 
 COL3 = [
-    # 1, 2 e 3 são os rótulos da figura do PP1; "pouco": no RF, a perda nas normalizações 1 e 2 tem IC com o zero
-    P(B("PP1."), f" Em pontos de AUC, a RL perde de {N('ExpCincoBLRQuedaNormMin')} a {N('ExpCincoBLRQuedaNormMax')} em "
-      f"todas as normalizações; o RF perde {N('ExpCincoBQuedaAUCJanela')} na principal e "
-      f"{N('ExpCincoBRefSDoisQuedaAUCJanela')} na 3 (outra no DMD), mas pouco na 1 (outra na UTA) e na 2 "
-      "(sem centrar)."),
-    P(B("PP2."), " " + _aparelhos(), sb=6),
-    P(B("PP3."), f" A SNR da abertura do olho é {N('ExpSeisSNRNoite')} à noite, {N('ExpSeisSNRDMDMovimento')} de dia "
-      f"com o carro andando e {N('ExpSeisSNRDMDParado')} parado. Óculos: AUC do olho de "
-      f"{N('ExpTresCEWPatchMRLSemOculosAUC')}{NB}para{NB}{N('ExpTresCEWPatchMRLComOculosAUC')}.", sb=6),
-    P(B("Limitações."), " Um só par de bases.", sb=6),
+    # 1, 2 e 3 são os rótulos da figura do PP1; no RF, a perda nas normalizações 1 e 2 tem IC com o zero
+    P(B("PP1."), f" Em AUC por janela, a RL perde de {N('ExpCincoBLRQuedaNormMin')} a "
+      f"{N('ExpCincoBLRQuedaNormMax')} em todas as normalizações; o RF, {N('ExpCincoBQuedaAUCJanela')} na "
+      f"principal e {N('ExpCincoBRefSDoisQuedaAUCJanela')} na 3 (outra no DMD); sem perda detectável na 1 (outra "
+      "na UTA) e 2 (sem centrar)."),
+    P(B("PP2."), " " + _aparelhos(), sb=4),
+    P(B("PP3."), f" A noite piora o sinal do olho (SNR {N('ExpSeisSNRNoite')}), mas o carro andando de dia já fica "
+      f"perto ({N('ExpSeisSNRDMDMovimento')}). Óculos: AUC do olho de "
+      f"{N('ExpTresCEWPatchMRLSemOculosAUC')}{NB}para{NB}{N('ExpTresCEWPatchMRLComOculosAUC')}.", sb=4),
+    # o aviso de segurança vem do artigo (ética): sonolentos que ficaram no verde; os números estão na caixa do app
+    P(B("Limitações."), " Um só par de bases; app não testado ao volante. Sem alarme não quer dizer acordado.", sb=2),
 ]
 # Referências (16 pt), em texto corrido: chaves de paper/refs.bib (NITYMED: dataset + artigo dos autores)
 _REFS = ["Ghoddoosian et al., CVPRW 2019.", "Ortega et al., ECCVW 2020.", "Petrellis et al., DataPort 2022; DSD 2021.",
@@ -414,8 +417,8 @@ def elements():
     hr = altura_cm(preparar(REFS, L.C3_W))
     y_ref = L.BOTTOM - hr
     y = L.Y_BODY
-    y += T(L.C3_X, y, L.C3_W, SINTESE, "Sintese") + 0.35
-    T(L.C3_X, y, L.C3_W, COL3, "Corpo col 3", h=y_ref - 0.2 - y, ajustavel=True)
+    y += T(L.C3_X, y, L.C3_W, SINTESE, "Sintese") + 0.25
+    T(L.C3_X, y, L.C3_W, COL3, "Corpo col 3", h=y_ref - 0.15 - y, ajustavel=True)
     T(L.C3_X, y_ref, L.C3_W, REFS, "Referencias", cls="ref")
 
     # checagens de geometria: tudo dentro da página e do fundo das colunas

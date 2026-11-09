@@ -1,8 +1,11 @@
 # Pôster (sessão de 16/11/2026)
 
 Pôster final no template do professor (`material_disciplina/TemplatePoster.pptx`: 3 colunas, cabeçalho com os
-logos, título em vermelho, nomes à direita). Versão de 08/11/2026 (o PP1 dá a perda do RF na normalização 3, 9,0,
-e o PP2 diz "mediana por quadro"; o resto é de 07/11): mensagem do PP1 igual à do artigo (a perda
+logos, título em vermelho, nomes à direita). Versão de 08/11/2026 (frases ajustadas ao que foi medido: 48,4 % das
+janelas com sono real; pergunta central sem "no celular", que fica na PP2; app em teste offline, em vídeos e sem a
+LSTM; vazamento de 45,3 pp do RF; PP1 com 9,0 na 3 e "sem perda detectável" na 1 e na 2; PP2 em mediana por quadro;
+PP3 como resposta; limitações com o aviso de segurança; no diagrama, a seta dos experimentos sai direto do MediaPipe e
+os números dos sinais ficam só com o app; o resto é de 07/11): mensagem do PP1 igual à do artigo (a perda
 depende do modelo e da normalização; o achado firme é que o modelo do DMD deixa passar boa parte do sono real, em
 que fechamentos longos de olho são bem mais raros), figura do PP1 com as normalizações numeradas (1, 2 e 3,
 explicadas no PP1 da coluna 3), vazamento medido nas duas unidades (sequências de piscadas e janelas de 10 s),
@@ -61,7 +64,7 @@ também chama `build_poster.py --pdf`, então o PDF sai com título e autores no
 - **Imagens:** nenhum rosto. Nada do DMD (CC BY-NC-ND e rostos), da UTA-RLDD (autorização de imagem restrita)
   nem do NITYMED; nenhum quadro do NTHU-DDD. As figuras são só gráficos e diagramas.
 - **Conferência feita em 08/11/2026:** PDF com 1 página de 50,80 × 28,57 cm; menor fonte 20 pt em tudo e
-  16 pt só nas referências, no PDF e no `.pptx`; as 83 linhas de texto do PDF iguais às do
+  16 pt só nas referências, no PDF e no `.pptx`; as 86 linhas de texto do PDF iguais às do
   `.pptx`; nenhum travessão; metadados com título e autores nos dois arquivos; `.pptx` aberto no Quick Look
   (`qlmanage -t -s 2000`) e comparado com o PDF. **Imprima o PDF.**
 
@@ -70,9 +73,9 @@ também chama `build_poster.py --pdf`, então o PDF sai com título e autores no
 | Coluna | Conteúdo | Fonte |
 |---|---|---|
 | Cabeçalho | título, endereço do repositório, autores, orientador e QR | |
-| 1. Contexto e Pergunta | ABRAMET/PRF 27,8 % (condições de saúde do condutor, sono incluído); encenado acima de 90 % em duas classes e real 65,2 % em três classes (modelo dos autores da base), pessoas 57,8 %; pergunta central; PP1 a PP3; siglas RF e RL | `paper/fontes_brasil.md`, `results/exp1_intra.md` |
-| 2. Método e Resultados | diagrama do método com a validação dos sinais do app (olhos κ 0,938 e revocação 0,929 dos fechamentos de 0,5 s ou mais; bocejo 0,638 sem a mão; cabeça sem revocação medida) e o semáforo (40 e 70); tabela das bases; figura do PP1 com os rótulos no próprio gráfico (perda ao treinar com sono encenado na normalização principal e em outras três, numeradas: 1, outra referência na UTA; 2, sem centragem; 3, outra referência no DMD. RL de 5,4 a 9,8 em todas; RF 10,9 na principal, 9,0 na 3 e de 2,1 a 2,3 na 1 e na 2; o modelo do DMD reconhece 82,0 % das janelas alertas e 48,4 % das de sono real); vazamento (45,3 pp nas sequências; 12,6 pp no RF e 1,2 pp na RL nas janelas de 10 s); app v2.1 em sono real (24 pessoas da UTA-RLDD, sentadas e fora do ajuste: AUC 0,812 entre sonolento e acordado; alarme em 15 de 24 sonolentos e 2 de 24 acordados) | `results/app_validacao*.md`, `results/exp5b_transferencia.md`, `results/exp2_leakage.md` |
-| 3. Conclusões | frase-síntese (treinado com sono encenado, o modelo só reconhece 48,4 % do sono real, em que fechamentos longos são bem mais raros: 5,1 contra 1,0 por minuto, mediana por vídeo, no artigo); PP1, com a legenda 1, 2 e 3 da figura; PP2 (por quadro, 11 a 12 ms no iPhone 17 Pro e 39 a 40 ms no Galaxy S23 Ultra, app 2.1); PP3 (SNR da abertura do olho 7,2 à noite, 8,7 de dia com o carro andando e 13,6 parado; óculos, AUC do olho de 93,4 para 65,1); limitações (um só par de bases); referências | `results/exp6_noite_videos.csv`, `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
+| 1. Contexto e Pergunta | ABRAMET/PRF 27,8 % (condições de saúde do condutor: sono, mas não só); encenado acima de 90 % em duas classes e real 65,2 % em três classes (modelo dos autores da base), pessoas 57,8 %; pergunta central (sem o celular, que é a PP2); PP1 a PP3; siglas RF e RL | `paper/fontes_brasil.md`, `results/exp1_intra.md` |
+| 2. Método e Resultados | diagrama do método: o MediaPipe vai direto aos experimentos e aos sinais do app, que levam só ao app, com a validação do app no DMD, dado de desenvolvimento (olhos κ 0,938 e revocação 0,929 dos fechamentos de 0,5 s ou mais; bocejo 0,638 sem a mão; cabeça sem revocação medida; o detector dos experimentos tem κ 0,773 e não usa a cabeça) e o semáforo (40 e 70); tabela das bases; figura do PP1 com os rótulos no próprio gráfico (perda ao treinar com sono encenado na normalização principal e em outras três, numeradas: 1, outra referência na UTA; 2, sem centragem; 3, outra referência no DMD. RL de 5,4 a 9,8 em todas; RF 10,9 na principal, 9,0 na 3 e de 2,1 a 2,3 na 1 e na 2; o modelo do DMD reconhece 82,0 % das janelas alertas e 48,4 % das de sono real); vazamento (partição ao acaso: 45,3 pp do RF nas sequências; 12,6 pp no RF e 1,2 pp na RL nas janelas de 10 s); app v2.1 em sono real, num teste offline, em vídeos e sem a LSTM (24 pessoas da UTA-RLDD, sentadas e fora do ajuste: AUC 0,812 entre sonolento e acordado; alarme em 15 de 24 sonolentos e 2 de 24 acordados) | `results/app_validacao*.md`, `results/exp5b_transferencia.md`, `results/exp2_leakage.md` |
+| 3. Conclusões | frase-síntese em 21 pt (treinado com sono encenado, o modelo só reconhece 48,4 % das janelas com sono real, em que fechamentos longos são bem mais raros: 5,1 contra 1,0 por minuto, mediana por vídeo, no artigo); PP1 em AUC por janela, com a legenda 1, 2 e 3 da figura e "sem perda detectável" na 1 e na 2; PP2 (mediana por quadro, 11 a 12 ms no iPhone 17 Pro e 39 a 40 ms no Galaxy S23 Ultra); PP3 (a noite piora o sinal do olho, SNR 7,2, mas o carro andando de dia já fica perto, 8,7; óculos, AUC do olho de 93,4 para 65,1); limitações (um só par de bases; app não testado ao volante; sem alarme não quer dizer acordado); referências | `results/exp6_noite_videos.csv`, `results/exp4_phone_latency.md`, `results/exp6_noite.md`, `results/exp3_eye_state.md` |
 
 ## Roteiro da apresentação (10 min, 4 falas de 2,5 min)
 
@@ -193,7 +196,7 @@ ele mudar (por exemplo, com a medição nova do celular), use os números novos.
    precisa de treino e cada alarme tem explicação. O LSTM entra só como reforço limitado.
 10. **Qual o falso alarme do app?** No teste independente em sono real (24 pessoas da UTA-RLDD, sentadas e fora
     do ajuste), 2 de 24 vídeos de pessoas acordadas deram alarme. Na direção real do DMD (63,3 min), 3,3 % do tempo
-    em vermelho, e 16 das 17 sessões sem nenhum alarme. São os mesmos vídeos usados para ajustar as regras, então é um número de
+    em vermelho, ou 3,8 alarmes por hora, todos de um único motorista, e 16 das 17 sessões sem nenhum alarme. São os mesmos vídeos usados para ajustar as regras, então é um número de
     desenvolvimento. O caso ruim conhecido é um motorista (gA_5) que olha muito para baixo: o olhar baixo é
     lido como olho fechado (55,8 % do tempo em vermelho).
 11. **E a revocação? O app pega quem está com sono?** No teste independente em sono real (24 pessoas da

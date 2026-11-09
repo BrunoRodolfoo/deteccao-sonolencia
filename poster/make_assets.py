@@ -6,9 +6,10 @@ src/experiments/make_paper_numbers.py a partir de results/, conferido por confer
 Os valores plotados são o campo `bruto` x `escala` e o IC é `ic_bruto` x `escala` de cada entrada.
 
 Figuras (tamanho em cm = tamanho no pôster, lido de poster/layout.py; texto em pt reais):
-  fig_poster_metodo.png      diagrama do método: câmera e MediaPipe, sinais (olhos, bocejo, cabeça),
-                             experimentos (Face Mesh, 468 pontos; janelas de 10 s; RF e RL) e
-                             app v2.1 (Face Landmarker, 478 pontos; nível de 0 a 100)
+  fig_poster_metodo.png      diagrama do método: câmera e MediaPipe, que vai direto aos experimentos (Face
+                             Mesh, 468 pontos; janelas de 10 s; RF e RL) e aos sinais do app (olhos, bocejo,
+                             cabeça, com a validação no DMD), que levam ao app v2.1 (Face Landmarker, 478 pontos;
+                             nível de 0 a 100)
   fig_poster_exp5b.png       PP1 (Exp. 5b): perda de AUC ao treinar com sono encenado (B − C; RF e RL;
                              normalização principal e as outras três) e quanto o modelo do DMD reconhece
                              das janelas alertas e sonolentas reais
@@ -221,8 +222,13 @@ def fig_metodo():
     for lim, cor in ((am, PRETO), (vm, "white")):
         txt(bx + bw * lim / 100 + 0.12, by + bh / 2, str(lim), ca, ha="left", va="center", color=cor)
 
+    # Os experimentos tiram as características direto dos pontos do MediaPipe (outro detector, sem a cabeça): a seta
+    # sai da caixa da captura e passa no vão entre "Olhos" e "Bocejo". As caixas dos sinais, com a validação do app
+    # no DMD, ligam-se só ao app.
+    y_vao = H - lado - hb - gap / 2
+    assert y_exp + 0.2 <= y_vao <= y_exp + h_out - 0.2, "a seta dos experimentos não chega à caixa deles"
+    seta(ax, lado + w1, y_vao, x3, y_vao)
     xa = x2 + w2
-    seta(ax, xa, centros[0], x3, y_exp + h_out / 2)
     seta(ax, xa, centros[2], x3, y_app + h_out / 2)
 
     # cada texto cabe na sua caixa (com 0,1 cm de folga dos lados)
