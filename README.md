@@ -204,9 +204,12 @@ Ela calibra o limiar de EAR nos primeiros segundos (olhos abertos); `q` sai. O a
 ```
 
 **PWA, o app de demonstração (2.1).** O guia completo, com a lógica do nível de 0 a 100, a validação e os limites, está em [`app/pwa/README.md`](app/pwa/README.md). A interface foi refeita em 07/11/2026, com o mesmo detector: estados com a forma das placas de trânsito, "Por quê?" com o prazo de cada ponto, calibração guiada, alarme com "segure: estou acordado" e um Modo pôster para a sessão de 16/11.
-Celular e computador ficam na mesma rede. Na PUC, a rede isola os aparelhos: use o Acesso Pessoal do iPhone e conecte o Mac e o celular nele.
+**Para usar, abra https://brunorodolfoo.github.io/deteccao-sonolencia/ no celular** (Safari ou Chrome), permita a câmera e toque em **Iniciar viagem**. Não precisa de computador, de rede em comum nem de comando. Para ter um ícone: no iPhone, Compartilhar > Adicionar à Tela de Início; no Android, menu do Chrome > Adicionar à tela inicial. Depois da primeira visita com internet, o app abre também sem sinal.
+O site é publicado pelo GitHub Actions (`.github/workflows/pages.yml`) a cada push na `main` que mexa em `app/pwa/`: roda os testes do motor, baixa `vendor/` conferindo o SHA-256 e publica.
 
-O app funciona sem internet quando a pasta `app/pwa/vendor/` está completa. Ela tem as dependências que, sem
+O servidor local abaixo continua servindo para o benchmark com envio automático ao Mac e para demonstrar sem nenhuma internet. Nesse caso, celular e computador ficam na mesma rede. Na PUC, a rede isola os aparelhos: use o Acesso Pessoal do iPhone e conecte o Mac e o celular nele.
+
+O app servido pelo Mac funciona sem internet quando a pasta `app/pwa/vendor/` está completa. Ela tem as dependências que, sem
 ela, viriam da internet: o MediaPipe com os arquivos WASM, o modelo `face_landmarker.task`, o TensorFlow.js e o
 tfjs-tflite, nas mesmas versões fixas do `app.js` (13 arquivos, cerca de 36 MB, fora do Git). Baixe uma vez, com internet:
 

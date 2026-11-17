@@ -247,7 +247,8 @@ essas parcelas.
 
 **Antes de entrar na sala (fora do cronômetro, ~1 min):**
 - Celular no suporte, **na altura do painel** (câmera um pouco abaixo do rosto), luz de frente, sem
-  contraluz. Mesma rede do computador (ou "Acesso Pessoal" do iPhone).
+  contraluz. Abra o app pelo endereço do GitHub Pages (seção 7) ou, pelo servidor local, na mesma rede do
+  computador (ou "Acesso Pessoal" do iPhone).
 - Abra o app e toque em **Iniciar viagem** (esse toque libera o som no iPhone).
 - **Volume:** o app começa com o "Volume do alarme" em **20 %** (padrão, para testes sem susto). Para a
   banca, **suba o controle para 100 %**, deixe o volume de mídia do celular no máximo e toque em
@@ -288,6 +289,18 @@ LSTM não decide nada sozinho porque não generaliza bem para uma pessoa nova (E
 
 ## 7. Como rodar
 
+**No celular, sem computador:** abra https://brunorodolfoo.github.io/deteccao-sonolencia/ (Safari ou Chrome),
+permita a câmera e toque em **Iniciar viagem**. Para ter um ícone: no iPhone, Compartilhar > Adicionar à Tela de
+Início; no Android, menu do Chrome > Adicionar à tela inicial. Depois da primeira visita com internet, o app abre
+também sem sinal: o service worker guarda a casca, os scripts de `vendor/` e os modelos ao instalar, e o WASM e o
+modelo do rosto no primeiro "Iniciar viagem" (testado no Chrome headless com o servidor desligado, 17/11/2026).
+O site é publicado pelo GitHub Actions (`.github/workflows/pages.yml`) a cada push na `main` que mexa em `app/pwa/`:
+roda `test_engine.mjs`, baixa `vendor/` com `tools/baixar_dependencias_app.sh` (SHA-256 conferido) e publica, sem
+os arquivos `.py`, os testes e os README. No GitHub Pages, o benchmark não chega sozinho ao computador: use os
+botões de download (seção 7.1).
+
+**Servidor local** (benchmark com envio automático, ou demonstração sem nenhuma internet):
+
 1. Os modelos já estão em `app/pwa/models/` (`eye_state_int8.tflite`, `eye_state_fp32.tflite`,
    `blink_temporal.tflite` + JSON). Sem eles o app roda em **modo degradado**: o detector (olhos,
    bocejo, cabeça) funciona; só os modelos experimentais ficam desligados, com aviso na tela.
@@ -301,8 +314,6 @@ LSTM não decide nada sozinho porque não generaliza bem para uma pessoa nova (E
    fora da pasta servida). Ao subir, ele confere `vendor/`; se faltar algo, avisa e oferece baixar.
 4. No celular, abra `https://<IP-do-computador>:8443/`, aceite o aviso do certificado e permita a
    câmera. Toque em **Iniciar viagem**.
-5. Alternativa com HTTPS válido: GitHub Pages (copie `app/pwa/` com `models/` para `docs/` e ative
-   Pages em `/docs`; sem `vendor/`, as dependências vêm da CDN).
 
 Parâmetros de URL: `?autostart=1` liga a câmera ao abrir (e pula o Primeiro uso); `&bench=1` inicia o benchmark de
 60 s ao ligar; `&volume=0..100` define o volume do alarme só nesta visita (não grava); `?pesquisa=1` liga o modo
@@ -528,7 +539,7 @@ os mesmos clipes da validação anterior rodaram de novo no navegador (seção 8
 | `engine.js` | motor puro testável em Node: EAR/MAR, pose, fusão dos olhos, fechamentos, PERCLOS, bocejo, cabeça, nível, alarme, volume (e as classes da v1) |
 | `tflite_io.js` | entrada/saída dos modelos TFLite (dtype, quantização) |
 | `test_engine.mjs` | testes do motor: `node app/pwa/test_engine.mjs` |
-| `sw.js`, `manifest.webmanifest`, `icon.svg` | PWA (rede primeiro, cache como reserva; cache `sonolencia-pwa-v7`, que guarda também `vendor/` e as respostas da CDN) |
+| `sw.js`, `manifest.webmanifest`, `icon.svg` | PWA (rede primeiro, cache como reserva; cache `sonolencia-pwa-v8`, que guarda também `vendor/`, os modelos e as respostas da CDN, e responde sem rede ao HEAD dos modelos) |
 | `serve_https.py` | servidor HTTPS local (8443) que recebe o benchmark e confere `vendor/` ao subir |
 | `check_tflite_web.py` | verifica se um `.tflite` carrega no runtime da PWA |
 | `models/` | cópias dos `.tflite`/`.json` (ver `models/README.md`) |

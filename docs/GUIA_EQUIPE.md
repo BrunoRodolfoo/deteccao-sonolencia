@@ -13,6 +13,7 @@ Passo a passo para os quatro integrantes. Versão de 07/11/2026.
 - Troca de bases (aprovada pelo orientador em conversa; registro em 04/10/2026): `docs/TROCA_DATASETS.md`.
 - Números do artigo e do pôster: `results/numeros_resumo.md`. Todos são gerados, nunca digitados.
 - App: `app/pwa/README.md` (lógica, validação, limites e o roteiro de 2 min da seção 6).
+- App no celular, sem computador: https://brunorodolfoo.github.io/deteccao-sonolencia/ (publicado sozinho a cada push; `app/pwa/README.md`, seção 7). O `serve_https.py` só é preciso para o benchmark com envio automático ao Mac.
 
 **Regras:**
 - Execute os comandos na raiz do repositório (a pasta `deteccao-sonolencia`). O caminho tem espaços e parênteses, então use aspas.

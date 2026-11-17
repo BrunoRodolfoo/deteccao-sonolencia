@@ -1,0 +1,54 @@
+# Publica o app (app/pwa/) no GitHub Pages: https://brunorodolfoo.github.io/deteccao-sonolencia/
+# Roda a cada push na main que mexa no app, ou à mão (Actions > Publicar app > Run workflow).
+# O site leva a pasta vendor/ (MediaPipe, modelo do rosto, TensorFlow.js), baixada aqui e conferida pelo
+# SHA-256 por tools/baixar_dependencias_app.sh: tudo vem do mesmo endereço, e o service worker guarda no
+# aparelho o que o app usou, para abrir depois até sem internet.
+# Uma vez só, no GitHub: Settings > Pages > Build and deployment > Source: "GitHub Actions".
+name: Publicar app
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/pwa/**"
+      - "tools/baixar_dependencias_app.sh"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Testes do motor (217 asserções)
+        run: node app/pwa/test_engine.mjs
+
+      - name: Montar o site (sem os arquivos só de desenvolvimento)
+        run: |
+          rsync -a --exclude '*.py' --exclude 'test_engine.mjs' --exclude 'README.md' --exclude 'vendor/' app/pwa/ _site/
+          bash tools/baixar_dependencias_app.sh --pasta "$PWD/_site/vendor"
+          du -sh _site
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
